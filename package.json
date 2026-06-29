@@ -1,0 +1,41 @@
+{
+  "name": "ermine",
+  "version": "0.1.0",
+  "description": "Ermine is a structural abstraction layer — a style specification that CSS implements. A typed, composable grammar: orthogonal axes (structure, spacing, sizing, state…) compose without conflict, each owning disjoint CSS properties.",
+  "keywords": [
+    "css",
+    "design-system",
+    "style",
+    "grammar",
+    "linter",
+    "composable",
+    "abstraction-layer",
+    "specification"
+  ],
+  "license": "MIT",
+  "author": "Jorge",
+  "type": "module",
+  "files": [
+    "registry.ts",
+    "lint.ts",
+    "STYLE-GRAMMAR.md",
+    "STYLE-GRAMMAR-SPEC.md",
+    "STYLE-GRAMMAR-GUIDE.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "registry": "tsx registry.ts",
+    "lint": "tsx lint.ts",
+    "typecheck": "tsc --noEmit --strict --module esnext --moduleResolution bundler --target es2022 --types node --allowImportingTsExtensions registry.ts lint.ts",
+    "check": "npm run typecheck && npm run lint"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
