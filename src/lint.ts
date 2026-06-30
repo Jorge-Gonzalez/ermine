@@ -14,6 +14,8 @@ export interface Parsed {
   axis: string | null;      // resolved axis id, or null if unknown
   member: string | null;    // resolved member/word
   value?: string | number;  // open-axis parameter value
+  isAlias?: boolean;        // m2: a whole-axis alias (complete value, mutually exclusive)
+  dial?: string | null;     // m2: which sub-dial a parametric token sets (grow/shrink)
   stateMember?: StateMember;
 }
 
@@ -40,11 +42,14 @@ export function parseWord(raw: string): Parsed {
         // state member resolution
         let stateMember: StateMember | undefined;
         if (ax.stateGroup) {
-          const word = m[1]?.split("-").slice(0, -1).join("-") || body;
           stateMember = ax.stateGroup.members.find((sm) => body === sm.word || body.startsWith(sm.word + "-"));
         }
         const value = m[2] !== undefined ? (/^\d+$/.test(m[2]) ? Number(m[2]) : m[2]) : undefined;
-        return { raw, scope, axis: ax.axis, member: m[1] ?? body, value, stateMember };
+        const member = m[1] ?? body;
+        // m2: is this a whole-axis alias, or which dial does a parametric token set?
+        const isAlias = ax.aliases?.some((a) => a.word === body);
+        const dial = ax.dialOf ? ax.dialOf(member) : undefined;
+        return { raw, scope, axis: ax.axis, member, value, isAlias, dial, stateMember };
       }
     }
   }
@@ -52,16 +57,51 @@ export function parseWord(raw: string): Parsed {
 }
 
 // --- P1: one word per axis PER SCOPE (Law 2, amended) ---
+// Refinements for the two member-role sizing shapes:
+//   • whole-axis ALIASES (m2 corners): an alias is a COMPLETE value, so it
+//     conflicts with ANY other word on the same axis/scope (another alias OR a dial).
+//   • SUB-DIALS (m2 grow/shrink): parametric tokens on DIFFERENT dials compose;
+//     two on the SAME dial conflict.
+//   • plain axes: at most one word per axis/scope (unchanged).
 export function p1_oneWordPerAxisPerScope(parsed: Parsed[]): Issue[] {
-  const seen = new Map<string, string>(); // key = scope|axis -> first raw word
   const out: Issue[] = [];
+  const byKey = new Map<string, Parsed[]>(); // scope|axis -> words
   for (const p of parsed) {
     if (!p.axis) continue;
     const key = `${p.scope}|${p.axis}`;
-    if (seen.has(key)) {
+    byKey.set(key, [...(byKey.get(key) ?? []), p]);
+  }
+
+  for (const [, words] of byKey) {
+    const ax = REGISTRY.find((a) => a.axis === words[0].axis);
+    const hasDials = !!ax?.subDials;
+    const aliases = words.filter((w) => w.isAlias);
+    const nonAliases = words.filter((w) => !w.isAlias);
+
+    if (hasDials || (ax?.aliases?.length ?? 0) > 0) {
+      // m2-style: aliases are whole-axis (complete) values.
+      if (aliases.length >= 1 && words.length > 1) {
+        const others = words.filter((w) => w.raw !== aliases[0].raw).map((w) => w.raw);
+        out.push({ level: "error", rule: "one-word-per-axis",
+          msg: `'${aliases[0].raw}' is a whole-axis value (it fixes every dial of '${words[0].axis}') — it cannot combine with '${others.join("', '")}'. Use either the alias OR the numbered dials.` });
+        continue;
+      }
+      // no alias: numbered dials — one value per dial.
+      const seenDial = new Map<string, string>();
+      for (const p of nonAliases) {
+        const d = p.dial ?? "(value)";
+        if (seenDial.has(d))
+          out.push({ level: "error", rule: "one-word-per-axis",
+            msg: `'${p.raw}' and '${seenDial.get(d)}' both set the '${d}' dial of '${p.axis}'.` });
+        else seenDial.set(d, p.raw);
+      }
+      continue;
+    }
+
+    // plain axis: more than one word is a conflict
+    if (words.length > 1)
       out.push({ level: "error", rule: "one-word-per-axis",
-        msg: `'${p.raw}' conflicts with '${seen.get(key)}' — both are axis '${p.axis}' in scope '${p.scope}'` });
-    } else seen.set(key, p.raw);
+        msg: `'${words.map((w) => w.raw).join("', '")}' conflict — all axis '${words[0].axis}' in scope '${words[0].scope}'` });
   }
   return out;
 }
@@ -72,18 +112,6 @@ export function p2_unknownWord(parsed: Parsed[]): Issue[] {
     level: "error" as const, rule: "unknown-word",
     msg: `'${p.raw}' resolves to no axis — not a member of any closed axis and not a sanctioned parameter. Do not coin; report a gap.`,
   }));
-}
-
-// --- P5: weight implies direction on (rigid grow-2 is a contradiction) ---
-export function p5_weightImpliesDirection(parsed: Parsed[]): Issue[] {
-  const out: Issue[] = [];
-  const words = new Set(parsed.map((p) => p.member));
-  const hasGrowWeight = parsed.some((p) => p.member === "grow" && typeof p.value === "number" && p.value > 0);
-  const hasShrinkWeight = parsed.some((p) => p.member === "shrink" && typeof p.value === "number" && p.value > 0);
-  if (words.has("rigid") && (hasGrowWeight || hasShrinkWeight))
-    out.push({ level: "error", rule: "weight-implies-direction",
-      msg: "`rigid` (grow-0 shrink-0) contradicts a positive grow/shrink weight — the weight turns the direction on." });
-  return out;
 }
 
 // --- P8: state entailment (category-dispatched), instance form ---
@@ -108,8 +136,7 @@ export function lint(classString: string, backing = new Set<string>()): Issue[] 
   const parsed = classString.trim().split(/\s+/).filter(Boolean).map(parseWord);
   return [
     ...p2_unknownWord(parsed),
-    ...p1_oneWordPerAxisPerScope(parsed),
-    ...p5_weightImpliesDirection(parsed),
+    ...p1_oneWordPerAxisPerScope(parsed),  // m2 alias/dial rules folded in (was P5)
     ...p8_stateEntailment(parsed, backing),
   ];
 }
@@ -118,20 +145,33 @@ export function lint(classString: string, backing = new Set<string>()): Issue[] 
 // SMOKE TEST
 // ============================================================================
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const cases: { s: string; backing?: string[]; expect: "ok" | "fail" }[] = [
+  const cases: { s: string; backing?: string[]; expect: "ok" | "fail"; why?: string }[] = [
     { s: "horizontal gap-comfortable padding-relaxed", expect: "ok" },
-    { s: "horizontal vertical", expect: "fail" },                       // P1
-    { s: "horizontal viewport-md:vertical", expect: "ok" },             // Law 2 amended: different scopes
-    { s: "viewport-md:horizontal viewport-md:vertical", expect: "fail" }, // same scope, same axis
-    { s: "rigid grow-2", expect: "fail" },                              // P5
-    { s: "elastic grow-2", expect: "ok" },
-    { s: "selected", expect: "fail" },                                  // P8 no backing
-    { s: "selected", backing: ["aria-pressed"], expect: "ok" },         // P8 Law-6b disjunction
-    { s: "selectable", expect: "ok" },                                  // capability entails nothing
-    { s: "stretchy", expect: "fail" },                                  // P2 coined
-    { s: "modal", expect: "ok" },                                       // top-layer mechanism, not a z rung
-    { s: "basis-exact-md", expect: "ok" },                              // token-indexed
-    { s: "basis-exact-240", expect: "fail" },                           // raw px is OUT in v0
+    { s: "horizontal vertical", expect: "fail", why: "P1 same axis/scope" },
+    { s: "horizontal viewport-md:vertical", expect: "ok", why: "Law 2: different scopes" },
+    { s: "viewport-md:horizontal viewport-md:vertical", expect: "fail", why: "same scope, same axis" },
+    // m2 — whole-axis aliases vs numbered dials
+    { s: "rigid grow-2", expect: "fail", why: "alias is whole-axis; can't combine with a dial" },
+    { s: "elastic grow-2", expect: "fail", why: "alias is whole-axis; can't combine with a dial" },
+    { s: "expandable shrink-2", expect: "fail", why: "alias fixes both dials; shrink-2 conflicts" },
+    { s: "elastic", expect: "ok", why: "alias alone" },
+    { s: "grow-2 shrink-1", expect: "ok", why: "numbered dials, one per dial" },
+    { s: "grow-2 grow-3", expect: "fail", why: "two values on the same dial" },
+    { s: "grow-1", expect: "ok", why: "single dial" },
+    // m3 / m5 — closed-with-parametric-member
+    { s: "basis-exact-md", expect: "ok", why: "parametric member, valid token" },
+    { s: "basis-exact-240", expect: "fail", why: "raw px OUT in v0" },
+    { s: "basis-content", expect: "ok", why: "closed member" },
+    { s: "basis-content basis-exact-md", expect: "fail", why: "two members of one closed axis" },
+    { s: "grid span-all", expect: "ok", why: "contextual member under grid" },
+    { s: "grid span-2 span-all", expect: "fail", why: "two members of one closed axis" },
+    { s: "grid span-2", expect: "ok", why: "parametric member" },
+    // state
+    { s: "selected", expect: "fail", why: "P8 no backing" },
+    { s: "selected", backing: ["aria-pressed"], expect: "ok", why: "P8 Law-6b disjunction" },
+    { s: "selectable", expect: "ok", why: "capability entails nothing" },
+    { s: "stretchy", expect: "fail", why: "P2 coined" },
+    { s: "modal", expect: "ok", why: "top-layer mechanism" },
     { s: "grid padding-comfortable selectable selection-subtle", backing: [], expect: "ok" },
   ];
 

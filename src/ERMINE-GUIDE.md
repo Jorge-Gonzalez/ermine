@@ -1,4 +1,4 @@
-# STYLE-GRAMMAR — Author's Guide
+# Ermine — Author's Guide
 
 > A friendly, example-led introduction to writing class strings in the style grammar. This is the
 > *teaching* face of the grammar; the exhaustive rules live in the machine-consumer spec, and the
@@ -100,15 +100,26 @@ or `-block` (top/bottom):
 ### Sizing: does this element grow or shrink? (member)
 
 This is the one place the grammar *negotiates* — members share the parent's space, so the result
-depends on all of them together. Four everyday words cover most cases:
+depends on all of them together. Four everyday words cover almost everything — pick **one**:
 
 - `rigid` — never grows, never shrinks
 - `compressible` — shrinks if needed (the default)
 - `expandable` — grows to fill space
 - `elastic` — both grows and shrinks
 
-Need to control *how much* one grows relative to its siblings? That's a number, not a new word:
-`grow-2`, `shrink-3`. And where its size *starts from*:
+Need to control *how much* one grows or shrinks relative to its siblings? Use the numbered dials
+instead — `grow-2`, `shrink-3` — **and one rule to remember: use the words *or* the dials, never both.**
+The four words each already set both grow and shrink, so `expandable grow-2` is a conflict (they both
+try to set grow). For a custom amount, drop the word and say it with dials:
+
+- `grow-2 shrink-1` — grows with weight 2, shrinks with weight 1
+- `grow-2 shrink-0` — grows with weight 2, *doesn't* shrink
+
+> **Worth knowing:** `grow-2` on its own is **not** "grow-only." A flex item shrinks by default, and
+> writing `grow-2` doesn't change that — so `grow-2` grows *and* shrinks. If you want grow-only at
+> weight 2, say it: `grow-2 shrink-0`. (Grow-only at the normal weight is just `expandable`.)
+
+And where its size *starts from* (a separate choice — pick one):
 
 - `basis-content` — size to its content (Figma's *Hug*)
 - `basis-ratio` — take a share of the space (like `1fr`)
@@ -240,5 +251,5 @@ genuinely unique to this component.
 ## Where to go next
 
 - Need the exact, exhaustive word lists and the validation rules? → the **machine-consumer spec**.
-- Want to know *why* a decision was made, or propose a change? → the **constitution** (`STYLE-GRAMMAR.md`).
+- Want to know *why* a decision was made, or propose a change? → the **constitution** (`ERMINE.md`).
   All changes are made there first; this guide is derived from it.

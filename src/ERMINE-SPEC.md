@@ -1,7 +1,7 @@
-# STYLE-GRAMMAR — Machine-Consumer Spec (derived)
+# Ermine — Machine-Consumer Spec (derived)
 
 > **Derived artifact. Do not edit here.** This document is a *mechanical extraction* of
-> `STYLE-GRAMMAR.md` (the constitution): the axis registry plus the laws, restated for the two
+> `ERMINE.md` (the constitution): the axis registry plus the laws, restated for the two
 > *machine* consumers of the grammar. Register-flat, predicate-form, no metaphors, no rationale, no
 > history. If this drifts from the constitution, the constitution wins — fix it there and re-extract.
 > (The friendly, example-led document for *human* authors is the separate **human guide**.)
@@ -119,33 +119,29 @@ Field rules:
 - controls: `display` (outer)
 - mustNeverTouch: `gap` `padding` `background`
 
-#### m2-flex-corner (give↔grab, qualitative)
-- role: member · signature: set-with-exclusivity · vocabulary: closed · regime: **negotiated**
-- members: `rigid` `compressible` `expandable` `elastic`
-- default: `compressible`
-- controls: `flex-grow` `flex-shrink`
-- mustNeverTouch: `flex-basis` `min-width` `max-width` `gap` `align-self`
-- alias map: `rigid`=grow-0 shrink-0 · `compressible`=0,1 · `expandable`=1,0 · `elastic`=1,1
-- composes with `m2-flex-weight` (constitution §4.1: corner + optional weight). A negotiated pair —
-  the two share `flex-grow`/`flex-shrink` legitimately (P7-4c exempts negotiated axes from each other).
-
-#### m2-flex-weight (give↔grab, parametric)
-- role: member · signature: set-with-exclusivity · vocabulary: open · regime: **negotiated**
-- primitives: `grow-N` `shrink-N` (N ≥ 0)
+#### m2-flex (give↔grab)
+- role: member · signature: set-with-exclusivity · vocabulary: **open + whole-axis aliases** · regime: **negotiated**
+- dials (open, one CSS longhand each): `grow-N` → `flex-grow:N` · `shrink-N` → `flex-shrink:N` (N ≥ 0)
 - parameter: `/^(grow|shrink)-\d+$/`
-- default: none
-- controls: `flex-grow` `flex-shrink`
-- mustNeverTouch: `flex-basis` `min-width` `max-width` `gap` `align-self`
-- P5 cross-check: `rigid` (from the corner axis) + a positive weight here is a contradiction.
+- aliases (whole-axis, write BOTH longhands): `rigid`=grow-0 shrink-0 · `compressible`=0,1 · `expandable`=1,0 · `elastic`=1,1
+- default: `compressible` (= CSS initials flex-grow:0 flex-shrink:1)
+- controls: `flex-grow` `flex-shrink` — **emit longhands, never the `flex` shorthand**
+- mustNeverTouch: `flex-basis` `min-width` `max-width` `gap` `align-self` `flex`
+- composition rule (the single invariant): dials compose one-per-dial (`grow-2 shrink-1`); an **alias
+  writes both longhands**, so it conflicts with any other m2 word (`expandable grow-2` double-writes
+  `flex-grow`; `rigid grow-2`, `expandable shrink-2` likewise). Write an alias **or** the dials.
+- per-dial default: an unspecified dial keeps its CSS initial, so **`grow-2` is not grow-only** (shrink
+  stays 1); grow-only at weight 2 = `grow-2 shrink-0`.
 
 #### m3-self-size (basis)
-- role: member · signature: set-with-exclusivity · vocabulary: open · regime: **negotiated**
-- members: `basis-content` `basis-ratio` `basis-exact-<size>`
-- parameter: `/^basis-exact-(sm|md|lg|xl)$/` (token-indexed over the §5.1 size scale; raw lengths OUT in v0)
+- role: member · signature: set-with-exclusivity · vocabulary: **closed + parametric member** · regime: **negotiated**
+- members (closed): `basis-content` `basis-ratio` `basis-exact` — `basis-exact` is the parametric member
+- parameter (closed value space): `/^basis-exact-(sm|md|lg|xl)$/` (size tokens; raw lengths OUT in v0)
 - default: auto (`basis-content`)
 - controls: `flex-basis` ONLY (does NOT control `align-self` — corrected, §10.1 collision 2)
 - mustNeverTouch: `flex-grow` `flex-shrink` `min-width` `max-width` `align-self`
-- note: bare `content`/`ratio`/`exact` are value words, never standalone classes; always `basis-` prefixed
+- note: bare `content`/`ratio`/`exact` are value words, never standalone classes; always `basis-` prefixed.
+  Two members of this closed axis conflict (`basis-content basis-exact-md`).
 
 #### m4-self-alignment
 - role: member · signature: set-with-exclusivity · vocabulary: closed · regime: free
@@ -155,14 +151,14 @@ Field rules:
 - mustNeverTouch: `align-items` `justify-content` `gap`
 
 #### m5-grid-placement
-- role: member · signature: set-with-exclusivity (positional) · vocabulary: open · regime: free
-- members (aliases): `span-all`
-- primitives (open): `span-N` `row-span-N`
-- parameter: `/^(span|row-span)-(\d+|all)$/`
+- role: member · signature: set-with-exclusivity (positional) · vocabulary: **closed + parametric member** · regime: free
+- members (closed): `span` `row-span` (parametric, carry an integer) · `span-all` (contextual — spans every column)
+- parameter (open value): `/^(span|row-span)-\d+$/` · plus the literal `span-all`
 - default: auto-place
 - controls: `grid-column` `grid-row`
 - mustNeverTouch: `align-self` `flex` `gap`
-- note: only meaningful under a `grid` parent
+- note: only meaningful under a `grid` parent. Two members conflict (`span-2 span-all`). `span-all`
+  resolves to the grid's column count (`grid-column: 1 / -1`), not a value of `span-N`.
 
 #### density (gap)
 - role: container · signature: ordered-chain · vocabulary: closed · regime: free
@@ -385,7 +381,7 @@ When intent doesn't obviously map to a word, work down this list and **stop at t
    not an axis — it is `expandable` (m2, main-axis) + `self-stretch` (m4, cross-axis). "A circle" is
    size grammar + a skin radius, not a `circle` word.)
 3. **Use the open parameter.** If the axis is `open`, the distinction is a *value*, not a new word:
-   `grow-2`, `span-3`, `basis-exact-240`, `padding-relaxed`. Emit a value matching the axis
+   `grow-2`, `span-3`, `basis-exact-md`, `padding-relaxed`. Emit a value matching the axis
    `parameter.pattern`; never a new word.
 4. **Stop and report the gap.** If 1–3 fail on a `closed` axis, the word does **not** exist and you may
    **not** mint it. Surface a structured gap (§3.4) and stop. This is a legitimate terminal state, not
@@ -399,7 +395,7 @@ There is no fifth move. "Invent a word that sounds right" is never available.
   do not pluralize, do not hyphenate two members together. (`structure`, `density`, `alignment`, all
   of state, the z-scale, easing, choreography are closed.)
 - **open** axis → admits *only* its sanctioned parameter, by `parameter.pattern`. New **values**, never
-  new **words**. (`m2` weights, `m3` `basis-exact-N`, `m5` spans, `constraints`.)
+  new **words**. (`m2` weights, `m3` `basis-exact-<size>`, `m5` spans, `constraints`.)
 
 When unsure which an axis is, treat it as **closed** — that is the safe default and forces move 4 rather
 than a guess.
@@ -416,7 +412,7 @@ parameterize*, never coin:
 | `loose-wide` | density + a retired proportion idea | `padding-inline-relaxed padding-block-snug` (per-side) |
 | `greedy` / `fill` | named a *symptom* of surplus | `elastic basis-ratio` |
 | `circle` | plane-mix (size + skin) | size grammar + a skin radius token |
-| `fixed` (sizing) | collides with `position:fixed` | `basis-exact-N` |
+| `fixed` (sizing) | collides with `position:fixed` | `basis-exact-<size>` |
 | `sticky-high` (z) | invents a scale rung | an existing `z-scale` member, within an `isolate` context |
 | `dialog-on-top` | invents above-everything z | top-layer mechanism (tier-1), not a z-number |
 | `stack` | a member that duplicates the default | `vertical` (the marked column) |
@@ -486,9 +482,15 @@ A state with `arity === "enumerated"` requires a value in `enumValues`.
 - `sorted` with no value → **error** `enum-arity` (needs one of {none, ascending, descending}).
 - `sorted=sideways` → **error** `enum-arity` (not in set).
 
-### P5 — weight implies direction is on
-A weight parameter contradicts a zero-direction alias.
-- `rigid grow-2` → **error** `weight-implies-direction` (`rigid` = grow-0; the weight turns grow on).
+### P5 — whole-axis aliases & per-dial conflicts (folded into one-word-per-axis)
+*(No longer a standalone "weight-implies-direction" predicate — that was a cross-class rule for the
+retired m2 split. It is now a consequence of the single invariant: no CSS property written by two
+co-present classes, at longhand granularity.)*
+On an `open + whole-axis aliases` axis (m2):
+- a **whole-axis alias** writes *both* longhands, so it conflicts with any other word on the axis:
+  `rigid grow-2`, `elastic grow-2`, `expandable shrink-2` → **error** `one-word-per-axis`.
+- **dials** compose one-per-longhand-dial: `grow-2 shrink-1` ok; `grow-2 grow-3` → **error**
+  `one-word-per-axis` (two values for the `flex-grow` dial).
 
 ### P6 — arity misuse (binary can't hold a tri-state)
 A binary member cannot carry an enumerated value.

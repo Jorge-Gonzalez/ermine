@@ -78,6 +78,16 @@ export interface StateMember {
   note?: string;
 }
 
+// A whole-axis alias: a single word that names a COMPLETE value of the axis
+// (it fixes every sub-dial at once). Mutually exclusive with every other word on
+// the axis — including the parametric forms and other aliases. This is the m2
+// "corner" mechanism: `elastic` = grow-1 + shrink-1, a whole-axis value, so it
+// cannot combine with `grow-2` or `shrink-0`. (constitution §4.1)
+export interface Alias {
+  word: string;
+  expands: string; // canonical full expansion, e.g. "grow-1 shrink-1"
+}
+
 export interface AxisRecord {
   axis: string; // unique id; state groups use `state.<group>`
   sibling: Sibling;
@@ -94,6 +104,24 @@ export interface AxisRecord {
   default: string | null;
   controls: string[]; // concrete CSS properties (transcribed; see trust boundary)
   mustNeverTouch: string[];
+
+  // OPEN axes with independent sub-dials (m2: grow, shrink). When present, the
+  // parametric tokens write DIFFERENT dials and compose one-per-dial; two values
+  // for the SAME dial conflict. `dialOf` maps a parsed token to its dial name.
+  subDials?: string[];
+  dialOf?: (member: string) => string | null;
+
+  // OPEN axes may carry whole-axis aliases (m2 corners). An alias is a complete
+  // value: it conflicts with any other word on the same axis (P1 generalization).
+  aliases?: Alias[];
+
+  // CLOSED axes whose member set includes one or more PARAMETRIC members — the
+  // member is a fixed word that carries an open value (m3 `basis-exact-<size>`,
+  // m5 `span-<N>`). This is `open` applied at MEMBER scope inside a `closed`
+  // axis — the same mechanism the enumerated states use (`sorted`, `current`),
+  // NOT a third vocabulary primitive. Listed for documentation/codegen; the
+  // linter treats them as ordinary members (closed membership, validated value).
+  parametricMembers?: string[];
 
   // state-group axes only:
   stateGroup?: {
@@ -143,40 +171,49 @@ export const LAYOUT: AxisRecord[] = [
     notes: "surface names provisional (alias-law, guide-level)",
   },
   {
-    axis: "m2-flex-corner",
-    sibling: "layout", role: "member", signature: "set-with-exclusivity",
-    vocabulary: "closed", regime: "negotiated",
-    valueSpace: ["rigid", "compressible", "expandable", "elastic"],
-    tokens: [{ pattern: /^(rigid|compressible|expandable|elastic)$/, shape: "<flex-corner>" }],
-    default: "compressible",
-    controls: ["flex-grow", "flex-shrink"],
-    mustNeverTouch: ["flex-basis", "min-width", "max-width", "gap", "align-self"],
-    notes: "qualitative corner: rigid=0,0 compressible=0,1 expandable=1,0 elastic=1,1. Composes with the m2-flex-weight axis (constitution §4.1: corner + optional weight).",
-  },
-  {
-    axis: "m2-flex-weight",
+    axis: "m2-flex",
     sibling: "layout", role: "member", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "negotiated",
-    valueSpace: ["grow-N", "shrink-N"],
-    tokens: [{ pattern: /^(grow|shrink)-(\d+)$/, shape: "grow-N | shrink-N", valueDomain: "integer-≥0" }],
-    default: null,
+    // two independent open dials (grow, shrink) + whole-axis alias corners.
+    valueSpace: ["grow-N", "shrink-N", "rigid", "compressible", "expandable", "elastic"],
+    tokens: [
+      { pattern: /^(grow|shrink)-(\d+)$/, shape: "grow-N | shrink-N", valueDomain: "integer-≥0" },
+      { pattern: /^(rigid|compressible|expandable|elastic)$/, shape: "<flex-corner alias>" },
+    ],
+    subDials: ["grow", "shrink"],
+    dialOf: (member: string) => (member === "grow" || member === "shrink" ? member : null),
+    aliases: [
+      { word: "rigid", expands: "grow-0 shrink-0" },
+      { word: "compressible", expands: "grow-0 shrink-1" },
+      { word: "expandable", expands: "grow-1 shrink-0" },
+      { word: "elastic", expands: "grow-1 shrink-1" },
+    ],
+    default: "compressible",
+    // EMISSION: longhands only. `grow-N` -> flex-grow:N (only); `shrink-N` -> flex-shrink:N (only);
+    // an alias writes BOTH longhands. NEVER emit the `flex` shorthand (it resets all three
+    // sub-properties incl. flex-basis — a manufactured cross-property collision). The single
+    // invariant (no property written by two co-present classes, at longhand granularity) is what
+    // makes dials compose and aliases mutually-exclusive-with-dials.
     controls: ["flex-grow", "flex-shrink"],
-    mustNeverTouch: ["flex-basis", "min-width", "max-width", "gap", "align-self"],
-    notes: "the parametric weight (two independent scales). P5 cross-checks against m2-flex-corner: `rigid` + a positive weight is a contradiction.",
+    mustNeverTouch: ["flex-basis", "min-width", "max-width", "gap", "align-self", "flex"],
+    notes: "open axis, two independent longhand dials grow-N (flex-grow) / shrink-N (flex-shrink) — compose one-per-dial (`grow-2 shrink-1`). The 4 corners are WHOLE-AXIS aliases writing BOTH longhands, so an alias conflicts with any other m2 word (`expandable shrink-2`, `rigid grow-2`). Per-dial default = CSS initial: an unspecified dial keeps flex-grow:0 / flex-shrink:1, so `grow-2` is NOT grow-only (it grows AND shrinks); grow-only at weight 2 is `grow-2 shrink-0`.",
   },
   {
     axis: "m3-self-size",
     sibling: "layout", role: "member", signature: "set-with-exclusivity",
-    vocabulary: "open", regime: "negotiated",
+    vocabulary: "closed", regime: "negotiated",
+    // closed membership {content, ratio, exact}; `exact` is a PARAMETRIC member
+    // carrying a size value — `open` at member scope, same as enumerated states.
     valueSpace: ["basis-content", "basis-ratio", "basis-exact-<size>"],
     tokens: [
       { pattern: /^(basis-content|basis-ratio)$/, shape: "basis-content | basis-ratio" },
       { pattern: new RegExp(`^basis-exact-(${SCALES.size.join("|")})$`), shape: "basis-exact-<size>", valueDomain: "size-step" },
     ],
+    parametricMembers: ["basis-exact"],
     default: "basis-content",
     controls: ["flex-basis"], // NOT align-self (collision-2 correction)
     mustNeverTouch: ["flex-grow", "flex-shrink", "min-width", "max-width", "align-self"],
-    notes: "basis-exact is token-indexed over the §5.1 size scale; arbitrary lengths are OUT in v0.",
+    notes: "closed-with-parametric-member: membership is closed {content, ratio, exact}; `exact` carries a token-indexed size value (arbitrary lengths OUT in v0). Same member-level mechanism as the enumerated states — NOT open at axis scope.",
   },
   {
     axis: "m4-self-alignment",
@@ -191,16 +228,20 @@ export const LAYOUT: AxisRecord[] = [
   {
     axis: "m5-grid-placement",
     sibling: "layout", role: "member", signature: "set-with-exclusivity",
-    vocabulary: "open", regime: "free",
-    valueSpace: ["span-all", "span-N", "row-span-N"],
+    vocabulary: "closed", regime: "free",
+    // closed membership {span, row-span, span-all}; span/row-span are PARAMETRIC
+    // members (carry an integer); span-all is a CONTEXTUAL member (resolves to the
+    // grid's column count, like grid-column: 1 / -1) — not a value of span-N.
+    valueSpace: ["span-N", "row-span-N", "span-all"],
     tokens: [
-      { pattern: /^span-all$/, shape: "span-all" },
       { pattern: /^(span|row-span)-(\d+)$/, shape: "span-N | row-span-N", valueDomain: "integer-≥0" },
+      { pattern: /^span-all$/, shape: "span-all (contextual)" },
     ],
+    parametricMembers: ["span", "row-span"],
     default: "auto-place",
     controls: ["grid-column", "grid-row"],
     mustNeverTouch: ["align-self", "flex", "gap"],
-    notes: "only meaningful under a grid parent",
+    notes: "closed-with-parametric-member: membership closed {span, row-span, span-all}; span/row-span carry integers, span-all is contextual (spans every column). Same member-level mechanism as m3 / enumerated states — NOT open at axis scope. Only meaningful under a grid parent.",
   },
   {
     axis: "density",
