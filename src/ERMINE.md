@@ -59,6 +59,31 @@
 > Still deferred to the registry build, not the constitution: state groups as first-class axes,
 > `valueSpace`/`token` split, and deriving `controls` from generated CSS (the predicate-4 trust gate).
 
+> **Session log (vocabulary-shape revision — the m2/m3/m5 settlement).** A long investigation of the
+> member-role sizing axes resolved how their vocabulary is *shaped*, and the result is **fewer concepts,
+> not more.** It established that vocabulary has exactly two primitives (`closed`, `open`) applied at two
+> scopes, with earned aliases as the only sugar (§2, "Two primitives, applied at two scopes"). Concretely:
+> 1. **m2 (flex) — `open` + whole-axis aliases.** Retracts the earlier "corner + optional weight"
+>    framing (which would have made `elastic grow-2` a sanctioned refinement). Because a class string is
+>    a set (order can't matter), an adjective and a number can't both speak to one dial. The four corners
+>    are **whole-axis aliases** — complete values, mutually exclusive with any other m2 word. Write an
+>    alias **or** numbered dials, never both. Dissolves the false "gate vs magnitude" model: `flex-grow:0`
+>    already *is* off; no gate to mint. Registry: the two split records (`m2-flex-corner`/`-weight`)
+>    collapse back to one `m2-flex` (open, sub-dials grow/shrink, whole-axis aliases). The split had been
+>    a workaround for a too-narrow schema; the real fix was naming the shape.
+> 2. **m3 (basis), m5 (span) — `closed` + parametric member.** Restamped from `open` to `closed`:
+>    membership is closed, but one member carries an open value (`basis-exact-<size>`, `span-<N>`) — the
+>    *same* member-scope mechanism the enumerated states (`sorted`, `current`) already use. `span-all` is
+>    a **contextual** member (resolves to the grid's column count), not a value of `span-N`. So
+>    `basis-content basis-exact-md` and `span-2 span-all` are member conflicts on a closed axis.
+> 3. **No new vocabulary primitive admitted.** Candidates "open-with-presets," "gate+magnitude," and
+>    "named extremal" were each examined and **rejected as illusions** — each decomposed into a primitive
+>    at a scope plus optional earned sugar. Law 6 turned inward: mint no new ontology for the grammar's
+>    own vocabulary. The lint mirrors this (whole-axis-alias + per-dial rules folded into one-word-per-
+>    axis; the old standalone "weight-implies-direction" predicate retired as a special case). Triggered
+>    by Jorge's sense that flex *felt* open-with-sugar, not closed — a mismodeling the earlier split had
+>    accommodated rather than fixed.
+
 > **Artifact manifest — what backs the "executable" claims, and its commit status.** The verification
 > this revision rests on lives in standalone scripts produced during the design session. They **run and
 > pass as described**, but — with one exception — they are **NOT yet committed to the repo suite**
@@ -383,6 +408,34 @@ consumer (or linter) needs — the dominant failure mode when *extending* the gr
 a plausible-sounding word**, which the alias law (§4.1) already forbids and this field makes
 checkable per-axis.
 
+#### Two primitives, applied at two scopes (settled — the vocabulary-shape revision)
+Vocabulary has exactly **two primitives**: `closed` (an exhaustive word set) and `open` (a parameter
+admitted by a stated rule). There is **no third primitive.** What looked, across several axes, like
+richer vocabulary kinds turned out to be the *same two primitives applied at a different scope, or
+carrying earned sugar*:
+
+- **`open` at axis scope, with whole-axis aliases** — **m2 (flex).** The axis is genuinely open: two
+  independent dials, `grow-N` and `shrink-N`. The four corners (`rigid`/`compressible`/`expandable`/
+  `elastic`) are **whole-axis aliases** — each names a *complete* value (it fixes *both* dials at once,
+  e.g. `elastic` = `grow-1 shrink-1`). Because an alias is a complete value, it is **mutually exclusive
+  with every other word on the axis**: `expandable shrink-2` and `rigid grow-2` are conflicts, not
+  refinements. You write *either* an alias *or* the numbered dials, never both. Numbered dials compose
+  one-per-dial (`grow-2 shrink-1`). The aliases are sugar earned by recurrence (the alias law), not a
+  second vocabulary.
+- **`closed` at axis scope, with a parametric member** — **m3 (basis), m5 (span), and the enumerated
+  states (`sorted`, `current`).** Membership is *closed* (you cannot coin a new member), but one member
+  *carries an open value*: `basis-exact-<size>`, `span-<N>`, `aria-sort` ∈ {…}. This is `open` applied
+  at **member scope** inside a `closed` axis — exactly the mechanism the enumerated states already use.
+  It is **not** an open axis: `basis-content basis-exact-md` is two members of one closed axis, a
+  conflict. m5's `span-all` is a *contextual* member (it resolves to the grid's column count, like
+  `grid-column: 1 / -1`), not a value of `span-N` — another closed member, not an axis-scope opening.
+
+The discipline is Law 6 turned inward on the grammar's own vocabulary: **mint no new ontology.** A
+"new shape" that decomposes into (primitive at a scope) + (optional earned alias) is a *composition*,
+not a primitive, and is admitted as such — never as a third vocabulary kind. The tell that a candidate
+is real rather than illusory: it cannot be expressed by the two primitives at any scope. None of the
+sizing/placement shapes met that bar; all reduced.
+
 ### Meta-rule — no coining (settled — the extension contract)
 The dominant failure when *extending* this grammar — especially by an automated consumer — is
 **inventing a plausible-sounding word** (`stretchy`, `loose-wide`, `centered-grow`). The grammar
@@ -487,8 +540,9 @@ Axes pre-filled from current code; rulings flagged. Held distinct from 4.4 layer
   rules are heterogeneous member-roles hardcoded.
 
 ### member-role — a FAMILY of sub-axes  *(was "sizing" + blocks/items/sections)*
-*(vocabulary is stamped **per sub-axis** below — the family is mixed: m1/m4 closed, m2/m3/m5 open;
-m2/m3 are the **negotiated** regime, m1/m4/m5 are free.)*
+*(vocabulary is stamped **per sub-axis** below — the family is mixed: m1/m4 closed; **m2** open +
+whole-axis aliases; **m3/m5** closed + parametric member (§2); m2/m3 are the **negotiated** regime,
+m1/m4/m5 are free.)*
 
 **Essence (what the sub-axes share):** every member-role property is resolved *relative to the
 parent's allocated space* and is **inert without a parent** — it's the element's *response* to
@@ -513,7 +567,7 @@ bordered/card-like — to some authors. Alternatives that are clearer about mech
 this from observed recurrence in real components, not from argument — it is a guide-surface name, not a
 structural choice.)*
 
-#### m2 — flex character (give↔grab) · **2D product** (grow × shrink) · **vocabulary: open (parametric)** — `grow-N`/`shrink-N` primitives; 4 corners are closed aliases · **regime: negotiated** · default: compressible
+#### m2 — flex character (give↔grab) · **2D product** (grow × shrink) · **vocabulary: open + whole-axis aliases** — open dials `grow-N`/`shrink-N`; 4 corners are whole-axis aliases (each fixes both dials) · **regime: negotiated** · default: compressible
 Grow-willingness and shrink-willingness are *independent* → a product, NOT a chain. Corners,
 **all adjectives**: `rigid` (0,0) · `compressible` (0,1, shrinks) · `expandable` (1,0, grows) ·
 `elastic` (1,1, both). The two atoms are `compressible` + `expandable`; `elastic`/`rigid` are
@@ -528,10 +582,20 @@ m3), so a symptom-name would merge them. `basis` factors to m3 (the "normal" siz
 grower *hides* the basis difference (smaller basis → larger free space, cancels); deficit *exposes*
 it (shrink is weighted by basis → basis 0 has zero shrink-weight).
 **Ratio/weight is parametric, not perceptual** (Jorge's "grow 1 vs 2"): the 4 corners are
-*qualitative* (does it grow/shrink at all); *how much* relative to siblings is a separate **weight**
-— like grid's `fr` number or m5's `span-N`. Express it as a parametric modifier on the corner:
-`elastic` + `grow-2`. So m2 = qualitative corner + optional weight; this is the grammar's sanctioned
-way to carry a numeric ratio (parametric axes are legitimate; cf. m5).
+*qualitative* (does it grow/shrink at all); *how much* relative to siblings is the **value on a dial**
+— like grid's `fr` number or m5's `span-N`. Carry it on the numbered dial directly: `grow-2`.
+> **RULED (whole-axis aliases — this revision; supersedes "corner + optional weight").** The earlier
+> framing said `elastic` + `grow-2` — a corner *plus* a weight modifier — was the sanctioned form. That
+> was wrong, and it was the source of a long detour. A class string is a **set** (order cannot matter,
+> §2 Law 2), so an adjective and a number can never *both* speak to one dial without becoming
+> order-dependent or self-contradictory. The corners are therefore **whole-axis aliases**: each names a
+> *complete* m2 value (both dials fixed), so it is **mutually exclusive with every other m2 word**.
+> `elastic grow-2`, `expandable shrink-2`, and `rigid grow-2` are all **conflicts**, not refinements.
+> The rule is clean: write **either** an alias (the common case) **or** the numbered dials
+> (`grow-2 shrink-1`) when you need a non-default magnitude — never both. This keeps m2 honestly `open`
+> (the dials are the substrate) with the corners as earned sugar (§2: open + whole-axis aliases), and it
+> dissolves the false "gate vs magnitude" two-facet model: `flex-grow:0` already *is* "doesn't grow"
+> — there is no separate on/off gate to mint.
 **Weight — RULED (layered: primitives + corner aliases).** `flex-grow`/`flex-shrink` are
 independent, so the weight is **two primitives**, not one:
 - **primitives:** `grow-N` · `shrink-N` (two independent scales, N≥0) — *complete*; express any case
@@ -545,10 +609,12 @@ single symmetric weight alias is minted.
 > **Alias law (Jorge):** *aliases are detected from repeated real usage, not invented speculatively.*
 > Codify a shorthand only after a primitive combination demonstrably recurs — never the other way around.
 
-Primitives are complete, aliases are kind. Consistency rule: a weight implies its direction is on
-(`rigid grow-2` is a contradiction → lint).
+Primitives are complete, aliases are kind. Consistency rule (now a special case of one-word-per-axis):
+a whole-axis alias is a complete value, so it cannot combine with a numbered dial — `rigid grow-2`,
+`elastic grow-2`, `expandable shrink-2` all conflict → lint. (`grow-2 grow-3` also conflicts: two
+values on one dial.)
 
-#### m3 — self size · `set` · **vocabulary: open (parametric)** — surface `basis-exact-N`; `basis-content`/`basis-ratio` closed · **regime: negotiated** · default: auto
+#### m3 — self size · `set` · **vocabulary: closed + parametric member** — closed {`content`, `ratio`, `exact`}; `exact` carries a size value · **regime: negotiated** · default: auto
 Member-role self-size = `basis` (the **normal**/start size; flex-only; factored out of m2). The
 *source* of `basis` is content/ratio/exact (below).
 
@@ -615,7 +681,7 @@ a "collapse". The deficit collapse-to-0 has **two causes that must stay distinct
 `self-start` · `self-center` · `self-end` · `self-stretch` · `self-baseline` (align-self). The
 **member twin** of the container `align-*` axis — same words, opposite role.
 
-#### m5 — grid placement · positional (not perceptual) · **vocabulary: open (parametric)** — `span-N`/`row-span-N`; `span-all` a closed alias · default: auto-place
+#### m5 — grid placement · positional (not perceptual) · **vocabulary: closed + parametric member** — closed {`span`, `row-span`, `span-all`}; `span`/`row-span` carry an integer, `span-all` contextual · default: auto-place
 `span-all` (grid-column:1/-1) · `span-2` · `row-span-2`. Only meaningful under a `grid` parent.
 NB: member-role mixes *perceptual* sub-axes (m2/m4) with *positional* ones (m5) — don't force
 perceptual words onto numeric placement.
