@@ -101,7 +101,7 @@ Field rules:
 > data), not this Markdown. This section is a human-readable mirror; when it disagrees with `registry.ts`,
 > the data wins, and the data in turn derives from the constitution. The count is now meaningful: every
 > state *group* is a first-class axis (`state.focus`, `state.selection`, …), so "one word per axis" is
-> enforceable per group. 34 = 16 layout + 4 layering + 2 motion + 9 state-groups + 3 skin.
+> enforceable per group. 33 = 15 layout + 4 layering + 2 motion + 9 state-groups + 3 skin.
 
 ### 2.1 LAYOUT (§4.1)
 
@@ -178,6 +178,9 @@ Field rules:
 
 #### padding
 - role: self · signature: ordered-chain · vocabulary: closed · regime: free
+- **sub-dials:** `inline` (`padding-inline-<density>`) · `block` (`padding-block-<density>`). The bare
+  `padding-<density>` is the **whole-axis** form (sets both sides) — mutually exclusive with a per-side
+  dial; the two per-side dials compose (`padding-inline-relaxed padding-block-snug`).
 - members: `padding-<density>`, `padding-inline-<density>`, `padding-block-<density>` (same scale)
 - controls: `padding`
 - default: none
@@ -185,6 +188,7 @@ Field rules:
 
 #### margin
 - role: member · signature: ordered-chain · vocabulary: closed · regime: free
+- **sub-dials:** `inline` / `block` (per-side, compose); `margin-<density>` is the whole-axis form.
 - members: `margin-<density>`, `margin-inline-<density>`, `margin-block-<density>` (same scale)
 - controls: `margin`
 - default: none (marked-by-preference: reach for it only outside container rhythm)
@@ -192,6 +196,8 @@ Field rules:
 
 #### alignment-container
 - role: container · signature: set-with-exclusivity (main/cross sub-axes) · vocabulary: closed · regime: free
+- **sub-dials:** `align` (`align-items`) · `justify` (`justify-content`). They write different
+  properties, so `align-center justify-between` **composes**; two `align-*` or two `justify-*` conflict.
 - members: `align-start|center|end|stretch|baseline` · `justify-start|center|end|between|around`
 - controls: `align-items` `justify-content`
 - default: none
@@ -216,6 +222,8 @@ Field rules:
 
 #### overflow
 - role: self · signature: set-with-exclusivity · vocabulary: closed · regime: free
+- **sub-dials:** `x` (`scroll-x` → `overflow-x`) · `y` (`scroll-y` → `overflow-y`) compose;
+  `scroll-auto` and `clip` are **whole-axis** (both directions), exclusive with a per-axis dial.
 - members: `scroll-y` `scroll-x` `scroll-auto` `clip`
 - controls: `overflow-x` `overflow-y`
 - default: none
@@ -286,34 +294,40 @@ coined CSS property.
 
 ### 2.4 STATE (§4.2) — closed; mirrored from ARIA 1.2 + CSS Selectors L4 UI
 
-Each **group below is a first-class axis** with id `state.<group>` (e.g. `state.selection`). Within a
-group: set-with-exclusivity (one word per scope) — so P1 fires on `selected current` (same group).
-Across groups: free composition — `hover selected invalid` is fine. State controls **nothing**
+Each **group below is a first-class axis** with id `state.<group>` (e.g. `state.selection`).
+**Within-group exclusivity is per-group, not global:** most groups are **`many`** (members are
+independent predicates that co-occur — `hover`+`focus`, `required`+`invalid`), carrying **pairwise
+`conflicts`** for the specific pairs that *are* mutually exclusive (`focus`/`focus-visible`,
+`selected`/`checked-mixed`); a few groups are **`one`** (genuinely alternative — `disclosure`). P1
+fires either on a second member in a `one` group, or on a conflicting pair in a `many` group.
+Across groups: always free composition — `hover selected invalid` is fine. State controls **nothing**
 (`controls: []`); it carries the *condition only* and composes via `state × plane → rule`.
 
-Each member: `(arity · driver · stateCategory · backing-set)`.
+Each member: `(arity · driver · stateCategory · backing-set)`. Enumerated members carry their value as
+a **separate token group** (`current-page` parses to word `current` + value `page`), so the value is
+available for P4 (enumerated-arity) checking.
 
-**focus group** (interaction) — resting none
+**focus group** (interaction) — resting none · **`many`**, conflict {`focus`,`focus-visible`}
 - `hover` (binary · interaction · instance · `:hover`)
 - `focus` / `focus-visible` (binary · interaction · instance · `:focus` / `:focus-visible`)
-- `active` / `pressed-momentary` (binary · interaction · instance · `:active`)
+- `active` (binary · interaction · instance · `:active`) — `pressed` folded into `selected` (Law 6b)
 
-**selection group** (interaction) — resting unselected
+**selection group** (interaction) — resting unselected · **`many`**, conflict {`selected`,`checked-mixed`}
 - `selectable` (— · interaction · **capability** · entails nothing)
 - `selected` (binary · interaction · instance · {`aria-selected` ∨ `aria-pressed` ∨ `:checked`}) — Law 6b merge
-- `checked-mixed` (enumerated · interaction · instance · {`aria-checked=mixed` ∨ `:indeterminate`})
+- `checked-mixed` (binary · interaction · instance · {`aria-checked=mixed` ∨ `:indeterminate`}) — a **complete word** (the tri-state value is in the word; NOT enumerated-with-suffix)
 - `current` (enumerated · interaction · instance · `aria-current` ∈ {page, step, location, date, time, true})
 
-**availability group** (interaction) — resting enabled/idle/writable
+**availability group** (interaction) — resting enabled/idle/writable · **`many`**
 - `disabled` (binary · interaction · instance · {`:disabled` ∨ `aria-disabled`})
 - `read-only` (binary · interaction · instance · {`:read-only` ∨ `aria-readonly`})
 - `busy` (binary · interaction · instance · `aria-busy`) — visual "updating" sense only
 
-**disclosure group** (interaction)
+**disclosure group** (interaction) — **`one`** (alternative presentation modes)
 - `expanded` (binary · interaction · instance · `aria-expanded`) — in-place; resting collapsed
 - `open` (binary · interaction · instance · {`[open]` ∨ `:open` ∨ `:popover-open`}) — top-layer; resting closed
 
-**validity group** (interaction) — resting valid/writable
+**validity group** (interaction) — resting valid/writable · **`many`** (required + invalid co-occur)
 - `invalid` (binary · interaction · instance · {`:invalid` ∨ `aria-invalid`})
 - `user-invalid` (binary · interaction · instance · `:user-invalid`)
 - `required` (binary · interaction · instance · {`:required` ∨ `aria-required`})
@@ -358,6 +372,16 @@ State category dispatch for entailment:
 - role: self · regime: free · (font-size/line-height are §5.1 generated scales)
 - controls: `font-size` `line-height` `font-family` `font-weight` `text-align`
 - mustNeverTouch: `display` `gap` `flex` `margin`
+
+#### selection-treatment (conditioned-skin)
+- role: self · regime: free · members: `selection-subtle` `selection-strong`
+- **conditional variant layer, not a base skin axis.** controls: `--selection-bg` `--selection-ink`
+  `--selection-outline` (custom properties — a sink reads them under the `selected` condition), **NOT**
+  `background`/`color` directly. This is why it does **not** collide with `skin-surface` under P7:
+  conditioned layers compose with base skin by writing *different* variables (same sink discipline as
+  m2 longhands / motion `--stagger`).
+- mustNeverTouch: `display` `gap` `flex` `position` `background` `color` `outline`
+- entails nothing; conditioned by `selected`/`hover`/`active`; pairs with capability `selectable`.
 
 ---
 
@@ -465,6 +489,13 @@ then apply one-word-per-axis within each bucket.
   layout; Law 2 amended).
 - `viewport-md:horizontal viewport-md:vertical` → **error** `one-word-per-axis` (same axis, same scope).
 - Only **environmental** states open scopes; bare interaction/input states do not.
+- **Sub-dial refinement:** axes with sub-dials (m2 grow/shrink, alignment align/justify, padding/margin
+  inline/block, overflow x/y) admit one value *per dial*, since dials write disjoint CSS properties:
+  `align-center justify-between` and `padding-inline-relaxed padding-block-snug` compose; two values on
+  one dial conflict. A **whole-axis** word (an m2 corner, `padding-<density>`, `scroll-auto`/`clip`)
+  writes every dial, so it is mutually exclusive with any other word on the axis.
+- **State-group refinement:** within a `one` group, a second member conflicts; within a `many` group,
+  only a declared `conflicts` pair conflicts (members otherwise co-occur).
 
 ### P2 — closed vocabulary admits no new members
 On a `closed` axis, any word not in `members` is rejected.
@@ -477,10 +508,13 @@ On an `open` axis, only values matching `parameter.pattern` are admitted; no new
 sanctioned *values*.
 - `grow-3` ok; `growish` → **error** `bad-parameter`.
 
-### P4 — enumerated arity must carry a value from its closed set
-A state with `arity === "enumerated"` requires a value in `enumValues`.
-- `sorted` with no value → **error** `enum-arity` (needs one of {none, ascending, descending}).
-- `sorted=sideways` → **error** `enum-arity` (not in set).
+### P4 — enumerated arity must carry a value from its closed set  ‹IMPLEMENTED›
+A state with `arity === "enumerated"` must be written WITH a value from `enumValues`. The parser
+captures a valid value via the per-member valid-value token; a bare or wrong-valued word matches a
+fallback token (no value captured), which P4 flags — distinguishing the two cases:
+- `sorted` (no value) → **error** `enum-arity` (needs one of {none, ascending, descending}).
+- `sorted-sideways` (value not in set) → **error** `enum-arity` (not in {none, ascending, descending}).
+- `sorted-ascending` → **ok**. (P8 entailment is suppressed for a malformed enum word — P4 owns it.)
 
 ### P5 — whole-axis aliases & per-dial conflicts (folded into one-word-per-axis)
 *(No longer a standalone "weight-implies-direction" predicate — that was a cross-class rule for the
@@ -492,9 +526,14 @@ On an `open + whole-axis aliases` axis (m2):
 - **dials** compose one-per-longhand-dial: `grow-2 shrink-1` ok; `grow-2 grow-3` → **error**
   `one-word-per-axis` (two values for the `flex-grow` dial).
 
-### P6 — arity misuse (binary can't hold a tri-state)
-A binary member cannot carry an enumerated value.
-- `selected` with `aria-checked=mixed` backing → **error** `arity-misuse` (use `checked-mixed`).
+### P6 — arity misuse (binary can't hold a tri-state)  ‹IMPLEMENTED (form b)›
+The implemented form: a **binary** state whose backing is a tri-state truth that has its own dedicated
+word.
+- `selected` with `aria-checked=mixed` (or `:indeterminate`) backing → **error** `arity-misuse`
+  (use the dedicated word `checked-mixed`).
+- A binary word written with a value suffix (`selected-mixed`) is caught by **P2 `unknown-word`** —
+  there is no such token — rather than P6; this is accurate and avoids over-matching typos with
+  binary "base + illegal tail" fallback tokens.
 
 ---
 
@@ -515,11 +554,15 @@ predicate-4 family):
 A grammar word touching a `must-never-touch` property (e.g. a layout word emitting `background`) →
 **error** `plane-mix`. This is also the decomposition test: split a class that mixes planes.
 
-### P8 — state entailment (category-dispatched)
+### P8 — state entailment (category-dispatched)  ‹IMPLEMENTED›
 - `instance`: requires *one of* its backing set present on the element. None present →
   **error** `state-entailment` (e.g. `selected` with no `aria-selected`/`aria-pressed`/`:checked`).
-- `relational`: requires the container's attribute to point at this member's id. Otherwise →
-  **error** `state-entailment` (inverted).
+  Suppressed for a malformed enum word (P4 owns that).
+- `relational` ‹IMPLEMENTED›: requires the **container** to point at this element's id via the member's
+  `relationalBacking.containerAttr` (e.g. listbox `aria-activedescendant` === this option's id).
+  Otherwise → **error** `state-entailment-relational`. Needs a `LintContext` (`{elementId,
+  containerAttrs}`); when no context is supplied the check is **skipped, not failed** (the linter can't
+  see the container, so it doesn't guess).
 - `capability` / `conditioned-skin`: entail nothing; never fire.
 
 ### P9 — no-coining (the extension contract)
@@ -565,11 +608,22 @@ legitimately carry `expandable` (negotiated) and `self-center` (free) at once.
 
 ---
 
-## 8. Reference: session scripts that mechanize this spec  ‹SHARED›
+## 8. Reference: what the linter implements  ‹SHARED›
 
-These run under `npx tsx <file>` and pass; **not yet committed** to `src/styles/grammar/`:
-- `full-registry.ts` — populates all axes, runs P7 (4a–4d), prints the property-ownership index.
-- `collision-analysis.ts` — diagnoses + proves the fixes for the two predicate-4 collisions.
-- `registry-lint.ts` — P8 (entailment, set-valued), P4 (enum-arity), P6 (arity-misuse).
-- `combobox-audit.ts` — `state-relational` (inverted entailment) confirming audit.
-- `tree-audit.ts` — confirms `state-relational` stays at one member (admission filters independent).
+**`lint.ts`** (runs under `npx tsx lint.ts`; smoke suite 47/47) implements, today:
+- **P1** — one word per axis per condition scope, including the sub-dial refinement (m2, alignment,
+  padding/margin, overflow) and per-group state exclusivity (`one`/`many` + pairwise `conflicts`).
+- **P2** — unknown/coined word.
+- **P4** — enumerated arity (missing value vs value-not-in-set), via per-member valid + fallback tokens.
+- **P6** — arity misuse, form (b): a binary word with a tri-state backing that has its own word.
+- **P8 instance** — instance-state entailment (set-valued, Law-6b disjunction), suppressed for malformed enums.
+- **P8 relational** — inverted entailment against a container context (`LintContext`); skipped, not
+  failed, when no context is supplied.
+
+**Not yet implemented in `lint.ts`** (specified above; deferred): P3 parameter-domain validation as a
+distinct check, P7 dimensional-purity *from generated CSS* (the `controls` are still transcribed, not
+derived — the highest-value next step), and P10 divider/wrap warnings.
+
+Earlier session scripts (not committed) that mechanized parts of this spec: `full-registry.ts` (P7 over
+all axes + ownership index), `collision-analysis.ts` (the two predicate-4 collisions), `combobox-audit.ts`
+/ `tree-audit.ts` (relational entailment). Folding their checks into `lint.ts` + CI is the open work.

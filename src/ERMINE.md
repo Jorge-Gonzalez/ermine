@@ -93,6 +93,67 @@
 >    by Jorge's sense that flex *felt* open-with-sugar, not closed — a mismodeling the earlier split had
 >    accommodated rather than fixed.
 
+> **Session log (registry-fidelity revision — implementation catches up to the constitution).** An
+> external review found the registry/linter rejecting compositions the constitution *says are legal* —
+> drift in the implementation, not the law. Fixes, all bringing code into agreement with existing prose:
+> 1. **Sub-dial axes generalized.** The `subDials`/`dialOf` mechanism (built for m2) was only wired into
+>    m2; it is now applied to every axis the constitution already describes as multi-directional:
+>    **alignment-container** (align / justify dials → `align-center justify-between` composes),
+>    **padding** and **margin** (inline / block dials, with `padding-<density>` as the whole-axis form),
+>    and **overflow** (x / y dials, with `scroll-auto`/`clip` whole-axis). The linter logic needed no
+>    change — only the records did. This confirms the m2 "whole-axis alias + dials" shape was never
+>    flex-specific; it is a general axis capability. A pattern-based whole-axis form (`aliasMatch`) was
+>    added for axes whose all-sides word is a pattern (`padding-<density>`) rather than a fixed alias.
+> 2. **State exclusivity made per-group.** Groups previously all defaulted to mutually-exclusive
+>    (`one`). Corrected to reflect the platform: most groups are **`many`** (co-present predicates —
+>    `hover`+`focus`, `required`+`invalid`), with **pairwise `conflicts`** for the specific exclusive
+>    pairs (`focus`/`focus-visible`, `selected`/`checked-mixed`). `disclosure` stays `one` (alternative
+>    presentation modes). The linter honors exclusivity + conflicts per group.
+> 3. **`selection-treatment` no longer collides with `skin-surface`.** It was a free skin axis writing
+>    `background`/`color` — a direct P7 dimensional-purity violation against base skin. Re-modeled as a
+>    **conditional variant layer** writing custom properties (`--selection-bg`/`--selection-ink`), read
+>    by a sink under the `selected` condition — the same sink-variable discipline as m2 longhands and
+>    motion `--stagger`. Conditioned layers compose with base skin by writing *different* variables.
+> 4. **`checked-mixed` token bug fixed.** It carried `enumValues:["mixed"]`, so the generic state-token
+>    builder generated `checked-mixed-mixed`. It is a *complete word* (the tri-state value is in the
+>    word), not an enumerated-with-suffix member — `enumValues` removed. The builder was also rewritten
+>    to capture base-word and enum-value in **separate groups** (`current-page` → word `current`, value
+>    `page`), groundwork for the spec's P4 (enumerated-arity) obligation; and stateMember resolution now
+>    prefers exact-word over prefix match (so `focus-visible` no longer mis-resolves to `focus`).
+> Deferred (bigger, acknowledged): relational-entailment (P8 against a container) and P10 in the linter;
+> derive `controls` from generated CSS; promote the audit scripts to CI; the eventual document split.
+> Linter smoke suite: 36/36.
+
+> **Session log (P4/P6 implementation).** Implemented the two enumerated-state predicates the spec had
+> promised but the linter didn't run, so the structured enum values (captured since the registry-fidelity
+> pass) now do real work:
+> - **P4 (enumerated arity).** An enumerated state must carry a value from its set. The state-token
+>   builder gained a per-member **fallback token** (`word(?:-.*)?`) tried *after* the valid-value token,
+>   so a bare word (`sorted`) or a wrong value (`sorted-sideways`) still resolves to its axis and is
+>   flagged `enum-arity` — distinguishing "needs a value" from "value not in set" — instead of falling
+>   through to P2's coarser `unknown-word`. P8 entailment is suppressed for a malformed enum word (P4
+>   owns that diagnosis), avoiding a double-complaint.
+> - **P6 (arity misuse), form (b).** A binary word standing in for a tri-state truth that has its own
+>   word — `selected` backed by `aria-checked=mixed` → `arity-misuse: use checked-mixed`. Form (a) (a
+>   binary word with a value suffix like `selected-mixed`) is deliberately left to P2 `unknown-word`:
+>   it's accurate, and binary "base + illegal tail" fallback tokens would over-match typos.
+> - **`checked-mixed` re-typed `binary`** (it's a complete word — the value is in the word), so P4
+>   doesn't wrongly demand a sub-value of it.
+> Smoke suite now 43/43. Implemented predicate set in `lint.ts`: P1 (with sub-dial + state-group
+> refinements), P2, P4, P6(b), P8(instance). Still specified-but-unimplemented: P3-as-distinct,
+> P7-from-generated-CSS, P8-relational, P10.
+
+> **Session log (P8-relational implementation).** Ported the inverted-entailment check from the
+> combobox/tree audit scripts into `lint.ts`. A `relational` state (`active-descendant`) is backed not
+> by an attribute on the element but by the **container** pointing at this element's id (listbox
+> `aria-activedescendant` === option id). This required giving the linter a notion of context beyond the
+> single element: `lint()` gained an optional `LintContext` (`{elementId, containerAttrs}`), and a new
+> `p8b_relationalEntailment` fires `state-entailment-relational` when the container attr doesn't point
+> here. Deliberately **skipped (not failed) when no context is supplied** — the linter can't see the
+> container, so it doesn't guess. Smoke suite 47/47. Remaining unimplemented: P7-from-generated-CSS (the
+> highest-value next step — it needs a CSS *generator* stood up first, so `controls` can be derived
+> rather than transcribed), P3-as-distinct, P10.
+
 > **Artifact manifest — what backs the "executable" claims, and its commit status.** The verification
 > this revision rests on lives in standalone scripts produced during the design session. They **run and
 > pass as described**, but — with one exception — they are **NOT yet committed to the repo suite**

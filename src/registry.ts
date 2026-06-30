@@ -114,6 +114,10 @@ export interface AxisRecord {
   // OPEN axes may carry whole-axis aliases (m2 corners). An alias is a complete
   // value: it conflicts with any other word on the same axis (P1 generalization).
   aliases?: Alias[];
+  // Some axes' whole-axis form is a PATTERN, not a fixed word (e.g. padding's
+  // `padding-<density>` sets both sides, vs the per-side dials). aliasMatch tags
+  // such a word as a whole-axis value for P1 (mutually exclusive with the dials).
+  aliasMatch?: (word: string) => boolean;
 
   // CLOSED axes whose member set includes one or more PARAMETRIC members — the
   // member is a fixed word that carries an open value (m3 `basis-exact-<size>`,
@@ -125,9 +129,12 @@ export interface AxisRecord {
 
   // state-group axes only:
   stateGroup?: {
-    // exclusivity WITHIN the group: "one" = one word per scope (set-with-exclusivity),
-    // members from DIFFERENT groups always compose.
+    // exclusivity WITHIN the group: "one" = at most one member per scope
+    // (genuinely alternative states); "many" = members are independent predicates
+    // that can co-occur (hover+focus, required+invalid), with optional pairwise
+    // conflicts for the specific pairs that ARE mutually exclusive.
     exclusivity: "one" | "many";
+    conflicts?: [string, string][]; // pairs that cannot co-occur even when exclusivity="many"
     members: StateMember[];
   };
 
@@ -181,7 +188,7 @@ export const LAYOUT: AxisRecord[] = [
       { pattern: /^(rigid|compressible|expandable|elastic)$/, shape: "<flex-corner alias>" },
     ],
     subDials: ["grow", "shrink"],
-    dialOf: (member: string) => (member === "grow" || member === "shrink" ? member : null),
+    dialOf: (word: string) => word.startsWith("grow-") ? "grow" : word.startsWith("shrink-") ? "shrink" : null,
     aliases: [
       { word: "rigid", expands: "grow-0 shrink-0" },
       { word: "compressible", expands: "grow-0 shrink-1" },
@@ -270,9 +277,13 @@ export const LAYOUT: AxisRecord[] = [
     vocabulary: "closed", regime: "free",
     valueSpace: SCALES.density,
     tokens: [densityToken("padding"), densityToken("padding-inline"), densityToken("padding-block")],
+    subDials: ["inline", "block"],
+    dialOf: (word: string) => word.startsWith("padding-inline-") ? "inline" : word.startsWith("padding-block-") ? "block" : null,
+    aliasMatch: (word: string) => /^padding-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word),
     default: null,
     controls: ["padding"],
     mustNeverTouch: ["margin", "gap", "display"],
+    notes: "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<density>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-relaxed padding-block-snug` composes.",
   },
   {
     axis: "margin",
@@ -280,10 +291,13 @@ export const LAYOUT: AxisRecord[] = [
     vocabulary: "closed", regime: "free",
     valueSpace: SCALES.density,
     tokens: [densityToken("margin"), densityToken("margin-inline"), densityToken("margin-block")],
+    subDials: ["inline", "block"],
+    dialOf: (word: string) => word.startsWith("margin-inline-") ? "inline" : word.startsWith("margin-block-") ? "block" : null,
+    aliasMatch: (word: string) => /^margin-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word),
     default: null,
     controls: ["margin"],
     mustNeverTouch: ["padding", "gap", "display"],
-    notes: "marked-by-preference: reach for it only outside container rhythm",
+    notes: "two sub-dials inline/block; `margin-<density>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
   },
   {
     axis: "alignment-container",
@@ -297,9 +311,12 @@ export const LAYOUT: AxisRecord[] = [
       { pattern: /^align-(start|center|end|stretch|baseline)$/, shape: "align-<x>" },
       { pattern: /^justify-(start|center|end|between|around)$/, shape: "justify-<x>" },
     ],
+    subDials: ["align", "justify"],
+    dialOf: (word: string) => word.startsWith("align-") ? "align" : word.startsWith("justify-") ? "justify" : null,
     default: null,
     controls: ["align-items", "justify-content"],
     mustNeverTouch: ["align-self", "gap", "padding"],
+    notes: "two sub-dials: align (align-items) and justify (justify-content). They write different properties, so `align-center justify-between` composes; two align-* or two justify-* conflict.",
   },
   {
     axis: "divider",
@@ -328,9 +345,13 @@ export const LAYOUT: AxisRecord[] = [
     vocabulary: "closed", regime: "free",
     valueSpace: ["scroll-y", "scroll-x", "scroll-auto", "clip"],
     tokens: [{ pattern: /^(scroll-y|scroll-x|scroll-auto|clip)$/, shape: "<overflow>" }],
+    subDials: ["x", "y"],
+    dialOf: (word: string) => word === "scroll-x" ? "x" : word === "scroll-y" ? "y" : null,
+    aliasMatch: (word: string) => word === "scroll-auto" || word === "clip",
     default: null,
     controls: ["overflow-x", "overflow-y"],
     mustNeverTouch: ["display", "padding"],
+    notes: "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto and clip are whole-axis (both directions), so they conflict with a per-axis dial.",
   },
   {
     axis: "constraints",
@@ -460,9 +481,9 @@ export const SKIN: AxisRecord[] = [
     valueSpace: ["selection-subtle", "selection-strong"],
     tokens: [{ pattern: /^selection-(subtle|strong)$/, shape: "selection-<x>" }],
     default: null,
-    controls: ["background", "color", "outline"],
-    mustNeverTouch: ["display", "gap", "flex", "position"],
-    notes: "conditioned-skin: entails nothing itself; conditioned by `selected`/`hover`/`active`; pairs with capability `selectable`.",
+    controls: ["--selection-bg", "--selection-ink", "--selection-outline"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "outline"],
+    notes: "conditioned-skin: a CONDITIONAL VARIANT LAYER, not a base skin axis. It writes custom properties (--selection-bg/--selection-ink), NOT background/color directly — a sink rule reads them under the `selected` condition. This is why it does NOT collide with skin-surface's background/color (same discipline as m2 longhands / motion --stagger): conditioned layers compose with base skin by writing different variables. Entails nothing itself; conditioned by `selected`/`hover`/`active`; pairs with capability `selectable`.",
   },
 ];
 
@@ -476,18 +497,39 @@ export const SKIN: AxisRecord[] = [
 const stateAxis = (
   group: string,
   members: StateMember[],
-  exclusivity: "one" | "many" = "one",
-): AxisRecord => ({
-  axis: `state.${group}`,
-  sibling: "state", role: "none", signature: "set-with-exclusivity",
-  vocabulary: "closed", regime: "free",
-  valueSpace: members.map((m) => m.word),
-  tokens: [{ pattern: new RegExp(`^(${members.flatMap((m) => m.enumValues ? m.enumValues.map(v => `${m.word}-${v}`) : [m.word]).join("|")})$`), shape: `<${group}-state>` }],
-  default: null,
-  controls: [], // P7-4d: state controls nothing
-  mustNeverTouch: ["*"],
-  stateGroup: { exclusivity, members },
-});
+  exclusivity: "one" | "many" = "many",
+  conflicts: [string, string][] = [],
+): AxisRecord => {
+  // Build token forms so the parser can separate base word from enum value, AND
+  // still recognize a bare or wrong-valued enum word (so P4 can flag it rather than
+  // P2 mislabeling it as a coined word):
+  //  - enumerated members, valid value → `(word)-(v1|v2|…)`  (value in group 2)
+  //  - enumerated members, fallback    → `(word)(?:-.*)?`     (base word, any/no tail)
+  //  - plain members                   → `(word)`            (no value)
+  const enumMembers = members.filter((m) => m.enumValues?.length);
+  const plainMembers = members.filter((m) => !m.enumValues?.length);
+  const tokens: Token[] = [];
+  // valid-value tokens FIRST (so a good value is captured before the fallback matches)
+  for (const m of enumMembers)
+    tokens.push({ pattern: new RegExp(`^(${m.word})-(${m.enumValues!.join("|")})$`), shape: `${m.word}-<value>`, valueDomain: "enum" });
+  if (plainMembers.length)
+    tokens.push({ pattern: new RegExp(`^(${plainMembers.map((m) => m.word).join("|")})$`), shape: `<${group}-state>` });
+  // fallback tokens LAST: base word bare or with a non-sanctioned tail → recognized,
+  // but no value captured, so P4 sees an enumerated member missing a valid value.
+  for (const m of enumMembers)
+    tokens.push({ pattern: new RegExp(`^(${m.word})(?:-.*)?$`), shape: `${m.word}-<value?>`, valueDomain: "enum" });
+  return {
+    axis: `state.${group}`,
+    sibling: "state", role: "none", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: members.map((m) => m.word),
+    tokens,
+    default: null,
+    controls: [], // P7-4d: state controls nothing
+    mustNeverTouch: ["*"],
+    stateGroup: { exclusivity, conflicts, members },
+  };
+};
 
 export const STATE: AxisRecord[] = [
   stateAxis("focus", [
@@ -495,28 +537,28 @@ export const STATE: AxisRecord[] = [
     { word: "focus", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":focus"] },
     { word: "focus-visible", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":focus-visible"] },
     { word: "active", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":active"], note: "the transient press; toggle `pressed` was folded into `selected` (Law 6b)" },
-  ]),
+  ], "many", [["focus", "focus-visible"]]),
   stateAxis("selection", [
     { word: "selectable", arity: "binary", driver: "interaction", stateCategory: "capability", note: "entails nothing; distributes capability down" },
     { word: "selected", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-selected", "aria-pressed", ":checked"], note: "Law 6b merge" },
-    { word: "checked-mixed", arity: "enumerated", driver: "interaction", stateCategory: "instance", entails: ["aria-checked=mixed", ":indeterminate"], enumValues: ["mixed"] },
+    { word: "checked-mixed", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-checked=mixed", ":indeterminate"], note: "the tri-state 'mixed/indeterminate' value as a complete word (binary arity: the word IS the value, no enum suffix)." },
     { word: "current", arity: "enumerated", driver: "interaction", stateCategory: "instance", entails: ["aria-current"], enumValues: ["page", "step", "location", "date", "time", "true"] },
-  ]),
+  ], "many", [["selected", "checked-mixed"]]),
   stateAxis("availability", [
     { word: "disabled", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":disabled", "aria-disabled"] },
     { word: "read-only", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":read-only", "aria-readonly"] },
     { word: "busy", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-busy"], note: "visual updating sense only" },
-  ]),
+  ], "many"),
   stateAxis("disclosure", [
     { word: "expanded", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-expanded"], note: "in-place disclosure" },
     { word: "open", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["[open]", ":open", ":popover-open"], note: "top-layer/details presentation" },
-  ]),
+  ], "one"),
   stateAxis("validity", [
     { word: "invalid", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":invalid", "aria-invalid"] },
     { word: "user-invalid", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":user-invalid"] },
     { word: "required", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":required", "aria-required"] },
     { word: "out-of-range", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":out-of-range"] },
-  ]),
+  ], "many"),
   stateAxis("sort", [
     { word: "sorted", arity: "enumerated", driver: "interaction", stateCategory: "instance", entails: ["aria-sort"], enumValues: ["none", "ascending", "descending"] },
   ]),

@@ -42,13 +42,18 @@ export function parseWord(raw: string): Parsed {
         // state member resolution
         let stateMember: StateMember | undefined;
         if (ax.stateGroup) {
-          stateMember = ax.stateGroup.members.find((sm) => body === sm.word || body.startsWith(sm.word + "-"));
+          // exact-word match first (so `focus-visible` doesn't resolve to `focus`),
+          // then prefix match for enum members (`current-page` → `current`).
+          stateMember = ax.stateGroup.members.find((sm) => body === sm.word)
+            ?? ax.stateGroup.members.find((sm) => body.startsWith(sm.word + "-"));
         }
         const value = m[2] !== undefined ? (/^\d+$/.test(m[2]) ? Number(m[2]) : m[2]) : undefined;
         const member = m[1] ?? body;
-        // m2: is this a whole-axis alias, or which dial does a parametric token set?
-        const isAlias = ax.aliases?.some((a) => a.word === body);
-        const dial = ax.dialOf ? ax.dialOf(member) : undefined;
+        // is this a whole-axis alias, or which sub-dial does this token set?
+        // dialOf receives the full authored word (body), so dials keyed by prefix
+        // (align-/justify-, padding-inline-/-block-) resolve correctly.
+        const isAlias = ax.aliases?.some((a) => a.word === body) || ax.aliasMatch?.(body) || false;
+        const dial = ax.dialOf ? ax.dialOf(body) : undefined;
         return { raw, scope, axis: ax.axis, member, value, isAlias, dial, stateMember };
       }
     }
@@ -98,6 +103,23 @@ export function p1_oneWordPerAxisPerScope(parsed: Parsed[]): Issue[] {
       continue;
     }
 
+    // state-group axis: exclusivity is "one" (alternatives) or "many" (co-present
+    // predicates, with optional pairwise conflicts).
+    if (ax?.stateGroup) {
+      const sg = ax.stateGroup;
+      const present = words.map((w) => w.stateMember?.word ?? w.member).filter(Boolean) as string[];
+      if (sg.exclusivity === "one" && words.length > 1) {
+        out.push({ level: "error", rule: "one-word-per-axis",
+          msg: `'${words.map((w) => w.raw).join("', '")}' — only one '${words[0].axis}' state at a time (mutually exclusive group).` });
+      } else if (sg.conflicts?.length) {
+        for (const [a, b] of sg.conflicts)
+          if (present.includes(a) && present.includes(b))
+            out.push({ level: "error", rule: "state-conflict",
+              msg: `'${a}' and '${b}' cannot both apply on '${words[0].axis}'.` });
+      }
+      continue;
+    }
+
     // plain axis: more than one word is a conflict
     if (words.length > 1)
       out.push({ level: "error", rule: "one-word-per-axis",
@@ -121,23 +143,100 @@ export function p8_stateEntailment(parsed: Parsed[], backing: Set<string>): Issu
   for (const p of parsed) {
     const sm = p.stateMember;
     if (!sm) continue;
+    // skip a malformed enumerated word (no valid value) — P4 owns that diagnosis;
+    // complaining about backing for a not-well-formed word is noise.
+    if (sm.arity === "enumerated" && p.value === undefined) continue;
     if (sm.stateCategory === "instance") {
       const set = sm.entails ?? [];
       if (set.length && !set.some((b) => backing.has(b)))
         out.push({ level: "error", rule: "state-entailment",
           msg: `'${sm.word}' requires one of {${set.join(", ")}} on this element — none present (visually-true-but-semantically-false).` });
     }
-    // capability / conditioned-skin entail nothing; relational checked against container (omitted in this smoke test)
+    // capability / conditioned-skin entail nothing; relational handled by p8b below.
   }
   return out;
 }
 
-export function lint(classString: string, backing = new Set<string>()): Issue[] {
+// Context for relational checks: the element's own id, and the container's attributes.
+// Both optional — when absent, relational checks are skipped (not failed), since the
+// linter then has no way to see the inverted backing.
+export interface LintContext {
+  elementId?: string;
+  containerAttrs?: Record<string, string>;
+}
+
+// --- P8b: RELATIONAL state entailment (inverted — backing on the CONTAINER) ---
+// A relational member (e.g. `active-descendant`) is NOT backed by an attribute on the
+// element itself, but by the CONTAINER pointing at this element's id (e.g. the listbox's
+// `aria-activedescendant` === this option's id). Ported from combobox-audit.ts.
+export function p8b_relationalEntailment(parsed: Parsed[], ctx: LintContext): Issue[] {
+  const out: Issue[] = [];
+  for (const p of parsed) {
+    const sm = p.stateMember;
+    if (!sm || sm.stateCategory !== "relational") continue;
+    const rb = sm.relationalBacking;
+    if (!rb) continue;
+    // No context to check against → skip (can't verify, don't false-positive).
+    if (ctx.containerAttrs === undefined || ctx.elementId === undefined) continue;
+    if (ctx.containerAttrs[rb.containerAttr] !== ctx.elementId)
+      out.push({ level: "error", rule: "state-entailment-relational",
+        msg: `'${sm.word}' requires the container's ${rb.containerAttr} to point at this element's id ('${ctx.elementId}') — it points elsewhere or is absent.` });
+  }
+  return out;
+}
+
+// --- P4: enumerated arity must carry a value from its closed set ---
+// An enumerated state member must be written WITH a value drawn from enumValues.
+// The parser captures a valid value (Parsed.value set) via the valid-value token;
+// a bare or wrong-valued word matches the fallback token (value undefined), which
+// P4 flags — distinguishing "missing value" from "value not in set" by whether a
+// `-tail` was supplied.
+export function p4_enumArity(parsed: Parsed[]): Issue[] {
+  const out: Issue[] = [];
+  for (const p of parsed) {
+    const sm = p.stateMember;
+    if (!sm || sm.arity !== "enumerated") continue;
+    if (p.value !== undefined) continue; // valid value captured — ok
+    const set = sm.enumValues ?? [];
+    const triedTail = p.raw.startsWith(sm.word + "-"); // wrote `word-something`
+    if (triedTail)
+      out.push({ level: "error", rule: "enum-arity",
+        msg: `'${p.raw}' — value not in {${set.join(", ")}} for enumerated state '${sm.word}'.` });
+    else
+      out.push({ level: "error", rule: "enum-arity",
+        msg: `'${sm.word}' is enumerated — it needs a value: one of {${set.join(", ")}} (e.g. '${sm.word}-${set[0] ?? "value"}').` });
+  }
+  return out;
+}
+
+// --- P6: arity misuse (a binary member can't carry an enumerated/tri-state value) ---
+// The high-value form is (b): a BINARY state whose BACKING is a tri-state truth that
+// has its own dedicated word (`selected` backed by `aria-checked=mixed` → `checked-mixed`).
+// Form (a) — a binary word written with a value suffix like `selected-mixed` — is left to
+// P2 `unknown-word` (there is no such token), which is an accurate diagnosis; adding binary
+// "base + illegal tail" fallback tokens would over-match typos, so it's deliberately not done.
+export function p6_arityMisuse(parsed: Parsed[], backing: Set<string>): Issue[] {
+  const out: Issue[] = [];
+  for (const p of parsed) {
+    const sm = p.stateMember;
+    if (!sm || sm.arity !== "binary") continue;
+    // (b) binary word standing in for a tri-state truth that has its own word
+    if (sm.word === "selected" && (backing.has("aria-checked=mixed") || backing.has(":indeterminate")))
+      out.push({ level: "error", rule: "arity-misuse",
+        msg: `'selected' with a mixed/indeterminate backing — use the dedicated word 'checked-mixed'.` });
+  }
+  return out;
+}
+
+export function lint(classString: string, backing = new Set<string>(), ctx: LintContext = {}): Issue[] {
   const parsed = classString.trim().split(/\s+/).filter(Boolean).map(parseWord);
   return [
     ...p2_unknownWord(parsed),
     ...p1_oneWordPerAxisPerScope(parsed),  // m2 alias/dial rules folded in (was P5)
+    ...p4_enumArity(parsed),
+    ...p6_arityMisuse(parsed, backing),
     ...p8_stateEntailment(parsed, backing),
+    ...p8b_relationalEntailment(parsed, ctx),
   ];
 }
 
@@ -145,7 +244,7 @@ export function lint(classString: string, backing = new Set<string>()): Issue[] 
 // SMOKE TEST
 // ============================================================================
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const cases: { s: string; backing?: string[]; expect: "ok" | "fail"; why?: string }[] = [
+  const cases: { s: string; backing?: string[]; ctx?: LintContext; expect: "ok" | "fail"; why?: string }[] = [
     { s: "horizontal gap-comfortable padding-relaxed", expect: "ok" },
     { s: "horizontal vertical", expect: "fail", why: "P1 same axis/scope" },
     { s: "horizontal viewport-md:vertical", expect: "ok", why: "Law 2: different scopes" },
@@ -173,11 +272,41 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     { s: "stretchy", expect: "fail", why: "P2 coined" },
     { s: "modal", expect: "ok", why: "top-layer mechanism" },
     { s: "grid padding-comfortable selectable selection-subtle", backing: [], expect: "ok" },
+    // sub-dial axes now compose (review priority 1)
+    { s: "align-center justify-between", expect: "ok", why: "different sub-dials (align-items vs justify-content)" },
+    { s: "align-center align-start", expect: "fail", why: "two values on the align sub-dial" },
+    { s: "padding-inline-relaxed padding-block-snug", expect: "ok", why: "different padding sub-dials" },
+    { s: "padding-comfortable padding-inline-relaxed", expect: "fail", why: "whole-axis padding + a per-side dial" },
+    { s: "scroll-x scroll-y", expect: "ok", why: "different overflow sub-dials" },
+    { s: "scroll-x scroll-auto", expect: "fail", why: "per-axis dial + whole-axis clip/auto" },
+    // checked-mixed token bug fixed (review priority 3)
+    { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the word is complete, not checked-mixed-mixed" },
+    // enum value parses as a real value (groundwork for P4)
+    { s: "sorted-ascending", backing: ["aria-sort"], expect: "ok", why: "enum value captured separately" },
+    { s: "current-page", backing: ["aria-current"], expect: "ok", why: "enum value captured separately" },
+    // state co-presence (review priority 2)
+    { s: "hover focus", backing: [":hover", ":focus"], expect: "ok", why: "focus group now many — co-present states" },
+    { s: "focus focus-visible", backing: [":focus", ":focus-visible"], expect: "fail", why: "pairwise conflict within a many-group" },
+    { s: "required invalid", backing: [":required", ":invalid"], expect: "ok", why: "validity many: required + invalid co-present" },
+    // P4 — enumerated arity
+    { s: "sorted-ascending", backing: ["aria-sort"], expect: "ok", why: "valid enum value" },
+    { s: "sorted", expect: "fail", why: "P4: enumerated needs a value" },
+    { s: "sorted-sideways", expect: "fail", why: "P4: value not in set" },
+    { s: "current-page", backing: ["aria-current"], expect: "ok", why: "valid enum value" },
+    { s: "current", expect: "fail", why: "P4: enumerated needs a value" },
+    // P6 — arity misuse
+    { s: "selected", backing: ["aria-checked=mixed"], expect: "fail", why: "P6: mixed backing → use checked-mixed" },
+    { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the dedicated tri-state word" },
+    // P8-relational — inverted entailment (backing on the container)
+    { s: "active-descendant", ctx: { elementId: "opt-3", containerAttrs: { "aria-activedescendant": "opt-3" } }, expect: "ok", why: "container points at this element" },
+    { s: "active-descendant", ctx: { elementId: "opt-3", containerAttrs: { "aria-activedescendant": "opt-1" } }, expect: "fail", why: "container points elsewhere" },
+    { s: "active-descendant", ctx: { elementId: "opt-3", containerAttrs: {} }, expect: "fail", why: "container attr absent" },
+    { s: "active-descendant", expect: "ok", why: "no context supplied → relational check skipped, not failed" },
   ];
 
   let pass = 0;
   for (const c of cases) {
-    const issues = lint(c.s, new Set(c.backing ?? []));
+    const issues = lint(c.s, new Set(c.backing ?? []), c.ctx ?? {});
     const got: "ok" | "fail" = issues.length ? "fail" : "ok";
     const ok = got === c.expect;
     pass += ok ? 1 : 0;
