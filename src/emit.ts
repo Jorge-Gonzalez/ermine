@@ -44,10 +44,15 @@ interface EmitSpec {
   plain: (word: string) => Record<string, string> | null;
 }
 
-// shared helper: the four density-scale axes (gap/flow/padding/margin) all
-// read the same var(--spacing-<step>) convention — one function, four axes.
-const densityDial = (property: string) => (word: string): Record<string, string> | null => {
-  const m = word.match(new RegExp(`^${property}-(${SCALES.density.join("|")})$`));
+// shared helper: density-scale axes read the same var(--spacing-<step>)
+// convention. wordPrefix and property are SEPARATE — they coincide for gap
+// (word "gap-comfortable" -> property "gap") and padding, but NOT for
+// flow-spacing (word "flow-relaxed" -> property "margin-block-start"). Found
+// by checking the real token pattern in registry.ts before trusting the
+// emission entry — conflating the two would have silently produced nothing
+// for every real flow-* word despite the axis resolving correctly.
+const densityDial = (wordPrefix: string, property = wordPrefix) => (word: string): Record<string, string> | null => {
+  const m = word.match(new RegExp(`^${wordPrefix}-(${SCALES.density.join("|")})$`));
   return m ? { [property]: `var(--spacing-${m[1]})` } : null;
 };
 
@@ -71,7 +76,7 @@ const EMISSION: Record<string, EmitSpec> = {
 
   // --- ordered-chain scale axis ---
   density: { effectKind: "css", plain: densityDial("gap") },
-  "flow-spacing": { effectKind: "css", plain: densityDial("margin-block-start") },
+  "flow-spacing": { effectKind: "css", plain: densityDial("flow", "margin-block-start") },
 
   // --- ordered-chain scale axis WITH sub-dials + aliasMatch (padding shape) ---
   padding: {
@@ -304,11 +309,120 @@ function selectorFragmentFromEntails(entails: string[] | undefined): string {
 }
 
 // ============================================================================
+// P7 — DIMENSIONAL PURITY FROM GENERATED CSS. The registry-build invariant
+// this whole emitter exists to make authoritative: no two FREE-regime axes
+// paint the same property, EXCEPT where a FacetRule or SinkRule explicitly
+// sanctions the overlap. Same standing-check shape as P0 in registry.ts —
+// this is a property of the REGISTRY, not of any one class string.
+// ============================================================================
+
+// A representative vocabulary per axis with EMISSION coverage — enough words
+// to exercise every declaration each axis can produce, not just one sample.
+// Deliberately axis-specific (not derived generically from valueSpace) for
+// the same reason EMISSION itself is axis-specific: word shape isn't uniform
+// across the registry (see the flow-spacing bug above).
+const VOCABULARY: Record<string, string[]> = {
+  structure: ["horizontal", "vertical", "rows", "grid"],
+  "m1-flow-participation": ["inline", "boxed", "boxed-inline"],
+  density: SCALES.density.map((s) => `gap-${s}`),
+  "flow-spacing": SCALES.density.map((s) => `flow-${s}`),
+  padding: [
+    ...SCALES.density.map((s) => `padding-${s}`),
+    ...SCALES.density.map((s) => `padding-inline-${s}`),
+    ...SCALES.density.map((s) => `padding-block-${s}`),
+  ],
+  "m2-flex": ["rigid", "compressible", "expandable", "elastic", "grow-1", "grow-2", "shrink-1"],
+  "m3-self-size": ["basis-content", "basis-ratio", ...SCALES.size.map((s) => `basis-exact-${s}`)],
+  constraints: ["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
+  "selection-treatment": ["selection-subtle", "selection-strong"],
+  "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
+  "motion-macro": ["together", "sequence", "cascade"],
+  "top-layer-mechanism": ["overlay", "modal", "popover", "toast"],
+};
+
+// Composed strings needed ON TOP of single-word enumeration, because sinks
+// and facets only exist when several words co-occur — no amount of
+// one-word-at-a-time walking will ever produce them.
+const COMPOSED_PROOFS: string[] = [
+  "horizontal inline",                                             // display facet twin
+  "selectable selected selection-subtle",                          // selection sink
+  "selectable selected selection-strong",
+  "decelerate cascade", "accelerate sequence", "standard together", // stagger sink, each choreography
+];
+
+export interface PurityViolation { property: string; axes: [string, string] }
+
+export function checkDimensionalPurity(): PurityViolation[] {
+  // process each emit() call as its own BATCH — facet sanctioning needs to
+  // know which facet rules fired TOGETHER in the same composed string, not
+  // which ones happen to share a selector string (they don't: `structure`'s
+  // facet rule sits on `.horizontal`, `m1-flow-participation`'s sits on
+  // `.inline` — different selectors, same property, sanctioned only because
+  // they were emitted from the SAME class string).
+  const batches: EmittedRule[][] = [
+    ...Object.values(VOCABULARY).flat().map((w) => emit(w)),
+    ...COMPOSED_PROOFS.map((c) => emit(c)),
+  ];
+  const rules = batches.flat();
+  const { paints } = deriveControls(rules);
+
+  // sanctioned pairs: axes explicitly allowed to co-paint a property, because
+  // a FacetRule or SinkRule fired together in some real emitted batch — the
+  // sink/facet's co-occurrence IS the sanction, computed from the rules, not
+  // asserted.
+  const pairKey = (a: string, b: string, prop: string) => [a, b].sort().join("~") + "::" + prop;
+  const sanctioned = new Set<string>();
+
+  for (const batch of batches) {
+    // facets: any two facet rules in the SAME batch sharing a property are a
+    // sanctioned pair for that property (they're the twin, by construction —
+    // a batch only ever contains one composed string's worth of rules).
+    const facetsByProperty = new Map<string, string[]>();
+    for (const r of batch) if (r.kind === "facet")
+      (facetsByProperty.get(r.property) ?? facetsByProperty.set(r.property, []).get(r.property)!).push(r.axis);
+    for (const [prop, axes] of facetsByProperty)
+      for (let i = 0; i < axes.length; i++)
+        for (let j = i + 1; j < axes.length; j++)
+          sanctioned.add(pairKey(axes[i], axes[j], prop));
+
+    // sinks: every pair of contributor axes is sanctioned for every property
+    // that sink's declarations paint.
+    for (const r of batch) if (r.kind === "reads") {
+      const contributors = [...new Set(r.composesFrom.filter((c) => c.role === "contributor").map((c) => c.axis))];
+      for (const prop of Object.keys(r.declarations))
+        for (let i = 0; i < contributors.length; i++)
+          for (let j = i + 1; j < contributors.length; j++)
+            sanctioned.add(pairKey(contributors[i], contributors[j], prop));
+    }
+  }
+
+  // now the actual check: for each property, do two DIFFERENT free axes both
+  // paint it, outside a sanctioned pair?
+  const byProperty = new Map<string, Set<string>>();
+  for (const [axis, props] of Object.entries(paints))
+    for (const prop of props)
+      (byProperty.get(prop) ?? byProperty.set(prop, new Set()).get(prop)!).add(axis);
+
+  const violations: PurityViolation[] = [];
+  for (const [prop, axesSet] of byProperty) {
+    const freeAxes = [...axesSet].filter((a) => REGISTRY.find((ax) => ax.axis === a)?.regime === "free");
+    for (let i = 0; i < freeAxes.length; i++)
+      for (let j = i + 1; j < freeAxes.length; j++) {
+        const [a, b] = [freeAxes[i], freeAxes[j]];
+        if (!sanctioned.has(pairKey(a, b, prop))) violations.push({ property: prop, axes: [a, b] });
+      }
+  }
+  return violations;
+}
+
+
+// ============================================================================
 // PROOF RUN — a real, composed class string exercising every rule kind at
 // once: structure+m1 facet merge, an ordinary scale axis, a parametric
 // member, a state condition, the selection sink (state + conditioned-skin),
 // and a platform mechanism, all walked from REAL registry.ts data via the
-// SAME parser lint.ts uses.
+// SAME parser lint.ts uses. Then P7 over the full vocabulary this walker
+// covers — the actual build gate, run via `npx tsx emit.ts`.
 // ============================================================================
 if (import.meta.url === `file://${process.argv[1]}`) {
   const cls = "horizontal inline gap-comfortable basis-content selectable selected selection-subtle modal decelerate cascade";
@@ -325,4 +439,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     `${rules.filter(r => r.kind === "reads").length} sink, ` +
     `${rules.filter(r => r.kind === "condition").length} condition, ` +
     `${rules.filter(r => r.kind === "mechanism").length} mechanism.`);
+
+  console.log(`\n--- P7: dimensional purity (${Object.keys(VOCABULARY).length} axes with emission coverage) ---`);
+  const violations = checkDimensionalPurity();
+  if (violations.length) {
+    console.log(`P7: FAILED — ${violations.length} unsanctioned collision(s):`);
+    for (const v of violations)
+      console.log(`  '${v.property}' painted by both '${v.axes[0]}' and '${v.axes[1]}' — not a declared facet or sink pair.`);
+    process.exitCode = 1;
+  } else {
+    console.log(`P7: ok — no unsanctioned property collisions across ${Object.keys(VOCABULARY).length} axes, ` +
+      `derived from ${Object.values(VOCABULARY).flat().length + COMPOSED_PROOFS.length} emitted class strings ` +
+      `(not transcribed).`);
+  }
 }
