@@ -61,6 +61,12 @@ export interface Token {
   shape: string;
   // for open/parametric tokens: the value's domain, for messages + validation
   valueDomain?: "density-step" | "size-step" | "breakpoint-step" | "integer-≥0" | "enum";
+  // P3: this token recognizes the axis's WORD SHAPE (prefix/structure) but NOT a sanctioned
+  // parameter value — e.g. `grow-abc` after `grow-<digits>`. Listed AFTER the valid-value
+  // token for an axis (valid matches win first), same ordering discipline as the enumerated
+  // state fallback tokens. A word resolving via a `fallback` token gets `bad-parameter`
+  // (P3), a more specific diagnosis than falling through to P2 `unknown-word`.
+  fallback?: boolean;
 }
 
 // A state member inside a state-group axis.
@@ -191,6 +197,7 @@ export const LAYOUT: AxisRecord[] = [
     tokens: [
       { pattern: /^(grow|shrink)-(\d+)$/, shape: "grow-N | shrink-N", valueDomain: "integer-≥0" },
       { pattern: /^(rigid|compressible|expandable|elastic)$/, shape: "<flex-corner alias>" },
+      { pattern: /^(grow|shrink)-.+$/, shape: "grow-<bad> | shrink-<bad>", valueDomain: "integer-≥0", fallback: true },
     ],
     subDials: ["grow", "shrink"],
     dialOf: (word: string) => word.startsWith("grow-") ? "grow" : word.startsWith("shrink-") ? "shrink" : null,
@@ -220,6 +227,7 @@ export const LAYOUT: AxisRecord[] = [
     tokens: [
       { pattern: /^(basis-content|basis-ratio)$/, shape: "basis-content | basis-ratio" },
       { pattern: new RegExp(`^basis-exact-(${SCALES.size.join("|")})$`), shape: "basis-exact-<size>", valueDomain: "size-step" },
+      { pattern: /^basis-exact-.+$/, shape: "basis-exact-<bad>", valueDomain: "size-step", fallback: true },
     ],
     parametricMembers: ["basis-exact"],
     default: "basis-content",
@@ -248,6 +256,7 @@ export const LAYOUT: AxisRecord[] = [
     tokens: [
       { pattern: /^(span|row-span)-(\d+)$/, shape: "span-N | row-span-N", valueDomain: "integer-≥0" },
       { pattern: /^span-all$/, shape: "span-all (contextual)" },
+      { pattern: /^(span|row-span)-.+$/, shape: "span-<bad> | row-span-<bad>", valueDomain: "integer-≥0", fallback: true },
     ],
     parametricMembers: ["span", "row-span"],
     default: "auto-place",
@@ -365,6 +374,7 @@ export const LAYOUT: AxisRecord[] = [
     valueSpace: ["min-width-<size>", "max-width-<size>", "min-height-<size>", "max-height-<size>"],
     tokens: [
       { pattern: new RegExp(`^(min-width|max-width|min-height|max-height)-(${SCALES.size.join("|")})$`), shape: "min/max-width/height-<size>", valueDomain: "size-step" },
+      { pattern: /^(min-width|max-width|min-height|max-height)-.+$/, shape: "min/max-width/height-<bad>", valueDomain: "size-step", fallback: true },
     ],
     // four independent dials — min/max-width form a band, min/max-height form a separate band.
     // A min and a max on the SAME dimension compose (`min-width-sm max-width-lg`); two values on
@@ -413,9 +423,16 @@ export const LAYERING: AxisRecord[] = [
     axis: "position-mode",
     sibling: "layering", role: "member", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["static", "relative", "absolute", "fixed", "sticky"],
-    tokens: [{ pattern: /^(static|relative|absolute|fixed|sticky)$/, shape: "<position>" }],
-    default: "static",
+    // PREFIXED this revision (was bare static/relative/absolute/fixed/sticky): bare `sticky`
+    // collided with the z-scale's tier-2 rung of the same name (both matched the same bare
+    // token; REGISTRY order silently resolved it to z-scale, making `position: sticky`
+    // inexpressible). Prefixing the whole axis — not just the colliding word — keeps the
+    // vocabulary shape uniform, and matches how other bare-CSS-value axes were already
+    // grammar-renamed (overflow's `scroll-auto`, not raw `auto`). Caught by the P0
+    // token-uniqueness check in registry.ts (`checkTokenUniqueness`), added this revision.
+    valueSpace: ["position-static", "position-relative", "position-absolute", "position-fixed", "position-sticky"],
+    tokens: [{ pattern: /^position-(?:static|relative|absolute|fixed|sticky)$/, shape: "position-<mode>" }],
+    default: "position-static",
     controls: ["position"],
     mustNeverTouch: ["z-index", "display", "inset"],
   },
@@ -620,6 +637,33 @@ export const REGISTRY: AxisRecord[] = [
   ...LAYOUT, ...LAYERING, ...MOTION, ...STATE, ...SKIN,
 ];
 
+// ============================================================================
+// P0 — TOKEN UNIQUENESS (registry-build invariant, not a per-string lint rule).
+// Every authored word must resolve to EXACTLY ONE axis. The parser (lint.ts) tries
+// axes in REGISTRY order and returns the first match, so an ambiguous word doesn't
+// error — it silently resolves to whichever axis happens to be listed first, and the
+// other axis's word becomes permanently inaccessible. This is a registry-authoring
+// bug class (caught the `sticky` collision between z-scale and position-mode this
+// revision), so it's checked once over the whole finite vocabulary, not per lint call.
+// Only tests CONCRETE (non-parametric) valueSpace entries — open/parametric member
+// shapes (`grow-<N>`, `basis-exact-<size>`) aren't enumerable finite words and are
+// exercised instead by ordinary well-formedness testing (they're already namespaced
+// by construction: a parametric prefix is chosen specifically to avoid collision).
+// ============================================================================
+export function checkTokenUniqueness(): { word: string; axes: string[] }[] {
+  const candidateWords = new Set<string>();
+  for (const ax of REGISTRY)
+    for (const w of ax.valueSpace)
+      if (!w.includes("<")) candidateWords.add(w);
+
+  const collisions: { word: string; axes: string[] }[] = [];
+  for (const word of candidateWords) {
+    const matches = REGISTRY.filter((ax) => ax.tokens.some((t) => t.pattern.test(word)));
+    if (matches.length > 1) collisions.push({ word, axes: matches.map((a) => a.axis) });
+  }
+  return collisions;
+}
+
 // quick self-report when run directly
 if (import.meta.url === `file://${process.argv[1]}`) {
   const bySibling = (s: Sibling) => REGISTRY.filter((a) => a.sibling === s).length;
@@ -628,4 +672,14 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   console.log(`  free=${REGISTRY.filter(a => a.regime === "free").length} negotiated=${REGISTRY.filter(a => a.regime === "negotiated").length}`);
   console.log(`  environment scope-prefixes: ${ENVIRONMENT_SCOPES.length}`);
   console.log(`  state groups: ${STATE.map(s => s.axis.replace("state.", "")).join(", ")}`);
+
+  const collisions = checkTokenUniqueness();
+  if (collisions.length) {
+    console.log(`\nP0 TOKEN UNIQUENESS: FAILED — ${collisions.length} ambiguous word(s):`);
+    for (const c of collisions)
+      console.log(`  '${c.word}' matches ${c.axes.length} axes: ${c.axes.join(", ")} — the parser will silently resolve to the first, making the others' meaning of this word inaccessible.`);
+    process.exitCode = 1;
+  } else {
+    console.log(`P0 TOKEN UNIQUENESS: ok — every closed/finite word resolves to exactly one axis.`);
+  }
 }

@@ -17,9 +17,10 @@ export interface Parsed {
   isAlias?: boolean;        // m2: a whole-axis alias (complete value, mutually exclusive)
   dial?: string | null;     // m2: which sub-dial a parametric token sets (grow/shrink)
   stateMember?: StateMember;
+  openFallback?: boolean;   // P3: matched a fallback token — shape recognized, value not sanctioned
 }
 
-export interface Issue { level: "error" | "warn"; rule: string; msg: string }
+export interface Issue { level: "error" | "warn"; rule: string; msg: string; target?: string }
 
 // --- parse one authored word into (scope, axis, member, value?) ---
 export function parseWord(raw: string): Parsed {
@@ -54,7 +55,7 @@ export function parseWord(raw: string): Parsed {
         // (align-/justify-, padding-inline-/-block-) resolve correctly.
         const isAlias = ax.aliases?.some((a) => a.word === body) || ax.aliasMatch?.(body) || false;
         const dial = ax.dialOf ? ax.dialOf(body) : undefined;
-        return { raw, scope, axis: ax.axis, member, value, isAlias, dial, stateMember };
+        return { raw, scope, axis: ax.axis, member, value, isAlias, dial, stateMember, openFallback: tok.fallback === true };
       }
     }
   }
@@ -147,7 +148,9 @@ export function p2_unknownWord(parsed: Parsed[]): Issue[] {
 
 // --- P8: state entailment (category-dispatched), instance form ---
 // backing = the set of platform truths present on the element (caller supplies)
-export function p8_stateEntailment(parsed: Parsed[], backing: Set<string>): Issue[] {
+// skipTargets = raw words another predicate (P6) already gave a more specific diagnosis for —
+// suppresses the redundant "none present" complaint so authors get one clear fix, not two.
+export function p8_stateEntailment(parsed: Parsed[], backing: Set<string>, skipTargets: Set<string> = new Set()): Issue[] {
   const out: Issue[] = [];
   for (const p of parsed) {
     const sm = p.stateMember;
@@ -155,6 +158,8 @@ export function p8_stateEntailment(parsed: Parsed[], backing: Set<string>): Issu
     // skip a malformed enumerated word (no valid value) — P4 owns that diagnosis;
     // complaining about backing for a not-well-formed word is noise.
     if (sm.arity === "enumerated" && p.value === undefined) continue;
+    // skip a word P6 already flagged more specifically (arity-misuse) — same noise principle.
+    if (skipTargets.has(p.raw)) continue;
     if (sm.stateCategory === "instance") {
       const set = sm.entails ?? [];
       if (!set.length) continue;
@@ -206,6 +211,37 @@ export function p8b_relationalEntailment(parsed: Parsed[], ctx: LintContext): Is
   return out;
 }
 
+// --- P10: divider/wrap interaction (warn) ---
+// `divided` draws a line BETWEEN children using native gap-decoration, which assumes children
+// stay in authored order. Composing it with wrapping (`wrap-allowed`/`wrap-reverse`) risks the
+// line landing in the wrong place, or not rendering, once children can reflow or visually
+// reorder. Not an error — a legitimate combination — but the author should verify the degrade
+// path (must fall back to no divider, never mis-render). Global check, not scope-bucketed: the
+// hazard exists whenever both are true for an element regardless of which scope authored them.
+const WRAP_RISK_WORDS = new Set(["wrap-allowed", "wrap-reverse"]);
+export function p10_dividerWrap(parsed: Parsed[]): Issue[] {
+  const hasDivided = parsed.some((p) => p.axis === "divider" && p.raw === "divided");
+  if (!hasDivided) return [];
+  const risky = parsed.find((p) => p.axis === "wrapping" && WRAP_RISK_WORDS.has(p.raw));
+  if (!risky) return [];
+  return [{ level: "warn", rule: "divider-wrap",
+    msg: `'divided' with '${risky.raw}' — the between-children line assumes authored order; verify it degrades to no divider rather than mis-rendering once children wrap or reorder.` }];
+}
+
+// --- P3: open vocabulary admits only its stated parameter (bad-parameter) ---
+// A word can recognize an open/parametric axis's SHAPE (its prefix) without its VALUE being
+// sanctioned — `grow-abc` looks like m2's grow-N dial but "abc" isn't a non-negative integer;
+// `basis-exact-240` looks like m3's parametric member but "240" isn't a §5.1 size step (raw
+// px is OUT in v0). These match a dedicated `fallback` token (registry.ts), giving them a more
+// specific diagnosis than falling through to P2 `unknown-word` — the shape was right, the
+// parameter wasn't.
+export function p3_badParameter(parsed: Parsed[]): Issue[] {
+  return parsed.filter((p) => p.openFallback).map((p) => ({
+    level: "error" as const, rule: "bad-parameter",
+    msg: `'${p.raw}' has a recognized shape on axis '${p.axis}' but its value isn't a sanctioned parameter — no new words, only new sanctioned values (P3).`,
+  }));
+}
+
 // --- P4: enumerated arity must carry a value from its closed set ---
 // An enumerated state member must be written WITH a value drawn from enumValues.
 // The parser captures a valid value (Parsed.value set) via the valid-value token;
@@ -243,7 +279,7 @@ export function p6_arityMisuse(parsed: Parsed[], backing: Set<string>): Issue[] 
     if (!sm || sm.arity !== "binary") continue;
     // (b) binary word standing in for a tri-state truth that has its own word
     if (sm.word === "selected" && (backing.has("aria-checked=mixed") || backing.has(":indeterminate")))
-      out.push({ level: "error", rule: "arity-misuse",
+      out.push({ level: "error", rule: "arity-misuse", target: p.raw,
         msg: `'selected' with a mixed/indeterminate backing — use the dedicated word 'checked-mixed'.` });
   }
   return out;
@@ -251,13 +287,17 @@ export function p6_arityMisuse(parsed: Parsed[], backing: Set<string>): Issue[] 
 
 export function lint(classString: string, backing = new Set<string>(), ctx: LintContext = {}): Issue[] {
   const parsed = classString.trim().split(/\s+/).filter(Boolean).map(parseWord);
+  const p6Issues = p6_arityMisuse(parsed, backing);
+  const p6Targets = new Set(p6Issues.map((i) => i.target).filter((t): t is string => !!t));
   return [
     ...p2_unknownWord(parsed),
     ...p1_oneWordPerAxisPerScope(parsed),  // m2 alias/dial rules folded in (was P5)
+    ...p3_badParameter(parsed),
     ...p4_enumArity(parsed),
-    ...p6_arityMisuse(parsed, backing),
-    ...p8_stateEntailment(parsed, backing),
+    ...p6Issues,
+    ...p8_stateEntailment(parsed, backing, p6Targets),
     ...p8b_relationalEntailment(parsed, ctx),
+    ...p10_dividerWrap(parsed),
   ];
 }
 
@@ -280,7 +320,14 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     { s: "grow-1", expect: "ok", why: "single dial" },
     // m3 / m5 — closed-with-parametric-member
     { s: "basis-exact-md", expect: "ok", why: "parametric member, valid token" },
-    { s: "basis-exact-240", expect: "fail", why: "raw px OUT in v0" },
+    { s: "basis-exact-240", expect: "fail", why: "raw px OUT in v0 — now P3 bad-parameter, not P2 unknown-word (review priority, this session)" },
+    // P3 — bad-parameter across the other open/parametric axes
+    { s: "grow-3", expect: "ok", why: "valid parameter" },
+    { s: "grow-abc", expect: "fail", why: "P3: shape recognized (grow-), value not a sanctioned integer" },
+    { s: "span-3", expect: "ok", why: "valid parameter, under grid" },
+    { s: "span-abc", expect: "fail", why: "P3: shape recognized (span-), value not a sanctioned integer" },
+    { s: "min-width-sm", expect: "ok", why: "valid parameter" },
+    { s: "min-width-huge", expect: "fail", why: "P3: shape recognized (min-width-), value not a sanctioned size step" },
     { s: "basis-content", expect: "ok", why: "closed member" },
     { s: "basis-content basis-exact-md", expect: "fail", why: "two members of one closed axis" },
     { s: "grid span-all", expect: "ok", why: "contextual member under grid" },
@@ -292,7 +339,18 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     { s: "selectable", expect: "ok", why: "capability entails nothing" },
     { s: "stretchy", expect: "fail", why: "P2 coined" },
     { s: "modal", expect: "ok", why: "top-layer mechanism" },
+    // sticky collision fixed (review this session): position-mode now prefixed, no longer
+    // shadowed by z-scale's tier-2 'sticky' rung
+    { s: "position-sticky", expect: "ok", why: "position-mode, unambiguous after prefixing" },
+    { s: "sticky", expect: "ok", why: "resolves to z-scale only now — position-mode no longer has a bare 'sticky'" },
+    { s: "position-sticky sticky", expect: "ok", why: "different axes (position-mode vs z-scale), compose freely" },
     { s: "grid padding-comfortable selectable selection-subtle", backing: [], expect: "ok" },
+    // P10 — divider/wrap interaction (review priority, this session)
+    { s: "divided wrap-allowed", expect: "warn", why: "P10: between-children line + wrapping is a real hazard, not an error" },
+    { s: "divided wrap-reverse", expect: "warn", why: "P10: reversed order is the same hazard as wrapping" },
+    { s: "divided wrap-prevent", expect: "ok", why: "no wrapping risk — order can't change" },
+    { s: "divided", expect: "ok", why: "divided alone, no wrap word present" },
+    { s: "wrap-allowed", expect: "ok", why: "wrapping alone, no divider to misplace" },
     // sub-dial axes now compose (review priority 1)
     { s: "align-center justify-between", expect: "ok", why: "different sub-dials (align-items vs justify-content)" },
     { s: "align-center align-start", expect: "fail", why: "two values on the align sub-dial" },
@@ -327,7 +385,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     { s: "sorted-ascending", backing: ["aria-sort=descending"], expect: "fail", why: "attribute present with the WRONG value" },
     { s: "current-page", backing: ["aria-current=step"], expect: "fail", why: "attribute present with a different valid-but-wrong enum value" },
     // P6 — arity misuse
-    { s: "selected", backing: ["aria-checked=mixed"], expect: "fail", why: "P6: mixed backing → use checked-mixed" },
+    { s: "selected", backing: ["aria-checked=mixed"], expect: "fail", why: "P6: mixed backing → use checked-mixed (P8 suppressed, no double-diagnosis)" },
     { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the dedicated tri-state word" },
     // P8-relational — inverted entailment (backing on the container)
     { s: "active-descendant", ctx: { elementId: "opt-3", containerAttrs: { "aria-activedescendant": "opt-3" } }, expect: "ok", why: "container points at this element" },

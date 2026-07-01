@@ -40,6 +40,15 @@ word you cannot point to in `members` or derive from a `parameter` pattern.
 
 ## 0. How a class string is validated  ‹SHARED›
 
+**Precondition, checked once at the registry level, not per string: P0 token uniqueness.** Every
+word in the finite/closed vocabulary must resolve to exactly one axis. `registry.ts` exports
+`checkTokenUniqueness()`, run via `npx tsx registry.ts`; it fails the process (non-zero exit) if any
+word matches more than one axis's tokens. This isn't a per-string lint rule — an ambiguous word
+doesn't error at validation time, it silently resolves to whichever axis is listed first in
+`REGISTRY`, permanently shadowing the other axis's meaning of that word. P0 catches the authoring bug
+before it reaches a class string at all. (Caught a real collision this session: `sticky` matched both
+`z-scale` and `position-mode`; fixed by prefixing `position-mode`'s members.)
+
 A class string is a set of words. Validation is three passes, in order:
 
 1. **Parse** each word to `(axis, member, value?)` against the registry (§2). A word that resolves to
@@ -73,6 +82,10 @@ interface Token {
   pattern: RegExp;
   shape: string;                        // human label, e.g. "gap-<density>" or "grow-N"
   valueDomain?: "density-step" | "size-step" | "breakpoint-step" | "integer-≥0" | "enum";
+  // P3: this token recognizes the axis's WORD SHAPE but not a sanctioned parameter value
+  // (`grow-abc` after `grow-<digits>`). Listed after the valid-value token; a word resolving
+  // via a fallback token gets `bad-parameter`, not P2 `unknown-word`.
+  fallback?: boolean;
 }
 ```
 
@@ -359,16 +372,23 @@ coined CSS property.
 ### 2.3 MOTION (§4.3)
 
 #### motion-micro (the atom, member-level)
-- role: member · signature: set-with-exclusivity · vocabulary: mixed · regime: free
-- parameters: `duration` (open skin scale) · `delay` (open skin scale) · `easing` (closed) · `direction` (closed)
+- role: member · signature: set-with-exclusivity · vocabulary: **closed** · regime: free — the
+  registry's `Vocabulary` type is only `"closed" | "open"` (no third primitive); duration/delay are
+  NOT axis members, they're **external §5.1 skin-scale references** the emitted CSS reads, so they
+  don't enter this axis's own vocabulary classification. (Was documented as `mixed` in an earlier
+  revision — corrected this session; see review.)
+- parameters: `duration` (open skin scale, external) · `delay` (open skin scale, external) ·
+  `easing` (closed, this axis) · `direction` (closed, this axis)
 - easing (closed): `decelerate` `accelerate` `standard` `emphasized`
 - direction (closed): `symmetric` `asymmetric`
 - controls: `transition-duration` `transition-timing-function` `transition-delay`
 - mustNeverTouch: `animation` `transform` `background`
 
 #### motion-macro (container-operation over micro edges)
-- role: container · signature: container-operation · vocabulary: mixed · regime: free
-- parameters: `stagger` (open skin scale) · `choreography` (closed)
+- role: container · signature: container-operation · vocabulary: **closed** · regime: free — same
+  correction as motion-micro: `stagger`'s magnitude is an external skin-scale reference, not a member
+  of this axis.
+- parameters: `stagger` (open skin scale, external) · `choreography` (closed, this axis)
 - choreography (closed): `together` `sequence` `cascade`
 - controls: `--stagger` (NOT raw `transition-delay`; composed additively — §10.1 collision 1)
 - mustNeverTouch: `transition-duration` `transition-delay` `transform`
@@ -597,10 +617,18 @@ On a `closed` axis, any word not in `members` is rejected.
 - A missing distinction on a closed axis is either a composition across axes or a gap to report
   (`[RULING]`), never a coined word.
 
-### P3 — open vocabulary admits only its stated parameter
-On an `open` axis, only values matching `parameter.pattern` are admitted; no new *words*, only new
-sanctioned *values*.
-- `grow-3` ok; `growish` → **error** `bad-parameter`.
+### P3 — open vocabulary admits only its stated parameter  ‹IMPLEMENTED›
+On an open/parametric axis, a word matching the axis's *shape* (its dash-prefix) but not a
+*sanctioned value* gets a dedicated `bad-parameter` diagnosis, via a `fallback` token listed after
+the valid-value token (same ordering discipline as the enumerated-state fallback tokens — valid
+matches win first). This is deliberately narrower than "any word that merely resembles the concept":
+a word with no structural match at all (no dash-prefix) still correctly falls through to P2
+`unknown-word` — P3 only fires when the *shape* is right and the *value* isn't.
+- `grow-3` → **ok**. `grow-abc` → **error** `bad-parameter` (shape `grow-` recognized, "abc" isn't a
+  sanctioned non-negative integer). `growish` (no dash) → **error** `unknown-word` (P2), not P3 — the
+  shape isn't recognized at all.
+- Same mechanism on `basis-exact-<size>` (`basis-exact-240` → `bad-parameter`, raw px is OUT in v0),
+  `span-<N>`/`row-span-<N>`, and `constraints`' four dials (`min-width-huge` → `bad-parameter`).
 
 ### P4 — enumerated arity must carry a value from its closed set  ‹IMPLEMENTED›
 A state with `arity === "enumerated"` must be written WITH a value from `enumValues`. The parser
@@ -651,6 +679,8 @@ A grammar word touching a `must-never-touch` property (e.g. a layout word emitti
 ### P8 — state entailment (category-dispatched)  ‹IMPLEMENTED›
 - `instance`, binary: requires *one of* its backing set present on the element. None present →
   **error** `state-entailment` (e.g. `selected` with no `aria-selected`/`aria-pressed`/`:checked`).
+  Suppressed for a word P6 already gave a more specific diagnosis (`selected` with mixed backing
+  reports only `arity-misuse`, not also a redundant `state-entailment` — one fix, not two).
 - `instance`, enumerated (**value-aware**, this revision): requires *one of* its backing set present
   **with the specific value the word carries** — `sorted-ascending` requires `aria-sort=ascending` on
   the element, not merely `aria-sort` present with any value (or a different one). Backing must be
@@ -670,9 +700,12 @@ A grammar word touching a `must-never-touch` property (e.g. a layout word emitti
 3. Aliases are **earned by recurrence**, never invented — codified only after a primitive combination
    demonstrably recurs in real use.
 
-### P10 — divider/wrap interaction (warn)
-`divided` composed with `wrap-allowed` (or any `order`/reversed member) where native gap-decoration is
-unavailable → **warn** `divider-wrap`: must degrade to no divider, not mis-render.
+### P10 — divider/wrap interaction (warn)  ‹IMPLEMENTED›
+`divided` composed with `wrap-allowed` or `wrap-reverse` → **warn** `divider-wrap`: the
+between-children line assumes authored order, so verify it degrades to no divider rather than
+mis-rendering once children can wrap or reverse. `wrap-prevent` is unaffected (order can't change).
+Global check, not scope-bucketed. (There's no `order`/reordering axis in the registry yet to extend
+this to — if one is added, it belongs in the same check.)
 
 ---
 
@@ -708,21 +741,34 @@ legitimately carry `expandable` (negotiated) and `self-center` (free) at once.
 
 ## 8. Reference: what the linter implements  ‹SHARED›
 
-**`lint.ts`** (runs under `npx tsx lint.ts`; smoke suite 56/56) implements, today:
+**`lint.ts`** (runs under `npx tsx lint.ts`; smoke suite 70/70) implements, today:
+- **P0** — token uniqueness (registry-build invariant, not per-string): every closed/finite word must
+  resolve to exactly one axis. Run via `npx tsx registry.ts` (`checkTokenUniqueness()`), exits non-zero
+  on any collision. Caught a real `sticky` collision between `z-scale` and `position-mode` this
+  session — fixed by prefixing `position-mode`'s members (`position-static`, `position-sticky`, …).
 - **P1** — one word per axis per condition scope, including the sub-dial refinement (m2, alignment,
   padding/margin, overflow, constraints) and per-group state exclusivity (`one`/`many` + pairwise
   `conflicts` as errors + pairwise `implies` as `warn`-level redundancy notices).
 - **P2** — unknown/coined word.
+- **P3** — bad-parameter: a word matching an open/parametric axis's *shape* (prefix) with an
+  unsanctioned *value* (`grow-abc`, `basis-exact-240`, `span-abc`, `min-width-huge`) gets a specific
+  `bad-parameter` diagnosis via a dedicated `fallback` token, rather than falling through to P2's
+  coarser `unknown-word`.
 - **P4** — enumerated arity (missing value vs value-not-in-set), via per-member valid + fallback tokens.
-- **P6** — arity misuse, form (b): a binary word with a tri-state backing that has its own word.
+- **P6** — arity misuse, form (b): a binary word with a tri-state backing that has its own word. P6's
+  target word is now suppressed from P8 (see below) so an author gets one diagnosis, not two.
 - **P8 instance** — instance-state entailment (set-valued, Law-6b disjunction), **value-aware for
-  enumerated states** (checks `attr=value`, not just attribute presence), suppressed for malformed enums.
+  enumerated states** (checks `attr=value`, not just attribute presence), suppressed for malformed
+  enums and for any word P6 already gave a more specific diagnosis (`selected` with mixed backing
+  reports only `arity-misuse`, not also `state-entailment`).
 - **P8 relational** — inverted entailment against a container context (`LintContext`); skipped, not
   failed, when no context is supplied.
+- **P10** — divider/wrap interaction: `divided` composed with `wrap-allowed`/`wrap-reverse` emits a
+  `warn`-level `divider-wrap` notice (the between-children line assumes authored order).
 
-**Not yet implemented in `lint.ts`** (specified above; deferred): P3 parameter-domain validation as a
-distinct check, P7 dimensional-purity *from generated CSS* (the `controls` are still transcribed, not
-derived — the highest-value next step), and P10 divider/wrap warnings.
+**Not yet implemented in `lint.ts`** (specified above; deferred): P7 dimensional-purity *from
+generated CSS* (the `controls` are still transcribed, not derived — the highest-value remaining
+piece).
 
 Earlier session scripts (not committed) that mechanized parts of this spec: `full-registry.ts` (P7 over
 all axes + ownership index), `collision-analysis.ts` (the two predicate-4 collisions), `combobox-audit.ts`

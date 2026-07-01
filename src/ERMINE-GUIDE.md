@@ -179,8 +179,13 @@ The same shape covers preferences. Like the breakpoint prefixes above, these are
 whichever axis fits:
 
 ```html
-<div class="prefers-reduced-motion:no-motion">…</div>
+<div class="prefers-color-scheme-dark:selection-strong">…</div>
 ```
+
+> One honest gap: `prefers-reduced-motion` is a real condition prefix, but there isn't yet a
+> registered word for "turn motion off/down" to pair it with — motion's current words
+> (`decelerate`, `standard`, `together`, …) all still animate. Per the golden rule above, don't
+> invent one; this is a real capability gap, flagged to the maintainer rather than coined here.
 
 ---
 

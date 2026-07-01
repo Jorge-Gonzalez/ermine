@@ -195,6 +195,59 @@
 > for its one fixed value (`aria-checked=mixed`) to the variable case. Bare-attribute backing, and a
 > present-but-wrong value, both now correctly fail. Smoke suite 56/56.
 
+> **Session log (external review, third pass — token uniqueness, P3, P10, double-diagnosis,
+> vocabulary drift).** A third external review, again checked line-by-line and empirically (ran the
+> smoke harness) rather than taken on faith, found one genuine correctness bug and several smaller
+> real gaps. All fixed this revision:
+> 1. **[real bug] `sticky` token collision — `position-mode` prefixed, P0 check added.** Bare `sticky`
+>    matched BOTH `z-scale` (a tier-2 rung name) and `position-mode` (a literal CSS position value);
+>    `REGISTRY` order silently resolved it to `z-scale`, making `position: sticky` unwritable — a
+>    violation of the core "every word resolves to exactly one axis" invariant, invisible until
+>    tested. Fixed by prefixing all of `position-mode`'s members (`position-static`,
+>    `position-relative`, `position-absolute`, `position-fixed`, `position-sticky`) — chosen over
+>    renaming the z-scale rung because it also brings the axis in line with how other bare-CSS-value
+>    axes were already grammar-renamed (`overflow`'s `scroll-auto`, not raw `auto`). Added a **P0
+>    token-uniqueness check** (`checkTokenUniqueness()` in `registry.ts`, run via
+>    `npx tsx registry.ts`) as a standing invariant so this bug class can't recur silently — it tests
+>    every closed/finite word against the whole registry and fails the process (non-zero exit) on any
+>    multi-axis match. Verified the checker actually catches the bug by temporarily reintroducing it.
+> 2. **[real gap] `prefers-reduced-motion:no-motion` was never a registered word — including in the
+>    constitution's own RULING that introduced the variant-prefix syntax.** Not just a guide example;
+>    the defining RULING for environmental-state syntax (above) used `no-motion` as its worked
+>    example, and motion currently has no member representing "reduced/off" (`motion-micro`'s easing
+>    words and `motion-macro`'s choreography words all still animate). Per the grammar's own
+>    "don't invent words, flag gaps" law, this was **not** patched by coining `no-motion` — the
+>    RULING's example is now marked illustrative-of-syntax-only, the guide's example was swapped to a
+>    real word (`prefers-color-scheme-dark:selection-strong`), and the gap is flagged honestly in
+>    both places pending a real motion ruling.
+> 3. **[real drift] spec's `vocabulary: mixed` for `motion-micro`/`motion-macro` had no home in the
+>    registry's `Vocabulary` type (`"closed" | "open"` only).** Corrected the spec (not the type) per
+>    the two-primitives discipline: both motion axes are `vocabulary: closed`; duration/delay/stagger
+>    magnitudes are **external §5.1 skin-scale references** the emitted CSS reads, not members of the
+>    axis itself, so they don't enter its own vocabulary classification. Same correction echoed in
+>    this constitution's §4.3 header.
+> 4. **[UX noise] `selected` with mixed backing fired two errors for one problem.** `arity-misuse`
+>    ("use `checked-mixed`") and a redundant `state-entailment` ("no backing present") both fired for
+>    the same authored word. `Issue` gained an optional `target` field; P6 tags its issues with the
+>    target word, and P8 now skips a word already flagged by P6 — one clear fix, not two competing
+>    ones.
+> 5. **P3 (bad-parameter) and P10 (divider/wrap) implemented**, closing the smaller
+>    specified-but-unimplemented predicates. P3 uses the same "valid token first, fallback token
+>    after" ordering the enumerated-state check established: a word matching an open/parametric
+>    axis's shape (`grow-`, `basis-exact-`, `span-`/`row-span-`, the four `constraints` dials) but
+>    not a sanctioned value gets `bad-parameter`, distinct from and more specific than P2
+>    `unknown-word` — deliberately narrower than "resembles the concept": a word with no structural
+>    match at all (`growish`, no dash) still correctly falls through to P2. P10 warns when `divided`
+>    co-occurs with `wrap-allowed`/`wrap-reverse` (not `wrap-prevent`, which carries no reorder risk).
+> Smoke suite 56/56 → 70/70 (+3 position-mode, +1 P6/P8 suppression regression coverage, +6 P3,
+> +5 P10). Remaining unimplemented: **P7-from-generated-CSS only** — the highest-value piece, and now
+> the sole item left in that category. Deferred design questions raised by this review but not acted
+> on (bigger than a fix): an `effectKind` field distinguishing CSS-emitting axes from
+> platform-mechanism axes (`modal`) from lint-only axes (`selected`) from custom-property axes
+> (`selection-strong`) — tracked in `SESSION-RESUME.md`, not implemented; and a future band-order
+> warning for an inverted `constraints` pair (`min-width-lg max-width-sm`) — already flagged as a
+> `notes` TODO on the axis, still not implemented.
+
 > **Artifact manifest — what backs the "executable" claims, and its commit status.** The verification
 > this revision rests on lives in standalone scripts produced during the design session. They **run and
 > pass as described**, but — with one exception — they are **NOT yet committed to the repo suite**
@@ -1298,6 +1351,11 @@ New members enter **only** when ARIA / CSS-UI / the media-query spec adds a stat
 >   an ordinary grammar word from some axis. This mirrors the platform 1:1 (`@media`/`@container`/
 >   `@media (prefers-*)` *wrap* rules — they don't sit *on* the element), so it is Law 6-faithful: the
 >   prefix names the platform's actual at-rule, the suffix is the rule it guards.
+>   ⚠ **`no-motion` here is illustrative of the SYNTAX FORM only — it is not a registered word.**
+>   Motion currently has no member representing "reduced/off" (see §4.3: `motion-micro`'s easing
+>   words and `motion-macro`'s choreography words all still animate). Flagged by external review; this
+>   is a real capability gap, not something to coin silently — it needs its own ruling through this
+>   document before a concrete example can be given. Tracked in `SESSION-RESUME.md`.
 > - **Interaction/input states stay bare** (`hover`, `selected`, `scroll-progress`) — they *are*
 >   element conditions and compose as before. Only the **environmental** driver takes the prefix form,
 >   because only it is a rule-wrapper rather than an element-truth. (The `:hover`/`@media` split in CSS
@@ -1348,9 +1406,13 @@ All other states are element-local.
   combobox confirming audit.)* Entailment predicate is now category-dispatched.
 
 ### 4.3 — MOTION grammar (time)
-**vocabulary: mixed (RESOLVED below)** — the *easing* curve is a **closed** named vocabulary
-(Law 6, mirrored from animation tradition); the *magnitudes* (duration/delay/stagger) are **open**
-skin scales. Motion is the **arrow between two states/configs**, never a static property — defined on
+**Vocabulary looks mixed at a glance, but isn't a third primitive (RESOLVED below; spec §2.3
+corrected to match this session).** The *easing* curve is a **closed** named vocabulary (Law 6,
+mirrored from animation tradition) — that's the axis's own `vocabulary: closed`. The *magnitudes*
+(duration/delay/stagger) are **open** skin scales, but they're **external references the emitted CSS
+reads**, not members of the motion axis itself — same shape as any other axis pointing at a §5.1
+scale. So each motion axis is still cleanly `closed`; nothing here needs a `"mixed"` registry
+primitive. Motion is the **arrow between two states/configs**, never a static property — defined on
 *pairs* (states = nodes, transitions = morphisms). It sits between state and the planes: a state
 change → plane properties change → motion governs *how, over time*.
 
