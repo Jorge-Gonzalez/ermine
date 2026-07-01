@@ -156,6 +156,45 @@
 > highest-value next step — it needs a CSS *generator* stood up first, so `controls` can be derived
 > rather than transcribed), P3-as-distinct, P10.
 
+> **Session log (external review, second pass — schema fidelity, constraints, state refinement).**
+> A second external review, checked line-by-line against the actual files rather than just the smoke
+> suite, found the artifacts had drifted again in three places. All three fixed this revision:
+> 1. **Spec schema (§1 of `ERMINE-SPEC.md`) brought back into fidelity with `registry.ts`.** The prior
+>    revision's registry restructuring (`valueSpace`/`tokens`/`subDials`/`stateGroup`, etc.) was never
+>    reflected back into the spec's `AxisRecord` schema, which still showed the old flat
+>    `members`/`parameter` shape. Since the spec is the machine-consumer contract, this meant a
+>    consumer implementing it from the Markdown couldn't reproduce actual linter behavior. Rewritten as
+>    a direct rendering of the real interfaces (`Token`, `StateMember`, `Alias`, `AxisRecord`) — not a
+>    simplification; the friendlier restatement stays in the guide.
+> 2. **`constraints` axis converted to four sub-dials.** It modeled `min-width`/`max-width` as plain
+>    alternatives (`set-with-exclusivity` over a flat word set), so the ordinary case of bounding both
+>    ends of a dimension (`min-width-sm max-width-lg`) was rejected as two words on one axis — wrong;
+>    min and max form a **band**, not alternatives. Given `subDials`/`dialOf` for all four longhands
+>    (`min-width`/`max-width`/`min-height`/`max-height`), same shape as the padding/overflow
+>    generalization above. Also closed a latent gap where `controls` already listed
+>    `min-height`/`max-height` but no token could ever emit those words.
+> 3. **State groups gained an `implies` (refinement) relation, distinct from `conflicts`.**
+>    `focus`/`focus-visible` had been modeled as a hard conflict pair in the prior revision's state
+>    rework — wrong; `:focus-visible` is a platform *subset* of `:focus`, not an alternative, so writing
+>    both is redundant, not incompatible. Same shape applies to `user-invalid`/`out-of-range` against
+>    `invalid` (platform-typical, noted as such rather than asserted as guaranteed). `stateGroup` gained
+>    `implies?: [string, string][]`; the linter now emits a `warn`-level `state-redundant` notice for an
+>    implies pair present together, rather than either a hard error or silence. This is the first real
+>    use of the `Issue.level: "warn"` distinction — the smoke harness was extended to track `warn`
+>    separately from `fail` rather than collapsing every issue into a binary ok/fail.
+> Smoke suite 56/56 (was 47/47 before this pass; +3 for constraints, +3 for implies, +3 for
+> value-aware entailment). Remaining unimplemented: P7-from-generated-CSS (still the highest-value
+> next step), P3-as-distinct, P10.
+
+> **Session log (value-aware enum entailment — review priority 6, this revision).** P8 instance
+> entailment for enumerated states previously checked only that a backing attribute *existed*
+> (`sorted-ascending` was satisfied by backing `aria-sort` alone, any value or none), not that its
+> *value* matched the authored word. Fixed: when an enumerated word carries a captured value (P4
+> already confirmed it's well-formed), P8 now requires the backing set to contain the specific
+> `attr=value` pair (`aria-sort=ascending`), generalizing the convention `checked-mixed` already used
+> for its one fixed value (`aria-checked=mixed`) to the variable case. Bare-attribute backing, and a
+> present-but-wrong value, both now correctly fail. Smoke suite 56/56.
+
 > **Artifact manifest — what backs the "executable" claims, and its commit status.** The verification
 > this revision rests on lives in standalone scripts produced during the design session. They **run and
 > pass as described**, but — with one exception — they are **NOT yet committed to the repo suite**
@@ -1190,7 +1229,7 @@ truths any-one of which satisfies entailment. Resting default per group is the u
 **selection group** *(interaction)* — resting = unselected
 - `selectable` (capability · distributes condition)
 - `selected` (binary · {`aria-selected` ∨ `aria-pressed` ∨ `:checked`}) — Law 6b merge
-- `checked-mixed` (enumerated · `aria-checked=mixed` / `:indeterminate`) — the tri-state value
+- `checked-mixed` (binary · `aria-checked=mixed` / `:indeterminate`) — the tri-state value
   `selected` can't hold; the one place the selection condition is enumerated, not binary
 - `current` (enumerated · `aria-current` ∈ {page, step, location, date, time, true}) — "the one in
   the set you're at"; nav/stepper/calendar. Distinct from `selected` (Law 5: "where you are" ≠

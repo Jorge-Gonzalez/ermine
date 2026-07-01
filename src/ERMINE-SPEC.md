@@ -61,37 +61,113 @@ A class string is a set of words. Validation is three passes, in order:
 
 ## 1. Registry record schema  ‹SHARED›
 
-Each axis is one record:
+This section is a **direct rendering of the real `registry.ts` interfaces** — not a simplification.
+(A friendlier restatement belongs in the guide, not here; if you're implementing a validator or
+generator from this spec, this is the contract you must match.)
+
+A `Token` is what the linter actually matches against an authored word — distinct from the
+conceptual `valueSpace`, which is the scale/word set the grammar *reasons* in:
+
+```ts
+interface Token {
+  pattern: RegExp;
+  shape: string;                        // human label, e.g. "gap-<density>" or "grow-N"
+  valueDomain?: "density-step" | "size-step" | "breakpoint-step" | "integer-≥0" | "enum";
+}
+```
+
+A `StateMember` is one word inside a state-group axis:
+
+```ts
+interface StateMember {
+  word: string;
+  arity: "binary" | "enumerated" | "continuous";
+  driver: "interaction" | "input" | "environmental";
+  stateCategory: "capability" | "instance" | "conditioned-skin" | "relational";
+  entails?: string[];                   // backing SET — any-one satisfies (Law 6b disjunction)
+  relationalBacking?: { containerAttr: string };  // relational only
+  enumValues?: string[];                // arity === "enumerated": the closed value set
+  note?: string;
+}
+```
+
+An `Alias` is a single word that fixes a whole open axis at once (the m2 "corner" mechanism —
+`elastic` = `grow-1 shrink-1`), mutually exclusive with every other word on that axis:
+
+```ts
+interface Alias {
+  word: string;
+  expands: string;                      // canonical full expansion, e.g. "grow-1 shrink-1"
+}
+```
+
+The axis record itself:
 
 ```ts
 interface AxisRecord {
-  axis: string;                 // unique axis id
+  axis: string;                         // unique id; state groups use "state.<group>"
   sibling: "layout" | "state" | "motion" | "layering" | "skin";
   role: "container" | "member" | "self" | "none";
   signature: "set-with-exclusivity" | "ordered-chain"
            | "container-operation" | "negotiated-field";
   vocabulary: "closed" | "open";        // open = admits a stated parameter only
   regime: "free" | "negotiated";
-  members: string[];                    // the words; in order if a scale
-  default: string | null;               // unmarked value
-  controls: string[];                   // concrete CSS properties it emits
+
+  valueSpace: readonly string[];        // conceptual member/value space (the scale/word set)
+  tokens: Token[];                      // emitted tokens — matched against real class strings
+
+  default: string | null;
+  controls: string[];                   // concrete CSS properties (transcribed; see §7 trust boundary)
   mustNeverTouch: string[];             // explicit out-of-scope ("*" = everything else)
-  parameter?: { pattern: RegExp };      // open axes only: the sanctioned value form
-  // state-only:
-  stateCategory?: "capability" | "instance" | "conditioned-skin" | "relational";
-  arity?: "binary" | "enumerated" | "continuous";
-  driver?: "interaction" | "input" | "environmental";
-  enumValues?: string[];                // arity === "enumerated": the closed value set
-  entails?: string[];                   // instance/relational: backing SET, any-one satisfies
+
+  // OPEN axes with independent sub-dials (e.g. m2 grow/shrink; constraints min/max-width/height).
+  // Parametric tokens on DIFFERENT dials compose; two values for the SAME dial conflict.
+  subDials?: string[];
+  dialOf?: (member: string) => string | null;
+
+  // OPEN axes may carry whole-axis aliases (m2 corners): a complete value, conflicts with any
+  // other word on the axis.
+  aliases?: Alias[];
+  // Some axes' whole-axis form is a PATTERN, not a fixed word (padding's `padding-<density>`
+  // vs. the per-side dials). aliasMatch tags such a word as whole-axis for P1.
+  aliasMatch?: (word: string) => boolean;
+
+  // CLOSED axes whose member set includes PARAMETRIC members — a fixed word carrying an open
+  // value (m3 `basis-exact-<size>`, m5 `span-<N>`). `open` at MEMBER scope inside a `closed`
+  // axis, same mechanism as enumerated states — not a third vocabulary primitive. Documentation/
+  // codegen only; the linter treats these as ordinary members (closed membership, validated value).
+  parametricMembers?: string[];
+
+  // state-group axes only:
+  stateGroup?: {
+    exclusivity: "one" | "many";        // "one" = alternatives; "many" = co-present predicates
+    conflicts?: [string, string][];     // pairs that cannot co-occur even when exclusivity="many"
+    // REFINEMENT, not conflict: [narrower, wider] — the narrower state is a platform SUBSET of
+    // the wider one (`:focus-visible` ⊂ `:focus`). Writing both is never an error, only redundant.
+    implies?: [string, string][];
+    members: StateMember[];
+  };
+
+  // environmental scope-prefix axis only:
+  scopePrefix?: boolean;
+
+  notes?: string;
 }
 ```
 
 Field rules:
 - `vocabulary` default expectation: numeric ratio/count/degree → **open**; perceptual or
   platform-mirrored (fixed scale, ARIA state set, named z-ladder) → **closed**.
-- `entails` is a **set** (any-one satisfies), supporting Law 6b merges.
+- `entails` (on `StateMember`) is a **set** (any-one satisfies), supporting Law 6b merges. For an
+  `enumerated` member, entailment is checked against `attr=value` (the specific captured value), not
+  bare attribute presence — see P8 in §5.
 - `controls` lists must eventually be *generated from shipped CSS*, not transcribed; until then treat
   property-disjointness checks as indicative, not authoritative (see §7).
+- State groups are first-class axes (`axis: "state.<group>"`) — the same P1 one-word-per-axis
+  machinery applies to them via `stateGroup.exclusivity`/`conflicts`/`implies`, not a separate code
+  path. `conflicts` is for genuinely incompatible pairs (hard error); `implies` is for a narrower
+  state that's a platform subset of a wider one — co-occurrence is redundant, not incompatible, and
+  the linter surfaces it as a `warn`, not an error.
 
 ---
 
@@ -303,9 +379,12 @@ coined CSS property.
 Each **group below is a first-class axis** with id `state.<group>` (e.g. `state.selection`).
 **Within-group exclusivity is per-group, not global:** most groups are **`many`** (members are
 independent predicates that co-occur — `hover`+`focus`, `required`+`invalid`), carrying **pairwise
-`conflicts`** for the specific pairs that *are* mutually exclusive (`focus`/`focus-visible`,
-`selected`/`checked-mixed`); a few groups are **`one`** (genuinely alternative — `disclosure`). P1
-fires either on a second member in a `one` group, or on a conflicting pair in a `many` group.
+`conflicts`** for pairs that are genuinely mutually exclusive (`selected`/`checked-mixed`), and
+**pairwise `implies`** for pairs where the narrower is a platform *subset* of the wider
+(`focus-visible`→`focus`; `user-invalid`→`invalid`, `out-of-range`→`invalid`) — co-occurrence there is
+redundant, not incompatible, so P1 emits a `warn`, not an error. A few groups are **`one`** (genuinely
+alternative — `disclosure`). P1 fires an error either on a second member in a `one` group, or on a
+conflicting pair in a `many` group; it emits a `warn` on an implies pair present together.
 Across groups: always free composition — `hover selected invalid` is fine. State controls **nothing**
 (`controls: []`); it carries the *condition only* and composes via `state × plane → rule`.
 
@@ -313,9 +392,10 @@ Each member: `(arity · driver · stateCategory · backing-set)`. Enumerated mem
 a **separate token group** (`current-page` parses to word `current` + value `page`), so the value is
 available for P4 (enumerated-arity) checking.
 
-**focus group** (interaction) — resting none · **`many`**, conflict {`focus`,`focus-visible`}
+**focus group** (interaction) — resting none · **`many`**, implies {`focus-visible`→`focus`}
 - `hover` (binary · interaction · instance · `:hover`)
-- `focus` / `focus-visible` (binary · interaction · instance · `:focus` / `:focus-visible`)
+- `focus` / `focus-visible` (binary · interaction · instance · `:focus` / `:focus-visible`) —
+  `focus-visible` is a platform subset of `focus`; both present is redundant, not a conflict
 - `active` (binary · interaction · instance · `:active`) — `pressed` folded into `selected` (Law 6b)
 
 **selection group** (interaction) — resting unselected · **`many`**, conflict {`selected`,`checked-mixed`}
@@ -333,11 +413,15 @@ available for P4 (enumerated-arity) checking.
 - `expanded` (binary · interaction · instance · `aria-expanded`) — in-place; resting collapsed
 - `open` (binary · interaction · instance · {`[open]` ∨ `:open` ∨ `:popover-open`}) — top-layer; resting closed
 
-**validity group** (interaction) — resting valid/writable · **`many`** (required + invalid co-occur)
+**validity group** (interaction) — resting valid/writable · **`many`**, implies
+{`user-invalid`→`invalid`, `out-of-range`→`invalid`}
 - `invalid` (binary · interaction · instance · {`:invalid` ∨ `aria-invalid`})
-- `user-invalid` (binary · interaction · instance · `:user-invalid`)
+- `user-invalid` (binary · interaction · instance · `:user-invalid`) — platform-typical subset of
+  `invalid` (fires only after user interaction, where `:invalid` already applies)
 - `required` (binary · interaction · instance · {`:required` ∨ `aria-required`})
-- `out-of-range` (binary · interaction · instance · {`:out-of-range` ∨ `aria-valuemin`/`max` breach})
+- `out-of-range` (binary · interaction · instance · {`:out-of-range` ∨ `aria-valuemin`/`max` breach}) —
+  platform-typical subset of `invalid` (browsers generally also flag out-of-range as `:invalid`,
+  absent `novalidate`)
 
 **sort group** (interaction) — resting unsorted
 - `sorted` (enumerated · interaction · instance · `aria-sort` ∈ {none, ascending, descending})
@@ -496,12 +580,16 @@ then apply one-word-per-axis within each bucket.
 - `viewport-md:horizontal viewport-md:vertical` → **error** `one-word-per-axis` (same axis, same scope).
 - Only **environmental** states open scopes; bare interaction/input states do not.
 - **Sub-dial refinement:** axes with sub-dials (m2 grow/shrink, alignment align/justify, padding/margin
-  inline/block, overflow x/y) admit one value *per dial*, since dials write disjoint CSS properties:
-  `align-center justify-between` and `padding-inline-relaxed padding-block-snug` compose; two values on
+  inline/block, overflow x/y, constraints min/max-width/min/max-height) admit one value *per dial*,
+  since dials write disjoint CSS properties: `align-center justify-between` and
+  `padding-inline-relaxed padding-block-snug` and `min-width-sm max-width-lg` compose; two values on
   one dial conflict. A **whole-axis** word (an m2 corner, `padding-<density>`, `scroll-auto`/`clip`)
-  writes every dial, so it is mutually exclusive with any other word on the axis.
-- **State-group refinement:** within a `one` group, a second member conflicts; within a `many` group,
-  only a declared `conflicts` pair conflicts (members otherwise co-occur).
+  writes every dial, so it is mutually exclusive with any other word on the axis. (Constraints has no
+  whole-axis word — there's no single term that sets all four bounds at once.)
+- **State-group refinement:** within a `one` group, a second member is an **error**. Within a `many`
+  group, a declared `conflicts` pair is an **error**; a declared `implies` pair (the narrower state is
+  a platform subset of the wider) present together is a **`warn`**, not an error — it's redundant, not
+  incompatible. Everything else in a `many` group co-occurs silently.
 
 ### P2 — closed vocabulary admits no new members
 On a `closed` axis, any word not in `members` is rejected.
@@ -561,9 +649,13 @@ A grammar word touching a `must-never-touch` property (e.g. a layout word emitti
 **error** `plane-mix`. This is also the decomposition test: split a class that mixes planes.
 
 ### P8 — state entailment (category-dispatched)  ‹IMPLEMENTED›
-- `instance`: requires *one of* its backing set present on the element. None present →
+- `instance`, binary: requires *one of* its backing set present on the element. None present →
   **error** `state-entailment` (e.g. `selected` with no `aria-selected`/`aria-pressed`/`:checked`).
-  Suppressed for a malformed enum word (P4 owns that).
+- `instance`, enumerated (**value-aware**, this revision): requires *one of* its backing set present
+  **with the specific value the word carries** — `sorted-ascending` requires `aria-sort=ascending` on
+  the element, not merely `aria-sort` present with any value (or a different one). Backing must be
+  supplied as `attr=value` pairs for enumerated checks; bare-attribute backing no longer satisfies.
+  Suppressed for a malformed enum word (P4 owns that diagnosis).
 - `relational` ‹IMPLEMENTED›: requires the **container** to point at this element's id via the member's
   `relationalBacking.containerAttr` (e.g. listbox `aria-activedescendant` === this option's id).
   Otherwise → **error** `state-entailment-relational`. Needs a `LintContext` (`{elementId,
@@ -616,13 +708,15 @@ legitimately carry `expandable` (negotiated) and `self-center` (free) at once.
 
 ## 8. Reference: what the linter implements  ‹SHARED›
 
-**`lint.ts`** (runs under `npx tsx lint.ts`; smoke suite 47/47) implements, today:
+**`lint.ts`** (runs under `npx tsx lint.ts`; smoke suite 56/56) implements, today:
 - **P1** — one word per axis per condition scope, including the sub-dial refinement (m2, alignment,
-  padding/margin, overflow) and per-group state exclusivity (`one`/`many` + pairwise `conflicts`).
+  padding/margin, overflow, constraints) and per-group state exclusivity (`one`/`many` + pairwise
+  `conflicts` as errors + pairwise `implies` as `warn`-level redundancy notices).
 - **P2** — unknown/coined word.
 - **P4** — enumerated arity (missing value vs value-not-in-set), via per-member valid + fallback tokens.
 - **P6** — arity misuse, form (b): a binary word with a tri-state backing that has its own word.
-- **P8 instance** — instance-state entailment (set-valued, Law-6b disjunction), suppressed for malformed enums.
+- **P8 instance** — instance-state entailment (set-valued, Law-6b disjunction), **value-aware for
+  enumerated states** (checks `attr=value`, not just attribute presence), suppressed for malformed enums.
 - **P8 relational** — inverted entailment against a container context (`LintContext`); skipped, not
   failed, when no context is supplied.
 

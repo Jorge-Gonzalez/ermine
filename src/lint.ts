@@ -104,18 +104,27 @@ export function p1_oneWordPerAxisPerScope(parsed: Parsed[]): Issue[] {
     }
 
     // state-group axis: exclusivity is "one" (alternatives) or "many" (co-present
-    // predicates, with optional pairwise conflicts).
+    // predicates, with optional pairwise conflicts and optional implies/refinement pairs).
     if (ax?.stateGroup) {
       const sg = ax.stateGroup;
       const present = words.map((w) => w.stateMember?.word ?? w.member).filter(Boolean) as string[];
       if (sg.exclusivity === "one" && words.length > 1) {
         out.push({ level: "error", rule: "one-word-per-axis",
           msg: `'${words.map((w) => w.raw).join("', '")}' — only one '${words[0].axis}' state at a time (mutually exclusive group).` });
-      } else if (sg.conflicts?.length) {
-        for (const [a, b] of sg.conflicts)
-          if (present.includes(a) && present.includes(b))
-            out.push({ level: "error", rule: "state-conflict",
-              msg: `'${a}' and '${b}' cannot both apply on '${words[0].axis}'.` });
+      } else {
+        if (sg.conflicts?.length)
+          for (const [a, b] of sg.conflicts)
+            if (present.includes(a) && present.includes(b))
+              out.push({ level: "error", rule: "state-conflict",
+                msg: `'${a}' and '${b}' cannot both apply on '${words[0].axis}'.` });
+        // implies (refinement, not conflict): writing both the narrower and the wider
+        // word is never an error — the narrower is a platform subset of the wider — but
+        // it's redundant, so surface it as a warning rather than staying silent.
+        if (sg.implies?.length)
+          for (const [narrower, wider] of sg.implies)
+            if (present.includes(narrower) && present.includes(wider))
+              out.push({ level: "warn", rule: "state-redundant",
+                msg: `'${narrower}' already implies '${wider}' on '${words[0].axis}' — writing both is redundant, not conflicting.` });
       }
       continue;
     }
@@ -148,9 +157,21 @@ export function p8_stateEntailment(parsed: Parsed[], backing: Set<string>): Issu
     if (sm.arity === "enumerated" && p.value === undefined) continue;
     if (sm.stateCategory === "instance") {
       const set = sm.entails ?? [];
-      if (set.length && !set.some((b) => backing.has(b)))
+      if (!set.length) continue;
+      if (sm.arity === "enumerated" && p.value !== undefined) {
+        // Value-aware entailment: a valid enum value was captured (P4 already confirmed the
+        // word is well-formed), so backing must carry the SPECIFIC attr=value pair, not just
+        // attribute presence. `aria-sort` existing is not enough for `sorted-ascending`; it
+        // must be `aria-sort=ascending`. Same convention checked-mixed already uses for its
+        // fixed value (`aria-checked=mixed`) — this generalizes it to variable enum values.
+        const wanted = set.map((attr) => `${attr}=${p.value}`);
+        if (!wanted.some((w) => backing.has(w)))
+          out.push({ level: "error", rule: "state-entailment",
+            msg: `'${p.raw}' requires one of {${wanted.join(", ")}} on this element — attribute present without the matching value, or absent entirely (visually-true-but-semantically-false).` });
+      } else if (!set.some((b) => backing.has(b))) {
         out.push({ level: "error", rule: "state-entailment",
           msg: `'${sm.word}' requires one of {${set.join(", ")}} on this element — none present (visually-true-but-semantically-false).` });
+      }
     }
     // capability / conditioned-skin entail nothing; relational handled by p8b below.
   }
@@ -244,7 +265,7 @@ export function lint(classString: string, backing = new Set<string>(), ctx: Lint
 // SMOKE TEST
 // ============================================================================
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const cases: { s: string; backing?: string[]; ctx?: LintContext; expect: "ok" | "fail"; why?: string }[] = [
+  const cases: { s: string; backing?: string[]; ctx?: LintContext; expect: "ok" | "warn" | "fail"; why?: string }[] = [
     { s: "horizontal gap-comfortable padding-relaxed", expect: "ok" },
     { s: "horizontal vertical", expect: "fail", why: "P1 same axis/scope" },
     { s: "horizontal viewport-md:vertical", expect: "ok", why: "Law 2: different scopes" },
@@ -286,18 +307,25 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     // checked-mixed token bug fixed (review priority 3)
     { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the word is complete, not checked-mixed-mixed" },
     // enum value parses as a real value (groundwork for P4)
-    { s: "sorted-ascending", backing: ["aria-sort"], expect: "ok", why: "enum value captured separately" },
-    { s: "current-page", backing: ["aria-current"], expect: "ok", why: "enum value captured separately" },
+    { s: "sorted-ascending", backing: ["aria-sort=ascending"], expect: "ok", why: "enum value captured and checked against backing value" },
+    { s: "current-page", backing: ["aria-current=page"], expect: "ok", why: "enum value captured and checked against backing value" },
     // state co-presence (review priority 2)
     { s: "hover focus", backing: [":hover", ":focus"], expect: "ok", why: "focus group now many — co-present states" },
-    { s: "focus focus-visible", backing: [":focus", ":focus-visible"], expect: "fail", why: "pairwise conflict within a many-group" },
+    { s: "focus focus-visible", backing: [":focus", ":focus-visible"], expect: "warn", why: "implies, not conflicts — focus-visible is a platform subset of focus, redundant but not an error" },
+    { s: "focus-visible", backing: [":focus-visible"], expect: "ok", why: "narrower alone, no redundancy to flag" },
     { s: "required invalid", backing: [":required", ":invalid"], expect: "ok", why: "validity many: required + invalid co-present" },
+    { s: "user-invalid invalid", backing: [":user-invalid", ":invalid"], expect: "warn", why: "user-invalid implies invalid — redundant, not an error" },
+    { s: "out-of-range invalid", backing: [":out-of-range", ":invalid"], expect: "warn", why: "out-of-range implies invalid — redundant, not an error" },
     // P4 — enumerated arity
-    { s: "sorted-ascending", backing: ["aria-sort"], expect: "ok", why: "valid enum value" },
+    { s: "sorted-ascending", backing: ["aria-sort=ascending"], expect: "ok", why: "valid enum value, value-aware backing" },
     { s: "sorted", expect: "fail", why: "P4: enumerated needs a value" },
     { s: "sorted-sideways", expect: "fail", why: "P4: value not in set" },
-    { s: "current-page", backing: ["aria-current"], expect: "ok", why: "valid enum value" },
+    { s: "current-page", backing: ["aria-current=page"], expect: "ok", why: "valid enum value, value-aware backing" },
     { s: "current", expect: "fail", why: "P4: enumerated needs a value" },
+    // P8 — value-aware enum entailment (review priority 6, this session)
+    { s: "sorted-ascending", backing: ["aria-sort"], expect: "fail", why: "attribute present but value-unqualified — no longer satisfies" },
+    { s: "sorted-ascending", backing: ["aria-sort=descending"], expect: "fail", why: "attribute present with the WRONG value" },
+    { s: "current-page", backing: ["aria-current=step"], expect: "fail", why: "attribute present with a different valid-but-wrong enum value" },
     // P6 — arity misuse
     { s: "selected", backing: ["aria-checked=mixed"], expect: "fail", why: "P6: mixed backing → use checked-mixed" },
     { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the dedicated tri-state word" },
@@ -311,7 +339,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   let pass = 0;
   for (const c of cases) {
     const issues = lint(c.s, new Set(c.backing ?? []), c.ctx ?? {});
-    const got: "ok" | "fail" = issues.length ? "fail" : "ok";
+    const hasError = issues.some((i) => i.level === "error");
+    const hasWarn = issues.some((i) => i.level === "warn");
+    const got: "ok" | "warn" | "fail" = hasError ? "fail" : hasWarn ? "warn" : "ok";
     const ok = got === c.expect;
     pass += ok ? 1 : 0;
     console.log(`${ok ? "PASS" : "XXXX"}  [${got}] ${c.s}${c.backing ? ` (backing: ${c.backing.join(",")||"∅"})` : ""}`);

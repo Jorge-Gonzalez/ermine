@@ -135,6 +135,11 @@ export interface AxisRecord {
     // conflicts for the specific pairs that ARE mutually exclusive.
     exclusivity: "one" | "many";
     conflicts?: [string, string][]; // pairs that cannot co-occur even when exclusivity="many"
+    // REFINEMENT, not conflict: [narrower, wider] — the narrower state is a platform SUBSET of
+    // the wider one (`:focus-visible` ⊂ `:focus`; `:user-invalid`/`:out-of-range` typically ⊂
+    // `:invalid`). Writing both is never an error — redundant, not incompatible. Distinct from
+    // `conflicts`, which is for genuinely mutually-exclusive pairs. (added this revision)
+    implies?: [string, string][];
     members: StateMember[];
   };
 
@@ -509,6 +514,7 @@ const stateAxis = (
   members: StateMember[],
   exclusivity: "one" | "many" = "many",
   conflicts: [string, string][] = [],
+  implies: [string, string][] = [],
 ): AxisRecord => {
   // Build token forms so the parser can separate base word from enum value, AND
   // still recognize a bare or wrong-valued enum word (so P4 can flag it rather than
@@ -537,7 +543,7 @@ const stateAxis = (
     default: null,
     controls: [], // P7-4d: state controls nothing
     mustNeverTouch: ["*"],
-    stateGroup: { exclusivity, conflicts, members },
+    stateGroup: { exclusivity, conflicts, implies, members },
   };
 };
 
@@ -547,7 +553,7 @@ export const STATE: AxisRecord[] = [
     { word: "focus", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":focus"] },
     { word: "focus-visible", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":focus-visible"] },
     { word: "active", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":active"], note: "the transient press; toggle `pressed` was folded into `selected` (Law 6b)" },
-  ], "many", [["focus", "focus-visible"]]),
+  ], "many", [], [["focus-visible", "focus"]]),
   stateAxis("selection", [
     { word: "selectable", arity: "binary", driver: "interaction", stateCategory: "capability", note: "entails nothing; distributes capability down" },
     { word: "selected", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-selected", "aria-pressed", ":checked"], note: "Law 6b merge" },
@@ -565,10 +571,10 @@ export const STATE: AxisRecord[] = [
   ], "one"),
   stateAxis("validity", [
     { word: "invalid", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":invalid", "aria-invalid"] },
-    { word: "user-invalid", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":user-invalid"] },
+    { word: "user-invalid", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":user-invalid"], note: "platform-typical subset of invalid — :user-invalid only matches after user interaction, so it fires only where :invalid already does" },
     { word: "required", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":required", "aria-required"] },
-    { word: "out-of-range", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":out-of-range"] },
-  ], "many"),
+    { word: "out-of-range", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":out-of-range"], note: "platform-typical subset of invalid (browsers generally flag out-of-range values as :invalid too, absent novalidate)" },
+  ], "many", [], [["user-invalid", "invalid"], ["out-of-range", "invalid"]]),
   stateAxis("sort", [
     { word: "sorted", arity: "enumerated", driver: "interaction", stateCategory: "instance", entails: ["aria-sort"], enumValues: ["none", "ascending", "descending"] },
   ]),
