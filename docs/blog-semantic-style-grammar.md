@@ -3,7 +3,7 @@
 *Notes from building a CSS layout language inside a browser extension.*
 
 > **Status:** living document — updated as the work reaches things worth sharing.
-> **Last updated:** 2026-06-30. See the [Changelog](#changelog) at the bottom.
+> **Last updated:** 2026-07-01. See the [Changelog](#changelog) at the bottom.
 > Companion to the constitution (`ERMINE.md`), the machine-consumer spec (`ERMINE-SPEC.md`), the
 > author's guide (`ERMINE-GUIDE.md`), the typed registry + linter (`registry.ts`, `lint.ts`), and the
 > `flex-character` playground. (The project now has a name — **Ermine** — and, more importantly, a
@@ -290,21 +290,36 @@ from "a document plus discipline" to something with a mechanized contract.
   role, regime, the CSS properties it controls, and what it must never touch. This is now the
   authoritative source the linter reads; when the prose and the registry disagree, the data wins.
 - **A running linter** (`lint.ts`) — a parser plus a set of validation predicates, with a smoke suite
-  of 47 cases. It actually rejects the things the constitution says are ill-formed and accepts the
+  of 70 cases. It actually rejects the things the constitution says are ill-formed and accepts the
   compositions it says are legal — *the laws made executable, and now checkable.* What it enforces
-  today: one-word-per-axis (including sub-dial composition and per-group state rules), no-coining,
-  enumerated-value arity, arity misuse, and state entailment — including the *inverted* kind, where a
-  child's state is backed by an attribute on its container.
+  today: one-word-per-axis (including sub-dial composition and per-group state rules, plus a
+  refinement relation for states that are platform *subsets* of each other rather than alternatives),
+  no-coining, a distinct diagnosis for a word whose *shape* is right but whose *value* isn't,
+  enumerated-value arity that checks the actual value against the backing attribute (not just that
+  the attribute exists), arity misuse, state entailment — including the *inverted* kind, where a
+  child's state is backed by an attribute on its container — and a warning for a specific hazard
+  (a between-children divider composed with wrapping). Every predicate the spec describes now has a
+  real check behind it except one (below).
 - **An interactive playground** — a flex "give↔grab / size-source" sandbox with guided scenarios
   and live numeric readouts (it has, more than once, falsified my own claims on screen).
 - **A test strategy, instantiated** — *rule* tests (token → CSS), *outcome* goldens (real widths),
   and *law* tests (conservation, ratio-invariance, clamping). Two behaviours were **reconstructed from
   experiment** against the engine — the flex resolution pipeline and CSS stacking.
 
-Not built yet — and I want to be precise about the biggest gap. The linter reasons about which CSS
-properties each axis controls from a **hand-transcribed** list in the registry, not from CSS it
-actually generates. The check that two axes never fight over a property is therefore only as honest as
-that transcription. Closing that means standing up a real **CSS emitter** so the property list is
+One of the smaller checks caught something none of the six earlier component audits surfaced: the
+registry had a bare word, `sticky`, doing double duty — once as a named rung on the z-index scale,
+once as the literal CSS `position: sticky` value — and the parser silently resolved it to whichever
+axis happened to be listed first. Nothing crashed; `position: sticky` was just quietly unwritable.
+It's the same shape of bug as the property collisions the dimensional-purity check exists to catch,
+one layer up: not two axes fighting over a CSS property, but two axes fighting over a *word*. It got
+the same treatment — a standing check, run over the whole registry, that fails loudly the moment two
+axes claim the same token, rather than trusting that authoring discipline will notice.
+
+Not built yet — and I want to be precise about the biggest gap, which is now also the *only*
+specified predicate without a real check behind it. The linter reasons about which CSS properties
+each axis controls from a **hand-transcribed** list in the registry, not from CSS it actually
+generates. The check that two axes never fight over a property is therefore only as honest as that
+transcription. Closing that means standing up a real **CSS emitter** so the property list is
 *derived* from output rather than typed by hand — the point where the registry stops being a faithful
 description and becomes executable in the strong sense. Also still open: the skin vocabulary, the
 namespacing decision, and the convergence pass that pulls the shipping (v0) CSS into conformance.
@@ -349,6 +364,23 @@ fatal for "adopt this instead of Tailwind," which is not the claim.
 
 ## Changelog
 
+- **2026-07-01 (session update)** — A registry-hardening pass, mostly driven by external review: real
+  bugs found and fixed, real gaps flagged rather than silently patched. The concrete one worth telling:
+  a bare `sticky` was doing double duty as both a z-index rung name and the literal CSS position value,
+  and the parser silently picked whichever axis was listed first — `position: sticky` was quietly
+  unwritable, and nothing said so. Fixed the collision and added a standing check (token uniqueness)
+  so the registry itself now refuses to build if two axes ever claim the same word again — the same
+  discipline the dimensional-purity check applies to CSS properties, one layer up, at words. The
+  linter also picked up its last two smaller predicates (a distinct diagnosis for a
+  right-shape/wrong-value word, and a warning for a specific divider/wrapping hazard), fixed a case
+  where one malformed word was producing two competing error messages instead of one clear fix, and
+  gained a genuine refinement relation for state words that are platform *subsets* of each other
+  (`focus-visible` of `focus`) rather than modeling them as flatly incompatible. On the honesty side:
+  found that `prefers-reduced-motion:no-motion` — used as the constitution's own worked example for
+  how conditional prefixes are written — named a word that was never actually registered. Didn't coin
+  one to make the example true; flagged it as an open gap instead, which is the whole point of the
+  no-coining law applied to itself. Smoke suite: 47 → 70. Every predicate the spec describes now has a
+  real check behind it except the CSS emitter (§7).
 - **2026-06-30 (session update)** — The project got a name — **Ermine** — and, more substantially, the
   two pieces it was missing: a **typed registry** (`registry.ts`, 33 axes as machine-readable data) and
   a **running linter** (`lint.ts`, 47 smoke cases). The linter enforces one-word-per-axis (with
