@@ -70,6 +70,31 @@ export interface SinkRule {
 }
 
 // ----------------------------------------------------------------------------
+// FACET — two DIFFERENT axes writing different FACETS of the same CSS
+// property, merged into one final declaration. This is not a sink (no custom
+// properties, no gating condition) and not ordinary declares (neither axis's
+// value is complete on its own). It's the constitution's ONE documented
+// free-regime exception: `structure` writes display's INNER facet
+// (flex/grid), `m1-flow-participation` writes the OUTER facet
+// (inline/block) — CSS's own two-value `display: <outer> <inner>` syntax IS
+// this mechanism, natively. Discovered walking real axes, not anticipated in
+// the first design pass — `controls: ["display.inner"]` /
+// `["display.outer"]` in registry.ts was already the tell.
+// ----------------------------------------------------------------------------
+export interface FacetRule {
+  kind: "facet";
+  axis: string;
+  token: string;
+  selector: string;
+  property: string;    // the shared CSS property, e.g. "display"
+  facet: string;         // e.g. "inner" | "outer" — matches registry.ts's
+                          // "property.facet" controls-list convention
+  value: string;          // this axis's contribution to that facet
+  effectKind: "css";
+  scope?: string;
+}
+
+// ----------------------------------------------------------------------------
 // CONDITION — a state word with no declarations of its own (P7-4d, `controls:
 // []`). Emitted so the AST is complete — every parsed word maps to SOMETHING —
 // but contributes nothing to derivedControls under any circumstance.
@@ -96,7 +121,7 @@ export interface MechanismRule {
   effectKind: "platform-mechanism";
 }
 
-export type EmittedRule = DeclareRule | SinkRule | ConditionRule | MechanismRule;
+export type EmittedRule = DeclareRule | SinkRule | FacetRule | ConditionRule | MechanismRule;
 
 // ============================================================================
 // WORKED EXAMPLES — one per rule kind, built from real registry axes, so the
@@ -230,6 +255,12 @@ export function deriveControls(rules: EmittedRule[]): {
           add(writes, c.axis, prop);
           add(paints, c.axis, prop); // sanctioned joint ownership
         }
+    } else if (r.kind === "facet") {
+      // every axis contributing a facet to the SAME (selector, property) is a
+      // sanctioned joint owner of the merged property — the twin exception,
+      // generalized from "structure + m1" specifically to any facet group.
+      add(writes, r.axis, r.property);
+      add(paints, r.axis, r.property);
     }
     // "condition" and "mechanism": never contribute to writes or paints —
     // P7-4d and the top-layer no-z-index invariant hold by construction, not
