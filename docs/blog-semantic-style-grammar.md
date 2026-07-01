@@ -3,8 +3,11 @@
 *Notes from building a CSS layout language inside a browser extension.*
 
 > **Status:** living document — updated as the work reaches things worth sharing.
-> **Last updated:** 2026-06-23. See the [Changelog](#changelog) at the bottom.
-> Companion to the working spec, `STYLE-GRAMMAR.md`, and the `flex-character` playground.
+> **Last updated:** 2026-06-30. See the [Changelog](#changelog) at the bottom.
+> Companion to the constitution (`ERMINE.md`), the machine-consumer spec (`ERMINE-SPEC.md`), the
+> author's guide (`ERMINE-GUIDE.md`), the typed registry + linter (`registry.ts`, `lint.ts`), and the
+> `flex-character` playground. (The project now has a name — **Ermine** — and, more importantly, a
+> registry and a running linter; see [§7](#7-whats-actually-built).)
 
 ---
 
@@ -185,7 +188,38 @@ element*; per-property independence needs bound tokens. (A flat class list is an
 so it can't bind a loose modifier to a loose applicator — `comfortable pad snug gap` simply can't
 mean "comfortable padding, snug gap.")
 
-### 4.7 Layout is laws; skin is consensus
+### 4.7 Two vocabulary primitives, and a case study in letting a model break
+
+Building the registry forced a question the prose had been fudging: *how many kinds of vocabulary are
+there?* Each axis declares whether its words are **closed** (an exhaustive set — don't invent more) or
+**open** (a parameter admitted by a rule, like `grow-2` or `span-3`). Several axes looked like they
+needed a *third* kind — something in between, a few named presets sitting on top of an open dial. I
+tried three different framings of that third thing over the course of a long session. Each one
+dissolved on inspection: what looked like a new primitive was always one of the two I already had,
+just *applied at a different scope* (a closed axis whose one member happens to carry an open value) or
+*wearing earned sugar* (an open axis with a handful of named points). The settled result is smaller
+than where I started: **two primitives, applied at two scopes — the axis's membership, and a member's
+value — with aliases as the only sugar.** No third kind survived examination. That's the no-coining
+law (§4.5) turned inward on the grammar's own metalanguage: mint no new ontology, not even for
+describing the vocabulary.
+
+The clearest case study is **flex**, and it's really a story about the method (§5): following a pretty
+model until it breaks, on purpose. CSS flex is genuinely strange — `flex-grow`/`flex-shrink` are two
+independent dials, but we *talk* about flex with four words (rigid, compressible, expandable,
+elastic). I spent a lot of effort modelling those four words as presets over the dials, with a "weight
+modifier" you could add — `expandable` plus a `grow-2` to tune it. It felt right. It was wrong, and
+watching it fail taught me the actual shape. The tell: to keep the "modifier" model consistent I'd had
+to hand-write a special rule relating two supposedly independent axes — and *genuinely independent
+things never need a bespoke rule tying them together.* The rule's existence was the evidence the split
+was fake. The clean model turns out to be almost embarrassingly simple: the dials are the real axis;
+the four words are **whole-axis aliases**, each a complete value (it sets *both* dials), so you write
+**either** a word **or** the dials, never both. A word and a dial together (`expandable grow-2`) tries
+to write the same CSS property twice — which is exactly the collision the dimensional-purity law
+already forbids, now showing up one level down at the sub-property. No new machinery; the existing law
+covered it once I stopped inventing a second one. The long detour wasn't wasted — it's the only way
+I'd have trusted that the simple answer was *right* rather than merely *first*.
+
+### 4.8 Layout is laws; skin is consensus
 A distinction I think matters: **layout** structure is *lawful* — proportion, rhythm, grids,
 symmetry have real mathematics (Le Corbusier's Modulor, Swiss grids, the `fr` unit). **Skin** is
 mostly *consensus* — "good design" is largely a moving, cyclical agreement, closer to distributional
@@ -245,31 +279,50 @@ designed to be legible to a *meaning-model* — which is what makes the AI able 
 
 ## 7. What's actually built
 
-Honest inventory, so this isn't vaporware-by-blog-post:
+Honest inventory, so this isn't vaporware-by-blog-post. Since the last update the grammar picked up
+two things it was missing — a **machine-readable registry** and a **running linter** — which move it
+from "a document plus discipline" to something with a mechanized contract.
 
-- **A constitution** (`STYLE-GRAMMAR.md`) — the planes, roles, scope, laws, the four grammars, and
-  the member-role family worked out in detail. Open decisions are tagged `[RULING]`.
+- **A constitution** (`ERMINE.md`) — the planes, roles, scope, laws, the four grammars, and the
+  member-role family worked out in detail, with the reasoning (including the wrong turns) preserved.
+  Open decisions are tagged `[RULING]`.
+- **A typed registry** (`registry.ts`) — the laws as data: 33 axes, each with its vocabulary kind,
+  role, regime, the CSS properties it controls, and what it must never touch. This is now the
+  authoritative source the linter reads; when the prose and the registry disagree, the data wins.
+- **A running linter** (`lint.ts`) — a parser plus a set of validation predicates, with a smoke suite
+  of 47 cases. It actually rejects the things the constitution says are ill-formed and accepts the
+  compositions it says are legal — *the laws made executable, and now checkable.* What it enforces
+  today: one-word-per-axis (including sub-dial composition and per-group state rules), no-coining,
+  enumerated-value arity, arity misuse, and state entailment — including the *inverted* kind, where a
+  child's state is backed by an attribute on its container.
 - **An interactive playground** — a flex "give↔grab / size-source" sandbox with guided scenarios
   and live numeric readouts (it has, more than once, falsified my own claims on screen).
-- **A compile seed** — `flexStyle()`, a pure function mapping grammar tokens → CSS flex
-  declarations. The first slice of the algebra layer.
-- **A test strategy, instantiated** (~30 browser tests + static rule tests): *rule* tests (token →
-  CSS, in jsdom), *outcome* goldens (real widths), and *law* tests (conservation, ratio-invariance,
-  clamping). Two behaviours were **reconstructed from experiment** against the engine — the flex
-  resolution pipeline and CSS stacking — and the **value-channel** (one density vocabulary feeding
-  many properties) is verified executably. The laws are, in a real sense, *the constitution made
-  executable.*
+- **A test strategy, instantiated** — *rule* tests (token → CSS), *outcome* goldens (real widths),
+  and *law* tests (conservation, ratio-invariance, clamping). Two behaviours were **reconstructed from
+  experiment** against the engine — the flex resolution pipeline and CSS stacking.
 
-Not built yet: the full compiler, the skin vocabulary, the namespacing decision, and the
-convergence pass that pulls the shipping (v0) CSS into conformance with the model.
+Not built yet — and I want to be precise about the biggest gap. The linter reasons about which CSS
+properties each axis controls from a **hand-transcribed** list in the registry, not from CSS it
+actually generates. The check that two axes never fight over a property is therefore only as honest as
+that transcription. Closing that means standing up a real **CSS emitter** so the property list is
+*derived* from output rather than typed by hand — the point where the registry stops being a faithful
+description and becomes executable in the strong sense. Also still open: the skin vocabulary, the
+namespacing decision, and the convergence pass that pulls the shipping (v0) CSS into conformance.
 
 ---
 
 ## 8. Honest limitations
 
 - **n = 1.** One app. The coherence might not survive data tables, dashboards, dense forms.
-- **No tooling, no enforcement.** Drift is prevented today by discipline + AI audit, not by a
-  linter that checks the laws. That's a real gap.
+- **Enforcement is partial.** There is now a linter that checks the composition laws, so drift is no
+  longer prevented by discipline alone — but it isn't yet wired into the build, and it verifies
+  property-disjointness against a *transcribed* list rather than generated CSS. Real enforcement (in
+  CI, against emitted output) is still ahead.
+- **Still one target.** The vocabulary names intent, but the registry is coupled to CSS — the words
+  compile to CSS, and only CSS. Calling the grammar "a layer above CSS" is true of the *words* and
+  overclaims the *registry*; flex is where the coupling shows most. A genuinely target-independent
+  version would need the intent and the CSS binding split into separate layers, which isn't worth
+  building against a single target yet.
 - **The perceptual vocabulary needs calibration.** `comfortable` means something only relative to
   its neighbours; a team would have to internalize the scale.
 - **Racing the platform.** As CSS absorbs `@scope`, container queries, and friends, maintaining a
@@ -282,17 +335,32 @@ fatal for "adopt this instead of Tailwind," which is not the claim.
 
 ## 9. Roadmap
 
-1. Resolve the remaining `[RULING]`s in the constitution.
-2. Purify the grammar file — extract the component-pattern squatters; name the skin plane.
-3. Build the value-channel compile layer for real (`--space` + applicators), with `@property`.
-4. The convergence pass: bring the shipping CSS into conformance and delete the v0 drift.
-5. Decide the implementation-scope policy (Shadow-DOM-only vs a namespace).
-6. Extend the rules+laws+goldens test pattern to the other axes (alignment, the layering `z` scale).
+1. **Stand up the CSS emitter** — the highest-value next step. Once each axis *generates* its CSS,
+   the property-ownership list is derived rather than transcribed, and the dimensional-purity check
+   becomes authoritative instead of indicative.
+2. Wire the linter into CI, so the laws are enforced on every change rather than on request.
+3. Split the constitution into normalized documents (current law / rationale / log / spec / guide)
+   linked by stable ids — referential integrity over Markdown, so the pieces read as one document.
+4. Build the value-channel compile layer for real (`--space` + applicators), with `@property`.
+5. The convergence pass: bring the shipping CSS into conformance and delete the v0 drift.
+6. Decide the implementation-scope policy (Shadow-DOM-only vs a namespace).
 
 ---
 
 ## Changelog
 
+- **2026-06-30 (session update)** — The project got a name — **Ermine** — and, more substantially, the
+  two pieces it was missing: a **typed registry** (`registry.ts`, 33 axes as machine-readable data) and
+  a **running linter** (`lint.ts`, 47 smoke cases). The linter enforces one-word-per-axis (with
+  sub-dial composition and per-group state rules), no-coining, enumerated arity, arity misuse, and
+  state entailment — including the *inverted* kind (a child's state backed by its container). The
+  "no enforcement" limitation is now only partly true. On the conceptual side, the **vocabulary shape**
+  settled: two primitives (`closed`/`open`) applied at two scopes, with aliases the only sugar — no
+  third kind survived (see [§4.7](#47-two-vocabulary-primitives-and-a-case-study-in-letting-a-model-break)).
+  The **flex axis** was resolved via that lens (whole-axis aliases over independent dials), after a long
+  and instructive detour that the section tells honestly. Refreshed [§7](#7-whats-actually-built),
+  [§8](#8-honest-limitations), and the [Roadmap](#9-roadmap) — the headline open problem is now
+  deriving property-ownership from *generated* CSS so the dimensional-purity check becomes authoritative.
 - **2026-06-23 (session update)** — The falsifiable-narrative *method* became a repeatable practice:
   reconstructed both the flex resolution pipeline and CSS stacking from experiment (engine as oracle),
   and verified the value-channel (D+P) mechanism executably. Added two governing principles — the

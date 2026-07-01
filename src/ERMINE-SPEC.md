@@ -95,7 +95,7 @@ Field rules:
 
 ---
 
-## 2. The axis registry (34 axes — see `registry.ts`)  ‹SHARED›
+## 2. The axis registry (33 axes — see `registry.ts`)  ‹SHARED›
 
 > **Source note (extraction revision).** The authoritative registry is now **`registry.ts`** (structured
 > data), not this Markdown. This section is a human-readable mirror; when it disagrees with `registry.ts`,
@@ -231,11 +231,17 @@ Field rules:
 
 #### constraints
 - role: self · signature: set-with-exclusivity · vocabulary: open · regime: free
-- members: `min-width-*` `max-width-*` `min/max/fixed-N-col`
-- parameter: carries values
+- **sub-dials:** `min-width` `max-width` `min-height` `max-height` — each an independent longhand.
+  A min and a max on the same dimension compose as a **band** (`min-width-sm max-width-lg`); all
+  four dials may co-occur. Two values on the *same* dial still conflict (`min-width-sm min-width-lg`).
+  No whole-axis alias — there's no "set all four at once" word.
+- members (per dial): `min-width-<size>` `max-width-<size>` `min-height-<size>` `max-height-<size>`
+- parameter: carries a value drawn from the §5.1 size scale
 - controls: `min-width` `max-width` `min-height` `max-height`
 - default: none
 - mustNeverTouch: `flex-grow` `flex-shrink` `flex-basis` `width`
+- open: a future semantic check should warn on an inverted band (e.g. `min-width-lg max-width-sm`
+  where the scale order makes min > max) — not yet implemented.
 
 ### 2.2 LAYERING (§4.4)
 

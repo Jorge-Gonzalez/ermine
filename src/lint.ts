@@ -279,6 +279,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     { s: "padding-comfortable padding-inline-relaxed", expect: "fail", why: "whole-axis padding + a per-side dial" },
     { s: "scroll-x scroll-y", expect: "ok", why: "different overflow sub-dials" },
     { s: "scroll-x scroll-auto", expect: "fail", why: "per-axis dial + whole-axis clip/auto" },
+    // constraints — min/max now compose as a band (review priority 1, this session)
+    { s: "min-width-sm max-width-lg", expect: "ok", why: "width band: min + max compose" },
+    { s: "min-width-sm min-width-lg", expect: "fail", why: "two values on the same min-width dial" },
+    { s: "min-width-sm max-width-lg min-height-sm max-height-lg", expect: "ok", why: "all four constraint dials co-occur" },
     // checked-mixed token bug fixed (review priority 3)
     { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the word is complete, not checked-mixed-mixed" },
     // enum value parses as a real value (groundwork for P4)

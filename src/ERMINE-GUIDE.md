@@ -174,7 +174,13 @@ layout is a state word composed with a layout word:
 <div class="vertical viewport-md:horizontal">…</div>
 ```
 
-The same shape covers preferences: `prefers-reduced-motion`, `prefers-color-scheme-dark`.
+The same shape covers preferences. Like the breakpoint prefixes above, these are written as a
+**condition prefix**, not a bare word — the part after the colon is an ordinary grammar word from
+whichever axis fits:
+
+```html
+<div class="prefers-reduced-motion:no-motion">…</div>
+```
 
 ---
 

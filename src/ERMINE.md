@@ -6,8 +6,10 @@
 > (the prior status conflated them):
 > - **Internal consistency — HIGH, now executable.** The central Law-3 claim (free-regime axes touch
 >   disjoint property sets) is no longer asserted — it is **checked**: predicate 4 (§10.1) runs across
->   all 23 axes and **passes after two corrections it surfaced** (motion stagger mechanism §4.3; m3
->   scope §4.1). The state-entailment, one-word-per-axis, weight-implies-direction, and enumerated-arity
+>   the full registry (33 axes as of this revision — see `registry.ts` self-report; §10.1 below records
+>   the 23-axis count of the revision where the check was first added) and **passes after two
+>   corrections it surfaced** (motion stagger mechanism §4.3; m3 scope §4.1). The state-entailment,
+>   one-word-per-axis, weight-implies-direction, and enumerated-arity
 >   laws run against six audited components (§9.1).
 > - **Empirical adequacy — VALIDATED for state, PARTIAL for the spatial core.** The state sibling was
 >   **rebuilt on the whole platform surface** (§4.2) and survived six dissimilar component audits
@@ -967,9 +969,18 @@ first), as sugar over per-side density — never as a re-minted primitive axis.
 
 ### constraints
 - signature: set-with-exclusivity
-- vocabulary: open (parametric) — `min/max/fixed-N-col`, `*-width-*` carry values
-- members: `min-width-*` `max-width-*` `min/max/fixed-N-col`
+- vocabulary: open (parametric) — `min-width-*` `max-width-*` `min-height-*` `max-height-*` each
+  carry a value from the §5.1 size scale
+- **four independent sub-dials**, one per longhand: `min-width` `max-width` `min-height`
+  `max-height`. A min and a max on the *same dimension* form a **band** and compose
+  (`min-width-sm max-width-lg`); two values on the same dial still conflict. All four dials may
+  co-occur. No whole-axis alias — there's no single word that sets all four at once. (Same shape as
+  the padding/overflow sub-dial generalization above — added this revision to fix a real gap the
+  external review surfaced: the axis previously modeled min/max as plain alternatives, which
+  wrongly rejected the ordinary case of bounding both ends of a dimension.)
 - must-never-touch: everything except min/max bounds
+- open item: a semantic check for an inverted band (e.g. `min-width-lg max-width-sm`) is not yet
+  implemented — see spec §2.1.
 
 ### interaction → promoted to **§4.2 STATE** (feedback animations → **§4.3 MOTION**)
 
@@ -1761,6 +1772,11 @@ then `npm run test:browser`. The default `npm test` excludes `*.browser.test.ts`
 ---
 
 ## 10.1 — Predicate 4: static dimensional-purity check — ADDED & RUN this revision
+
+> **Historical count, not current.** The "23 axes" figures below describe the registry as it stood
+> *when this check was first added*. The registry has since grown to 33 axes (`registry.ts` is
+> authoritative for the current count — see the top status block). The predicate itself, and the
+> disjointness result it proved, still hold; only the axis count is dated.
 
 §10's outcome tests prove the *negotiated* algebra. **Predicate 4 proves the *free* algebra's
 precondition**: Law 3's claim that free-regime axes touch **disjoint** CSS property sets — the thing

@@ -357,13 +357,23 @@ export const LAYOUT: AxisRecord[] = [
     axis: "constraints",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
-    valueSpace: ["min-width-<size>", "max-width-<size>"],
+    valueSpace: ["min-width-<size>", "max-width-<size>", "min-height-<size>", "max-height-<size>"],
     tokens: [
-      { pattern: new RegExp(`^(min|max)-width-(${SCALES.size.join("|")})$`), shape: "min/max-width-<size>", valueDomain: "size-step" },
+      { pattern: new RegExp(`^(min-width|max-width|min-height|max-height)-(${SCALES.size.join("|")})$`), shape: "min/max-width/height-<size>", valueDomain: "size-step" },
     ],
+    // four independent dials — min/max-width form a band, min/max-height form a separate band.
+    // A min and a max on the SAME dimension compose (`min-width-sm max-width-lg`); two values on
+    // the SAME dial still conflict (`min-width-sm min-width-lg`). No whole-axis alias: there's no
+    // natural "set all four at once" word, so plain dial composition (no `aliasMatch`) is correct.
+    subDials: ["min-width", "max-width", "min-height", "max-height"],
+    dialOf: (word: string) => {
+      const m = word.match(/^(min-width|max-width|min-height|max-height)-/);
+      return m ? m[1] : null;
+    },
     default: null,
     controls: ["min-width", "max-width", "min-height", "max-height"],
     mustNeverTouch: ["flex-grow", "flex-shrink", "flex-basis", "width"],
+    notes: "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
   },
 ];
 
