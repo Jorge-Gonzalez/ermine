@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ermine — rendered demo</title>
+  <!-- RE-SKIN: swap this one line to theme-alt.css and reload. Only the theme
+       changes; not a single class in the markup below moves. -->
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="ermine.css">
+  <style>
+    /* not grammar — just enough page chrome to see the layout render */
+    body { font-family: system-ui, sans-serif; margin: 0; background: #f6f7f9; }
+    .card { background: #fff; border: 1px solid #e3e6ea; border-radius: 10px; }
+    .swatch { width: 2.5rem; height: 2.5rem; border-radius: 8px; background: var(--harmonic, #6b8afd); }
+    .pill { border: 1px solid #d5dae1; border-radius: 999px; }
+  </style>
+</head>
+<body class="vertical gap-comfortable padding-relaxed">
+
+  <div class="card vertical gap-snug padding-comfortable max-width-lg">
+    <div class="horizontal gap-snug align-center justify-between">
+      <strong>Ermine</strong>
+      <span class="pill horizontal inline gap-tight padding-snug">inline&nbsp;flex badge</span>
+    </div>
+
+    <div class="horizontal gap-comfortable align-center">
+      <div class="swatch"></div>
+      <div class="vertical gap-tight expandable">
+        <span>Composed from grammar words only.</span>
+        <span>Spacing and size read theme variables.</span>
+      </div>
+    </div>
+
+    <div class="vertical gap-tight">
+      <div class="pill selectable selected selection-subtle padding-snug" aria-selected="true">selected row — skin driven by a sink</div>
+      <div class="pill selectable selection-subtle padding-snug">unselected row</div>
+    </div>
+  </div>
+
+</body>
+</html>

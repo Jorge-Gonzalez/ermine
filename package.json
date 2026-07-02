@@ -30,6 +30,7 @@
   "scripts": {
     "registry": "tsx src/registry.ts",
     "emit": "tsx src/emit.ts",
+    "demo": "tsx demo/build.ts",
     "test": "node --import tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit",
     "check": "pnpm run typecheck && pnpm run test"

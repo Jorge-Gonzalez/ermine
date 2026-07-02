@@ -1,0 +1,25 @@
+/* theme.css — a starter theme: VALUES for the slots the grammar exposes.
+   The grammar owns the step names (--spacing-comfortable exists); the theme
+   owns what they are worth. Swap this file (or edit the numbers) to re-skin;
+   the markup and ermine.css do not change. */
+:root {
+  /* §5.1 spacing scale (ad-hoc starter values; the generator is the open slot) */
+  --spacing-tight: 4px;
+  --spacing-snug: 8px;
+  --spacing-comfortable: 16px;
+  --spacing-relaxed: 24px;
+  --spacing-loose: 40px;
+  --spacing-separated: 64px;
+
+  /* §5.1 size scale */
+  --size-sm: 12rem;
+  --size-md: 20rem;
+  --size-lg: 32rem;
+  --size-xl: 48rem;
+
+  /* skin surface/ink tokens the selection sink reads (rung-3, theme-owned) */
+  --harmonic: #6b8afd;
+  --harmonic-wash: #eef2ff;
+  --ink: #1b1f27;
+  --base-tone: #ffffff;
+}

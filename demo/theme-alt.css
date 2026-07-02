@@ -1,0 +1,22 @@
+/* theme-alt.css — the SAME grammar, a different point in value-space.
+   Denser spacing, narrower sizes, a warmer harmonic. Swap the <link> in
+   index.html from theme.css to this and reload: the whole UI re-proportions
+   and re-tints without a single class changing. That swap IS the thesis. */
+:root {
+  --spacing-tight: 2px;
+  --spacing-snug: 5px;
+  --spacing-comfortable: 10px;
+  --spacing-relaxed: 15px;
+  --spacing-loose: 24px;
+  --spacing-separated: 40px;
+
+  --size-sm: 9rem;
+  --size-md: 15rem;
+  --size-lg: 22rem;
+  --size-xl: 34rem;
+
+  --harmonic: #e0794b;
+  --harmonic-wash: #fdeee6;
+  --ink: #2a1c14;
+  --base-tone: #ffffff;
+}
