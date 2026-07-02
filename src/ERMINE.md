@@ -772,6 +772,15 @@ bordered/card-like — to some authors. Alternatives that are clearer about mech
 this from observed recurrence in real components, not from argument — it is a guide-surface name, not a
 structural choice.)*
 
+> **Outcome constraint — m1 is inert on a flex/grid item (browser-verified, `demo/` + `test/browser`).**
+> CSS *blockifies* the outer display of a flex/grid item, so `inline` / `boxed-inline` are **no-ops on a
+> child of a flex/grid container** (`horizontal inline` in flow → `inline-flex`; the same as a flex item →
+> `flex`). This is correct CSS, not a defect — but it is an *outcome* interaction P7 cannot see (no property
+> collides; the parent's layout mode silently overrides the child's outer display). Recorded as a **candidate
+> lint warning** (not yet implemented): flag m1 on an element whose parent is a flex/grid container. This is
+> the first entry in the "outcome behavior" frontier the status note names — surfaced by rendering, not by the
+> paper checks.
+
 #### m2 — flex character (give↔grab) · **2D product** (grow × shrink) · **vocabulary: open + whole-axis aliases** — open dials `grow-N`/`shrink-N`; 4 corners are whole-axis aliases (each fixes both dials) · **regime: negotiated** · default: compressible
 Grow-willingness and shrink-willingness are *independent* → a product, NOT a chain. Corners,
 **all adjectives**: `rigid` (0,0) · `compressible` (0,1, shrinks) · `expandable` (1,0, grows) ·

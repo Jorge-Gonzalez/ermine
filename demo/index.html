@@ -14,27 +14,37 @@
     .card { background: #fff; border: 1px solid #e3e6ea; border-radius: 10px; }
     .swatch { width: 2.5rem; height: 2.5rem; border-radius: 8px; background: var(--harmonic, #6b8afd); }
     .pill { border: 1px solid #d5dae1; border-radius: 999px; }
+    .muted { color: #8a93a0; }
   </style>
 </head>
 <body class="vertical gap-comfortable padding-relaxed">
 
-  <div class="card vertical gap-snug padding-comfortable max-width-lg">
-    <div class="horizontal gap-snug align-center justify-between">
+  <div id="card" class="card vertical gap-snug padding-comfortable max-width-lg">
+    <div id="header-row" class="horizontal gap-snug align-center justify-between">
       <strong>Ermine</strong>
-      <span class="pill horizontal inline gap-tight padding-snug">inline&nbsp;flex badge</span>
+      <span class="muted">rendered demo</span>
     </div>
+
+    <!-- FLOW context (this <p> is a block container, not a flex parent), so the
+         badge's `inline` outer-display actually takes effect → inline-flex.
+         (Inside a flex parent it would blockify to plain flex — see the test.) -->
+    <p id="flow" style="margin: 0">
+      Composed from grammar words only — even this
+      <span id="badge" class="pill horizontal inline gap-tight padding-snug">inline-flex badge</span>
+      stays inline because it sits in flow, not as a flex item.
+    </p>
 
     <div class="horizontal gap-comfortable align-center">
       <div class="swatch"></div>
       <div class="vertical gap-tight expandable">
-        <span>Composed from grammar words only.</span>
         <span>Spacing and size read theme variables.</span>
+        <span>Swap the theme <code>&lt;link&gt;</code> to re-proportion.</span>
       </div>
     </div>
 
     <div class="vertical gap-tight">
-      <div class="pill selectable selected selection-subtle padding-snug" aria-selected="true">selected row — skin driven by a sink</div>
-      <div class="pill selectable selection-subtle padding-snug">unselected row</div>
+      <div id="selected-row" class="pill selectable selected selection-subtle padding-snug" aria-selected="true">selected row — skin driven by a sink</div>
+      <div id="unselected-row" class="pill selectable selection-subtle padding-snug">unselected row</div>
     </div>
   </div>
 

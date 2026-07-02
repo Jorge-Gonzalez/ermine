@@ -190,7 +190,7 @@ export const LAYOUT: AxisRecord[] = [
     default: "natural",
     controls: ["display.outer"],
     mustNeverTouch: ["gap", "padding", "background"],
-    notes: "surface names provisional (alias-law, guide-level)",
+    notes: "surface names provisional (alias-law, guide-level). OUTCOME CONSTRAINT (browser-verified, demo/test): the outer display is INERT on a flex/grid ITEM — CSS blockifies a flex/grid item's outer display, so `inline`/`boxed-inline` are no-ops on a child of a flex/grid container. Candidate lint WARNING (not yet implemented): flag m1 on an element whose parent is a flex/grid container. Not a property collision, so P7 can't see it — it needs parent context.",
   },
   {
     axis: "m2-flex",
