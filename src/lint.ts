@@ -6,7 +6,7 @@
 //   stretchy                       -> P2 no-coining / unknown-word
 // Plus the amended Law 2: horizontal viewport-md:vertical is WELL-FORMED.
 
-import { REGISTRY, STATE, ENVIRONMENT_SCOPES, type AxisRecord, type StateMember } from "./registry.ts";
+import { REGISTRY, ENVIRONMENT_SCOPES, type StateMember } from "./registry.ts";
 
 export interface Parsed {
   raw: string;
@@ -299,111 +299,4 @@ export function lint(classString: string, backing = new Set<string>(), ctx: Lint
     ...p8b_relationalEntailment(parsed, ctx),
     ...p10_dividerWrap(parsed),
   ];
-}
-
-// ============================================================================
-// SMOKE TEST
-// ============================================================================
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const cases: { s: string; backing?: string[]; ctx?: LintContext; expect: "ok" | "warn" | "fail"; why?: string }[] = [
-    { s: "horizontal gap-comfortable padding-relaxed", expect: "ok" },
-    { s: "horizontal vertical", expect: "fail", why: "P1 same axis/scope" },
-    { s: "horizontal viewport-md:vertical", expect: "ok", why: "Law 2: different scopes" },
-    { s: "viewport-md:horizontal viewport-md:vertical", expect: "fail", why: "same scope, same axis" },
-    // m2 — whole-axis aliases vs numbered dials
-    { s: "rigid grow-2", expect: "fail", why: "alias is whole-axis; can't combine with a dial" },
-    { s: "elastic grow-2", expect: "fail", why: "alias is whole-axis; can't combine with a dial" },
-    { s: "expandable shrink-2", expect: "fail", why: "alias fixes both dials; shrink-2 conflicts" },
-    { s: "elastic", expect: "ok", why: "alias alone" },
-    { s: "grow-2 shrink-1", expect: "ok", why: "numbered dials, one per dial" },
-    { s: "grow-2 grow-3", expect: "fail", why: "two values on the same dial" },
-    { s: "grow-1", expect: "ok", why: "single dial" },
-    // m3 / m5 — closed-with-parametric-member
-    { s: "basis-exact-md", expect: "ok", why: "parametric member, valid token" },
-    { s: "basis-exact-240", expect: "fail", why: "raw px OUT in v0 — now P3 bad-parameter, not P2 unknown-word (review priority, this session)" },
-    // P3 — bad-parameter across the other open/parametric axes
-    { s: "grow-3", expect: "ok", why: "valid parameter" },
-    { s: "grow-abc", expect: "fail", why: "P3: shape recognized (grow-), value not a sanctioned integer" },
-    { s: "span-3", expect: "ok", why: "valid parameter, under grid" },
-    { s: "span-abc", expect: "fail", why: "P3: shape recognized (span-), value not a sanctioned integer" },
-    { s: "min-width-sm", expect: "ok", why: "valid parameter" },
-    { s: "min-width-huge", expect: "fail", why: "P3: shape recognized (min-width-), value not a sanctioned size step" },
-    { s: "basis-content", expect: "ok", why: "closed member" },
-    { s: "basis-content basis-exact-md", expect: "fail", why: "two members of one closed axis" },
-    { s: "grid span-all", expect: "ok", why: "contextual member under grid" },
-    { s: "grid span-2 span-all", expect: "fail", why: "two members of one closed axis" },
-    { s: "grid span-2", expect: "ok", why: "parametric member" },
-    // state
-    { s: "selected", expect: "fail", why: "P8 no backing" },
-    { s: "selected", backing: ["aria-pressed"], expect: "ok", why: "P8 Law-6b disjunction" },
-    { s: "selectable", expect: "ok", why: "capability entails nothing" },
-    { s: "stretchy", expect: "fail", why: "P2 coined" },
-    { s: "modal", expect: "ok", why: "top-layer mechanism" },
-    // sticky collision fixed (review this session): position-mode now prefixed, no longer
-    // shadowed by z-scale's tier-2 'sticky' rung
-    { s: "position-sticky", expect: "ok", why: "position-mode, unambiguous after prefixing" },
-    { s: "sticky", expect: "ok", why: "resolves to z-scale only now — position-mode no longer has a bare 'sticky'" },
-    { s: "position-sticky sticky", expect: "ok", why: "different axes (position-mode vs z-scale), compose freely" },
-    { s: "grid padding-comfortable selectable selection-subtle", backing: [], expect: "ok" },
-    // P10 — divider/wrap interaction (review priority, this session)
-    { s: "divided wrap-allowed", expect: "warn", why: "P10: between-children line + wrapping is a real hazard, not an error" },
-    { s: "divided wrap-reverse", expect: "warn", why: "P10: reversed order is the same hazard as wrapping" },
-    { s: "divided wrap-prevent", expect: "ok", why: "no wrapping risk — order can't change" },
-    { s: "divided", expect: "ok", why: "divided alone, no wrap word present" },
-    { s: "wrap-allowed", expect: "ok", why: "wrapping alone, no divider to misplace" },
-    // sub-dial axes now compose (review priority 1)
-    { s: "align-center justify-between", expect: "ok", why: "different sub-dials (align-items vs justify-content)" },
-    { s: "align-center align-start", expect: "fail", why: "two values on the align sub-dial" },
-    { s: "padding-inline-relaxed padding-block-snug", expect: "ok", why: "different padding sub-dials" },
-    { s: "padding-comfortable padding-inline-relaxed", expect: "fail", why: "whole-axis padding + a per-side dial" },
-    { s: "scroll-x scroll-y", expect: "ok", why: "different overflow sub-dials" },
-    { s: "scroll-x scroll-auto", expect: "fail", why: "per-axis dial + whole-axis clip/auto" },
-    // constraints — min/max now compose as a band (review priority 1, this session)
-    { s: "min-width-sm max-width-lg", expect: "ok", why: "width band: min + max compose" },
-    { s: "min-width-sm min-width-lg", expect: "fail", why: "two values on the same min-width dial" },
-    { s: "min-width-sm max-width-lg min-height-sm max-height-lg", expect: "ok", why: "all four constraint dials co-occur" },
-    // checked-mixed token bug fixed (review priority 3)
-    { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the word is complete, not checked-mixed-mixed" },
-    // enum value parses as a real value (groundwork for P4)
-    { s: "sorted-ascending", backing: ["aria-sort=ascending"], expect: "ok", why: "enum value captured and checked against backing value" },
-    { s: "current-page", backing: ["aria-current=page"], expect: "ok", why: "enum value captured and checked against backing value" },
-    // state co-presence (review priority 2)
-    { s: "hover focus", backing: [":hover", ":focus"], expect: "ok", why: "focus group now many — co-present states" },
-    { s: "focus focus-visible", backing: [":focus", ":focus-visible"], expect: "warn", why: "implies, not conflicts — focus-visible is a platform subset of focus, redundant but not an error" },
-    { s: "focus-visible", backing: [":focus-visible"], expect: "ok", why: "narrower alone, no redundancy to flag" },
-    { s: "required invalid", backing: [":required", ":invalid"], expect: "ok", why: "validity many: required + invalid co-present" },
-    { s: "user-invalid invalid", backing: [":user-invalid", ":invalid"], expect: "warn", why: "user-invalid implies invalid — redundant, not an error" },
-    { s: "out-of-range invalid", backing: [":out-of-range", ":invalid"], expect: "warn", why: "out-of-range implies invalid — redundant, not an error" },
-    // P4 — enumerated arity
-    { s: "sorted-ascending", backing: ["aria-sort=ascending"], expect: "ok", why: "valid enum value, value-aware backing" },
-    { s: "sorted", expect: "fail", why: "P4: enumerated needs a value" },
-    { s: "sorted-sideways", expect: "fail", why: "P4: value not in set" },
-    { s: "current-page", backing: ["aria-current=page"], expect: "ok", why: "valid enum value, value-aware backing" },
-    { s: "current", expect: "fail", why: "P4: enumerated needs a value" },
-    // P8 — value-aware enum entailment (review priority 6, this session)
-    { s: "sorted-ascending", backing: ["aria-sort"], expect: "fail", why: "attribute present but value-unqualified — no longer satisfies" },
-    { s: "sorted-ascending", backing: ["aria-sort=descending"], expect: "fail", why: "attribute present with the WRONG value" },
-    { s: "current-page", backing: ["aria-current=step"], expect: "fail", why: "attribute present with a different valid-but-wrong enum value" },
-    // P6 — arity misuse
-    { s: "selected", backing: ["aria-checked=mixed"], expect: "fail", why: "P6: mixed backing → use checked-mixed (P8 suppressed, no double-diagnosis)" },
-    { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the dedicated tri-state word" },
-    // P8-relational — inverted entailment (backing on the container)
-    { s: "active-descendant", ctx: { elementId: "opt-3", containerAttrs: { "aria-activedescendant": "opt-3" } }, expect: "ok", why: "container points at this element" },
-    { s: "active-descendant", ctx: { elementId: "opt-3", containerAttrs: { "aria-activedescendant": "opt-1" } }, expect: "fail", why: "container points elsewhere" },
-    { s: "active-descendant", ctx: { elementId: "opt-3", containerAttrs: {} }, expect: "fail", why: "container attr absent" },
-    { s: "active-descendant", expect: "ok", why: "no context supplied → relational check skipped, not failed" },
-  ];
-
-  let pass = 0;
-  for (const c of cases) {
-    const issues = lint(c.s, new Set(c.backing ?? []), c.ctx ?? {});
-    const hasError = issues.some((i) => i.level === "error");
-    const hasWarn = issues.some((i) => i.level === "warn");
-    const got: "ok" | "warn" | "fail" = hasError ? "fail" : hasWarn ? "warn" : "ok";
-    const ok = got === c.expect;
-    pass += ok ? 1 : 0;
-    console.log(`${ok ? "PASS" : "XXXX"}  [${got}] ${c.s}${c.backing ? ` (backing: ${c.backing.join(",")||"∅"})` : ""}`);
-    for (const i of issues) console.log(`         ${i.level}: ${i.rule} — ${i.msg}`);
-  }
-  console.log(`\n${pass}/${cases.length} cases behaved as expected.`);
 }

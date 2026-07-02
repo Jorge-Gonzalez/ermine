@@ -67,8 +67,20 @@ const EMISSION: Record<string, EmitSpec> = {
       switch (word) {
         case "horizontal": return { "flex-direction": "row" };
         case "vertical": return { "flex-direction": "column" };
-        case "rows": return { "flex-direction": "row", "flex-wrap": "wrap" };
         case "grid": return { "grid-auto-flow": "row" };
+        default: return null;
+      }
+    },
+  },
+
+  // --- plain closed axis (flex-wrap) — the axis `rows` used to shadow ---
+  wrapping: {
+    effectKind: "css",
+    plain: (word) => {
+      switch (word) {
+        case "wrap-allowed": return { "flex-wrap": "wrap" };
+        case "wrap-prevent": return { "flex-wrap": "nowrap" };
+        case "wrap-reverse": return { "flex-wrap": "wrap-reverse" };
         default: return null;
       }
     },
@@ -158,7 +170,7 @@ const EMISSION: Record<string, EmitSpec> = {
 // separate from EMISSION because a FacetRule isn't a complete declaration.
 const FACET_EMISSION: Record<string, (word: string) => { property: string; facet: string; value: string } | null> = {
   structure: (word) => {
-    const inner: Record<string, string> = { horizontal: "flex", vertical: "flex", rows: "flex", grid: "grid" };
+    const inner: Record<string, string> = { horizontal: "flex", vertical: "flex", grid: "grid" };
     return word in inner ? { property: "display", facet: "inner", value: inner[word] } : null;
   },
   "m1-flow-participation": (word) => {
@@ -321,8 +333,9 @@ function selectorFragmentFromEntails(entails: string[] | undefined): string {
 // Deliberately axis-specific (not derived generically from valueSpace) for
 // the same reason EMISSION itself is axis-specific: word shape isn't uniform
 // across the registry (see the flow-spacing bug above).
-const VOCABULARY: Record<string, string[]> = {
-  structure: ["horizontal", "vertical", "rows", "grid"],
+export const VOCABULARY: Record<string, string[]> = {
+  structure: ["horizontal", "vertical", "grid"],
+  wrapping: ["wrap-allowed", "wrap-prevent", "wrap-reverse"],
   "m1-flow-participation": ["inline", "boxed", "boxed-inline"],
   density: SCALES.density.map((s) => `gap-${s}`),
   "flow-spacing": SCALES.density.map((s) => `flow-${s}`),

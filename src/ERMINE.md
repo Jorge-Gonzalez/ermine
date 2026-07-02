@@ -695,7 +695,7 @@ Axes pre-filled from current code; rulings flagged. Held distinct from 4.4 layer
 
 ### structure — container-role
 - signature: container-operation
-- vocabulary: closed (`horizontal/vertical/rows/grid` exhaust the inner-display choices)
+- vocabulary: closed (`horizontal/vertical/grid` exhaust the inner-display choices)
 - controls: the **inner display type** (CSS Display L3) — how children arrange: flow / flex / grid (+ direction)
 - must-never-touch: spacing, alignment, the element's own size/flex, appearance, the **outer**
   display type (block/inline — that's member-role, below)
@@ -703,7 +703,13 @@ Axes pre-filled from current code; rulings flagged. Held distinct from 4.4 layer
   element sits in its parent) = **member-role**, NOT structure. Structure picks the inner type;
   the unmarked inner type is flow, with flex/grid opt-in (don't default to flex). NB: CSS's
   outer/inner display split *is* the member/container role split.
-- members: `horizontal` `vertical` `rows` `grid`
+- members: `horizontal` `vertical` `grid`
+- **retired: `rows`** (compose-don't-coin, §8). It expanded to `flex-direction: row` + `flex-wrap: wrap`
+  — i.e. exactly `horizontal wrap-allowed`. It was a coined composition, and it wrote `flex-wrap`,
+  which belongs to the **wrapping** axis, not to structure (whose mandate is inner-display-type +
+  direction). The overlap was a latent dimensional-purity violation, hidden only because the wrapping
+  axis had no emitted CSS yet; giving wrapping its emission surfaced it. Resolution: drop the word, keep
+  the composition.
 - frozen compositions (dissolve into grammar — see §8): `two-sections` and `sidebar-main`
   bake in structure + per-child member-roles; `sidebar-main`'s `:first-child`/`:last-child`
   rules are heterogeneous member-roles hardcoded.

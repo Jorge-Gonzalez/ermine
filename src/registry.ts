@@ -171,11 +171,15 @@ export const LAYOUT: AxisRecord[] = [
     axis: "structure",
     sibling: "layout", role: "container", signature: "container-operation",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["horizontal", "vertical", "rows", "grid"],
-    tokens: [{ pattern: /^(horizontal|vertical|rows|grid)$/, shape: "<structure>" }],
+    // `rows` retired (compose-don't-coin, §8): it was `horizontal` + `wrap-allowed`,
+    // and it smuggled flex-wrap — which the `wrapping` axis owns — into an axis whose
+    // mandate is inner-display-type (+ direction) only. The collision was latent (P7
+    // missed it only because `wrapping` had no emission entry yet).
+    valueSpace: ["horizontal", "vertical", "grid"],
+    tokens: [{ pattern: /^(horizontal|vertical|grid)$/, shape: "<structure>" }],
     default: "flow", // unmarked inner display; `flow` reserved for default, never a member
     controls: ["display.inner", "flex-direction", "grid-template-columns", "grid-auto-flow"],
-    mustNeverTouch: ["gap", "padding", "margin", "align-self", "flex", "background", "border", "display.outer"],
+    mustNeverTouch: ["gap", "padding", "margin", "align-self", "flex", "flex-wrap", "background", "border", "display.outer"],
   },
   {
     axis: "m1-flow-participation",
@@ -295,7 +299,10 @@ export const LAYOUT: AxisRecord[] = [
     dialOf: (word: string) => word.startsWith("padding-inline-") ? "inline" : word.startsWith("padding-block-") ? "block" : null,
     aliasMatch: (word: string) => /^padding-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word),
     default: null,
-    controls: ["padding"],
+    // longhands, not the shorthand: the whole-axis form emits `padding` (all sides), the
+    // dials emit `padding-inline` / `padding-block`. Listed so the hand `controls` face
+    // matches the emitter's real footprint (controls-fidelity check, emit.ts).
+    controls: ["padding", "padding-inline", "padding-block"],
     mustNeverTouch: ["margin", "gap", "display"],
     notes: "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<density>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-relaxed padding-block-snug` composes.",
   },
