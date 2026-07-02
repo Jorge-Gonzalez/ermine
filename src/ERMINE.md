@@ -372,6 +372,36 @@ checkable grammar; an author still reasons in layout terms, just lawful ones. An
 
 ---
 
+**What Ermine is — and what it is *for* (present vs direction).** Two registers, kept apart so the
+second never inflates the first.
+
+*Present (demonstrable, now).* Ermine is a **framework**: a typed, composable style grammar with an
+executable registry and a linter. What lifts it past a utility set is the seam it enforces — **classes
+name meaning, not values** (`gap-comfortable`, not `gap-4`), and their composition is **checked**
+(disjoint properties, one-word-per-axis, entailment); the visual values are isolated behind a `var()`
+seam a swappable theme owns (§5–§6). The whole present claim is bounded and testable: *a semantic,
+composable framework whose class strings are verifiably well-formed and whose look is isolated behind a
+theme seam.* Nothing in it requires anything that does not already run. (This is the **competence**
+grammar of the status note; generating and predicting *into* it is **performance**, below.)
+
+*Direction (GOALS — non-normative).* Because the grammar is a **finite, typed language with composition
+laws**, well-formedness is a constraint an author — human, tool, or model — can be held to. Two goals
+follow, in the same direction, at increasing distance and decreasing certainty:
+- **(near goal) generation *into* the grammar** — the linter's well-formedness rules *are* a generation
+  grammar; a model given the spec's authoring contract can be constrained to emit only valid Ermine. A
+  goal, not a feature: no generator ships today.
+- **(far goal) a layout model** — given a corpus of real designs *parsed into* the grammar (the inverse
+  of the emitter — unbuilt, and the hard direction; see §5.1), characterize the distribution of real
+  layouts and generate *statistically* plausible ones. The north star, not a claim: it rests on
+  artifacts that do not yet exist.
+
+The boundary between the two registers is load-bearing: **validity is grammatical** — the grammar
+delivers it now; **quality is statistical** — it needs the corpus, later. The framework is present
+tense; the layout model is a distant goal *in the same direction*, written here as a goal precisely so
+it is never read as a capability.
+
+---
+
 ## 1. The three planes (settled)
 
 Sort every style by **function**, not by file or by reusable-vs-app.
@@ -1580,6 +1610,31 @@ value/name decisions; the **three-tier structure and the declarative/JS boundary
 ## 5. Skin — three kinds of structure (settled framing; rulings open)
 
 Skin is **not** one thing and **not** all consensus.
+
+### 5.0 — The grammar/theme seam (framing; non-structural)
+
+**Theme is not a plane; it is the value-side of a seam that already runs through the grammar.**
+`gap-comfortable` does not emit `16px` — it emits `var(--spacing-comfortable)`. Three things stack
+there, three owners: the **step-name** `comfortable` (grammar — closed, stable), the **reference**
+`var(--spacing-comfortable)` (the emitter's binding), the **value** `--spacing-comfortable: 16px`
+(theme — swappable, defined once). The grammar owns *that there are six density steps and their names*;
+the theme owns *what they are worth*; they meet at the `var()`. **That seam — not the layout/skin
+split — is where grammar ends and theme begins**, and it already cuts through layout (spacing is
+themed). So "skin" is not "the themed part." The real distinction is *how theme-bound a word is*, on
+three rungs:
+
+1. **Fixed** — grammar word, fixed CSS value (`horizontal`→`flex-direction:row`; `align-center`). Theme
+   absent; the word *is* the value.
+2. **Scale-bound** — grammar word (closed, stable step-name), value via `var(--scale-step)`.
+   Spacing/size today; **radius** (→`border-radius`) and **type** (→`font-size`/`line-height`) are this
+   rung (§5.1). Grammar owns the steps; theme owns the numbers.
+3. **Fully open** — theme owns even the *word set* (`tone-*`, surfaces; §5.3). Grammar owns only the
+   disjoint property and the `var()` socket; it enumerates nothing.
+
+**Scope (consequence, not new law).** The skin the grammar specifies *now* is the rung-2 scales —
+radius and type — emitted exactly as spacing is. Color/tone/ink are rung 3: declare the socket and the
+disjoint property, defer the vocabulary and the values to the theme (§5.3). **Skin is the interface; a
+theme is an implementation of it** — which is why a theme swap re-skins without touching a class.
 
 ### 5.1 Generative-proportional — *declare it; it's already math*
 Ratios, modular scales, grids, rhythm, symmetry. Lawful, algebraic, author-set.
