@@ -28,3 +28,21 @@ test("the selection sink fires only when its three words co-occur", () => {
   const withoutSink = emit("selectable selection-subtle").filter((r) => r.kind === "reads");
   assert.equal(withoutSink.length, 0, "sink must not fire when `selected` is absent");
 });
+
+// value correctness for the mechanical axes (controls-fidelity checks property keys, not values).
+const declOf = (cls: string) =>
+  emit(cls).filter((r) => r.kind === "declares").flatMap((r) => Object.entries((r as { declarations: Record<string, string> }).declarations));
+
+test("overflow whole-axis word writes BOTH longhands, never the shorthand", () => {
+  assert.deepEqual(declOf("scroll-auto"), [["overflow-x", "auto"], ["overflow-y", "auto"]]);
+  assert.deepEqual(declOf("scroll-x"), [["overflow-x", "scroll"]]);
+});
+
+test("alignment-container maps between/around to space-*", () => {
+  assert.deepEqual(declOf("justify-between"), [["justify-content", "space-between"]]);
+  assert.deepEqual(declOf("align-center"), [["align-items", "center"]]);
+});
+
+test("position-mode strips the grammar prefix", () => {
+  assert.deepEqual(declOf("position-sticky"), [["position", "sticky"]]);
+});

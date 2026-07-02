@@ -138,6 +138,70 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- ordered-chain scale axis, sub-dials + aliasMatch (same shape as padding) ---
+  margin: {
+    effectKind: "css",
+    plain: (word) => {
+      if (/^margin-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word))
+        return densityDial("margin")(word);
+      const inline = densityDial("margin-inline")(word);
+      if (inline) return inline;
+      return densityDial("margin-block")(word);
+    },
+  },
+
+  // --- plain closed axis: self alignment ---
+  "m4-self-alignment": {
+    effectKind: "css",
+    plain: (word) => {
+      const m = word.match(/^self-(start|center|end|stretch|baseline)$/);
+      return m ? { "align-self": m[1] } : null;
+    },
+  },
+
+  // --- sub-dial axis: container alignment (align dial → align-items, justify dial → justify-content) ---
+  "alignment-container": {
+    effectKind: "css",
+    plain: (word): Record<string, string> | null => {
+      const a = word.match(/^align-(start|center|end|stretch|baseline)$/);
+      if (a) return { "align-items": a[1] };
+      const j = word.match(/^justify-(start|center|end|between|around)$/);
+      if (j) return { "justify-content": j[1] === "between" || j[1] === "around" ? `space-${j[1]}` : j[1] };
+      return null;
+    },
+  },
+
+  // --- sub-dials + whole-axis aliases: overflow. Longhands only (never the `overflow`
+  //     shorthand), same discipline as m2-flex — so a per-axis dial composes with itself
+  //     and the whole-axis words (scroll-auto/clip) write BOTH longhands. ---
+  overflow: {
+    effectKind: "css",
+    plain: (word): Record<string, string> | null => {
+      switch (word) {
+        case "scroll-x": return { "overflow-x": "scroll" };
+        case "scroll-y": return { "overflow-y": "scroll" };
+        case "scroll-auto": return { "overflow-x": "auto", "overflow-y": "auto" };
+        case "clip": return { "overflow-x": "clip", "overflow-y": "clip" };
+        default: return null;
+      }
+    },
+  },
+
+  // --- plain closed axis: position mode (strip the `position-` grammar prefix) ---
+  "position-mode": {
+    effectKind: "css",
+    plain: (word) => {
+      const m = word.match(/^position-(static|relative|absolute|fixed|sticky)$/);
+      return m ? { position: m[1] } : null;
+    },
+  },
+
+  // --- single-member axis: stacking context ---
+  "stacking-context": {
+    effectKind: "css",
+    plain: (word) => (word === "isolate" ? { isolation: "isolate" } : null),
+  },
+
   // --- conditioned-skin: writes custom properties, paints nothing itself ---
   "selection-treatment": {
     effectKind: "custom-property",
@@ -347,6 +411,16 @@ export const VOCABULARY: Record<string, string[]> = {
   "m2-flex": ["rigid", "compressible", "expandable", "elastic", "grow-1", "grow-2", "shrink-1"],
   "m3-self-size": ["basis-content", "basis-ratio", ...SCALES.size.map((s) => `basis-exact-${s}`)],
   constraints: ["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
+  margin: [
+    ...SCALES.density.map((s) => `margin-${s}`),
+    ...SCALES.density.map((s) => `margin-inline-${s}`),
+    ...SCALES.density.map((s) => `margin-block-${s}`),
+  ],
+  "m4-self-alignment": ["self-start", "self-center", "self-end", "self-stretch", "self-baseline"],
+  "alignment-container": ["align-start", "align-center", "align-end", "align-stretch", "align-baseline", "justify-start", "justify-center", "justify-end", "justify-between", "justify-around"],
+  overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip"],
+  "position-mode": ["position-static", "position-relative", "position-absolute", "position-fixed", "position-sticky"],
+  "stacking-context": ["isolate"],
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
   "motion-macro": ["together", "sequence", "cascade"],

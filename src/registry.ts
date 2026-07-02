@@ -316,7 +316,7 @@ export const LAYOUT: AxisRecord[] = [
     dialOf: (word: string) => word.startsWith("margin-inline-") ? "inline" : word.startsWith("margin-block-") ? "block" : null,
     aliasMatch: (word: string) => /^margin-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word),
     default: null,
-    controls: ["margin"],
+    controls: ["margin", "margin-inline", "margin-block"], // longhands, per padding (controls-fidelity)
     mustNeverTouch: ["padding", "gap", "display"],
     notes: "two sub-dials inline/block; `margin-<density>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
   },
