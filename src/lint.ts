@@ -183,12 +183,15 @@ export function p8_stateEntailment(parsed: Parsed[], backing: Set<string>, skipT
   return out;
 }
 
-// Context for relational checks: the element's own id, and the container's attributes.
-// Both optional — when absent, relational checks are skipped (not failed), since the
-// linter then has no way to see the inverted backing.
+// Context the linter can't get from the class string alone. All optional — when a
+// field is absent, the check that needs it is SKIPPED (not failed), so isolated
+// linting never false-positives.
 export interface LintContext {
   elementId?: string;
   containerAttrs?: Record<string, string>;
+  // the PARENT element's class string — the first bit of parent context the linter
+  // consumes (P11). Absent → parent unknown → P11 skipped.
+  parentClasses?: string;
 }
 
 // --- P8b: RELATIONAL state entailment (inverted — backing on the CONTAINER) ---
@@ -226,6 +229,27 @@ export function p10_dividerWrap(parsed: Parsed[]): Issue[] {
   if (!risky) return [];
   return [{ level: "warn", rule: "divider-wrap",
     msg: `'divided' with '${risky.raw}' — the between-children line assumes authored order; verify it degrades to no divider rather than mis-rendering once children wrap or reorder.` }];
+}
+
+// --- P11: m1 flow-participation is inert on a flex/grid item (warn) ---
+// The first OUTCOME-level rule, and the first that needs PARENT context. CSS
+// blockifies a flex/grid item's OUTER display, so an inline-flavored m1 word
+// (`inline`, `boxed-inline`) is silently overridden to block on a child of a
+// flex/grid container — a no-op the author almost certainly didn't intend. Not a
+// property collision, so P7 can't see it (browser-verified in test/browser). The
+// parent is a flex/grid container iff it carries any `structure` word (all of
+// horizontal/vertical/grid produce flex/grid inner display). Skipped when the
+// parent is unknown (ctx.parentClasses absent), like the relational check.
+const INLINE_OUTER_M1 = new Set(["inline", "boxed-inline"]); // `boxed` (block outer) is unaffected
+export function p11_m1OnFlexItem(parsed: Parsed[], ctx: LintContext): Issue[] {
+  if (ctx.parentClasses === undefined) return []; // parent unknown → can't check
+  const parentIsFlexOrGrid = ctx.parentClasses.trim().split(/\s+/).filter(Boolean)
+    .map(parseWord).some((p) => p.axis === "structure");
+  if (!parentIsFlexOrGrid) return [];
+  return parsed
+    .filter((p) => p.axis === "m1-flow-participation" && INLINE_OUTER_M1.has(p.raw))
+    .map((p) => ({ level: "warn" as const, rule: "flow-participation-inert",
+      msg: `'${p.raw}' sets an inline outer display, but this element is a flex/grid item — CSS blockifies the outer display, so '${p.raw}' is a no-op here. Drop it, or make the parent a flow container.` }));
 }
 
 // --- P3: open vocabulary admits only its stated parameter (bad-parameter) ---
@@ -298,5 +322,6 @@ export function lint(classString: string, backing = new Set<string>(), ctx: Lint
     ...p8_stateEntailment(parsed, backing, p6Targets),
     ...p8b_relationalEntailment(parsed, ctx),
     ...p10_dividerWrap(parsed),
+    ...p11_m1OnFlexItem(parsed, ctx),
   ];
 }

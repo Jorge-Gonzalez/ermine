@@ -776,10 +776,11 @@ structural choice.)*
 > CSS *blockifies* the outer display of a flex/grid item, so `inline` / `boxed-inline` are **no-ops on a
 > child of a flex/grid container** (`horizontal inline` in flow → `inline-flex`; the same as a flex item →
 > `flex`). This is correct CSS, not a defect — but it is an *outcome* interaction P7 cannot see (no property
-> collides; the parent's layout mode silently overrides the child's outer display). Recorded as a **candidate
-> lint warning** (not yet implemented): flag m1 on an element whose parent is a flex/grid container. This is
-> the first entry in the "outcome behavior" frontier the status note names — surfaced by rendering, not by the
-> paper checks.
+> collides; the parent's layout mode silently overrides the child's outer display). Enforced by **lint warning
+> P11** (`flow-participation-inert`, `lint.ts`): it reads the parent's classes from `LintContext.parentClasses`
+> and warns when an inline-flavored m1 word rides a flex/grid item. This is the first entry in the "outcome
+> behavior" frontier the status note names — surfaced by rendering, not by the paper checks — and the first
+> lint rule that consumes **parent context** rather than the class string in isolation.
 
 #### m2 — flex character (give↔grab) · **2D product** (grow × shrink) · **vocabulary: open + whole-axis aliases** — open dials `grow-N`/`shrink-N`; 4 corners are whole-axis aliases (each fixes both dials) · **regime: negotiated** · default: compressible
 Grow-willingness and shrink-willingness are *independent* → a product, NOT a chain. Corners,

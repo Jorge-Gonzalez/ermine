@@ -98,6 +98,12 @@ const cases: Case[] = [
   // flex-wrap into the structure axis, colliding with the wrapping axis.
   { s: "rows", expect: "fail", why: "P2: `rows` retired — it decomposes to `horizontal wrap-allowed`" },
   { s: "horizontal wrap-allowed", expect: "ok", why: "the composition `rows` used to coin" },
+  // P11 — m1 flow-participation inert on a flex/grid item (needs parent context)
+  { s: "inline", ctx: { parentClasses: "horizontal gap-snug" }, expect: "warn", why: "P11: inline outer blockified on a flex item" },
+  { s: "boxed-inline", ctx: { parentClasses: "grid" }, expect: "warn", why: "P11: grid items blockify too" },
+  { s: "inline", ctx: { parentClasses: "padding-relaxed" }, expect: "ok", why: "parent is flow (no structure word) → inline is meaningful" },
+  { s: "boxed", ctx: { parentClasses: "horizontal" }, expect: "ok", why: "boxed is block outer — blockification is a no-op change, not inert-inline" },
+  { s: "inline", expect: "ok", why: "no parent context → P11 skipped, not failed" },
 ];
 
 for (const c of cases) {
