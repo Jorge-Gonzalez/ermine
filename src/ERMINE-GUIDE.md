@@ -52,7 +52,7 @@ children" is a container job (`gap-*`); "*I* should grow" is a member job (`expa
 
 One word, picks the arrangement of direct children:
 
-<!-- BEGIN GENERATED: guide-structure (do not edit between markers) -->
+<!-- BEGIN GENERATED: guide-structure (registry words generated; teaching prose editable) -->
 - `horizontal` — a row
 - `vertical` — a column
 - `grid` — a grid
@@ -63,13 +63,13 @@ Bare (no word) = normal document flow. You only add a word when you want flex or
 ### Spacing: four families, one scale (container / self / member)
 
 All spacing reads the **same scale**, so the density words are always the same:
-<!-- BEGIN GENERATED: guide-density-scale (do not edit between markers) -->
+<!-- BEGIN GENERATED: guide-density-scale (registry words generated; teaching prose editable) -->
 `tight · snug · comfortable · relaxed · loose · separated`.
 <!-- END GENERATED: guide-density-scale -->
 
 What changes is *which property* owns the space:
 
-<!-- BEGIN GENERATED: guide-spacing-families (do not edit between markers) -->
+<!-- BEGIN GENERATED: guide-spacing-families (registry words generated; teaching prose editable) -->
 - `gap-*` — space **between** children (the default for rhythm). `gap-comfortable`
 - `flow-*` — space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`
 - `padding-*` — space **inside** an element. `padding-snug`
@@ -92,7 +92,7 @@ or `-block` (top/bottom):
 
 ### Alignment (container vs member)
 
-<!-- BEGIN GENERATED: guide-alignment (do not edit between markers) -->
+<!-- BEGIN GENERATED: guide-alignment (registry words generated; teaching prose editable) -->
 - Container aligns its children: `align-start|center|end|stretch|baseline`,
   `justify-start|center|end|between|around`.
 - A member overrides its own alignment: `self-start|center|end|stretch|baseline`.
@@ -110,7 +110,7 @@ or `-block` (top/bottom):
 This is the one place the grammar *negotiates* — members share the parent's space, so the result
 depends on all of them together. Four everyday words cover almost everything — pick **one**:
 
-<!-- BEGIN GENERATED: guide-flex-aliases (do not edit between markers) -->
+<!-- BEGIN GENERATED: guide-flex-aliases (registry words generated; teaching prose editable) -->
 - `rigid` — never grows, never shrinks
 - `compressible` — shrinks if needed (the default)
 - `expandable` — grows to fill space
@@ -131,7 +131,7 @@ try to set grow). For a custom amount, drop the word and say it with dials:
 
 And where its size *starts from* (a separate choice — pick one):
 
-<!-- BEGIN GENERATED: guide-basis-choices (do not edit between markers) -->
+<!-- BEGIN GENERATED: guide-basis-choices (registry words generated; teaching prose editable) -->
 - `basis-content` — size to its content (Figma's *Hug*)
 - `basis-ratio` — take a share of the space (like `1fr`)
 - `basis-exact-sm|md|lg|xl` — a specific size from the size scale
@@ -151,7 +151,7 @@ And where its size *starts from* (a separate choice — pick one):
 
 ### A few more container words
 
-<!-- BEGIN GENERATED: guide-more-container-words (do not edit between markers) -->
+<!-- BEGIN GENERATED: guide-more-container-words (registry words generated; teaching prose editable) -->
 - `divided` / `undivided` — a line drawn *between* children (not on each child). `undivided` is the default.
 - `wrap-allowed` / `wrap-prevent` / `wrap-reverse` — wrapping behaviour.
 <!-- END GENERATED: guide-more-container-words -->

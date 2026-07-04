@@ -6,11 +6,11 @@ const GUIDE_PATH = new URL("./ERMINE-GUIDE.md", import.meta.url);
 
 interface GuideBlock {
   name: string;
-  render: () => string;
+  render: (current: string) => string;
 }
 
 function begin(name: string): string {
-  return `<!-- BEGIN GENERATED: guide-${name} (do not edit between markers) -->`;
+  return `<!-- BEGIN GENERATED: guide-${name} (registry words generated; teaching prose editable) -->`;
 }
 
 function end(name: string): string {
@@ -37,18 +37,88 @@ function compactPrefixed(values: readonly string[], prefix: string): string {
   return `${prefix}${suffixes.join("|")}`;
 }
 
-function renderStructure(): string {
-  const descriptions: Record<string, string> = {
-    horizontal: "a row",
-    vertical: "a column",
-    grid: "a grid",
-  };
-  return axis("structure").valueSpace
-    .map((word) => `- ${code(word)}${descriptions[word] ? ` — ${descriptions[word]}` : ""}`)
-    .join("\n");
+interface GlossEntry {
+  key: string;
+  display: string;
 }
 
-function renderDensityScale(): string {
+interface ParsedGloss {
+  key: string;
+  suffix: string;
+}
+
+function logicalBullets(current: string, label: string): string[] {
+  const bullets: string[] = [];
+  for (const line of current.split("\n")) {
+    if (line.startsWith("- ")) bullets.push(line);
+    else if (bullets.length && /^\s+\S/.test(line)) bullets[bullets.length - 1] += `\n${line}`;
+    else throw new Error(`Guide ${label} contains a line that is not part of a teaching-gloss bullet`);
+  }
+  return bullets;
+}
+
+function parsedGlosses(current: string, label: string): ParsedGloss[] {
+  return logicalBullets(current, label).map((bullet) => {
+    const match = bullet.match(/^- `([^`]+)`(\s+—[\s\S]+)$/);
+    if (!match || !/^\s+—\s+\S/.test(match[2])) {
+      throw new Error(`Guide ${label} requires a non-empty teaching gloss after every listed word`);
+    }
+    return { key: match[1], suffix: match[2] };
+  });
+}
+
+function preserveKeyedGlosses(
+  current: string,
+  entries: GlossEntry[],
+  label: string,
+  normalizeKey: (display: string) => string = (display) => display,
+): string {
+  const glosses = new Map<string, string>();
+  for (const gloss of parsedGlosses(current, label)) {
+    const key = normalizeKey(gloss.key);
+    if (glosses.has(key)) throw new Error(`Guide ${label} has a duplicate teaching gloss for ${key}`);
+    glosses.set(key, gloss.suffix);
+  }
+
+  const expected = new Set(entries.map((entry) => entry.key));
+  for (const key of glosses.keys()) {
+    if (!expected.has(key)) throw new Error(`Guide ${label} has a stale teaching gloss for ${key}`);
+  }
+  return entries.map((entry) => {
+    const suffix = glosses.get(entry.key);
+    if (!suffix) throw new Error(`Guide ${label} is missing a teaching gloss for ${entry.key}`);
+    return `- ${code(entry.display)}${suffix}`;
+  }).join("\n");
+}
+
+function preservePositionalGlosses(current: string, displays: string[], label: string): string {
+  const glosses = parsedGlosses(current, label);
+  if (glosses.length !== displays.length) {
+    throw new Error(
+      `Guide ${label} has ${glosses.length} teaching glosses for ${displays.length} registry entries`,
+    );
+  }
+  return displays.map((display, index) => `- ${code(display)}${glosses[index].suffix}`).join("\n");
+}
+
+function replaceCodeSpans(current: string, displays: string[], label: string): string {
+  let index = 0;
+  const rendered = current.replace(/`[^`\n]+`/g, () => {
+    if (index >= displays.length) throw new Error(`Guide ${label} contains too many generated word spans`);
+    return code(displays[index++]);
+  });
+  if (index !== displays.length) {
+    throw new Error(`Guide ${label} contains ${index} word spans for ${displays.length} registry listings`);
+  }
+  return rendered;
+}
+
+function renderStructure(current: string): string {
+  const entries = axis("structure").valueSpace.map((word) => ({ key: word, display: word }));
+  return preserveKeyedGlosses(current, entries, "structure listing");
+}
+
+function renderDensityScale(_current: string): string {
   return `${code(SCALES.density.join(" · "))}.`;
 }
 
@@ -61,86 +131,63 @@ function densityShape(axisId: string): string {
   return token.shape.replace("<density>", "*");
 }
 
-function renderSpacingFamilies(): string {
-  const families = [
-    {
-      axis: "density",
-      description: "space **between** children (the default for rhythm).",
-      example: "gap-comfortable",
-    },
-    {
-      axis: "flow-spacing",
-      description: "space between children in **prose/block flow** where `gap` can't reach.",
-      example: "flow-relaxed",
-    },
-    {
-      axis: "padding",
-      description: "space **inside** an element.",
-      example: "padding-snug",
-    },
-    {
-      axis: "margin",
-      description: "an element's **own outward** space. Reach for this only when something needs space\n  independent of its container's rhythm.",
-      example: "margin-loose",
-    },
-  ] as const;
-
-  return families
-    .map(
-      (family) =>
-        `- ${code(densityShape(family.axis))} — ${family.description} ${code(family.example)}`,
-    )
-    .join("\n");
+function renderSpacingFamilies(current: string): string {
+  const displays = ["density", "flow-spacing", "padding", "margin"].map(densityShape);
+  return preservePositionalGlosses(current, displays, "spacing-family listing");
 }
 
-function renderAlignment(): string {
+function renderAlignment(current: string): string {
   const container = axis("alignment-container").valueSpace;
   const align = container.filter((word) => word.startsWith("align-"));
   const justify = container.filter((word) => word.startsWith("justify-"));
   const member = axis("m4-self-alignment").valueSpace;
-  return [
-    `- Container aligns its children: ${code(compactPrefixed(align, "align-"))},`,
-    `  ${code(compactPrefixed(justify, "justify-"))}.`,
-    `- A member overrides its own alignment: ${code(compactPrefixed(member, "self-"))}.`,
-  ].join("\n");
+  return replaceCodeSpans(current, [
+    compactPrefixed(align, "align-"),
+    compactPrefixed(justify, "justify-"),
+    compactPrefixed(member, "self-"),
+  ], "alignment listing");
 }
 
-function renderFlexAliases(): string {
-  const descriptions: Record<string, string> = {
-    rigid: "never grows, never shrinks",
-    compressible: "shrinks if needed (the default)",
-    expandable: "grows to fill space",
-    elastic: "both grows and shrinks",
-  };
+function renderFlexAliases(current: string): string {
   const aliases = axis("m2-flex").aliases;
   if (!aliases?.length) throw new Error("Guide flex listing requires whole-axis aliases");
-  return aliases
-    .map(({ word }) => `- ${code(word)}${descriptions[word] ? ` — ${descriptions[word]}` : ""}`)
-    .join("\n");
+  return preserveKeyedGlosses(
+    current,
+    aliases.map(({ word }) => ({ key: word, display: word })),
+    "flex-alias listing",
+  );
 }
 
-function renderBasisChoices(): string {
-  const descriptions: Record<string, string> = {
-    "basis-content": "size to its content (Figma's *Hug*)",
-    "basis-ratio": "take a share of the space (like `1fr`)",
-    "basis-exact-<size>": "a specific size from the size scale",
-  };
-  return axis("m3-self-size").valueSpace
-    .map((word) => {
-      const display = word === "basis-exact-<size>"
-        ? compactPrefixed(SCALES.size.map((step) => `basis-exact-${step}`), "basis-exact-")
-        : word;
-      return `- ${code(display)}${descriptions[word] ? ` — ${descriptions[word]}` : ""}`;
-    })
-    .join("\n");
+function renderBasisChoices(current: string): string {
+  const entries = axis("m3-self-size").valueSpace.map((word) => {
+    const display = word === "basis-exact-<size>"
+      ? compactPrefixed(SCALES.size.map((step) => `basis-exact-${step}`), "basis-exact-")
+      : word;
+    return { key: word, display };
+  });
+  return preserveKeyedGlosses(
+    current,
+    entries,
+    "basis-choice listing",
+    (display) => display.startsWith("basis-exact-") ? "basis-exact-<size>" : display,
+  );
 }
 
-function renderMoreContainerWords(): string {
+function renderMoreContainerWords(current: string): string {
   const divider = axis("divider");
   const wrapping = axis("wrapping");
+  const bullets = logicalBullets(current, "additional-container listing");
+  if (bullets.length !== 2) throw new Error("Guide additional-container listing requires two axis glosses");
+  const suffixes = bullets.map((bullet) => {
+    const match = bullet.match(/^- [\s\S]+?(\s+—\s+\S[\s\S]*)$/);
+    if (!match) throw new Error("Guide additional-container listing requires a non-empty axis gloss");
+    return match[1];
+  });
+  if (divider.default === null) throw new Error("Guide divider gloss names a default but the registry has none");
+  const dividerSuffix = replaceCodeSpans(suffixes[0], [divider.default], "divider-default gloss");
   return [
-    `- ${divider.valueSpace.map(code).join(" / ")} — a line drawn *between* children (not on each child). ${code(divider.default ?? "")} is the default.`,
-    `- ${wrapping.valueSpace.map(code).join(" / ")} — wrapping behaviour.`,
+    `- ${divider.valueSpace.map(code).join(" / ")}${dividerSuffix}`,
+    `- ${wrapping.valueSpace.map(code).join(" / ")}${suffixes[1]}`,
   ].join("\n");
 }
 
@@ -166,7 +213,8 @@ function replaceBlock(source: string, block: GuideBlock): string {
       source.indexOf(endMarker, finish + endMarker.length) >= 0) {
     throw new Error(`Duplicate ${block.name} guide markers`);
   }
-  return `${source.slice(0, start)}${startMarker}\n${block.render()}\n${endMarker}${source.slice(finish + endMarker.length)}`;
+  const current = source.slice(start + startMarker.length, finish).replace(/^\n|\n$/g, "");
+  return `${source.slice(0, start)}${startMarker}\n${block.render(current)}\n${endMarker}${source.slice(finish + endMarker.length)}`;
 }
 
 function generate(source: string): string {
