@@ -1,0 +1,1171 @@
+{
+  "date": "2026-07-04",
+  "generator": "fake",
+  "arms": {
+    "ermine-loop": {
+      "metrics": {
+        "arm": "ermine-loop",
+        "n": 30,
+        "firstEmissionValidity": 0.9333333333333333,
+        "gapRate": 0.03333333333333333,
+        "semanticPassRate": 0.9666666666666667,
+        "roundsToValid": {
+          "1": 28,
+          "2": 1
+        }
+      },
+      "runs": [
+        {
+          "id": "P01",
+          "trace": {
+            "intent": "a stacked content section with comfortable rhythm and inner breathing room",
+            "rounds": [
+              {
+                "promptHash": "2b9a20573fdc03e9cd7a48991b06024af86ae8caa76d35e3826c4be8b3e2654a",
+                "emission": "vertical gap-comfortable padding-relaxed",
+                "issues": [],
+                "ms": 1
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical gap-comfortable padding-relaxed"
+          }
+        },
+        {
+          "id": "P02",
+          "trace": {
+            "intent": "a header row: controls vertically centered, groups pushed to opposite ends",
+            "rounds": [
+              {
+                "promptHash": "0ef491daf9cb8e23f28665353fb1b625e4cb6cb79ac646bb23512ca9e9b0bd6b",
+                "emission": "horizontal gap-snug align-center justify-between",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "horizontal gap-snug align-center justify-between"
+          }
+        },
+        {
+          "id": "P03",
+          "trace": {
+            "intent": "a card body that never grows past its readable width",
+            "rounds": [
+              {
+                "promptHash": "942c62eaea70e8547456ad7c730d0127c535e4ea04d09aabdbd435c24580452f",
+                "emission": "vertical gap-snug padding-comfortable max-width-lg",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical gap-snug padding-comfortable max-width-lg"
+          }
+        },
+        {
+          "id": "P04",
+          "trace": {
+            "intent": "a compact chip that sits inline in running text",
+            "rounds": [
+              {
+                "promptHash": "c761420fd89765ce5723b2ef5227387575bb94c8a3ac072ca7b538d886ca4e03",
+                "emission": "horizontal inline gap-tight padding-snug",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "horizontal inline gap-tight padding-snug"
+          }
+        },
+        {
+          "id": "P05",
+          "trace": {
+            "intent": "a chip that can be selected, with a quiet selected look",
+            "rounds": [
+              {
+                "promptHash": "e3d3e301d23de4a4da8651e3b7dd3a8752df0bf82f76c4c7495772bed8e2a96c",
+                "emission": "selectable selection-subtle padding-snug",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "selectable selection-subtle padding-snug"
+          }
+        },
+        {
+          "id": "P06",
+          "trace": {
+            "intent": "a chip currently selected (the element carries its real selection truth)",
+            "rounds": [
+              {
+                "promptHash": "2f2d6ef0595cf22eb1b80b9dbce7f23bf125b7d29d94f905426706ff36dbcb76",
+                "emission": "selectable selected selection-subtle",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "selectable selected selection-subtle"
+          }
+        },
+        {
+          "id": "P07",
+          "trace": {
+            "intent": "a sidebar column whose list absorbs the leftover space",
+            "rounds": [
+              {
+                "promptHash": "dea05f70d8ab2d1197574b6045e5d08a25bf1db813d517163b95c1269b204c5d",
+                "emission": "vertical gap-tight expandable",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical gap-tight expandable"
+          }
+        },
+        {
+          "id": "P08",
+          "trace": {
+            "intent": "one of two columns that split space equally regardless of content",
+            "rounds": [
+              {
+                "promptHash": "04698beb7d182a9d44e68a3a766f25dd1223e63e3f80bd4ba97f61161f8762f2",
+                "emission": "elastic basis-ratio",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "elastic basis-ratio"
+          }
+        },
+        {
+          "id": "P09",
+          "trace": {
+            "intent": "a member locked to the medium size step, never negotiating",
+            "rounds": [
+              {
+                "promptHash": "1523c0cb2f335b7dfa425b91d394278a5ef567c05280e51c6055c7e35dd8f26f",
+                "emission": "rigid basis-exact-md",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "rigid basis-exact-md"
+          }
+        },
+        {
+          "id": "P10",
+          "trace": {
+            "intent": "a member that grows at double weight but never shrinks",
+            "rounds": [
+              {
+                "promptHash": "45a85bd0bb071a52cd7a2e08a1acd9eda3a41f6ea205020e4330ce310032f780",
+                "emission": "expandable grow-2",
+                "issues": [
+                  {
+                    "level": "error",
+                    "rule": "one-word-per-axis",
+                    "msg": "'expandable' is a whole-axis value (it fixes every dial of 'm2-flex') — it cannot combine with 'grow-2'. Use either the alias OR the numbered dials."
+                  }
+                ],
+                "ms": 0
+              },
+              {
+                "promptHash": "e07a5a7c589641f8515ee9895171022c49e6523f88d42ea88d0a875567b41119",
+                "emission": "grow-2 shrink-0",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "grow-2 shrink-0"
+          }
+        },
+        {
+          "id": "P11",
+          "trace": {
+            "intent": "fill the parent: grow along the row and stretch across it",
+            "rounds": [
+              {
+                "promptHash": "de3baeba56354325d84d7f7b260077e8d2abff8d5f8448e1fd02f49de2f6b046",
+                "emission": "expandable self-stretch",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "expandable self-stretch"
+          }
+        },
+        {
+          "id": "P12",
+          "trace": {
+            "intent": "a stack that becomes a row on medium viewports and up",
+            "rounds": [
+              {
+                "promptHash": "572294467449189224592d458cd1b675d5b66619607c9d3dc88aba07e4099069",
+                "emission": "vertical viewport-md:horizontal",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical viewport-md:horizontal"
+          }
+        },
+        {
+          "id": "P13",
+          "trace": {
+            "intent": "a stronger selected look only under a dark color scheme",
+            "rounds": [
+              {
+                "promptHash": "baf0b339e41accf3f1ae9c706553baa4321cd26d0c5dff8bbe221401c662ac1e",
+                "emission": "prefers-color-scheme-dark:selection-strong",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "prefers-color-scheme-dark:selection-strong"
+          }
+        },
+        {
+          "id": "P14",
+          "trace": {
+            "intent": "a list with a stroke between items, never around them",
+            "rounds": [
+              {
+                "promptHash": "82a788754da31a9d3e871d81b0c5e950850ea5f6628b0fb5be6e307ad7a5164f",
+                "emission": "vertical gap-comfortable divided",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical gap-comfortable divided"
+          }
+        },
+        {
+          "id": "P15",
+          "trace": {
+            "intent": "a blocking dialog presented above everything on the page",
+            "rounds": [
+              {
+                "promptHash": "6fd98bc5cff12ed3374b72e70e83f2644fc05c699563603fd69c706a6d2b7f38",
+                "emission": "modal",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "modal"
+          }
+        },
+        {
+          "id": "P16",
+          "trace": {
+            "intent": "a combobox popup: positioned, isolated, layered above nearby content, scrolling when tall",
+            "rounds": [
+              {
+                "promptHash": "5c13a82f20e2ea43ad61e0b4785b858e9040ebe901c0906cca53a2da620a9053",
+                "emission": "position-absolute isolate dropdown scroll-y max-height-md",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "position-absolute isolate dropdown scroll-y max-height-md"
+          }
+        },
+        {
+          "id": "P17",
+          "trace": {
+            "intent": "the arrow-key-highlighted option that the container asserts via aria-activedescendant",
+            "rounds": [
+              {
+                "promptHash": "726a31a4a95a8cffc104578d6c61d8136c4fe36ab698377d3b627d6ad5164019",
+                "emission": "active-descendant selection-subtle",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "active-descendant selection-subtle"
+          }
+        },
+        {
+          "id": "P18",
+          "trace": {
+            "intent": "a tree node currently showing its children",
+            "rounds": [
+              {
+                "promptHash": "4e0ab2a5f849ec4e663ad91bcf7ac45ba4a99eccea7e1316c34c6f97c856b219",
+                "emission": "expanded",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "expanded"
+          }
+        },
+        {
+          "id": "P19",
+          "trace": {
+            "intent": "a table column header sorted ascending",
+            "rounds": [
+              {
+                "promptHash": "9bcb1718ad1eef9e813988d7eb761b4897cbd688419b7b5b6d69ce124596244b",
+                "emission": "sorted-ascending",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "sorted-ascending"
+          }
+        },
+        {
+          "id": "P20",
+          "trace": {
+            "intent": "a required form field currently failing validation",
+            "rounds": [
+              {
+                "promptHash": "80bf40195a9f823ac37353e4ee35c4d7c85264c78e058771bd7177423fc6695f",
+                "emission": "required invalid",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "required invalid"
+          }
+        },
+        {
+          "id": "H01",
+          "trace": {
+            "intent": "a card that relaxes its inner padding when its container is at least medium",
+            "rounds": [
+              {
+                "promptHash": "19ec7d08e0de086db4e8ceb44a710b7e2d35368ff641ba429cf67c458d43d750",
+                "emission": "padding-snug container-md:padding-relaxed",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "padding-snug container-md:padding-relaxed"
+          }
+        },
+        {
+          "id": "H02",
+          "trace": {
+            "intent": "a selected look that strengthens only when the user prefers more contrast",
+            "rounds": [
+              {
+                "promptHash": "7fb1885fef6674352dd545cdab75532d588cef4a1bf7e66d8b840082be393c91",
+                "emission": "selection-subtle prefers-contrast-more:selection-strong",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "selection-subtle prefers-contrast-more:selection-strong"
+          }
+        },
+        {
+          "id": "H03",
+          "trace": {
+            "intent": "the option the container currently points at as active, which is also selected",
+            "rounds": [
+              {
+                "promptHash": "fdde380130dd1f9970e69c0a6d253a658a24090676eedd0439182b04c1320442",
+                "emission": "active-descendant selected selection-subtle",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "active-descendant selected selection-subtle"
+          }
+        },
+        {
+          "id": "H04",
+          "trace": {
+            "intent": "a field marked invalid only after the user has interacted with it",
+            "rounds": [
+              {
+                "promptHash": "5825c62b6e224b73aa6ea6f51f3ac6315cd6e22c00b10d688d61b78617b12b8a",
+                "emission": "GAP\nintent: a field marked invalid only after the user has interacted with it\nnearest: \nmissing: scripted fake gap — pipeline exercise, not a grammar verdict",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "gap",
+            "finalString": "GAP\nintent: a field marked invalid only after the user has interacted with it\nnearest: \nmissing: scripted fake gap — pipeline exercise, not a grammar verdict"
+          }
+        },
+        {
+          "id": "H05",
+          "trace": {
+            "intent": "a tri-state checkbox showing the mixed state",
+            "rounds": [
+              {
+                "promptHash": "f663cecafa2d836887a6436bfa882ec1ef64038b41e0602d04bf3a2626cad042",
+                "emission": "checked-mixed",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "checked-mixed"
+          }
+        },
+        {
+          "id": "H06",
+          "trace": {
+            "intent": "a member that starts at the large size step but may shrink when space runs out",
+            "rounds": [
+              {
+                "promptHash": "2708285b23128687428db232177398d22ad777baa124f93888e3edc58c11b094",
+                "emission": "compressible basis-exact-lg",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "compressible basis-exact-lg"
+          }
+        },
+        {
+          "id": "H07",
+          "trace": {
+            "intent": "a member that grows at twice its sibling's weight and never shrinks",
+            "rounds": [
+              {
+                "promptHash": "8ca599ecc27581f039ac85896761b552992d469a3ffe759ce33bee2be32804dc",
+                "emission": "grow-2 shrink-0",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "grow-2 shrink-0"
+          }
+        },
+        {
+          "id": "H08",
+          "trace": {
+            "intent": "a member that fills leftover space but never gets narrower than the small size step",
+            "rounds": [
+              {
+                "promptHash": "ebbfbad773152fbc3ba659e35200cac230727396a687c8aa50088ff6381d2f51",
+                "emission": "expandable min-width-sm",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "expandable min-width-sm"
+          }
+        },
+        {
+          "id": "H09",
+          "trace": {
+            "intent": "a column header the user has sorted descending",
+            "rounds": [
+              {
+                "promptHash": "3845d74bde4e759fce9d0a7f682795a5fe1566835fd149d4949309e061eb4359",
+                "emission": "sorted-descending",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "sorted-descending"
+          }
+        },
+        {
+          "id": "H10",
+          "trace": {
+            "intent": "a member that is rigid on small screens but becomes elastic from the large breakpoint up",
+            "rounds": [
+              {
+                "promptHash": "d4b47716ca6a73cc478bc0770dcf29d0f69b256e5fedc206ae9ae84e6302b41d",
+                "emission": "rigid viewport-lg:elastic",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "rigid viewport-lg:elastic"
+          }
+        }
+      ]
+    },
+    "ermine-oneshot": {
+      "metrics": {
+        "arm": "ermine-oneshot",
+        "n": 30,
+        "firstEmissionValidity": 0.9333333333333333,
+        "gapRate": 0.03333333333333333,
+        "semanticPassRate": 0.9333333333333333
+      },
+      "runs": [
+        {
+          "id": "P01",
+          "trace": {
+            "intent": "a stacked content section with comfortable rhythm and inner breathing room",
+            "rounds": [
+              {
+                "promptHash": "2b9a20573fdc03e9cd7a48991b06024af86ae8caa76d35e3826c4be8b3e2654a",
+                "emission": "vertical gap-comfortable padding-relaxed",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical gap-comfortable padding-relaxed"
+          }
+        },
+        {
+          "id": "P02",
+          "trace": {
+            "intent": "a header row: controls vertically centered, groups pushed to opposite ends",
+            "rounds": [
+              {
+                "promptHash": "0ef491daf9cb8e23f28665353fb1b625e4cb6cb79ac646bb23512ca9e9b0bd6b",
+                "emission": "horizontal gap-snug align-center justify-between",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "horizontal gap-snug align-center justify-between"
+          }
+        },
+        {
+          "id": "P03",
+          "trace": {
+            "intent": "a card body that never grows past its readable width",
+            "rounds": [
+              {
+                "promptHash": "942c62eaea70e8547456ad7c730d0127c535e4ea04d09aabdbd435c24580452f",
+                "emission": "vertical gap-snug padding-comfortable max-width-lg",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical gap-snug padding-comfortable max-width-lg"
+          }
+        },
+        {
+          "id": "P04",
+          "trace": {
+            "intent": "a compact chip that sits inline in running text",
+            "rounds": [
+              {
+                "promptHash": "c761420fd89765ce5723b2ef5227387575bb94c8a3ac072ca7b538d886ca4e03",
+                "emission": "horizontal inline gap-tight padding-snug",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "horizontal inline gap-tight padding-snug"
+          }
+        },
+        {
+          "id": "P05",
+          "trace": {
+            "intent": "a chip that can be selected, with a quiet selected look",
+            "rounds": [
+              {
+                "promptHash": "e3d3e301d23de4a4da8651e3b7dd3a8752df0bf82f76c4c7495772bed8e2a96c",
+                "emission": "selectable selection-subtle padding-snug",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "selectable selection-subtle padding-snug"
+          }
+        },
+        {
+          "id": "P06",
+          "trace": {
+            "intent": "a chip currently selected (the element carries its real selection truth)",
+            "rounds": [
+              {
+                "promptHash": "2f2d6ef0595cf22eb1b80b9dbce7f23bf125b7d29d94f905426706ff36dbcb76",
+                "emission": "selectable selected selection-subtle",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "selectable selected selection-subtle"
+          }
+        },
+        {
+          "id": "P07",
+          "trace": {
+            "intent": "a sidebar column whose list absorbs the leftover space",
+            "rounds": [
+              {
+                "promptHash": "dea05f70d8ab2d1197574b6045e5d08a25bf1db813d517163b95c1269b204c5d",
+                "emission": "vertical gap-tight expandable",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical gap-tight expandable"
+          }
+        },
+        {
+          "id": "P08",
+          "trace": {
+            "intent": "one of two columns that split space equally regardless of content",
+            "rounds": [
+              {
+                "promptHash": "04698beb7d182a9d44e68a3a766f25dd1223e63e3f80bd4ba97f61161f8762f2",
+                "emission": "elastic basis-ratio",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "elastic basis-ratio"
+          }
+        },
+        {
+          "id": "P09",
+          "trace": {
+            "intent": "a member locked to the medium size step, never negotiating",
+            "rounds": [
+              {
+                "promptHash": "1523c0cb2f335b7dfa425b91d394278a5ef567c05280e51c6055c7e35dd8f26f",
+                "emission": "rigid basis-exact-md",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "rigid basis-exact-md"
+          }
+        },
+        {
+          "id": "P10",
+          "trace": {
+            "intent": "a member that grows at double weight but never shrinks",
+            "rounds": [
+              {
+                "promptHash": "45a85bd0bb071a52cd7a2e08a1acd9eda3a41f6ea205020e4330ce310032f780",
+                "emission": "expandable grow-2",
+                "issues": [
+                  {
+                    "level": "error",
+                    "rule": "one-word-per-axis",
+                    "msg": "'expandable' is a whole-axis value (it fixes every dial of 'm2-flex') — it cannot combine with 'grow-2'. Use either the alias OR the numbered dials."
+                  }
+                ],
+                "ms": 0
+              }
+            ],
+            "terminalState": "exhausted",
+            "finalString": "expandable grow-2"
+          }
+        },
+        {
+          "id": "P11",
+          "trace": {
+            "intent": "fill the parent: grow along the row and stretch across it",
+            "rounds": [
+              {
+                "promptHash": "de3baeba56354325d84d7f7b260077e8d2abff8d5f8448e1fd02f49de2f6b046",
+                "emission": "expandable self-stretch",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "expandable self-stretch"
+          }
+        },
+        {
+          "id": "P12",
+          "trace": {
+            "intent": "a stack that becomes a row on medium viewports and up",
+            "rounds": [
+              {
+                "promptHash": "572294467449189224592d458cd1b675d5b66619607c9d3dc88aba07e4099069",
+                "emission": "vertical viewport-md:horizontal",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical viewport-md:horizontal"
+          }
+        },
+        {
+          "id": "P13",
+          "trace": {
+            "intent": "a stronger selected look only under a dark color scheme",
+            "rounds": [
+              {
+                "promptHash": "baf0b339e41accf3f1ae9c706553baa4321cd26d0c5dff8bbe221401c662ac1e",
+                "emission": "prefers-color-scheme-dark:selection-strong",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "prefers-color-scheme-dark:selection-strong"
+          }
+        },
+        {
+          "id": "P14",
+          "trace": {
+            "intent": "a list with a stroke between items, never around them",
+            "rounds": [
+              {
+                "promptHash": "82a788754da31a9d3e871d81b0c5e950850ea5f6628b0fb5be6e307ad7a5164f",
+                "emission": "vertical gap-comfortable divided",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "vertical gap-comfortable divided"
+          }
+        },
+        {
+          "id": "P15",
+          "trace": {
+            "intent": "a blocking dialog presented above everything on the page",
+            "rounds": [
+              {
+                "promptHash": "6fd98bc5cff12ed3374b72e70e83f2644fc05c699563603fd69c706a6d2b7f38",
+                "emission": "modal",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "modal"
+          }
+        },
+        {
+          "id": "P16",
+          "trace": {
+            "intent": "a combobox popup: positioned, isolated, layered above nearby content, scrolling when tall",
+            "rounds": [
+              {
+                "promptHash": "5c13a82f20e2ea43ad61e0b4785b858e9040ebe901c0906cca53a2da620a9053",
+                "emission": "position-absolute isolate dropdown scroll-y max-height-md",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "position-absolute isolate dropdown scroll-y max-height-md"
+          }
+        },
+        {
+          "id": "P17",
+          "trace": {
+            "intent": "the arrow-key-highlighted option that the container asserts via aria-activedescendant",
+            "rounds": [
+              {
+                "promptHash": "726a31a4a95a8cffc104578d6c61d8136c4fe36ab698377d3b627d6ad5164019",
+                "emission": "active-descendant selection-subtle",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "active-descendant selection-subtle"
+          }
+        },
+        {
+          "id": "P18",
+          "trace": {
+            "intent": "a tree node currently showing its children",
+            "rounds": [
+              {
+                "promptHash": "4e0ab2a5f849ec4e663ad91bcf7ac45ba4a99eccea7e1316c34c6f97c856b219",
+                "emission": "expanded",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "expanded"
+          }
+        },
+        {
+          "id": "P19",
+          "trace": {
+            "intent": "a table column header sorted ascending",
+            "rounds": [
+              {
+                "promptHash": "9bcb1718ad1eef9e813988d7eb761b4897cbd688419b7b5b6d69ce124596244b",
+                "emission": "sorted-ascending",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "sorted-ascending"
+          }
+        },
+        {
+          "id": "P20",
+          "trace": {
+            "intent": "a required form field currently failing validation",
+            "rounds": [
+              {
+                "promptHash": "80bf40195a9f823ac37353e4ee35c4d7c85264c78e058771bd7177423fc6695f",
+                "emission": "required invalid",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "required invalid"
+          }
+        },
+        {
+          "id": "H01",
+          "trace": {
+            "intent": "a card that relaxes its inner padding when its container is at least medium",
+            "rounds": [
+              {
+                "promptHash": "19ec7d08e0de086db4e8ceb44a710b7e2d35368ff641ba429cf67c458d43d750",
+                "emission": "padding-snug container-md:padding-relaxed",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "padding-snug container-md:padding-relaxed"
+          }
+        },
+        {
+          "id": "H02",
+          "trace": {
+            "intent": "a selected look that strengthens only when the user prefers more contrast",
+            "rounds": [
+              {
+                "promptHash": "7fb1885fef6674352dd545cdab75532d588cef4a1bf7e66d8b840082be393c91",
+                "emission": "selection-subtle prefers-contrast-more:selection-strong",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "selection-subtle prefers-contrast-more:selection-strong"
+          }
+        },
+        {
+          "id": "H03",
+          "trace": {
+            "intent": "the option the container currently points at as active, which is also selected",
+            "rounds": [
+              {
+                "promptHash": "fdde380130dd1f9970e69c0a6d253a658a24090676eedd0439182b04c1320442",
+                "emission": "active-descendant selected selection-subtle",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "active-descendant selected selection-subtle"
+          }
+        },
+        {
+          "id": "H04",
+          "trace": {
+            "intent": "a field marked invalid only after the user has interacted with it",
+            "rounds": [
+              {
+                "promptHash": "5825c62b6e224b73aa6ea6f51f3ac6315cd6e22c00b10d688d61b78617b12b8a",
+                "emission": "GAP\nintent: a field marked invalid only after the user has interacted with it\nnearest: \nmissing: scripted fake gap — pipeline exercise, not a grammar verdict",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "gap",
+            "finalString": "GAP\nintent: a field marked invalid only after the user has interacted with it\nnearest: \nmissing: scripted fake gap — pipeline exercise, not a grammar verdict"
+          }
+        },
+        {
+          "id": "H05",
+          "trace": {
+            "intent": "a tri-state checkbox showing the mixed state",
+            "rounds": [
+              {
+                "promptHash": "f663cecafa2d836887a6436bfa882ec1ef64038b41e0602d04bf3a2626cad042",
+                "emission": "checked-mixed",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "checked-mixed"
+          }
+        },
+        {
+          "id": "H06",
+          "trace": {
+            "intent": "a member that starts at the large size step but may shrink when space runs out",
+            "rounds": [
+              {
+                "promptHash": "2708285b23128687428db232177398d22ad777baa124f93888e3edc58c11b094",
+                "emission": "compressible basis-exact-lg",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "compressible basis-exact-lg"
+          }
+        },
+        {
+          "id": "H07",
+          "trace": {
+            "intent": "a member that grows at twice its sibling's weight and never shrinks",
+            "rounds": [
+              {
+                "promptHash": "8ca599ecc27581f039ac85896761b552992d469a3ffe759ce33bee2be32804dc",
+                "emission": "grow-2 shrink-0",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "grow-2 shrink-0"
+          }
+        },
+        {
+          "id": "H08",
+          "trace": {
+            "intent": "a member that fills leftover space but never gets narrower than the small size step",
+            "rounds": [
+              {
+                "promptHash": "ebbfbad773152fbc3ba659e35200cac230727396a687c8aa50088ff6381d2f51",
+                "emission": "expandable min-width-sm",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "expandable min-width-sm"
+          }
+        },
+        {
+          "id": "H09",
+          "trace": {
+            "intent": "a column header the user has sorted descending",
+            "rounds": [
+              {
+                "promptHash": "3845d74bde4e759fce9d0a7f682795a5fe1566835fd149d4949309e061eb4359",
+                "emission": "sorted-descending",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "sorted-descending"
+          }
+        },
+        {
+          "id": "H10",
+          "trace": {
+            "intent": "a member that is rigid on small screens but becomes elastic from the large breakpoint up",
+            "rounds": [
+              {
+                "promptHash": "d4b47716ca6a73cc478bc0770dcf29d0f69b256e5fedc206ae9ae84e6302b41d",
+                "emission": "rigid viewport-lg:elastic",
+                "issues": [],
+                "ms": 0
+              }
+            ],
+            "terminalState": "valid",
+            "finalString": "rigid viewport-lg:elastic"
+          }
+        }
+      ]
+    },
+    "tailwind-oneshot": {
+      "metrics": {
+        "arm": "tailwind-oneshot",
+        "n": 30,
+        "firstEmissionValidity": 1,
+        "gapRate": null,
+        "semanticPassRate": null
+      },
+      "runs": [
+        {
+          "id": "P01",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P02",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P03",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P04",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P05",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P06",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P07",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P08",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P09",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P10",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P11",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P12",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P13",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P14",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P15",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P16",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P17",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P18",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P19",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "P20",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H01",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H02",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H03",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H04",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H05",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H06",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H07",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H08",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H09",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        },
+        {
+          "id": "H10",
+          "emission": "flex items-center gap-4 p-6",
+          "shapeValid": true
+        }
+      ]
+    }
+  }
+}

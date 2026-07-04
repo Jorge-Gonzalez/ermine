@@ -35,7 +35,11 @@ export async function buildInitialPrompt(intent: string): Promise<string> {
 export async function runLoop(
   intent: string,
   gen: Generator,
-  opts: { maxRounds: number },
+  // `backing` (A3 amendment, coordinator-approved): the platform truths the intent's
+  // author will supply on the element — the same declared-backing convention as the
+  // authoring contract's `backing=` fences. Without it, every instance-state intent
+  // is unwinnable (P8 errors on bare lint). Default stays bare, so A2 behavior holds.
+  opts: { maxRounds: number; backing?: string[] },
 ): Promise<Trace> {
   if (!intent.trim()) throw new Error("runLoop requires a non-empty intent");
   if (!Number.isInteger(opts.maxRounds) || opts.maxRounds < 1) {
@@ -49,7 +53,7 @@ export async function runLoop(
     const started = performance.now();
     const emission = await gen(prompt);
     const gap = isGapBlock(emission);
-    const issues = gap ? [] : lint(emission);
+    const issues = gap ? [] : lint(emission, new Set(opts.backing ?? []));
     const elapsed = performance.now() - started;
     rounds.push({
       promptHash: promptHash(prompt),
