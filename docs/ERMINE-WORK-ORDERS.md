@@ -85,7 +85,7 @@ Do not include a recommendation. The Gap Report is input to a human ruling, not 
 ### 0.2 Repository map (orientation only — do not "fix" anything here)
 
 ```
-src/ERMINE.md          — the constitution (source of truth; ~2,000 lines)
+constitution/ERMINE.md          — the constitution (source of truth; ~2,000 lines)
 src/ERMINE-SPEC.md     — machine-consumer spec (currently hand-written; will become derived)
 src/ERMINE-GUIDE.md    — human author's guide
 src/registry.ts        — the typed axis registry (SCALES, AxisRecord[], ~26 axes)
@@ -105,7 +105,7 @@ context/…HISTORY.md    — project history (context only; never edit)
 
 Known inconsistency you will encounter: prose in `README.md`, `registry.ts` comments, and
 elsewhere refers to `STYLE-GRAMMAR.md`, `STYLE-GRAMMAR-SPEC.md`, `STYLE-GRAMMAR-GUIDE.md`.
-The actual files are `src/ERMINE.md`, `src/ERMINE-SPEC.md`, `src/ERMINE-GUIDE.md`.
+The actual files are `constitution/ERMINE.md`, `src/ERMINE-SPEC.md`, `src/ERMINE-GUIDE.md`.
 Work order K1 fixes this; no other order should.
 
 ---
@@ -305,14 +305,14 @@ metric, not an embarrassment.
 **Inputs.** `src/registry.ts` (all axes), `src/emit.ts` (existing entries are the pattern
 library: plain closed, ordered-chain scale, open+dial+alias, closed+parametric member,
 facet-split, state condition, platform mechanism, sink shapes — the header comment lists
-them), `src/ERMINE.md` §4 (per-axis rulings, which often name the CSS property),
+them), `constitution/ERMINE.md` §4 (per-axis rulings, which often name the CSS property),
 `demo/theme.css` (the variable naming convention, e.g. `--spacing-<step>`).
 
 **Steps.**
 1. Enumerate all axes: `REGISTRY.map(a => a.axis)`. Diff against `Object.keys(EMISSION)`.
    The difference is your worklist. Record it in the commit body.
 2. For each missing axis, in this order of authority: (a) find its constitution section
-   in `src/ERMINE.md` §4 — if it names the CSS property/value mapping, implement exactly
+   in `constitution/ERMINE.md` §4 — if it names the CSS property/value mapping, implement exactly
    that; (b) if the constitution gives the property but the *value* must come from a
    theme variable, follow the existing `var(--…)` conventions visible in `emit.ts` and
    `demo/theme.css`; (c) if neither the property nor the value mapping is derivable from
@@ -350,7 +350,7 @@ defines, note it in the entry's comment — themes are a downstream concern).
 ### K7 — Three-register restructure of the constitution (stable IDs + document-integrity linter)
 
 **Depends on K1 only.** May run in parallel with K2–K6 PROVIDED no other active order is
-editing `src/ERMINE.md` at the same time (coordinator schedules). K2/K3 generation reads
+editing `constitution/ERMINE.md` at the same time (coordinator schedules). K2/K3 generation reads
 `src/registry.ts`, not the constitution, so they are unaffected.
 
 **Objective.** Split the constitution's three interleaved registers — normative law,
@@ -524,23 +524,23 @@ of these lists is a Gap Report).**
   fact about the design ("these rulings must be reviewed together"), not an error.
 
 **Steps.**
-1. Extend `docs/lint-docs.ts` to emit `docs/graph.generated.json`:
+1. Extend `constitution/lint-docs.ts` to emit `constitution/graph.generated.json`:
    `{ nodes: [{id, register: "constitution"|"rationale"|"history"|"code", file, anchor}],`
    ` edges: [{from, to, type, scope?}],`
    ` clusters: [{name, members: [id…]}] }`
    — where edges come from the K7 footer fields plus `rationale-of` (derived from RAT
    headings) and `implements` (derived from code-comment IDs). Add a `graph:check`
    no-diff script (K2 pattern) wired into `check`. Humans never read this file; tools do.
-2. Create `docs/impact.ts`:
-   - `tsx docs/impact.ts <ID>` → the reverse transitive closure from `<ID>`, grouped by
+2. Create `constitution/impact.ts`:
+   - `tsx constitution/impact.ts <ID>` → the reverse transitive closure from `<ID>`, grouped by
      hop distance and register, each line showing the edge type it arrived by. For any
      affected node with multiple live inbound sources, append the arbitration verdict:
      `controls: <ID>` or `UNRESOLVED: {<ID>, <ID>} incomparable — human ruling required`.
-   - `tsx docs/impact.ts <ID> --mark` → additionally writes the DIRECT (one-hop reverse)
+   - `tsx constitution/impact.ts <ID> --mark` → additionally writes the DIRECT (one-hop reverse)
      dependents into the staleness ledger.
-3. Staleness ledger `docs/stale.json`: entries `{id, staleSince: <ISO date>,
+3. Staleness ledger `constitution/stale.json`: entries `{id, staleSince: <ISO date>,
    cause: <the changed ID>}`. Commands: `--mark` (above) and
-   `tsx docs/impact.ts --clear <ID>` (a human reviewed the node; remove its entry).
+   `tsx constitution/impact.ts --clear <ID>` (a human reviewed the node; remove its entry).
    `docs:check` reports the stale count as WARN — CI does NOT fail on staleness (review
    is human-paced) but DOES fail (`DOC-E09`) on a ledger entry whose `id` or `cause` no
    longer resolves. Staleness never edits content; it only routes attention (this
@@ -549,7 +549,7 @@ of these lists is a Gap Report).**
    `depends-on` subgraph; clusters named `CLUSTER-<smallest-member-id>`.
 5. Implement the arbitration comparator as a pure function
    `precedes(a: NodeRef, b: NodeRef, graph): "a"|"b"|"incomparable"` in
-   `docs/arbitration.ts`, with the three tiers applied in order; `impact.ts` consumes
+   `constitution/arbitration.ts`, with the three tiers applied in order; `impact.ts` consumes
    it. Property to encode in tests: the induced relation is irreflexive and transitive
    on every fixture (i.e. actually a strict partial order).
 6. Fixture-based tests `test/doc-graph.test.ts` covering, minimum: a dangling edge
@@ -753,18 +753,18 @@ relevant lines instead of the whole corpus.
 **Steps.**
 1. In `mcp/server.ts`, add `ermine_context(id: string, hops?: number)` (default
    `hops = 1`, maximum 2 — reject higher values with a clear error):
-   a. Resolve `id` against `docs/graph.generated.json`. Unknown ID → error listing the
+   a. Resolve `id` against `constitution/graph.generated.json`. Unknown ID → error listing the
       5 closest IDs by string distance (simple Levenshtein; no dependency).
    b. Collect the node plus its neighborhood to `hops` (BOTH edge directions — inbound
       edges are the "what depends on this" half that matters most).
    c. For each collected node, load its text: the heading-anchored block from its
       `file`/`anchor` (constitution/rationale) or the whole file (ADRs, which are small).
    d. **Order the output by the arbitration canon**: reuse `precedes()` from
-      `docs/arbitration.ts` — controlling sources first; sources that defer are emitted
+      `constitution/arbitration.ts` — controlling sources first; sources that defer are emitted
       AFTER their controllers with the label `deferred to <ID> (scope: …)`; any
       incomparable pair is emitted with the label `UNRESOLVED conflict — treat neither
       as controlling`. Do not reimplement arbitration in the server; import it.
-   e. Annotate every node that appears in `docs/stale.json` with
+   e. Annotate every node that appears in `constitution/stale.json` with
       `⚠ stale since <date> (cause: <ID>)`.
    f. Enforce a hard output budget of 6,000 tokens (approximate by chars/4). If the
       neighborhood exceeds it, truncate WHOLE NODES from the far end of the precedence
@@ -1213,7 +1213,7 @@ especially not this one).
 ```
 Day 1        : C3 survey protocol + page (launch collection) ; K1
 Days 1–5     : K2 → K3 → K4 → K5 → K6   (serial, one executor)
-Days 2–7     : K7 (parallel executor — sole writer of src/ERMINE.md during this window;
+Days 2–7     : K7 (parallel executor — sole writer of constitution/ERMINE.md during this window;
                all Gap Report rulings queue until K7 lands, then apply via IDs)
 Days 5–12    : A1→A2→A3 (executor 1) ∥ B1→B2→B3 (executor 2) ∥ C1→C2 (executor 3)
 Days 7–10    : K8 (same executor as K7, immediately after it)
