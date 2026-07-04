@@ -1,8 +1,9 @@
 # Ermine — Author's Guide
 
 > A friendly, example-led introduction to writing class strings in the style grammar. This is the
-> *teaching* face of the grammar; the exhaustive rules live in the machine-consumer spec, and the
-> reasoning behind every decision lives in the constitution. You don't need either to get started.
+> *teaching* face of the grammar; the exhaustive registry and validation rules live in the shared
+> machine-consumer spec and validator spec, and the reasoning behind every decision lives in the
+> constitution. You don't need any of them to get started.
 >
 > One honest caveat up front: this is a **typed grammar over CSS**, not "natural-language CSS." The
 > words rename layout concepts into composable, checkable names — you still reason in layout terms
@@ -274,6 +275,7 @@ genuinely unique to this component.
 
 ## Where to go next
 
-- Need the exact, exhaustive word lists and the validation rules? → the **machine-consumer spec**.
+- Need the exact word lists? → the shared **machine-consumer spec** (`ERMINE-SPEC.md`).
+- Need the validation rules? → the **validator spec** (`LINT-SPEC.md`).
 - Want to know *why* a decision was made, or propose a change? → the **constitution** (`ERMINE.md`).
   All changes are made there first; this guide is derived from it.

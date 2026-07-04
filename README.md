@@ -89,7 +89,9 @@ Research, not a product. Honest ledger:
 | `constitution/decisions/` | Append-only decision records |
 | `src/registry.ts` | The typed axis registry |
 | `src/lint.ts` / `src/emit.ts` | Verifier and emitter |
-| `src/ERMINE-SPEC.md` / `src/ERMINE-GUIDE.md` | Derived spec and guide (generated sections) |
+| `src/ERMINE-SPEC.md` | Shared machine schema and generated registry |
+| `src/LINT-SPEC.md` / `src/LLM-AUTHORING.md` | Validator and authoring contracts |
+| `src/ERMINE-GUIDE.md` | Human guide (generated word-list sections) |
 | `analysis/` | The measurement instrument and findings |
 | `demo/` | A rendered demo page |
 | `docs/DIRECTION.md` | Strategy: the four subprojects, gates, and status |

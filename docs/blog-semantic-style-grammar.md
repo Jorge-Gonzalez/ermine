@@ -4,8 +4,9 @@
 
 > **Status:** living document — updated as the work reaches things worth sharing.
 > **Last updated:** 2026-07-01. See the [Changelog](#changelog) at the bottom.
-> Companion to the constitution (`ERMINE.md`), the machine-consumer spec (`ERMINE-SPEC.md`), the
-> author's guide (`ERMINE-GUIDE.md`), the typed registry + linter (`registry.ts`, `lint.ts`), and the
+> Companion to the constitution (`ERMINE.md`), the shared machine-consumer spec (`ERMINE-SPEC.md`),
+> the validator and authoring contracts (`LINT-SPEC.md`, `LLM-AUTHORING.md`), the author's guide
+> (`ERMINE-GUIDE.md`), the typed registry + linter (`registry.ts`, `lint.ts`), and the
 > `flex-character` playground. (The project now has a name — **Ermine** — and, more importantly, a
 > registry and a running linter; see [§7](#7-whats-actually-built).)
 

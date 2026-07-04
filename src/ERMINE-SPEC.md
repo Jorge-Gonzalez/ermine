@@ -1,70 +1,18 @@
-# Ermine — Machine-Consumer Spec (derived)
+# Ermine — Shared Machine-Consumer Spec (derived)
 
 > **Derived artifact. Do not edit here.** This document is a *mechanical extraction* of
-> `ERMINE.md` (the constitution): the axis registry plus the laws, restated for the two
-> *machine* consumers of the grammar. Register-flat, predicate-form, no metaphors, no rationale, no
-> history. If this drifts from the constitution, the constitution wins — fix it there and re-extract.
-> (The friendly, example-led document for *human* authors is the separate **human guide**.)
+> `constitution/ERMINE.md`: the shared registry schema and generated axis registry used by both
+> machine consumers. Register-flat, predicate-form, no metaphors, no rationale, no history. If this
+> drifts from the constitution, the constitution wins — fix it there and re-extract.
 
 ## Two machine roles share one registry
 
-This spec serves two roles that **converge on the registry (§2) but diverge on what they do with it**.
-The registry is the single source of truth — its *predicate face* is the linter, its *generative face*
-is the LLM, its *generated face* is the shipped CSS. Both roles read the same records; they differ only
-in direction.
+This shared core contains the record schema (§1) and generated registry (§2). The two consumers
+converge here, then follow separate contracts:
 
-| Role | Direction | Question | Reads |
-|---|---|---|---|
-| **Validator / linter** | judges a string that exists | "is this well-formed, and if not, *why*?" | §1 schema · §2 registry · §4 per-axis predicates · §5 cross-cutting predicates · §6 negotiated invariants · §7 trust boundary |
-| **Author / LLM (generation)** | emits a string from intent | "what string expresses this, *without coining*?" | §1 schema · §2 registry · §3 generation contract · §4–§5 (as obligations, not just rejections) |
-
-**Read-path — validator.** Skip §3. Run the three passes in §4–§5 in order; emit the error/warn codes
-verbatim. §6 tells you what you must *not* flag (the negotiated regime is not part-wise checkable). §7
-bounds how much to trust property-disjointness today.
-
-**Read-path — author / LLM.** Start at §3 (the generation contract: closed-vs-open priors, the
-compose-don't-coin reframe, the stop-and-report protocol, intent→string patterns). Treat §4–§5 as
-*obligations you must satisfy before emitting* — most importantly P8 entailment (emit `selected` ⇒ you
-are responsible for the backing existing) and P9 no-coining. Use §2 to resolve every word; never emit a
-word you cannot point to in `members` or derive from a `parameter` pattern.
-
-> **On the eventual split.** This single document keeps progress centralized while the structure
-> settles (mirroring the constitution's "hold until stable, then extract" discipline). It is
-> *pre-cut* for a later split along section boundaries: a lift of §3 (+ the §4–§5 obligation framing)
-> becomes `LLM-AUTHORING.md`; §1–§2 + §4–§7 become `LINT-SPEC.md`; §2 is the shared registry both
-> import. Until the size asymmetry that justifies two files is real, the split is deferred, not
-> reconciled away. Section boundaries below are marked `‹LINT›`, `‹LLM›`, or `‹SHARED›` so the cut is
-> mechanical when it comes.
-
----
-
-## 0. How a class string is validated  ‹SHARED›
-
-**Precondition, checked once at the registry level, not per string: P0 token uniqueness.** Every
-word in the finite/closed vocabulary must resolve to exactly one axis. `registry.ts` exports
-`checkTokenUniqueness()`, run via `npx tsx registry.ts`; it fails the process (non-zero exit) if any
-word matches more than one axis's tokens. This isn't a per-string lint rule — an ambiguous word
-doesn't error at validation time, it silently resolves to whichever axis is listed first in
-`REGISTRY`, permanently shadowing the other axis's meaning of that word. P0 catches the authoring bug
-before it reaches a class string at all. (Caught a real collision this session: `sticky` matched both
-`z-scale` and `position-mode`; fixed by prefixing `position-mode`'s members.)
-
-A class string is a set of words. Validation is three passes, in order:
-
-1. **Parse** each word to `(axis, member, value?)` against the registry (§2). A word that resolves to
-   no axis is `unknown-word`.
-2. **Per-axis laws** (§4): one-word-per-axis, closed/open vocabulary, enumerated arity, weight-implies-
-   direction.
-3. **Cross-cutting laws** (§5): dimensional purity (`must-never-touch`), state entailment, no-coining.
-
-**Two regimes** (every axis declares one):
-- **free** — independent; axes commute and unify. Well-formedness is *part-wise* (validate each word
-  against its axis in isolation).
-- **negotiated** — a per-member demand resolved by a global solve (member-role sizing only). Does not
-  satisfy dimensional purity; validated by the §6 invariants, not part-wise.
-
-**Two roles** (every axis declares one): `container` (governs direct children, `> *`), `member`
-(governs the element itself within its parent), `self` (the element's own box), `none`.
+- **Validator / linter:** `src/LINT-SPEC.md` (§0 validation path and §§4–§8 predicates,
+  invariants, trust boundary, and implementation reference).
+- **Author / LLM:** `src/LLM-AUTHORING.md` (§3 generation contract and P1–P10 obligations).
 
 ---
 
@@ -130,7 +78,7 @@ interface AxisRecord {
   tokens: Token[];                      // emitted tokens — matched against real class strings
 
   default: string | null;
-  controls: string[];                   // concrete CSS properties (transcribed; see §7 trust boundary)
+  controls: string[];                   // concrete CSS properties (transcribed; see LINT-SPEC §7)
   mustNeverTouch: string[];             // explicit out-of-scope ("*" = everything else)
 
   // OPEN axes with independent sub-dials (e.g. m2 grow/shrink; constraints min/max-width/height).
@@ -173,9 +121,9 @@ Field rules:
   platform-mirrored (fixed scale, ARIA state set, named z-ladder) → **closed**.
 - `entails` (on `StateMember`) is a **set** (any-one satisfies), supporting Law 6b merges. For an
   `enumerated` member, entailment is checked against `attr=value` (the specific captured value), not
-  bare attribute presence — see P8 in §5.
+  bare attribute presence — see P8 in `src/LINT-SPEC.md` §5.
 - `controls` lists must eventually be *generated from shipped CSS*, not transcribed; until then treat
-  property-disjointness checks as indicative, not authoritative (see §7).
+  property-disjointness checks as indicative, not authoritative (see `src/LINT-SPEC.md` §7).
 - State groups are first-class axes (`axis: "state.<group>"`) — the same P1 one-word-per-axis
   machinery applies to them via `stateGroup.exclusivity`/`conflicts`/`implies`, not a separate code
   path. `conflicts` is for genuinely incompatible pairs (hard error); `implies` is for a narrower
@@ -828,279 +776,6 @@ These prefixes are closed condition scopes, not registry-axis members. The guard
 
 ---
 
-## 3. Generation contract (author / LLM read-path)  ‹LLM›
-
-This section is for the *generating* consumer — emitting a class string from intent. The validator can
-skip it. Everything here is the constitution's anti-coining machinery restated as authoring priors. The
-single dominant failure mode when generating is **inventing a plausible-sounding word**; every rule
-below exists to prevent that.
-
-### 3.1 The four moves, in order
-
-When intent doesn't obviously map to a word, work down this list and **stop at the first that applies**:
-
-1. **Find the member.** Resolve the intent to an existing `member` in §2. Most intent is one word on
-   one axis. (`a row` → `horizontal`; `space between children` → `gap-*`.)
-2. **Compose across axes.** If no single word fits, the felt gap is *usually a composition of existing
-   axes*, not a missing word (Law 6). Combine one word each from several axes. ("Fill the parent" is
-   not an axis — it is `expandable` (m2, main-axis) + `self-stretch` (m4, cross-axis). "A circle" is
-   size grammar + a skin radius, not a `circle` word.)
-3. **Use the open parameter.** If the axis is `open`, the distinction is a *value*, not a new word:
-   `grow-2`, `span-3`, `basis-exact-md`, `padding-relaxed`. Emit a value matching the axis
-   `parameter.pattern`; never a new word.
-4. **Stop and report the gap.** If 1–3 fail on a `closed` axis, the word does **not** exist and you may
-   **not** mint it. Surface a structured gap (§3.4) and stop. This is a legitimate terminal state, not
-   a failure to try harder.
-
-There is no fifth move. "Invent a word that sounds right" is never available.
-
-### 3.2 Closed vs open — the prior that does the most work
-
-- **closed** axis → the `members` list is *exhaustive*. A word not in it does not exist. Do not coin,
-  do not pluralize, do not hyphenate two members together. (`structure`, `density`, `alignment`, all
-  of state, the z-scale, easing, choreography are closed.)
-- **open** axis → admits *only* its sanctioned parameter, by `parameter.pattern`. New **values**, never
-  new **words**. (`m2` weights, `m3` `basis-exact-<size>`, `m5` spans, `constraints`.)
-
-When unsure which an axis is, treat it as **closed** — that is the safe default and forces move 4 rather
-than a guess.
-
-### 3.3 Common coinages and their correct substitutions
-
-These are the tempting inventions and what to emit instead. The pattern is always *compose or
-parameterize*, never coin:
-
-| Tempting coinage | Why it's wrong | Emit instead |
-|---|---|---|
-| `stretchy` | conflates two axes | `expandable` (grow) or `self-stretch` (cross-axis) — pick the one meant |
-| `centered-grow` | bundles two axes | `expandable self-center` |
-| `loose-wide` | density + a retired proportion idea | `padding-inline-relaxed padding-block-snug` (per-side) |
-| `greedy` / `fill` | named a *symptom* of surplus | `elastic basis-ratio` |
-| `circle` | plane-mix (size + skin) | size grammar + a skin radius token |
-| `fixed` (sizing) | collides with `position:fixed` | `basis-exact-<size>` |
-| `sticky-high` (z) | invents a scale rung | an existing `z-scale` member, within an `isolate` context |
-| `dialog-on-top` | invents above-everything z | top-layer mechanism (tier-1), not a z-number |
-| `stack` | a member that duplicates the default | `vertical` (the marked column) |
-
-### 3.4 Stop-and-report protocol
-
-When move 4 fires, do **not** emit a class. Emit a gap report the maintainer can act on:
-
-```
-GAP: axis=<axis or "unknown">, intent="<what was wanted>",
-     tried=[member-lookup, composition, parameter],
-     candidate-word="<the word you were tempted to coin>",
-     note="<why composition/parameter did not cover it>"
-```
-
-A real missing distinction becomes a constitution `[RULING]`; a non-distinction is dropped. Either way
-the decision is the maintainer's, made in the constitution, never improvised at generation time.
-
-### 3.5 State entailment is an authoring *obligation*
-
-Emitting a state word commits you to its truth. This is the one place generation carries a duty beyond
-word choice (full predicate in §5, P8):
-- Emit a **`state-instance`** word (`selected`, `open`, `invalid`, …) ⇒ you are responsible for *one of*
-  its backing set existing on the element (`selected` ⇒ `aria-selected` ∨ `aria-pressed` ∨ `:checked`).
-  A state class without backing renders something *visually true but semantically false* — never emit it.
-- Emit a **`state-relational`** word (`active-descendant`) ⇒ the backing is on the **container**
-  (`aria-activedescendant` pointing at this element's id), not the element.
-- **`state-capability`** (`selectable`) and **conditioned-skin** entail nothing — safe to emit alone.
-
-### 3.6 What is out of grammar — route, don't coin
-
-Some intent has no grammar word *by design*. Route it; never invent a property:
-- **ARIA wiring** (`aria-controls`, `aria-labelledby`, focus management, `inert`) → authoring/JS, not a
-  state member.
-- **"What is currently on top, place me above it"** → top-layer promotion (tier-1) or JS. There is no
-  CSS-readable scalar for it; do not coin one.
-- **Type, font, content size** → skin tokens (§5 of the constitution), not a layout word.
-- **A specific component's one-off positioning** → identity residue, not grammar.
-
----
-
-## 4. Per-axis predicates  ‹LINT› (authors: read as obligations)
-
-### P1 — one word per axis, per condition scope (both regimes)
-A well-formed string picks **at most one** member per axis **within each condition scope**. Parsing
-assigns every word a `scope` (`base`, or an environment prefix like `viewport-md`). Bucket by scope,
-then apply one-word-per-axis within each bucket.
-- `horizontal vertical` → **error** `one-word-per-axis` (both `structure`, same `base` scope).
-- `horizontal viewport-md:vertical` → **ok** (same axis, *different* scopes — the basis of responsive
-  layout; Law 2 amended).
-- `viewport-md:horizontal viewport-md:vertical` → **error** `one-word-per-axis` (same axis, same scope).
-- Only **environmental** states open scopes; bare interaction/input states do not.
-- **Sub-dial refinement:** axes with sub-dials (m2 grow/shrink, alignment align/justify, padding/margin
-  inline/block, overflow x/y, constraints min/max-width/min/max-height) admit one value *per dial*,
-  since dials write disjoint CSS properties: `align-center justify-between` and
-  `padding-inline-relaxed padding-block-snug` and `min-width-sm max-width-lg` compose; two values on
-  one dial conflict. A **whole-axis** word (an m2 corner, `padding-<density>`, `scroll-auto`/`clip`)
-  writes every dial, so it is mutually exclusive with any other word on the axis. (Constraints has no
-  whole-axis word — there's no single term that sets all four bounds at once.)
-- **State-group refinement:** within a `one` group, a second member is an **error**. Within a `many`
-  group, a declared `conflicts` pair is an **error**; a declared `implies` pair (the narrower state is
-  a platform subset of the wider) present together is a **`warn`**, not an error — it's redundant, not
-  incompatible. Everything else in a `many` group co-occurs silently.
-
-### P2 — closed vocabulary admits no new members
-On a `closed` axis, any word not in `members` is rejected.
-- `stretchy`, `loose-wide`, `centered-grow` → **error** `unknown-word` / `coined-word`.
-- A missing distinction on a closed axis is either a composition across axes or a gap to report
-  (`[RULING]`), never a coined word.
-
-### P3 — open vocabulary admits only its stated parameter  ‹IMPLEMENTED›
-On an open/parametric axis, a word matching the axis's *shape* (its dash-prefix) but not a
-*sanctioned value* gets a dedicated `bad-parameter` diagnosis, via a `fallback` token listed after
-the valid-value token (same ordering discipline as the enumerated-state fallback tokens — valid
-matches win first). This is deliberately narrower than "any word that merely resembles the concept":
-a word with no structural match at all (no dash-prefix) still correctly falls through to P2
-`unknown-word` — P3 only fires when the *shape* is right and the *value* isn't.
-- `grow-3` → **ok**. `grow-abc` → **error** `bad-parameter` (shape `grow-` recognized, "abc" isn't a
-  sanctioned non-negative integer). `growish` (no dash) → **error** `unknown-word` (P2), not P3 — the
-  shape isn't recognized at all.
-- Same mechanism on `basis-exact-<size>` (`basis-exact-240` → `bad-parameter`, raw px is OUT in v0),
-  `span-<N>`/`row-span-<N>`, and `constraints`' four dials (`min-width-huge` → `bad-parameter`).
-
-### P4 — enumerated arity must carry a value from its closed set  ‹IMPLEMENTED›
-A state with `arity === "enumerated"` must be written WITH a value from `enumValues`. The parser
-captures a valid value via the per-member valid-value token; a bare or wrong-valued word matches a
-fallback token (no value captured), which P4 flags — distinguishing the two cases:
-- `sorted` (no value) → **error** `enum-arity` (needs one of {none, ascending, descending}).
-- `sorted-sideways` (value not in set) → **error** `enum-arity` (not in {none, ascending, descending}).
-- `sorted-ascending` → **ok**. (P8 entailment is suppressed for a malformed enum word — P4 owns it.)
-
-### P5 — whole-axis aliases & per-dial conflicts (folded into one-word-per-axis)
-*(No longer a standalone "weight-implies-direction" predicate — that was a cross-class rule for the
-retired m2 split. It is now a consequence of the single invariant: no CSS property written by two
-co-present classes, at longhand granularity.)*
-On an `open + whole-axis aliases` axis (m2):
-- a **whole-axis alias** writes *both* longhands, so it conflicts with any other word on the axis:
-  `rigid grow-2`, `elastic grow-2`, `expandable shrink-2` → **error** `one-word-per-axis`.
-- **dials** compose one-per-longhand-dial: `grow-2 shrink-1` ok; `grow-2 grow-3` → **error**
-  `one-word-per-axis` (two values for the `flex-grow` dial).
-
-### P6 — arity misuse (binary can't hold a tri-state)  ‹IMPLEMENTED (form b)›
-The implemented form: a **binary** state whose backing is a tri-state truth that has its own dedicated
-word.
-- `selected` with `aria-checked=mixed` (or `:indeterminate`) backing → **error** `arity-misuse`
-  (use the dedicated word `checked-mixed`).
-- A binary word written with a value suffix (`selected-mixed`) is caught by **P2 `unknown-word`** —
-  there is no such token — rather than P6; this is accurate and avoids over-matching typos with
-  binary "base + illegal tail" fallback tokens.
-
----
-
-## 5. Cross-cutting predicates  ‹LINT› (authors: read as obligations)
-
-### P7 — dimensional purity (free regime)
-For the free regime, no two axes touch the same CSS property, so a word must touch only its own axis's
-`controls` and none of its `mustNeverTouch`. The checkable form runs over the whole registry (the §10.1
-predicate-4 family):
-- **4a self-consistency:** no axis controls a property it also forbids.
-- **4b cross-axis disjointness (free):** no two free axes control the same property, except the
-  documented container/member **twin** on a facet-split property (only `display`: `structure` sets
-  inner, `m1` sets outer — CSS resolves independently).
-- **4c free-vs-negotiated:** a negotiated axis may share with other negotiated axes (the flex solve)
-  but must be disjoint from every free axis.
-- **4d state controls nothing:** any state axis with non-empty `controls` is a violation.
-
-A grammar word touching a `must-never-touch` property (e.g. a layout word emitting `background`) →
-**error** `plane-mix`. This is also the decomposition test: split a class that mixes planes.
-
-### P8 — state entailment (category-dispatched)  ‹IMPLEMENTED›
-- `instance`, binary: requires *one of* its backing set present on the element. None present →
-  **error** `state-entailment` (e.g. `selected` with no `aria-selected`/`aria-pressed`/`:checked`).
-  Suppressed for a word P6 already gave a more specific diagnosis (`selected` with mixed backing
-  reports only `arity-misuse`, not also a redundant `state-entailment` — one fix, not two).
-- `instance`, enumerated (**value-aware**, this revision): requires *one of* its backing set present
-  **with the specific value the word carries** — `sorted-ascending` requires `aria-sort=ascending` on
-  the element, not merely `aria-sort` present with any value (or a different one). Backing must be
-  supplied as `attr=value` pairs for enumerated checks; bare-attribute backing no longer satisfies.
-  Suppressed for a malformed enum word (P4 owns that diagnosis).
-- `relational` ‹IMPLEMENTED›: requires the **container** to point at this element's id via the member's
-  `relationalBacking.containerAttr` (e.g. listbox `aria-activedescendant` === this option's id).
-  Otherwise → **error** `state-entailment-relational`. Needs a `LintContext` (`{elementId,
-  containerAttrs}`); when no context is supplied the check is **skipped, not failed** (the linter can't
-  see the container, so it doesn't guess).
-- `capability` / `conditioned-skin`: entail nothing; never fire.
-
-### P9 — no-coining (the extension contract)
-1. Closed axes admit no new members (P2). A consumer that wants a word not present must **stop and
-   report the gap**, never guess.
-2. Open axes admit only their sanctioned parameter values (P3).
-3. Aliases are **earned by recurrence**, never invented — codified only after a primitive combination
-   demonstrably recurs in real use.
-
-### P10 — divider/wrap interaction (warn)  ‹IMPLEMENTED›
-`divided` composed with `wrap-allowed` or `wrap-reverse` → **warn** `divider-wrap`: the
-between-children line assumes authored order, so verify it degrades to no divider rather than
-mis-rendering once children can wrap or reverse. `wrap-prevent` is unaffected (order can't change).
-Global check, not scope-bucketed. (There's no `order`/reordering axis in the registry yet to extend
-this to — if one is added, it belongs in the same check.)
-
----
-
-## 6. Negotiated regime — invariants (not part-wise)  ‹SHARED›
-
-Member-role sizing (`m2` give↔grab, `m3` basis, the min/max band) does not commute and is not validated
-part-wise. Its correctness is the solver's invariants (the oracle is the engine; tests in §10):
-- **conservation** — Σ settled = available space.
-- **monotonicity** — more `grab` never shrinks you; more `give` never grows you.
-- **ratio-invariance** — scaling all weights by *c* leaves the result fixed.
-- **order-equivariance** — permuting members permutes the result identically.
-- **clamp-idempotence** — applying `bounds` twice = once.
-
-Phase order is `place ∘ negotiate` (never the reverse): the solver fixes sizes globally first;
-placement positions each settled box locally after. The two never interleave — so an element may
-legitimately carry `expandable` (negotiated) and `self-center` (free) at once.
-
----
-
-## 7. Trust boundary  ‹SHARED›
-
-- `controls` lists are currently **transcribed from prose**, not generated from shipped CSS. Property-
-  disjointness checks (P7) are therefore **indicative**, not authoritative, until `controls` is derived
-  from the generated output (the real build gate). A property an axis emits but the prose didn't name
-  could hide a collision.
-- Property-disjointness is **necessary, not sufficient** for compositionality: two property-disjoint
-  axes can still interact through layout side-effects. Those are caught by outcome/browser tests, not
-  by this static spec.
-- Skin is **sampled** (surface + type), not exhaustive; a fuller enumeration could surface a grammar/
-  skin overlap.
-
----
-
-## 8. Reference: what the linter implements  ‹SHARED›
-
-**`lint.ts`** (runs under `npx tsx lint.ts`; smoke suite 70/70) implements, today:
-- **P0** — token uniqueness (registry-build invariant, not per-string): every closed/finite word must
-  resolve to exactly one axis. Run via `npx tsx registry.ts` (`checkTokenUniqueness()`), exits non-zero
-  on any collision. Caught a real `sticky` collision between `z-scale` and `position-mode` this
-  session — fixed by prefixing `position-mode`'s members (`position-static`, `position-sticky`, …).
-- **P1** — one word per axis per condition scope, including the sub-dial refinement (m2, alignment,
-  padding/margin, overflow, constraints) and per-group state exclusivity (`one`/`many` + pairwise
-  `conflicts` as errors + pairwise `implies` as `warn`-level redundancy notices).
-- **P2** — unknown/coined word.
-- **P3** — bad-parameter: a word matching an open/parametric axis's *shape* (prefix) with an
-  unsanctioned *value* (`grow-abc`, `basis-exact-240`, `span-abc`, `min-width-huge`) gets a specific
-  `bad-parameter` diagnosis via a dedicated `fallback` token, rather than falling through to P2's
-  coarser `unknown-word`.
-- **P4** — enumerated arity (missing value vs value-not-in-set), via per-member valid + fallback tokens.
-- **P6** — arity misuse, form (b): a binary word with a tri-state backing that has its own word. P6's
-  target word is now suppressed from P8 (see below) so an author gets one diagnosis, not two.
-- **P8 instance** — instance-state entailment (set-valued, Law-6b disjunction), **value-aware for
-  enumerated states** (checks `attr=value`, not just attribute presence), suppressed for malformed
-  enums and for any word P6 already gave a more specific diagnosis (`selected` with mixed backing
-  reports only `arity-misuse`, not also `state-entailment`).
-- **P8 relational** — inverted entailment against a container context (`LintContext`); skipped, not
-  failed, when no context is supplied.
-- **P10** — divider/wrap interaction: `divided` composed with `wrap-allowed`/`wrap-reverse` emits a
-  `warn`-level `divider-wrap` notice (the between-children line assumes authored order).
-
-**Not yet implemented in `lint.ts`** (specified above; deferred): P7 dimensional-purity *from
-generated CSS* (the `controls` are still transcribed, not derived — the highest-value remaining
-piece).
-
-Earlier session scripts (not committed) that mechanized parts of this spec: `full-registry.ts` (P7 over
-all axes + ownership index), `collision-analysis.ts` (the two predicate-4 collisions), `combobox-audit.ts`
-/ `tree-audit.ts` (relational entailment). Folding their checks into `lint.ts` + CI is the open work.
+> Validator sections §0 and §§4–§8 live in `src/LINT-SPEC.md`.
+>
+> Authoring section §3 and its pre-emission obligations live in `src/LLM-AUTHORING.md`.

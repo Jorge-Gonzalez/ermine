@@ -23,6 +23,8 @@
     "src/emitter-types.ts",
     "constitution",
     "src/ERMINE-SPEC.md",
+    "src/LINT-SPEC.md",
+    "src/LLM-AUTHORING.md",
     "src/ERMINE-GUIDE.md",
     "LICENSE",
     "README.md"
