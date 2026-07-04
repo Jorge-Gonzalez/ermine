@@ -46,3 +46,21 @@ test("alignment-container maps between/around to space-*", () => {
 test("position-mode strips the grammar prefix", () => {
   assert.deepEqual(declOf("position-sticky"), [["position", "sticky"]]);
 });
+
+// K6 additions — the three axes completed from ruled mappings.
+
+test("m5: span carries columns, row-span carries rows, span-all is contextual (R-M5-01)", () => {
+  assert.deepEqual(declOf("span-3"), [["grid-column", "span 3"]]);
+  assert.deepEqual(declOf("row-span-2"), [["grid-row", "span 2"]]);
+  assert.deepEqual(declOf("span-all"), [["grid-column", "1 / -1"]]);
+});
+
+test("divider declares the native gap-decoration pair; the stroke is one theme socket (R-DIVIDER-01)", () => {
+  assert.deepEqual(declOf("divided"), [["row-rule", "var(--divider-rule)"], ["column-rule", "var(--divider-rule)"]]);
+  assert.deepEqual(declOf("undivided"), [["row-rule", "none"], ["column-rule", "none"]]);
+});
+
+test("z-scale steps read theme-owned numbers, never literal integers (R-LAYER-01/05)", () => {
+  assert.deepEqual(declOf("raised"), [["z-index", "var(--z-raised)"]]);
+  assert.deepEqual(declOf("tooltip"), [["z-index", "var(--z-tooltip)"]]);
+});

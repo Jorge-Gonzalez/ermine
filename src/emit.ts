@@ -21,12 +21,15 @@
 // registry: value mapping can change (rename a variable, retune a value)
 // without touching the law. The EMISSION table below is that missing layer.
 //
-// SCOPE: this is real, but not exhaustive. It covers one representative axis
-// per STRUCTURAL PATTERN in the registry (plain closed, ordered-chain scale,
-// open+dial+alias, closed+parametric member, facet-split, state condition,
-// platform mechanism, and both sink shapes) — proving the walker handles
-// every shape correctly. Filling in the remaining ~20 axes' EMISSION entries
-// is mechanical repetition of these patterns, not a design question.
+// SCOPE (K6 completion): 31 of 33 registry axes emit — 19 via EMISSION entries
+// below, 12 via the walker's other sanctioned mechanisms (m1-flow-participation
+// through FACET_EMISSION; top-layer-mechanism through MECHANISM; motion-macro
+// through the stagger SINK; all 9 state.* axes through the generic ConditionRule,
+// because state is condition-only — R-STATE-01 — and controls nothing).
+// 2 axes are gap-reported: skin-surface and skin-type have no sanctioned
+// vocabulary to map (registry tokens are empty by design — R-SKIN-01 leaves
+// open sockets to the theme, and which skin words the GRAMMAR fixes is unruled;
+// see reports/GAP-K6-skin-surface.md and reports/GAP-K6-skin-type.md).
 
 import { REGISTRY, SCALES, type AxisRecord } from "./registry.ts";
 import { parseWord, type Parsed, type LintContext } from "./lint.ts";
@@ -228,6 +231,49 @@ const EMISSION: Record<string, EmitSpec> = {
   // motion-macro's `together`/`sequence`/`cascade` don't declare directly —
   // they only parameterize the stagger SINK (below) — so no plain() entries
   // needed; the sink template owns all of motion-macro's emission.
+
+  // --- closed axis with parametric members (m5 shape — same member-level
+  // mechanism as m3). R-M5-01: span/row-span carry integers onto the grid
+  // tracks; span-all is CONTEXTUAL — it resolves to the grid's full column
+  // range (grid-column: 1 / -1), not a value of span-N. ---
+  "m5-grid-placement": {
+    effectKind: "css",
+    plain: (word): Record<string, string> | null => {
+      if (word === "span-all") return { "grid-column": "1 / -1" };
+      const m = word.match(/^(span|row-span)-(\d+)$/);
+      if (!m) return null;
+      return m[1] === "span" ? { "grid-column": `span ${m[2]}` } : { "grid-row": `span ${m[2]}` };
+    },
+  },
+
+  // --- plain closed axis: divider. R-DIVIDER-01: the container owns a stroke
+  // between adjacent members; the ruled mechanism is native gap decoration
+  // (row-rule/column-rule — exactly the registry's controls). The stroke's
+  // color/thickness/style are LATE-BOUND SKIN, so the value is one theme
+  // socket this emission reads; no theme defines --divider-rule yet (themes
+  // are a downstream concern). The conditionally-correct `* + *` fallback of
+  // R-DIVIDER-02 is a serializer concern bounded by P10, not a declaration
+  // this table can express. ---
+  divider: {
+    effectKind: "css",
+    plain: (word): Record<string, string> | null => {
+      if (word === "divided") return { "row-rule": "var(--divider-rule)", "column-rule": "var(--divider-rule)" };
+      if (word === "undivided") return { "row-rule": "none", "column-rule": "none" };
+      return null;
+    },
+  },
+
+  // --- ordered-chain scale axis: z-scale. Steps name tier-2 depths; themes
+  // own the numbers (the same grammar/theme seam as --spacing-<step> and
+  // --size-<step>; R-LAYER-05 forbids guessing ranges, which is why the value
+  // is always a var). Only meaningful inside isolation (R-LAYER-01) — a
+  // composition fact the linter owns, not this mapping. No theme defines
+  // --z-* yet. ---
+  "z-scale": {
+    effectKind: "css",
+    plain: (word) =>
+      (SCALES.zTier2 as readonly string[]).includes(word) ? { "z-index": `var(--z-${word})` } : null,
+  },
 };
 
 // facet-writing axes (structure + m1-flow-participation → display) — kept
@@ -426,6 +472,9 @@ export const VOCABULARY: Record<string, string[]> = {
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
   "motion-macro": ["together", "sequence", "cascade"],
   "top-layer-mechanism": ["overlay", "modal", "popover", "toast"],
+  "m5-grid-placement": ["span-1", "span-3", "row-span-2", "span-all"],
+  divider: ["divided", "undivided"],
+  "z-scale": [...SCALES.zTier2],
 };
 
 // Composed strings needed ON TOP of single-word enumeration, because sinks
