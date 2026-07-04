@@ -363,90 +363,123 @@ normative/informative separation as in standards bodies; ADR-style append-only d
 records; and — the part specific to this project — references treated as foreign keys
 with mechanical integrity checking. The executor implements; the design is settled.
 
+**Amendment — one tree, self-identifying registers, typed binding (author ruling; amends
+DOC-SYSTEM §10, which the author updates in tandem).** DOC-SYSTEM §2 already holds that
+"location is not identity" and that containment "may change freely"; the original binding
+did not yet honor it. Four changes below make the implementation match the architecture:
+- **One tree at `constitution/`.** The three registers plus the binding and the linter live
+  together under `constitution/`; the constitution moves out of `src/` (which is for code),
+  so the corpus stops straddling two directories.
+- **Self-identifying registers.** Each register file declares its class in YAML front-matter
+  (`register: normative|rationale|history`); the linter DISCOVERS the corpus by scanning for
+  it — no hardcoded path list to break when folders move.
+- **Typed binding.** The binding is `constitution/binding-ermine.ts`, a compiler-checked
+  module the linter imports, not prose markdown.
+- **Symbol-keyed code refs.** A `code:` footer is keyed on `#<symbol>`; the `<file>` is
+  advisory (resolved by finding the exporting file), so reorganizing `src/` never
+  invalidates a footer.
+
 **Steps.**
 1. Install the authored `docs/DOC-SYSTEM.md` (provided by the project author — it is
    the ruling this order implements; do NOT write, extend, or modify it; on any
    discrepancy between it and this order, DOC-SYSTEM.md wins and the discrepancy is
-   reported in the commit body). Its key provisions, restated here for convenience
-   only:
-   - **Registers.** `src/ERMINE.md` = normative only (laws and rulings; terse; present
-     tense; a sentence that constrains nothing does not belong here).
-     `docs/ERMINE-RATIONALE.md` = commentary (why each ruling holds; what was rejected;
-     what evidence exists). `docs/decisions/ADR-NNNN-<slug>.md` = history (one file per
-     decision event; append-only; never edited after commit — supersession is a NEW
-     record referencing the old).
+   reported in the commit body). Its key provisions, restated for convenience only, AS
+   AMENDED by the note above:
+   - **Registers, in one tree.** The whole governed corpus lives under `constitution/`.
+     `constitution/ERMINE.md` = normative only (laws and rulings; terse; present tense; a
+     sentence that constrains nothing does not belong here).
+     `constitution/ERMINE-RATIONALE.md` = commentary (why each ruling holds; what was
+     rejected; what evidence exists). `constitution/decisions/ADR-NNNN-<slug>.md` = history
+     (one file per decision event; append-only; never edited after commit — supersession is
+     a NEW record referencing the old). Each register file begins with YAML front-matter
+     declaring its class (`register: normative|rationale|history`); the linter discovers the
+     corpus by that front-matter, never by a hardcoded path.
    - **ID scheme.** Laws: `LAW-<n>` (numbering follows the constitution's existing Law
      numbers where they exist). Rulings: `R-<AREA>-<nn>` where `<AREA>` is a short
      uppercase token derived from the ruling's existing section context (e.g. `DENSITY`,
      `M2`, `STATE`, `LAYER`, `SPACE`) — derive the AREA list from existing headings,
-     record the full list in `docs/binding-ermine.md` (the binding annex DOC-SYSTEM.md
-     §10 calls for — the ONLY doc-system file this order creates), and DO NOT invent
-     areas beyond what the
-     headings support. Decision records: `ADR-<nnnn>` zero-padded, chronological.
-     Predicates keep their existing `P1`…`P11` identifiers as code-side IDs. IDs are
-     PERMANENT: they survive any restructuring; they are never renumbered or reused.
+     record it as typed data in `constitution/binding-ermine.ts` (the binding DOC-SYSTEM.md
+     §10 calls for, as a compiler-checked module the linter IMPORTS — the only doc-system
+     files this order creates are this binding and the linter), and DO NOT invent areas
+     beyond what the headings support. Decision records: `ADR-<nnnn>` zero-padded,
+     chronological. Predicates keep their existing `P1`…`P11` identifiers as code-side IDs.
+     IDs are PERMANENT: they survive any restructuring; they are never renumbered or reused.
    - **Reference footer syntax.** Every law/ruling in the constitution ends with one
      metadata line:
      `→ rationale: RAT:<ID> · history: ADR-NNNN[, ADR-NNNN…] · code: <file>#<symbol>[, …] [· defers-to: <ID> (scope: <one line>)]`
      Fields that do not apply are omitted, EXCEPT: `rationale:` is mandatory for every
      ruling; `history:` is mandatory but may carry the literal token `unrecorded` when
-     no source material exists (see step 4).
-2. **Inventory pass.** Enumerate every law and ruling currently in `src/ERMINE.md` —
-   they are findable by the markers already in the text (`settled`, `RULED`, `REVISED`,
-   `RESOLVED`, `[RULING]`, `Law <n>`). Produce a mapping table (ID → current heading →
-   current line range) and include it in the commit body. Every marked item gets an ID;
-   if an item's status marker is ambiguous (you cannot tell whether it is a ruling or
-   commentary), file a Gap Report for that item and continue with the rest.
-3. **The split — move text, never write text.** This is the anti-confabulation rule for
+     no source material exists (see the split step). In a `code:` field the `#<symbol>` is
+     the key; the `<file>` is advisory (the linter resolves the symbol by finding its
+     exporting file), so reorganizing `src/` never invalidates a footer.
+2. **Relocate the corpus.** Create `constitution/`; `git mv src/ERMINE.md
+   constitution/ERMINE.md`; add the `register: normative` front-matter to it. Update every
+   repository reference to the old path — `package.json` (`files`), the README repository
+   map, and any sibling work order that names `src/ERMINE.md` — to the new location. The
+   derived spec and guide stay in `src/` for now (they are generated artifacts, not
+   registers); `src/*.ts` code citations are handled in the migration step below.
+3. **Inventory pass.** Enumerate every law and ruling currently in
+   `constitution/ERMINE.md` — they are findable by the markers already in the text
+   (`settled`, `RULED`, `REVISED`, `RESOLVED`, `[RULING]`, `Law <n>`). Produce a mapping
+   table (ID → current heading → current line range) and include it in the commit body.
+   Every marked item gets an ID; if an item's status marker is ambiguous (you cannot tell
+   whether it is a ruling or commentary), file a Gap Report for that item and continue.
+4. **The split — move text, never write text.** This is the anti-confabulation rule for
    the whole order:
-   a. `src/ERMINE.md` retains, per ID: the ID as heading, the normative statement(s),
-      and the reference footer. Sentences that explain, justify, narrate, or record
-      history MOVE OUT.
-   b. Explanatory sentences move to `docs/ERMINE-RATIONALE.md` under a `## RAT:<ID>`
+   a. `constitution/ERMINE.md` retains, per ID: the ID as heading, the normative
+      statement(s), and the reference footer. Sentences that explain, justify, narrate, or
+      record history MOVE OUT.
+   b. Explanatory sentences move to `constitution/ERMINE-RATIONALE.md` under a `## RAT:<ID>`
       heading. You may reorder moved sentences for flow and add connective phrases of
       ≤5 words; you may NOT add substantive claims, examples, or reasoning that the
       source text did not contain.
    c. Historical narration (how a decision evolved, what an audit found, what was
-      retired) becomes ADR files. Source material: the paper-trail passages inside
-      `src/ERMINE.md` itself, and `context/MONKY-STYLE-GRAMMAR-PROJECT-HISTORY.md`
-      (read-only — quote/summarize with a source pointer, never edit it). Every ADR
-      carries a `source:` line naming where its content came from. **If no recorded
-      source exists for a ruling's history, write NO ADR** — the footer says
-      `history: unrecorded`. Inventing plausible history is the worst possible failure
-      of this order.
-4. **Migrate code citations.** `src/registry.ts`, `src/lint.ts`, `src/emit.ts` currently
-   cite constitution sections positionally (`§4.1`, `§5.1`, `§2`). Using the step-2
-   mapping table, replace each with the stable ID (e.g. `constitution §4.1` →
-   `R-M2-01`). Positional citations break under restructuring; ID citations do not —
-   that is the point.
-5. **Build `docs/lint-docs.ts`.** Checks, each with a distinct error code:
+      retired) becomes ADR files under `constitution/decisions/`. Source material: the
+      paper-trail passages inside `constitution/ERMINE.md` itself, and
+      `context/MONKY-STYLE-GRAMMAR-PROJECT-HISTORY.md` (read-only — quote/summarize with a
+      source pointer, never edit it). Every ADR carries a `source:` line naming where its
+      content came from. **If no recorded source exists for a ruling's history, write NO
+      ADR** — the footer says `history: unrecorded`. Inventing plausible history is the
+      worst possible failure of this order.
+5. **Migrate code citations.** `src/registry.ts`, `src/lint.ts`, `src/emit.ts` currently
+   cite constitution sections positionally (`§4.1`, `§5.1`, `§2`). Using the inventory
+   mapping table, replace each with the stable ID (e.g. `constitution §4.1` → `R-M2-01`).
+   Positional citations break under restructuring; ID citations do not — that is the point.
+6. **Build `constitution/lint-docs.ts`.** It DISCOVERS the register files by their
+   front-matter and IMPORTS `constitution/binding-ermine.ts` for ID shapes and footer
+   grammar. Checks, each with a distinct error code:
    - `DOC-E01` duplicate ID anywhere.
    - `DOC-E02` a reference (footer field, RAT heading, ADR mention, code-comment ID)
      that resolves to no defined ID.
    - `DOC-E03` a ruling in the constitution with no `RAT:<ID>` entry.
    - `DOC-E04` a ruling whose `history:` field is absent (note: `unrecorded` is present,
      not absent). Report the count of `unrecorded` as an INFO line.
-   - `DOC-E05` a `code:` reference whose file does not exist or whose `#<symbol>` does
-     not appear as an exported name in that file (string-level check is sufficient:
-     `export … <symbol>`).
+   - `DOC-E05` a `code:` reference whose `#<symbol>` appears as an exported name in NO
+     file under `src/` (string-level check is sufficient: `export … <symbol>`). The symbol
+     is the key; a stale advisory `<file>` is a warning, not an error.
    - `DOC-E06` a cycle in `supersedes` references among ADRs.
    - `DOC-E07` an ADR file that has been modified after a later-numbered ADR referenced
      it as superseded (checkable via `git log --follow` on the file; if git history is
      unavailable in the execution environment, emit INFO "E07 skipped" rather than
      failing).
-6. Wire `docs:check` (`tsx docs/lint-docs.ts`) into the `check` script chain.
-7. Run `npm run check`.
+7. Wire `docs:check` (`tsx constitution/lint-docs.ts`) into the `check` script chain, and
+   add `constitution` to the `tsconfig.json` include array.
+8. Run `npm run check`.
 
-**Deliverables.** installed `docs/DOC-SYSTEM.md` (authored, verbatim) +
-`docs/binding-ermine.md` (AREA list annex); restructured `src/ERMINE.md`; new
-`docs/ERMINE-RATIONALE.md`; `docs/decisions/` directory; `docs/lint-docs.ts`; migrated code
-comments; updated `package.json` scripts.
+**Deliverables.** `constitution/binding-ermine.ts` (typed binding: AREA list, ID shapes,
+footer grammar); relocated + restructured `constitution/ERMINE.md` (with `register:`
+front-matter); new `constitution/ERMINE-RATIONALE.md`; `constitution/decisions/` directory;
+`constitution/lint-docs.ts`; migrated `src/*.ts` code comments; updated `package.json` and
+`tsconfig.json`; updated README repository map. `docs/DOC-SYSTEM.md` is already installed;
+its §10 file-mapping is amended by the author in tandem (this order does not edit it).
 
 **Acceptance criteria.**
 - `npm run check` exits 0 (including `docs:check`).
 - Tamper tests, each verified then reverted: delete one RAT entry → `DOC-E03`; corrupt
-  one footer ID → `DOC-E02`; point one `code:` ref at a nonexistent symbol → `DOC-E05`.
+  one footer ID → `DOC-E02`; point one `code:` ref at a symbol exported nowhere → `DOC-E05`.
 - `grep -n "§" src/*.ts` returns zero lines.
+- Moving any register file to a different folder and re-running `docs:check` still passes
+  (proves discovery is path-independent, not hardcoded).
 - Commit body reports: the ID inventory table; constitution line count before → after
   (a large reduction is expected and is the headline number); the `unrecorded` history
   count; and a spot-check list of 5 randomly chosen RAT/ADR entries each with the source
@@ -454,7 +487,8 @@ comments; updated `package.json` scripts.
 
 **Out of scope.** Changing the substance of any law or ruling (moving text is the ONLY
 permitted operation on meaning-bearing prose); writing new rationale; the graph export,
-impact analysis, staleness, and arbitration (all K8); renaming predicate IDs.
+impact analysis, staleness, and arbitration (all K8); renaming predicate IDs; moving the
+derived spec/guide out of `src/`.
 
 ---
 

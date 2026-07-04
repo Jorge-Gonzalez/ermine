@@ -305,24 +305,36 @@ edge — a needed-but-absent edge is a corpus bug to fix, not a gap to paper ove
 
 The Ermine project instantiates this system as follows:
 
-- **Registers**: `src/ERMINE.md` (normative), `docs/ERMINE-RATIONALE.md` (rationale),
-  `docs/decisions/ADR-NNNN-<slug>.md` (history). Code nodes: exported symbols in
-  `src/registry.ts`, `src/lint.ts`, `src/emit.ts`, cited by ID in comments.
+- **Registers are declared, not located.** Each register file carries YAML front-matter
+  `register: normative | rationale | history`, and the toolchain DISCOVERS the corpus by
+  scanning for it — honoring §2 (location is not identity). The Ermine corpus lives, by
+  convention not by rule, in one tree under `constitution/`: `ERMINE.md` (normative),
+  `ERMINE-RATIONALE.md` (rationale), `decisions/ADR-NNNN-<slug>.md` (history). Moving the
+  tree is a free containment change; nothing in the graph references these paths. Code
+  nodes: exported symbols in `src/registry.ts`, `src/lint.ts`, `src/emit.ts`, cited by ID
+  in comments and resolved by symbol.
 - **ID shapes**: `LAW-<n>`; `R-<AREA>-<nn>` with the AREA token list derived from the
-  constitution's existing section structure and recorded in the binding; `ADR-<nnnn>`;
-  predicate identifiers `P1…P11` continue as code-side IDs.
+  constitution's existing section structure; `ADR-<nnnn>`; predicate identifiers `P1…P11`
+  continue as code-side IDs.
+- **Binding module**: `constitution/binding-ermine.ts` — a typed, compiler-checked module
+  the toolchain IMPORTS, carrying the AREA list, the ID-shape patterns, and the footer
+  grammar. (A prose binding is config the tools must parse; a typed module is config they
+  type-check. The general system requires only that a binding exist and be machine-
+  consumable — its format is a binding choice.)
 - **Footer grammar**:
   `→ rationale: RAT:<ID> · history: ADR-NNNN[, …] | unrecorded · code: <file>#<symbol>[, …] [· defers-to: <ID> (scope: <one line>)]`
-- **Toolchain**: `docs/lint-docs.ts` (§9.1), `docs/impact.ts` + `docs/stale.json`
-  (§9.2), the `ermine_context` MCP tool (§9.3), with the arbitration comparator in
-  `docs/arbitration.ts` shared by 9.2 and 9.3.
+  In a `code:` field the `#<symbol>` is the key; the `<file>` is advisory, resolved by
+  finding the exporting file, so reorganizing `src/` invalidates no footer.
+- **Toolchain**: `constitution/lint-docs.ts` (§9.1), `constitution/impact.ts` +
+  `constitution/stale.json` (§9.2), the `ermine_context` MCP tool (§9.3), with the
+  arbitration comparator in `constitution/arbitration.ts` shared by 9.2 and 9.3.
 - **Implementation orders**: K7 (registers, IDs, integrity), K8 (graph export, impact,
   staleness, arbitration), A6 (context assembly) in `ERMINE-WORK-ORDERS.md`, which
   implement this document and defer to it on any discrepancy.
 
-Further bindings would replicate this section's shape: file mapping, ID shapes, footer
-grammar, toolchain locations — and nothing else, because everything else above is
-already general.
+Further bindings replicate this section's shape — register-discovery convention, ID shapes,
+binding module, footer grammar, toolchain locations — and nothing else, because everything
+else above is already general.
 
 ---
 
