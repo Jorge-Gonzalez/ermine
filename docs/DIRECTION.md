@@ -66,7 +66,7 @@ not the scarce resource; validated findings are, and they arrive at reality's pa
 
 ## 5. Governance invariants
 
-1. **The constitution wins.** All design decisions are rulings in `src/ERMINE.md`,
+1. **The constitution wins.** All design decisions are rulings in `constitution/ERMINE.md`,
    addressed by stable ID, connected to rationale and history by typed, lint-checked
    references.
 2. **Gap Reports are the only channel** by which delegated or generated work changes

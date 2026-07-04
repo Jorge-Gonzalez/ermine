@@ -55,7 +55,7 @@ cascade-order tiebreaking because conflicts are inexpressible, not resolved.
 
 ## How the project is governed
 
-The design is legislated in a constitution (`src/ERMINE.md`) organized as three
+The design is legislated in a constitution (`constitution/ERMINE.md`) organized as three
 registers — normative law, explanatory rationale, decision history — connected by
 stable IDs and typed references, with a document linter that fails the build on a
 dangling reference or an unexplained ruling. Derived artifacts (the machine spec, the
@@ -84,9 +84,9 @@ Research, not a product. Honest ledger:
 
 | Path | What it is |
 |---|---|
-| `src/ERMINE.md` | The constitution — normative rulings (source of truth) |
-| `docs/ERMINE-RATIONALE.md` | Why each ruling holds |
-| `docs/decisions/` | Append-only decision records |
+| `constitution/ERMINE.md` | The constitution — normative rulings (source of truth) |
+| `constitution/ERMINE-RATIONALE.md` | Why each ruling holds |
+| `constitution/decisions/` | Append-only decision records |
 | `src/registry.ts` | The typed axis registry |
 | `src/lint.ts` / `src/emit.ts` | Verifier and emitter |
 | `src/ERMINE-SPEC.md` / `src/ERMINE-GUIDE.md` | Derived spec and guide (generated sections) |

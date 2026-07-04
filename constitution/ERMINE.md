@@ -1,3 +1,7 @@
+---
+register: normative
+---
+
 # ERMINE — the constitution
 
 > Status: **EXTRACTION-STABLE — empirically validated on state + dimensional purity; spatial outcome-tests pending.**

@@ -17,7 +17,7 @@
 These rules apply to EVERY work order below. A work order may add rules; it may never
 cancel one of these.
 
-**R1 — The constitution wins.** The file `src/ERMINE.md` (the constitution) is the only
+**R1 — The constitution wins.** The file `constitution/ERMINE.md` (the constitution) is the only
 place where design decisions ("rulings") are made. If your task reveals that a decision
 is needed and the constitution does not already contain it, you do NOT make the decision.
 You STOP and produce a **Gap Report** (format in §0.1) as your output for that task.

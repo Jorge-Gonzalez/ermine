@@ -1,7 +1,7 @@
 // registry.ts — the machine-readable axis registry.
 //
 // SINGLE SOURCE OF TRUTH for the derived artifacts (the spec .md, the CSS, the
-// lint tests). Extracted from src/ERMINE.md (the constitution); when this and
+// lint tests). Extracted from constitution/ERMINE.md (the constitution); when this and
 // the constitution disagree, the constitution wins — fix it there, re-extract here.
 //
 // This file answers the review's structural findings at the data level:

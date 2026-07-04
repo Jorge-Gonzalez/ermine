@@ -21,7 +21,7 @@
     "src/lint.ts",
     "src/emit.ts",
     "src/emitter-types.ts",
-    "src/ERMINE.md",
+    "constitution/ERMINE.md",
     "src/ERMINE-SPEC.md",
     "src/ERMINE-GUIDE.md",
     "LICENSE",
