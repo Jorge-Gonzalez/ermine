@@ -1,4 +1,4 @@
-# STYLE-GRAMMAR — the constitution
+# ERMINE — the constitution
 
 > Status: **EXTRACTION-STABLE — empirically validated on state + dimensional purity; spatial outcome-tests pending.**
 > The structure is *stable enough to extract the spec, guide, and registry from*, and no open item
@@ -306,7 +306,7 @@ law, not like onboarding.
 
 | Document | Audience | Register | Relationship to this source |
 |---|---|---|---|
-| **STYLE-GRAMMAR** (this) | the author / maintainer | constitutional, with rationale & history | the source of truth; the only place rulings are *made* |
+| **ERMINE** (this) | the author / maintainer | constitutional, with rationale & history | the source of truth; the only place rulings are *made* |
 | **Well-formedness spec** (derived) | LLMs, linters, validators, tools | register-flat, predicate-form, no metaphors | a mechanical extraction: the axis registry + the laws as checkable predicates |
 | **Human guide** (derived) | authors using the grammar | friendly, example-led, task-oriented | a teaching extraction: the common cases, worked examples, the small public surface |
 
@@ -338,8 +338,8 @@ fact. **Editing the constitution further is deprioritized below building the reg
 **Planned post-extraction refactors (NOT now — recorded so they aren't lost).** Two structural document
 moves are deliberately deferred until after the registry/spec/guide exist, to avoid forking a
 still-referenced source:
-- **Split the paper trail out:** `STYLE-GRAMMAR.md` (current law only) · `STYLE-GRAMMAR-RATIONALE.md`
-  (why each decision) · `STYLE-GRAMMAR-LOG.md` (retired ideas, audit history). The rationale/history is
+- **Split the paper trail out:** `ERMINE.md` (current law only) · `ERMINE-RATIONALE.md`
+  (why each decision) · `ERMINE-LOG.md` (retired ideas, audit history). The rationale/history is
   *useful now* (it lets decisions be re-derived during this design phase) and becomes *friction later*;
   split it once the design phase closes, not before.
 - **Curate a small public v0 surface** (for the *guide / shipped framework*, not this source — the
