@@ -11,21 +11,21 @@
 //    emitted `tokens` (regexes that match REAL authored class strings).
 //  - the z-scale (tier-2) and the top-layer-mechanism set (tier-1) are DIFFERENT
 //    axes; `modal` is never a z rung.
-//  - `basis-exact-*` is token-indexed over the §5.1 size scale, not raw px.
+//  - `basis-exact-*` is token-indexed over the R-SCALE-01 size scale, not raw px.
 //  - environmental state is a SCOPE PREFIX, not a bare member; parsing yields a
 //    `scope`, and P1 runs per-scope (Law 2, amended).
 
 // ============================================================================
 // SCALES — named value sets referenced by multiple axes (single-sourced).
-// Values themselves are §5.1 generator output (FROZEN as slots); the linter only
+// Values themselves are R-SCALE-01 generator output (FROZEN as slots); the linter only
 // needs the STEP NAMES, which are stable. Swapping the generator does not change
 // these names, so the grammar surface is stable even though the numbers are open.
 // ============================================================================
 
 export const SCALES = {
   density: ["tight", "snug", "comfortable", "relaxed", "loose", "separated"],
-  size: ["sm", "md", "lg", "xl"], // §5.1 size scale — basis-exact-<step>, constraints
-  breakpoint: ["sm", "md", "lg", "xl"], // §5.1-style named breakpoint scale
+  size: ["sm", "md", "lg", "xl"], // R-SCALE-01 size scale — basis-exact-<step>, constraints
+  breakpoint: ["sm", "md", "lg", "xl"], // R-SCALE-01-style named breakpoint scale
   zTier2: ["base", "content", "raised", "dropdown", "sticky", "tooltip"],
 } as const;
 
@@ -88,7 +88,7 @@ export interface StateMember {
 // (it fixes every sub-dial at once). Mutually exclusive with every other word on
 // the axis — including the parametric forms and other aliases. This is the m2
 // "corner" mechanism: `elastic` = grow-1 + shrink-1, a whole-axis value, so it
-// cannot combine with `grow-2` or `shrink-0`. (constitution §4.1)
+// cannot combine with `grow-2` or `shrink-0`. (R-M2-01)
 export interface Alias {
   word: string;
   expands: string; // canonical full expansion, e.g. "grow-1 shrink-1"
@@ -171,7 +171,7 @@ export const LAYOUT: AxisRecord[] = [
     axis: "structure",
     sibling: "layout", role: "container", signature: "container-operation",
     vocabulary: "closed", regime: "free",
-    // `rows` retired (compose-don't-coin, §8): it was `horizontal` + `wrap-allowed`,
+    // `rows` retired (compose-don't-coin, R-STRUCTURE-01): it was `horizontal` + `wrap-allowed`,
     // and it smuggled flex-wrap — which the `wrapping` axis owns — into an axis whose
     // mandate is inner-display-type (+ direction) only. The collision was latent (P7
     // missed it only because `wrapping` had no emission entry yet).
@@ -472,7 +472,7 @@ export const MOTION: AxisRecord[] = [
     default: null,
     controls: ["transition-duration", "transition-timing-function", "transition-delay"],
     mustNeverTouch: ["animation", "transform", "background"],
-    notes: "duration/delay magnitudes are open skin scales (§5.1), not grammar members.",
+    notes: "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.",
   },
   {
     axis: "motion-macro",

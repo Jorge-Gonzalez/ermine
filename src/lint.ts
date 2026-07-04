@@ -255,7 +255,7 @@ export function p11_m1OnFlexItem(parsed: Parsed[], ctx: LintContext): Issue[] {
 // --- P3: open vocabulary admits only its stated parameter (bad-parameter) ---
 // A word can recognize an open/parametric axis's SHAPE (its prefix) without its VALUE being
 // sanctioned — `grow-abc` looks like m2's grow-N dial but "abc" isn't a non-negative integer;
-// `basis-exact-240` looks like m3's parametric member but "240" isn't a §5.1 size step (raw
+// `basis-exact-240` looks like m3's parametric member but "240" isn't a R-M3-03 size step (raw
 // px is OUT in v0). These match a dedicated `fallback` token (registry.ts), giving them a more
 // specific diagnosis than falling through to P2 `unknown-word` — the shape was right, the
 // parameter wasn't.

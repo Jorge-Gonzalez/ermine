@@ -225,7 +225,7 @@ const EXAMPLE_RULES: EmittedRule[] = [
 // axes sharing a `writes` entry (e.g. two different custom properties named
 // similarly) isn't a violation — CSS variables are namespaced by construction
 // — but two free axes sharing a `paints` entry outside a declared sink IS
-// exactly the collision predicate 4 exists to catch (the §10.1 stagger and
+// exactly the collision predicate 4 exists to catch (the R-MOTION-03 stagger and
 // selection-skin collisions were both this shape, found by inspection before
 // there was a checker; this is what makes the check run itself).
 // ============================================================================
