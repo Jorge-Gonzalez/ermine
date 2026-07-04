@@ -590,8 +590,14 @@ Depends on: K complete. A1 → A2 → A3 may proceed serially; A4 after A2; A5 i
 ### A1 — Operationalize the authoring contract
 
 **Objective.** Turn `src/LLM-AUTHORING.md` (from K4) into a contract precise enough that
-a model reading ONLY that file plus the shared spec sections can emit lawful class
-strings, and knows exactly what to output when it cannot.
+a model reading ONLY that file plus the shared spec sections and the negotiated-regime
+invariants can emit lawful class strings, and knows exactly what to output when it cannot.
+
+**Authoring context bundle (used by A1, A2, and A4).** Full text of
+`src/LLM-AUTHORING.md` + shared §§1–2 from `src/ERMINE-SPEC.md` + the exact §6
+negotiated-regime invariants from `src/LINT-SPEC.md`. Extract the two section ranges by
+heading at assembly time and fail clearly if either heading is absent; do not copy §6
+into the authoring file and create another drift target.
 
 **Steps.**
 1. Add a section `## Output protocol` specifying the exact emission format: a single
@@ -616,7 +622,10 @@ strings, and knows exactly what to output when it cannot.
    failure.
 3. Add a section `## Obligations before emitting` if K4 did not already create it, one
    line per predicate, phrased as an obligation (see K4 step 3).
-4. Keep the whole file under ~400 lines — it will be injected into prompts; length is a
+4. In the existing `## Read path`, state that negotiated-axis authoring also requires
+   the injected §6 invariants from `src/LINT-SPEC.md`; the prompt assembler supplies
+   them as part of the authoring context bundle.
+5. Keep the whole file under ~400 lines — it will be injected into prompts; length is a
    cost.
 
 **Acceptance criteria.** A test file `test/authoring-patterns.test.ts` exists that parses
@@ -643,8 +652,10 @@ present, else throws with a clear message. Use plain `fetch`; add no SDK.
 **Steps.**
 1. Create `loop/harness.ts` with:
    - `runLoop(intent: string, gen: Generator, opts: {maxRounds: number}): Promise<Trace>`
-   - Round 1 prompt = fixed preamble + full text of `src/LLM-AUTHORING.md` + shared spec
-     registry section + the intent. Round N+1 prompt = previous prompt + the emitted
+   - Round 1 prompt = fixed preamble + the A1 authoring context bundle (full authoring
+     contract + shared spec §§1–2 + exact `src/LINT-SPEC.md` §6) + the intent. Extract
+     the sections by heading at runtime; do not hand-copy them. Round N+1 prompt =
+     previous prompt + the emitted
      string + the linter `Issue[]` serialized verbatim (rule id + msg), + one fixed line:
      "Correct the string. Emit only the corrected string."
    - Terminal states: `valid` (lint returns zero errors), `gap` (model emitted the GAP
@@ -704,7 +715,7 @@ beyond the fixed prompts defined here.
 
 **Objective.** Expose three tools over MCP so any agent can target the grammar:
 `ermine_lint(classString) → Issue[]`, `ermine_emit(classString) → EmittedRule[]`,
-`ermine_contract() → text of LLM-AUTHORING.md`.
+`ermine_contract() → the A1 authoring context bundle`.
 
 DEPENDENCY AUTHORIZED: `@modelcontextprotocol/sdk` (dev/runtime of the server package
 only). Put the server in `mcp/` with its own `package.json` so the core package keeps
@@ -719,7 +730,9 @@ zero runtime deps.
    answers correctly for one known-good and one known-bad input.
 
 **Acceptance criteria.** `npm run check` exits 0; the three tool round-trips pass in the
-test; the server refuses malformed input without crashing.
+test; `ermine_contract()` includes the authoring contract plus the shared §1 and §2
+headings and the validator's §6 heading; the server refuses malformed input without
+crashing.
 
 **Out of scope.** Auth; HTTP transport; any tool that MUTATES the registry (explicitly
 forbidden — the server is read/judge only).
