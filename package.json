@@ -27,6 +27,7 @@
     "src/LLM-AUTHORING.md",
     "src/ERMINE-GUIDE.md",
     "loop",
+    "mcp",
     "generators",
     "LICENSE",
     "README.md"
@@ -43,6 +44,7 @@
     "emit": "tsx src/emit.ts",
     "demo": "tsx demo/build.ts",
     "loop": "tsx loop/run.ts",
+    "mcp": "tsx mcp/server.ts",
     "test": "node --import tsx --test test/*.test.ts",
     "test:browser": "node --import tsx --test test/browser/*.test.ts",
     "typecheck": "tsc --noEmit",
