@@ -1,72 +1,104 @@
 # Ermine
 
-Ermine is a structural abstraction layer — a style specification that CSS implements. A typed, composable grammar: orthogonal axes (structure, spacing, sizing, state…) compose without conflict, each owning disjoint CSS properties. A constitution defines the rules, a registry mechanizes them, a linter checks well-formedness with reasons.
+**A typed, machine-checkable style registry — and the four things it makes possible.**
 
----
+Ermine began as a structural style grammar for CSS: a small, closed vocabulary of
+words like `horizontal gap-comfortable expandable`, where every word belongs to exactly
+one axis, every axis owns a disjoint set of CSS properties, and a linter can judge any
+composition — with reasons, not just verdicts.
 
-## The idea
+What the project turned out to be is slightly larger than that. The grammar sits on a
+typed registry (33 axes, executable predicates, generated documentation), and that
+registry has four distinct consumers. Each is a subproject; two of them are useful even
+if you never write an Ermine class.
 
-You describe an interface by combining words from independent **axes** — how children arrange, how much space sits between them, whether an element grows, what condition it's in — and you pick at most one word per axis:
+## The four faces
 
-```html
-<div class="horizontal gap-comfortable padding-relaxed">…</div>
+**The grammar (A) — an LLM-native styling language.** A closed vocabulary plus a
+verifier that returns *reasons* is exactly the shape a generate-verify loop needs:
+a model emits, the linter rejects with an explanation, the explanation goes back into
+context, and convergence is fast because the surface is small. The authoring contract
+(compose, don't coin; stop and report gaps) is written for machine authors as much as
+human ones.
+
+**The engine (B) — a vocabulary-independent verifier.** The predicate machinery
+(orthogonality, dimensional purity, entailment, scope discipline) doesn't care that the
+words are `horizontal` and `snug`. Bring your own registry — your design tokens, or a
+subset of an existing utility vocabulary — and the engine derives conflict detection
+with explanations, from data rather than hand-maintained heuristics.
+
+**The instrument (C) — a CSS measurement tool.** Before trusting its own scales, the
+project measured real stylesheets: property-family coverage, scale adherence,
+residual distributions. The findings are published in [`analysis/FINDINGS.md`](analysis/FINDINGS.md),
+including the ones that cut against the project's assumptions. The instrument runs on
+any CSS and is useful to people who never adopt the grammar.
+
+**The surfaces (D) — one registry, multiple syntaxes.** The same registry compiles to
+class strings (for HTML and LLMs), a typed-props API (for TypeScript, where the compiler
+enforces one-word-per-axis), and the generated CSS — with an equivalence test asserting
+that both authoring surfaces emit identical output.
+
+The strategy, sequencing, and evidence gates for all four live in
+[`docs/DIRECTION.md`](docs/DIRECTION.md).
+
+## The idea in one example
+
+```
+card = "vertical gap-comfortable padded-relaxed elevation-raised"
 ```
 
-That reads as a sentence: lay children out in a *row*, with *comfortable* space between them, and *relaxed* padding inside. Three axes, three words.
+Four words, four axes. `vertical` owns flow direction; `gap-comfortable` owns
+inter-child spacing; each axis touches CSS properties no other axis touches — a
+property the linter *proves* rather than asserts. `vertical horizontal` is rejected
+with a reason (one word per axis). `gap-comfortable gap-tight` likewise. There is no
+cascade-order tiebreaking because conflicts are inexpressible, not resolved.
 
-The axes compose without conflict because each one owns a **disjoint set of properties** and never touches another's. That isn't a convention you're trusted to follow — it's a property the linter checks. The name is the law: an ermine keeps its coat clean by refusing to touch what would stain it, and an Ermine axis does the same.
+## How the project is governed
 
-CSS is the first thing the grammar compiles to, not the limit of what it is. The artifact is the grammar; CSS is one implementation of it.
+The design is legislated in a constitution (`src/ERMINE.md`) organized as three
+registers — normative law, explanatory rationale, decision history — connected by
+stable IDs and typed references, with a document linter that fails the build on a
+dangling reference or an unexplained ruling. Derived artifacts (the machine spec, the
+guide's vocabulary tables, property-ownership sets) are generated from the registry
+and CI-checked so they cannot drift. Design changes enter through one door: Gap
+Reports, ruled on in the constitution, propagated by regeneration and impact analysis.
 
-## Why a layer above CSS
-
-Ordinary styling lets any rule touch any property, so two rules can quietly fight over the same one and nothing warns you. Ermine sits one level up: it reasons in concepts, and because the concepts own disjoint properties, the conflicts CSS happily lets you write can't be expressed — and when a string *is* malformed, the linter rejects it **with a reason**, which raw CSS gives you no way to do.
-
-## How it's structured
-
-Four layers, each derived from the one above it. The upstream document is the single source of truth; everything below is extracted from it.
-
-| Layer | Artifact | Role |
-|---|---|---|
-| **Constitution** | `STYLE-GRAMMAR.md` | The legislated grammar and its laws. The single source of truth; every decision is recorded here with its reasoning. |
-| **Registry** | `registry.ts` | Those laws as machine-readable data — the axes, members, tokens, and predicates. |
-| **Spec** | `STYLE-GRAMMAR-SPEC.md` | The machine-consumer view: validation predicates for a linter, a generation contract for an LLM authoring inside the grammar. |
-| **Guide** | `STYLE-GRAMMAR-GUIDE.md` | The human-facing teaching document — example-led, the common surface. |
-
-The linter (`lint.ts`) decides whether a class string is well-formed and explains why; the authoring contract lets a generator emit only inside the grammar, never coining a word that doesn't exist.
-
-## A taste of the laws
-
-- **One word per axis, per condition scope.** Two words from the same axis is a conflict, not a composition. Conditions (like a responsive breakpoint) open a new scope, so the same axis may recur once per scope — which is how responsive layout works without a separate system.
-- **Dimensional purity.** Free-regime axes touch disjoint property sets. This is *checked*, not asserted — the check has already caught real collisions and forced corrections.
-- **Mint no new ontology.** Name the platform's existing distinctions (ARIA states, CSS features); never invent a word for something the platform doesn't already distinguish. When a wanted word doesn't exist, the rule is to stop and report the gap, not to coin one.
-- **Compose, don't coin.** A felt gap is almost always a *composition* of existing axes, not a missing word. "Fill the parent" isn't one word — it's `expandable` (grow) + `self-stretch` (cross-axis).
+The same discipline the grammar applies to CSS — no two authorities touch the same
+ground without an executable law saying who wins — applies to the project's own
+documents.
 
 ## Status
 
-**Extraction-stable.** The structure is settled enough to extract the spec, guide, and registry from, and no open item affects whether a class string is well-formed. Two axes of confidence are tracked separately:
+Research, not a product. Honest ledger:
 
-- **Internal consistency — high, and executable.** The central composition law is no longer just asserted; a dimensional-purity predicate runs across all axes and passes (after two corrections it surfaced). The one-word-per-axis, state-entailment, weight-implies-direction, and arity laws run against audited components.
-- **Empirical adequacy — validated for state, partial for the spatial core.** The state vocabulary was rebuilt on the full ARIA + CSS-UI surface and survived audits against seven dissimilar components. The spatial/layering/sizing axes pass the purity check and survived those audits by inspection, but their runtime *outcome* behaviour is not yet under browser tests. That's the remaining frontier, not a known defect.
+- **Internal consistency: high and executable.** The orthogonality and purity claims
+  are runnable predicates; the test suite includes browser-level rendering checks.
+- **Empirical adequacy: partial.** Audited against real component patterns; not yet
+  proven by a full application built end-to-end. That build, and its gap log, is the
+  current critical path.
+- **Emission: partial.** The linter covers the full registry; CSS emission is being
+  completed axis-by-axis, with every genuine design question recorded rather than
+  improvised.
 
-A few value-slots remain open by intent (the scale generator, some tier-2 layer names, the breakpoint scale values). Anything marked `[RULING]` in the constitution is a value/name decision, not a structural one.
+## Repository map
 
-### What exists today
+| Path | What it is |
+|---|---|
+| `src/ERMINE.md` | The constitution — normative rulings (source of truth) |
+| `docs/ERMINE-RATIONALE.md` | Why each ruling holds |
+| `docs/decisions/` | Append-only decision records |
+| `src/registry.ts` | The typed axis registry |
+| `src/lint.ts` / `src/emit.ts` | Verifier and emitter |
+| `src/ERMINE-SPEC.md` / `src/ERMINE-GUIDE.md` | Derived spec and guide (generated sections) |
+| `analysis/` | The measurement instrument and findings |
+| `demo/` | A rendered demo page |
+| `docs/DIRECTION.md` | Strategy: the four subprojects, gates, and status |
 
-- The constitution, registry, machine-consumer spec, and human guide.
-- A working parser and a core predicate set (`lint.ts`) that rejects malformed strings with reasons; the registry typechecks and the linter's checks pass.
+## Name
 
-### What's next
-
-- Generate the spec from the registry (so "derived, don't edit here" is mechanically enforced).
-- Generate the CSS implementation.
-- Derive each axis's property list from the generated CSS, so the purity check becomes authoritative rather than indicative.
-- Promote the audit/validation scripts to a committed test suite.
-
-## A note on the name
-
-An ermine is a small mustelid whose coat stays clean because it won't touch what would soil it. That's the whole system in one animal: an axis touches only the properties it owns, and the grammar composes cleanly as a result. No heraldry intended — just the animal, and the discipline it stands for.
+An ermine changes its coat with the season while remaining the same animal — the
+grammar's words stay constant while themes change what they render to.
 
 ## License
 
-[MIT](./LICENSE). The ideas are not owned and cannot be — they're built on the work of others, as anyone's are. The license governs this particular text and code, and keeps the lineage honest. Build on it freely.
+MIT.
