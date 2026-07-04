@@ -23,6 +23,7 @@ export interface Parsed {
 export interface Issue { level: "error" | "warn"; rule: string; msg: string; target?: string }
 
 // --- parse one authored word into (scope, axis, member, value?) ---
+// implements: R-STATE-07
 export function parseWord(raw: string): Parsed {
   let scope = "base";
   let body = raw;
@@ -69,6 +70,7 @@ export function parseWord(raw: string): Parsed {
 //   • SUB-DIALS (m2 grow/shrink): parametric tokens on DIFFERENT dials compose;
 //     two on the SAME dial conflict.
 //   • plain axes: at most one word per axis/scope (unchanged).
+// implements: LAW-2
 export function p1_oneWordPerAxisPerScope(parsed: Parsed[]): Issue[] {
   const out: Issue[] = [];
   const byKey = new Map<string, Parsed[]>(); // scope|axis -> words
@@ -139,6 +141,7 @@ export function p1_oneWordPerAxisPerScope(parsed: Parsed[]): Issue[] {
 }
 
 // --- P2: unknown word / no-coining ---
+// implements: LAW-6, R-VOCAB-03
 export function p2_unknownWord(parsed: Parsed[]): Issue[] {
   return parsed.filter((p) => p.axis === null).map((p) => ({
     level: "error" as const, rule: "unknown-word",
@@ -150,6 +153,7 @@ export function p2_unknownWord(parsed: Parsed[]): Issue[] {
 // backing = the set of platform truths present on the element (caller supplies)
 // skipTargets = raw words another predicate (P6) already gave a more specific diagnosis for —
 // suppresses the redundant "none present" complaint so authors get one clear fix, not two.
+// implements: LAW-6B, R-STATE-05
 export function p8_stateEntailment(parsed: Parsed[], backing: Set<string>, skipTargets: Set<string> = new Set()): Issue[] {
   const out: Issue[] = [];
   for (const p of parsed) {
@@ -198,6 +202,7 @@ export interface LintContext {
 // A relational member (e.g. `active-descendant`) is NOT backed by an attribute on the
 // element itself, but by the CONTAINER pointing at this element's id (e.g. the listbox's
 // `aria-activedescendant` === this option's id). Ported from combobox-audit.ts.
+// implements: R-STATE-05
 export function p8b_relationalEntailment(parsed: Parsed[], ctx: LintContext): Issue[] {
   const out: Issue[] = [];
   for (const p of parsed) {
@@ -222,6 +227,7 @@ export function p8b_relationalEntailment(parsed: Parsed[], ctx: LintContext): Is
 // path (must fall back to no divider, never mis-render). Global check, not scope-bucketed: the
 // hazard exists whenever both are true for an element regardless of which scope authored them.
 const WRAP_RISK_WORDS = new Set(["wrap-allowed", "wrap-reverse"]);
+// implements: R-DIVIDER-02
 export function p10_dividerWrap(parsed: Parsed[]): Issue[] {
   const hasDivided = parsed.some((p) => p.axis === "divider" && p.raw === "divided");
   if (!hasDivided) return [];
@@ -241,6 +247,7 @@ export function p10_dividerWrap(parsed: Parsed[]): Issue[] {
 // horizontal/vertical/grid produce flex/grid inner display). Skipped when the
 // parent is unknown (ctx.parentClasses absent), like the relational check.
 const INLINE_OUTER_M1 = new Set(["inline", "boxed-inline"]); // `boxed` (block outer) is unaffected
+// implements: R-M1-01
 export function p11_m1OnFlexItem(parsed: Parsed[], ctx: LintContext): Issue[] {
   if (ctx.parentClasses === undefined) return []; // parent unknown → can't check
   const parentIsFlexOrGrid = ctx.parentClasses.trim().split(/\s+/).filter(Boolean)
@@ -259,6 +266,7 @@ export function p11_m1OnFlexItem(parsed: Parsed[], ctx: LintContext): Issue[] {
 // px is OUT in v0). These match a dedicated `fallback` token (registry.ts), giving them a more
 // specific diagnosis than falling through to P2 `unknown-word` — the shape was right, the
 // parameter wasn't.
+// implements: R-M3-03
 export function p3_badParameter(parsed: Parsed[]): Issue[] {
   return parsed.filter((p) => p.openFallback).map((p) => ({
     level: "error" as const, rule: "bad-parameter",

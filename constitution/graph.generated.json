@@ -1,0 +1,1746 @@
+{
+  "nodes": [
+    {
+      "id": "ADR-0001",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0001-spacing-exploration.md",
+      "anchor": "ADR-0001"
+    },
+    {
+      "id": "ADR-0002",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0002-freezing-by-removal.md",
+      "anchor": "ADR-0002"
+    },
+    {
+      "id": "ADR-0003",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0003-audit-and-state-rebuild.md",
+      "anchor": "ADR-0003"
+    },
+    {
+      "id": "ADR-0004",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0004-registry-extraction.md",
+      "anchor": "ADR-0004"
+    },
+    {
+      "id": "CODE:Alias",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "Alias"
+    },
+    {
+      "id": "CODE:Arity",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "Arity"
+    },
+    {
+      "id": "CODE:AxisRecord",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "AxisRecord"
+    },
+    {
+      "id": "CODE:checkDimensionalPurity",
+      "register": "code",
+      "file": "src/emit.ts",
+      "anchor": "checkDimensionalPurity"
+    },
+    {
+      "id": "CODE:Driver",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "Driver"
+    },
+    {
+      "id": "CODE:emit",
+      "register": "code",
+      "file": "src/emit.ts",
+      "anchor": "emit"
+    },
+    {
+      "id": "CODE:ENVIRONMENT_SCOPES",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "ENVIRONMENT_SCOPES"
+    },
+    {
+      "id": "CODE:LAYERING",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "LAYERING"
+    },
+    {
+      "id": "CODE:LAYOUT",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "LAYOUT"
+    },
+    {
+      "id": "CODE:MOTION",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "MOTION"
+    },
+    {
+      "id": "CODE:p1_oneWordPerAxisPerScope",
+      "register": "code",
+      "file": "src/lint.ts",
+      "anchor": "p1_oneWordPerAxisPerScope"
+    },
+    {
+      "id": "CODE:p10_dividerWrap",
+      "register": "code",
+      "file": "src/lint.ts",
+      "anchor": "p10_dividerWrap"
+    },
+    {
+      "id": "CODE:p11_m1OnFlexItem",
+      "register": "code",
+      "file": "src/lint.ts",
+      "anchor": "p11_m1OnFlexItem"
+    },
+    {
+      "id": "CODE:p2_unknownWord",
+      "register": "code",
+      "file": "src/lint.ts",
+      "anchor": "p2_unknownWord"
+    },
+    {
+      "id": "CODE:p3_badParameter",
+      "register": "code",
+      "file": "src/lint.ts",
+      "anchor": "p3_badParameter"
+    },
+    {
+      "id": "CODE:p8_stateEntailment",
+      "register": "code",
+      "file": "src/lint.ts",
+      "anchor": "p8_stateEntailment"
+    },
+    {
+      "id": "CODE:p8b_relationalEntailment",
+      "register": "code",
+      "file": "src/lint.ts",
+      "anchor": "p8b_relationalEntailment"
+    },
+    {
+      "id": "CODE:parseWord",
+      "register": "code",
+      "file": "src/lint.ts",
+      "anchor": "parseWord"
+    },
+    {
+      "id": "CODE:Role",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "Role"
+    },
+    {
+      "id": "CODE:SCALES",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "SCALES"
+    },
+    {
+      "id": "CODE:Signature",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "Signature"
+    },
+    {
+      "id": "CODE:SKIN",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "SKIN"
+    },
+    {
+      "id": "CODE:STATE",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "STATE"
+    },
+    {
+      "id": "CODE:Vocabulary",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "Vocabulary"
+    },
+    {
+      "id": "LAW-1",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-1"
+    },
+    {
+      "id": "LAW-2",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-2"
+    },
+    {
+      "id": "LAW-3",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-3"
+    },
+    {
+      "id": "LAW-4",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-4"
+    },
+    {
+      "id": "LAW-5",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-5"
+    },
+    {
+      "id": "LAW-6",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-6"
+    },
+    {
+      "id": "LAW-6B",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-6B"
+    },
+    {
+      "id": "LAW-7",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-7"
+    },
+    {
+      "id": "LAW-8",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "LAW-8"
+    },
+    {
+      "id": "R-ALIGN-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-ALIGN-01"
+    },
+    {
+      "id": "R-AXIS-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-AXIS-01"
+    },
+    {
+      "id": "R-COMPILE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-COMPILE-01"
+    },
+    {
+      "id": "R-COMPILE-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-COMPILE-02"
+    },
+    {
+      "id": "R-COMPILE-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-COMPILE-03"
+    },
+    {
+      "id": "R-CONSTRAINT-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-CONSTRAINT-01"
+    },
+    {
+      "id": "R-DENSITY-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-DENSITY-01"
+    },
+    {
+      "id": "R-DENSITY-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-DENSITY-02"
+    },
+    {
+      "id": "R-DENSITY-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-DENSITY-03"
+    },
+    {
+      "id": "R-DENSITY-04",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-DENSITY-04"
+    },
+    {
+      "id": "R-DIVIDER-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-DIVIDER-01"
+    },
+    {
+      "id": "R-DIVIDER-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-DIVIDER-02"
+    },
+    {
+      "id": "R-DOC-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-DOC-01"
+    },
+    {
+      "id": "R-GRAMMAR-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-GRAMMAR-01"
+    },
+    {
+      "id": "R-IMPL-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-IMPL-01"
+    },
+    {
+      "id": "R-LAYER-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-LAYER-01"
+    },
+    {
+      "id": "R-LAYER-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-LAYER-02"
+    },
+    {
+      "id": "R-LAYER-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-LAYER-03"
+    },
+    {
+      "id": "R-LAYER-04",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-LAYER-04"
+    },
+    {
+      "id": "R-LAYER-05",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-LAYER-05"
+    },
+    {
+      "id": "R-M1-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M1-01"
+    },
+    {
+      "id": "R-M2-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M2-01"
+    },
+    {
+      "id": "R-M2-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M2-02"
+    },
+    {
+      "id": "R-M2-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M2-03"
+    },
+    {
+      "id": "R-M3-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M3-01"
+    },
+    {
+      "id": "R-M3-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M3-02"
+    },
+    {
+      "id": "R-M3-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M3-03"
+    },
+    {
+      "id": "R-M4-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M4-01"
+    },
+    {
+      "id": "R-M5-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M5-01"
+    },
+    {
+      "id": "R-MEMBER-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MEMBER-01"
+    },
+    {
+      "id": "R-MEMBER-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MEMBER-02"
+    },
+    {
+      "id": "R-MEMBER-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MEMBER-03"
+    },
+    {
+      "id": "R-MEMBER-04",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MEMBER-04"
+    },
+    {
+      "id": "R-MOTION-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MOTION-01"
+    },
+    {
+      "id": "R-MOTION-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MOTION-02"
+    },
+    {
+      "id": "R-MOTION-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MOTION-03"
+    },
+    {
+      "id": "R-MOTION-04",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MOTION-04"
+    },
+    {
+      "id": "R-MOTION-05",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MOTION-05"
+    },
+    {
+      "id": "R-MOTION-06",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MOTION-06"
+    },
+    {
+      "id": "R-OVERFLOW-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-OVERFLOW-01"
+    },
+    {
+      "id": "R-PADDING-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-PADDING-01"
+    },
+    {
+      "id": "R-PADDING-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-PADDING-02"
+    },
+    {
+      "id": "R-PLANE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-PLANE-01"
+    },
+    {
+      "id": "R-PROPORTION-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-PROPORTION-01"
+    },
+    {
+      "id": "R-ROLE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-ROLE-01"
+    },
+    {
+      "id": "R-SCALE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SCALE-01"
+    },
+    {
+      "id": "R-SCALE-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SCALE-02"
+    },
+    {
+      "id": "R-SCOPE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SCOPE-01"
+    },
+    {
+      "id": "R-SCOPE-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SCOPE-02"
+    },
+    {
+      "id": "R-SKIN-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SKIN-01"
+    },
+    {
+      "id": "R-SPACE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SPACE-01"
+    },
+    {
+      "id": "R-SPACE-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SPACE-02"
+    },
+    {
+      "id": "R-SPACE-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SPACE-03"
+    },
+    {
+      "id": "R-STATE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-01"
+    },
+    {
+      "id": "R-STATE-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-02"
+    },
+    {
+      "id": "R-STATE-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-03"
+    },
+    {
+      "id": "R-STATE-04",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-04"
+    },
+    {
+      "id": "R-STATE-05",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-05"
+    },
+    {
+      "id": "R-STATE-06",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-06"
+    },
+    {
+      "id": "R-STATE-07",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-07"
+    },
+    {
+      "id": "R-STATE-08",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-08"
+    },
+    {
+      "id": "R-STRUCTURE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STRUCTURE-01"
+    },
+    {
+      "id": "R-TEST-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-TEST-01"
+    },
+    {
+      "id": "R-TEST-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-TEST-02"
+    },
+    {
+      "id": "R-TYPE-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-TYPE-01"
+    },
+    {
+      "id": "R-VOCAB-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-VOCAB-01"
+    },
+    {
+      "id": "R-VOCAB-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-VOCAB-02"
+    },
+    {
+      "id": "R-VOCAB-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-VOCAB-03"
+    },
+    {
+      "id": "R-WRAP-01",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-WRAP-01"
+    },
+    {
+      "id": "RAT:LAW-1",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-1"
+    },
+    {
+      "id": "RAT:LAW-2",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-2"
+    },
+    {
+      "id": "RAT:LAW-3",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-3"
+    },
+    {
+      "id": "RAT:LAW-4",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-4"
+    },
+    {
+      "id": "RAT:LAW-5",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-5"
+    },
+    {
+      "id": "RAT:LAW-6",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-6"
+    },
+    {
+      "id": "RAT:LAW-6B",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-6B"
+    },
+    {
+      "id": "RAT:LAW-7",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-7"
+    },
+    {
+      "id": "RAT:LAW-8",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:LAW-8"
+    },
+    {
+      "id": "RAT:R-ALIGN-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-ALIGN-01"
+    },
+    {
+      "id": "RAT:R-AXIS-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-AXIS-01"
+    },
+    {
+      "id": "RAT:R-COMPILE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-COMPILE-01"
+    },
+    {
+      "id": "RAT:R-COMPILE-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-COMPILE-02"
+    },
+    {
+      "id": "RAT:R-COMPILE-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-COMPILE-03"
+    },
+    {
+      "id": "RAT:R-CONSTRAINT-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-CONSTRAINT-01"
+    },
+    {
+      "id": "RAT:R-DENSITY-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-DENSITY-01"
+    },
+    {
+      "id": "RAT:R-DENSITY-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-DENSITY-02"
+    },
+    {
+      "id": "RAT:R-DENSITY-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-DENSITY-03"
+    },
+    {
+      "id": "RAT:R-DENSITY-04",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-DENSITY-04"
+    },
+    {
+      "id": "RAT:R-DIVIDER-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-DIVIDER-01"
+    },
+    {
+      "id": "RAT:R-DIVIDER-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-DIVIDER-02"
+    },
+    {
+      "id": "RAT:R-DOC-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-DOC-01"
+    },
+    {
+      "id": "RAT:R-GRAMMAR-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-GRAMMAR-01"
+    },
+    {
+      "id": "RAT:R-IMPL-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-IMPL-01"
+    },
+    {
+      "id": "RAT:R-LAYER-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-LAYER-01"
+    },
+    {
+      "id": "RAT:R-LAYER-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-LAYER-02"
+    },
+    {
+      "id": "RAT:R-LAYER-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-LAYER-03"
+    },
+    {
+      "id": "RAT:R-LAYER-04",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-LAYER-04"
+    },
+    {
+      "id": "RAT:R-LAYER-05",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-LAYER-05"
+    },
+    {
+      "id": "RAT:R-M1-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M1-01"
+    },
+    {
+      "id": "RAT:R-M2-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M2-01"
+    },
+    {
+      "id": "RAT:R-M2-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M2-02"
+    },
+    {
+      "id": "RAT:R-M2-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M2-03"
+    },
+    {
+      "id": "RAT:R-M3-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M3-01"
+    },
+    {
+      "id": "RAT:R-M3-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M3-02"
+    },
+    {
+      "id": "RAT:R-M3-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M3-03"
+    },
+    {
+      "id": "RAT:R-M4-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M4-01"
+    },
+    {
+      "id": "RAT:R-M5-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M5-01"
+    },
+    {
+      "id": "RAT:R-MEMBER-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MEMBER-01"
+    },
+    {
+      "id": "RAT:R-MEMBER-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MEMBER-02"
+    },
+    {
+      "id": "RAT:R-MEMBER-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MEMBER-03"
+    },
+    {
+      "id": "RAT:R-MEMBER-04",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MEMBER-04"
+    },
+    {
+      "id": "RAT:R-MOTION-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MOTION-01"
+    },
+    {
+      "id": "RAT:R-MOTION-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MOTION-02"
+    },
+    {
+      "id": "RAT:R-MOTION-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MOTION-03"
+    },
+    {
+      "id": "RAT:R-MOTION-04",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MOTION-04"
+    },
+    {
+      "id": "RAT:R-MOTION-05",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MOTION-05"
+    },
+    {
+      "id": "RAT:R-MOTION-06",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MOTION-06"
+    },
+    {
+      "id": "RAT:R-OVERFLOW-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-OVERFLOW-01"
+    },
+    {
+      "id": "RAT:R-PADDING-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-PADDING-01"
+    },
+    {
+      "id": "RAT:R-PADDING-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-PADDING-02"
+    },
+    {
+      "id": "RAT:R-PLANE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-PLANE-01"
+    },
+    {
+      "id": "RAT:R-PROPORTION-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-PROPORTION-01"
+    },
+    {
+      "id": "RAT:R-ROLE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-ROLE-01"
+    },
+    {
+      "id": "RAT:R-SCALE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SCALE-01"
+    },
+    {
+      "id": "RAT:R-SCALE-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SCALE-02"
+    },
+    {
+      "id": "RAT:R-SCOPE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SCOPE-01"
+    },
+    {
+      "id": "RAT:R-SCOPE-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SCOPE-02"
+    },
+    {
+      "id": "RAT:R-SKIN-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SKIN-01"
+    },
+    {
+      "id": "RAT:R-SPACE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SPACE-01"
+    },
+    {
+      "id": "RAT:R-SPACE-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SPACE-02"
+    },
+    {
+      "id": "RAT:R-SPACE-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SPACE-03"
+    },
+    {
+      "id": "RAT:R-STATE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-01"
+    },
+    {
+      "id": "RAT:R-STATE-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-02"
+    },
+    {
+      "id": "RAT:R-STATE-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-03"
+    },
+    {
+      "id": "RAT:R-STATE-04",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-04"
+    },
+    {
+      "id": "RAT:R-STATE-05",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-05"
+    },
+    {
+      "id": "RAT:R-STATE-06",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-06"
+    },
+    {
+      "id": "RAT:R-STATE-07",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-07"
+    },
+    {
+      "id": "RAT:R-STATE-08",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-08"
+    },
+    {
+      "id": "RAT:R-STRUCTURE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STRUCTURE-01"
+    },
+    {
+      "id": "RAT:R-TEST-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-TEST-01"
+    },
+    {
+      "id": "RAT:R-TEST-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-TEST-02"
+    },
+    {
+      "id": "RAT:R-TYPE-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-TYPE-01"
+    },
+    {
+      "id": "RAT:R-VOCAB-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-VOCAB-01"
+    },
+    {
+      "id": "RAT:R-VOCAB-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-VOCAB-02"
+    },
+    {
+      "id": "RAT:R-VOCAB-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-VOCAB-03"
+    },
+    {
+      "id": "RAT:R-WRAP-01",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-WRAP-01"
+    }
+  ],
+  "edges": [
+    {
+      "from": "CODE:Alias",
+      "to": "R-M2-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:Arity",
+      "to": "R-STATE-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:AxisRecord",
+      "to": "LAW-1",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:checkDimensionalPurity",
+      "to": "LAW-3",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:checkDimensionalPurity",
+      "to": "R-MOTION-03",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:checkDimensionalPurity",
+      "to": "R-TEST-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:Driver",
+      "to": "R-STATE-03",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:emit",
+      "to": "R-COMPILE-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:ENVIRONMENT_SCOPES",
+      "to": "R-STATE-07",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYERING",
+      "to": "R-LAYER-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYERING",
+      "to": "R-LAYER-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYERING",
+      "to": "R-LAYER-03",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-ALIGN-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-CONSTRAINT-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-DIVIDER-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-M2-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-M2-03",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-M3-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-M3-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-M4-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-M5-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-OVERFLOW-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-PADDING-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-STRUCTURE-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-WRAP-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:MOTION",
+      "to": "R-MOTION-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:MOTION",
+      "to": "R-MOTION-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:MOTION",
+      "to": "R-MOTION-04",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p1_oneWordPerAxisPerScope",
+      "to": "LAW-2",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p10_dividerWrap",
+      "to": "R-DIVIDER-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p11_m1OnFlexItem",
+      "to": "R-M1-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p2_unknownWord",
+      "to": "LAW-6",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p2_unknownWord",
+      "to": "R-VOCAB-03",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p3_badParameter",
+      "to": "R-M3-03",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p8_stateEntailment",
+      "to": "LAW-6B",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p8_stateEntailment",
+      "to": "R-STATE-05",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:p8b_relationalEntailment",
+      "to": "R-STATE-05",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:parseWord",
+      "to": "R-STATE-07",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:Role",
+      "to": "R-ROLE-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SCALES",
+      "to": "R-DENSITY-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SCALES",
+      "to": "R-DENSITY-04",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SCALES",
+      "to": "R-SCALE-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SCALES",
+      "to": "R-SPACE-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:Signature",
+      "to": "R-AXIS-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN",
+      "to": "R-SKIN-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN",
+      "to": "R-TYPE-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:STATE",
+      "to": "R-STATE-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:STATE",
+      "to": "R-STATE-06",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:Vocabulary",
+      "to": "R-VOCAB-01",
+      "type": "implements"
+    },
+    {
+      "from": "RAT:LAW-1",
+      "to": "LAW-1",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:LAW-2",
+      "to": "LAW-2",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:LAW-3",
+      "to": "LAW-3",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:LAW-4",
+      "to": "LAW-4",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:LAW-5",
+      "to": "LAW-5",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:LAW-6",
+      "to": "LAW-6",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:LAW-6B",
+      "to": "LAW-6B",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:LAW-7",
+      "to": "LAW-7",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:LAW-8",
+      "to": "LAW-8",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-ALIGN-01",
+      "to": "R-ALIGN-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-AXIS-01",
+      "to": "R-AXIS-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-COMPILE-01",
+      "to": "R-COMPILE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-COMPILE-02",
+      "to": "R-COMPILE-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-COMPILE-03",
+      "to": "R-COMPILE-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-CONSTRAINT-01",
+      "to": "R-CONSTRAINT-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-DENSITY-01",
+      "to": "R-DENSITY-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-DENSITY-02",
+      "to": "R-DENSITY-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-DENSITY-03",
+      "to": "R-DENSITY-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-DENSITY-04",
+      "to": "R-DENSITY-04",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-DIVIDER-01",
+      "to": "R-DIVIDER-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-DIVIDER-02",
+      "to": "R-DIVIDER-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-DOC-01",
+      "to": "R-DOC-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-GRAMMAR-01",
+      "to": "R-GRAMMAR-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-IMPL-01",
+      "to": "R-IMPL-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-LAYER-01",
+      "to": "R-LAYER-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-LAYER-02",
+      "to": "R-LAYER-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-LAYER-03",
+      "to": "R-LAYER-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-LAYER-04",
+      "to": "R-LAYER-04",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-LAYER-05",
+      "to": "R-LAYER-05",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M1-01",
+      "to": "R-M1-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M2-01",
+      "to": "R-M2-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M2-02",
+      "to": "R-M2-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M2-03",
+      "to": "R-M2-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M3-01",
+      "to": "R-M3-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M3-02",
+      "to": "R-M3-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M3-03",
+      "to": "R-M3-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M4-01",
+      "to": "R-M4-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-M5-01",
+      "to": "R-M5-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MEMBER-01",
+      "to": "R-MEMBER-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MEMBER-02",
+      "to": "R-MEMBER-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MEMBER-03",
+      "to": "R-MEMBER-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MEMBER-04",
+      "to": "R-MEMBER-04",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MOTION-01",
+      "to": "R-MOTION-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MOTION-02",
+      "to": "R-MOTION-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MOTION-03",
+      "to": "R-MOTION-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MOTION-04",
+      "to": "R-MOTION-04",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MOTION-05",
+      "to": "R-MOTION-05",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MOTION-06",
+      "to": "R-MOTION-06",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-OVERFLOW-01",
+      "to": "R-OVERFLOW-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-PADDING-01",
+      "to": "R-PADDING-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-PADDING-02",
+      "to": "R-PADDING-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-PLANE-01",
+      "to": "R-PLANE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-PROPORTION-01",
+      "to": "R-PROPORTION-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-ROLE-01",
+      "to": "R-ROLE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SCALE-01",
+      "to": "R-SCALE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SCALE-02",
+      "to": "R-SCALE-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SCOPE-01",
+      "to": "R-SCOPE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SCOPE-02",
+      "to": "R-SCOPE-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SKIN-01",
+      "to": "R-SKIN-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SPACE-01",
+      "to": "R-SPACE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SPACE-02",
+      "to": "R-SPACE-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SPACE-03",
+      "to": "R-SPACE-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-01",
+      "to": "R-STATE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-02",
+      "to": "R-STATE-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-03",
+      "to": "R-STATE-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-04",
+      "to": "R-STATE-04",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-05",
+      "to": "R-STATE-05",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-06",
+      "to": "R-STATE-06",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-07",
+      "to": "R-STATE-07",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-08",
+      "to": "R-STATE-08",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STRUCTURE-01",
+      "to": "R-STRUCTURE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-TEST-01",
+      "to": "R-TEST-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-TEST-02",
+      "to": "R-TEST-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-TYPE-01",
+      "to": "R-TYPE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-VOCAB-01",
+      "to": "R-VOCAB-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-VOCAB-02",
+      "to": "R-VOCAB-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-VOCAB-03",
+      "to": "R-VOCAB-03",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-WRAP-01",
+      "to": "R-WRAP-01",
+      "type": "rationale-of"
+    }
+  ],
+  "clusters": []
+}

@@ -302,6 +302,7 @@ function fragmentForMatch(p: Parsed): string {
 // ============================================================================
 // THE WALKER
 // ============================================================================
+// implements: R-COMPILE-01
 export function emit(classString: string, ctx: LintContext = {}, scope?: string): EmittedRule[] {
   const words = classString.trim().split(/\s+/).filter(Boolean);
   const parsed: Parsed[] = words.map(parseWord);
@@ -439,6 +440,7 @@ const COMPOSED_PROOFS: string[] = [
 
 export interface PurityViolation { property: string; axes: [string, string] }
 
+// implements: LAW-3, R-MOTION-03, R-TEST-02
 export function checkDimensionalPurity(): PurityViolation[] {
   // process each emit() call as its own BATCH — facet sanctioning needs to
   // know which facet rules fired TOGETHER in the same composed string, not

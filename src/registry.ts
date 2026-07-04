@@ -22,6 +22,7 @@
 // these names, so the grammar surface is stable even though the numbers are open.
 // ============================================================================
 
+// implements: R-SPACE-02, R-DENSITY-01, R-DENSITY-04, R-SCALE-01
 export const SCALES = {
   density: ["tight", "snug", "comfortable", "relaxed", "loose", "separated"],
   size: ["sm", "md", "lg", "xl"], // R-SCALE-01 size scale — basis-exact-<step>, constraints
@@ -34,12 +35,15 @@ export const SCALES = {
 // ============================================================================
 
 export type Sibling = "layout" | "state" | "motion" | "layering" | "skin";
+// implements: R-ROLE-01
 export type Role = "container" | "member" | "self" | "none";
+// implements: R-AXIS-01
 export type Signature =
   | "set-with-exclusivity"
   | "ordered-chain"
   | "container-operation"
   | "negotiated-field";
+// implements: R-VOCAB-01
 export type Vocabulary = "closed" | "open";
 export type Regime = "free" | "negotiated";
 
@@ -49,7 +53,9 @@ export type StateCategory =
   | "instance"
   | "conditioned-skin"
   | "relational";
+// implements: R-STATE-02
 export type Arity = "binary" | "enumerated" | "continuous";
+// implements: R-STATE-03
 export type Driver = "interaction" | "input" | "environmental";
 
 // A `token` is what the linter actually matches against an authored word.
@@ -89,11 +95,13 @@ export interface StateMember {
 // the axis — including the parametric forms and other aliases. This is the m2
 // "corner" mechanism: `elastic` = grow-1 + shrink-1, a whole-axis value, so it
 // cannot combine with `grow-2` or `shrink-0`. (R-M2-01)
+// implements: R-M2-01
 export interface Alias {
   word: string;
   expands: string; // canonical full expansion, e.g. "grow-1 shrink-1"
 }
 
+// implements: LAW-1
 export interface AxisRecord {
   axis: string; // unique id; state groups use `state.<group>`
   sibling: Sibling;
@@ -166,6 +174,7 @@ const densityToken = (prefix: string): Token => ({
 // 4.1 LAYOUT
 // ============================================================================
 
+// implements: R-STRUCTURE-01, R-M2-02, R-M2-03, R-M3-01, R-M3-02, R-M4-01, R-M5-01, R-PADDING-01, R-ALIGN-01, R-DIVIDER-01, R-WRAP-01, R-OVERFLOW-01, R-CONSTRAINT-01
 export const LAYOUT: AxisRecord[] = [
   {
     axis: "structure",
@@ -403,6 +412,7 @@ export const LAYOUT: AxisRecord[] = [
 // 4.4 LAYERING — tier-2 z-scale and tier-1 top-layer are DIFFERENT axes.
 // ============================================================================
 
+// implements: R-LAYER-01, R-LAYER-02, R-LAYER-03
 export const LAYERING: AxisRecord[] = [
   {
     axis: "z-scale", // TIER 2 ONLY
@@ -459,6 +469,7 @@ export const LAYERING: AxisRecord[] = [
 // 4.3 MOTION
 // ============================================================================
 
+// implements: R-MOTION-01, R-MOTION-02, R-MOTION-04
 export const MOTION: AxisRecord[] = [
   {
     axis: "motion-micro",
@@ -491,6 +502,7 @@ export const MOTION: AxisRecord[] = [
 // 5. SKIN — sampled (surface + type + one conditioned-skin record).
 // ============================================================================
 
+// implements: R-TYPE-01, R-SKIN-01
 export const SKIN: AxisRecord[] = [
   {
     axis: "skin-surface",
@@ -571,6 +583,7 @@ const stateAxis = (
   };
 };
 
+// implements: R-STATE-01, R-STATE-06
 export const STATE: AxisRecord[] = [
   stateAxis("focus", [
     { word: "hover", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":hover"] },
@@ -629,6 +642,7 @@ export interface ScopePrefix {
   note?: string;
 }
 
+// implements: R-STATE-07
 export const ENVIRONMENT_SCOPES: ScopePrefix[] = [
   { id: "viewport-bp", pattern: new RegExp(`^viewport-(${SCALES.breakpoint.join("|")})$`), shape: "viewport-<bp>:", role: "none" },
   { id: "viewport-orientation", pattern: /^viewport-(portrait|landscape)$/, shape: "viewport-<orientation>:", role: "none" },

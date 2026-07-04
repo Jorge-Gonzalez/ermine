@@ -1,4 +1,4 @@
-import { readFile, readdir } from "node:fs/promises";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 import { relative, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
@@ -12,6 +12,14 @@ import {
   type RegisterClass,
   parseFooter,
 } from "./binding-ermine.ts";
+import {
+  normalizeGraph,
+  validateGraph,
+  type DocumentGraph,
+  type GraphEdge,
+  type GraphNode,
+  type StaleEntry,
+} from "./graph-core.ts";
 
 interface RegisterFile {
   path: string;
@@ -34,7 +42,15 @@ interface HistoryNode {
   supersedes: string[];
 }
 
+interface CodeImplementation {
+  symbol: string;
+  file: string;
+  ids: string[];
+}
+
 const root = resolve(process.cwd());
+const graphPath = resolve(root, "constitution/graph.generated.json");
+const stalePath = resolve(root, "constitution/stale.json");
 const ignoredDirectories = new Set([".git", "node_modules", "dist", "coverage"]);
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -220,6 +236,108 @@ async function checkCodeCommentIds(normativeIds: Set<string>): Promise<void> {
   }
 }
 
+async function scanCodeImplementations(normativeIds: Set<string>): Promise<CodeImplementation[]> {
+  const implementations: CodeImplementation[] = [];
+  const exportPattern = /^\s*export\s+(?:(?:declare|default|async)\s+)*(?:type|interface|const|let|var|function|class|enum)\s+([A-Za-z_$][\w$]*)\b/;
+  for (const file of await sourceFiles(resolve(root, "src"))) {
+    const lines = (await readFile(file, "utf8")).split("\n");
+    for (let index = 0; index < lines.length; index += 1) {
+      const declaration = /^\s*\/\/\s*implements:\s*(.+)\s*$/.exec(lines[index]);
+      if (!declaration) continue;
+      const exported = exportPattern.exec(lines[index + 1] ?? "");
+      if (!exported) {
+        report("DOC-E02", `${relative(root, file)}:${index + 1} implements comment is not immediately followed by an exported symbol`);
+        continue;
+      }
+      const ids = declaration[1].split(/,\s*/);
+      for (const id of ids) {
+        if (!normativeIds.has(id)) report("DOC-E02", `${relative(root, file)}:${index + 1} implements missing ${id}`);
+      }
+      implementations.push({ symbol: exported[1], file: relative(root, file), ids });
+    }
+  }
+  return implementations;
+}
+
+function buildGraph(
+  normative: NormativeNode[],
+  rationales: Map<string, { file: RegisterFile; line: number }>,
+  history: Map<string, HistoryNode>,
+  implementations: CodeImplementation[],
+): DocumentGraph {
+  const nodes: GraphNode[] = [];
+  const edges: GraphEdge[] = [];
+  for (const node of normative) {
+    nodes.push({ id: node.id, register: "constitution", file: node.file.displayPath, anchor: node.id });
+    if (!node.footer) continue;
+    edges.push({ from: node.footer.rationale, to: node.id, type: "rationale-of" });
+    if (node.footer.defersTo) {
+      edges.push({ from: node.id, to: node.footer.defersTo.id, type: "defers-to", scope: node.footer.defersTo.scope });
+    }
+  }
+  for (const [id, location] of rationales) {
+    nodes.push({ id, register: "rationale", file: location.file.displayPath, anchor: id });
+  }
+  for (const node of history.values()) {
+    nodes.push({ id: node.id, register: "history", file: node.file.displayPath, anchor: node.id });
+    for (const target of node.supersedes) edges.push({ from: node.id, to: target, type: "supersedes" });
+  }
+  for (const implementation of implementations) {
+    const codeId = `CODE:${implementation.symbol}`;
+    if (!nodes.some(({ id }) => id === codeId)) {
+      nodes.push({ id: codeId, register: "code", file: implementation.file, anchor: implementation.symbol });
+    }
+    for (const id of implementation.ids) edges.push({ from: codeId, to: id, type: "implements" });
+  }
+  const uniqueEdges = [...new Map(edges.map((edge) => [`${edge.type}\0${edge.from}\0${edge.to}\0${edge.scope ?? ""}`, edge])).values()];
+  return normalizeGraph({ nodes, edges: uniqueEdges, clusters: [] });
+}
+
+async function checkStaleness(graph: DocumentGraph): Promise<void> {
+  let entries: StaleEntry[];
+  try {
+    const value: unknown = JSON.parse(await readFile(stalePath, "utf8"));
+    if (!Array.isArray(value)) throw new Error("root is not an array");
+    entries = value as StaleEntry[];
+  } catch (error) {
+    report("DOC-E09", `cannot read constitution/stale.json: ${error instanceof Error ? error.message : String(error)}`);
+    return;
+  }
+  const ids = new Set(graph.nodes.map(({ id }) => id));
+  for (const [index, entry] of entries.entries()) {
+    if (!entry || typeof entry.id !== "string" || typeof entry.cause !== "string" || typeof entry.staleSince !== "string") {
+      report("DOC-E09", `stale.json entry ${index} is malformed`);
+      continue;
+    }
+    if (!ids.has(entry.id)) report("DOC-E09", `stale node ${entry.id} does not resolve`);
+    if (!ids.has(entry.cause)) report("DOC-E09", `stale cause ${entry.cause} does not resolve`);
+  }
+  if (entries.length) warnings.push(`WARN stale nodes: ${entries.length}`);
+  else infos.push("INFO stale nodes: 0");
+}
+
+async function handleGraphArtifact(graph: DocumentGraph): Promise<void> {
+  const output = `${JSON.stringify(graph, null, 2)}\n`;
+  if (process.argv.includes("--write-graph")) {
+    if (!errors.length) {
+      await writeFile(graphPath, output);
+      infos.push("INFO wrote constitution/graph.generated.json");
+    }
+    return;
+  }
+  if (process.argv.includes("--check-graph")) {
+    let current = "";
+    try {
+      current = await readFile(graphPath, "utf8");
+    } catch {
+      errors.push("GRAPH-DIFF constitution/graph.generated.json is missing; run npm run graph");
+      return;
+    }
+    if (current !== output) errors.push("GRAPH-DIFF constitution/graph.generated.json is stale; run npm run graph");
+    else infos.push("INFO graph.generated.json is current");
+  }
+}
+
 function checkAdrReferences(history: Map<string, HistoryNode>, normativeIds: Set<string>): void {
   const idPattern = new RegExp(`\\b(?:${NORMATIVE_ID_SOURCE}|ADR-\\d{4})\\b`, "g");
   for (const node of history.values()) {
@@ -297,16 +415,22 @@ async function main(): Promise<void> {
   await checkCodeReferences(codeReferences);
   const normativeIds = new Set(normative.map(({ id }) => id));
   await checkCodeCommentIds(normativeIds);
+  const implementations = await scanCodeImplementations(normativeIds);
   checkAdrReferences(history, normativeIds);
   checkSupersedesCycles(history);
   checkHistoryImmutability(history);
+  const graph = buildGraph(normative, rationales, history, implementations);
+  for (const issue of validateGraph(graph)) report(issue.code, issue.message);
+  for (const cluster of graph.clusters) infos.push(`INFO ${cluster.name}: ${cluster.members.join(", ")}`);
+  await checkStaleness(graph);
+  await handleGraphArtifact(graph);
 
   infos.unshift(`INFO discovered ${registers.length} register files: ${registers.map(({ displayPath }) => displayPath).sort().join(", ")}`);
   for (const line of infos) console.log(line);
   for (const line of warnings) console.warn(line);
   for (const line of errors) console.error(line);
   if (errors.length) process.exitCode = 1;
-  else console.log(`docs:check passed (${normative.length} normative, ${rationales.size} rationale, ${history.size} history nodes)`);
+  else console.log(`docs:check passed (${normative.length} normative, ${rationales.size} rationale, ${history.size} history, ${graph.nodes.filter(({ register }) => register === "code").length} code nodes)`);
 }
 
 await main();
