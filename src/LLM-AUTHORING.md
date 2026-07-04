@@ -11,6 +11,9 @@ Start at §3 for the closed-vs-open priors, compose-don't-coin reframe, stop-and
 intent-to-string patterns. Treat P1–P10 in Obligations as conditions to satisfy before emitting —
 most importantly P8 entailment and P9 no-coining. Use shared §2 to resolve every word; never emit a
 word that cannot be traced to the registry's value space or a sanctioned token parameter.
+Negotiated-axis authoring (the m2/m3 trade-offs) additionally requires the §6 negotiated-regime
+invariants from `src/LINT-SPEC.md` — the prompt assembler injects them as part of the authoring
+context bundle; they are not restated here.
 
 ---
 
@@ -70,13 +73,14 @@ parameterize*, never coin:
 
 ### 3.4 Stop-and-report protocol
 
-When move 4 fires, do **not** emit a class. Emit a gap report the maintainer can act on:
+When move 4 fires, do **not** emit a class. Emit the GAP block defined in `## Output protocol` —
+name the tempted coinage and why moves 1–3 did not cover it on the `missing:` line:
 
 ```
-GAP: axis=<axis or "unknown">, intent="<what was wanted>",
-     tried=[member-lookup, composition, parameter],
-     candidate-word="<the word you were tempted to coin>",
-     note="<why composition/parameter did not cover it>"
+GAP
+intent: <what was wanted>
+nearest: <the closest lawful composition, if any>
+missing: <the lacking distinction — the word you were tempted to coin and why composition/parameter missed>
 ```
 
 A real missing distinction becomes a constitution `[RULING]`; a non-distinction is dropped. Either way
@@ -118,4 +122,195 @@ Some intent has no grammar word *by design*. Route it; never invent a property:
 - **P8 —** Before emitting an instance or relational state, ensure its required element or container backing exists with the specific value or relationship; capability and conditioned-skin words entail nothing.
 - **P9 —** Before emitting any word, resolve it to a closed member or sanctioned open parameter; if neither applies, stop and report the gap rather than coining.
 - **P10 —** Before emitting `divided` with `wrap-allowed` or `wrap-reverse`, surface the divider/wrap warning and verify graceful degradation.
+
+## Output protocol
+
+When asked for a class string, emit **exactly one line of space-separated grammar words — nothing
+else**. No markdown, no code fences, no quotes, no commentary, no trailing punctuation. The line is
+the entire output.
+
+When the intent cannot be lawfully expressed (move 4 of §3.1 fired), emit this block instead —
+again nothing else:
+
+```
+GAP
+intent: <the intent that cannot be expressed>
+nearest: <the closest lawful composition, if any>
+missing: <what the grammar lacks, in one line>
+```
+
+Emitting a GAP block is a correct terminal state, not a failure. Downstream tooling maps it to the
+maintainer's Gap Report format; the ruling it asks for is made in the constitution, never at
+generation time.
+
+## Intent patterns
+
+Twenty worked intent→string pairs, sourced from the demo page, the six audited components
+(disclosure, responsive, sort, validity, combobox, tree), and the guide's examples. Every string
+below is linter-verified. The fenced blocks tagged `ermine` are the stable machine delimiter for
+this section; a `backing=` field on a fence names the comma-separated platform truths the author
+must ensure exist when emitting that string (the P8 obligation — the verifier lints each string
+with exactly that backing).
+
+**P01 — a stacked content section with comfortable rhythm and inner breathing room**
+
+```ermine
+vertical gap-comfortable padding-relaxed
+```
+
+axes: structure · density · padding — source: demo page
+
+**P02 — a header row: controls vertically centered, groups pushed to opposite ends**
+
+```ermine
+horizontal gap-snug align-center justify-between
+```
+
+axes: structure · density · alignment-container — source: demo page
+
+**P03 — a card body that never grows past its readable width**
+
+```ermine
+vertical gap-snug padding-comfortable max-width-lg
+```
+
+axes: structure · density · padding · constraints — source: demo page
+
+**P04 — a compact chip that sits inline in running text**
+
+```ermine
+horizontal inline gap-tight padding-snug
+```
+
+axes: structure · m1-flow-participation · density · padding — source: demo page
+
+**P05 — a chip that can be selected, with a quiet selected look**
+
+```ermine
+selectable selection-subtle padding-snug
+```
+
+axes: state.selection (capability) · selection-treatment · padding — source: demo page
+
+**P06 — a chip currently selected (the element carries its real selection truth)**
+
+```ermine backing=aria-selected
+selectable selected selection-subtle
+```
+
+axes: state.selection · selection-treatment — source: demo page
+
+**P07 — a sidebar column whose list absorbs the leftover space**
+
+```ermine
+vertical gap-tight expandable
+```
+
+axes: structure · density · m2-flex — source: demo page
+
+**P08 — one of two columns that split space equally regardless of content**
+
+```ermine
+elastic basis-ratio
+```
+
+axes: m2-flex · m3-self-size — source: guide, equal-columns example
+
+**P09 — a member locked to the medium size step, never negotiating**
+
+```ermine
+rigid basis-exact-md
+```
+
+axes: m2-flex · m3-self-size (parametric member) — source: guide, basis choices
+
+**P10 — grow-only at double weight (a flex item shrinks by default; say both dials)**
+
+```ermine
+grow-2 shrink-0
+```
+
+axes: m2-flex (dials, never combined with an alias) — source: guide, dial examples
+
+**P11 — "fill the parent": grow along the row AND stretch across it (two axes, not one word)**
+
+```ermine
+expandable self-stretch
+```
+
+axes: m2-flex · m4-self-alignment — source: guide, "fill the parent" note
+
+**P12 — a stack that becomes a row on medium viewports and up**
+
+```ermine
+vertical viewport-md:horizontal
+```
+
+axes: structure, twice — unscoped and viewport-scoped (Law 2) — source: guide, responsive example
+
+**P13 — a stronger selected look only under a dark color scheme**
+
+```ermine
+prefers-color-scheme-dark:selection-strong
+```
+
+axes: selection-treatment under a preference scope — source: guide, preference example
+
+**P14 — a list with a stroke between items, never around them**
+
+```ermine
+vertical gap-comfortable divided
+```
+
+axes: structure · density · divider — source: guide, container words
+
+**P15 — a blocking dialog presented above everything on the page**
+
+```ermine
+modal
+```
+
+axes: top-layer-mechanism (tier-1 — no z-index, the platform top layer) — source: disclosure audit
+
+**P16 — a combobox popup: positioned, isolated, layered above nearby content, scrolling when tall**
+
+```ermine
+position-absolute isolate dropdown scroll-y max-height-md
+```
+
+axes: position-mode · stacking-context · z-scale · overflow · constraints — source: combobox audit
+
+**P17 — the arrow-key-highlighted option (the container asserts it via aria-activedescendant)**
+
+```ermine
+active-descendant selection-subtle
+```
+
+axes: state.relational · selection-treatment — the backing lives on the CONTAINER, pointing at this
+element's id — source: combobox audit
+
+**P18 — a tree node currently showing its children**
+
+```ermine backing=aria-expanded
+expanded
+```
+
+axes: state.disclosure — source: tree audit
+
+**P19 — a table column header sorted ascending (value-aware backing)**
+
+```ermine backing=aria-sort=ascending
+sorted-ascending
+```
+
+axes: state.sort (enumerated arity — the backing carries the value, not just the attribute) —
+source: sort audit
+
+**P20 — a required form field currently failing validation**
+
+```ermine backing=aria-required,aria-invalid
+required invalid
+```
+
+axes: state.validity, two independent predicates co-occurring — source: validity audit
 
