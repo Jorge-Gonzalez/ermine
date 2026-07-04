@@ -26,6 +26,8 @@
     "src/LINT-SPEC.md",
     "src/LLM-AUTHORING.md",
     "src/ERMINE-GUIDE.md",
+    "loop",
+    "generators",
     "LICENSE",
     "README.md"
   ],
@@ -40,6 +42,7 @@
     "registry": "tsx src/registry.ts",
     "emit": "tsx src/emit.ts",
     "demo": "tsx demo/build.ts",
+    "loop": "tsx loop/run.ts",
     "test": "node --import tsx --test test/*.test.ts",
     "test:browser": "node --import tsx --test test/browser/*.test.ts",
     "typecheck": "tsc --noEmit",
