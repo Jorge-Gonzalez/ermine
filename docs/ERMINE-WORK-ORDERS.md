@@ -103,10 +103,9 @@ docs/blog-…md          — the blog draft
 context/…HISTORY.md    — project history (context only; never edit)
 ```
 
-Known inconsistency you will encounter: prose in `README.md`, `registry.ts` comments, and
-elsewhere refers to `STYLE-GRAMMAR.md`, `STYLE-GRAMMAR-SPEC.md`, `STYLE-GRAMMAR-GUIDE.md`.
-The actual files are `constitution/ERMINE.md`, `src/ERMINE-SPEC.md`, `src/ERMINE-GUIDE.md`.
-Work order K1 fixes this; no other order should.
+The legacy filename inconsistency formerly present in prose and comments was reconciled
+by work order K1. The canonical files are `constitution/ERMINE.md`,
+`src/ERMINE-SPEC.md`, and `src/ERMINE-GUIDE.md`.
 
 ---
 
@@ -125,16 +124,17 @@ so no future generator or reader resolves a dangling name.
 **Inputs.** Whole repository.
 
 **Steps.**
-1. Search the entire repo (excluding `.git/` and `context/`) for the strings
-   `STYLE-GRAMMAR.md`, `STYLE-GRAMMAR-SPEC.md`, `STYLE-GRAMMAR-GUIDE.md`,
-   `STYLE-GRAMMAR-SPEC`, `STYLE-GRAMMAR-GUIDE`, and bare `STYLE-GRAMMAR` used as a
-   filename reference.
+1. In a shell, set `legacy='STYLE-'GRAMMAR`, then search the entire repo (excluding
+   `.git/` and `context/`) for `${legacy}.md`, `${legacy}-SPEC.md`,
+   `${legacy}-GUIDE.md`, `${legacy}-SPEC`, `${legacy}-GUIDE`, and bare `${legacy}` used
+   as a filename reference. Constructing the legacy stem prevents this search
+   specification from matching itself.
 2. Replace each with the corresponding real path: `src/ERMINE.md`, `src/ERMINE-SPEC.md`,
    `src/ERMINE-GUIDE.md`. When the reference appears in running prose as the *name of the
-   document* rather than a path (e.g. "the constitution (`STYLE-GRAMMAR.md`)"), keep the
+   document* rather than a path (e.g. "the constitution (`${legacy}.md`)"), keep the
    prose but correct the filename.
 3. EXCEPTIONS — do not modify: (a) anything in `context/` (it is a historical record);
-   (b) the constitution's own internal title line `# STYLE-GRAMMAR — the constitution`
+   (b) the constitution's own internal title line `# ${legacy} — the constitution`
    IF changing it would break internal anchors — check for intra-document links first;
    if there are none, retitle it `# ERMINE — the constitution` and note this in the
    commit body.
@@ -143,7 +143,7 @@ so no future generator or reader resolves a dangling name.
 **Deliverables.** Modified files only; no new files.
 
 **Acceptance criteria.**
-- `grep -rn "STYLE-GRAMMAR" --include="*.md" --include="*.ts" . | grep -v context/ | grep -v .git` returns ONLY matches inside `context/` (i.e. zero lines after the filters), OR zero lines total.
+- `legacy='STYLE-'GRAMMAR; test -z "$(grep -rn "$legacy" --include="*.md" --include="*.ts" . | grep -v context/ | grep -v .git)"` exits 0. The split shell literal is intentional: the acceptance command must not match its own work-order text.
 - `npm run check` exits 0.
 
 **Out of scope.** Restructuring any document; renaming any file; editing `context/`.
@@ -171,9 +171,10 @@ is the target rendering to match), `src/lint.ts` (for predicate IDs).
       hand-written spec says today. Formatting may differ slightly (column order,
       whitespace); facts may not. If you find a place where the hand-written spec and
       the registry DISAGREE on a fact (a word listed in one and not the other, a
-      different exclusivity, a different scale), STOP for that item and file a Gap
-      Report (this is doc drift, and which side is right is a ruling — R1). Generate
-      the rest.
+      different exclusivity, a different scale), consult the constitution. If an
+      existing ruling resolves the disagreement, follow it and identify the ruling and
+      resolved drift item in the commit body. Otherwise STOP for that item and file a
+      Gap Report (which side is right requires a new ruling — R1). Generate the rest.
    c. Write output between sentinel comments inside `src/ERMINE-SPEC.md`:
       `<!-- BEGIN GENERATED: registry (do not edit between markers) -->` and
       `<!-- END GENERATED: registry -->`. Everything outside the markers is untouched
@@ -196,8 +197,9 @@ generated block); modified `package.json` (scripts only).
 - Manually deleting one axis row from the generated block and running `npm run spec:check`
   exits 1 (verify, then restore by running `npm run spec`).
 - `npm run check` exits 0.
-- Zero Gap Reports, OR each drift item has a Gap Report and the generator skips only
-  those items (list them in the commit body).
+- Zero Gap Reports because no drift was found or every drift item was resolved by a
+  cited existing ruling, OR each unresolved drift item has a Gap Report and the
+  generator skips only those items (list all drift dispositions in the commit body).
 
 **Out of scope.** Generating the guide (that is K3); changing any fact in the registry;
 rewriting the spec's hand-prose sections; the `LINT-SPEC`/`LLM-AUTHORING` split (K4).

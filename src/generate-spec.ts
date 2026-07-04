@@ -181,7 +181,7 @@ function replaceGeneratedSection(source: string): string {
   const sectionStart = source.search(/^## 2\. The axis registry/m);
   const nextSection = source.search(/^## 3\. Generation contract/m);
   if (sectionStart < 0 || nextSection <= sectionStart) {
-    throw new Error("Could not locate the hand-written §2 registry section in ERMINE-SPEC.md");
+    throw new Error("Could not locate the hand-written registry section in ERMINE-SPEC.md");
   }
   const before = source.slice(0, sectionStart).trimEnd();
   const after = source.slice(nextSection).trimStart();
