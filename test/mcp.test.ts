@@ -119,6 +119,7 @@ test("A4 MCP server exposes the read-only Ermine tools", async (t) => {
       "ermine_lint",
       "ermine_emit",
       "ermine_contract",
+      "ermine_context", // A6 addition — graph-aware context assembly
     ]);
   });
 

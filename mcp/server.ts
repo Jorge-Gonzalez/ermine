@@ -7,9 +7,14 @@ import {
   McpError,
 } from "@modelcontextprotocol/sdk/types.js";
 
+import { fileURLToPath } from "node:url";
+
 import { loadAuthoringContext } from "../loop/context.ts";
 import { emit } from "../src/emit.ts";
 import { lint } from "../src/lint.ts";
+import { assembleContext, loadContextSource } from "./context-tool.ts";
+
+const REPO_ROOT = fileURLToPath(new URL("..", import.meta.url));
 
 const CLASS_STRING_SCHEMA = {
   type: "object",
@@ -29,6 +34,26 @@ const CLASS_STRING_SCHEMA = {
 const EMPTY_SCHEMA = {
   type: "object",
   properties: {},
+  additionalProperties: false,
+} as const;
+
+const CONTEXT_SCHEMA = {
+  type: "object",
+  properties: {
+    id: {
+      type: "string",
+      minLength: 1,
+      maxLength: 200,
+      description: "A stable corpus ID (LAW-n, R-AREA-nn, RAT:<id>, ADR-nnnn, CODE:<symbol>).",
+    },
+    hops: {
+      type: "integer",
+      minimum: 1,
+      maximum: 2,
+      description: "Neighborhood radius, both edge directions. Default 1; maximum 2.",
+    },
+  },
+  required: ["id"],
   additionalProperties: false,
 } as const;
 
@@ -56,6 +81,12 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       name: "ermine_contract",
       description: "Return the A1 authoring context bundle used to guide an authoring model.",
       inputSchema: EMPTY_SCHEMA,
+    },
+    {
+      name: "ermine_context",
+      description:
+        "Assemble precedence-ordered context for one corpus ID by graph traversal: the node plus its neighborhood (both edge directions, 1-2 hops), controlling sources first, stale and deferral annotations, hard 6k-token budget.",
+      inputSchema: CONTEXT_SCHEMA,
     },
   ],
 }));
@@ -99,6 +130,29 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return errorResult("ermine_contract accepts no arguments.");
     }
     return { content: [{ type: "text", text: await loadAuthoringContext() }] };
+  }
+
+  if (name === "ermine_context") {
+    if (!args || typeof args !== "object" || Array.isArray(args)) {
+      return errorResult("Expected arguments to be an object containing id (and optionally hops).");
+    }
+    const record = args as Record<string, unknown>;
+    if (Object.keys(record).some((key) => key !== "id" && key !== "hops")) {
+      return errorResult("Only the id and hops arguments are accepted.");
+    }
+    if (typeof record.id !== "string" || record.id.length === 0 || record.id.length > 200 || /\r|\n/.test(record.id)) {
+      return errorResult("id must be a non-empty single-line string of at most 200 characters.");
+    }
+    if (record.hops !== undefined && (!Number.isInteger(record.hops) || (record.hops as number) < 1 || (record.hops as number) > 2)) {
+      return errorResult(`hops must be 1 or 2 (got ${JSON.stringify(record.hops)}) — deeper traversal is out of scope; request a specific ID for detail instead.`);
+    }
+    try {
+      const source = loadContextSource(REPO_ROOT);
+      const context = assembleContext(record.id, source, { hops: record.hops as number | undefined });
+      return { content: [{ type: "text", text: context }] };
+    } catch (error) {
+      return errorResult(error instanceof Error ? error.message : String(error));
+    }
   }
 
   if (name === "ermine_lint" || name === "ermine_emit") {
