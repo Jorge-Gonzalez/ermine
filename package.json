@@ -47,6 +47,7 @@
     "ownership:check": "node --import tsx src/derive-ownership.ts --check",
     "registry": "tsx src/registry.ts",
     "emit": "tsx src/emit.ts",
+    "audit": "tsx analysis/audit.ts",
     "demo": "tsx demo/build.ts",
     "loop": "tsx loop/run.ts",
     "mcp": "tsx mcp/server.ts",

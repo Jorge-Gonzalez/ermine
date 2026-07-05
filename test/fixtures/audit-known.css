@@ -1,0 +1,22 @@
+:root {
+  --space: 8px;
+}
+
+.alpha {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+  margin: 0 4px !important;
+  width: 100px;
+  min-width: 2rem;
+  height: 50%;
+  color: red;
+  transform: translateX(1px);
+}
+
+.beta {
+  gap: 8px;
+  padding: 12px;
+  width: 100px;
+  max-width: 200px;
+}
