@@ -14,16 +14,17 @@ before(async () => {
   browser = await chromium.launch({ args: ["--no-sandbox"] });
   const context = await browser.newContext({ offline: true });
   page = await context.newPage();
-  await page.addInitScript(() => {
+  // The stub is a RAW STRING on purpose: passing a function here lets tsx
+  // compile it, and esbuild's keepNames transform injects a `__name(...)`
+  // helper that does not exist inside the page. An init script that throws
+  // fails SILENTLY, so the stub never installed and the real (focus-flaky)
+  // clipboard ran instead — the deterministic failure this fixes.
+  await page.addInitScript(`
     Object.defineProperty(navigator, "clipboard", {
       configurable: true,
-      value: {
-        writeText: async (value: string) => {
-          (window as unknown as { __copied: string }).__copied = value;
-        },
-      },
+      value: { writeText: async (value) => { window.__copied = value; } },
     });
-  });
+  `);
   await page.goto(`file://${surveyPath}`);
 });
 
