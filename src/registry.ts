@@ -31,64 +31,48 @@ export const SCALES = {
 } as const;
 
 // ============================================================================
-// TYPES
+// TYPES — the schema definitions moved to the vocabulary-independent engine
+// (B1, engine/types.ts). The aliases below keep this file the doc system's
+// citation surface and every existing consumer's import surface; the axis DATA
+// stays here and nowhere near the engine.
 // ============================================================================
+
+import type {
+  Alias as EngineAlias,
+  Arity as EngineArity,
+  AxisRecord as EngineAxisRecord,
+  Driver as EngineDriver,
+  Regime as EngineRegime,
+  Role as EngineRole,
+  ScopePrefix as EngineScopePrefix,
+  Signature as EngineSignature,
+  StateCategory as EngineStateCategory,
+  StateMember as EngineStateMember,
+  Token as EngineToken,
+  Vocabulary as EngineVocabulary,
+} from "../engine/types.ts";
 
 export type Sibling = "layout" | "state" | "motion" | "layering" | "skin";
 // implements: R-ROLE-01
-export type Role = "container" | "member" | "self" | "none";
+export type Role = EngineRole;
 // implements: R-AXIS-01
-export type Signature =
-  | "set-with-exclusivity"
-  | "ordered-chain"
-  | "container-operation"
-  | "negotiated-field";
+export type Signature = EngineSignature;
 // implements: R-VOCAB-01
-export type Vocabulary = "closed" | "open";
-export type Regime = "free" | "negotiated";
+export type Vocabulary = EngineVocabulary;
+export type Regime = EngineRegime;
 
 // state-only refinements
-export type StateCategory =
-  | "capability"
-  | "instance"
-  | "conditioned-skin"
-  | "relational";
+export type StateCategory = EngineStateCategory;
 // implements: R-STATE-02
-export type Arity = "binary" | "enumerated" | "continuous";
+export type Arity = EngineArity;
 // implements: R-STATE-03
-export type Driver = "interaction" | "input" | "environmental";
+export type Driver = EngineDriver;
 
 // A `token` is what the linter actually matches against an authored word.
-// `pattern` matches the real emitted class; `captures` documents what the
-// capture groups mean (for parse output + error messages).
-export interface Token {
-  pattern: RegExp;
-  // human label for the matched thing, e.g. "gap-<density>" or "grow-N"
-  shape: string;
-  // for open/parametric tokens: the value's domain, for messages + validation
-  valueDomain?: "density-step" | "size-step" | "breakpoint-step" | "integer-≥0" | "enum";
-  // P3: this token recognizes the axis's WORD SHAPE (prefix/structure) but NOT a sanctioned
-  // parameter value — e.g. `grow-abc` after `grow-<digits>`. Listed AFTER the valid-value
-  // token for an axis (valid matches win first), same ordering discipline as the enumerated
-  // state fallback tokens. A word resolving via a `fallback` token gets `bad-parameter`
-  // (P3), a more specific diagnosis than falling through to P2 `unknown-word`.
-  fallback?: boolean;
-}
+export type Token = EngineToken;
 
 // A state member inside a state-group axis.
-export interface StateMember {
-  word: string;
-  arity: Arity;
-  driver: Driver;
-  stateCategory: StateCategory;
-  // backing SET — any-one satisfies entailment (Law 6b). instance/relational only.
-  entails?: string[];
-  // for relational: the container attribute that must point at this member's id
-  relationalBacking?: { containerAttr: string };
-  // for enumerated arity: the closed value set
-  enumValues?: string[];
-  note?: string;
-}
+export type StateMember = EngineStateMember;
 
 // A whole-axis alias: a single word that names a COMPLETE value of the axis
 // (it fixes every sub-dial at once). Mutually exclusive with every other word on
@@ -96,72 +80,10 @@ export interface StateMember {
 // "corner" mechanism: `elastic` = grow-1 + shrink-1, a whole-axis value, so it
 // cannot combine with `grow-2` or `shrink-0`. (R-M2-01)
 // implements: R-M2-01
-export interface Alias {
-  word: string;
-  expands: string; // canonical full expansion, e.g. "grow-1 shrink-1"
-}
+export type Alias = EngineAlias;
 
 // implements: LAW-1
-export interface AxisRecord {
-  axis: string; // unique id; state groups use `state.<group>`
-  sibling: Sibling;
-  role: Role;
-  signature: Signature;
-  vocabulary: Vocabulary;
-  regime: Regime;
-
-  // CONCEPTUAL member/value space (the scale or word set the grammar reasons in).
-  valueSpace: readonly string[];
-  // EMITTED tokens — what the linter matches against real authored class strings.
-  tokens: Token[];
-
-  default: string | null;
-  controls: string[]; // concrete CSS properties (transcribed; see trust boundary)
-  mustNeverTouch: string[];
-
-  // OPEN axes with independent sub-dials (m2: grow, shrink). When present, the
-  // parametric tokens write DIFFERENT dials and compose one-per-dial; two values
-  // for the SAME dial conflict. `dialOf` maps a parsed token to its dial name.
-  subDials?: string[];
-  dialOf?: (member: string) => string | null;
-
-  // OPEN axes may carry whole-axis aliases (m2 corners). An alias is a complete
-  // value: it conflicts with any other word on the same axis (P1 generalization).
-  aliases?: Alias[];
-  // Some axes' whole-axis form is a PATTERN, not a fixed word (e.g. padding's
-  // `padding-<density>` sets both sides, vs the per-side dials). aliasMatch tags
-  // such a word as a whole-axis value for P1 (mutually exclusive with the dials).
-  aliasMatch?: (word: string) => boolean;
-
-  // CLOSED axes whose member set includes one or more PARAMETRIC members — the
-  // member is a fixed word that carries an open value (m3 `basis-exact-<size>`,
-  // m5 `span-<N>`). This is `open` applied at MEMBER scope inside a `closed`
-  // axis — the same mechanism the enumerated states use (`sorted`, `current`),
-  // NOT a third vocabulary primitive. Listed for documentation/codegen; the
-  // linter treats them as ordinary members (closed membership, validated value).
-  parametricMembers?: string[];
-
-  // state-group axes only:
-  stateGroup?: {
-    // exclusivity WITHIN the group: "one" = at most one member per scope
-    // (genuinely alternative states); "many" = members are independent predicates
-    // that can co-occur (hover+focus, required+invalid), with optional pairwise
-    // conflicts for the specific pairs that ARE mutually exclusive.
-    exclusivity: "one" | "many";
-    conflicts?: [string, string][]; // pairs that cannot co-occur even when exclusivity="many"
-    // REFINEMENT, not conflict: [narrower, wider] — the narrower state is a platform SUBSET of
-    // the wider one (`:focus-visible` ⊂ `:focus`; `:user-invalid`/`:out-of-range` typically ⊂
-    // `:invalid`). Writing both is never an error — redundant, not incompatible. Distinct from
-    // `conflicts`, which is for genuinely mutually-exclusive pairs. (added this revision)
-    implies?: [string, string][];
-    members: StateMember[];
-  };
-
-  // environmental scope-prefix axis only (see ENVIRONMENT below):
-  scopePrefix?: boolean;
-
-  notes?: string;
-}
+export type AxisRecord = EngineAxisRecord;
 
 // helper: build a density-token regex for a property prefix
 const densityToken = (prefix: string): Token => ({
@@ -200,6 +122,18 @@ export const LAYOUT: AxisRecord[] = [
     controls: ["display.outer"],
     mustNeverTouch: ["gap", "padding", "background"],
     notes: "surface names provisional (alias-law, guide-level). OUTCOME CONSTRAINT (browser-verified, demo/test): the outer display is INERT on a flex/grid ITEM — CSS blockifies a flex/grid item's outer display, so `inline`/`boxed-inline` are no-ops on a child of a flex/grid container. Enforced by lint WARNING P11 (`flow-participation-inert`, lint.ts), which reads the parent's classes from LintContext. Not a property collision, so P7 can't see it — it needs parent context.",
+    // P11 as declared data (B1, R-M1-01): the outcome constraint above, in the form the
+    // engine consumes. The parent is a flex/grid container iff it carries any `structure`
+    // word (all of horizontal/vertical/grid produce flex/grid inner display); `boxed`
+    // (block outer) is unaffected.
+    parentInertness: {
+      parentAxis: "structure",
+      inertWords: ["inline", "boxed-inline"],
+      level: "warn",
+      rule: "flow-participation-inert",
+      msg: (word: string) =>
+        `'${word}' sets an inline outer display, but this element is a flex/grid item — CSS blockifies the outer display, so '${word}' is a no-op here. Drop it, or make the parent a flow container.`,
+    },
   },
   {
     axis: "m2-flex",
@@ -358,6 +292,19 @@ export const LAYOUT: AxisRecord[] = [
     controls: ["row-rule", "column-rule"],
     mustNeverTouch: ["border", "gap", "padding", "background"],
     notes: "divided + wrap/order/reversed REQUIRES native gap-decoration; else degrade (P10 warn)",
+    // P10 as declared data (B1, R-DIVIDER-02): `divided` draws a line BETWEEN children
+    // using native gap-decoration, which assumes children stay in authored order.
+    // Composing it with wrapping risks the line landing wrong once children reflow
+    // or visually reorder.
+    compositionHazards: [{
+      ownWords: ["divided"],
+      otherAxis: "wrapping",
+      otherWords: ["wrap-allowed", "wrap-reverse"],
+      level: "warn",
+      rule: "divider-wrap",
+      msg: (own: string, other: string) =>
+        `'${own}' with '${other}' — the between-children line assumes authored order; verify it degrades to no divider rather than mis-rendering once children wrap or reorder.`,
+    }],
   },
   {
     axis: "wrapping",
@@ -593,7 +540,10 @@ export const STATE: AxisRecord[] = [
   ], "many", [], [["focus-visible", "focus"]]),
   stateAxis("selection", [
     { word: "selectable", arity: "binary", driver: "interaction", stateCategory: "capability", note: "entails nothing; distributes capability down" },
-    { word: "selected", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-selected", "aria-pressed", ":checked"], note: "Law 6b merge" },
+    { word: "selected", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-selected", "aria-pressed", ":checked"], note: "Law 6b merge",
+      // P6 form (b) as declared data (B1): a binary `selected` standing in for the
+      // tri-state truth that `checked-mixed` owns.
+      misuse: { whenBacking: ["aria-checked=mixed", ":indeterminate"], msg: "'selected' with a mixed/indeterminate backing — use the dedicated word 'checked-mixed'." } },
     { word: "checked-mixed", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-checked=mixed", ":indeterminate"], note: "the tri-state 'mixed/indeterminate' value as a complete word (binary arity: the word IS the value, no enum suffix)." },
     { word: "current", arity: "enumerated", driver: "interaction", stateCategory: "instance", entails: ["aria-current"], enumValues: ["page", "step", "location", "date", "time", "true"] },
   ], "many", [["selected", "checked-mixed"]]),
@@ -634,13 +584,7 @@ export const STATE: AxisRecord[] = [
 // Parsing a prefixed word yields { scope, axis, member }, and P1 runs per-scope.
 // ----------------------------------------------------------------------------
 
-export interface ScopePrefix {
-  id: string;
-  pattern: RegExp; // matches the PREFIX part (before the colon)
-  shape: string;
-  role: Role; // container-<bp> is container-role; rest are self/none
-  note?: string;
-}
+export type ScopePrefix = EngineScopePrefix;
 
 // implements: R-STATE-07
 export const ENVIRONMENT_SCOPES: ScopePrefix[] = [
