@@ -20,12 +20,48 @@ test("validateRegistry accepts the Ermine registry", () => {
   assert.deepEqual(errors, []);
 });
 
-test("validateRegistry reports structural registry problems", () => {
-  const badRecords = [
-    { axis: "dup", sibling: "layout", role: "container", signature: "set-with-exclusivity", vocabulary: "closed", regime: "free", valueSpace: ["alpha"], tokens: [{ pattern: /^alpha$/, shape: "alpha" }], default: null, controls: [], mustNeverTouch: [] },
-    { axis: "dup", sibling: "layout", role: "container", signature: "set-with-exclusivity", vocabulary: "closed", regime: "free", valueSpace: ["beta"], tokens: [{ pattern: /^beta$/, shape: "beta" }], default: null, controls: [], mustNeverTouch: [] },
-  ] as any;
+// minimal well-formed record for corruption fixtures
+const record = (axis: string, over: object = {}) => ({
+  axis, sibling: "layout", role: "container", signature: "set-with-exclusivity",
+  vocabulary: "closed", regime: "free", valueSpace: [axis + "-word"],
+  tokens: [{ pattern: new RegExp(`^${axis}-word$`), shape: axis }],
+  default: null, controls: [], mustNeverTouch: [], ...over,
+});
 
-  const errors = validateRegistry({ records: badRecords });
+test("validateRegistry reports structural registry problems", () => {
+  const errors = validateRegistry({ records: [record("dup"), record("dup")] as never });
   assert.ok(errors.some((message) => message.includes("duplicate axis id: dup")));
+});
+
+test("validateRegistry catches P0-style cross-axis token shadowing", () => {
+  // axis-b's broad token also matches axis-a's word — the parser would silently
+  // resolve `sticky` to whichever axis is listed first (the historical bug class).
+  const shadow = [
+    record("a", { valueSpace: ["sticky"], tokens: [{ pattern: /^sticky$/, shape: "s" }] }),
+    record("b", { valueSpace: ["stick-N"], tokens: [{ pattern: /^stick/, shape: "broad" }] }),
+  ];
+  const errors = validateRegistry({ records: shadow as never });
+  assert.ok(errors.some((message) => message.includes("'sticky' matches tokens of multiple axes: a, b")));
+});
+
+test("validateRegistry checks alias expansions against the registry's own tokens", () => {
+  const badAlias = [record("c", {
+    vocabulary: "open",
+    aliases: [{ word: "wide", expands: "nonexistent-word" }],
+  })];
+  const errors = validateRegistry({ records: badAlias as never });
+  assert.ok(errors.some((message) => message.includes("alias 'wide' expands to unknown word 'nonexistent-word'")));
+});
+
+test("validateRegistry resolves <name>-step token domains against declared scales", () => {
+  const scaleBound = [record("d", {
+    tokens: [{ pattern: /^d-(tight|snug)$/, shape: "d-<density>", valueDomain: "density-step" }],
+  })];
+  // scales provided but missing the referenced one → error
+  const missing = validateRegistry({ records: scaleBound as never, scales: {} });
+  assert.ok(missing.some((message) => message.includes("references undeclared scale 'density'")));
+  // scale declared → clean
+  assert.deepEqual(validateRegistry({ records: scaleBound as never, scales: { density: ["tight", "snug"] } }), []);
+  // bare-array input declares no scales at all → scale checks are skipped, not failed
+  assert.deepEqual(validateRegistry(scaleBound as never), []);
 });
