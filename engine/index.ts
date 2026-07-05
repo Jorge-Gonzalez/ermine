@@ -7,6 +7,8 @@ import { makeParser } from "./parse.ts";
 import { makePredicates, type Predicates } from "./predicates.ts";
 import type { AxisRecord, Issue, LintContext, Parsed, ScopePrefix } from "./types.ts";
 
+export { validateRegistry } from "./validate-registry.ts";
+
 export interface Linter extends Predicates {
   parseWord: (raw: string) => Parsed;
   lint: (classString: string, backing?: Set<string>, ctx?: LintContext) => Issue[];
