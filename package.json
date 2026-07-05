@@ -30,6 +30,7 @@
     "src/ERMINE-GUIDE.md",
     "loop",
     "mcp",
+    "survey",
     "generators",
     "LICENSE",
     "README.md"
@@ -49,6 +50,7 @@
     "demo": "tsx demo/build.ts",
     "loop": "tsx loop/run.ts",
     "mcp": "tsx mcp/server.ts",
+    "survey:tally": "node --import tsx survey/tally.ts",
     "test": "node --import tsx --test test/*.test.ts",
     "test:browser": "node --import tsx --test test/browser/*.test.ts",
     "typecheck": "tsc --noEmit",

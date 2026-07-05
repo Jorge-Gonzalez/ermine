@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order these words</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: system-ui, sans-serif;
+      line-height: 1.4;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    main {
+      width: min(32rem, calc(100% - 2rem));
+      padding-block: 2rem;
+    }
+
+    h1 {
+      margin-block: 0 1.5rem;
+      font-size: clamp(1.35rem, 5vw, 2rem);
+    }
+
+    ol {
+      display: grid;
+      gap: 0.6rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: rank;
+    }
+
+    li {
+      counter-increment: rank;
+      display: grid;
+      grid-template-columns: 2rem 1fr auto;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      border: 1px solid ButtonBorder;
+      border-radius: 0.5rem;
+      background: ButtonFace;
+      color: ButtonText;
+      cursor: grab;
+      user-select: none;
+    }
+
+    li::before {
+      content: counter(rank);
+      font-variant-numeric: tabular-nums;
+      opacity: 0.65;
+    }
+
+    li.dragging {
+      opacity: 0.45;
+      cursor: grabbing;
+    }
+
+    .moves {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    button {
+      min-width: 2.5rem;
+      min-height: 2.5rem;
+      border: 1px solid ButtonBorder;
+      border-radius: 0.4rem;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    #copy {
+      width: 100%;
+      margin-block-start: 1rem;
+      padding: 0.75rem 1rem;
+      font-weight: 650;
+    }
+
+    #status {
+      min-height: 1.5em;
+      margin-block: 0.75rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Order these words from least space to most space.</h1>
+    <ol id="words" aria-label="Words in your chosen order"></ol>
+    <button id="copy" type="button">Copy results</button>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+
+  <script>
+    const WORDS = ["tight", "snug", "comfortable", "relaxed", "loose", "separated"];
+    const PREFIX = "ORDER-v1:";
+    const list = document.querySelector("#words");
+    const status = document.querySelector("#status");
+    let dragged = null;
+
+    function shuffled(values) {
+      const copy = [...values];
+      for (let index = copy.length - 1; index > 0; index -= 1) {
+        const swap = Math.floor(Math.random() * (index + 1));
+        [copy[index], copy[swap]] = [copy[swap], copy[index]];
+      }
+      return copy;
+    }
+
+    function moveButton(word, direction, label) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = direction < 0 ? "↑" : "↓";
+      button.setAttribute("aria-label", `${label} ${word}`);
+      button.addEventListener("click", () => {
+        const item = button.closest("li");
+        const neighbor = direction < 0 ? item.previousElementSibling : item.nextElementSibling;
+        if (!neighbor) return;
+        if (direction < 0) list.insertBefore(item, neighbor);
+        else list.insertBefore(neighbor, item);
+        item.focus();
+      });
+      return button;
+    }
+
+    function itemFor(word) {
+      const item = document.createElement("li");
+      item.dataset.word = word;
+      item.draggable = true;
+      item.tabIndex = 0;
+
+      const label = document.createElement("span");
+      label.textContent = word;
+      const moves = document.createElement("span");
+      moves.className = "moves";
+      moves.append(moveButton(word, -1, "Move up"), moveButton(word, 1, "Move down"));
+      item.append(label, moves);
+
+      item.addEventListener("dragstart", (event) => {
+        dragged = item;
+        item.classList.add("dragging");
+        event.dataTransfer.effectAllowed = "move";
+        event.dataTransfer.setData("text/plain", word);
+      });
+      item.addEventListener("dragend", () => {
+        item.classList.remove("dragging");
+        dragged = null;
+      });
+      return item;
+    }
+
+    list.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      const target = event.target.closest("li");
+      if (!dragged || !target || target === dragged) return;
+      const after = event.clientY > target.getBoundingClientRect().top + target.offsetHeight / 2;
+      list.insertBefore(dragged, after ? target.nextElementSibling : target);
+    });
+
+    list.addEventListener("drop", (event) => event.preventDefault());
+    list.append(...shuffled(WORDS).map(itemFor));
+
+    async function copyText(value) {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+        return;
+      }
+      const field = document.createElement("textarea");
+      field.value = value;
+      field.setAttribute("readonly", "");
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.append(field);
+      field.select();
+      document.execCommand("copy");
+      field.remove();
+    }
+
+    document.querySelector("#copy").addEventListener("click", async () => {
+      const order = [...list.children].map((item) => item.dataset.word).join(">");
+      try {
+        await copyText(PREFIX + order);
+        status.textContent = "Copied. Send the copied result.";
+      } catch {
+        status.textContent = `Copy failed. Send this result: ${PREFIX}${order}`;
+      }
+    });
+  </script>
+</body>
+</html>
