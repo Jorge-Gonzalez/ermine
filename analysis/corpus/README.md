@@ -1,30 +1,44 @@
 # App-UI corpus provenance
 
-These files are byte-for-byte snapshots of the compiled CSS distributed with
-`playwright-core@1.61.1`. They were retrieved from the repository's installed,
-lockfile-pinned npm artifact on 2026-07-05; no formatting or normalization was
-applied. A public mirror of every distributed file is available under
-`https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/`.
+These files are byte-for-byte snapshots from two independently maintained app-UI
+families. No formatting or normalization was applied.
+
+- Playwright CSS was retrieved from the repository's installed, lockfile-pinned
+  `playwright-core@1.61.1` npm artifact on 2026-07-05. A public mirror of every
+  distributed file is available under
+  `https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/`.
+- Firefox `about:debugging` CSS and its directly imported token/DevTools styles
+  were retrieved from the installed Firefox 151.0 package on 2026-07-05. That
+  package records build ID `20260518133229` and Mozilla source stamp
+  `fc12dc911f904307729760a817deb829cbf8feb4`.
 
 Playwright is Apache-2.0 licensed; the distributed license is preserved in
 [`PLAYWRIGHT-LICENSE.txt`](./PLAYWRIGHT-LICENSE.txt). Upstream source is the
 [`v1.61.1` Playwright release](https://github.com/microsoft/playwright/tree/v1.61.1).
+Firefox is MPL-2.0 licensed; the license is preserved in
+[`FIREFOX-MPL-2.0.txt`](./FIREFOX-MPL-2.0.txt), and the snapshot maps to the
+[pinned Mozilla source tree](https://hg.mozilla.org/releases/mozilla-release/file/fc12dc911f904307729760a817deb829cbf8feb4/devtools/client/aboutdebugging).
 
 ## Targets
 
 | target | public source | retrieved | why it is app UI |
 |---|---|---|---|
+| Firefox `about:debugging` | [pinned source directory](https://hg.mozilla.org/releases/mozilla-release/file/fc12dc911f904307729760a817deb829cbf8feb4/devtools/client/aboutdebugging) | 2026-07-05 | A stateful runtime dashboard for connecting devices and inspecting extensions, tabs, and workers. |
 | Playwright Dashboard | [`lib/vite/dashboard/assets/index-BY2S1tHT.css`](https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/lib/vite/dashboard/assets/index-BY2S1tHT.css) | 2026-07-05 | An interactive browser-session dashboard with navigation, controls, and stateful work panels. |
 | Playwright HTML Report | [`lib/vite/htmlReport/report.css`](https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/lib/vite/htmlReport/report.css) | 2026-07-05 | A searchable, filterable test-results application with list, detail, error, and attachment views. |
 | Playwright Recorder | [`lib/vite/recorder/assets/`](https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/lib/vite/recorder/assets/) | 2026-07-05 | The Inspector/codegen application: recording controls, call log, locator input, and generated-code editor. |
 | Playwright Trace Viewer | [`lib/vite/traceViewer/`](https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/lib/vite/traceViewer/) | 2026-07-05 | A time-travel debugging application with a timeline and actions, source, console, network, and metadata panels. |
 
-The four targets are separate interactive surfaces but share a product family and
-some React/Vite-built UI assets. The comparison therefore tests app-style CSS while
-remaining correlated; [`FINDINGS-APPS.md`](../FINDINGS-APPS.md) does not pool the
-rows or treat them as four independent design organizations.
+The Firefox target is independent of Playwright. The four Playwright targets remain
+separate interactive surfaces from one product family and share some React/Vite-built
+UI assets; [`FINDINGS-APPS.md`](../FINDINGS-APPS.md) does not pool those four rows or
+treat them as independent design organizations.
 
 ## Integrity
+
+Firefox's 27 CSS snapshots are covered by
+[`firefox-about-debugging/SHA256SUMS`](./firefox-about-debugging/SHA256SUMS).
+The Playwright snapshot hashes are:
 
 ```text
 4e741ba6be0fb15305f6dfd907e245e68554f6dbd5282a58dcc1e9d2493eb917  playwright-dashboard/index-BY2S1tHT.css
