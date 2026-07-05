@@ -3,7 +3,7 @@
 // DESIGN DOCUMENT, not the emitter itself. This answers one question: what shape
 // does ONE EMITTED RULE need to be, so that (a) every axis in the registry can be
 // represented honestly, and (b) `deriveControls()` can compute real property
-// ownership for P7 — replacing the currently hand-transcribed `controls` lists.
+// ownership for P7 and the committed ownership.generated.json build artifact.
 //
 // The reason this can't be a single flat shape (token -> selector -> declarations):
 // the registry's own `notes` fields already document THREE ways an axis's "effect"
@@ -12,9 +12,8 @@
 //   - top-layer-mechanism: `controls: []` — no CSS at all, a DOM/JS mechanism
 //   - selection-treatment / motion-macro: write CUSTOM PROPERTIES that a SEPARATE
 //     sink rule, keyed on MULTIPLE co-present words, reads later
-// Today all three collapse into the same `controls: []` (or a lone custom-property
-// list) at the registry level, which is honest about INPUT but says nothing about
-// how emission and ownership actually work. That's what this file adds.
+// The registry-level controls remain the fallback for gap-reported axes only;
+// emitted axes get their authoritative ownership from this AST.
 //
 // Four rule kinds, one union type. Every parsed word maps to exactly one.
 
@@ -209,8 +208,8 @@ const EXAMPLE_RULES: EmittedRule[] = [
 ];
 
 // ============================================================================
-// deriveControls — what turns this AST into P7's input, replacing the
-// hand-transcribed `controls` lists. Two ownership questions, kept SEPARATE:
+// deriveControls — what turns this AST into ownership.generated.json and P7's
+// authoritative input for emitted axes. Two ownership questions, kept SEPARATE:
 //
 //   writes — which axis's DeclareRule put a property/variable on the wire.
 //            Includes custom-property writes (--selection-bg belongs to

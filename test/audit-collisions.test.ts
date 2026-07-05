@@ -69,7 +69,7 @@ test("collision 2: m3 and m4 are property-disjoint after the fix", () => {
 });
 
 test("neither collision survives in P7's global purity sweep", () => {
-  const violations = checkDimensionalPurity();
+  const { violations } = checkDimensionalPurity();
   const touched = violations.filter((v) =>
     v.property === "transition-delay" || v.property === "align-self");
   assert.deepEqual(touched, []);

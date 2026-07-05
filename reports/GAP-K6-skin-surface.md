@@ -34,3 +34,14 @@ Writing a vocabulary here would be coining (R2 / R-VOCAB-03).
 ## What is blocked
 K6's acceptance criterion "every axis has an EMISSION entry" for this axis; any test emitting
 a skin-surface word; downstream theme guidance for surface tokens.
+
+## B4 follow-up — authoritative ownership
+
+B4 derives `selection-treatment` as ultimately painting `background`, `color`, and `outline`
+through the conditional selection sink. Because `skin-surface` has no emittable word, P7 must
+fall back to its declared ownership, which also contains `background` and `color`. The overlap
+cannot be classified authoritatively until this report is ruled: the ruling must say whether
+conditional skin is a sanctioned share with base skin, whether the sink's final declarations
+belong to the base-surface ownership record, or whether the surface socket has another boundary.
+Until then B4 reports the two overlaps as `unverified-overlap` warnings and does not silently
+choose an owner.

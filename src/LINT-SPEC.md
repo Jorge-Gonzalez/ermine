@@ -181,15 +181,17 @@ legitimately carry `expandable` (negotiated) and `self-center` (free) at once.
 
 ## 7. Trust boundary  ‹LINT›
 
-- `controls` lists are currently **transcribed from prose**, not generated from shipped CSS. Property-
-  disjointness checks (P7) are therefore **indicative**, not authoritative, until `controls` is derived
-  from the generated output (the real build gate). A property an axis emits but the prose didn't name
-  could hide a collision.
+- `src/ownership.generated.json` is derived from shipped emission and is P7's authoritative property-
+  ownership input for all 31 emitted axes. `ownership:check` rejects drift in CI. The two axes without
+  an emittable vocabulary (`skin-surface`, `skin-type`) fall back to their declared `controls` with
+  explicit `unverified-ownership` warnings; their pending rulings are
+  `reports/GAP-K6-skin-surface.md` and `reports/GAP-K6-skin-type.md`.
 - Property-disjointness is **necessary, not sufficient** for compositionality: two property-disjoint
   axes can still interact through layout side-effects. Those are caught by outcome/browser tests, not
   by this static spec.
-- Skin is **sampled** (surface + type), not exhaustive; a fuller enumeration could surface a grammar/
-  skin overlap.
+- Skin is **sampled** (surface + type), not exhaustive. The derived pass surfaces `background` and
+  `color` as potential overlaps between the unverified base-surface axis and the verified conditional
+  selection sink; P7 warns rather than choosing an owner while the skin-surface ruling is pending.
 
 ---
 
@@ -220,11 +222,10 @@ legitimately carry `expandable` (negotiated) and `self-center` (free) at once.
 - **P10** — divider/wrap interaction: `divided` composed with `wrap-allowed`/`wrap-reverse` emits a
   `warn`-level `divider-wrap` notice (the between-children line assumes authored order).
 
-**Not yet implemented in `lint.ts`** (specified above; deferred): P7 dimensional-purity *from
-generated CSS* (the `controls` are still transcribed, not derived — the highest-value remaining
-piece).
+**P7 is a registry-build check, not a per-string `lint.ts` predicate.** `src/derive-ownership.ts`
+enumerates emittable words into `src/ownership.generated.json`; `checkDimensionalPurity()` consumes
+that artifact, derives facet/sink exceptions from composed emission, and reports verified violations
+separately from warned gap-axis fallbacks.
 
-Earlier session scripts (not committed) that mechanized parts of this spec: `full-registry.ts` (P7 over
-all axes + ownership index), `collision-analysis.ts` (the two predicate-4 collisions), `combobox-audit.ts`
-/ `tree-audit.ts` (relational entailment). Folding their checks into `lint.ts` + CI is the open work.
-
+The earlier session scripts have been superseded by the committed registry, emission, audit, and
+ownership tests in the main suite.

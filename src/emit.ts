@@ -31,6 +31,8 @@
 // open sockets to the theme, and which skin words the GRAMMAR fixes is unruled;
 // see reports/GAP-K6-skin-surface.md and reports/GAP-K6-skin-type.md).
 
+import { readFileSync } from "node:fs";
+
 import { REGISTRY, SCALES, type AxisRecord } from "./registry.ts";
 import { parseWord, type Parsed, type LintContext } from "./lint.ts";
 import type { EmittedRule, DeclareRule, SinkRule, FacetRule, ConditionRule, MechanismRule } from "./emitter-types.ts";
@@ -480,7 +482,7 @@ export const VOCABULARY: Record<string, string[]> = {
 // Composed strings needed ON TOP of single-word enumeration, because sinks
 // and facets only exist when several words co-occur — no amount of
 // one-word-at-a-time walking will ever produce them.
-const COMPOSED_PROOFS: string[] = [
+export const COMPOSED_PROOFS: string[] = [
   "horizontal inline",                                             // display facet twin
   "selectable selected selection-subtle",                          // selection sink
   "selectable selected selection-strong",
@@ -489,20 +491,71 @@ const COMPOSED_PROOFS: string[] = [
 
 export interface PurityViolation { property: string; axes: [string, string] }
 
+export interface PurityWarning {
+  rule: "unverified-ownership" | "unverified-overlap";
+  axis: string;
+  property?: string;
+  otherAxis?: string;
+  msg: string;
+}
+
+export interface PurityReport {
+  violations: PurityViolation[];
+  warnings: PurityWarning[];
+  verifiedAxes: string[];
+  unverifiedAxes: string[];
+  ownership: Record<string, string[]>;
+}
+
+const OWNERSHIP_PATH = new URL("./ownership.generated.json", import.meta.url);
+const GENERATED_KEY = "_generated";
+const GAP_REPORTED_AXES = new Set(["skin-surface", "skin-type"]);
+
+function generatedOwnership(): Record<string, string[]> {
+  const parsed = JSON.parse(readFileSync(OWNERSHIP_PATH, "utf8")) as Record<string, unknown>;
+  const ownership: Record<string, string[]> = {};
+  for (const [axis, properties] of Object.entries(parsed)) {
+    if (axis === GENERATED_KEY) continue;
+    if (!Array.isArray(properties) || !properties.every((property) => typeof property === "string")) {
+      throw new Error(`Invalid generated ownership entry for '${axis}'`);
+    }
+    ownership[axis] = properties;
+  }
+  return ownership;
+}
+
 // implements: LAW-3, R-MOTION-03, R-TEST-02
-export function checkDimensionalPurity(): PurityViolation[] {
-  // process each emit() call as its own BATCH — facet sanctioning needs to
-  // know which facet rules fired TOGETHER in the same composed string, not
-  // which ones happen to share a selector string (they don't: `structure`'s
-  // facet rule sits on `.horizontal`, `m1-flow-participation`'s sits on
-  // `.inline` — different selectors, same property, sanctioned only because
-  // they were emitted from the SAME class string).
-  const batches: EmittedRule[][] = [
-    ...Object.values(VOCABULARY).flat().map((w) => emit(w)),
-    ...COMPOSED_PROOFS.map((c) => emit(c)),
-  ];
-  const rules = batches.flat();
-  const { paints } = deriveControls(rules);
+export function checkDimensionalPurity(): PurityReport {
+  const generated = generatedOwnership();
+  const verifiedAxes = REGISTRY.filter((axis) => Object.hasOwn(generated, axis.axis)).map((axis) => axis.axis);
+  const unverifiedAxes = REGISTRY.filter((axis) => !Object.hasOwn(generated, axis.axis)).map((axis) => axis.axis);
+
+  for (const axis of unverifiedAxes) {
+    if (!GAP_REPORTED_AXES.has(axis)) {
+      throw new Error(`Axis '${axis}' has neither generated ownership nor a gap-reported fallback`);
+    }
+  }
+  for (const axis of GAP_REPORTED_AXES) {
+    if (!unverifiedAxes.includes(axis)) {
+      throw new Error(`Gap-reported axis '${axis}' unexpectedly has generated ownership; resolve its report before treating it as verified`);
+    }
+  }
+
+  const ownership: Record<string, string[]> = { ...generated };
+  const warnings: PurityWarning[] = [];
+  for (const axis of unverifiedAxes) {
+    const record = REGISTRY.find((candidate) => candidate.axis === axis)!;
+    ownership[axis] = [...new Set(record.controls.map((property) => property.replace(/^display\..*/, "display")))].sort();
+    warnings.push({
+      rule: "unverified-ownership",
+      axis,
+      msg: `'${axis}' has no emittable vocabulary; P7 is falling back to its declared controls (see reports/GAP-K6-${axis}.md).`,
+    });
+  }
+
+  // Facet/sink exceptions remain derived from real composed emission batches.
+  // The ownership sets themselves come only from ownership.generated.json.
+  const batches = COMPOSED_PROOFS.map((classString) => emit(classString));
 
   // sanctioned pairs: axes explicitly allowed to co-paint a property, because
   // a FacetRule or SinkRule fired together in some real emitted batch — the
@@ -534,23 +587,38 @@ export function checkDimensionalPurity(): PurityViolation[] {
     }
   }
 
-  // now the actual check: for each property, do two DIFFERENT free axes both
-  // paint it, outside a sanctioned pair?
+  // Now the actual check: free/free and free/negotiated sharing is forbidden
+  // outside a sanctioned pair. Negotiated/negotiated sharing belongs to the
+  // solver. Any pair involving a declared-control fallback is warned instead.
   const byProperty = new Map<string, Set<string>>();
-  for (const [axis, props] of Object.entries(paints))
+  for (const [axis, props] of Object.entries(ownership))
     for (const prop of props)
       (byProperty.get(prop) ?? byProperty.set(prop, new Set()).get(prop)!).add(axis);
 
   const violations: PurityViolation[] = [];
   for (const [prop, axesSet] of byProperty) {
-    const freeAxes = [...axesSet].filter((a) => REGISTRY.find((ax) => ax.axis === a)?.regime === "free");
-    for (let i = 0; i < freeAxes.length; i++)
-      for (let j = i + 1; j < freeAxes.length; j++) {
-        const [a, b] = [freeAxes[i], freeAxes[j]];
-        if (!sanctioned.has(pairKey(a, b, prop))) violations.push({ property: prop, axes: [a, b] });
+    const axes = [...axesSet];
+    for (let i = 0; i < axes.length; i++)
+      for (let j = i + 1; j < axes.length; j++) {
+        const [a, b] = [axes[i], axes[j]];
+        const regimes = [a, b].map((axis) => REGISTRY.find((record) => record.axis === axis)?.regime);
+        if (regimes.every((regime) => regime === "negotiated")) continue;
+        if (sanctioned.has(pairKey(a, b, prop))) continue;
+        const unverified = [a, b].find((axis) => unverifiedAxes.includes(axis));
+        if (unverified) {
+          warnings.push({
+            rule: "unverified-overlap",
+            axis: unverified,
+            property: prop,
+            otherAxis: unverified === a ? b : a,
+            msg: `'${prop}' may be shared by unverified '${unverified}' and '${unverified === a ? b : a}'; a skin ruling is required before P7 can classify the overlap.`,
+          });
+        } else {
+          violations.push({ property: prop, axes: [a, b] });
+        }
       }
   }
-  return violations;
+  return { violations, warnings, verifiedAxes, unverifiedAxes, ownership };
 }
 
 
@@ -578,16 +646,16 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     `${rules.filter(r => r.kind === "condition").length} condition, ` +
     `${rules.filter(r => r.kind === "mechanism").length} mechanism.`);
 
-  console.log(`\n--- P7: dimensional purity (${Object.keys(VOCABULARY).length} axes with emission coverage) ---`);
-  const violations = checkDimensionalPurity();
-  if (violations.length) {
-    console.log(`P7: FAILED — ${violations.length} unsanctioned collision(s):`);
-    for (const v of violations)
+  const report = checkDimensionalPurity();
+  console.log(`\n--- P7: dimensional purity (${report.verifiedAxes.length} emitted axes) ---`);
+  for (const warning of report.warnings) console.warn(`P7: WARN — ${warning.msg}`);
+  if (report.violations.length) {
+    console.log(`P7: FAILED — ${report.violations.length} unsanctioned collision(s):`);
+    for (const v of report.violations)
       console.log(`  '${v.property}' painted by both '${v.axes[0]}' and '${v.axes[1]}' — not a declared facet or sink pair.`);
     process.exitCode = 1;
   } else {
-    console.log(`P7: ok — no unsanctioned property collisions across ${Object.keys(VOCABULARY).length} axes, ` +
-      `derived from ${Object.values(VOCABULARY).flat().length + COMPOSED_PROOFS.length} emitted class strings ` +
-      `(not transcribed).`);
+    console.log(`P7: ok — no verified unsanctioned property collisions across ${report.verifiedAxes.length} emitted axes; ` +
+      `${report.unverifiedAxes.length} gap-reported axes use warned declared-control fallbacks.`);
   }
 }

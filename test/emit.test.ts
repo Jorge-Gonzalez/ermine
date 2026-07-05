@@ -6,8 +6,18 @@ import { emit, checkDimensionalPurity } from "../src/emit.ts";
 import { deriveControls } from "../src/emitter-types.ts";
 
 test("P7: no unsanctioned property collisions across covered axes", () => {
-  const violations = checkDimensionalPurity();
-  assert.deepEqual(violations, [], violations.map((v) => `${v.property}: ${v.axes.join(" ~ ")}`).join("; "));
+  const report = checkDimensionalPurity();
+  assert.deepEqual(
+    report.violations,
+    [],
+    report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
+  );
+  assert.equal(report.verifiedAxes.length, 31);
+  assert.deepEqual(report.unverifiedAxes, ["skin-surface", "skin-type"]);
+  assert.deepEqual(
+    report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
+    ["skin-surface", "skin-type"],
+  );
 });
 
 test("structure no longer paints flex-wrap (rows retired)", () => {

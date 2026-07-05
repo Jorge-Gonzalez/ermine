@@ -21,6 +21,8 @@
     "src/lint.ts",
     "src/emit.ts",
     "src/emitter-types.ts",
+    "src/derive-ownership.ts",
+    "src/ownership.generated.json",
     "constitution",
     "src/ERMINE-SPEC.md",
     "src/LINT-SPEC.md",
@@ -40,6 +42,8 @@
     "spec:check": "tsx src/generate-spec.ts --check",
     "guide": "tsx src/generate-guide.ts",
     "guide:check": "tsx src/generate-guide.ts --check",
+    "ownership": "node --import tsx src/derive-ownership.ts",
+    "ownership:check": "node --import tsx src/derive-ownership.ts --check",
     "registry": "tsx src/registry.ts",
     "emit": "tsx src/emit.ts",
     "demo": "tsx demo/build.ts",
@@ -48,7 +52,7 @@
     "test": "node --import tsx --test test/*.test.ts",
     "test:browser": "node --import tsx --test test/browser/*.test.ts",
     "typecheck": "tsc --noEmit",
-    "check": "npm run docs:check && npm run graph:check && npm run spec:check && npm run guide:check && npm run typecheck && npm run test"
+    "check": "npm run docs:check && npm run graph:check && npm run spec:check && npm run guide:check && npm run ownership:check && npm run typecheck && npm run test"
   },
   "devDependencies": {
     "@types/node": "^26.0.1",

@@ -36,3 +36,10 @@ word. Writing a vocabulary or a scale here would be coining (R2 / R-VOCAB-03).
 ## What is blocked
 K6's acceptance criterion "every axis has an EMISSION entry" for this axis; any test emitting
 a skin-type word; downstream theme guidance for type tokens.
+
+## B4 follow-up — authoritative ownership
+
+B4 cannot derive ownership for this axis because it still has no emittable word. P7 therefore
+falls back to the declared type properties and emits an `unverified-ownership` warning. No current
+emitted axis overlaps that fallback set, but the clean result is provisional rather than verified;
+the warning remains until this report rules the type vocabulary/theme boundary.
