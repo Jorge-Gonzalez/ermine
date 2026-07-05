@@ -68,6 +68,10 @@ export const APP_TARGETS: readonly AppTarget[] = [
       "xtermModule.DYP7pi_n.css",
     ],
   },
+  {
+    slug: "swagger-ui",
+    files: ["swagger-ui.css"],
+  },
 ];
 
 function displayPath(path: string): string {

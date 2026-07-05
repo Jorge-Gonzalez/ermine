@@ -2,17 +2,22 @@
 
 This is the app-UI companion to the dated, text-site-skewed
 [`FINDINGS.md`](./FINDINGS.md). It applies the same C1 instrument and table shapes
-to five public interactive applications across the Mozilla and Playwright product
-families. The CSS snapshots and generated per-target audits are committed under
+to six public interactive applications across the Mozilla, Playwright, and
+Swagger UI product families. The CSS snapshots and generated per-target audits are committed under
 [`analysis/corpus/`](./corpus/README.md).
 
 Fetched: **2026-07-05**. Standing assumptions: rem→16px assumed; `!important`
 stripped. The instrument observes distributed CSS declarations, not computed styles.
 
-Firefox `about:debugging` is independent of Playwright. The four Playwright targets
-belong to one product family and share some theme, icon, editor, and terminal assets.
-Those four are kept as separate rows rather than pooled so duplicated shared CSS is
-not counted as independent evidence.
+Firefox `about:debugging`, Swagger UI, and the Playwright targets come from three
+independently maintained organizations. The four Playwright targets belong to one
+product family and share some theme, icon, editor, and terminal assets; those four
+are kept as separate rows rather than pooled so duplicated shared CSS is not counted
+as independent evidence. Two widely deployed dashboard families were considered and
+excluded because this instrument cannot see them: Grafana 13 distributes only a
+7.4 kB chart-library stylesheet (its UI styling is emotion CSS-in-JS) and the Home
+Assistant frontend links no stylesheet at all (lit shadow-DOM styles) — details in
+the [corpus manifest](./corpus/README.md).
 
 ## Targets and reproduction
 
@@ -23,8 +28,9 @@ not counted as independent evidence.
 | Playwright HTML Report | [CSS](https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/lib/vite/htmlReport/report.css) | 2026-07-05 | Searchable and filterable results application with test-detail and attachment views. | `npm run audit:apps -- playwright-html-report` |
 | Playwright Recorder | [CSS directory](https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/lib/vite/recorder/assets/) | 2026-07-05 | Inspector/codegen application with recording controls, call log, locator input, and code editor. | `npm run audit:apps -- playwright-recorder` |
 | Playwright Trace Viewer | [CSS directory](https://cdn.jsdelivr.net/npm/playwright-core@1.61.1/lib/vite/traceViewer/) | 2026-07-05 | Time-travel debugging application with timeline, action, source, console, network, and metadata panels. | `npm run audit:apps -- playwright-trace-viewer` |
+| Swagger UI | [CSS](https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.31.1/swagger-ui.css) | 2026-07-05 | Interactive API console: operation lists, expandable panels, request forms, response viewers. | `npm run audit:apps -- swagger-ui` |
 
-Run `npm run audit:apps` to reproduce all five reports, or
+Run `npm run audit:apps` to reproduce all six reports, or
 `npm run audit:apps:check` to verify that the committed reports match the corpus.
 Exact upstream URLs, file hashes, retrieval details, and license provenance are in
 the [corpus manifest](./corpus/README.md).
@@ -40,12 +46,13 @@ Real-property FAMILY coverage (the ceiling on what an ingestor can express):
 | [Playwright HTML Report](./corpus/playwright-html-report/AUDIT-playwright-html-report.md) | 82.4% | 77.3% |
 | [Playwright Recorder](./corpus/playwright-recorder/AUDIT-playwright-recorder.md) | 34.5% | 48.7% |
 | [Playwright Trace Viewer](./corpus/playwright-trace-viewer/AUDIT-playwright-trace-viewer.md) | 51.3% | 49.9% |
+| [Swagger UI](./corpus/swagger-ui/AUDIT-swagger-ui.md) | 78.5% | 0.0% |
 
 Coverage spans **34.5–82.4%**, a wider range than the original framework and
-hand-authored rows (**64.2–77.2%**). Theme custom properties account for
-**48.7–77.3%** of declarations, above the original framework range (**21.4–36.9%**).
-The independent Firefox row sits at **77.1%** coverage and **70.1%** custom
-properties. Three lower-coverage Playwright bundles each contain 573–576 uncovered
+hand-authored rows (**64.2–77.2%**). Theme-custom-property share separates the
+families outright: **48.7–77.3%** across Playwright and **70.1%** for Firefox,
+against **0.0%** for Swagger UI — an app-UI stylesheet with no custom properties at
+all, whose 78.5% coverage sits near the top of the corpus. Three lower-coverage Playwright bundles each contain 573–576 uncovered
 `content` declarations from icon CSS; the HTML Report, which does not include that
 block, has the highest coverage. Thus both product family and bundle composition are
 visible in the app-UI measures.
@@ -61,6 +68,7 @@ visible in the app-UI measures.
 | [Playwright HTML Report](./corpus/playwright-html-report/AUDIT-playwright-html-report.md) | 142 | 17 | **83.8%** | 96.5% | 84.5% | 28.0% |
 | [Playwright Recorder](./corpus/playwright-recorder/AUDIT-playwright-recorder.md) | 40 | 14 | **77.5%** | 95.0% | 30.0% | 31.0% |
 | [Playwright Trace Viewer](./corpus/playwright-trace-viewer/AUDIT-playwright-trace-viewer.md) | 181 | 26 | **70.7%** | 90.1% | 46.4% | 22.3% |
+| [Swagger UI](./corpus/swagger-ui/AUDIT-swagger-ui.md) | 867 | 41 | **54.8%** | 81.3% | 86.5% | 22.8% |
 
 Across the four Playwright targets, top-six spacing coverage is **70.7–84.8%**:
 above the original hand-authored row (**47.7%**) and below Bootstrap (**94.7%**).
@@ -69,6 +77,10 @@ remains at least 70.7%; recurring off-grid values such as 3px, 5px, 6px, and 10p
 account for part of that separation. Firefox exposes only **two raw spacing lengths**
 because its spacing declarations are predominantly token references, so its 100%
 top-six result is reported but is too small to use as a concentration estimate.
+Swagger UI contributes the largest raw sample (**867** lengths, 41 distinct): its
+top-six coverage (**54.8%**) sits between the original hand-authored row (47.7%) and
+the Playwright band, while its 4px-grid share (**86.5%**) is the highest in the
+corpus — the top values are a doubling ladder (16, 8, 4, 32, 64, 128, 256px).
 
 ### SIZE (width/height/min-max/basis)
 
@@ -79,13 +91,17 @@ top-six result is reported but is too small to use as a concentration estimate.
 | [Playwright HTML Report](./corpus/playwright-html-report/AUDIT-playwright-html-report.md) | 15 | 11 | 66.7% |
 | [Playwright Recorder](./corpus/playwright-recorder/AUDIT-playwright-recorder.md) | 21 | 16 | 52.4% |
 | [Playwright Trace Viewer](./corpus/playwright-trace-viewer/AUDIT-playwright-trace-viewer.md) | 75 | 32 | 42.7% |
+| [Swagger UI](./corpus/swagger-ui/AUDIT-swagger-ui.md) | 146 | 41 | 48.6% |
 
 Across Playwright, top-six size coverage is **42.7–66.7%**, versus **55%** for
 Bootstrap and **23.4%** for the original hand-authored corpus. Within every
 Playwright target, size is less concentrated than spacing: the top-six difference
 ranges from 17.1 percentage points in the HTML Report to 28.0 points in the Trace
 Viewer. Firefox has only **two raw size lengths**, both 24px, so its 100% row is also
-reported without treating it as a stable distribution.
+reported without treating it as a stable distribution. Swagger UI's size top-six
+(**48.6%**) falls inside the Playwright band; its spacing/size concentration gap is
+the narrowest measured (6.2 percentage points), with the same doubling values
+recurring in both families of lengths.
 
 These are measurements of the committed app bundles. No scale adjustment or grammar
 ruling is made here.
