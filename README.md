@@ -40,6 +40,8 @@ that both authoring surfaces emit identical output.
 
 The strategy, sequencing, and evidence gates for all four live in
 [`docs/DIRECTION.md`](docs/DIRECTION.md).
+The completed implementations and their dependencies are mapped in
+[`docs/PROJECT-MAP.md`](docs/PROJECT-MAP.md).
 
 ## The idea in one example
 
@@ -95,6 +97,7 @@ Research, not a product. Honest ledger:
 | `analysis/` | The measurement instrument and findings |
 | `demo/` | A rendered demo page |
 | `docs/DIRECTION.md` | Strategy: the four subprojects, gates, and status |
+| `docs/PROJECT-MAP.md` | As-built map of K and subprojects A–D |
 
 ## Name
 
