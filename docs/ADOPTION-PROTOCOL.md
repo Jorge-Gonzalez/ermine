@@ -130,6 +130,26 @@ the new decision is applied.
 - Rewrite one bounded surface at a time and run its unit, build, and browser comparisons before
   proceeding.
 
+### Theme and scale binding gate
+
+Scale values and breakpoint values are late-bound project parameters, not values that adoption may
+silently infer. Before generated CSS uses a project binding, follow this sequence:
+
+```text
+measure existing project values
+  -> propose a semantic binding
+  -> obtain human approval
+  -> commit the project theme binding
+  -> compile generated Ermine CSS
+```
+
+Automation may identify repeated values and propose candidates. It may not decide that a number
+means `comfortable`, `md`, or another semantic step. Ordered bindings must preserve their declared
+ordering constraints. Ambiguous candidates remain `uncertain`; missing constitutional decisions
+produce Gap Reports. A compiler must fail when a used value or condition has no committed binding,
+rather than guessing it. An optional reference profile may seed a new project, but it does not
+override this project-owned approval step.
+
 ## 7. Reporting without a conversion target
 
 Adoption percentage is descriptive evidence:
