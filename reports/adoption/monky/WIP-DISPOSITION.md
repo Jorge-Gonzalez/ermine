@@ -15,6 +15,18 @@ The Ermine documentation changes predate U0 and are preserved. Monky's tracked d
 `121 insertions, 25 deletions` across four files: most insertions were browser-harness lockfile
 changes; the semantic stylesheet removed `.items`, `.sections`, `.equal-circle`, and `.spaced`.
 
+## Completed U0 commits
+
+| Repository | Commit | Result |
+|---|---|---|
+| Ermine | `c12809f` | Thread U work-order contract |
+| Ermine | `94476e1` | Adapted browser evidence and initial disposition record |
+| Monky | `fc2af45` | Grammar-playground cleanup with Ermine provenance in the commit body |
+
+The Monky result was validated with 83 test files passing (1,146 tests passed, 1 skipped) and a
+successful Vite production build. The Ermine result passed the complete `npm run check` gate (219
+tests) and the complete browser gate (21 tests, including all 13 adapted U0 assertions).
+
 ## Captured artifact hashes
 
 SHA-256 is over the unmodified Monky files at the recorded commit/worktree pair.
