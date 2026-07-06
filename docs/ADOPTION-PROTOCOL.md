@@ -42,6 +42,11 @@ Every declaration gets exactly one of these eight terminal or pending dispositio
 Only `grammar-exact` and `grammar-composition` may carry `axis` and `words`. A `gap` is not an
 approximate grammar mapping, and `uncertain` is not permission to rewrite.
 
+The baseline analyzer may assign `substrate` mechanically only when both conditions hold: the
+physical source basename is `reset.css`, and the selector contains no class, ID, or attribute hook.
+This admits universal/root/native-element normalization while leaving component-like reset rules
+`uncertain` for human review. Later manual classification may use stronger application evidence.
+
 ## 3. Ledger contract and conservation
 
 The version-1 TypeScript contract lives in `adoption/types.ts`. Case-study ledgers live at

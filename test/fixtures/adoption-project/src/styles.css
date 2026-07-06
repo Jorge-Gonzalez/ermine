@@ -1,0 +1,16 @@
+@import "./reset.css";
+
+.card {
+  display: flex;
+  color: red;
+}
+
+.duplicate {
+  gap: 4px;
+}
+
+@media (min-width: 40rem) {
+  .duplicate {
+    gap: 8px;
+  }
+}

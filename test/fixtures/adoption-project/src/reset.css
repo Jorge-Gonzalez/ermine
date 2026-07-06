@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+.duplicate {
+  gap: 4px;
+}
+
+.shadow-card {
+  display: grid;
+}
