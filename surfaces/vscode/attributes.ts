@@ -1,0 +1,39 @@
+// The same deliberately conservative literal-attribute boundary as D3:
+// class/className with double quotes, single quotes, or an interpolation-free
+// template literal. Dynamic expressions are invisible by design.
+
+const CLASS_ATTRIBUTE = /(?:class|className)\s*=\s*(?:"([^"]*)"|'([^']*)'|\{\s*`([^`$]*)`\s*\})/g;
+
+export interface ClassAttributeContext {
+  valueStart: number;
+  valueEnd: number;
+  wordStart: number;
+  wordEnd: number;
+  word: string;
+}
+
+export function classAttributeContextAt(text: string, offset: number): ClassAttributeContext | null {
+  const pattern = new RegExp(CLASS_ATTRIBUTE.source, CLASS_ATTRIBUTE.flags);
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text))) {
+    const value = match[1] ?? match[2] ?? match[3] ?? "";
+    const delimiter = match[1] !== undefined ? '"' : match[2] !== undefined ? "'" : "`";
+    const localStart = match[0].indexOf(delimiter) + 1;
+    const valueStart = match.index + localStart;
+    const valueEnd = valueStart + value.length;
+    if (offset < valueStart || offset > valueEnd) continue;
+
+    let wordStart = Math.min(Math.max(offset, valueStart), valueEnd);
+    let wordEnd = wordStart;
+    while (wordStart > valueStart && !/\s/.test(text[wordStart - 1])) wordStart -= 1;
+    while (wordEnd < valueEnd && !/\s/.test(text[wordEnd])) wordEnd += 1;
+    return {
+      valueStart,
+      valueEnd,
+      wordStart,
+      wordEnd,
+      word: text.slice(wordStart, wordEnd),
+    };
+  }
+  return null;
+}

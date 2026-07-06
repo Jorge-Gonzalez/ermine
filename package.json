@@ -57,11 +57,13 @@
     "test": "node --import tsx --test test/*.test.ts",
     "test:browser": "node --import tsx --test test/browser/*.test.ts",
     "typecheck": "tsc --noEmit",
-    "check": "npm run docs:check && npm run graph:check && npm run spec:check && npm run guide:check && npm run ownership:check && npm run typed:check && npm run audit:apps:check && npm run typecheck && npm run test",
+    "check": "npm run docs:check && npm run graph:check && npm run spec:check && npm run guide:check && npm run ownership:check && npm run typed:check && npm run vscode:check && npm run audit:apps:check && npm run typecheck && npm run test",
     "translate": "node --import tsx analysis/translate.ts",
     "translate:original": "node --import tsx analysis/translation/make-original.ts",
     "typed": "node --import tsx surfaces/typed/generate.ts",
-    "typed:check": "node --import tsx surfaces/typed/generate.ts --check"
+    "typed:check": "node --import tsx surfaces/typed/generate.ts --check",
+    "vscode": "node --import tsx surfaces/vscode/generate-data.ts",
+    "vscode:check": "node --import tsx surfaces/vscode/generate-data.ts --check"
   },
   "devDependencies": {
     "@types/node": "^26.0.1",
