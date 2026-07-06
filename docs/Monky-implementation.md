@@ -181,7 +181,20 @@ Minimum shape:
       "words": ["horizontal"],
       "evidence": "computed display remains flex"
     }
-  ]
+  ],
+  "summary": {
+    "totalRecords": 1,
+    "byDisposition": {
+      "grammar-exact": 1,
+      "grammar-composition": 0,
+      "skin-local": 0,
+      "identity-local": 0,
+      "substrate": 0,
+      "gap": 0,
+      "dead": 0,
+      "uncertain": 0
+    }
+  }
 }
 ```
 

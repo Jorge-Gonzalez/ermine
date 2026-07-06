@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "project": "fixture",
+  "source": {
+    "ermineCommit": "1111111111111111111111111111111111111111",
+    "monkyCommit": "2222222222222222222222222222222222222222"
+  },
+  "records": [
+    {
+      "id": "src/a.css::.row::display::1",
+      "file": "src/a.css",
+      "selector": ".row",
+      "property": "display",
+      "value": "flex",
+      "disposition": "grammar-exact",
+      "axis": "structure",
+      "words": ["horizontal"],
+      "evidence": "Ermine emits display:flex for horizontal"
+    },
+    {
+      "id": "src/a.css::.row::padding::1",
+      "file": "src/a.css",
+      "selector": ".row",
+      "property": "padding",
+      "value": "8px 16px",
+      "disposition": "grammar-composition",
+      "axis": "padding",
+      "words": ["padding-inline-comfortable", "padding-block-snug"],
+      "evidence": "The pair preserves independent inline and block intent"
+    },
+    {
+      "id": "src/a.css::.brand::color::1",
+      "file": "src/a.css",
+      "selector": ".brand",
+      "property": "color",
+      "value": "#123456",
+      "disposition": "skin-local",
+      "evidence": "Product color remains owned by the application"
+    },
+    {
+      "id": "src/a.css::.search::position::1",
+      "file": "src/a.css",
+      "selector": ".search",
+      "property": "position",
+      "value": "fixed",
+      "disposition": "identity-local",
+      "evidence": "Overlay anchoring is specific to this component"
+    },
+    {
+      "id": "src/reset.css::*::box-sizing::1",
+      "file": "src/reset.css",
+      "selector": "*",
+      "property": "box-sizing",
+      "value": "border-box",
+      "disposition": "substrate",
+      "evidence": "Project-wide reset verified at the bundle entry"
+    },
+    {
+      "id": "src/a.css::.card::border-radius::1",
+      "file": "src/a.css",
+      "selector": ".card",
+      "property": "border-radius",
+      "value": "8px",
+      "disposition": "gap",
+      "gapReport": "reports/GAP-U-5-fixture-skin.md",
+      "evidence": "No settled skin vocabulary owns this recurring radius"
+    },
+    {
+      "id": "src/old.css::.unused::display::1",
+      "file": "src/old.css",
+      "selector": ".unused",
+      "property": "display",
+      "value": "none",
+      "disposition": "dead",
+      "evidence": "Static usage search and browser coverage find no consumer"
+    },
+    {
+      "id": "src/a.css::.panel::min-height::1",
+      "file": "src/a.css",
+      "selector": ".panel",
+      "property": "min-height",
+      "value": "12rem",
+      "disposition": "uncertain",
+      "pending": "Human must decide whether the exact bound is structural or component identity",
+      "evidence": "Ownership is ambiguous; no rewrite has been made"
+    }
+  ],
+  "summary": {
+    "totalRecords": 8,
+    "byDisposition": {
+      "grammar-exact": 1,
+      "grammar-composition": 1,
+      "skin-local": 1,
+      "identity-local": 1,
+      "substrate": 1,
+      "gap": 1,
+      "dead": 1,
+      "uncertain": 1
+    }
+  }
+}

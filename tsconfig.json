@@ -9,5 +9,5 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "include": ["src", "test", "demo", "analysis", "constitution", "loop", "mcp", "generators", "bench", "engine", "clients", "survey"]
+  "include": ["src", "test", "demo", "analysis", "constitution", "loop", "mcp", "generators", "bench", "engine", "clients", "survey", "adoption"]
 }
