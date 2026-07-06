@@ -142,9 +142,12 @@
       "selector": ".modal-backdrop",
       "property": "position",
       "value": "fixed",
-      "evidence": "Mechanical baseline only: Ermine owns the position property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the position property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "position-mode",
+      "words": [
+        "position-fixed"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::inset::1",
@@ -152,9 +155,8 @@
       "selector": ".modal-backdrop",
       "property": "inset",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine does not own the inset property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::background-color::1",
@@ -162,9 +164,8 @@
       "selector": ".modal-backdrop",
       "property": "background-color",
       "value": "var(--shadow-color)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::z-index::1",
@@ -172,9 +173,8 @@
       "selector": ".modal-backdrop",
       "property": "z-index",
       "value": "10000",
-      "evidence": "Mechanical baseline only: Ermine owns the z-index property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the z-index property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::display::1",
@@ -182,9 +182,12 @@
       "selector": ".modal-backdrop",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "horizontal"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::align-items::1",
@@ -192,9 +195,12 @@
       "selector": ".modal-backdrop",
       "property": "align-items",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the align-items property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the align-items property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "alignment-container",
+      "words": [
+        "align-center"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::justify-content::1",
@@ -202,9 +208,12 @@
       "selector": ".modal-backdrop",
       "property": "justify-content",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the justify-content property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the justify-content property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "alignment-container",
+      "words": [
+        "justify-center"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::background-color::1",
@@ -212,9 +221,8 @@
       "selector": ".modal-dialog",
       "property": "background-color",
       "value": "var(--base-tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::border-radius::1",
@@ -222,9 +230,8 @@
       "selector": ".modal-dialog",
       "property": "border-radius",
       "value": "var(--radius-lg)",
-      "evidence": "Mechanical baseline only: Ermine owns the border-radius property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border-radius property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::box-shadow::1",
@@ -232,9 +239,8 @@
       "selector": ".modal-dialog",
       "property": "box-shadow",
       "value": "rgba(31, 32, 34, 0.3) 0px 1px 2px 0px, rgba(31, 32, 34, 0.15) 0px 2px 6px 2px",
-      "evidence": "Mechanical baseline only: Ermine owns the box-shadow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the box-shadow property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::mix-blend-mode::1",
@@ -242,9 +248,8 @@
       "selector": ".modal-dialog",
       "property": "mix-blend-mode",
       "value": "multiply",
-      "evidence": "Mechanical baseline only: Ermine does not own the mix-blend-mode property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::border::1",
@@ -252,9 +257,8 @@
       "selector": ".modal-dialog",
       "property": "border",
       "value": "1px solid var(--harmonic)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::width::1",
@@ -262,9 +266,8 @@
       "selector": ".modal-dialog",
       "property": "width",
       "value": "min(600px, calc(100vw - 2rem))",
-      "evidence": "Mechanical baseline only: Ermine does not own the width property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::height::1",
@@ -272,9 +275,8 @@
       "selector": ".modal-dialog",
       "property": "height",
       "value": "min(560px, 85vh)",
-      "evidence": "Mechanical baseline only: Ermine does not own the height property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::overflow::1",
@@ -282,9 +284,8 @@
       "selector": ".modal-dialog",
       "property": "overflow",
       "value": "hidden",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::display::1",
@@ -292,9 +293,12 @@
       "selector": ".modal-dialog",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "vertical"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::flex-direction::1",
@@ -302,9 +306,12 @@
       "selector": ".modal-dialog",
       "property": "flex-direction",
       "value": "column",
-      "evidence": "Mechanical baseline only: Ermine owns the flex property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the flex property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "structure",
+      "words": [
+        "vertical"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-container::min-height::1",
@@ -312,9 +319,8 @@
       "selector": ".modal-nav-container",
       "property": "min-height",
       "value": "48px",
-      "evidence": "Mechanical baseline only: Ermine owns the min-height property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the min-height property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-branding::margin-right::1",
@@ -322,9 +328,8 @@
       "selector": ".modal-nav-branding",
       "property": "margin-right",
       "value": "1rem",
-      "evidence": "Mechanical baseline only: Ermine owns the margin property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the margin property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-branding::color::1",
@@ -332,9 +337,8 @@
       "selector": ".modal-nav-branding",
       "property": "color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-branding svg::color::1",
@@ -342,9 +346,8 @@
       "selector": ".modal-nav-branding svg",
       "property": "color",
       "value": "inherit",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.monky-logo-word::display::1",
@@ -352,9 +355,8 @@
       "selector": ".monky-logo-word",
       "property": "display",
       "value": "block",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.monky-logo-word::width::1",
@@ -362,9 +364,8 @@
       "selector": ".monky-logo-word",
       "property": "width",
       "value": "auto",
-      "evidence": "Mechanical baseline only: Ermine does not own the width property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.monky-logo-word::height::1",
@@ -372,9 +373,8 @@
       "selector": ".monky-logo-word",
       "property": "height",
       "value": "26px",
-      "evidence": "Mechanical baseline only: Ermine does not own the height property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab::color::1",
@@ -382,9 +382,8 @@
       "selector": ".modal-nav-tab",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab::border-bottom::1",
@@ -392,9 +391,8 @@
       "selector": ".modal-nav-tab",
       "property": "border-bottom",
       "value": "2px solid transparent",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab:hover::background-color::1",
@@ -402,9 +400,8 @@
       "selector": ".modal-nav-tab:hover",
       "property": "background-color",
       "value": "var(--tone-dim)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab:hover::color::1",
@@ -412,9 +409,8 @@
       "selector": ".modal-nav-tab:hover",
       "property": "color",
       "value": "var(--ink)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab.active::color::1",
@@ -422,9 +418,8 @@
       "selector": ".modal-nav-tab.active",
       "property": "color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab.active::border-bottom-color::1",
@@ -432,9 +427,8 @@
       "selector": ".modal-nav-tab.active",
       "property": "border-bottom-color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab.active::background-color::1",
@@ -442,9 +436,8 @@
       "selector": ".modal-nav-tab.active",
       "property": "background-color",
       "value": "var(--tone-dim)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-icon::height::1",
@@ -452,9 +445,8 @@
       "selector": ".modal-nav-icon",
       "property": "height",
       "value": "18px",
-      "evidence": "Mechanical baseline only: Ermine does not own the height property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-label::font-size::1",
@@ -462,9 +454,8 @@
       "selector": ".modal-nav-label",
       "property": "font-size",
       "value": "var(--text-base)",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-content::flex::1",
@@ -472,9 +463,13 @@
       "selector": ".modal-content",
       "property": "flex",
       "value": "1",
-      "evidence": "Mechanical baseline only: Ermine owns the flex property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the flex property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "m2-flex + m3-self-size",
+      "words": [
+        "elastic",
+        "basis-ratio"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-content::min-height::1",
@@ -482,9 +477,8 @@
       "selector": ".modal-content",
       "property": "min-height",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine owns the min-height property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the min-height property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-content::overflow::1",
@@ -492,9 +486,8 @@
       "selector": ".modal-content",
       "property": "overflow",
       "value": "hidden",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-content::display::1",
@@ -502,9 +495,12 @@
       "selector": ".modal-content",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "vertical"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-content::flex-direction::1",
@@ -512,9 +508,12 @@
       "selector": ".modal-content",
       "property": "flex-direction",
       "value": "column",
-      "evidence": "Mechanical baseline only: Ermine owns the flex property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the flex property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "structure",
+      "words": [
+        "vertical"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css:::host, #monky-modal::position::1",
@@ -522,9 +521,8 @@
       "selector": ":host, #monky-modal",
       "property": "position",
       "value": "fixed !important",
-      "evidence": "Mechanical baseline only: Ermine owns the position property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the position property preserves intent through an existing Ermine mapping"
+      "evidence": "U4 proved modalManager removed this rule before every injection; fff8baa removed the dead declaration with the regex surgery.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css:::host, #monky-modal::top::1",
@@ -532,9 +530,8 @@
       "selector": ":host, #monky-modal",
       "property": "top",
       "value": "0 !important",
-      "evidence": "Mechanical baseline only: Ermine does not own the top property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U4 proved modalManager removed this rule before every injection; fff8baa removed the dead declaration with the regex surgery.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css:::host, #monky-modal::left::1",
@@ -542,9 +539,8 @@
       "selector": ":host, #monky-modal",
       "property": "left",
       "value": "0 !important",
-      "evidence": "Mechanical baseline only: Ermine does not own the left property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U4 proved modalManager removed this rule before every injection; fff8baa removed the dead declaration with the regex surgery.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css:::host, #monky-modal::width::1",
@@ -552,9 +548,8 @@
       "selector": ":host, #monky-modal",
       "property": "width",
       "value": "100vw !important",
-      "evidence": "Mechanical baseline only: Ermine does not own the width property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U4 proved modalManager removed this rule before every injection; fff8baa removed the dead declaration with the regex surgery.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css:::host, #monky-modal::height::1",
@@ -562,9 +557,8 @@
       "selector": ":host, #monky-modal",
       "property": "height",
       "value": "100vh !important",
-      "evidence": "Mechanical baseline only: Ermine does not own the height property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U4 proved modalManager removed this rule before every injection; fff8baa removed the dead declaration with the regex surgery.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css:::host, #monky-modal::z-index::1",
@@ -572,9 +566,8 @@
       "selector": ":host, #monky-modal",
       "property": "z-index",
       "value": "2147483647 !important",
-      "evidence": "Mechanical baseline only: Ermine owns the z-index property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the z-index property preserves intent through an existing Ermine mapping"
+      "evidence": "U4 proved modalManager removed this rule before every injection; fff8baa removed the dead declaration with the regex surgery.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css:::host, #monky-modal::pointer-events::1",
@@ -582,9 +575,8 @@
       "selector": ":host, #monky-modal",
       "property": "pointer-events",
       "value": "none !important",
-      "evidence": "Mechanical baseline only: Ermine does not own the pointer-events property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U4 proved modalManager removed this rule before every injection; fff8baa removed the dead declaration with the regex surgery.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::#monky-modal > *::pointer-events::1",
@@ -592,9 +584,8 @@
       "selector": "#monky-modal > *",
       "property": "pointer-events",
       "value": "auto !important",
-      "evidence": "Mechanical baseline only: Ermine does not own the pointer-events property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U4 proved modalManager removed this rule before every injection; fff8baa removed the dead declaration with the regex surgery.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::font-family::1",
@@ -2812,9 +2803,12 @@
       "selector": ".macro-search-view",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "vertical"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-view::flex-direction::1",
@@ -2822,9 +2816,12 @@
       "selector": ".macro-search-view",
       "property": "flex-direction",
       "value": "column",
-      "evidence": "Mechanical baseline only: Ermine owns the flex property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the flex property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "structure",
+      "words": [
+        "vertical"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-view::height::1",
@@ -2832,9 +2829,8 @@
       "selector": ".macro-search-view",
       "property": "height",
       "value": "100%",
-      "evidence": "Mechanical baseline only: Ermine does not own the height property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input-container::padding::1",
@@ -2842,9 +2838,12 @@
       "selector": ".macro-search-input-container",
       "property": "padding",
       "value": "var(--spacing-lg)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "padding",
+      "words": [
+        "padding-relaxed"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input-container::border-bottom::1",
@@ -2852,9 +2851,8 @@
       "selector": ".macro-search-input-container",
       "property": "border-bottom",
       "value": "1px solid var(--harmonic)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::width::1",
@@ -2862,9 +2860,8 @@
       "selector": ".macro-search-input",
       "property": "width",
       "value": "100%",
-      "evidence": "Mechanical baseline only: Ermine does not own the width property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::padding::1",
@@ -2872,9 +2869,13 @@
       "selector": ".macro-search-input",
       "property": "padding",
       "value": "var(--spacing-sm) var(--spacing-md)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "padding",
+      "words": [
+        "padding-block-snug",
+        "padding-inline-comfortable"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::border::1",
@@ -2882,9 +2883,8 @@
       "selector": ".macro-search-input",
       "property": "border",
       "value": "1px solid var(--accent-dim)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::border-radius::1",
@@ -2892,9 +2892,8 @@
       "selector": ".macro-search-input",
       "property": "border-radius",
       "value": "var(--radius-md)",
-      "evidence": "Mechanical baseline only: Ermine owns the border-radius property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border-radius property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::font-size::1",
@@ -2902,9 +2901,8 @@
       "selector": ".macro-search-input",
       "property": "font-size",
       "value": "var(--text-md)",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::background-color::1",
@@ -2912,9 +2910,8 @@
       "selector": ".macro-search-input",
       "property": "background-color",
       "value": "var(--tone-dim)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::color::1",
@@ -2922,9 +2919,8 @@
       "selector": ".macro-search-input",
       "property": "color",
       "value": "var(--ink)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::outline::1",
@@ -2932,9 +2928,8 @@
       "selector": ".macro-search-input",
       "property": "outline",
       "value": "none",
-      "evidence": "Mechanical baseline only: Ermine does not own the outline property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::box-sizing::1",
@@ -2942,9 +2937,8 @@
       "selector": ".macro-search-input",
       "property": "box-sizing",
       "value": "border-box",
-      "evidence": "Mechanical baseline only: Ermine does not own the box-sizing property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input::transition::1",
@@ -2952,9 +2946,8 @@
       "selector": ".macro-search-input",
       "property": "transition",
       "value": "border-color var(--transition-fast)",
-      "evidence": "Mechanical baseline only: Ermine owns the transition property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the transition property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input:focus::border-color::1",
@@ -2962,9 +2955,8 @@
       "selector": ".macro-search-input:focus",
       "property": "border-color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-input:focus::box-shadow::1",
@@ -2972,9 +2964,8 @@
       "selector": ".macro-search-input:focus",
       "property": "box-shadow",
       "value": "0 0 0 2px var(--tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the box-shadow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the box-shadow property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-results::flex::1",
@@ -2982,9 +2973,13 @@
       "selector": ".macro-search-results",
       "property": "flex",
       "value": "1",
-      "evidence": "Mechanical baseline only: Ermine owns the flex property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the flex property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "m2-flex + m3-self-size",
+      "words": [
+        "elastic",
+        "basis-ratio"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-results::max-height::1",
@@ -2992,9 +2987,8 @@
       "selector": ".macro-search-results",
       "property": "max-height",
       "value": "400px",
-      "evidence": "Mechanical baseline only: Ermine owns the max-height property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the max-height property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-results::overflow-y::1",
@@ -3002,9 +2996,8 @@
       "selector": ".macro-search-results",
       "property": "overflow-y",
       "value": "auto",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-results::display::1",
@@ -3012,9 +3005,12 @@
       "selector": ".macro-search-results",
       "property": "display",
       "value": "grid",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "grid"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-results::grid-template-columns::1",
@@ -3022,9 +3018,8 @@
       "selector": ".macro-search-results",
       "property": "grid-template-columns",
       "value": "fit-content(140px) 1fr",
-      "evidence": "Mechanical baseline only: Ermine owns the grid property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the grid property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-results::align-content::1",
@@ -3032,9 +3027,8 @@
       "selector": ".macro-search-results",
       "property": "align-content",
       "value": "start",
-      "evidence": "Mechanical baseline only: Ermine does not own the align-content property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-empty::grid-column::1",
@@ -3042,9 +3036,12 @@
       "selector": ".macro-search-empty",
       "property": "grid-column",
       "value": "1 / -1",
-      "evidence": "Mechanical baseline only: Ermine owns the grid property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the grid property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "m5-grid-placement",
+      "words": [
+        "span-all"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-empty::padding::1",
@@ -3052,9 +3049,12 @@
       "selector": ".macro-search-empty",
       "property": "padding",
       "value": "var(--spacing-lg)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "padding",
+      "words": [
+        "padding-relaxed"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-empty::color::1",
@@ -3062,9 +3062,8 @@
       "selector": ".macro-search-empty",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-empty::text-align::1",
@@ -3072,9 +3071,8 @@
       "selector": ".macro-search-empty",
       "property": "text-align",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the text-align property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the text-align property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-empty::font-size::1",
@@ -3082,9 +3080,8 @@
       "selector": ".macro-search-empty",
       "property": "font-size",
       "value": "var(--text-md)",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item::display::1",
@@ -3092,9 +3089,12 @@
       "selector": ".macro-search-item",
       "property": "display",
       "value": "grid",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "grid"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item::grid-column::1",
@@ -3102,9 +3102,12 @@
       "selector": ".macro-search-item",
       "property": "grid-column",
       "value": "1 / -1",
-      "evidence": "Mechanical baseline only: Ermine owns the grid property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the grid property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "m5-grid-placement",
+      "words": [
+        "span-all"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item::grid-template-columns::1",
@@ -3112,9 +3115,8 @@
       "selector": ".macro-search-item",
       "property": "grid-template-columns",
       "value": "subgrid",
-      "evidence": "Mechanical baseline only: Ermine owns the grid property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the grid property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item::position::1",
@@ -3122,9 +3124,12 @@
       "selector": ".macro-search-item",
       "property": "position",
       "value": "relative",
-      "evidence": "Mechanical baseline only: Ermine owns the position property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the position property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "position-mode",
+      "words": [
+        "position-relative"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::padding::1",
@@ -3132,9 +3137,12 @@
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "padding",
       "value": "var(--spacing-md)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "padding",
+      "words": [
+        "padding-comfortable"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::border-bottom::1",
@@ -3142,9 +3150,8 @@
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "border-bottom",
       "value": "1px solid var(--harmonic-minor)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::color::1",
@@ -3152,9 +3159,8 @@
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "color",
       "value": "var(--ink)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::cursor::1",
@@ -3162,9 +3168,8 @@
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "cursor",
       "value": "pointer",
-      "evidence": "Mechanical baseline only: Ermine does not own the cursor property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::transition::1",
@@ -3172,9 +3177,8 @@
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "transition",
       "value": "background-color var(--transition-fast)",
-      "evidence": "Mechanical baseline only: Ermine owns the transition property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the transition property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::overflow::1",
@@ -3182,9 +3186,8 @@
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "overflow",
       "value": "hidden",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::text-overflow::1",
@@ -3192,9 +3195,8 @@
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "text-overflow",
       "value": "ellipsis",
-      "evidence": "Mechanical baseline only: Ermine does not own the text-overflow property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::white-space::1",
@@ -3202,9 +3204,8 @@
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "white-space",
       "value": "nowrap",
-      "evidence": "Mechanical baseline only: Ermine does not own the white-space property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command::font-weight::1",
@@ -3212,9 +3213,8 @@
       "selector": ".macro-search-item-command",
       "property": "font-weight",
       "value": "500",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command::color::1",
@@ -3222,9 +3222,8 @@
       "selector": ".macro-search-item-command",
       "property": "color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command::font-size::1",
@@ -3232,9 +3231,8 @@
       "selector": ".macro-search-item-command",
       "property": "font-size",
       "value": "var(--text-md)",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command::padding-right::1",
@@ -3242,9 +3240,8 @@
       "selector": ".macro-search-item-command",
       "property": "padding-right",
       "value": "var(--spacing-xs)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text::font-size::1",
@@ -3252,9 +3249,8 @@
       "selector": ".macro-search-item-text",
       "property": "font-size",
       "value": "var(--text-base)",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text::color::1",
@@ -3262,9 +3258,8 @@
       "selector": ".macro-search-item-text",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text::padding-left::1",
@@ -3272,9 +3267,8 @@
       "selector": ".macro-search-item-text",
       "property": "padding-left",
       "value": "var(--spacing-xs)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item:hover .macro-search-item-command, .macro-search-item:hover .macro-search-item-text::background-color::1",
@@ -3282,9 +3276,8 @@
       "selector": ".macro-search-item:hover .macro-search-item-command, .macro-search-item:hover .macro-search-item-text",
       "property": "background-color",
       "value": "var(--tone-dim)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item.selected .macro-search-item-command, .macro-search-item.selected .macro-search-item-text::background-color::1",
@@ -3292,9 +3285,8 @@
       "selector": ".macro-search-item.selected .macro-search-item-command, .macro-search-item.selected .macro-search-item-text",
       "property": "background-color",
       "value": "var(--tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item.selected .macro-search-item-text::white-space::1",
@@ -3302,9 +3294,8 @@
       "selector": ".macro-search-item.selected .macro-search-item-text",
       "property": "white-space",
       "value": "normal",
-      "evidence": "Mechanical baseline only: Ermine does not own the white-space property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item.selected .macro-search-item-text::overflow::1",
@@ -3312,9 +3303,8 @@
       "selector": ".macro-search-item.selected .macro-search-item-text",
       "property": "overflow",
       "value": "visible",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item.selected .macro-search-item-text::text-overflow::1",
@@ -3322,9 +3312,8 @@
       "selector": ".macro-search-item.selected .macro-search-item-text",
       "property": "text-overflow",
       "value": "clip",
-      "evidence": "Mechanical baseline only: Ermine does not own the text-overflow property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::padding::1",
@@ -3332,9 +3321,12 @@
       "selector": ".macro-search-item-confirm",
       "property": "padding",
       "value": "var(--spacing-md)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "padding",
+      "words": [
+        "padding-comfortable"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::padding-left::1",
@@ -3342,9 +3334,8 @@
       "selector": ".macro-search-item-confirm",
       "property": "padding-left",
       "value": "var(--spacing-xs)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::border-bottom::1",
@@ -3352,9 +3343,8 @@
       "selector": ".macro-search-item-confirm",
       "property": "border-bottom",
       "value": "1px solid var(--harmonic-minor)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::font-size::1",
@@ -3362,9 +3352,8 @@
       "selector": ".macro-search-item-confirm",
       "property": "font-size",
       "value": "var(--text-base)",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::font-weight::1",
@@ -3372,9 +3361,8 @@
       "selector": ".macro-search-item-confirm",
       "property": "font-weight",
       "value": "500",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::color::1",
@@ -3382,9 +3370,8 @@
       "selector": ".macro-search-item-confirm",
       "property": "color",
       "value": "var(--status-error)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::white-space::1",
@@ -3392,9 +3379,8 @@
       "selector": ".macro-search-item-confirm",
       "property": "white-space",
       "value": "nowrap",
-      "evidence": "Mechanical baseline only: Ermine does not own the white-space property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::overflow::1",
@@ -3402,9 +3388,8 @@
       "selector": ".macro-search-item-confirm",
       "property": "overflow",
       "value": "hidden",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::text-overflow::1",
@@ -3412,9 +3397,8 @@
       "selector": ".macro-search-item-confirm",
       "property": "text-overflow",
       "value": "ellipsis",
-      "evidence": "Mechanical baseline only: Ermine does not own the text-overflow property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item.confirming-delete .macro-search-item-command, .macro-search-item.confirming-delete .macro-search-item-confirm::background-color::1",
@@ -3422,9 +3406,8 @@
       "selector": ".macro-search-item.confirming-delete .macro-search-item-command, .macro-search-item.confirming-delete .macro-search-item-confirm",
       "property": "background-color",
       "value": "var(--status-error-wash)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item.confirming-delete .macro-search-item-command::color::1",
@@ -3432,9 +3415,8 @@
       "selector": ".macro-search-item.confirming-delete .macro-search-item-command",
       "property": "color",
       "value": "var(--status-error)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::position::1",
@@ -3442,9 +3424,12 @@
       "selector": ".macro-search-item-edit",
       "property": "position",
       "value": "absolute",
-      "evidence": "Mechanical baseline only: Ermine owns the position property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the position property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "position-mode",
+      "words": [
+        "position-absolute"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::right::1",
@@ -3452,9 +3437,8 @@
       "selector": ".macro-search-item-edit",
       "property": "right",
       "value": "var(--spacing-sm)",
-      "evidence": "Mechanical baseline only: Ermine does not own the right property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::top::1",
@@ -3462,9 +3446,8 @@
       "selector": ".macro-search-item-edit",
       "property": "top",
       "value": "50%",
-      "evidence": "Mechanical baseline only: Ermine does not own the top property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::transform::1",
@@ -3472,9 +3455,8 @@
       "selector": ".macro-search-item-edit",
       "property": "transform",
       "value": "translateY(-50%)",
-      "evidence": "Mechanical baseline only: Ermine does not own the transform property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::display::1",
@@ -3482,9 +3464,12 @@
       "selector": ".macro-search-item-edit",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "horizontal"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::align-items::1",
@@ -3492,9 +3477,12 @@
       "selector": ".macro-search-item-edit",
       "property": "align-items",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the align-items property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the align-items property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "alignment-container",
+      "words": [
+        "align-center"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::justify-content::1",
@@ -3502,9 +3490,12 @@
       "selector": ".macro-search-item-edit",
       "property": "justify-content",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the justify-content property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the justify-content property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "alignment-container",
+      "words": [
+        "justify-center"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::padding::1",
@@ -3512,9 +3503,12 @@
       "selector": ".macro-search-item-edit",
       "property": "padding",
       "value": "var(--spacing-xs)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "padding",
+      "words": [
+        "padding-tight"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::border::1",
@@ -3522,9 +3516,8 @@
       "selector": ".macro-search-item-edit",
       "property": "border",
       "value": "none",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::border-radius::1",
@@ -3532,9 +3525,8 @@
       "selector": ".macro-search-item-edit",
       "property": "border-radius",
       "value": "var(--radius-sm)",
-      "evidence": "Mechanical baseline only: Ermine owns the border-radius property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border-radius property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::background::1",
@@ -3542,9 +3534,8 @@
       "selector": ".macro-search-item-edit",
       "property": "background",
       "value": "transparent",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::color::1",
@@ -3552,9 +3543,8 @@
       "selector": ".macro-search-item-edit",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::cursor::1",
@@ -3562,9 +3552,8 @@
       "selector": ".macro-search-item-edit",
       "property": "cursor",
       "value": "pointer",
-      "evidence": "Mechanical baseline only: Ermine does not own the cursor property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::opacity::1",
@@ -3572,9 +3561,8 @@
       "selector": ".macro-search-item-edit",
       "property": "opacity",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine does not own the opacity property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::transition::1",
@@ -3582,9 +3570,8 @@
       "selector": ".macro-search-item-edit",
       "property": "transition",
       "value": "opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)",
-      "evidence": "Mechanical baseline only: Ermine owns the transition property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the transition property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit:hover::background-color::1",
@@ -3592,9 +3579,8 @@
       "selector": ".macro-search-item-edit:hover",
       "property": "background-color",
       "value": "var(--tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit:hover::color::1",
@@ -3602,9 +3588,8 @@
       "selector": ".macro-search-item-edit:hover",
       "property": "color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item:hover .macro-search-item-edit, .macro-search-item.selected .macro-search-item-edit::opacity::1",
@@ -3612,9 +3597,8 @@
       "selector": ".macro-search-item:hover .macro-search-item-edit, .macro-search-item.selected .macro-search-item-edit",
       "property": "opacity",
       "value": "1",
-      "evidence": "Mechanical baseline only: Ermine does not own the opacity property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::background::1",
@@ -3622,9 +3606,8 @@
       "selector": ".macro-search-item-text mark",
       "property": "background",
       "value": "transparent",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::color::1",
@@ -3632,9 +3615,8 @@
       "selector": ".macro-search-item-text mark",
       "property": "color",
       "value": "inherit",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::font-style::1",
@@ -3642,9 +3624,8 @@
       "selector": ".macro-search-item-text mark",
       "property": "font-style",
       "value": "normal",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark span::opacity::1",
@@ -3652,9 +3633,8 @@
       "selector": ".macro-search-item-text mark span",
       "property": "opacity",
       "value": "0.35",
-      "evidence": "Mechanical baseline only: Ermine does not own the opacity property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-footer::padding::1",
@@ -3662,9 +3642,12 @@
       "selector": ".macro-search-footer",
       "property": "padding",
       "value": "var(--spacing-sm)",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "padding",
+      "words": [
+        "padding-snug"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-footer::border-top::1",
@@ -3672,9 +3655,8 @@
       "selector": ".macro-search-footer",
       "property": "border-top",
       "value": "1px solid var(--harmonic)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-footer::font-size::1",
@@ -3682,9 +3664,8 @@
       "selector": ".macro-search-footer",
       "property": "font-size",
       "value": "var(--text-sm)",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-footer::color::1",
@@ -3692,9 +3673,8 @@
       "selector": ".macro-search-footer",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-footer::display::1",
@@ -3702,9 +3682,12 @@
       "selector": ".macro-search-footer",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "horizontal"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-footer::justify-content::1",
@@ -3712,9 +3695,12 @@
       "selector": ".macro-search-footer",
       "property": "justify-content",
       "value": "space-between",
-      "evidence": "Mechanical baseline only: Ermine owns the justify-content property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the justify-content property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "alignment-container",
+      "words": [
+        "justify-between"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-footer::background-color::1",
@@ -3722,9 +3708,8 @@
       "selector": ".macro-search-footer",
       "property": "background-color",
       "value": "var(--base-tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-count::color::1",
@@ -3732,9 +3717,8 @@
       "selector": ".macro-search-count",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-count::font-variant-numeric::1",
@@ -3742,9 +3726,8 @@
       "selector": ".macro-search-count",
       "property": "font-variant-numeric",
       "value": "tabular-nums",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-name::color::1",
@@ -3752,9 +3735,8 @@
       "selector": ".modal-command-item .modal-command-name",
       "property": "color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-name::font-family::1",
@@ -3762,9 +3744,8 @@
       "selector": ".modal-command-item .modal-command-name",
       "property": "font-family",
       "value": "monospace",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-name::font-weight::1",
@@ -3772,9 +3753,8 @@
       "selector": ".modal-command-item .modal-command-name",
       "property": "font-weight",
       "value": "600",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-description::color::1",
@@ -3782,9 +3762,8 @@
       "selector": ".modal-command-item .modal-command-description",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-description::font-style::1",
@@ -3792,9 +3771,8 @@
       "selector": ".modal-command-item .modal-command-description",
       "property": "font-style",
       "value": "italic",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-shortcut::display::1",
@@ -3802,9 +3780,13 @@
       "selector": ".macro-search-shortcut",
       "property": "display",
       "value": "inline-flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure + m1-flow-participation",
+      "words": [
+        "horizontal",
+        "inline"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-shortcut::align-items::1",
@@ -3812,9 +3794,12 @@
       "selector": ".macro-search-shortcut",
       "property": "align-items",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the align-items property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the align-items property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "alignment-container",
+      "words": [
+        "align-center"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-shortcut::gap::1",
@@ -3822,9 +3807,12 @@
       "selector": ".macro-search-shortcut",
       "property": "gap",
       "value": "var(--spacing-sm)",
-      "evidence": "Mechanical baseline only: Ermine owns the gap property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the gap property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "density",
+      "words": [
+        "gap-snug"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-shortcut::margin-right::1",
@@ -3832,9 +3820,8 @@
       "selector": ".macro-search-shortcut",
       "property": "margin-right",
       "value": "var(--spacing-xl)",
-      "evidence": "Mechanical baseline only: Ermine owns the margin property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the margin property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::position::1",
@@ -3842,9 +3829,12 @@
       "selector": ".macro-search-kbd",
       "property": "position",
       "value": "relative",
-      "evidence": "Mechanical baseline only: Ermine owns the position property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the position property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "position-mode",
+      "words": [
+        "position-relative"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::display::1",
@@ -3852,9 +3842,13 @@
       "selector": ".macro-search-kbd",
       "property": "display",
       "value": "inline-flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-composition",
+      "axis": "structure + m1-flow-participation",
+      "words": [
+        "horizontal",
+        "inline"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::align-items::1",
@@ -3862,9 +3856,12 @@
       "selector": ".macro-search-kbd",
       "property": "align-items",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the align-items property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the align-items property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "alignment-container",
+      "words": [
+        "align-center"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::justify-content::1",
@@ -3872,9 +3869,12 @@
       "selector": ".macro-search-kbd",
       "property": "justify-content",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the justify-content property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the justify-content property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "disposition": "grammar-exact",
+      "axis": "alignment-container",
+      "words": [
+        "justify-center"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::font-family::1",
@@ -3882,9 +3882,8 @@
       "selector": ".macro-search-kbd",
       "property": "font-family",
       "value": "monospace",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::font-size::1",
@@ -3892,9 +3891,8 @@
       "selector": ".macro-search-kbd",
       "property": "font-size",
       "value": "12px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::line-height::1",
@@ -3902,9 +3900,8 @@
       "selector": ".macro-search-kbd",
       "property": "line-height",
       "value": "1",
-      "evidence": "Mechanical baseline only: Ermine owns the line-height property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the line-height property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::padding::1",
@@ -3912,9 +3909,8 @@
       "selector": ".macro-search-kbd",
       "property": "padding",
       "value": "3px 6px 6px",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::min-width::1",
@@ -3922,9 +3918,8 @@
       "selector": ".macro-search-kbd",
       "property": "min-width",
       "value": "26px",
-      "evidence": "Mechanical baseline only: Ermine owns the min-width property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the min-width property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::background::1",
@@ -3932,9 +3927,8 @@
       "selector": ".macro-search-kbd",
       "property": "background",
       "value": "var(--base-tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::color::1",
@@ -3942,9 +3936,8 @@
       "selector": ".macro-search-kbd",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::border::1",
@@ -3952,9 +3945,8 @@
       "selector": ".macro-search-kbd",
       "property": "border",
       "value": "1px solid var(--harmonic-minor)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::border-radius::1",
@@ -3962,9 +3954,8 @@
       "selector": ".macro-search-kbd",
       "property": "border-radius",
       "value": "4px",
-      "evidence": "Mechanical baseline only: Ermine owns the border-radius property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border-radius property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::z-index::1",
@@ -3972,9 +3963,8 @@
       "selector": ".macro-search-kbd",
       "property": "z-index",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine owns the z-index property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the z-index property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::content::1",
@@ -3982,9 +3972,8 @@
       "selector": ".macro-search-kbd::after",
       "property": "content",
       "value": "''",
-      "evidence": "Mechanical baseline only: Ermine does not own the content property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::position::1",
@@ -3992,9 +3981,8 @@
       "selector": ".macro-search-kbd::after",
       "property": "position",
       "value": "absolute",
-      "evidence": "Mechanical baseline only: Ermine owns the position property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the position property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::background::1",
@@ -4002,9 +3990,8 @@
       "selector": ".macro-search-kbd::after",
       "property": "background",
       "value": "var(--tone-dim)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::inset::1",
@@ -4012,9 +3999,8 @@
       "selector": ".macro-search-kbd::after",
       "property": "inset",
       "value": "0 2px 4px",
-      "evidence": "Mechanical baseline only: Ermine does not own the inset property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border::1",
@@ -4022,9 +4008,8 @@
       "selector": ".macro-search-kbd::after",
       "property": "border",
       "value": "1px solid var(--harmonic-minor)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border-radius::1",
@@ -4032,9 +4017,8 @@
       "selector": ".macro-search-kbd::after",
       "property": "border-radius",
       "value": "2px",
-      "evidence": "Mechanical baseline only: Ermine owns the border-radius property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border-radius property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: application-owned skin or typography retained in component CSS pending Ermine skin vocabulary.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::pointer-events::1",
@@ -4042,9 +4026,8 @@
       "selector": ".macro-search-kbd::after",
       "property": "pointer-events",
       "value": "none",
-      "evidence": "Mechanical baseline only: Ermine does not own the pointer-events property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::z-index::1",
@@ -4052,9 +4035,8 @@
       "selector": ".macro-search-kbd::after",
       "property": "z-index",
       "value": "-1",
-      "evidence": "Mechanical baseline only: Ermine owns the z-index property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the z-index property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd:first-child::margin-left::1",
@@ -4062,9 +4044,8 @@
       "selector": ".macro-search-kbd:first-child",
       "property": "margin-left",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine owns the margin property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the margin property preserves intent through an existing Ermine mapping"
+      "evidence": "U5 modal/search review: exact component geometry or product behavior retained locally; no grammar claim is made.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-view::display::1",
@@ -14066,14 +14047,14 @@
   "summary": {
     "totalRecords": 1409,
     "byDisposition": {
-      "grammar-exact": 0,
-      "grammar-composition": 0,
-      "skin-local": 0,
-      "identity-local": 0,
+      "grammar-exact": 24,
+      "grammar-composition": 13,
+      "skin-local": 78,
+      "identity-local": 49,
       "substrate": 34,
       "gap": 0,
-      "dead": 0,
-      "uncertain": 1375
+      "dead": 8,
+      "uncertain": 1203
     }
   }
 }
