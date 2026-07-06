@@ -1221,6 +1221,10 @@ a running `docs/gap-log.md` index. Any executor who is asked to "just add a word
 unblock the UI must refuse and file the Gap Report instead (R1/R2 — no exceptions,
 especially not this one).
 
+Monky is the first Thread U application. Its evidence-extraction, adoption, refactor,
+skin-feedback, and generalization orders live in
+[`docs/Monky-implementation.md`](Monky-implementation.md).
+
 ---
 
 ## Sequencing summary (for the coordinating human)
