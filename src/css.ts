@@ -11,7 +11,7 @@
 
 import { emit } from "./emit.ts";
 import type { FacetRule } from "./emitter-types.ts";
-import type { LintContext } from "./lint.ts";
+import { parseWord, type LintContext } from "./lint.ts";
 
 // facet-role order for CSS's two-value `display: <outer> <inner>` syntax.
 const FACET_ORDER: Record<string, number> = { outer: 0, inner: 1 };
@@ -33,35 +33,90 @@ function mergeFacets(facets: FacetRule[]): { selector: string; property: string;
 
 // Build one stylesheet from many authored class strings. Atomic rules shared
 // across elements dedup to a single block; facet/sink rules land on their
-// compound selectors. Conditions/mechanisms are not CSS — surfaced as a trailing
-// comment so nothing is silently dropped (state-scoped emission is a follow-up).
+// compound selectors. Exact environment scopes become at-rules; breakpoint
+// scopes without project-measured values, conditions, and mechanisms surface as
+// trailing integration hints so nothing is silently dropped.
 export function buildStylesheet(classStrings: string[], ctx: LintContext = {}): string {
   const bySelector = new Map<string, Map<string, string>>();
+  const byCondition = new Map<string, Map<string, Map<string, string>>>();
   const notes: string[] = [];
-  const put = (selector: string, prop: string, value: string) => {
-    (bySelector.get(selector) ?? bySelector.set(selector, new Map()).get(selector)!).set(prop, value);
+  const put = (target: Map<string, Map<string, string>>, selector: string, prop: string, value: string) => {
+    (target.get(selector) ?? target.set(selector, new Map()).get(selector)!).set(prop, value);
   };
 
   for (const cls of classStrings) {
-    const rules = emit(cls, ctx);
-    for (const m of mergeFacets(rules.filter((r): r is FacetRule => r.kind === "facet")))
-      put(m.selector, m.property, m.value);
-    for (const r of rules) {
-      if (r.kind === "declares" || r.kind === "reads")
-        for (const [p, v] of Object.entries(r.declarations)) put(r.selector, p, v);
-      else if (r.kind === "condition")
-        notes.push(`condition ${r.axis} '${r.token}' → ${r.selectorFragment}  (state-scoped emission: TODO)`);
-      else if (r.kind === "mechanism")
-        notes.push(`mechanism '${r.token}' → ${r.mechanism}  (no CSS)`);
+    const groups = new Map<string, string[]>();
+    for (const word of cls.trim().split(/\s+/).filter(Boolean)) {
+      const scope = parseWord(word).scope;
+      (groups.get(scope) ?? groups.set(scope, []).get(scope)!).push(word);
+    }
+
+    for (const [scope, authoredWords] of groups) {
+      const base = scope === "base";
+      const innerWords = base ? authoredWords : authoredWords.map((word) => word.slice(word.indexOf(":") + 1));
+      const condition = base ? undefined : scopeCondition(scope);
+      if (!base && !condition) {
+        notes.push(`scope '${scope}' needs a project condition binding; no CSS emitted for ${authoredWords.map((word) => `'${word}'`).join(", ")}`);
+        continue;
+      }
+
+      const target = base
+        ? bySelector
+        : (byCondition.get(condition!) ?? byCondition.set(condition!, new Map()).get(condition!)!);
+      const rules = emit(innerWords.join(" "), ctx, base ? undefined : scope);
+      const scopedSelector = (selector: string): string => base
+        ? selector
+        : innerWords.reduce(
+          (current, word, index) => current.replaceAll(`.${word}`, classSelector(authoredWords[index])),
+          selector,
+        );
+
+      for (const m of mergeFacets(rules.filter((r): r is FacetRule => r.kind === "facet")))
+        put(target, scopedSelector(m.selector), m.property, m.value);
+      for (const r of rules) {
+        if (r.kind === "declares" || r.kind === "reads")
+          for (const [p, v] of Object.entries(r.declarations)) put(target, scopedSelector(r.selector), p, v);
+        else if (r.kind === "condition")
+          notes.push(`condition ${r.axis} '${base ? r.token : `${scope}:${r.token}`}' → ${r.selectorFragment}  (state-scoped emission: TODO)`);
+        else if (r.kind === "mechanism")
+          notes.push(`mechanism '${base ? r.token : `${scope}:${r.token}`}' → ${r.mechanism}  (no CSS)`);
+      }
     }
   }
 
-  const blocks = [...bySelector].map(([selector, decls]) =>
-    `${selector} {\n${[...decls].map(([p, v]) => `  ${p}: ${v};`).join("\n")}\n}`);
+  const blocks = renderBlocks(bySelector);
+  for (const [condition, selectors] of byCondition) {
+    const inner = renderBlocks(selectors).map((block) => block.split("\n").map((line) => `  ${line}`).join("\n"));
+    blocks.push(`${condition} {\n${inner.join("\n\n")}\n}`);
+  }
   const noteBlock = notes.length
     ? `\n/* not CSS — integration hints:\n${[...new Set(notes)].map((n) => `   - ${n}`).join("\n")}\n*/\n`
     : "";
   return blocks.join("\n\n") + "\n" + noteBlock;
+}
+
+function renderBlocks(selectors: Map<string, Map<string, string>>): string[] {
+  return [...selectors].map(([selector, decls]) =>
+    `${selector} {\n${[...decls].map(([p, v]) => `  ${p}: ${v};`).join("\n")}\n}`);
+}
+
+function classSelector(word: string): string {
+  return `.${word.replace(/([^a-zA-Z0-9_-])/g, "\\$1")}`;
+}
+
+// Breakpoint values are intentionally theme-measured, not registry constants.
+// Only conditions whose platform query is fully determined by the authored
+// prefix can be serialized without inventing a project decision.
+function scopeCondition(scope: string): string | undefined {
+  const exact: Record<string, string> = {
+    "viewport-portrait": "@media (orientation: portrait)",
+    "viewport-landscape": "@media (orientation: landscape)",
+    "prefers-reduced-motion": "@media (prefers-reduced-motion: reduce)",
+    "prefers-color-scheme-dark": "@media (prefers-color-scheme: dark)",
+    "prefers-contrast-more": "@media (prefers-contrast: more)",
+    "prefers-reduced-transparency": "@media (prefers-reduced-transparency: reduce)",
+  };
+  return exact[scope];
 }
 
 // Convenience: serialize a single class string (tests, inspection).

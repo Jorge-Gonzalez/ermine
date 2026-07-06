@@ -142,3 +142,50 @@ It is never an optimization target. Moving legitimate skin, identity, or substra
 grammar merely to raise the number is a protocol failure. Report the complete disposition table,
 including gaps and uncertainty, alongside the percentage. Success means that ownership is explicit,
 declarations are conserved, behavior is preserved, and every result is reproducible.
+
+## 8. Explicit manifest CSS generation
+
+Use `adoption/build-css.ts` when an application constructs class strings dynamically, delivers CSS
+to a Shadow Root, or otherwise cannot rely on D3's literal-source scanner. This is the conservative
+alternative, not a replacement for D3: the scanner remains convenient for literal `class` and
+`className` attributes, while the manifest makes runtime element compositions reviewable and
+complete by declaration.
+
+Manifest version 1 records one complete composition per element:
+
+```json
+{
+  "version": 1,
+  "elements": [
+    {
+      "id": "modal-navigation",
+      "classString": "horizontal align-center justify-between gap-snug",
+      "backing": []
+    }
+  ]
+}
+```
+
+IDs and normalized class strings are unique. `backing` supplies the real P8 evidence for state
+words; an optional `context` object may supply `elementId`, `containerAttrs`, and `parentClasses`
+using `LintContext`. The compiler lints every complete composition before writing anything. Lint
+errors and GAP blocks stop generation rather than producing partial CSS.
+
+Generate and verify with:
+
+```sh
+node --import tsx adoption/build-css.ts \
+  --manifest elements.json --out ermine.generated.css
+node --import tsx adoption/build-css.ts \
+  --manifest elements.json --out ermine.generated.css --check
+```
+
+The adjacent `.meta.json` file pins the Ermine compiler commit, input and output SHA-256 hashes,
+entry and distinct-word counts, and the reproduction command. Entries are compiled in canonical ID
+order, so JSON entry order cannot change the CSS. Keep both generated files together and run
+`--check` in application CI.
+
+Orientation and preference scopes have fully determined platform queries and serialize to `@media`
+rules. Named viewport and container breakpoints deliberately do not: Ermine fixes the names but
+leaves their numeric values project-measured. Until the application supplies that binding in a
+later integration step, the serializer emits an explicit integration hint and no guessed rule.
