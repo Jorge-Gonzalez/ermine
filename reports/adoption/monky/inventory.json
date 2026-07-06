@@ -1,0 +1,5625 @@
+{
+  "version": 1,
+  "project": "monky",
+  "source": {
+    "ermineCommit": "bdabb07f18953043a9842ca52274c4b742791c97",
+    "monkyCommit": "fc2af4525beadc0d0b85144f615e2f0fe8bd2acf"
+  },
+  "scan": {
+    "root": "src",
+    "excluded": [
+      "dependencies",
+      "build output",
+      "test files",
+      "ignored files",
+      "paths outside scan root"
+    ]
+  },
+  "counts": {
+    "cssFiles": 11,
+    "cssTemplates": 1,
+    "declarations": 1409,
+    "importEdges": 4,
+    "rawImports": 6,
+    "linkedStylesheets": 4,
+    "styleInjections": 4,
+    "shadowRoots": 1,
+    "bundles": 8,
+    "staticClassTokens": 222,
+    "classOccurrences": 263,
+    "dynamicClassExpressions": 33,
+    "inlineStyleObjects": 16,
+    "directStyleWrites": 13,
+    "duplicateDefinitions": 48,
+    "contextDependentDefinitions": 117,
+    "undefinedStaticTokens": 41,
+    "grammarPropertyCandidates": 1119
+  },
+  "cssFiles": [
+    {
+      "file": "src/content/overlays/modal/modalStyles.css",
+      "bytes": 2271,
+      "declarationCount": 46
+    },
+    {
+      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+      "bytes": 3366,
+      "declarationCount": 94
+    },
+    {
+      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+      "bytes": 5337,
+      "declarationCount": 127
+    },
+    {
+      "file": "src/content/overlays/views/search/searchViewStyles.css",
+      "bytes": 5647,
+      "declarationCount": 126
+    },
+    {
+      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+      "bytes": 3727,
+      "declarationCount": 81
+    },
+    {
+      "file": "src/popup/popup.css",
+      "bytes": 1527,
+      "declarationCount": 23
+    },
+    {
+      "file": "src/styles/layout-semantic.css",
+      "bytes": 22054,
+      "declarationCount": 495
+    },
+    {
+      "file": "src/styles/pageStyles.css",
+      "bytes": 672,
+      "declarationCount": 12
+    },
+    {
+      "file": "src/styles/reset.css",
+      "bytes": 1919,
+      "declarationCount": 35
+    },
+    {
+      "file": "src/styles/utilities.css",
+      "bytes": 10465,
+      "declarationCount": 271
+    },
+    {
+      "file": "src/styles.css",
+      "bytes": 3324,
+      "declarationCount": 86
+    }
+  ],
+  "cssTemplates": [
+    {
+      "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts",
+      "line": 4,
+      "name": "DELETE_CONFIRM_STYLES",
+      "virtualFile": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+      "declarationCount": 13
+    }
+  ],
+  "imports": {
+    "css": [
+      {
+        "file": "src/styles.css",
+        "line": 2,
+        "specifier": "./styles/reset.css",
+        "resolved": "src/styles/reset.css"
+      },
+      {
+        "file": "src/styles.css",
+        "line": 3,
+        "specifier": "./styles/layout-semantic.css",
+        "resolved": "src/styles/layout-semantic.css"
+      },
+      {
+        "file": "src/styles.css",
+        "line": 4,
+        "specifier": "./styles/pageStyles.css",
+        "resolved": "src/styles/pageStyles.css"
+      },
+      {
+        "file": "src/styles.css",
+        "line": 5,
+        "specifier": "./styles/utilities.css",
+        "resolved": "src/styles/utilities.css"
+      }
+    ],
+    "raw": [
+      {
+        "file": "src/content/overlays/modal/modalManager.ts",
+        "line": 13,
+        "binding": "MODAL_STYLES",
+        "specifier": "./modalStyles.css?raw",
+        "resolved": "src/content/overlays/modal/modalStyles.css"
+      },
+      {
+        "file": "src/content/overlays/modal/modalManager.ts",
+        "line": 14,
+        "binding": "SEARCH_VIEW_STYLES",
+        "specifier": "../views/search/searchViewStyles.css?raw",
+        "resolved": "src/content/overlays/views/search/searchViewStyles.css"
+      },
+      {
+        "file": "src/content/overlays/modal/modalManager.ts",
+        "line": 15,
+        "binding": "SETTINGS_VIEW_STYLES",
+        "specifier": "../views/settings/settingsViewStyles.css?raw",
+        "resolved": "src/content/overlays/views/settings/settingsViewStyles.css"
+      },
+      {
+        "file": "src/content/overlays/modal/modalManager.ts",
+        "line": 16,
+        "binding": "EDITOR_VIEW_STYLES",
+        "specifier": "../views/macroEditor/editorViewStyles.css?raw",
+        "resolved": "src/content/overlays/views/macroEditor/editorViewStyles.css"
+      },
+      {
+        "file": "src/content/overlays/services/appFont.ts",
+        "line": 1,
+        "binding": "LAYOUT_SEMANTIC_STYLES",
+        "specifier": "../../../styles/layout-semantic.css?raw",
+        "resolved": "src/styles/layout-semantic.css"
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/SuggestionsOverlayStyles.ts",
+        "line": 2,
+        "binding": "styles",
+        "specifier": "./suggestionsOverlayStyles.css?raw",
+        "resolved": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css"
+      }
+    ],
+    "links": [
+      {
+        "file": "src/editor/index.html",
+        "line": 1,
+        "specifier": "/src/styles.css",
+        "resolved": "src/styles.css"
+      },
+      {
+        "file": "src/options/index.html",
+        "line": 7,
+        "specifier": "/src/styles.css",
+        "resolved": "src/styles.css"
+      },
+      {
+        "file": "src/popup/index.html",
+        "line": 1,
+        "specifier": "/src/styles.css",
+        "resolved": "src/styles.css"
+      },
+      {
+        "file": "src/popup/index.html",
+        "line": 2,
+        "specifier": "/src/popup/popup.css",
+        "resolved": "src/popup/popup.css"
+      }
+    ]
+  },
+  "delivery": {
+    "injections": [
+      {
+        "file": "src/content/overlays/deleteConfirm/DeleteConfirmManager.ts",
+        "line": 30,
+        "styleId": "'macro-delete-confirm-styles'",
+        "styleArgument": "SUGGESTIONS_OVERLAY_STYLES + DELETE_CONFIRM_STYLES",
+        "target": "shadow-root"
+      },
+      {
+        "file": "src/content/overlays/modal/modalManager.ts",
+        "line": 116,
+        "styleId": "'monky-modal-styles'",
+        "styleArgument": "allStyles",
+        "target": "shadow-root"
+      },
+      {
+        "file": "src/content/overlays/services/appFont.ts",
+        "line": 17,
+        "styleId": "'monky-font-face'",
+        "styleArgument": "fontFace",
+        "target": "document"
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/SuggestionsOverlayManager.ts",
+        "line": 173,
+        "styleId": "'macro-suggestions-styles'",
+        "styleArgument": "SUGGESTIONS_OVERLAY_STYLES",
+        "target": "shadow-root"
+      }
+    ],
+    "shadowRoots": [
+      {
+        "file": "src/content/overlays/services/reactRenderer.ts",
+        "line": 18
+      }
+    ],
+    "bundles": [
+      {
+        "file": "src/content/overlays/deleteConfirm/DeleteConfirmManager.ts",
+        "line": 30,
+        "name": "SUGGESTIONS_OVERLAY_STYLES + DELETE_CONFIRM_STYLES",
+        "members": [
+          "SUGGESTIONS_OVERLAY_STYLES",
+          "DELETE_CONFIRM_STYLES"
+        ],
+        "delivery": "shadow-root"
+      },
+      {
+        "file": "src/content/overlays/modal/modalManager.ts",
+        "line": 27,
+        "name": "allStyles",
+        "members": [
+          "LAYOUT_STYLES_WITHOUT_FONT_FACE",
+          "adaptModalStyles(MODAL_STYLES)",
+          "SEARCH_VIEW_STYLES",
+          "SETTINGS_VIEW_STYLES",
+          "EDITOR_VIEW_STYLES"
+        ],
+        "delivery": "shadow-root"
+      },
+      {
+        "file": "src/content/overlays/services/appFont.ts",
+        "line": 17,
+        "name": "fontFace",
+        "members": [
+          "fontFace"
+        ],
+        "delivery": "document"
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/SuggestionsOverlayManager.ts",
+        "line": 173,
+        "name": "SUGGESTIONS_OVERLAY_STYLES",
+        "members": [
+          "SUGGESTIONS_OVERLAY_STYLES"
+        ],
+        "delivery": "shadow-root"
+      },
+      {
+        "file": "src/editor/index.html",
+        "line": 1,
+        "name": "/src/styles.css",
+        "members": [
+          "src/styles.css"
+        ],
+        "delivery": "page"
+      },
+      {
+        "file": "src/options/index.html",
+        "line": 7,
+        "name": "/src/styles.css",
+        "members": [
+          "src/styles.css"
+        ],
+        "delivery": "page"
+      },
+      {
+        "file": "src/popup/index.html",
+        "line": 1,
+        "name": "/src/styles.css",
+        "members": [
+          "src/styles.css"
+        ],
+        "delivery": "page"
+      },
+      {
+        "file": "src/popup/index.html",
+        "line": 2,
+        "name": "/src/popup/popup.css",
+        "members": [
+          "src/popup/popup.css"
+        ],
+        "delivery": "page"
+      }
+    ]
+  },
+  "classes": {
+    "knownLawfulWords": [
+      "active",
+      "align-center",
+      "disabled",
+      "horizontal",
+      "justify-between",
+      "justify-center",
+      "selected",
+      "shrink-0",
+      "wrap-allowed"
+    ],
+    "knownUnlawfulWords": [],
+    "foreignIdentityOrSkinCandidates": [
+      "action-toolbar",
+      "alert",
+      "alert-error",
+      "alert-success",
+      "bg-secondary",
+      "blocks",
+      "border-b",
+      "border-primary",
+      "border-t",
+      "btn",
+      "btn-danger",
+      "btn-link",
+      "btn-link-danger",
+      "btn-outlined",
+      "btn-primary",
+      "btn-secondary",
+      "btn-success",
+      "button-group",
+      "button-label",
+      "cancel",
+      "card",
+      "ce-link-field",
+      "ce-link-input",
+      "ce-style-caret",
+      "ce-style-dropdown",
+      "ce-style-menu",
+      "ce-style-option",
+      "ce-style-option-label",
+      "ce-style-option-short",
+      "ce-style-trigger",
+      "ce-toolbar",
+      "ce-toolbar-btn",
+      "ce-toolbar-icon",
+      "ce-toolbar-sep",
+      "checkbox",
+      "clear-button",
+      "command-input",
+      "command-input-container",
+      "command-input-error",
+      "command-input-error-message",
+      "command-input-hint",
+      "command-input-label",
+      "command-suggestion-action",
+      "command-suggestion-actions",
+      "command-suggestion-command",
+      "command-suggestion-item",
+      "command-suggestion-text",
+      "command-suggestion-wrapper",
+      "command-suggestions",
+      "command-suggestions-label",
+      "confirm",
+      "confirming-delete",
+      "content-editor",
+      "content-editor-body",
+      "cursor-pointer",
+      "dark",
+      "delete",
+      "delete-confirm",
+      "delete-confirm-command",
+      "delete-confirm-danger",
+      "delete-confirm-message",
+      "delete-confirm-option",
+      "divider",
+      "editor-bottombar",
+      "editor-command",
+      "editor-command-error",
+      "editor-content",
+      "editor-form",
+      "editor-popout",
+      "editor-sensitive",
+      "editor-title",
+      "editor-toast",
+      "editor-topbar",
+      "editor-topbar-lead",
+      "empty",
+      "empty-state",
+      "enabled",
+      "equal-square",
+      "fit-content",
+      "flex",
+      "focused",
+      "font-bold",
+      "font-medium",
+      "font-semibold",
+      "fuzzy-search-field",
+      "gap-1",
+      "gap-2",
+      "gap-md",
+      "grow",
+      "icon-text",
+      "import-status--error",
+      "import-status--ok",
+      "inline-flex",
+      "input",
+      "input-dropdown-open",
+      "input-error",
+      "is-active",
+      "is-selected",
+      "is-sliding",
+      "items",
+      "items-center",
+      "label",
+      "light",
+      "list",
+      "list-item",
+      "loose",
+      "macro-editor-view",
+      "macro-search-count",
+      "macro-search-empty",
+      "macro-search-footer",
+      "macro-search-input",
+      "macro-search-input-container",
+      "macro-search-item",
+      "macro-search-item-command",
+      "macro-search-item-confirm",
+      "macro-search-item-edit",
+      "macro-search-item-text",
+      "macro-search-kbd",
+      "macro-search-results",
+      "macro-search-shortcut",
+      "macro-search-view",
+      "macro-suggestions-arrow",
+      "macro-suggestions-command-item",
+      "macro-suggestions-commands-list",
+      "macro-suggestions-container",
+      "macro-suggestions-footer",
+      "macro-suggestions-kbd",
+      "macro-suggestions-text-preview",
+      "mb-2",
+      "ml-2",
+      "modal-backdrop",
+      "modal-command-description",
+      "modal-command-hint",
+      "modal-command-item",
+      "modal-command-name",
+      "modal-content",
+      "modal-dialog",
+      "modal-nav-branding",
+      "modal-nav-container",
+      "modal-nav-icon",
+      "modal-nav-label",
+      "modal-nav-tab",
+      "mt-2",
+      "multi-select-list",
+      "my-2",
+      "overflow-hidden",
+      "p-1",
+      "p-2",
+      "padded-comfortable-loose",
+      "page-container",
+      "page-title",
+      "panel-button",
+      "popup-container",
+      "pt-2",
+      "px-2",
+      "py-1",
+      "radio",
+      "radio-label",
+      "relative",
+      "rounded",
+      "scrollable",
+      "search-field",
+      "search-focused-item",
+      "search-input",
+      "search-input-wrapper",
+      "search-spinner",
+      "searchable-list-container",
+      "searchable-list-search",
+      "searchable-list-toolbar",
+      "searchable-list-view",
+      "section",
+      "section-description",
+      "section-title",
+      "seg-control",
+      "seg-option",
+      "seg-snap",
+      "selectable-group",
+      "settings-appearance-controls",
+      "settings-body",
+      "settings-divider",
+      "settings-group",
+      "settings-import-status",
+      "settings-row",
+      "settings-row-label",
+      "settings-rows",
+      "settings-section-label",
+      "settings-view",
+      "shadow-sm",
+      "shake",
+      "show",
+      "snug",
+      "space-y-md",
+      "space-y-sm",
+      "text-left",
+      "text-lg",
+      "text-mono",
+      "text-primary",
+      "text-secondary",
+      "text-sm",
+      "text-white",
+      "text-xs",
+      "toggle-field",
+      "toggle-field-description",
+      "toggle-field-input",
+      "toggle-field-label",
+      "toggle-field-text",
+      "toolbar",
+      "toolbar-button",
+      "transition-colors",
+      "truncate",
+      "validation-error",
+      "w-full",
+      "whitespace-pre-wrap"
+    ],
+    "undefinedStaticTokens": [
+      "action-toolbar",
+      "button-label",
+      "clear-button",
+      "command-input",
+      "command-input-container",
+      "command-input-error",
+      "command-input-error-message",
+      "command-input-hint",
+      "command-input-label",
+      "disabled",
+      "empty",
+      "enabled",
+      "focused",
+      "fuzzy-search-field",
+      "gap-md",
+      "icon-text",
+      "light",
+      "list",
+      "list-item",
+      "modal-command-hint",
+      "multi-select-list",
+      "scrollable",
+      "search-field",
+      "search-focused-item",
+      "search-input",
+      "search-input-wrapper",
+      "search-spinner",
+      "searchable-list-container",
+      "searchable-list-search",
+      "searchable-list-toolbar",
+      "searchable-list-view",
+      "show",
+      "space-y-md",
+      "space-y-sm",
+      "toggle-field",
+      "toggle-field-description",
+      "toggle-field-input",
+      "toggle-field-label",
+      "toggle-field-text",
+      "toolbar",
+      "toolbar-button"
+    ],
+    "unlawfulCompositions": [],
+    "dynamicExpressions": [
+      {
+        "file": "src/content/overlays/deleteConfirm/DeleteConfirmPopup.tsx",
+        "line": 49,
+        "expression": "macro-suggestions-arrow ${placement}"
+      },
+      {
+        "file": "src/content/overlays/deleteConfirm/DeleteConfirmPopup.tsx",
+        "line": 57,
+        "expression": "macro-suggestions-command-item delete-confirm-option ${nav.selectedIndex === 0 ? 'selected' : ''}"
+      },
+      {
+        "file": "src/content/overlays/deleteConfirm/DeleteConfirmPopup.tsx",
+        "line": 64,
+        "expression": "macro-suggestions-command-item delete-confirm-option delete-confirm-danger ${nav.selectedIndex === 1 ? 'selected' : ''}"
+      },
+      {
+        "file": "src/content/overlays/modal/ui/ModalNavigation.tsx",
+        "line": 68,
+        "expression": "modal-nav-tab panel-button padded-comfortable-loose horizontal items align-center justify-center snug ${currentView === tab.view ? 'active' : ''}"
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/ui/MacroSuggestions.tsx",
+        "line": 169,
+        "expression": "macro-suggestions-arrow ${placement}"
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/ui/MacroSuggestions.tsx",
+        "line": 175,
+        "expression": "macro-suggestions-command-item ${index === navigation.selectedIndex ? 'selected' : ''}"
+      },
+      {
+        "file": "src/content/overlays/views/macroEditor/ui/CommandSuggestions.tsx",
+        "line": 55,
+        "expression": "command-suggestion-item ${i === selectedIndex ? 'selected' : ''} ${confirming ? 'confirming-delete' : ''}"
+      },
+      {
+        "file": "src/content/overlays/views/macroEditor/ui/ModalMacroForm.tsx",
+        "line": 135,
+        "expression": "input ${command && !commandValid ? 'input-error input-dropdown-open' : ''} ${suggest.visible ? 'input-dropdown-open' : ''}"
+      },
+      {
+        "file": "src/content/overlays/views/macroEditor/ui/ModalMacroForm.tsx",
+        "line": 145,
+        "expression": "validation-error editor-command-error ${suggest.visible ? 'input-dropdown-open' : ''}"
+      },
+      {
+        "file": "src/content/overlays/views/macroEditor/ui/ModalMacroForm.tsx",
+        "line": 201,
+        "expression": "editor-toast alert ${error ? 'alert-error' : 'alert-success'}"
+      },
+      {
+        "file": "src/content/overlays/views/search/ui/MacroCommandResults.tsx",
+        "line": 25,
+        "expression": "macro-search-item modal-command-item ${index === selectedIndex ? 'selected' : ''}"
+      },
+      {
+        "file": "src/content/overlays/views/search/ui/MacroSearchResults.tsx",
+        "line": 68,
+        "expression": "macro-search-item ${isSelected ? 'selected' : ''} ${isConfirmingDelete ? 'confirming-delete' : ''}"
+      },
+      {
+        "file": "src/content/overlays/views/settings/ui/SettingsView.tsx",
+        "line": 150,
+        "expression": "settings-import-status ${importStatus.ok ? 'import-status--ok' : 'import-status--error'}"
+      },
+      {
+        "file": "src/editor/ui/MacroForm.tsx",
+        "line": 94,
+        "expression": "input ${command && !commandValid ? 'input-error' : ''}"
+      },
+      {
+        "file": "src/shared/content-editor/ContentEditor.tsx",
+        "line": 82,
+        "expression": "content-editor ${className}"
+      },
+      {
+        "file": "src/shared/content-editor/ContentEditorStyleMenu.tsx",
+        "line": 42,
+        "expression": "ce-toolbar-btn ce-style-trigger ${open ? 'is-active' : ''}"
+      },
+      {
+        "file": "src/shared/content-editor/ContentEditorStyleMenu.tsx",
+        "line": 61,
+        "expression": "ce-style-option ${blockType === opt.type ? 'is-active' : ''}"
+      },
+      {
+        "file": "src/shared/content-editor/ContentEditorToolbar.tsx",
+        "line": 31,
+        "expression": "ce-toolbar-btn${active ? ' is-active' : ''}"
+      },
+      {
+        "file": "src/shared/ui/ActionToolbar.tsx",
+        "line": 235,
+        "expression": "action-toolbar ${position} ${className}"
+      },
+      {
+        "file": "src/shared/ui/ActionToolbar.tsx",
+        "line": 247,
+        "expression": "toolbar-button ${button.className || ''} ${enabled ? 'enabled' : 'disabled'}"
+      },
+      {
+        "file": "src/shared/ui/ActionToolbar.tsx",
+        "line": 176,
+        "expression": "iconConfig.class"
+      },
+      {
+        "file": "src/shared/ui/CommandInput.tsx",
+        "line": 143,
+        "expression": "command-input-container ${className}"
+      },
+      {
+        "file": "src/shared/ui/CommandInput.tsx",
+        "line": 154,
+        "expression": "command-input ${showError ? 'command-input-error' : ''}"
+      },
+      {
+        "file": "src/shared/ui/FuzzySearchField.tsx",
+        "line": 254,
+        "expression": "fuzzy-search-field ${className}"
+      },
+      {
+        "file": "src/shared/ui/MultiSelectList.tsx",
+        "line": 240,
+        "expression": "multi-select-list empty ${className}"
+      },
+      {
+        "file": "src/shared/ui/MultiSelectList.tsx",
+        "line": 251,
+        "expression": "multi-select-list ${className}"
+      },
+      {
+        "file": "src/shared/ui/MultiSelectList.tsx",
+        "line": 274,
+        "expression": "list-item ${isSelected ? 'selected' : ''} ${isFocused ? 'focused' : ''}"
+      },
+      {
+        "file": "src/shared/ui/SearchableListView.tsx",
+        "line": 186,
+        "expression": "searchable-list-view ${className}"
+      },
+      {
+        "file": "src/shared/ui/SegmentedControl.tsx",
+        "line": 55,
+        "expression": "seg-control ${sliding ? 'is-sliding' : ''}"
+      },
+      {
+        "file": "src/shared/ui/SegmentedControl.tsx",
+        "line": 71,
+        "expression": "seg-option ${opt.value === value ? 'is-selected' : ''}"
+      },
+      {
+        "file": "src/shared/ui/SelectableGroup.tsx",
+        "line": 57,
+        "expression": "selectable-group ${minClass} ${className ?? ''}"
+      },
+      {
+        "file": "src/shared/ui/SelectableGroup.tsx",
+        "line": 67,
+        "expression": "${buttonClassName ?? ''} ${isSelected ? 'is-selected' : ''} ${shake === option ? 'shake' : ''}"
+      },
+      {
+        "file": "src/shared/ui/ToggleField.tsx",
+        "line": 75,
+        "expression": "toggle-field ${className}"
+      }
+    ]
+  },
+  "definitions": {
+    "duplicates": [
+      {
+        "selector": ".font-medium",
+        "property": "font-weight",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1215,
+            "selector": ".font-medium",
+            "context": [],
+            "value": "500"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 171,
+            "selector": ".font-medium",
+            "context": [],
+            "value": "500"
+          }
+        ]
+      },
+      {
+        "selector": ".font-semibold",
+        "property": "font-weight",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1219,
+            "selector": ".font-semibold",
+            "context": [],
+            "value": "600"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 172,
+            "selector": ".font-semibold",
+            "context": [],
+            "value": "600"
+          }
+        ]
+      },
+      {
+        "selector": ".grid",
+        "property": "display",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 154,
+            "selector": ".grid",
+            "context": [],
+            "value": "grid"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 42,
+            "selector": ".grid",
+            "context": [],
+            "value": "grid"
+          }
+        ]
+      },
+      {
+        "selector": ".justify-around",
+        "property": "justify-content",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 340,
+            "selector": ".justify-around",
+            "context": [],
+            "value": "space-around"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 31,
+            "selector": ".justify-around",
+            "context": [],
+            "value": "space-around"
+          }
+        ]
+      },
+      {
+        "selector": ".justify-between",
+        "property": "justify-content",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 336,
+            "selector": ".justify-between",
+            "context": [],
+            "value": "space-between"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 30,
+            "selector": ".justify-between",
+            "context": [],
+            "value": "space-between"
+          }
+        ]
+      },
+      {
+        "selector": ".justify-center",
+        "property": "justify-content",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 328,
+            "selector": ".justify-center",
+            "context": [],
+            "value": "center"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 28,
+            "selector": ".justify-center",
+            "context": [],
+            "value": "center"
+          }
+        ]
+      },
+      {
+        "selector": ".justify-end",
+        "property": "justify-content",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 332,
+            "selector": ".justify-end",
+            "context": [],
+            "value": "flex-end"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 29,
+            "selector": ".justify-end",
+            "context": [],
+            "value": "flex-end"
+          }
+        ]
+      },
+      {
+        "selector": ".justify-start",
+        "property": "justify-content",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 324,
+            "selector": ".justify-start",
+            "context": [],
+            "value": "flex-start"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 27,
+            "selector": ".justify-start",
+            "context": [],
+            "value": "flex-start"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-empty",
+        "property": "color",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 53,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 102,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "#6b7280"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-empty",
+        "property": "padding",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 52,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "var(--spacing-lg)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 100,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "2rem 1.5rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-empty",
+        "property": "text-align",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 54,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "center"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 101,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "center"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-footer",
+        "property": "background-color",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 175,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "var(--base-tone)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 134,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "#f9fafb"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-footer",
+        "property": "border-top",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 170,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "1px solid var(--harmonic)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 133,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "1px solid #e5e7eb"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-footer",
+        "property": "color",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 172,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 136,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "#6b7280"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-footer",
+        "property": "display",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 173,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "flex"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 137,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "flex"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-footer",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 171,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "var(--text-sm)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 135,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "0.75rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-footer",
+        "property": "justify-content",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 174,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "space-between"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 138,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "space-between"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-footer",
+        "property": "padding",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 169,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "var(--spacing-sm)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 132,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "0.75rem 1.5rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input-container",
+        "property": "padding",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 16,
+            "selector": ".macro-search-input-container",
+            "context": [],
+            "value": "var(--spacing-lg)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 35,
+            "selector": ".macro-search-input-container",
+            "context": [],
+            "value": "1.5rem 1.5rem 0"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input",
+        "property": "border",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 24,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "1px solid var(--accent-dim)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 41,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "2px solid #e5e7eb"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input",
+        "property": "border-radius",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 25,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "var(--radius-md)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 42,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "8px"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input",
+        "property": "color",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 28,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 47,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "#111827"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input:focus",
+        "property": "border-color",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 35,
+            "selector": ".macro-search-input:focus",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 51,
+            "selector": ".macro-search-input:focus",
+            "context": [],
+            "value": "#3b82f6"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 26,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "var(--text-md)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 43,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "1rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input",
+        "property": "outline",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 29,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "none"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 44,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "none"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input",
+        "property": "padding",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 23,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "var(--spacing-sm) var(--spacing-md)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 40,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "0.75rem 1rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input",
+        "property": "transition",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 31,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "border-color var(--transition-fast)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 45,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "border-color 0.2s"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-input",
+        "property": "width",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 22,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "100%"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 39,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "100%"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-item-command",
+        "property": "color",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 80,
+            "selector": ".macro-search-item-command",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 121,
+            "selector": ".macro-search-item-command",
+            "context": [],
+            "value": "#3b82f6"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-item-command",
+        "property": "font-weight",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 79,
+            "selector": ".macro-search-item-command",
+            "context": [],
+            "value": "500"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 120,
+            "selector": ".macro-search-item-command",
+            "context": [],
+            "value": "600"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-item-text",
+        "property": "color",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 87,
+            "selector": ".macro-search-item-text",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 126,
+            "selector": ".macro-search-item-text",
+            "context": [],
+            "value": "#6b7280"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-item-text",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 86,
+            "selector": ".macro-search-item-text",
+            "context": [],
+            "value": "var(--text-base)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 127,
+            "selector": ".macro-search-item-text",
+            "context": [],
+            "value": "0.875rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-kbd",
+        "property": "border",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 225,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "1px solid var(--harmonic-minor)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 145,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "1px solid #d1d5db"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-kbd",
+        "property": "border-radius",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 226,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "4px"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 146,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "0.25rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-kbd",
+        "property": "display",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 215,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "inline-flex"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 142,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "inline-block"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-kbd",
+        "property": "font-family",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 218,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "monospace"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 147,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "monospace"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-kbd",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 219,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "12px"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 148,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "0.75rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-kbd",
+        "property": "padding",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 221,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "3px 6px 6px"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 143,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "0.125rem 0.375rem"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-results",
+        "property": "max-height",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 42,
+            "selector": ".macro-search-results",
+            "context": [],
+            "value": "400px"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 55,
+            "selector": ".macro-search-results",
+            "context": [],
+            "value": "300px"
+          }
+        ]
+      },
+      {
+        "selector": ".macro-search-results",
+        "property": "overflow-y",
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 43,
+            "selector": ".macro-search-results",
+            "context": [],
+            "value": "auto"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 56,
+            "selector": ".macro-search-results",
+            "context": [],
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "selector": ".text-2xl",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1205,
+            "selector": ".text-2xl",
+            "context": [],
+            "value": "var(--text-2xl)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 168,
+            "selector": ".text-2xl",
+            "context": [],
+            "value": "20px"
+          }
+        ]
+      },
+      {
+        "selector": ".text-base",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1189,
+            "selector": ".text-base",
+            "context": [],
+            "value": "var(--text-base)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 164,
+            "selector": ".text-base",
+            "context": [],
+            "value": "13px"
+          }
+        ]
+      },
+      {
+        "selector": ".text-lg",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1197,
+            "selector": ".text-lg",
+            "context": [],
+            "value": "var(--text-lg)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 166,
+            "selector": ".text-lg",
+            "context": [],
+            "value": "15px"
+          }
+        ]
+      },
+      {
+        "selector": ".text-md",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1193,
+            "selector": ".text-md",
+            "context": [],
+            "value": "var(--text-md)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 165,
+            "selector": ".text-md",
+            "context": [],
+            "value": "14px"
+          }
+        ]
+      },
+      {
+        "selector": ".text-sm",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1185,
+            "selector": ".text-sm",
+            "context": [],
+            "value": "var(--text-sm)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 163,
+            "selector": ".text-sm",
+            "context": [],
+            "value": "12px"
+          }
+        ]
+      },
+      {
+        "selector": ".text-xl",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1201,
+            "selector": ".text-xl",
+            "context": [],
+            "value": "var(--text-xl)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 167,
+            "selector": ".text-xl",
+            "context": [],
+            "value": "18px"
+          }
+        ]
+      },
+      {
+        "selector": ".text-xs",
+        "property": "font-size",
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1181,
+            "selector": ".text-xs",
+            "context": [],
+            "value": "var(--text-xs)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 162,
+            "selector": ".text-xs",
+            "context": [],
+            "value": "11px"
+          }
+        ]
+      },
+      {
+        "selector": "body",
+        "property": "font-family",
+        "definitions": [
+          {
+            "file": "src/styles.css",
+            "line": 156,
+            "selector": "body",
+            "context": [],
+            "value": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 98,
+            "selector": "body",
+            "context": [],
+            "value": "'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+          }
+        ]
+      }
+    ],
+    "contextDependent": [
+      {
+        "className": "align-start-max",
+        "property": "grid-template-columns",
+        "values": [
+          "max-content 1fr",
+          "subgrid"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 345,
+            "selector": ".rows.two-sections.align-start-max",
+            "context": [],
+            "value": "max-content 1fr"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 351,
+            "selector": ".rows.two-sections.align-start-max > *",
+            "context": [],
+            "value": "subgrid"
+          }
+        ]
+      },
+      {
+        "className": "btn-danger",
+        "property": "background-color",
+        "values": [
+          "color-mix(in oklch, var(--status-error) 82%, black)",
+          "var(--status-error)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 988,
+            "selector": ".btn-danger",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 993,
+            "selector": ".btn-danger:hover",
+            "context": [],
+            "value": "color-mix(in oklch, var(--status-error) 82%, black)"
+          }
+        ]
+      },
+      {
+        "className": "btn-link-danger",
+        "property": "text-decoration",
+        "values": [
+          "none",
+          "underline"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1015,
+            "selector": ".btn-link-danger",
+            "context": [],
+            "value": "none"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1023,
+            "selector": ".btn-link-danger:hover",
+            "context": [],
+            "value": "underline"
+          }
+        ]
+      },
+      {
+        "className": "btn-link",
+        "property": "text-decoration",
+        "values": [
+          "none",
+          "underline"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1000,
+            "selector": ".btn-link",
+            "context": [],
+            "value": "none"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1008,
+            "selector": ".btn-link:hover",
+            "context": [],
+            "value": "underline"
+          }
+        ]
+      },
+      {
+        "className": "btn-outlined",
+        "property": "background-color",
+        "values": [
+          "var(--base-tone)",
+          "var(--tone)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 158,
+            "selector": ".settings-view .btn-outlined:not(.is-selected, :hover, :active), .settings-view .seg-control",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 969,
+            "selector": ".btn-outlined",
+            "context": [],
+            "value": "var(--base-tone)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 975,
+            "selector": ".btn-outlined:hover",
+            "context": [],
+            "value": "var(--tone)"
+          }
+        ]
+      },
+      {
+        "className": "btn-secondary",
+        "property": "background-color",
+        "values": [
+          "var(--tone)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 959,
+            "selector": ".btn-secondary",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 965,
+            "selector": ".btn-secondary:hover",
+            "context": [],
+            "value": "var(--tone)"
+          }
+        ]
+      },
+      {
+        "className": "btn-success",
+        "property": "background-color",
+        "values": [
+          "color-mix(in oklch, var(--status-success) 82%, black)",
+          "var(--status-success)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 979,
+            "selector": ".btn-success",
+            "context": [],
+            "value": "var(--status-success)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 984,
+            "selector": ".btn-success:hover",
+            "context": [],
+            "value": "color-mix(in oklch, var(--status-success) 82%, black)"
+          }
+        ]
+      },
+      {
+        "className": "btn",
+        "property": "background-color",
+        "values": [
+          "var(--accent)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1027,
+            "selector": ".btn:active",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1032,
+            "selector": ".btn:disabled",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1039,
+            "selector": ".btn:disabled:hover",
+            "context": [],
+            "value": "var(--tone-dim)"
+          }
+        ]
+      },
+      {
+        "className": "btn",
+        "property": "color",
+        "values": [
+          "var(--ink-alt)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1028,
+            "selector": ".btn:active",
+            "context": [],
+            "value": "var(--ink-alt)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1033,
+            "selector": ".btn:disabled",
+            "context": [],
+            "value": "var(--ink-soft)"
+          }
+        ]
+      },
+      {
+        "className": "btn",
+        "property": "cursor",
+        "values": [
+          "not-allowed",
+          "pointer"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 939,
+            "selector": ".btn",
+            "context": [],
+            "value": "pointer"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1034,
+            "selector": ".btn:disabled",
+            "context": [],
+            "value": "not-allowed"
+          }
+        ]
+      },
+      {
+        "className": "ce-style-caret",
+        "property": "display",
+        "values": [
+          "block",
+          "flex"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 707,
+            "selector": ".ce-style-caret",
+            "context": [],
+            "value": "flex"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 713,
+            "selector": ".ce-style-caret svg",
+            "context": [],
+            "value": "block"
+          }
+        ]
+      },
+      {
+        "className": "ce-style-option-short",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 760,
+            "selector": ".ce-style-option-short",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 766,
+            "selector": ".ce-style-option.is-active .ce-style-option-short",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "ce-style-option",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 741,
+            "selector": ".ce-style-option",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 753,
+            "selector": ".ce-style-option.is-active",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 766,
+            "selector": ".ce-style-option.is-active .ce-style-option-short",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "ce-toolbar-btn",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 663,
+            "selector": ".ce-toolbar-btn",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 672,
+            "selector": ".ce-toolbar-btn:hover",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 677,
+            "selector": ".ce-toolbar-btn.is-active",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "ce-toolbar-btn",
+        "property": "display",
+        "values": [
+          "block",
+          "flex"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 655,
+            "selector": ".ce-toolbar-btn",
+            "context": [],
+            "value": "flex"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 681,
+            "selector": ".ce-toolbar-btn svg",
+            "context": [],
+            "value": "block"
+          }
+        ]
+      },
+      {
+        "className": "command-suggestion-action",
+        "property": "background-color",
+        "values": [
+          "var(--status-error)",
+          "var(--status-error-wash)",
+          "var(--tone)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 218,
+            "selector": ".command-suggestion-action.delete:hover",
+            "context": [],
+            "value": "var(--status-error-wash)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 236,
+            "selector": ".command-suggestion-action.confirm:hover",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 241,
+            "selector": ".command-suggestion-action.cancel:hover",
+            "context": [],
+            "value": "var(--tone)"
+          }
+        ]
+      },
+      {
+        "className": "command-suggestion-action",
+        "property": "color",
+        "values": [
+          "var(--base-tone)",
+          "var(--ink)",
+          "var(--ink-soft)",
+          "var(--status-error)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 205,
+            "selector": ".command-suggestion-action",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 219,
+            "selector": ".command-suggestion-action.delete:hover",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 232,
+            "selector": ".command-suggestion-action.confirm",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 237,
+            "selector": ".command-suggestion-action.confirm:hover",
+            "context": [],
+            "value": "var(--base-tone)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 242,
+            "selector": ".command-suggestion-action.cancel:hover",
+            "context": [],
+            "value": "var(--ink)"
+          }
+        ]
+      },
+      {
+        "className": "command-suggestion-action",
+        "property": "opacity",
+        "values": [
+          "0",
+          "1"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 207,
+            "selector": ".command-suggestion-action",
+            "context": [],
+            "value": "0"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 214,
+            "selector": ".command-suggestion-item:hover .command-suggestion-action.delete, .command-suggestion-item.selected .command-suggestion-action.delete",
+            "context": [],
+            "value": "1"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 214,
+            "selector": ".command-suggestion-item:hover .command-suggestion-action.delete, .command-suggestion-item.selected .command-suggestion-action.delete",
+            "context": [],
+            "value": "1"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 228,
+            "selector": ".command-suggestion-item.confirming-delete .command-suggestion-action",
+            "context": [],
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "className": "command-suggestion-item",
+        "property": "background",
+        "values": [
+          "var(--base-tone)",
+          "var(--tone)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 161,
+            "selector": ".command-suggestion-item:hover",
+            "context": [],
+            "value": "var(--base-tone)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 165,
+            "selector": ".command-suggestion-item.selected",
+            "context": [],
+            "value": "var(--tone)"
+          }
+        ]
+      },
+      {
+        "className": "confirm",
+        "property": "color",
+        "values": [
+          "var(--base-tone)",
+          "var(--status-error)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 232,
+            "selector": ".command-suggestion-action.confirm",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 237,
+            "selector": ".command-suggestion-action.confirm:hover",
+            "context": [],
+            "value": "var(--base-tone)"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "border-radius",
+        "values": [
+          "8px",
+          "var(--radius-sm)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 808,
+            "selector": ".content-editor-body",
+            "context": [],
+            "value": "8px"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 883,
+            "selector": ".content-editor-body code",
+            "context": [],
+            "value": "var(--radius-sm)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 891,
+            "selector": ".content-editor-body pre",
+            "context": [],
+            "value": "var(--radius-sm)"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 804,
+            "selector": ".content-editor-body",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 822,
+            "selector": ".content-editor-body:empty::before",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 881,
+            "selector": ".content-editor-body code",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 900,
+            "selector": ".content-editor-body blockquote",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 924,
+            "selector": ".content-editor-body a",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "font-family",
+        "values": [
+          "'IBM Plex Mono', 'Fira Code', monospace",
+          "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 811,
+            "selector": ".content-editor-body",
+            "context": [],
+            "value": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 878,
+            "selector": ".content-editor-body code",
+            "context": [],
+            "value": "'IBM Plex Mono', 'Fira Code', monospace"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 887,
+            "selector": ".content-editor-body pre",
+            "context": [],
+            "value": "'IBM Plex Mono', 'Fira Code', monospace"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "font-size",
+        "values": [
+          "0.88em",
+          "1.15em",
+          "1.4em",
+          "1.75em",
+          "var(--text-md)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 805,
+            "selector": ".content-editor-body",
+            "context": [],
+            "value": "var(--text-md)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 836,
+            "selector": ".content-editor-body h1",
+            "context": [],
+            "value": "1.75em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 842,
+            "selector": ".content-editor-body h2",
+            "context": [],
+            "value": "1.4em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 848,
+            "selector": ".content-editor-body h3",
+            "context": [],
+            "value": "1.15em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 879,
+            "selector": ".content-editor-body code",
+            "context": [],
+            "value": "0.88em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 888,
+            "selector": ".content-editor-body pre",
+            "context": [],
+            "value": "0.88em"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "list-style-type",
+        "values": [
+          "decimal",
+          "disc"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 911,
+            "selector": ".content-editor .content-editor-body ul",
+            "context": [],
+            "value": "disc"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 915,
+            "selector": ".content-editor .content-editor-body ol",
+            "context": [],
+            "value": "decimal"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "margin",
+        "values": [
+          "0.75em 0",
+          "0.75em 0 0.4em"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 838,
+            "selector": ".content-editor-body h1",
+            "context": [],
+            "value": "0.75em 0 0.4em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 844,
+            "selector": ".content-editor-body h2",
+            "context": [],
+            "value": "0.75em 0 0.4em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 850,
+            "selector": ".content-editor-body h3",
+            "context": [],
+            "value": "0.75em 0 0.4em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 893,
+            "selector": ".content-editor-body pre",
+            "context": [],
+            "value": "0.75em 0"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 899,
+            "selector": ".content-editor-body blockquote",
+            "context": [],
+            "value": "0.75em 0"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "margin-bottom",
+        "values": [
+          "0",
+          "0.2em",
+          "0.75em"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 828,
+            "selector": ".content-editor-body p",
+            "context": [],
+            "value": "0.75em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 832,
+            "selector": ".content-editor-body p:last-child",
+            "context": [],
+            "value": "0"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 907,
+            "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
+            "context": [],
+            "value": "0.75em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 907,
+            "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
+            "context": [],
+            "value": "0.75em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 920,
+            "selector": ".content-editor-body li",
+            "context": [],
+            "value": "0.2em"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "min-height",
+        "values": [
+          "0",
+          "150px"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 87,
+            "selector": ".editor-content .content-editor-body",
+            "context": [],
+            "value": "0"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 801,
+            "selector": ".content-editor-body",
+            "context": [],
+            "value": "150px"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "padding",
+        "values": [
+          "0.1em 0.35em",
+          "var(--spacing-md)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 800,
+            "selector": ".content-editor-body",
+            "context": [],
+            "value": "var(--spacing-md)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 882,
+            "selector": ".content-editor-body code",
+            "context": [],
+            "value": "0.1em 0.35em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 890,
+            "selector": ".content-editor-body pre",
+            "context": [],
+            "value": "var(--spacing-md)"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "padding-left",
+        "values": [
+          "1.5em",
+          "var(--spacing-md)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 898,
+            "selector": ".content-editor-body blockquote",
+            "context": [],
+            "value": "var(--spacing-md)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 906,
+            "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
+            "context": [],
+            "value": "1.5em"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 906,
+            "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
+            "context": [],
+            "value": "1.5em"
+          }
+        ]
+      },
+      {
+        "className": "content-editor-body",
+        "property": "text-decoration",
+        "values": [
+          "line-through",
+          "underline"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 870,
+            "selector": ".content-editor-body u",
+            "context": [],
+            "value": "underline"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 874,
+            "selector": ".content-editor-body s",
+            "context": [],
+            "value": "line-through"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 925,
+            "selector": ".content-editor-body a",
+            "context": [],
+            "value": "underline"
+          }
+        ]
+      },
+      {
+        "className": "content-editor",
+        "property": "list-style-type",
+        "values": [
+          "decimal",
+          "disc"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 911,
+            "selector": ".content-editor .content-editor-body ul",
+            "context": [],
+            "value": "disc"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 915,
+            "selector": ".content-editor .content-editor-body ol",
+            "context": [],
+            "value": "decimal"
+          }
+        ]
+      },
+      {
+        "className": "dark",
+        "property": "background",
+        "values": [
+          "#1f2937",
+          "#4b5563",
+          "#6b7280"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles.css",
+            "line": 87,
+            "selector": ".dark .macro-search-results::-webkit-scrollbar-track",
+            "context": [],
+            "value": "#1f2937"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 91,
+            "selector": ".dark .macro-search-results::-webkit-scrollbar-thumb",
+            "context": [],
+            "value": "#4b5563"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 96,
+            "selector": ".dark .macro-search-results::-webkit-scrollbar-thumb:hover",
+            "context": [],
+            "value": "#6b7280"
+          }
+        ]
+      },
+      {
+        "className": "editor-command",
+        "property": "width",
+        "values": [
+          "100%",
+          "280px"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 64,
+            "selector": ".editor-command",
+            "context": [],
+            "value": "280px"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 68,
+            "selector": ".editor-command .input",
+            "context": [],
+            "value": "100%"
+          }
+        ]
+      },
+      {
+        "className": "editor-content",
+        "property": "min-height",
+        "values": [
+          "0",
+          "150px"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 82,
+            "selector": ".editor-content.content-editor",
+            "context": [],
+            "value": "0"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 87,
+            "selector": ".editor-content .content-editor-body",
+            "context": [],
+            "value": "0"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 616,
+            "selector": ".editor-content",
+            "context": [],
+            "value": "150px"
+          }
+        ]
+      },
+      {
+        "className": "editor-popout",
+        "property": "background",
+        "values": [
+          "transparent",
+          "var(--tone)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 51,
+            "selector": ".editor-popout",
+            "context": [],
+            "value": "transparent"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 58,
+            "selector": ".editor-popout:hover",
+            "context": [],
+            "value": "var(--tone)"
+          }
+        ]
+      },
+      {
+        "className": "editor-popout",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 52,
+            "selector": ".editor-popout",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
+            "line": 59,
+            "selector": ".editor-popout:hover",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "hover",
+        "property": "opacity",
+        "values": [
+          "0.8",
+          "0.9"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/utilities.css",
+            "line": 300,
+            "selector": ".hover\\:opacity-80:hover",
+            "context": [],
+            "value": "0.8"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 301,
+            "selector": ".hover\\:opacity-90:hover",
+            "context": [],
+            "value": "0.9"
+          }
+        ]
+      },
+      {
+        "className": "is-selected",
+        "property": "background",
+        "values": [
+          "transparent",
+          "var(--accent)",
+          "var(--tone)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 139,
+            "selector": ".seg-option:hover:not(.is-selected)",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 145,
+            "selector": ".seg-option.is-selected",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 152,
+            "selector": ".seg-control.is-sliding .seg-option.is-selected",
+            "context": [],
+            "value": "transparent"
+          }
+        ]
+      },
+      {
+        "className": "is-selected",
+        "property": "background-color",
+        "values": [
+          "var(--accent)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 158,
+            "selector": ".settings-view .btn-outlined:not(.is-selected, :hover, :active), .settings-view .seg-control",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 221,
+            "selector": ".selectable-group > .is-selected",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 227,
+            "selector": ".selectable-group > .is-selected:hover",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "is-selected",
+        "property": "color",
+        "values": [
+          "var(--ink)",
+          "var(--ink-alt)",
+          "white"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 140,
+            "selector": ".seg-option:hover:not(.is-selected)",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 144,
+            "selector": ".seg-option.is-selected",
+            "context": [],
+            "value": "var(--ink-alt)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 222,
+            "selector": ".selectable-group > .is-selected",
+            "context": [],
+            "value": "white"
+          }
+        ]
+      },
+      {
+        "className": "is-selected",
+        "property": "opacity",
+        "values": [
+          "0.9",
+          "0.95"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 228,
+            "selector": ".selectable-group > .is-selected:hover",
+            "context": [],
+            "value": "0.9"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 464,
+            "selector": ".min-selected-1 > .is-selected:only-of-type",
+            "context": [],
+            "value": "0.95"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 468,
+            "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
+            "context": [],
+            "value": "0.95"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-empty",
+        "property": "color",
+        "values": [
+          "#6b7280",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 53,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 102,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "#6b7280"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-empty",
+        "property": "padding",
+        "values": [
+          "2rem 1.5rem",
+          "var(--spacing-lg)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 52,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "var(--spacing-lg)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 100,
+            "selector": ".macro-search-empty",
+            "context": [],
+            "value": "2rem 1.5rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-footer",
+        "property": "background-color",
+        "values": [
+          "#f9fafb",
+          "var(--base-tone)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 175,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "var(--base-tone)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 134,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "#f9fafb"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-footer",
+        "property": "border-top",
+        "values": [
+          "1px solid #e5e7eb",
+          "1px solid var(--harmonic)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 170,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "1px solid var(--harmonic)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 133,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "1px solid #e5e7eb"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-footer",
+        "property": "color",
+        "values": [
+          "#6b7280",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 172,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 136,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "#6b7280"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-footer",
+        "property": "font-size",
+        "values": [
+          "0.75rem",
+          "var(--text-sm)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 171,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "var(--text-sm)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 135,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "0.75rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-footer",
+        "property": "padding",
+        "values": [
+          "0.75rem 1.5rem",
+          "var(--spacing-sm)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 169,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "var(--spacing-sm)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 132,
+            "selector": ".macro-search-footer",
+            "context": [],
+            "value": "0.75rem 1.5rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-input-container",
+        "property": "padding",
+        "values": [
+          "1.5rem 1.5rem 0",
+          "var(--spacing-lg)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 16,
+            "selector": ".macro-search-input-container",
+            "context": [],
+            "value": "var(--spacing-lg)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 35,
+            "selector": ".macro-search-input-container",
+            "context": [],
+            "value": "1.5rem 1.5rem 0"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-input",
+        "property": "border",
+        "values": [
+          "1px solid var(--accent-dim)",
+          "2px solid #e5e7eb"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 24,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "1px solid var(--accent-dim)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 41,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "2px solid #e5e7eb"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-input",
+        "property": "border-color",
+        "values": [
+          "#3b82f6",
+          "var(--accent)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 35,
+            "selector": ".macro-search-input:focus",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 51,
+            "selector": ".macro-search-input:focus",
+            "context": [],
+            "value": "#3b82f6"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-input",
+        "property": "border-radius",
+        "values": [
+          "8px",
+          "var(--radius-md)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 25,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "var(--radius-md)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 42,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "8px"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-input",
+        "property": "color",
+        "values": [
+          "#111827",
+          "var(--ink)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 28,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 47,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "#111827"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-input",
+        "property": "font-size",
+        "values": [
+          "1rem",
+          "var(--text-md)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 26,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "var(--text-md)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 43,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "1rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-input",
+        "property": "padding",
+        "values": [
+          "0.75rem 1rem",
+          "var(--spacing-sm) var(--spacing-md)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 23,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "var(--spacing-sm) var(--spacing-md)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 40,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "0.75rem 1rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-input",
+        "property": "transition",
+        "values": [
+          "border-color 0.2s",
+          "border-color var(--transition-fast)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 31,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "border-color var(--transition-fast)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 45,
+            "selector": ".macro-search-input",
+            "context": [],
+            "value": "border-color 0.2s"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-command",
+        "property": "background-color",
+        "values": [
+          "var(--status-error-wash)",
+          "var(--tone)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 93,
+            "selector": ".macro-search-item:hover .macro-search-item-command, .macro-search-item:hover .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 98,
+            "selector": ".macro-search-item.selected .macro-search-item-command, .macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 122,
+            "selector": ".macro-search-item.confirming-delete .macro-search-item-command, .macro-search-item.confirming-delete .macro-search-item-confirm",
+            "context": [],
+            "value": "var(--status-error-wash)"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-command",
+        "property": "color",
+        "values": [
+          "#3b82f6",
+          "var(--accent)",
+          "var(--ink)",
+          "var(--status-error)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 70,
+            "selector": ".macro-search-item-command, .macro-search-item-text",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 80,
+            "selector": ".macro-search-item-command",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 126,
+            "selector": ".macro-search-item.confirming-delete .macro-search-item-command",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 121,
+            "selector": ".macro-search-item-command",
+            "context": [],
+            "value": "#3b82f6"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-command",
+        "property": "font-weight",
+        "values": [
+          "500",
+          "600"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 79,
+            "selector": ".macro-search-item-command",
+            "context": [],
+            "value": "500"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 120,
+            "selector": ".macro-search-item-command",
+            "context": [],
+            "value": "600"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-edit",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 141,
+            "selector": ".macro-search-item-edit",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 149,
+            "selector": ".macro-search-item-edit:hover",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-edit",
+        "property": "opacity",
+        "values": [
+          "0",
+          "1"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 143,
+            "selector": ".macro-search-item-edit",
+            "context": [],
+            "value": "0"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 154,
+            "selector": ".macro-search-item:hover .macro-search-item-edit, .macro-search-item.selected .macro-search-item-edit",
+            "context": [],
+            "value": "1"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 154,
+            "selector": ".macro-search-item:hover .macro-search-item-edit, .macro-search-item.selected .macro-search-item-edit",
+            "context": [],
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-text",
+        "property": "background-color",
+        "values": [
+          "var(--tone)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 93,
+            "selector": ".macro-search-item:hover .macro-search-item-command, .macro-search-item:hover .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 98,
+            "selector": ".macro-search-item.selected .macro-search-item-command, .macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone)"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-text",
+        "property": "color",
+        "values": [
+          "#6b7280",
+          "inherit",
+          "var(--ink)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 70,
+            "selector": ".macro-search-item-command, .macro-search-item-text",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 87,
+            "selector": ".macro-search-item-text",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 159,
+            "selector": ".macro-search-item-text mark",
+            "context": [],
+            "value": "inherit"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 126,
+            "selector": ".macro-search-item-text",
+            "context": [],
+            "value": "#6b7280"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-text",
+        "property": "font-size",
+        "values": [
+          "0.875rem",
+          "var(--text-base)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 86,
+            "selector": ".macro-search-item-text",
+            "context": [],
+            "value": "var(--text-base)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 127,
+            "selector": ".macro-search-item-text",
+            "context": [],
+            "value": "0.875rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-text",
+        "property": "overflow",
+        "values": [
+          "hidden",
+          "visible"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 73,
+            "selector": ".macro-search-item-command, .macro-search-item-text",
+            "context": [],
+            "value": "hidden"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 103,
+            "selector": ".macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "visible"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-text",
+        "property": "text-overflow",
+        "values": [
+          "clip",
+          "ellipsis"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 74,
+            "selector": ".macro-search-item-command, .macro-search-item-text",
+            "context": [],
+            "value": "ellipsis"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 104,
+            "selector": ".macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "clip"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item-text",
+        "property": "white-space",
+        "values": [
+          "normal",
+          "nowrap"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 75,
+            "selector": ".macro-search-item-command, .macro-search-item-text",
+            "context": [],
+            "value": "nowrap"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 102,
+            "selector": ".macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "normal"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-item",
+        "property": "background-color",
+        "values": [
+          "#f8fafc",
+          "var(--status-error-wash)",
+          "var(--tone)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 93,
+            "selector": ".macro-search-item:hover .macro-search-item-command, .macro-search-item:hover .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 93,
+            "selector": ".macro-search-item:hover .macro-search-item-command, .macro-search-item:hover .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 98,
+            "selector": ".macro-search-item.selected .macro-search-item-command, .macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 98,
+            "selector": ".macro-search-item.selected .macro-search-item-command, .macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 122,
+            "selector": ".macro-search-item.confirming-delete .macro-search-item-command, .macro-search-item.confirming-delete .macro-search-item-confirm",
+            "context": [],
+            "value": "var(--status-error-wash)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 122,
+            "selector": ".macro-search-item.confirming-delete .macro-search-item-command, .macro-search-item.confirming-delete .macro-search-item-confirm",
+            "context": [],
+            "value": "var(--status-error-wash)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 115,
+            "selector": ".macro-search-item:hover, .macro-search-item.selected",
+            "context": [],
+            "value": "#f8fafc"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 115,
+            "selector": ".macro-search-item:hover, .macro-search-item.selected",
+            "context": [],
+            "value": "#f8fafc"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-kbd",
+        "property": "background",
+        "values": [
+          "var(--base-tone)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 223,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "var(--base-tone)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 233,
+            "selector": ".macro-search-kbd::after",
+            "context": [],
+            "value": "var(--tone-dim)"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-kbd",
+        "property": "border",
+        "values": [
+          "1px solid #d1d5db",
+          "1px solid var(--harmonic-minor)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 225,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "1px solid var(--harmonic-minor)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 235,
+            "selector": ".macro-search-kbd::after",
+            "context": [],
+            "value": "1px solid var(--harmonic-minor)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 145,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "1px solid #d1d5db"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-kbd",
+        "property": "border-radius",
+        "values": [
+          "0.25rem",
+          "2px",
+          "4px"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 226,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "4px"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 236,
+            "selector": ".macro-search-kbd::after",
+            "context": [],
+            "value": "2px"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 146,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "0.25rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-kbd",
+        "property": "display",
+        "values": [
+          "inline-block",
+          "inline-flex"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 215,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "inline-flex"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 142,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "inline-block"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-kbd",
+        "property": "font-size",
+        "values": [
+          "0.75rem",
+          "12px"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 219,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "12px"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 148,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "0.75rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-kbd",
+        "property": "padding",
+        "values": [
+          "0.125rem 0.375rem",
+          "3px 6px 6px"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 221,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "3px 6px 6px"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 143,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "0.125rem 0.375rem"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-kbd",
+        "property": "position",
+        "values": [
+          "absolute",
+          "relative"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 214,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "relative"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 232,
+            "selector": ".macro-search-kbd::after",
+            "context": [],
+            "value": "absolute"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-kbd",
+        "property": "z-index",
+        "values": [
+          "-1",
+          "0"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 227,
+            "selector": ".macro-search-kbd",
+            "context": [],
+            "value": "0"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 238,
+            "selector": ".macro-search-kbd::after",
+            "context": [],
+            "value": "-1"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-results",
+        "property": "background",
+        "values": [
+          "#1f2937",
+          "#4b5563",
+          "#6b7280",
+          "#94a3b8",
+          "#cbd5e1",
+          "#f1f5f9"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles.css",
+            "line": 68,
+            "selector": ".macro-search-results::-webkit-scrollbar-track",
+            "context": [],
+            "value": "#f1f5f9"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 73,
+            "selector": ".macro-search-results::-webkit-scrollbar-thumb",
+            "context": [],
+            "value": "#cbd5e1"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 79,
+            "selector": ".macro-search-results::-webkit-scrollbar-thumb:hover",
+            "context": [],
+            "value": "#94a3b8"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 87,
+            "selector": ".dark .macro-search-results::-webkit-scrollbar-track",
+            "context": [],
+            "value": "#1f2937"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 91,
+            "selector": ".dark .macro-search-results::-webkit-scrollbar-thumb",
+            "context": [],
+            "value": "#4b5563"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 96,
+            "selector": ".dark .macro-search-results::-webkit-scrollbar-thumb:hover",
+            "context": [],
+            "value": "#6b7280"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-results",
+        "property": "border",
+        "values": [
+          "1px solid #1f2937",
+          "1px solid #f1f5f9"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles.css",
+            "line": 75,
+            "selector": ".macro-search-results::-webkit-scrollbar-thumb",
+            "context": [],
+            "value": "1px solid #f1f5f9"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 92,
+            "selector": ".dark .macro-search-results::-webkit-scrollbar-thumb",
+            "context": [],
+            "value": "1px solid #1f2937"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-results",
+        "property": "max-height",
+        "values": [
+          "300px",
+          "400px"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 42,
+            "selector": ".macro-search-results",
+            "context": [],
+            "value": "400px"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 55,
+            "selector": ".macro-search-results",
+            "context": [],
+            "value": "300px"
+          }
+        ]
+      },
+      {
+        "className": "macro-search-results",
+        "property": "scrollbar-color",
+        "values": [
+          "#4b5563 #1f2937",
+          "#cbd5e1 #f1f5f9"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles.css",
+            "line": 59,
+            "selector": ".macro-search-results",
+            "context": [],
+            "value": "#cbd5e1 #f1f5f9"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 83,
+            "selector": ".dark .macro-search-results",
+            "context": [],
+            "value": "#4b5563 #1f2937"
+          }
+        ]
+      },
+      {
+        "className": "macro-suggestions-command-item",
+        "property": "background-color",
+        "values": [
+          "var(--status-error-wash)",
+          "var(--tone)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 28,
+            "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
+            "context": [],
+            "value": "var(--status-error-wash)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 94,
+            "selector": ".macro-suggestions-command-item",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 106,
+            "selector": ".macro-suggestions-command-item:hover",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 111,
+            "selector": ".macro-suggestions-command-item.selected",
+            "context": [],
+            "value": "var(--tone)"
+          }
+        ]
+      },
+      {
+        "className": "macro-suggestions-command-item",
+        "property": "border-color",
+        "values": [
+          "var(--accent)",
+          "var(--harmonic)",
+          "var(--status-error)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 30,
+            "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 107,
+            "selector": ".macro-suggestions-command-item:hover",
+            "context": [],
+            "value": "var(--harmonic)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 113,
+            "selector": ".macro-suggestions-command-item.selected",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "macro-suggestions-command-item",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink)",
+          "var(--status-error)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 29,
+            "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 95,
+            "selector": ".macro-suggestions-command-item",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 112,
+            "selector": ".macro-suggestions-command-item.selected",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "macro-suggestions-command-item",
+        "property": "flex",
+        "values": [
+          "0 1 auto",
+          "1 1 0"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 23,
+            "selector": ".macro-suggestions-command-item.delete-confirm-option",
+            "context": [],
+            "value": "1 1 0"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 88,
+            "selector": ".macro-suggestions-command-item",
+            "context": [],
+            "value": "0 1 auto"
+          }
+        ]
+      },
+      {
+        "className": "macro-suggestions-command-item",
+        "property": "max-width",
+        "values": [
+          "8em",
+          "none"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 24,
+            "selector": ".macro-suggestions-command-item.delete-confirm-option",
+            "context": [],
+            "value": "none"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 90,
+            "selector": ".macro-suggestions-command-item",
+            "context": [],
+            "value": "8em"
+          }
+        ]
+      },
+      {
+        "className": "macro-suggestions-container",
+        "property": "min-width",
+        "values": [
+          "200px",
+          "240px"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 6,
+            "selector": ".macro-suggestions-container.delete-confirm",
+            "context": [],
+            "value": "240px"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 24,
+            "selector": ".macro-suggestions-container",
+            "context": [],
+            "value": "200px"
+          }
+        ]
+      },
+      {
+        "className": "macro-suggestions-item",
+        "property": "background-color",
+        "values": [
+          "var(--tone)",
+          "var(--tone-dim)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 67,
+            "selector": ".macro-suggestions-item:hover",
+            "context": [],
+            "value": "var(--tone-dim)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 71,
+            "selector": ".macro-suggestions-item.selected",
+            "context": [],
+            "value": "var(--tone)"
+          }
+        ]
+      },
+      {
+        "className": "macro-suggestions-item",
+        "property": "border-bottom",
+        "values": [
+          "1px solid var(--harmonic-minor)",
+          "none"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 59,
+            "selector": ".macro-suggestions-item",
+            "context": [],
+            "value": "1px solid var(--harmonic-minor)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 63,
+            "selector": ".macro-suggestions-item:last-of-type",
+            "context": [],
+            "value": "none"
+          }
+        ]
+      },
+      {
+        "className": "modal-command-item",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 184,
+            "selector": ".modal-command-item .modal-command-name",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 190,
+            "selector": ".modal-command-item .modal-command-description",
+            "context": [],
+            "value": "var(--ink-soft)"
+          }
+        ]
+      },
+      {
+        "className": "modal-nav-branding",
+        "property": "color",
+        "values": [
+          "inherit",
+          "var(--accent)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/modal/modalStyles.css",
+            "line": 50,
+            "selector": ".modal-nav-branding",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/content/overlays/modal/modalStyles.css",
+            "line": 54,
+            "selector": ".modal-nav-branding svg",
+            "context": [],
+            "value": "inherit"
+          }
+        ]
+      },
+      {
+        "className": "modal-nav-tab",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--ink)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/modal/modalStyles.css",
+            "line": 65,
+            "selector": ".modal-nav-tab",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/content/overlays/modal/modalStyles.css",
+            "line": 71,
+            "selector": ".modal-nav-tab:hover",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/content/overlays/modal/modalStyles.css",
+            "line": 75,
+            "selector": ".modal-nav-tab.active",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "popup-button-primary",
+        "property": "background-color",
+        "values": [
+          "var(--button-bg)",
+          "var(--button-bg-hover)"
+        ],
+        "definitions": [
+          {
+            "file": "src/popup/popup.css",
+            "line": 9,
+            "selector": ".popup-button-primary",
+            "context": [],
+            "value": "var(--button-bg)"
+          },
+          {
+            "file": "src/popup/popup.css",
+            "line": 13,
+            "selector": ".popup-button-primary:hover",
+            "context": [],
+            "value": "var(--button-bg-hover)"
+          }
+        ]
+      },
+      {
+        "className": "popup-toggle-bg",
+        "property": "--tw-ring-color",
+        "values": [
+          "rgba(37, 99, 235, 0.5)",
+          "rgba(59, 130, 246, 0.5)"
+        ],
+        "definitions": [
+          {
+            "file": "src/popup/popup.css",
+            "line": 37,
+            "selector": ".popup-toggle-bg:focus-within",
+            "context": [],
+            "value": "rgba(59, 130, 246, 0.5)"
+          },
+          {
+            "file": "src/popup/popup.css",
+            "line": 41,
+            "selector": ".dark .popup-toggle-bg:focus-within",
+            "context": [],
+            "value": "rgba(37, 99, 235, 0.5)"
+          }
+        ]
+      },
+      {
+        "className": "popup-toggle-knob",
+        "property": "border-color",
+        "values": [
+          "#4b5563",
+          "#d1d5db"
+        ],
+        "definitions": [
+          {
+            "file": "src/popup/popup.css",
+            "line": 46,
+            "selector": ".popup-toggle-knob",
+            "context": [],
+            "value": "#d1d5db"
+          },
+          {
+            "file": "src/popup/popup.css",
+            "line": 49,
+            "selector": ".dark .popup-toggle-knob",
+            "context": [],
+            "value": "#4b5563"
+          }
+        ]
+      },
+      {
+        "className": "rows",
+        "property": "display",
+        "values": [
+          "flex",
+          "grid"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 149,
+            "selector": ".rows",
+            "context": [],
+            "value": "flex"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 349,
+            "selector": ".rows.two-sections.align-start-max > *",
+            "context": [],
+            "value": "grid"
+          }
+        ]
+      },
+      {
+        "className": "rows",
+        "property": "grid-template-columns",
+        "values": [
+          "max-content 1fr",
+          "subgrid"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 345,
+            "selector": ".rows.two-sections.align-start-max",
+            "context": [],
+            "value": "max-content 1fr"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 351,
+            "selector": ".rows.two-sections.align-start-max > *",
+            "context": [],
+            "value": "subgrid"
+          }
+        ]
+      },
+      {
+        "className": "seg-control",
+        "property": "background",
+        "values": [
+          "transparent",
+          "var(--accent)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 92,
+            "selector": ".seg-control::before",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 152,
+            "selector": ".seg-control.is-sliding .seg-option.is-selected",
+            "context": [],
+            "value": "transparent"
+          }
+        ]
+      },
+      {
+        "className": "seg-control",
+        "property": "opacity",
+        "values": [
+          "0",
+          "1"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 93,
+            "selector": ".seg-control::before",
+            "context": [],
+            "value": "0"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 98,
+            "selector": ".seg-control.is-sliding::before",
+            "context": [],
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "className": "seg-control",
+        "property": "position",
+        "values": [
+          "absolute",
+          "relative"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 80,
+            "selector": ".seg-control",
+            "context": [],
+            "value": "relative"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 87,
+            "selector": ".seg-control::before",
+            "context": [],
+            "value": "absolute"
+          }
+        ]
+      },
+      {
+        "className": "seg-control",
+        "property": "transition",
+        "values": [
+          "left 0.1s ease, width 0.1s ease",
+          "none"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 94,
+            "selector": ".seg-control::before",
+            "context": [],
+            "value": "left 0.1s ease, width 0.1s ease"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 101,
+            "selector": ".seg-control.seg-snap::before",
+            "context": [],
+            "value": "none"
+          }
+        ]
+      },
+      {
+        "className": "seg-option",
+        "property": "background",
+        "values": [
+          "transparent",
+          "var(--accent)",
+          "var(--tone)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 110,
+            "selector": ".seg-option",
+            "context": [],
+            "value": "transparent"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 139,
+            "selector": ".seg-option:hover:not(.is-selected)",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 145,
+            "selector": ".seg-option.is-selected",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 152,
+            "selector": ".seg-control.is-sliding .seg-option.is-selected",
+            "context": [],
+            "value": "transparent"
+          }
+        ]
+      },
+      {
+        "className": "seg-option",
+        "property": "border-right",
+        "values": [
+          "1px solid var(--harmonic)",
+          "none"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 112,
+            "selector": ".seg-option",
+            "context": [],
+            "value": "1px solid var(--harmonic)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 135,
+            "selector": ".seg-option:last-child",
+            "context": [],
+            "value": "none"
+          }
+        ]
+      },
+      {
+        "className": "seg-option",
+        "property": "color",
+        "values": [
+          "var(--ink)",
+          "var(--ink-alt)",
+          "var(--ink-soft)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 109,
+            "selector": ".seg-option",
+            "context": [],
+            "value": "var(--ink-soft)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 140,
+            "selector": ".seg-option:hover:not(.is-selected)",
+            "context": [],
+            "value": "var(--ink)"
+          },
+          {
+            "file": "src/content/overlays/views/settings/settingsViewStyles.css",
+            "line": 144,
+            "selector": ".seg-option.is-selected",
+            "context": [],
+            "value": "var(--ink-alt)"
+          }
+        ]
+      },
+      {
+        "className": "selectable-group",
+        "property": "background-color",
+        "values": [
+          "var(--accent)",
+          "var(--tone)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 213,
+            "selector": ".selectable-group > *:hover",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 221,
+            "selector": ".selectable-group > .is-selected",
+            "context": [],
+            "value": "var(--accent)"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 227,
+            "selector": ".selectable-group > .is-selected:hover",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "selected",
+        "property": "background-color",
+        "values": [
+          "#f8fafc",
+          "var(--status-error-wash)",
+          "var(--tone)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 28,
+            "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
+            "context": [],
+            "value": "var(--status-error-wash)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 71,
+            "selector": ".macro-suggestions-item.selected",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 111,
+            "selector": ".macro-suggestions-command-item.selected",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 98,
+            "selector": ".macro-search-item.selected .macro-search-item-command, .macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/content/overlays/views/search/searchViewStyles.css",
+            "line": 98,
+            "selector": ".macro-search-item.selected .macro-search-item-command, .macro-search-item.selected .macro-search-item-text",
+            "context": [],
+            "value": "var(--tone)"
+          },
+          {
+            "file": "src/styles.css",
+            "line": 115,
+            "selector": ".macro-search-item:hover, .macro-search-item.selected",
+            "context": [],
+            "value": "#f8fafc"
+          }
+        ]
+      },
+      {
+        "className": "selected",
+        "property": "border-color",
+        "values": [
+          "var(--accent)",
+          "var(--status-error)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 30,
+            "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 113,
+            "selector": ".macro-suggestions-command-item.selected",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "selected",
+        "property": "color",
+        "values": [
+          "var(--accent)",
+          "var(--status-error)"
+        ],
+        "definitions": [
+          {
+            "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES",
+            "line": 29,
+            "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
+            "context": [],
+            "value": "var(--status-error)"
+          },
+          {
+            "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+            "line": 112,
+            "selector": ".macro-suggestions-command-item.selected",
+            "context": [],
+            "value": "var(--accent)"
+          }
+        ]
+      },
+      {
+        "className": "sidebar-main",
+        "property": "flex",
+        "values": [
+          "0 0 auto",
+          "1 1 0%"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 179,
+            "selector": ".sidebar-main > :first-child",
+            "context": [],
+            "value": "0 0 auto"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 183,
+            "selector": ".sidebar-main > :last-child",
+            "context": [],
+            "value": "1 1 0%"
+          }
+        ]
+      },
+      {
+        "className": "text-2xl",
+        "property": "font-size",
+        "values": [
+          "20px",
+          "var(--text-2xl)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1205,
+            "selector": ".text-2xl",
+            "context": [],
+            "value": "var(--text-2xl)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 168,
+            "selector": ".text-2xl",
+            "context": [],
+            "value": "20px"
+          }
+        ]
+      },
+      {
+        "className": "text-base",
+        "property": "font-size",
+        "values": [
+          "13px",
+          "var(--text-base)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1189,
+            "selector": ".text-base",
+            "context": [],
+            "value": "var(--text-base)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 164,
+            "selector": ".text-base",
+            "context": [],
+            "value": "13px"
+          }
+        ]
+      },
+      {
+        "className": "text-lg",
+        "property": "font-size",
+        "values": [
+          "15px",
+          "var(--text-lg)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1197,
+            "selector": ".text-lg",
+            "context": [],
+            "value": "var(--text-lg)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 166,
+            "selector": ".text-lg",
+            "context": [],
+            "value": "15px"
+          }
+        ]
+      },
+      {
+        "className": "text-md",
+        "property": "font-size",
+        "values": [
+          "14px",
+          "var(--text-md)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1193,
+            "selector": ".text-md",
+            "context": [],
+            "value": "var(--text-md)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 165,
+            "selector": ".text-md",
+            "context": [],
+            "value": "14px"
+          }
+        ]
+      },
+      {
+        "className": "text-sm",
+        "property": "font-size",
+        "values": [
+          "12px",
+          "var(--text-sm)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1185,
+            "selector": ".text-sm",
+            "context": [],
+            "value": "var(--text-sm)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 163,
+            "selector": ".text-sm",
+            "context": [],
+            "value": "12px"
+          }
+        ]
+      },
+      {
+        "className": "text-xl",
+        "property": "font-size",
+        "values": [
+          "18px",
+          "var(--text-xl)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1201,
+            "selector": ".text-xl",
+            "context": [],
+            "value": "var(--text-xl)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 167,
+            "selector": ".text-xl",
+            "context": [],
+            "value": "18px"
+          }
+        ]
+      },
+      {
+        "className": "text-xs",
+        "property": "font-size",
+        "values": [
+          "11px",
+          "var(--text-xs)"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 1181,
+            "selector": ".text-xs",
+            "context": [],
+            "value": "var(--text-xs)"
+          },
+          {
+            "file": "src/styles/utilities.css",
+            "line": 162,
+            "selector": ".text-xs",
+            "context": [],
+            "value": "11px"
+          }
+        ]
+      },
+      {
+        "className": "two-sections",
+        "property": "grid-template-columns",
+        "values": [
+          "auto 1fr",
+          "max-content 1fr",
+          "subgrid"
+        ],
+        "definitions": [
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 169,
+            "selector": ".two-sections",
+            "context": [],
+            "value": "auto 1fr"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 345,
+            "selector": ".rows.two-sections.align-start-max",
+            "context": [],
+            "value": "max-content 1fr"
+          },
+          {
+            "file": "src/styles/layout-semantic.css",
+            "line": 351,
+            "selector": ".rows.two-sections.align-start-max > *",
+            "context": [],
+            "value": "subgrid"
+          }
+        ]
+      }
+    ]
+  },
+  "nonStylesheetWrites": {
+    "inlineStyleObjects": [
+      {
+        "file": "src/content/overlays/deleteConfirm/DeleteConfirmPopup.tsx",
+        "line": 47,
+        "expression": "left: position.x, top: position.y, position: 'fixed'"
+      },
+      {
+        "file": "src/content/overlays/modal/ui/ModalNavigation.tsx",
+        "line": 59,
+        "expression": "borderBottom: '1px solid var(--harmonic)', padding: '0 1rem'"
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/ui/MacroSuggestions.tsx",
+        "line": 163,
+        "expression": "left: position.x, top: position.y, position: 'fixed',"
+      },
+      {
+        "file": "src/content/overlays/views/settings/ui/SettingsView.tsx",
+        "line": 136,
+        "expression": "display: 'none'"
+      },
+      {
+        "file": "src/editor/ui/MacroForm.tsx",
+        "line": 125,
+        "expression": "display: 'flex', alignItems: 'center', justifyContent: 'space-between'"
+      },
+      {
+        "file": "src/editor/ui/MacroForm.tsx",
+        "line": 126,
+        "expression": "display: 'inline-flex', alignItems: 'center', gap: 'var(--spacing-sm)'"
+      },
+      {
+        "file": "src/editor/ui/MacroForm.tsx",
+        "line": 133,
+        "expression": "marginBottom: 0"
+      },
+      {
+        "file": "src/editor/ui/MacroItemEditor.tsx",
+        "line": 13,
+        "expression": "marginLeft: '8px', fontSize: 'var(--text-sm)', color: 'var(--ink-soft)'"
+      },
+      {
+        "file": "src/editor/ui/MacroItemEditor.tsx",
+        "line": 15,
+        "expression": "marginTop: 'var(--spacing-md)'"
+      },
+      {
+        "file": "src/editor/ui/Settings.tsx",
+        "line": 17,
+        "expression": "marginBottom: 0"
+      },
+      {
+        "file": "src/editor/ui/Settings.tsx",
+        "line": 20,
+        "expression": "width: 'auto'"
+      },
+      {
+        "file": "src/popup/ui/MacroItem.tsx",
+        "line": 22,
+        "expression": "backgroundColor: '#ca8a04'"
+      },
+      {
+        "file": "src/popup/ui/MacroSearch.tsx",
+        "line": 37,
+        "expression": "maxHeight: '256px', overflowY: 'auto'"
+      },
+      {
+        "file": "src/popup/ui/SiteToggle.tsx",
+        "line": 48,
+        "expression": "position: 'absolute', opacity: 0"
+      },
+      {
+        "file": "src/popup/ui/SiteToggle.tsx",
+        "line": 50,
+        "expression": "width: '44px', height: '24px', borderRadius: '9999px', backgroundColor: isEnabled ? 'var(--accent)' : 'var(--harmonic)', position: 'relative', transition: 'background-color 0.15s'"
+      },
+      {
+        "file": "src/popup/ui/SiteToggle.tsx",
+        "line": 58,
+        "expression": "content: '', position: 'absolute', top: '2px', left: isEnabled ? 'calc(100% - 22px)' : '2px', width: '20px', height: '20px', borderRadius: '9999px', backgroundColor: 'white', transition: 'left 0.15s', border: '1px solid var(--harmonic)'"
+      }
+    ],
+    "directStyleWrites": [
+      {
+        "file": "src/content/macroEngine/googledocs/googleDocsAdapter.ts",
+        "line": 70,
+        "expression": ".style.cssText ="
+      },
+      {
+        "file": "src/content/macroEngine/replacement/richTextReplacement.ts",
+        "line": 45,
+        "expression": ".style.display ="
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/utils/caretPosition.ts",
+        "line": 56,
+        "expression": ".style.position ="
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/utils/caretPosition.ts",
+        "line": 57,
+        "expression": ".style.visibility ="
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/utils/caretPosition.ts",
+        "line": 58,
+        "expression": ".style.whiteSpace ="
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/utils/caretPosition.ts",
+        "line": 59,
+        "expression": ".style.wordWrap ="
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/utils/caretPosition.ts",
+        "line": 60,
+        "expression": ".style.top ="
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/utils/caretPosition.ts",
+        "line": 61,
+        "expression": ".style.left ="
+      },
+      {
+        "file": "src/content/overlays/suggestionsOverlay/utils/caretPosition.ts",
+        "line": 62,
+        "expression": ".style.overflow ="
+      },
+      {
+        "file": "src/shared/ui/SegmentedControl.tsx",
+        "line": 38,
+        "expression": ".style.setProperty('--pill-left', `${b.offsetLeft}px`)"
+      },
+      {
+        "file": "src/shared/ui/SegmentedControl.tsx",
+        "line": 39,
+        "expression": ".style.setProperty('--pill-width', `${b.offsetWidth}px`)"
+      },
+      {
+        "file": "src/theme/hooks/useThemeColors.ts",
+        "line": 23,
+        "expression": ".style.setProperty(property, value)"
+      },
+      {
+        "file": "src/theme/ui/ThemeManager.tsx",
+        "line": 28,
+        "expression": ".style.setProperty(key, value)"
+      }
+    ]
+  },
+  "measurements": {
+    "scope": {
+      "total": 1409,
+      "custom": 42,
+      "real": 1367,
+      "covered": 1119,
+      "uncovered": {
+        "-moz-appearance": 2,
+        "-moz-osx-font-smoothing": 1,
+        "-moz-tab-size": 1,
+        "-webkit-appearance": 2,
+        "-webkit-box-orient": 1,
+        "-webkit-font-smoothing": 1,
+        "-webkit-line-clamp": 1,
+        "-webkit-text-size-adjust": 1,
+        "accent-color": 2,
+        "align-content": 1,
+        "animation": 5,
+        "appearance": 1,
+        "aspect-ratio": 1,
+        "backdrop-filter": 1,
+        "bottom": 5,
+        "box-sizing": 6,
+        "content": 3,
+        "cursor": 26,
+        "height": 23,
+        "inset": 2,
+        "left": 10,
+        "letter-spacing": 1,
+        "list-style": 1,
+        "list-style-type": 2,
+        "mix-blend-mode": 1,
+        "opacity": 24,
+        "outline": 13,
+        "pointer-events": 7,
+        "right": 4,
+        "scroll-behavior": 1,
+        "scrollbar-color": 3,
+        "scrollbar-width": 1,
+        "src": 1,
+        "tab-size": 1,
+        "text-decoration": 8,
+        "text-overflow": 7,
+        "text-transform": 4,
+        "top": 9,
+        "transform": 12,
+        "user-select": 6,
+        "vertical-align": 1,
+        "white-space": 14,
+        "width": 29,
+        "word-break": 2
+      }
+    },
+    "values": {
+      "spacing": {
+        "totalTokens": 268,
+        "kinds": {
+          "zero": 44,
+          "length": 140,
+          "percent": 0,
+          "keyword": 5,
+          "var": 79,
+          "calc": 0,
+          "other": 0
+        },
+        "rawLengths": 140,
+        "distinctLengths": 16,
+        "lengths": [
+          [
+            1,
+            1
+          ],
+          [
+            1.6,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3.2,
+            1
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            5.6,
+            1
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6.4,
+            3
+          ],
+          [
+            8,
+            22
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            12,
+            33
+          ],
+          [
+            16,
+            21
+          ],
+          [
+            20,
+            6
+          ],
+          [
+            24,
+            12
+          ],
+          [
+            32,
+            2
+          ]
+        ],
+        "topValues": [
+          [
+            12,
+            33
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            22
+          ],
+          [
+            16,
+            21
+          ],
+          [
+            24,
+            12
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            20,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6.4,
+            3
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            32,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1.6,
+            1
+          ],
+          [
+            5.6,
+            1
+          ],
+          [
+            3.2,
+            1
+          ]
+        ],
+        "topCoverage6": 0.8428571428571429,
+        "topCoverage12": 0.9714285714285714,
+        "gridAlignedShare": 0.8571428571428571,
+        "zeroShare": 0.16417910447761194
+      },
+      "size": {
+        "totalTokens": 94,
+        "kinds": {
+          "zero": 16,
+          "length": 41,
+          "percent": 15,
+          "keyword": 7,
+          "var": 3,
+          "calc": 2,
+          "other": 10
+        },
+        "rawLengths": 41,
+        "distinctLengths": 26,
+        "lengths": [
+          [
+            1,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            16,
+            5
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            26,
+            2
+          ],
+          [
+            28,
+            3
+          ],
+          [
+            32,
+            2
+          ],
+          [
+            36,
+            1
+          ],
+          [
+            48,
+            3
+          ],
+          [
+            128,
+            1
+          ],
+          [
+            140,
+            1
+          ],
+          [
+            150,
+            2
+          ],
+          [
+            200,
+            1
+          ],
+          [
+            240,
+            1
+          ],
+          [
+            280,
+            1
+          ],
+          [
+            300,
+            1
+          ],
+          [
+            320,
+            2
+          ],
+          [
+            360,
+            1
+          ],
+          [
+            384,
+            1
+          ],
+          [
+            400,
+            1
+          ],
+          [
+            448,
+            1
+          ],
+          [
+            512,
+            1
+          ],
+          [
+            576,
+            1
+          ],
+          [
+            600,
+            1
+          ],
+          [
+            672,
+            2
+          ]
+        ],
+        "topValues": [
+          [
+            16,
+            5
+          ],
+          [
+            48,
+            3
+          ],
+          [
+            28,
+            3
+          ],
+          [
+            26,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            32,
+            2
+          ],
+          [
+            150,
+            2
+          ],
+          [
+            672,
+            2
+          ],
+          [
+            320,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            200,
+            1
+          ],
+          [
+            360,
+            1
+          ],
+          [
+            128,
+            1
+          ],
+          [
+            280,
+            1
+          ],
+          [
+            400,
+            1
+          ],
+          [
+            36,
+            1
+          ],
+          [
+            140,
+            1
+          ],
+          [
+            24,
+            1
+          ],
+          [
+            384,
+            1
+          ],
+          [
+            448,
+            1
+          ],
+          [
+            512,
+            1
+          ],
+          [
+            576,
+            1
+          ],
+          [
+            600,
+            1
+          ],
+          [
+            300,
+            1
+          ],
+          [
+            240,
+            1
+          ]
+        ],
+        "topCoverage6": 0.4146341463414634,
+        "topCoverage12": 0.6585365853658537,
+        "gridAlignedShare": 0.8292682926829268,
+        "zeroShare": 0.1702127659574468
+      }
+    }
+  },
+  "limitations": [
+    "Only src/ is scanned; ignored docs, fixtures, public test pages, build output, dependencies, and test files are excluded.",
+    "Static syntax only: runtime-computed imports, class names, selectors, and CSSOM mutations are not interpreted.",
+    "Template CSS detection is limited to const-assigned template literals containing declaration-shaped text.",
+    "Dynamic class expressions contribute discoverable literal branches, but possible co-occurrence is not inferred.",
+    "State and relational entailment are not judged from string extraction; application markup requires later review.",
+    "Inline style objects and direct .style writes are counted as limitations and are not converted into declaration ledger records.",
+    "The CSS parser handles ordinary nested at-rules but does not execute preprocessors, resolve the cascade, or observe computed styles.",
+    "Property-family coverage comes from analysis/lib.ts and is a compatibility ceiling, not proof of semantic equivalence."
+  ]
+}
