@@ -2,8 +2,8 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "bdabb07f18953043a9842ca52274c4b742791c97",
-    "monkyCommit": "fc2af4525beadc0d0b85144f615e2f0fe8bd2acf"
+    "ermineCommit": "00a0e4f917394bef3892dfc47df6dd5ef164d4f6",
+    "monkyCommit": "73e582c0da73db506bbddcfe5953ada1832e55d0"
   },
   "records": [
     {
@@ -3842,12 +3842,11 @@
       "selector": ".macro-search-kbd",
       "property": "display",
       "value": "inline-flex",
-      "evidence": "U5 modal/search review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint.",
+      "evidence": "U5 Chromium finding: the old inline-flex outer mode was blockified because the kbd is a flex item; horizontal reproduces computed display:flex without an inert m1 word.",
       "disposition": "grammar-composition",
-      "axis": "structure + m1-flow-participation",
+      "axis": "structure",
       "words": [
-        "horizontal",
-        "inline"
+        "horizontal"
       ]
     },
     {
