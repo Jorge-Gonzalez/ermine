@@ -1,0 +1,13 @@
+{
+  "name": "@ermine/vite-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "JIT Ermine emission for Vite: scan markup for grammar words, emit only the authored subset as CSS",
+  "devDependencies": {
+    "vite": "^7.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

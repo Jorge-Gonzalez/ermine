@@ -25,6 +25,9 @@ lib/
 # *.css
 # *.css.map
 
+# ── Ermine build artifacts (reproducible from source) ────────
+demo/ermine.generated.css
+
 # ── Test / coverage ──────────────────────────────────────────
 coverage/
 *.lcov
