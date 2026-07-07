@@ -151,6 +151,58 @@ During U6 and U7, executors should:
 The useful question for U6/U7 is not "can this become an Ermine word now?" but
 "does this surface produce independent evidence for the same perceptual choice?"
 
+## U6 settings/editor evidence
+
+Source report: `reports/adoption/monky/pilots/SETTINGS-EDITOR.md`  
+Measured Monky result: `df194bae51b905172dfd16ed38698b3a376eac7d`
+
+U6 conserved 208 baseline settings/editor declarations. It migrated 66 structural
+declarations to existing Ermine grammar and retained 142 local residuals. Of those
+residuals, 85 were classified `skin-local`.
+
+U6 `skin-local` property-family evidence:
+
+| Property family | Count |
+|---|---:|
+| `color` | 20 |
+| `background` | 13 |
+| `font-size` | 9 |
+| `transition` | 6 |
+| `background-color` | 5 |
+| `border` | 5 |
+| `opacity` | 5 |
+| `border-radius` | 4 |
+| `font-weight` | 3 |
+| `border-bottom-left-radius` | 2 |
+| `border-bottom-right-radius` | 2 |
+| `border-right` | 2 |
+| `box-shadow` | 2 |
+| `border-bottom` | 1 |
+| `border-right-color` | 1 |
+| `border-top` | 1 |
+| `letter-spacing` | 1 |
+| `line-height` | 1 |
+| `text-align` | 1 |
+| `text-transform` | 1 |
+
+The new evidence comes from independent surfaces beyond the U5 modal/search pilot:
+settings groups, segmented controls, macro-editor chrome, command suggestions, and
+shared content-editor chrome. It reinforces the same open skin families:
+
+| Proposal family | U6 evidence shape | Current disposition |
+|---|---|---|
+| `ground` | editor dropdowns, command rows, segmented controls, and settings controls rely on surface shifts | descriptive only |
+| `ink` | command text, selected rows, icons, labels, and status feedback need explicit prominence relationships | descriptive only |
+| `rule` | settings dividers, segmented-control seams, command dropdown edges, and toolbar/menu borders show separator pressure | descriptive only |
+| `corner` | segmented controls, popout/action buttons, validation panels, dropdowns, and toolbar controls repeat radius choices | descriptive only |
+| `treatments` | hover, selected, checked, delete-confirming, validation, and success/error treatments recur across editor surfaces | descriptive only |
+| `scroller` | no new independent scrollbar evidence was added by U6 | descriptive only |
+
+U6 also confirms that state backing and skin treatment are separate decisions:
+command suggestions now use `aria-selected`/`data-state`, and segmented controls now
+use `aria-checked`; their colors, backgrounds, opacity, borders, and radius remain
+Monky skin evidence until U-SKIN rules vocabulary.
+
 ## Not yet decided
 
 - Whether `ground`, `ink`, `rule`, `corner`, `treatments`, and `scroller` become Ermine
