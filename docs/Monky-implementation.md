@@ -780,6 +780,203 @@ public shared-UI styling hooks without compatibility review.
 
 ---
 
+## U8b — Triage remaining uncertain ledger records
+
+**Objective.** Classify the post-U8 `uncertain` ledger tail by resolution mechanism so
+U8c–U8e and U9 can resolve it without mixing mechanical cleanup, shared rulings, and
+genuine human judgment.
+
+**Repositories.** Ermine evidence first; Monky edits only if the report identifies
+mechanically dead records that can be removed without behavior or API change.
+
+**Steps.**
+
+1. Freeze the post-U8 ledger source commits and record the starting `uncertain` count.
+   This order begins from the U8 ledger tail, not from a fresh baseline.
+2. Produce `reports/adoption/monky/pilots/UNCERTAIN-TRIAGE.md` grouping every remaining
+   `uncertain` record into one of these buckets:
+   - **dead-code candidate** — source file, selector, or static class token appears to
+     have no remaining consumer;
+   - **existing-Ermine candidate** — declaration/value appears mechanically expressible
+     by an existing structural word, pending context confirmation;
+   - **shared-ruling candidate** — multiple records can be resolved by the same
+     constitution/skin ruling rather than one-by-one judgment;
+   - **Monky identity-local candidate** — value belongs to a specific component contract,
+     public hook, state, viewport behavior, or product identity;
+   - **Ermine-evolution candidate** — record is evidence for new vocabulary or a Gap
+     Report, especially skin/theme, rounding intensity, separators, surface hierarchy,
+     scrollbar prominence, overflow semantics, or toolbar/icon treatment.
+3. For each bucket, include counts by file, property family, and representative record
+   IDs. The report must be an indexed list or link to one; summary counts alone are not
+   enough.
+4. Mark which buckets are safe to automate in a later order. Automation candidates must
+   name the evidence needed to avoid false positives, for example static token usage,
+   selector reachability, generated CSS inverse mapping, or computed-style equality.
+5. Identify same-ruling groups explicitly. A same-ruling group must name the proposed
+   controlling question, the affected property families, and the records it would
+   resolve if ruled.
+6. Do not change a ledger disposition from `uncertain` to a terminal value unless the
+   evidence is purely mechanical and the report records the rule used. Judgment-heavy
+   records remain `uncertain` with a more specific `pending` note.
+7. Append any skin-shaped findings to `SKIN-EVIDENCE.md` by reference to the triage
+   report. Do not introduce new Ermine skin words in this order.
+
+**Acceptance criteria.**
+
+- The post-U8 `uncertain` count is fully conserved: every starting uncertain record is
+  either still present with a sharper pending note or has a terminal disposition backed
+  by a mechanical rule documented in the triage report.
+- `UNCERTAIN-TRIAGE.md` includes bucket counts, file counts, property-family counts,
+  representative IDs, and a complete indexed mapping from record ID to bucket.
+- Same-ruling candidates are grouped so one later ruling can resolve many records
+  without re-reviewing each declaration.
+- Automatable candidates are separated from human-only candidates.
+- No new Ermine vocabulary, constitution ruling, or project skin token is created.
+- Ermine adoption checks and ledger validation pass.
+
+**Out of scope.** Finishing all remaining uncertain records; redesigning Monky skin;
+adding skin/theme grammar; rewriting components merely to simplify the ledger.
+
+---
+
+## U8c — Decide the Ermine theme/skin boundary
+
+**Objective.** Turn U8b's shared-ruling and Ermine-evolution candidates into explicit
+boundary decisions before U9 publishes the Monky outcome.
+
+**Repositories.** Ermine only, except optional Monky read-only references.
+
+**Inputs.**
+
+- `reports/adoption/monky/pilots/UNCERTAIN-TRIAGE.md`
+- `reports/adoption/monky/SKIN-EVIDENCE.md`
+- `docs/SKIN-GRAMMAR-PROPOSAL.md`
+- Monky's current theme directory and theme-selection behavior as reference evidence.
+
+**Steps.**
+
+1. Define the theme-plane boundary in writing:
+   - Ermine may own value-free socket names, socket families, validation shape,
+     generated type contracts, theme × mode resolution interface, and DOM application
+     helpers.
+   - Projects continue to own actual palettes, user-selected theme persistence,
+     framework glue, product-specific values, and migration timing.
+2. Decide whether each U8b same-ruling group is:
+   - admitted into the Ermine theme/skin plane;
+   - explicitly retained as project-local skin/identity;
+   - deferred with a named Gap Report.
+3. Address at least these groups:
+   - theme metric sockets: spacing, radius, text-size, transition scales;
+   - base substrate defaults: host/body typography, box sizing, input inheritance,
+     base tone/ink defaults;
+   - type/ink treatment;
+   - surface/rule/corner treatment;
+   - scrollbar prominence;
+   - motion/status treatment;
+   - rich-text editor content defaults.
+4. Record decisions in the constitution, rationale, or Gap Reports according to R1.
+   Do not smuggle decisions into adoption reports.
+5. Update `SKIN-GRAMMAR-PROPOSAL.md` only as explanatory design material; it is not the
+   controlling ruling unless the constitution explicitly defers to it.
+6. Mark affected docs/stale nodes if the doc system requires impact tracking.
+
+**Acceptance criteria.**
+
+- Every U8b same-ruling group has a controlling decision, an explicit project-local
+  retention, or a named Gap Report.
+- The theme-system integration split is explicit: Ermine owns the socket skeleton and
+  generic resolution/application plane; Monky owns palettes, persistence, and React glue.
+- No implementation code is added unless needed to keep generated docs/checks coherent.
+- Ermine `npm run check` passes.
+
+**Out of scope.** Implementing the theme plane; changing Monky styles; selecting final
+palette values; resolving every identity-local record.
+
+---
+
+## U8d — Implement the minimal Ermine theme-plane skeleton
+
+**Objective.** Implement only the value-free theme/skin skeleton admitted by U8c, with
+generated contracts and validation, before Monky adopts it.
+
+**Repositories.** Ermine first; Monky read-only for fixture evidence.
+
+**Steps.**
+
+1. Add registry-owned skin/theme socket definitions for the families admitted by U8c.
+   The socket list is the identity of the plane; do not allow projects to invent
+   unregistered socket names.
+2. Generate a type contract equivalent to `Record<SkinSocket, value>` plus any narrower
+   family helpers needed by consumers.
+3. Implement value validation for project palettes without embedding Monky palette
+   values in Ermine.
+4. Implement theme × mode resolution as a framework-free function. It should accept a
+   project palette set and a selected theme/mode, and return the resolved socket-value
+   record.
+5. Implement DOM application as a small framework-free helper that writes the resolved
+   sockets to an element/root as CSS custom properties.
+6. Add fixtures covering:
+   - valid and invalid socket records;
+   - theme × light/dark mode resolution;
+   - DOM application without React;
+   - no-diff generation/check behavior.
+7. Update generated docs/surfaces so editor/tooling consumers can discover the sockets.
+
+**Acceptance criteria.**
+
+- The socket contract is generated from registry-owned data, not hand-maintained.
+- A non-React consumer can validate, resolve, and apply a theme with no Monky imports.
+- Missing, extra, or invalid socket values fail clearly.
+- No Monky palette, storage, or React hook logic enters Ermine.
+- Ermine `npm run check` passes.
+
+**Out of scope.** Full skin word grammar; palette design; Monky adoption; visual
+redesign; automatic classification of all U8b records.
+
+---
+
+## U8e — Apply theme/skin rulings to the Monky adoption ledger
+
+**Objective.** Use U8c rulings and U8d skeleton behavior to terminally classify the
+U8b shared-ruling and existing-Ermine candidates that are now safe, while preserving
+honest residuals for U9.
+
+**Repositories.** Ermine evidence and Monky implementation as needed.
+
+**Steps.**
+
+1. Pin the Ermine commit that contains the U8c rulings and U8d implementation.
+2. If Monky adopts the new theme-plane skeleton, reduce Monky's theme glue so it owns
+   palettes, selection persistence, and React integration only. Record any accepted
+   behavior or computed-style changes.
+3. Update the adoption ledger only with controlling evidence:
+   - existing-Ermine candidates become `grammar-exact` or `grammar-composition` only
+     when inverse generated-CSS lookup and context confirm equivalence;
+   - skin/theme candidates become `skin-local`, `substrate`, or another admitted
+     terminal disposition only under the U8c ruling;
+   - project-specific component contracts become `identity-local`;
+   - unresolved evolution questions become `gap` with named Gap Reports.
+4. Preserve declaration conservation. Do not drop records when old source files were
+   deleted; classify the original declaration's disposition.
+5. Write `reports/adoption/monky/pilots/THEME-LEDGER-RESOLUTION.md` with before/after
+   counts, controlling rulings, generated commands, and accepted residuals.
+6. Update `SKIN-EVIDENCE.md` with any new evidence or negative rulings.
+
+**Acceptance criteria.**
+
+- Every ledger disposition changed in U8e cites a controlling ruling, generated inverse
+  match, reachability proof, or project identity rationale.
+- U8b bucket counts are consumed explicitly; no candidate disappears without a terminal
+  disposition or named Gap Report.
+- Monky theme glue, if touched, is thinner than before and contains no Ermine-owned
+  socket definitions.
+- Ermine checks and relevant Monky tests/build/style checks pass.
+
+**Out of scope.** Publishing the final adoption report; inventing new skin vocabulary
+outside U8c; redesigning Monky appearance; forcing unresolved records to zero.
+
+---
+
 ## U-SKIN — Continuous skin evidence and ruling loop
 
 **Objective.** Use recurring Monky residuals to inform Ermine's open skin work without
@@ -826,9 +1023,19 @@ from one product; treating recurrence as proof of admission.
 ## U9 — Generalize the tooling and publish the Monky outcome
 
 **Objective.** Separate the reusable adoption method from Monky-specific handling and
-close the case study with reproducible before/after evidence.
+close the case study with reproducible before/after evidence after the U8b uncertainty
+tail has either been terminally resolved, ruled project-local, or explicitly blocked by
+named Gap Reports.
 
 **Repositories.** Ermine primarily; small Monky documentation update allowed.
+
+**Preconditions.**
+
+- U8b triage exists and every post-U8 uncertain record has a bucket.
+- U8c has decided or deferred the theme/skin boundary.
+- U8d has implemented any Ermine theme-plane skeleton admitted by U8c.
+- U8e has applied those decisions to the Monky adoption ledger as far as the rulings
+  permit.
 
 **Steps.**
 
@@ -863,7 +1070,7 @@ close the case study with reproducible before/after evidence.
 
 - Final analyzer regeneration is a no-op.
 - Every baseline declaration has a terminal disposition; `uncertain` is zero unless
-  explicitly human-blocked and listed.
+  explicitly human-blocked by a named Gap Report or project-local decision and listed.
 - All numbers in `FINAL.md` trace to generated JSON or named commands.
 - Generic fixture tests pass without Monky checked out.
 - Ermine `npm run check` and Monky tests/build/browser/style lint all exit 0.

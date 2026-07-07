@@ -277,6 +277,36 @@ rulings:
 - **Density gap at 2xl (24px).** No step sits between `loose` (20px) and `separated`
   (40px); the modal nav tab's 24px inline padding stayed identity.
 
+## U8b uncertain-tail evidence
+
+Source report: `reports/adoption/monky/pilots/UNCERTAIN-TRIAGE.md`
+
+U8b did not add terminal skin dispositions. It triaged the 329 post-U8 `uncertain`
+records so future work can separate mechanical cleanup from actual rulings:
+
+| U8b bucket | Count | Skin relevance |
+|---|---:|---|
+| Existing-Ermine candidate | 93 | structural candidates; not skin evidence unless context rejects grammar |
+| Shared-ruling candidate | 150 | direct skin/theme/type/base evidence |
+| Monky identity-local candidate | 49 | mostly component contracts; may become evidence only after recurrence |
+| Ermine-evolution candidate | 37 | direct Gap Report / proposal evidence |
+| Dead-code candidate | 0 | no skin evidence |
+
+The strongest skin-shaped groups are:
+
+| Proposal pressure | Evidence shape | Current disposition |
+|---|---|---|
+| `ground` / theme sockets | base tone, tone, tone-dim, background fills, and host/body surface defaults recur across popup, search, pages, and editor | descriptive only |
+| `ink` / type | text color, text size, font family, font weight, line height, and rich-text editor defaults dominate the shared-ruling bucket | descriptive only |
+| `rule` | borders, border colors, separators, and focus rings recur in controls, search rows, editor fields, and keyboard caps | descriptive only |
+| `corner` | radius tokens and concrete radii recur across inputs, keyboard caps, dropdowns, editor fields, and scrollbar thumbs | descriptive only |
+| `treatments` | hover, selected, focus, disabled/min-selected, flash, and shake records show treatment pressure but no settled vocabulary | descriptive only |
+| `scroller` | 23 scrollbar-related records now form the clearest explicit-scrollbar evidence set, including size, track/thumb color, radius, border, and hover | descriptive only |
+
+U8b also records that file deletion alone is not a safe skin cleanup rule: several
+records from deleted or retired sheets have surviving intent in relocated skin,
+component, or generated-grammar surfaces.
+
 ## Not yet decided
 
 - Whether Ermine's overflow axis should gain an `overflow: hidden` word distinct from
