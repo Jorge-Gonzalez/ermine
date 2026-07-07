@@ -4,6 +4,9 @@ Status: evidence checkpoint after U5. No vocabulary here is a constitution rulin
 no Monky class should use these proposal words until U-SKIN produces a ruling and the
 registry/generated artifacts land in Ermine.
 
+This is a cumulative document: U-SKIN extends it with per-order sections after U6–U8.
+Earlier evidence is never overwritten.
+
 ## Provenance
 
 | Evidence | Source |
@@ -79,6 +82,15 @@ This is the first Monky evidence for the proposal families:
 | `treatments` | active/focus/selection/hover are composed visual effects, not just single values | descriptive only |
 | `scroller` | intended scrollbar is explicit UI, not hidden mechanics | descriptive only |
 
+Coverage note: the six proposal families do not cover the whole seed. The largest
+uncovered cluster is **type** — `font-size` 8, `font-weight` 3, `font-family` 2,
+`font-style` 2, `font-variant-numeric` 1 — 16 declarations, second only to color
+pressure. Next are **motion** (`transition` 3), `mix-blend-mode` 1, and `text-align` 1.
+The proposal deliberately names no type or motion family yet; the type decision is
+already tracked by `reports/GAP-K6-skin-type.md`. These records remain `skin-local`
+evidence with no family tag. (`opacity`, `outline`, and `box-shadow` sit near `ink`
+and `treatments`, but that assignment is itself an open call, not made here.)
+
 ## Theme-plane observation
 
 Monky already resolves colors through a matrix:
@@ -116,17 +128,14 @@ Boundary test: Monky's current `useThemeColors` should eventually reduce to thin
 glue around a framework-free Ermine resolver/applicator, and a non-React consumer
 should be able to use the same theme plane without carrying Monky dependencies.
 
-## Monky-only follow-up identified
+## Monky-only follow-up (resolved)
 
-`monky/src/styles/theme/metrics.css` currently contains:
-
-```css
-scrollbar-color: var(---tone) var(--tone-dim);
-```
-
-That should be `var(--tone)`. This is a Monky typo fix and should be committed
-separately from Ermine skin vocabulary work. It may affect the explicit scrollbar
-affordance evidence, but it is not a ruling.
+`monky/src/styles/theme/metrics.css` contained `scrollbar-color: var(---tone)
+var(--tone-dim);` — a typo for `var(--tone)`. It was fixed in Monky commit
+`c444d2f fix(styles): correct scrollbar tone variable`, as its own commit separate
+from skin vocabulary work, as the protocol requires. The measured U5 result
+(`73e582c…`) still contained the typo; future U6/U7 scrollbar evidence should be read
+from the corrected Monky state.
 
 ## How U6 and U7 should use this report
 

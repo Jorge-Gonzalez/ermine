@@ -792,9 +792,14 @@ components retain the same skin-shaped need.
 
 1. Group `skin-local` records by property family, treatment intent, and recurrence.
    Similar numeric values alone are not sufficient; the role/intent must also match.
-2. Publish `reports/adoption/monky/SKIN-EVIDENCE.md` with counts and examples. Separate:
-   surface/tone, ink, radius, type, shadow/elevation, control treatment, focus treatment,
-   status treatment, and anything genuinely unclassified.
+2. Extend `reports/adoption/monky/SKIN-EVIDENCE.md` — a cumulative document seeded by
+   U5.1; add per-order sections, never overwrite prior evidence — with counts and
+   examples. Separate: surface/tone, ink, radius, type, shadow/elevation, control
+   treatment, focus treatment, status treatment, and anything genuinely unclassified.
+   Where the U5.1 proposal names a family, tag with both taxonomies: surface/tone →
+   `ground`, radius → `corner`, shadow/elevation and control/focus/status treatments →
+   `treatments`. Type and motion have no proposal family yet; they stay in the
+   pre-proposal category names.
 3. Check existing skin Gap Reports and constitution rulings. Append evidence to the
    adoption report; do not edit an already-filed Gap Report to smuggle in a decision.
 4. If a required choice remains absent, file a new `GAP-U-*` report or cross-reference
