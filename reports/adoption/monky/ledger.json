@@ -3,7 +3,7 @@
   "project": "monky",
   "source": {
     "ermineCommit": "00a0e4f917394bef3892dfc47df6dd5ef164d4f6",
-    "monkyCommit": "df194bae51b905172dfd16ed38698b3a376eac7d"
+    "monkyCommit": "5e1b3292fc54ffaae19e8f5c5a052ac481aade11"
   },
   "records": [
     {
@@ -12,9 +12,8 @@
       "selector": ".macro-suggestions-container.delete-confirm",
       "property": "min-width",
       "value": "240px",
-      "evidence": "Mechanical baseline only: Ermine owns the min-width property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the min-width property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.delete-confirm-message::padding::1",
@@ -22,9 +21,8 @@
       "selector": ".delete-confirm-message",
       "property": "padding",
       "value": "10px 12px",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.delete-confirm-message::font-size::1",
@@ -32,9 +30,8 @@
       "selector": ".delete-confirm-message",
       "property": "font-size",
       "value": "13px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.delete-confirm-message::color::1",
@@ -42,9 +39,8 @@
       "selector": ".delete-confirm-message",
       "property": "color",
       "value": "var(--ink)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.delete-confirm-message::border-bottom::1",
@@ -52,9 +48,8 @@
       "selector": ".delete-confirm-message",
       "property": "border-bottom",
       "value": "1px solid var(--harmonic-minor)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.delete-confirm-command::font-family::1",
@@ -62,9 +57,8 @@
       "selector": ".delete-confirm-command",
       "property": "font-family",
       "value": "monospace",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.delete-confirm-command::font-weight::1",
@@ -72,9 +66,8 @@
       "selector": ".delete-confirm-command",
       "property": "font-weight",
       "value": "600",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.delete-confirm-command::color::1",
@@ -82,9 +75,8 @@
       "selector": ".delete-confirm-command",
       "property": "color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.macro-suggestions-command-item.delete-confirm-option::flex::1",
@@ -92,9 +84,13 @@
       "selector": ".macro-suggestions-command-item.delete-confirm-option",
       "property": "flex",
       "value": "1 1 0",
-      "evidence": "Mechanical baseline only: Ermine owns the flex property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the flex property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 suggestions/delete review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint and Monky style smoke.",
+      "disposition": "grammar-composition",
+      "axis": "m2-flex + m3-self-size",
+      "words": [
+        "elastic",
+        "basis-ratio"
+      ]
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.macro-suggestions-command-item.delete-confirm-option::max-width::1",
@@ -102,9 +98,8 @@
       "selector": ".macro-suggestions-command-item.delete-confirm-option",
       "property": "max-width",
       "value": "none",
-      "evidence": "Mechanical baseline only: Ermine owns the max-width property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the max-width property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.macro-suggestions-command-item.delete-confirm-danger.selected::background-color::1",
@@ -112,9 +107,8 @@
       "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
       "property": "background-color",
       "value": "var(--status-error-wash)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual skin treatment; Monky result moved class-only selected truth to aria-selected selectors while preserving the visual treatment.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.macro-suggestions-command-item.delete-confirm-danger.selected::color::1",
@@ -122,9 +116,8 @@
       "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
       "property": "color",
       "value": "var(--status-error)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual skin treatment; Monky result moved class-only selected truth to aria-selected selectors while preserving the visual treatment.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.ts#DELETE_CONFIRM_STYLES::.macro-suggestions-command-item.delete-confirm-danger.selected::border-color::1",
@@ -132,9 +125,8 @@
       "selector": ".macro-suggestions-command-item.delete-confirm-danger.selected",
       "property": "border-color",
       "value": "var(--status-error)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual skin treatment; Monky result moved class-only selected truth to aria-selected selectors while preserving the visual treatment.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::position::1",
@@ -593,9 +585,8 @@
       "selector": ":host, #macro-suggestions",
       "property": "font-family",
       "value": "'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::line-height::1",
@@ -603,9 +594,8 @@
       "selector": ":host, #macro-suggestions",
       "property": "line-height",
       "value": "1.5",
-      "evidence": "Mechanical baseline only: Ermine owns the line-height property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the line-height property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::position::1",
@@ -613,9 +603,8 @@
       "selector": ":host, #macro-suggestions",
       "property": "position",
       "value": "fixed !important",
-      "evidence": "Mechanical baseline only: Ermine owns the position property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the position property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::z-index::1",
@@ -623,9 +612,8 @@
       "selector": ":host, #macro-suggestions",
       "property": "z-index",
       "value": "2147483646 !important",
-      "evidence": "Mechanical baseline only: Ermine owns the z-index property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the z-index property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::#macro-suggestions *::box-sizing::1",
@@ -633,9 +621,8 @@
       "selector": "#macro-suggestions *",
       "property": "box-sizing",
       "value": "border-box",
-      "evidence": "Mechanical baseline only: Ermine does not own the box-sizing property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: Shadow-root/browser substrate or inherited form-control normalization retained outside grammar migration.",
+      "disposition": "substrate"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::button, input, textarea, select::font-family::1",
@@ -643,9 +630,8 @@
       "selector": "button, input, textarea, select",
       "property": "font-family",
       "value": "inherit",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: Shadow-root/browser substrate or inherited form-control normalization retained outside grammar migration.",
+      "disposition": "substrate"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::background-color::1",
@@ -653,9 +639,8 @@
       "selector": ".macro-suggestions-container",
       "property": "background-color",
       "value": "var(--base-tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::border-radius::1",
@@ -663,9 +648,8 @@
       "selector": ".macro-suggestions-container",
       "property": "border-radius",
       "value": "8px",
-      "evidence": "Mechanical baseline only: Ermine owns the border-radius property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border-radius property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::box-shadow::1",
@@ -673,9 +657,8 @@
       "selector": ".macro-suggestions-container",
       "property": "box-shadow",
       "value": "0 10px 25px -5px var(--shadow-color)",
-      "evidence": "Mechanical baseline only: Ermine owns the box-shadow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the box-shadow property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::border::1",
@@ -683,9 +666,8 @@
       "selector": ".macro-suggestions-container",
       "property": "border",
       "value": "1px solid var(--harmonic)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::min-width::1",
@@ -693,9 +675,8 @@
       "selector": ".macro-suggestions-container",
       "property": "min-width",
       "value": "200px",
-      "evidence": "Mechanical baseline only: Ermine owns the min-width property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the min-width property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::max-width::1",
@@ -703,9 +684,8 @@
       "selector": ".macro-suggestions-container",
       "property": "max-width",
       "value": "360px",
-      "evidence": "Mechanical baseline only: Ermine owns the max-width property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the max-width property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::font-size::1",
@@ -713,9 +693,8 @@
       "selector": ".macro-suggestions-container",
       "property": "font-size",
       "value": "14px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::overflow::1",
@@ -723,9 +702,8 @@
       "selector": ".macro-suggestions-container",
       "property": "overflow",
       "value": "hidden",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::transition::1",
@@ -733,9 +711,8 @@
       "selector": ".macro-suggestions-container",
       "property": "transition",
       "value": "opacity 0.15s ease, transform 0.15s ease",
-      "evidence": "Mechanical baseline only: Ermine owns the transition property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the transition property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow::position::1",
@@ -743,9 +720,12 @@
       "selector": ".macro-suggestions-arrow",
       "property": "position",
       "value": "absolute",
-      "evidence": "Mechanical baseline only: Ermine owns the position property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the position property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 suggestions/delete review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint and Monky style smoke.",
+      "disposition": "grammar-exact",
+      "axis": "position-mode",
+      "words": [
+        "position-absolute"
+      ]
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow::width::1",
@@ -753,9 +733,8 @@
       "selector": ".macro-suggestions-arrow",
       "property": "width",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine does not own the width property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow::height::1",
@@ -763,9 +742,8 @@
       "selector": ".macro-suggestions-arrow",
       "property": "height",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine does not own the height property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow::border::1",
@@ -773,9 +751,8 @@
       "selector": ".macro-suggestions-arrow",
       "property": "border",
       "value": "6px solid transparent",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::top::1",
@@ -783,9 +760,8 @@
       "selector": ".macro-suggestions-arrow.top",
       "property": "top",
       "value": "100%",
-      "evidence": "Mechanical baseline only: Ermine does not own the top property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::left::1",
@@ -793,9 +769,8 @@
       "selector": ".macro-suggestions-arrow.top",
       "property": "left",
       "value": "50%",
-      "evidence": "Mechanical baseline only: Ermine does not own the left property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::transform::1",
@@ -803,9 +778,8 @@
       "selector": ".macro-suggestions-arrow.top",
       "property": "transform",
       "value": "translateX(-50%)",
-      "evidence": "Mechanical baseline only: Ermine does not own the transform property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::border-top-color::1",
@@ -813,9 +787,8 @@
       "selector": ".macro-suggestions-arrow.top",
       "property": "border-top-color",
       "value": "var(--base-tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::bottom::1",
@@ -823,9 +796,8 @@
       "selector": ".macro-suggestions-arrow.bottom",
       "property": "bottom",
       "value": "100%",
-      "evidence": "Mechanical baseline only: Ermine does not own the bottom property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::left::1",
@@ -833,9 +805,8 @@
       "selector": ".macro-suggestions-arrow.bottom",
       "property": "left",
       "value": "50%",
-      "evidence": "Mechanical baseline only: Ermine does not own the left property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::transform::1",
@@ -843,9 +814,8 @@
       "selector": ".macro-suggestions-arrow.bottom",
       "property": "transform",
       "value": "translateX(-50%)",
-      "evidence": "Mechanical baseline only: Ermine does not own the transform property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::border-bottom-color::1",
@@ -853,9 +823,8 @@
       "selector": ".macro-suggestions-arrow.bottom",
       "property": "border-bottom-color",
       "value": "var(--base-tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item::padding::1",
@@ -863,9 +832,8 @@
       "selector": ".macro-suggestions-item",
       "property": "padding",
       "value": "6px 10px",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item::cursor::1",
@@ -873,9 +841,8 @@
       "selector": ".macro-suggestions-item",
       "property": "cursor",
       "value": "pointer",
-      "evidence": "Mechanical baseline only: Ermine does not own the cursor property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item::display::1",
@@ -883,9 +850,8 @@
       "selector": ".macro-suggestions-item",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item::align-items::1",
@@ -893,9 +859,8 @@
       "selector": ".macro-suggestions-item",
       "property": "align-items",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the align-items property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the align-items property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item::justify-content::1",
@@ -903,9 +868,8 @@
       "selector": ".macro-suggestions-item",
       "property": "justify-content",
       "value": "space-between",
-      "evidence": "Mechanical baseline only: Ermine owns the justify-content property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the justify-content property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item::transition::1",
@@ -913,9 +877,8 @@
       "selector": ".macro-suggestions-item",
       "property": "transition",
       "value": "background-color 0.15s",
-      "evidence": "Mechanical baseline only: Ermine owns the transition property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the transition property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item::border-bottom::1",
@@ -923,9 +886,8 @@
       "selector": ".macro-suggestions-item",
       "property": "border-bottom",
       "value": "1px solid var(--harmonic-minor)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item:last-of-type::border-bottom::1",
@@ -933,9 +895,8 @@
       "selector": ".macro-suggestions-item:last-of-type",
       "property": "border-bottom",
       "value": "none",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item:hover::background-color::1",
@@ -943,9 +904,8 @@
       "selector": ".macro-suggestions-item:hover",
       "property": "background-color",
       "value": "var(--tone-dim)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item.selected::background-color::1",
@@ -953,9 +913,8 @@
       "selector": ".macro-suggestions-item.selected",
       "property": "background-color",
       "value": "var(--tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item.selected::border-left::1",
@@ -963,9 +922,8 @@
       "selector": ".macro-suggestions-item.selected",
       "property": "border-left",
       "value": "1px solid var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-content::flex::1",
@@ -973,9 +931,8 @@
       "selector": ".macro-suggestions-item-content",
       "property": "flex",
       "value": "1",
-      "evidence": "Mechanical baseline only: Ermine owns the flex property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the flex property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-content::min-width::1",
@@ -983,9 +940,8 @@
       "selector": ".macro-suggestions-item-content",
       "property": "min-width",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine owns the min-width property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the min-width property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-commands-list::display::1",
@@ -993,9 +949,12 @@
       "selector": ".macro-suggestions-commands-list",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 suggestions/delete review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint and Monky style smoke.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "horizontal"
+      ]
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-commands-list::padding::1",
@@ -1003,9 +962,12 @@
       "selector": ".macro-suggestions-commands-list",
       "property": "padding",
       "value": "4px",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint and Monky style smoke.",
+      "disposition": "grammar-exact",
+      "axis": "padding",
+      "words": [
+        "padding-tight"
+      ]
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-commands-list::gap::1",
@@ -1013,9 +975,12 @@
       "selector": ".macro-suggestions-commands-list",
       "property": "gap",
       "value": "4px",
-      "evidence": "Mechanical baseline only: Ermine owns the gap property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the gap property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint and Monky style smoke.",
+      "disposition": "grammar-exact",
+      "axis": "density",
+      "words": [
+        "gap-tight"
+      ]
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-commands-list::border-bottom::1",
@@ -1023,9 +988,8 @@
       "selector": ".macro-suggestions-commands-list",
       "property": "border-bottom",
       "value": "1px solid var(--harmonic-minor)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::flex::1",
@@ -1033,9 +997,12 @@
       "selector": ".macro-suggestions-command-item",
       "property": "flex",
       "value": "0 1 auto",
-      "evidence": "Mechanical baseline only: Ermine owns the flex property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the flex property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 mapping uses compressible for flex-grow:0/flex-shrink:1; removing the flex shorthand preserves flex-basis:auto through the CSS initial value.",
+      "disposition": "grammar-composition",
+      "axis": "m2-flex",
+      "words": [
+        "compressible"
+      ]
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::min-width::1",
@@ -1043,9 +1010,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "min-width",
       "value": "0",
-      "evidence": "Mechanical baseline only: Ermine owns the min-width property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the min-width property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::max-width::1",
@@ -1053,9 +1019,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "max-width",
       "value": "8em",
-      "evidence": "Mechanical baseline only: Ermine owns the max-width property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the max-width property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
@@ -1063,9 +1028,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "padding",
       "value": "3px 6px",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::border::1",
@@ -1073,9 +1037,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "border",
       "value": "1px solid transparent",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::border-radius::1",
@@ -1083,9 +1046,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "border-radius",
       "value": "6px",
-      "evidence": "Mechanical baseline only: Ermine owns the border-radius property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border-radius property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::background-color::1",
@@ -1093,9 +1055,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "background-color",
       "value": "var(--tone-dim)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::color::1",
@@ -1103,9 +1064,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "color",
       "value": "var(--ink)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::font-size::1",
@@ -1113,9 +1073,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "font-size",
       "value": "13px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::cursor::1",
@@ -1123,9 +1082,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "cursor",
       "value": "pointer",
-      "evidence": "Mechanical baseline only: Ermine does not own the cursor property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::transition::1",
@@ -1133,9 +1091,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "transition",
       "value": "all 0.15s ease",
-      "evidence": "Mechanical baseline only: Ermine owns the transition property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the transition property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::text-align::1",
@@ -1143,9 +1100,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "text-align",
       "value": "center",
-      "evidence": "Mechanical baseline only: Ermine owns the text-align property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the text-align property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::white-space::1",
@@ -1153,9 +1109,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "white-space",
       "value": "nowrap",
-      "evidence": "Mechanical baseline only: Ermine does not own the white-space property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::overflow::1",
@@ -1163,9 +1118,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "overflow",
       "value": "hidden",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::text-overflow::1",
@@ -1173,9 +1127,8 @@
       "selector": ".macro-suggestions-command-item",
       "property": "text-overflow",
       "value": "ellipsis",
-      "evidence": "Mechanical baseline only: Ermine does not own the text-overflow property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item:hover::background-color::1",
@@ -1183,9 +1136,8 @@
       "selector": ".macro-suggestions-command-item:hover",
       "property": "background-color",
       "value": "var(--tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item:hover::border-color::1",
@@ -1193,9 +1145,8 @@
       "selector": ".macro-suggestions-command-item:hover",
       "property": "border-color",
       "value": "var(--harmonic)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item.selected::background-color::1",
@@ -1203,9 +1154,8 @@
       "selector": ".macro-suggestions-command-item.selected",
       "property": "background-color",
       "value": "var(--tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual skin treatment; Monky result moved class-only selected truth to aria-selected selectors while preserving the visual treatment.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item.selected::color::1",
@@ -1213,9 +1163,8 @@
       "selector": ".macro-suggestions-command-item.selected",
       "property": "color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual skin treatment; Monky result moved class-only selected truth to aria-selected selectors while preserving the visual treatment.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item.selected::border-color::1",
@@ -1223,9 +1172,8 @@
       "selector": ".macro-suggestions-command-item.selected",
       "property": "border-color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual skin treatment; Monky result moved class-only selected truth to aria-selected selectors while preserving the visual treatment.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-text::font-size::1",
@@ -1233,9 +1181,8 @@
       "selector": ".macro-suggestions-item-text",
       "property": "font-size",
       "value": "11px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-text::color::1",
@@ -1243,9 +1190,8 @@
       "selector": ".macro-suggestions-item-text",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-text::overflow::1",
@@ -1253,9 +1199,8 @@
       "selector": ".macro-suggestions-item-text",
       "property": "overflow",
       "value": "hidden",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-text::text-overflow::1",
@@ -1263,9 +1208,8 @@
       "selector": ".macro-suggestions-item-text",
       "property": "text-overflow",
       "value": "ellipsis",
-      "evidence": "Mechanical baseline only: Ermine does not own the text-overflow property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-text::white-space::1",
@@ -1273,9 +1217,8 @@
       "selector": ".macro-suggestions-item-text",
       "property": "white-space",
       "value": "nowrap",
-      "evidence": "Mechanical baseline only: Ermine does not own the white-space property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-indicator::margin-left::1",
@@ -1283,9 +1226,8 @@
       "selector": ".macro-suggestions-item-indicator",
       "property": "margin-left",
       "value": "8px",
-      "evidence": "Mechanical baseline only: Ermine owns the margin property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the margin property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-indicator::font-size::1",
@@ -1293,9 +1235,8 @@
       "selector": ".macro-suggestions-item-indicator",
       "property": "font-size",
       "value": "11px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-item-indicator::color::1",
@@ -1303,9 +1244,8 @@
       "selector": ".macro-suggestions-item-indicator",
       "property": "color",
       "value": "var(--accent)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 dead residue: no live Monky source or tests consume the old macro-suggestions-item family; rg found only the CSS definitions, so the block was removed.",
+      "disposition": "dead"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::padding::1",
@@ -1313,9 +1253,8 @@
       "selector": ".macro-suggestions-text-preview",
       "property": "padding",
       "value": "8px 12px",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::font-size::1",
@@ -1323,9 +1262,8 @@
       "selector": ".macro-suggestions-text-preview",
       "property": "font-size",
       "value": "12px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::color::1",
@@ -1333,9 +1271,8 @@
       "selector": ".macro-suggestions-text-preview",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::display::1",
@@ -1343,9 +1280,8 @@
       "selector": ".macro-suggestions-text-preview",
       "property": "display",
       "value": "-webkit-box",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::-webkit-line-clamp::1",
@@ -1353,9 +1289,8 @@
       "selector": ".macro-suggestions-text-preview",
       "property": "-webkit-line-clamp",
       "value": "3",
-      "evidence": "Mechanical baseline only: Ermine does not own the -webkit-line-clamp property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::-webkit-box-orient::1",
@@ -1363,9 +1298,8 @@
       "selector": ".macro-suggestions-text-preview",
       "property": "-webkit-box-orient",
       "value": "vertical",
-      "evidence": "Mechanical baseline only: Ermine does not own the -webkit-box-orient property family; application ownership is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must classify this declaration as skin, identity, substrate, gap, or dead"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::overflow::1",
@@ -1373,9 +1307,8 @@
       "selector": ".macro-suggestions-text-preview",
       "property": "overflow",
       "value": "hidden",
-      "evidence": "Mechanical baseline only: Ermine owns the overflow property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the overflow property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::padding::1",
@@ -1383,9 +1316,8 @@
       "selector": ".macro-suggestions-footer",
       "property": "padding",
       "value": "6px 12px",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::border-top::1",
@@ -1393,9 +1325,8 @@
       "selector": ".macro-suggestions-footer",
       "property": "border-top",
       "value": "1px solid var(--harmonic)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::font-size::1",
@@ -1403,9 +1334,8 @@
       "selector": ".macro-suggestions-footer",
       "property": "font-size",
       "value": "11px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::color::1",
@@ -1413,9 +1343,8 @@
       "selector": ".macro-suggestions-footer",
       "property": "color",
       "value": "var(--ink-soft)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::background-color::1",
@@ -1423,9 +1352,8 @@
       "selector": ".macro-suggestions-footer",
       "property": "background-color",
       "value": "var(--base-tone)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::display::1",
@@ -1433,9 +1361,12 @@
       "selector": ".macro-suggestions-footer",
       "property": "display",
       "value": "flex",
-      "evidence": "Mechanical baseline only: Ermine owns the display property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the display property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 suggestions/delete review: emitted Ermine declarations reproduce the baseline computed property; full composition passes Ermine lint and Monky style smoke.",
+      "disposition": "grammar-composition",
+      "axis": "structure",
+      "words": [
+        "horizontal"
+      ]
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::gap::1",
@@ -1443,9 +1374,12 @@
       "selector": ".macro-suggestions-footer",
       "property": "gap",
       "value": "12px",
-      "evidence": "Mechanical baseline only: Ermine owns the gap property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the gap property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 approved Monky density binding preserves the pre-existing semantic step and computed value; full composition passes Ermine lint and Monky style smoke.",
+      "disposition": "grammar-exact",
+      "axis": "density",
+      "words": [
+        "gap-comfortable"
+      ]
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::justify-content::1",
@@ -1453,9 +1387,8 @@
       "selector": ".macro-suggestions-footer",
       "property": "justify-content",
       "value": "flex-end",
-      "evidence": "Mechanical baseline only: Ermine owns the justify-content property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the justify-content property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
@@ -1463,9 +1396,8 @@
       "selector": ".macro-suggestions-kbd",
       "property": "padding",
       "value": "1px 4px",
-      "evidence": "Mechanical baseline only: Ermine owns the padding property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the padding property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky overlay identity or interaction geometry (host escape, caret arrow, viewport placement, exact width, off-scale spacing, truncation, cursor, or clipping).",
+      "disposition": "identity-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::border-radius::1",
@@ -1473,9 +1405,8 @@
       "selector": ".macro-suggestions-kbd",
       "property": "border-radius",
       "value": "3px",
-      "evidence": "Mechanical baseline only: Ermine owns the border-radius property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border-radius property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::font-family::1",
@@ -1483,9 +1414,8 @@
       "selector": ".macro-suggestions-kbd",
       "property": "font-family",
       "value": "monospace",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::background-color::1",
@@ -1493,9 +1423,8 @@
       "selector": ".macro-suggestions-kbd",
       "property": "background-color",
       "value": "var(--kbd-bg)",
-      "evidence": "Mechanical baseline only: Ermine owns the background property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the background property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::border::1",
@@ -1503,9 +1432,8 @@
       "selector": ".macro-suggestions-kbd",
       "property": "border",
       "value": "1px solid var(--kbd-border)",
-      "evidence": "Mechanical baseline only: Ermine owns the border property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the border property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::color::1",
@@ -1513,9 +1441,8 @@
       "selector": ".macro-suggestions-kbd",
       "property": "color",
       "value": "var(--ink)",
-      "evidence": "Mechanical baseline only: Ermine owns the color property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the color property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::font-size::1",
@@ -1523,9 +1450,8 @@
       "selector": ".macro-suggestions-kbd",
       "property": "font-size",
       "value": "10px",
-      "evidence": "Mechanical baseline only: Ermine owns the font property family; semantic equivalence is unreviewed",
-      "disposition": "uncertain",
-      "pending": "Human must decide whether the font property preserves intent through an existing Ermine mapping"
+      "evidence": "U7 residual: retained as Monky skin (type/color/border/radius/shadow/motion/treatment). No skin vocabulary is ruled in Ermine yet.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.macro-editor-view::padding::1",
@@ -14111,14 +14037,14 @@
   "summary": {
     "totalRecords": 1409,
     "byDisposition": {
-      "grammar-exact": 61,
-      "grammar-composition": 42,
-      "skin-local": 163,
-      "identity-local": 106,
-      "substrate": 34,
+      "grammar-exact": 65,
+      "grammar-composition": 46,
+      "skin-local": 208,
+      "identity-local": 137,
+      "substrate": 36,
       "gap": 0,
-      "dead": 8,
-      "uncertain": 995
+      "dead": 29,
+      "uncertain": 888
     }
   }
 }

@@ -203,6 +203,52 @@ command suggestions now use `aria-selected`/`data-state`, and segmented controls
 use `aria-checked`; their colors, backgrounds, opacity, borders, and radius remain
 Monky skin evidence until U-SKIN rules vocabulary.
 
+## U7 suggestions/delete evidence
+
+Source report: `reports/adoption/monky/pilots/SUGGESTIONS-DELETE.md`  
+Measured Monky result: `5e1b3292fc54ffaae19e8f5c5a052ac481aade11`
+
+U7 conserved 107 baseline suggestions/delete declarations. It migrated 8 structural
+declarations to existing Ermine grammar, removed 21 dead declarations, and retained 78
+local non-dead residuals. Of those residuals, 45 were classified `skin-local`.
+
+U7 `skin-local` property-family evidence:
+
+| Property family | Count |
+|---|---:|
+| `color` | 8 |
+| `background-color` | 7 |
+| `font-size` | 6 |
+| `border` | 4 |
+| `border-color` | 3 |
+| `border-radius` | 3 |
+| `font-family` | 3 |
+| `border-bottom` | 2 |
+| `transition` | 2 |
+| `border-bottom-color` | 1 |
+| `border-top` | 1 |
+| `border-top-color` | 1 |
+| `box-shadow` | 1 |
+| `font-weight` | 1 |
+| `line-height` | 1 |
+| `text-align` | 1 |
+
+This evidence comes from injected, caret-positioned Shadow Roots rather than the modal
+surface. It reinforces the same open skin families:
+
+| Proposal family | U7 evidence shape | Current disposition |
+|---|---|---|
+| `ground` | popup container, command options, selected option, and delete danger wash rely on surface shifts | descriptive only |
+| `ink` | command text, footer hints, keyboard caps, and danger labels need prominence relationships | descriptive only |
+| `rule` | popup container border, command-list divider, footer divider, and option borders repeat separator pressure | descriptive only |
+| `corner` | popup shell, command options, and keyboard caps repeat radius choices | descriptive only |
+| `treatments` | hover, selected, and danger-confirm treatments recur in an independent overlay root | descriptive only |
+| `scroller` | no new independent scrollbar evidence was added by U7 | descriptive only |
+
+U7 adds one boundary datum for exactness: `justify-end` currently computes to `end`, not
+`flex-end`, so the footer's `justify-content:flex-end` remains local. This is not a skin
+gap; it is a grammar-emission exactness boundary for migration work.
+
 ## Not yet decided
 
 - Whether `ground`, `ink`, `rule`, `corner`, `treatments`, and `scroller` become Ermine
