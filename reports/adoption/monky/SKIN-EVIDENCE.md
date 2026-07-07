@@ -249,8 +249,40 @@ U7 adds one boundary datum for exactness: `justify-end` currently computes to `e
 `flex-end`, so the footer's `justify-content:flex-end` remains local. This is not a skin
 gap; it is a grammar-emission exactness boundary for migration work.
 
+## U8 pages evidence
+
+Source report: `reports/adoption/monky/pilots/PAGES.md`
+
+U8 migrated the popup, options, and editor pages and retired the legacy/utility sheet.
+It added no proposal-family words to markup (they remain unruled); recurring appearance
+was consolidated as `skin-local` (131 new records) or kept identity. The page surfaces
+reinforce the existing families rather than introducing new ones:
+
+| Proposal family | U8 evidence shape | Current disposition |
+|---|---|---|
+| `ground` | popup/card/section surfaces and the `bg-secondary` fill repeat the surface-salience need on a third, light-DOM context | descriptive only |
+| `ink` | page type consolidates on `text-primary`/`text-secondary`/`text-white` prominence steps | descriptive only |
+| `rule` | popup list dividers, card borders, and `border-t/b` repeat separator pressure | descriptive only |
+| `corner` | the `.rounded`→`.ui-rounded` recipe and radius scale (`sm/md/lg`) recur across popup controls | descriptive only |
+| `treatments` | button variants (`btn-*`) remain composed skin, not single values | descriptive only |
+| `scroller` | the popup result list keeps a bespoke thin scrollbar (`popup-results`), independent of the global one — a second explicit-scroller datum | descriptive only |
+
+Two exactness boundaries surfaced, both grammar/vocabulary observations rather than skin
+rulings:
+
+- **No `overflow: hidden` word.** Ermine's overflow axis is `scroll-x/y/auto` and `clip`
+  only; `clip` emits `overflow: clip` (no scroll container / BFC), which is not
+  equivalent to `hidden`. The SiteToggle clip stayed inline identity to preserve exact
+  behavior.
+- **Density gap at 2xl (24px).** No step sits between `loose` (20px) and `separated`
+  (40px); the modal nav tab's 24px inline padding stayed identity.
+
 ## Not yet decided
 
+- Whether Ermine's overflow axis should gain an `overflow: hidden` word distinct from
+  `clip`, or whether `clip` is the sanctioned clipping primitive and `hidden` stays
+  identity.
+- Whether the density scale needs a step at 24px (between `loose` and `separated`).
 - Whether `ground`, `ink`, `rule`, `corner`, `treatments`, and `scroller` become Ermine
   vocabulary or remain Monky-local vocabulary.
 - How Monky's existing `--base-tone`, `--tone-dim`, `--tone`, `--ink`, `--ink-soft`,
