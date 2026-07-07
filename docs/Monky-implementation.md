@@ -229,11 +229,12 @@ flowchart LR
   U2 --> U4[U4 style strata + bundles]
   U3 --> U5[U5 modal/search pilot]
   U4 --> U5
-  U5 --> U6[U6 settings/editor]
-  U5 --> U7[U7 suggestions/delete]
+  U5 --> U51[U5.1 skin evidence checkpoint]
+  U51 --> U6[U6 settings/editor]
+  U51 --> U7[U7 suggestions/delete]
   U6 --> U8[U8 pages + utility retirement]
   U7 --> U8
-  U5 -. recurring skin evidence .-> US[U-SKIN ruling loop]
+  U51 -. skin proposal + seed evidence .-> US[U-SKIN ruling loop]
   U6 -. recurring skin evidence .-> US
   U7 -. recurring skin evidence .-> US
   U8 -. recurring skin evidence .-> US
@@ -241,9 +242,10 @@ flowchart LR
   US --> U9
 ```
 
-U0–U4 are prerequisites. U6 and U7 may proceed in parallel only when they touch
-disjoint Monky files. U-SKIN is continuous and human-gated. U9 starts after every
-declaration in the baseline ledger has a terminal disposition.
+U0–U4 are prerequisites. U5.1 must run after U5 and before U6/U7 so skin evidence
+does not get confused with grammar migration. U6 and U7 may proceed in parallel only
+when they touch disjoint Monky files. U-SKIN is continuous and human-gated. U9 starts
+after every declaration in the baseline ledger has a terminal disposition.
 
 ---
 
@@ -606,6 +608,55 @@ and identity residue honestly.
 
 **Out of scope.** Migrating settings/editor/suggestions/pages; changing appearance;
 resolving skin gaps without a ruling.
+
+---
+
+## U5.1 — Skin evidence checkpoint after the pilot
+
+**Objective.** Separate Monky's intended skin direction from Ermine grammar migration
+before continuing to more surfaces. Seed the skin-ruling loop with evidence from the
+modal/search pilot, the user-approved visual direction, and the value-free skin grammar
+proposal.
+
+**Repository.** Ermine only, unless a small Monky bug fix is explicitly chosen as a
+separate commit.
+
+**Inputs.**
+
+- U5 modal/search ledger records and `pilots/MODAL-SEARCH.md`
+- The user-provided old-vs-intended modal/search screenshot pair
+- Monky `humo` / `acera` / `mar` theme constants and light/dark resolution behavior
+- `docs/SKIN-GRAMMAR-PROPOSAL.md`
+
+**Steps.**
+
+1. Publish `reports/adoption/monky/SKIN-EVIDENCE.md` with the U5 seed counts and
+   recurring treatment observations. Use the proposal's language (`ground`, `ink`,
+   `rule`, `corner`, `treatments`, `scroller`) as descriptive tags only; do not mark
+   them as Ermine vocabulary.
+2. Record the visual direction as Monky skin evidence: surface-led hierarchy, fewer
+   section separators, pill/round controls, icon-forward toolbar, stronger command and
+   text contrast, and explicit scrollbar affordance.
+3. Record the theme-plane split: Ermine may later own a value-free socket contract and
+   framework-free resolver/applicator; Monky owns palette data, user selection,
+   persistence, and React glue.
+4. Identify immediate Monky-only bug fixes separately from skin vocabulary. In
+   particular, `src/styles/theme/metrics.css` has `var(---tone)` in `scrollbar-color`;
+   fixing it is a Monky typo fix, not an Ermine ruling.
+5. Update U6/U7 instructions only by reference: future migrations should classify
+   recurring skin as evidence for U-SKIN, not adopt proposal words before a ruling.
+
+**Acceptance criteria.**
+
+- `SKIN-EVIDENCE.md` names the source commits/reports it relies on.
+- U5 skin residuals are conserved as evidence, not reclassified as grammar.
+- No registry, emission, generated CSS, or Monky class vocabulary changes are made by
+  this checkpoint.
+- The report explicitly separates theme socket architecture from project palette data.
+- `npm run adoption:check` and `npm run check` pass.
+
+**Out of scope.** Restyling Monky; renaming Monky theme constants; ruling skin
+vocabulary; implementing the Ermine theme plane.
 
 ---
 

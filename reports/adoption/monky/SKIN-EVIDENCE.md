@@ -1,0 +1,155 @@
+# Monky skin evidence checkpoint
+
+Status: evidence checkpoint after U5. No vocabulary here is a constitution ruling, and
+no Monky class should use these proposal words until U-SKIN produces a ruling and the
+registry/generated artifacts land in Ermine.
+
+## Provenance
+
+| Evidence | Source |
+|---|---|
+| Modal/search pilot report | `reports/adoption/monky/pilots/MODAL-SEARCH.md` |
+| Modal/search pilot evidence commit | `63f3dae docs(adoption): record modal search pilot` |
+| Skin grammar proposal | `docs/SKIN-GRAMMAR-PROPOSAL.md` |
+| Skin grammar proposal commit | `af95f08 docs(skin): propose evidence-stage grammar` |
+| Measured Monky U5 result | `73e582c0da73db506bbddcfe5953ada1832e55d0` |
+| Visual evidence | User-provided modal/search old-vs-intended screenshot pair |
+
+The screenshot pair is evidence for intended Monky skin direction only. It is not a
+new Ermine source of truth and does not override the U5 computed-style preservation
+claim.
+
+## U5 seed counts
+
+The modal/search pilot conserved 172 baseline declarations. U5 migrated 37 structural
+declarations to existing Ermine grammar, removed 8 dead declarations, and retained 127
+local residuals. Of those residuals, 78 were classified `skin-local`.
+
+U5 `skin-local` property-family seed:
+
+| Property family | Count |
+|---|---:|
+| `color` | 20 |
+| `background-color` | 10 |
+| `font-size` | 8 |
+| `border` | 5 |
+| `border-radius` | 5 |
+| `background` | 4 |
+| `border-bottom` | 4 |
+| `font-weight` | 3 |
+| `opacity` | 3 |
+| `transition` | 3 |
+| `box-shadow` | 2 |
+| `font-family` | 2 |
+| `font-style` | 2 |
+| `border-bottom-color` | 1 |
+| `border-color` | 1 |
+| `border-top` | 1 |
+| `font-variant-numeric` | 1 |
+| `mix-blend-mode` | 1 |
+| `outline` | 1 |
+| `text-align` | 1 |
+
+These counts are descriptive. They show where skin pressure appears in one pilot
+surface; they do not prove admission into Ermine.
+
+## Visual direction captured from U5.1 discussion
+
+The intended modal/search direction is not a layout grammar change. It is a skin
+posture that can be described without binding exact colors or numbers:
+
+- surface-led hierarchy rather than section-heavy borders;
+- fewer visible separators among UI sections;
+- delimited input and navigation controls through ground shift plus round/pill shape;
+- icon-forward toolbar behavior, with labels reduced or removed where the command set
+  is already recognizable;
+- stronger contrast and prominence for command text and important marks;
+- softer secondary text and footer hints;
+- explicit scrollbar affordance, where the scrollbar claims real estate instead of
+  disappearing into the background.
+
+This is the first Monky evidence for the proposal families:
+
+| Proposal family | U5.1 evidence shape | Current disposition |
+|---|---|---|
+| `ground` | modal, input, nav, row, and footer surfaces need named salience relationships | descriptive only |
+| `ink` | command, description, footer, icon, and muted hint marks need prominence relationships | descriptive only |
+| `rule` | old skin used many section rules; intended skin removes or quiets them | descriptive only |
+| `corner` | input, modal shell, toolbar controls, edit buttons, and keyboard caps carry personality through radius | descriptive only |
+| `treatments` | active/focus/selection/hover are composed visual effects, not just single values | descriptive only |
+| `scroller` | intended scrollbar is explicit UI, not hidden mechanics | descriptive only |
+
+## Theme-plane observation
+
+Monky already resolves colors through a matrix:
+
+```text
+selected color theme: humo | acera | mar
+resolved mode: light | dark
+concrete CSS custom properties
+```
+
+`system` mode resolves to light or dark through `prefers-color-scheme`; it is not a
+third palette. The U5.1 proposal therefore treats skin words as socket names, not direct
+values:
+
+```text
+proposal word → future SkinSocket → project palette × resolved mode → concrete value
+```
+
+Potential Ermine ownership, after ruling:
+
+- value-free socket names derived from the registry;
+- `Record<SkinSocket, value>` contract;
+- palette completeness validation;
+- theme × mode resolution shape;
+- framework-free DOM application helper.
+
+Project ownership:
+
+- actual palette values;
+- user selection and persistence;
+- theme picker UI;
+- React hooks and application glue.
+
+Boundary test: Monky's current `useThemeColors` should eventually reduce to thin React
+glue around a framework-free Ermine resolver/applicator, and a non-React consumer
+should be able to use the same theme plane without carrying Monky dependencies.
+
+## Monky-only follow-up identified
+
+`monky/src/styles/theme/metrics.css` currently contains:
+
+```css
+scrollbar-color: var(---tone) var(--tone-dim);
+```
+
+That should be `var(--tone)`. This is a Monky typo fix and should be committed
+separately from Ermine skin vocabulary work. It may affect the explicit scrollbar
+affordance evidence, but it is not a ruling.
+
+## How U6 and U7 should use this report
+
+During U6 and U7, executors should:
+
+1. keep applying existing Ermine grammar only where structural equivalence is exact;
+2. keep proposal-family words out of Monky markup and generated CSS;
+3. classify recurring appearance records as `skin-local`;
+4. tag recurrence in pilot reports using the proposal family names as prose labels;
+5. escalate to U-SKIN only when a repeated pattern crosses independent surfaces and
+   needs a shared decision.
+
+The useful question for U6/U7 is not "can this become an Ermine word now?" but
+"does this surface produce independent evidence for the same perceptual choice?"
+
+## Not yet decided
+
+- Whether `ground`, `ink`, `rule`, `corner`, `treatments`, and `scroller` become Ermine
+  vocabulary or remain Monky-local vocabulary.
+- How Monky's existing `--base-tone`, `--tone-dim`, `--tone`, `--ink`, `--ink-soft`,
+  `--ink-alt`, `--accent`, `--accent-dim`, `--harmonic`, `--harmonic-minor`, and
+  temperament/wash roles map to future sockets.
+- Whether one rule-color socket is sufficient or U6/U7 show coexisting rule
+  prominences in a single view.
+- The radius generator parameters for `corner-*`.
+- Which focus, selection, hover, and status treatments deserve named choices.
