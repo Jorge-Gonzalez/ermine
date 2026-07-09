@@ -307,6 +307,20 @@ U8b also records that file deletion alone is not a safe skin cleanup rule: sever
 records from deleted or retired sheets have surviving intent in relocated skin,
 component, or generated-grammar surfaces.
 
+## U8e theme-plane binding and coverage
+
+Source report: `reports/adoption/monky/pilots/THEME-LEDGER-RESOLUTION.md`
+Measured Monky result: `f2f0e2a5daacace8b43e0b055022f89d500ae02e`
+
+Monky's humo/acera/mar palettes were bound to the ratified socket contract and the theme
+is now driven from the plane (both apply paths). Result: **22 sockets bound per theme ×
+mode, all contract-valid, with byte-identical rendering** (style-smoke parity, 1147 tests,
+clean build). The socket set covers Monky's whole theme-varying colour palette — surface
+hierarchy, ink family + inverse, rule, accent, status + washes, interaction tones. The one
+true colour residual is `--shadow-color` (no socket; a shadow alpha). Scales stay in
+`metrics.css` as mode-invariant metrics (a deliberate boundary, not a gap). This is the
+positive evidence that the skin colour plane, as ruled, is sufficient for a real theme.
+
 ## Not yet decided
 
 - Whether Ermine's overflow axis should gain an `overflow: hidden` word distinct from
