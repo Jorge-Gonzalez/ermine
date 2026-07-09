@@ -163,6 +163,12 @@
       "anchor": "SKIN"
     },
     {
+      "id": "CODE:SKIN_PLANE",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "SKIN_PLANE"
+    },
+    {
       "id": "CODE:STATE",
       "register": "code",
       "file": "src/registry.ts",
@@ -1436,6 +1442,36 @@
     {
       "from": "CODE:SKIN",
       "to": "R-TYPE-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN_PLANE",
+      "to": "R-SCALE-03",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN_PLANE",
+      "to": "R-SKIN-03",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN_PLANE",
+      "to": "R-SKIN-05",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN_PLANE",
+      "to": "R-SKIN-06",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN_PLANE",
+      "to": "R-SKIN-07",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN_PLANE",
+      "to": "R-SKIN-08",
       "type": "implements"
     },
     {

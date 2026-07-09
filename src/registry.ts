@@ -486,6 +486,31 @@ export const SKIN: AxisRecord[] = [
 ];
 
 // ============================================================================
+// 5.1 SKIN PLANE — the registry-owned socket contract (R-SKIN-08).
+// The theme-plane skeleton derives its SkinSocket list from this data alone; it
+// is the identity of the plane, so a project may not invent unregistered sockets.
+// Intensity (soft/muted/faint, R-SKIN-04) is realized by the theme/emitter from the
+// base carrier/role colors, not enumerated here. Motion duration/stagger are named
+// scale-bound (R-SCALE-03) but their step names remain open (R-SCALE-02), so they
+// are intentionally absent until ruled.
+// ============================================================================
+
+// implements: R-SKIN-03, R-SKIN-05, R-SKIN-06, R-SKIN-07, R-SKIN-08, R-SCALE-03
+export const SKIN_PLANE = {
+  // R-SKIN-03: carriers own a default color. R-SKIN-05: role hues shared across carriers.
+  colors: {
+    carriers: ["ground", "ink", "rule"],
+    roles: ["accent", "pass", "warn", "fail", "note"],
+  },
+  // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
+  scales: {
+    radius: ["sm", "md", "lg"], // R-SKIN-06 corner magnitude
+    type: ["sm", "md", "lg", "xl"], // R-SKIN-07 size
+    weight: ["medium", "semibold", "bold"], // R-SKIN-07 weight
+  },
+} as const;
+
+// ============================================================================
 // 4.2 STATE — each GROUP is a first-class axis (id `state.<group>`).
 // Within a group: set-with-exclusivity (one word per scope). Across groups: compose.
 // State controls NOTHING (condition only); composes via state × plane → rule.
