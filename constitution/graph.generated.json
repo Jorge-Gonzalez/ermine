@@ -1456,6 +1456,11 @@
     },
     {
       "from": "CODE:SKIN_PLANE",
+      "to": "R-SKIN-04",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:SKIN_PLANE",
       "to": "R-SKIN-05",
       "type": "implements"
     },

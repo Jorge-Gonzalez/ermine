@@ -1,7 +1,12 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { SKIN_SOCKETS, SOCKET_FAMILIES, type SkinSocket } from "../src/theme/sockets.generated.ts";
+import {
+  REQUIRED_SOCKETS,
+  SKIN_SOCKETS,
+  SOCKET_FAMILIES,
+  type SkinSocket,
+} from "../src/theme/sockets.generated.ts";
 import {
   applyTheme,
   resolveTheme,
@@ -11,9 +16,13 @@ import {
   type StyleTarget,
 } from "../src/theme/theme-plane.ts";
 
-// A complete, contract-satisfying binding built from placeholder values (no real palette).
+// A full binding (every socket) built from placeholder values (no real palette).
 const completeBindings = (value = "x"): SocketBindings =>
   Object.fromEntries(SKIN_SOCKETS.map((socket) => [socket, value])) as SocketBindings;
+
+// A floor binding: only the required sockets — the minimum a theme must supply.
+const floorBindings = (value = "x"): SocketBindings =>
+  Object.fromEntries(REQUIRED_SOCKETS.map((socket) => [socket, value])) as SocketBindings;
 
 const palette = (): Palette => ({
   humo: { light: completeBindings("light-humo"), dark: completeBindings("dark-humo") },
@@ -24,26 +33,38 @@ test("the socket contract is registry-derived and internally consistent", () => 
   // Every family socket is in the flat list, and the families partition it.
   const flat = Object.values(SOCKET_FAMILIES).flat();
   assert.deepEqual([...flat].sort(), [...SKIN_SOCKETS].sort());
+  // The required floor is a subset of the full socket set.
+  for (const socket of REQUIRED_SOCKETS) assert.ok(SKIN_SOCKETS.includes(socket));
 });
 
-test("a complete palette binding validates with zero errors", () => {
+test("a full binding validates with zero errors", () => {
   assert.deepEqual(validateBindings(completeBindings()), []);
 });
 
-test("a missing socket is named specifically", () => {
+test("a floor binding (required only, optionals absent) validates", () => {
+  assert.deepEqual(validateBindings(floorBindings()), []);
+});
+
+test("a missing required socket is named specifically", () => {
+  const bindings = floorBindings() as Record<string, string>;
+  delete bindings.ink;
+  assert.deepEqual(validateBindings(bindings), ["missing required socket: ink"]);
+});
+
+test("a missing optional socket is fine", () => {
   const bindings = completeBindings() as Record<string, string>;
-  delete bindings.accent;
-  assert.deepEqual(validateBindings(bindings), ["missing socket: accent"]);
+  delete bindings["accent-faint"]; // optional
+  assert.deepEqual(validateBindings(bindings), []);
 });
 
 test("an empty socket value fails", () => {
-  const bindings = completeBindings();
+  const bindings = floorBindings();
   bindings.ink = "   ";
   assert.deepEqual(validateBindings(bindings), ["empty socket value: ink"]);
 });
 
 test("an unregistered socket fails — a project may not invent sockets", () => {
-  const bindings = { ...completeBindings(), "brand-special": "#fff" };
+  const bindings = { ...floorBindings(), "brand-special": "#fff" };
   assert.deepEqual(validateBindings(bindings), ["unregistered socket: brand-special"]);
 });
 

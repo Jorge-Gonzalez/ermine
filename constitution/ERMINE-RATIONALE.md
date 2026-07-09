@@ -240,7 +240,11 @@ rides a carrier so it never collides with a property owner. See `docs/skin-theme
 Anchor-plus-recession from the ink/ground games. Four steps kept for expressive range (a
 current-trend observation) against Primer's leaner default/muted/subtle; provisional with a
 data-triggered reduction. Realization deferred to the theme so alpha vs `color-mix` stays an
-implementation choice.
+implementation choice. Refinement (U8e, Monky evidence): realization includes the theme
+*binding a step's value directly* — hand-tuned or computed — not only a formula. The socket
+contract names each step; a theme supplies the value or leaves the (optional) step unbound.
+Ground varies toward differentiation rather than recession, so it names its own steps
+(`subtle`/`defined`) instead of reusing the recession words.
 
 ## RAT:R-SKIN-05
 Roles as a shared reporting register (pass/warn/fail/note) that read as siblings without one

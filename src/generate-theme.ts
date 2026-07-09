@@ -9,34 +9,59 @@ import { SKIN_PLANE } from "./registry.ts";
 
 const OUT_PATH = new URL("./theme/sockets.generated.ts", import.meta.url);
 
-function deriveSockets(): { colors: string[]; scales: Record<string, string[]> } {
-  const colors = [...SKIN_PLANE.colors.carriers, ...SKIN_PLANE.colors.roles];
-  const scales: Record<string, string[]> = {};
-  for (const [family, steps] of Object.entries(SKIN_PLANE.scales)) {
-    scales[family] = steps.map((step) => `${family}-${step}`);
-  }
-  return { colors, scales };
+interface Derived {
+  color: string[];
+  radius: string[];
+  type: string[];
+  weight: string[];
+  required: string[];
+}
+
+function socketsFor(anchor: string, steps: readonly string[]): string[] {
+  return [anchor, ...steps.map((step) => `${anchor}-${step}`)];
+}
+
+function derive(): Derived {
+  const carriers = Object.entries(SKIN_PLANE.colors.carriers);
+  const roles = Object.entries(SKIN_PLANE.colors.roles);
+  const color = [
+    ...carriers.flatMap(([anchor, steps]) => socketsFor(anchor, steps)),
+    ...roles.flatMap(([anchor, steps]) => socketsFor(anchor, steps)),
+  ];
+  const scale = (family: keyof typeof SKIN_PLANE.scales) =>
+    SKIN_PLANE.scales[family].map((step) => `${family}-${step}`);
+  const radius = scale("radius");
+  const type = scale("type");
+  const weight = scale("weight");
+  // Required floor (R-SKIN-08): carrier anchors + every scale step. Role anchors and all
+  // color steps are optional — bound when a design uses them.
+  const required = [...carriers.map(([anchor]) => anchor), ...radius, ...type, ...weight];
+  return { color, radius, type, weight, required };
+}
+
+function list(name: string, values: string[]): string[] {
+  return [`export const ${name} = [`, ...values.map((v) => `  "${v}",`), "] as const;"];
 }
 
 function render(): string {
-  const { colors, scales } = deriveSockets();
-  const all = [...colors, ...Object.values(scales).flat()];
-  const familyEntries = [
-    `  color: [${colors.map((s) => `"${s}"`).join(", ")}],`,
-    ...Object.entries(scales).map(([family, sockets]) => `  ${family}: [${sockets.map((s) => `"${s}"`).join(", ")}],`),
-  ];
+  const { color, radius, type, weight, required } = derive();
+  const all = [...color, ...radius, ...type, ...weight];
   return [
     "// GENERATED from src/registry.ts SKIN_PLANE by src/generate-theme.ts — do not edit.",
     "// The socket list is the theme plane's identity (R-SKIN-08).",
     "",
-    "export const SKIN_SOCKETS = [",
-    ...all.map((s) => `  "${s}",`),
-    "] as const;",
+    ...list("SKIN_SOCKETS", all),
     "",
     "export type SkinSocket = (typeof SKIN_SOCKETS)[number];",
     "",
+    "// Carrier anchors + scale steps: every theme must bind these (R-SKIN-08 floor).",
+    ...list("REQUIRED_SOCKETS", required),
+    "",
     "export const SOCKET_FAMILIES = {",
-    ...familyEntries,
+    `  color: [${color.map((s) => `"${s}"`).join(", ")}],`,
+    `  radius: [${radius.map((s) => `"${s}"`).join(", ")}],`,
+    `  type: [${type.map((s) => `"${s}"`).join(", ")}],`,
+    `  weight: [${weight.map((s) => `"${s}"`).join(", ")}],`,
     "} as const satisfies Record<string, readonly SkinSocket[]>;",
     "",
   ].join("\n");

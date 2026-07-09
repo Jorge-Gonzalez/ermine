@@ -495,17 +495,33 @@ export const SKIN: AxisRecord[] = [
 // are intentionally absent until ruled.
 // ============================================================================
 
-// implements: R-SKIN-03, R-SKIN-05, R-SKIN-06, R-SKIN-07, R-SKIN-08, R-SCALE-03
+// Each carrier/role names its anchor (the bare socket) plus the steps it varies through
+// (R-SKIN-04: the theme realizes a step by binding its value — hand-tuned or computed).
+// Carrier anchors (ground/ink/rule) and every scale step are the required floor; role
+// anchors and all color steps are optional (bound when a design uses them). The socket
+// set is provisional and adjusts against real theme data.
+// implements: R-SKIN-03, R-SKIN-04, R-SKIN-05, R-SKIN-06, R-SKIN-07, R-SKIN-08, R-SCALE-03
 export const SKIN_PLANE = {
-  // R-SKIN-03: carriers own a default color. R-SKIN-05: role hues shared across carriers.
   colors: {
-    carriers: ["ground", "ink", "rule"],
-    roles: ["accent", "pass", "warn", "fail", "note"],
+    // R-SKIN-03: carriers own a default color. Steps: R-SKIN-04 ramp + ink's inverse.
+    carriers: {
+      ground: ["subtle", "defined"], // surface hierarchy (differentiation)
+      ink: ["soft", "muted", "faint", "inverse"], // recession + the inverse mark color
+      rule: ["soft"], // border: drawn or quiet
+    },
+    // R-SKIN-05: shared role hues; anchor = full, `-faint` = the wash.
+    roles: {
+      accent: ["soft", "faint"],
+      pass: ["faint"],
+      warn: ["faint"],
+      fail: ["faint"],
+      note: ["faint"],
+    },
   },
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {
-    radius: ["sm", "md", "lg"], // R-SKIN-06 corner magnitude
-    type: ["sm", "md", "lg", "xl"], // R-SKIN-07 size
+    radius: ["sm", "md", "lg", "xl", "2xl", "3xl"], // R-SKIN-06 corner magnitude
+    type: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"], // R-SKIN-07 size
     weight: ["medium", "semibold", "bold"], // R-SKIN-07 weight
   },
 } as const;

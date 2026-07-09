@@ -3,12 +3,16 @@
 // apply a binding to a DOM target as CSS custom properties. No palette values, no
 // storage, no framework: a project owns those; Ermine owns the contract and mechanism.
 
-import { SKIN_SOCKETS, type SkinSocket } from "./sockets.generated.ts";
+import { REQUIRED_SOCKETS, SKIN_SOCKETS, type SkinSocket } from "./sockets.generated.ts";
 
 export type Mode = "light" | "dark";
 
-/** A complete binding of every skin socket to a concrete CSS value. */
-export type SocketBindings = Record<SkinSocket, string>;
+/**
+ * A theme's socket binding. Required sockets (carrier anchors + scales) must be present;
+ * optional sockets (role anchors, all color steps) are bound only when the design uses
+ * them — so the binding is a partial map over the socket space.
+ */
+export type SocketBindings = Partial<Record<SkinSocket, string>>;
 
 /** A project palette: each named theme binds sockets for both resolved modes. */
 export type Palette = Record<string, Record<Mode, SocketBindings>>;
@@ -16,24 +20,22 @@ export type Palette = Record<string, Record<Mode, SocketBindings>>;
 const SOCKET_SET: ReadonlySet<string> = new Set(SKIN_SOCKETS);
 
 /**
- * Validate a socket binding against the contract: every socket present with a
- * non-empty value, and no unregistered socket. Returns human-readable errors
- * (empty array = valid) rather than throwing, so callers can report all at once.
+ * Validate a binding against the contract: every required socket present, every bound
+ * value non-empty, no unregistered socket. Optional sockets may be absent. Returns
+ * human-readable errors (empty array = valid) rather than throwing, so a caller can
+ * report all at once.
  */
 export function validateBindings(bindings: Record<string, unknown>): string[] {
   const errors: string[] = [];
-  for (const socket of SKIN_SOCKETS) {
-    if (!(socket in bindings)) {
-      errors.push(`missing socket: ${socket}`);
-      continue;
-    }
-    const value = bindings[socket];
-    if (typeof value !== "string" || value.trim() === "") {
-      errors.push(`empty socket value: ${socket}`);
-    }
+  for (const socket of REQUIRED_SOCKETS) {
+    if (!(socket in bindings)) errors.push(`missing required socket: ${socket}`);
   }
-  for (const key of Object.keys(bindings)) {
-    if (!SOCKET_SET.has(key)) errors.push(`unregistered socket: ${key}`);
+  for (const [key, value] of Object.entries(bindings)) {
+    if (!SOCKET_SET.has(key)) {
+      errors.push(`unregistered socket: ${key}`);
+    } else if (typeof value !== "string" || value.trim() === "") {
+      errors.push(`empty socket value: ${key}`);
+    }
   }
   return errors;
 }
@@ -65,6 +67,7 @@ export interface StyleTarget {
 /** Write a resolved binding onto a target as `--<socket>` custom properties. */
 export function applyTheme(bindings: SocketBindings, target: StyleTarget): void {
   for (const socket of SKIN_SOCKETS) {
-    target.style.setProperty(`--${socket}`, bindings[socket]);
+    const value = bindings[socket];
+    if (value !== undefined) target.style.setProperty(`--${socket}`, value);
   }
 }
