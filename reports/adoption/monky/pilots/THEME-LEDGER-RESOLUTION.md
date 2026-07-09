@@ -46,8 +46,11 @@ Mapping (Monky var → socket):
 
 ## Residuals (honest)
 
-- **`--shadow-color`** — no socket; a shadow alpha, not a surface/ink/accent colour. Kept
-  as a palette extra. Candidate: a `shadow` socket, or leave project-local.
+- **`--shadow-color`** — *resolved.* Absorbed as a standalone `shadow` socket (Monky
+  `518ecba`): a theme colour that is neither carrier nor role, read by the elevation
+  treatment (`raised`/`sunken`); its geometry (offset/blur) stays with the treatment, not
+  the socket. `--shadow-color` now aliases to `--shadow`; rendering unchanged. 23 sockets
+  bound. No colour residual remains.
 - **Scales** (`--radius-*`, `--spacing-*`, `--text-*`, `--transition-*`) stay in
   `metrics.css`. They are mode-invariant, so they are *not* routed through the theme-plane
   resolver — a deliberate boundary (the plane resolves theme × mode colour), not a gap.

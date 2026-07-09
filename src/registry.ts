@@ -520,6 +520,10 @@ export const SKIN_PLANE = {
       fail: ["faint"],
       note: ["faint"],
     },
+    // Standalone theme colours that are neither carrier nor role — read by a treatment,
+    // not typed by an author. `shadow` is the cast-shadow colour (its geometry belongs to
+    // the elevation treatment, not here).
+    standalone: ["shadow"],
   },
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {

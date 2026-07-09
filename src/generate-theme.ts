@@ -27,6 +27,7 @@ function derive(): Derived {
   const color = [
     ...carriers.flatMap(([anchor, steps]) => socketsFor(anchor, steps)),
     ...roles.flatMap(([anchor, steps]) => socketsFor(anchor, steps)),
+    ...SKIN_PLANE.colors.standalone,
   ];
   const scale = (family: keyof typeof SKIN_PLANE.scales) =>
     SKIN_PLANE.scales[family].map((step) => `${family}-${step}`);
