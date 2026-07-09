@@ -219,11 +219,57 @@ Source: pre-split `constitution/ERMINE.md` lines 1617–1623.
 ## RAT:R-SKIN-01
 Source: pre-split `constitution/ERMINE.md` lines 1624–1652.
 
+## RAT:R-SKIN-08
+The theme-plane sessions plus the W3C Design Tokens / Style Dictionary model: a socket is a
+semantic token resolved by theme × mode. The socket list must be registry-owned so the plane
+has an identity a project cannot fork; a Radix-style ramp may generate values under it.
+See `docs/skin-theme-ruling-draft.md`.
+
+## RAT:R-SKIN-02
+The rectangle-delimiter derivation (`docs/SKIN-GRAMMAR-PROPOSAL.md`): the semantic choice is
+whether the rectangle is made perceivable; the means (tone / border / radius / shadow) are
+theme facets of one delimiter, not separate axes. Flush is the unmarked default, mirroring an
+SVG shape with `fill="none" stroke="none"`.
+
+## RAT:R-SKIN-03
+The carrier/role/intensity model, independently confirmed by GitHub Primer's
+`[carrier]-[role]-[intensity]` (fgColor / bgColor / borderColor = ink / ground / rule). A role
+rides a carrier so it never collides with a property owner. See `docs/skin-theme-ruling-draft.md` §5.
+
+## RAT:R-SKIN-04
+Anchor-plus-recession from the ink/ground games. Four steps kept for expressive range (a
+current-trend observation) against Primer's leaner default/muted/subtle; provisional with a
+data-triggered reduction. Realization deferred to the theme so alpha vs `color-mix` stays an
+implementation choice.
+
+## RAT:R-SKIN-05
+Roles as a shared reporting register (pass/warn/fail/note) that read as siblings without one
+axis; validated against Primer's roles (accent/success/attention/danger). `note` kept distinct
+provisionally though Primer folds neutral info into accent. The constrained interface palette
+versus the versatile data plane resolves the restrict-vs-forgive tension by design-for-the-
+regularity: target the regular case, push the exception (dashboards/graphs) to a separate plane.
+
+## RAT:R-SKIN-06
+Corner kind from SVG `stroke-linejoin` (miter/round/bevel); magnitude scale-bound with fixed
+endpoints `square` and `pill` (pill = `calc(infinity * 1px)`, clamped by the spec to half the
+shorter side).
+
+## RAT:R-SKIN-07
+`font` is the delimiter-pattern kind (a multi-property responsibility area), not the ink-pattern
+kind (single property). The apparent asymmetry with ink dissolves at the description level:
+words name intent, not CSS properties (the R-SKIN-01 seam). Namespace locality keeps all
+typography under `font-*`.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 
 ## RAT:R-SCALE-02
 Source: pre-split `constitution/ERMINE.md` lines 1673–1692.
+
+## RAT:R-SCALE-03
+Extends R-SCALE-01's named-scale treatment to radius, type size, and motion magnitudes, per
+the two-tier suffix rule (a generator-produced magnitude takes scale-bound steps). The
+generator and its parameters remain open under R-SCALE-02.
 
 ## RAT:R-COMPILE-01
 Source: pre-split `constitution/ERMINE.md` lines 1715–1752.

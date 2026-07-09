@@ -514,6 +514,72 @@ values to the theme.
 
 → rationale: RAT:R-SKIN-01 · history: ADR-0002 · code: src/registry.ts#SKIN
 
+## R-SKIN-02 — Delimiter default
+
+A sub-element's rectangle is delimited only by carrying a delimiter facet (ground, rule, or
+corner); the undelimited state (flush) is the unnamed default. Ground, rule, corner, and
+shadow are facets of one delimiter, not independent axes. A corner word without another
+delimiter facet is a lint warning, except identity clipping of the element's own content.
+
+→ rationale: RAT:R-SKIN-02 · history: ADR-0005
+
+## R-SKIN-03 — Color carriers and composition
+
+Color is authored as `<carrier>[-<role>][-<intensity>]`. The carriers are ink (owns color),
+ground (owns background), and rule (owns border-color); each anchors a default hue and full
+intensity, both unnamed. The role slot overrides the hue; the intensity slot overrides
+prominence. A role never stands alone — it rides a carrier — so it cannot collide with a
+property owner.
+
+→ rationale: RAT:R-SKIN-03 · history: ADR-0005
+
+## R-SKIN-04 — Intensity ramp
+
+Intensity recedes from the unnamed full anchor through `soft`, `muted`, `faint`. The step
+count is four provisionally; it may reduce toward three if evidence shows `soft` unused. The
+theme owns realization (alpha or color-mix into ground); the grammar owns only the ordered
+step names.
+
+→ rationale: RAT:R-SKIN-04 · history: ADR-0005
+
+## R-SKIN-05 — Color roles and the constrained palette
+
+The interface color roles are `accent` (brand emphasis) and the status set `pass`, `warn`,
+`fail`, `note` — a shared reporting register, not one ordered axis. `note` is kept distinct
+from `accent` provisionally. Bare-role intensity is the full/solid color. The interface
+palette is deliberately constrained; the data/graph color plane is a separate, versatile
+concern and is out of scope for skin.
+
+→ rationale: RAT:R-SKIN-05 · history: ADR-0005
+
+## R-SKIN-06 — Corner
+
+Corner is kind × magnitude. Kind is `miter | round | bevel` (fixed words). Magnitude runs
+`square` (zero) through the radius scale (`sm md lg`) to `pill` (the half-shorter-side
+saturation). Endpoints are fixed words; the interior is scale-bound.
+
+→ rationale: RAT:R-SKIN-06 · history: ADR-0005
+
+## R-SKIN-07 — Typography namespace
+
+`font` is a multi-property responsibility area with sibling composable facets — size
+(scale-bound), weight (`medium semibold bold`), and typeface variant (`mono`) — each owning
+a disjoint property so they compose. It is a peer of `ink` at the description level: ink
+describes the marks' color, font their typographic character; neither's CSS-property count
+is grammar-visible.
+
+→ rationale: RAT:R-SKIN-07 · history: ADR-0005
+
+## R-SKIN-08 — Theme plane
+
+A theme is a project-owned, exhaustive binding of the registry's skin sockets, resolved
+across the selected theme and the resolved light/dark mode. Ermine owns the socket names,
+the completeness contract, the resolution interface, and a framework-free application
+helper; the project owns palette values, selection, persistence, and framework glue. The
+socket list is registry-defined; a theme may not invent unregistered sockets.
+
+→ rationale: RAT:R-SKIN-08 · history: ADR-0005
+
 ## R-SCALE-01 — Generator-defined scales
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.
@@ -528,6 +594,14 @@ The specific generator remains open pending empirical measurement. Implementatio
 the function, base, or ratio; the slot may admit varying ratios and per-property-family results.
 
 → rationale: RAT:R-SCALE-02 · history: ADR-0002
+
+## R-SCALE-03 — Scale-bound skin families
+
+Radius, type size, motion duration, and motion stagger are scale-bound alongside spacing
+(R-SCALE-01): the grammar owns stable step names, the theme owns the numbers, and the
+generator and its parameters remain open (R-SCALE-02).
+
+→ rationale: RAT:R-SCALE-03 · history: ADR-0005
 
 ## R-COMPILE-01 — Per-property scale compilation
 
