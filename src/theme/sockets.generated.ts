@@ -48,22 +48,6 @@ export const REQUIRED_SOCKETS = [
   "ground",
   "ink",
   "rule",
-  "radius-sm",
-  "radius-md",
-  "radius-lg",
-  "radius-xl",
-  "radius-2xl",
-  "radius-3xl",
-  "type-xs",
-  "type-sm",
-  "type-md",
-  "type-lg",
-  "type-xl",
-  "type-2xl",
-  "type-3xl",
-  "weight-medium",
-  "weight-semibold",
-  "weight-bold",
 ] as const;
 
 export const SOCKET_FAMILIES = {

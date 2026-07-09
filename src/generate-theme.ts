@@ -33,9 +33,10 @@ function derive(): Derived {
   const radius = scale("radius");
   const type = scale("type");
   const weight = scale("weight");
-  // Required floor (R-SKIN-08): carrier anchors + every scale step. Role anchors and all
-  // color steps are optional — bound when a design uses them.
-  const required = [...carriers.map(([anchor]) => anchor), ...radius, ...type, ...weight];
+  // Required floor (R-SKIN-08): the carrier anchors — a themed surface minimally needs a
+  // background, text, and border color. Role anchors, all color steps, and scales are
+  // optional: mode-invariant scales may come through the plane or a project metric layer.
+  const required = carriers.map(([anchor]) => anchor);
   return { color, radius, type, weight, required };
 }
 

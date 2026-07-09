@@ -497,9 +497,9 @@ export const SKIN: AxisRecord[] = [
 
 // Each carrier/role names its anchor (the bare socket) plus the steps it varies through
 // (R-SKIN-04: the theme realizes a step by binding its value — hand-tuned or computed).
-// Carrier anchors (ground/ink/rule) and every scale step are the required floor; role
-// anchors and all color steps are optional (bound when a design uses them). The socket
-// set is provisional and adjusts against real theme data.
+// Carrier anchors (ground/ink/rule) are the required floor; role anchors, all color steps,
+// and scales are optional (bound when a design uses them, or supplied by a metric layer).
+// The socket set is provisional and adjusts against real theme data.
 // implements: R-SKIN-03, R-SKIN-04, R-SKIN-05, R-SKIN-06, R-SKIN-07, R-SKIN-08, R-SCALE-03
 export const SKIN_PLANE = {
   colors: {
