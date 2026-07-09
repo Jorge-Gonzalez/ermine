@@ -503,11 +503,14 @@ export const SKIN: AxisRecord[] = [
 // implements: R-SKIN-03, R-SKIN-04, R-SKIN-05, R-SKIN-06, R-SKIN-07, R-SKIN-08, R-SCALE-03
 export const SKIN_PLANE = {
   colors: {
-    // R-SKIN-03: carriers own a default color. Steps: R-SKIN-04 ramp + ink's inverse.
+    // R-SKIN-03: carriers own a default color. Steps: R-SKIN-04 ramp, ink's inverse, and
+    // the conditioned-skin interaction tones (hover/active/selected) — the tones a skin
+    // recipe shows under `:hover` / `:active` / `[aria-selected]`, keyed by element kind
+    // and the `selectable` capability, not by any grammar word (platform-first, U-R10).
     carriers: {
-      ground: ["subtle", "defined"], // surface hierarchy (differentiation)
-      ink: ["soft", "muted", "faint", "inverse"], // recession + the inverse mark color
-      rule: ["soft"], // border: drawn or quiet
+      ground: ["subtle", "defined", "hover", "active", "selected"],
+      ink: ["soft", "muted", "faint", "inverse", "selected"],
+      rule: ["soft"],
     },
     // R-SKIN-05: shared role hues; anchor = full, `-faint` = the wash.
     roles: {

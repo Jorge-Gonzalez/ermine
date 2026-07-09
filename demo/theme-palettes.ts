@@ -14,10 +14,16 @@ interface Tones {
 
 // A role's wash references the resolved role and ground sockets, so it re-mixes per theme.
 const wash = (role: string) => `color-mix(in oklch, var(--${role}) 15%, var(--ground))`;
+// Interaction tones, computed toward ink (mode-robust differentiation) or accent (selection).
+// A real theme may hand-tune these for extra margin; the demo derives them so they stay
+// related to the palette and re-mix per theme.
+const towardInk = (pct: number) => `color-mix(in oklch, var(--ground) ${100 - pct}%, var(--ink))`;
+const towardAccent = (pct: number) => `color-mix(in oklch, var(--ground) ${100 - pct}%, var(--accent))`;
 
 const toSockets = (t: Tones): SocketBindings => ({
   ground: t.base, "ground-subtle": t.toneDim, "ground-defined": t.tone,
-  ink: t.ink, "ink-soft": t.inkSoft, "ink-inverse": t.inkAlt,
+  "ground-hover": towardInk(8), "ground-active": towardInk(16), "ground-selected": towardAccent(20),
+  ink: t.ink, "ink-soft": t.inkSoft, "ink-inverse": t.inkAlt, "ink-selected": t.accent,
   rule: t.harmonic, "rule-soft": t.harmonicMinor,
   accent: t.accent, "accent-soft": t.accentDim,
   pass: t.calm, "pass-faint": wash("pass"),
