@@ -45,6 +45,7 @@
     "spec:check": "tsx src/generate-spec.ts --check",
     "theme": "tsx src/generate-theme.ts",
     "theme:check": "tsx src/generate-theme.ts --check",
+    "theme-demo": "tsx demo/build-theme-demo.ts",
     "guide": "tsx src/generate-guide.ts",
     "guide:check": "tsx src/generate-guide.ts --check",
     "ownership": "node --import tsx src/derive-ownership.ts",
