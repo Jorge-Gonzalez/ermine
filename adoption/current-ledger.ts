@@ -226,8 +226,8 @@ function selectorCondition(compound: string): string {
   return "";
 }
 
-function matchKey(condition: string, property: string, resolvedValue: string): string {
-  return `${condition} ${canonicalProperty(property)} ${resolvedValue}`;
+export function matchKey(condition: string, property: string, resolvedValue: string): string {
+  return `${condition}\u0000${canonicalProperty(property)}\u0000${resolvedValue}`;
 }
 
 export function buildInverseErmineMap(environment: VarEnvironment): InverseErmineMap {
