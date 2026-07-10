@@ -1259,37 +1259,211 @@
           "label": "ground",
           "insertText": "ground",
           "kind": "word",
-          "meaning": "ground[-<step>]"
+          "meaning": "ground[-<role|step>[-<intensity>]]"
         },
         {
           "label": "ground-subtle",
           "insertText": "ground-subtle",
           "kind": "word",
-          "meaning": "ground[-<step>]"
+          "meaning": "ground[-<role|step>[-<intensity>]]"
         },
         {
           "label": "ground-defined",
           "insertText": "ground-defined",
           "kind": "word",
-          "meaning": "ground[-<step>]"
+          "meaning": "ground[-<role|step>[-<intensity>]]"
         },
         {
           "label": "ground-hover",
           "insertText": "ground-hover",
           "kind": "word",
-          "meaning": "ground[-<step>]"
+          "meaning": "ground[-<role|step>[-<intensity>]]"
         },
         {
           "label": "ground-active",
           "insertText": "ground-active",
           "kind": "word",
-          "meaning": "ground[-<step>]"
+          "meaning": "ground[-<role|step>[-<intensity>]]"
         },
         {
           "label": "ground-selected",
           "insertText": "ground-selected",
           "kind": "word",
-          "meaning": "ground[-<step>]"
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-accent",
+          "insertText": "ground-accent",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-accent-soft",
+          "insertText": "ground-accent-soft",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-accent-faint",
+          "insertText": "ground-accent-faint",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-pass",
+          "insertText": "ground-pass",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-pass-faint",
+          "insertText": "ground-pass-faint",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-warn",
+          "insertText": "ground-warn",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-warn-faint",
+          "insertText": "ground-warn-faint",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-fail",
+          "insertText": "ground-fail",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-fail-faint",
+          "insertText": "ground-fail-faint",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-note",
+          "insertText": "ground-note",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ground-note-faint",
+          "insertText": "ground-note-faint",
+          "kind": "word",
+          "meaning": "ground[-<role|step>[-<intensity>]]"
+        }
+      ]
+    },
+    {
+      "axis": "skin-ink",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink",
+      "items": [
+        {
+          "label": "ink",
+          "insertText": "ink",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-soft",
+          "insertText": "ink-soft",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-muted",
+          "insertText": "ink-muted",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-faint",
+          "insertText": "ink-faint",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-inverse",
+          "insertText": "ink-inverse",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-selected",
+          "insertText": "ink-selected",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-accent",
+          "insertText": "ink-accent",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-accent-soft",
+          "insertText": "ink-accent-soft",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-accent-faint",
+          "insertText": "ink-accent-faint",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-pass",
+          "insertText": "ink-pass",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-pass-faint",
+          "insertText": "ink-pass-faint",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-warn",
+          "insertText": "ink-warn",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-warn-faint",
+          "insertText": "ink-warn-faint",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-fail",
+          "insertText": "ink-fail",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-fail-faint",
+          "insertText": "ink-fail-faint",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-note",
+          "insertText": "ink-note",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "ink-note-faint",
+          "insertText": "ink-note-faint",
+          "kind": "word",
+          "meaning": "ink[-<role|step>[-<intensity>]]"
         }
       ]
     },

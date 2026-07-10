@@ -449,29 +449,72 @@ export const MOTION: AxisRecord[] = [
 // 5. SKIN — sampled (surface + type + one conditioned-skin record).
 // ============================================================================
 
+// The carrier/role/intensity vocabulary (R-SKIN-03/04/05), single-sourced so a
+// carrier axis's tokens and the SKIN_PLANE socket contract below cannot drift.
+// Carriers own a property + steps; roles are shared hues that ride any carrier;
+// role intensities recede the hue. A carrier word is `<carrier>`, `<carrier>-<step>`,
+// `<carrier>-<role>`, or `<carrier>-<role>-<intensity>`.
+const CARRIER_STEPS = {
+  ground: ["subtle", "defined", "hover", "active", "selected"],
+  ink: ["soft", "muted", "faint", "inverse", "selected"],
+  rule: ["soft"],
+} as const;
+const ROLE_STEPS = {
+  accent: ["soft", "faint"],
+  pass: ["faint"],
+  warn: ["faint"],
+  fail: ["faint"],
+  note: ["faint"],
+} as const;
+type Carrier = keyof typeof CARRIER_STEPS;
+
+// The closed suffix alternation a carrier accepts: its own steps, plus every role
+// and role-intensity. Fed to the token regex and (as words) to the emitter.
+const carrierSuffixes = (carrier: Carrier): string[] => [
+  ...CARRIER_STEPS[carrier],
+  ...Object.entries(ROLE_STEPS).flatMap(([role, steps]) => [role, ...steps.map((s) => `${role}-${s}`)]),
+];
+const carrierToken = (carrier: Carrier): Token => ({
+  pattern: new RegExp(`^${carrier}(-(${carrierSuffixes(carrier).join("|")}))?$`),
+  shape: `${carrier}[-<role|step>[-<intensity>]]`,
+});
+
 // implements: R-TYPE-01, R-SKIN-01
 export const SKIN: AxisRecord[] = [
   {
-    // skin-ground: the interior carrier (R-SKIN-03). Owns `background`; each word reads its
-    // like-named socket (K6 skin emission: anchor + hierarchy + interaction tones).
+    // skin-ground: the interior carrier (R-SKIN-03). Owns `background`; each word reads
+    // its like-named socket — carrier steps (hierarchy + interaction tones) plus role
+    // hues that ride the carrier (`ground-fail` = a fail-tinted surface).
     axis: "skin-ground",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["ground", "ground-subtle", "ground-defined", "ground-hover", "ground-active", "ground-selected"],
-    tokens: [{ pattern: /^ground(-(subtle|defined|hover|active|selected))?$/, shape: "ground[-<step>]" }],
+    valueSpace: ["ground", ...carrierSuffixes("ground").map((s) => `ground-${s}`)],
+    tokens: [carrierToken("ground")],
     default: null,
     controls: ["background"],
     mustNeverTouch: ["display", "gap", "flex", "position", "color", "border-color", "border-radius", "font-size"],
   },
   {
+    // skin-ink: the foreground carrier (R-SKIN-03). Owns `color`; carrier steps
+    // (soft/muted/faint/inverse) plus role hues (`ink-accent`, `ink-fail`).
+    axis: "skin-ink",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["ink", ...carrierSuffixes("ink").map((s) => `ink-${s}`)],
+    tokens: [carrierToken("ink")],
+    default: null,
+    controls: ["color"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background", "border-color", "border-radius", "font-size"],
+  },
+  {
     axis: "skin-surface",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
-    valueSpace: ["<ink>", "<radius>"],
-    tokens: [], // remaining sampled skin (color/border/radius/shadow) — not yet split into axes
+    valueSpace: ["<radius>"],
+    tokens: [], // remaining sampled skin (border/radius/shadow) — not yet split into axes
     default: null,
-    controls: ["color", "border", "border-radius", "box-shadow"],
-    mustNeverTouch: ["display", "gap", "flex", "position", "background"],
+    controls: ["border", "border-radius", "box-shadow"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color"],
   },
   {
     axis: "skin-type",
@@ -520,19 +563,9 @@ export const SKIN_PLANE = {
     // the conditioned-skin interaction tones (hover/active/selected) — the tones a skin
     // recipe shows under `:hover` / `:active` / `[aria-selected]`, keyed by element kind
     // and the `selectable` capability, not by any grammar word (platform-first, U-R10).
-    carriers: {
-      ground: ["subtle", "defined", "hover", "active", "selected"],
-      ink: ["soft", "muted", "faint", "inverse", "selected"],
-      rule: ["soft"],
-    },
+    carriers: CARRIER_STEPS,
     // R-SKIN-05: shared role hues; anchor = full, `-faint` = the wash.
-    roles: {
-      accent: ["soft", "faint"],
-      pass: ["faint"],
-      warn: ["faint"],
-      fail: ["faint"],
-      note: ["faint"],
-    },
+    roles: ROLE_STEPS,
     // Standalone theme colours that are neither carrier nor role — read by a treatment,
     // not typed by an author. `shadow` is the cast-shadow colour (its geometry belongs to
     // the elevation treatment, not here).

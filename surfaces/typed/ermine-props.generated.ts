@@ -71,7 +71,9 @@ export interface ErminePlainProps {
   /** axis `state.relational` */
   relational?: "active-descendant" | readonly ("active-descendant")[];
   /** axis `skin-ground` */
-  skinGround?: "ground" | "ground-subtle" | "ground-defined" | "ground-hover" | "ground-active" | "ground-selected";
+  skinGround?: "ground" | "ground-subtle" | "ground-defined" | "ground-hover" | "ground-active" | "ground-selected" | "ground-accent" | "ground-accent-soft" | "ground-accent-faint" | "ground-pass" | "ground-pass-faint" | "ground-warn" | "ground-warn-faint" | "ground-fail" | "ground-fail-faint" | "ground-note" | "ground-note-faint";
+  /** axis `skin-ink` */
+  skinInk?: "ink" | "ink-soft" | "ink-muted" | "ink-faint" | "ink-inverse" | "ink-selected" | "ink-accent" | "ink-accent-soft" | "ink-accent-faint" | "ink-pass" | "ink-pass-faint" | "ink-warn" | "ink-warn-faint" | "ink-fail" | "ink-fail-faint" | "ink-note" | "ink-note-faint";
   /** axis `selection-treatment` */
   selectionTreatment?: "selection-subtle" | "selection-strong";
 }
@@ -179,6 +181,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "continuousInput", axis: "state.continuous-input", kind: "group", many: true },
   { prop: "relational", axis: "state.relational", kind: "group", many: true },
   { prop: "skinGround", axis: "skin-ground", kind: "word" },
+  { prop: "skinInk", axis: "skin-ink", kind: "word" },
   { prop: "selectionTreatment", axis: "selection-treatment", kind: "word" },
 ];
 

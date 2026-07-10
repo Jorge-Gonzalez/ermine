@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (34 axes)  ‹SHARED›
+## 2. The axis registry (35 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=4. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=5. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -717,12 +717,12 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (4 axes)
+### 2.5 SKIN (5 axes)
 
 #### skin-ground
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `ground` `ground-subtle` `ground-defined` `ground-hover` `ground-active` `ground-selected`
+- value space: `ground` `ground-subtle` `ground-defined` `ground-hover` `ground-active` `ground-selected` `ground-accent` `ground-accent-soft` `ground-accent-faint` `ground-pass` `ground-pass-faint` `ground-warn` `ground-warn-faint` `ground-fail` `ground-fail-faint` `ground-note` `ground-note-faint`
 - default: none
 - controls: `background`
 - must never touch: `display` `gap` `flex` `position` `color` `border-color` `border-radius` `font-size`
@@ -731,15 +731,29 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `ground[-<step>]` | `/^ground(-(subtle\|defined\|hover\|active\|selected))?$/` | — | no |
+| `ground[-<role\|step>[-<intensity>]]` | `/^ground(-(subtle\|defined\|hover\|active\|selected\|accent\|accent-soft\|accent-faint\|pass\|pass-faint\|warn\|warn-faint\|fail\|fail-faint\|note\|note-faint))?$/` | — | no |
+
+#### skin-ink
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `ink` `ink-soft` `ink-muted` `ink-faint` `ink-inverse` `ink-selected` `ink-accent` `ink-accent-soft` `ink-accent-faint` `ink-pass` `ink-pass-faint` `ink-warn` `ink-warn-faint` `ink-fail` `ink-fail-faint` `ink-note` `ink-note-faint`
+- default: none
+- controls: `color`
+- must never touch: `display` `gap` `flex` `position` `background` `border-color` `border-radius` `font-size`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `ink[-<role\|step>[-<intensity>]]` | `/^ink(-(soft\|muted\|faint\|inverse\|selected\|accent\|accent-soft\|accent-faint\|pass\|pass-faint\|warn\|warn-faint\|fail\|fail-faint\|note\|note-faint))?$/` | — | no |
 
 #### skin-surface
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
-- value space: `<ink>` `<radius>`
+- value space: `<radius>`
 - default: none
-- controls: `color` `border` `border-radius` `box-shadow`
-- must never touch: `display` `gap` `flex` `position` `background`
+- controls: `border` `border-radius` `box-shadow`
+- must never touch: `display` `gap` `flex` `position` `background` `color`
 
 Tokens:
 

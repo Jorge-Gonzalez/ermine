@@ -806,33 +806,173 @@
     },
     "ground": {
       "axis": "skin-ground",
-      "meaning": "ground[-<step>]",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
     },
     "ground-subtle": {
       "axis": "skin-ground",
-      "meaning": "ground[-<step>]",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
     },
     "ground-defined": {
       "axis": "skin-ground",
-      "meaning": "ground[-<step>]",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
     },
     "ground-hover": {
       "axis": "skin-ground",
-      "meaning": "ground[-<step>]",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
     },
     "ground-active": {
       "axis": "skin-ground",
-      "meaning": "ground[-<step>]",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
     },
     "ground-selected": {
       "axis": "skin-ground",
-      "meaning": "ground[-<step>]",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-accent": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-accent-soft": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-accent-faint": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-pass": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-pass-faint": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-warn": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-warn-faint": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-fail": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-fail-faint": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-note": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-note-faint": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ink": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-soft": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-muted": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-faint": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-inverse": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-selected": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-accent": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-accent-soft": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-accent-faint": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-pass": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-pass-faint": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-warn": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-warn-faint": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-fail": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-fail-faint": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-note": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
+    },
+    "ink-note-faint": {
+      "axis": "skin-ink",
+      "meaning": "ink[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
     },
     "selection-subtle": {
       "axis": "selection-treatment",

@@ -61,6 +61,29 @@ const densityDial = (wordPrefix: string, property = wordPrefix) => (word: string
   return m ? { [property]: `var(--spacing-${m[1]})` } : null;
 };
 
+// A colour carrier (ground/ink/rule) reads exactly one socket into its property.
+// The bare carrier and its own steps read the carrier-prefixed socket; a role hue
+// riding the carrier reads the un-prefixed role socket (R-SKIN-05). The token has
+// already validated the word, so the role branch is the safe default.
+const CARRIER_STEPS: Record<string, readonly string[]> = SKIN_PLANE.colors.carriers;
+const carrierEmission = (carrier: string, property: string) => (word: string): Record<string, string> => {
+  if (word === carrier) return { [property]: `var(--${carrier})` };
+  const suffix = word.slice(carrier.length + 1);
+  const socket = CARRIER_STEPS[carrier]?.includes(suffix) ? `${carrier}-${suffix}` : suffix;
+  return { [property]: `var(--${socket})` };
+};
+
+// The full closed word list a carrier emits — its steps plus every role and
+// role-intensity (single-sourced from the socket contract; used by VOCABULARY).
+const carrierWords = (carrier: string): string[] => [
+  carrier,
+  ...(SKIN_PLANE.colors.carriers[carrier as keyof typeof SKIN_PLANE.colors.carriers] ?? []).map((s) => `${carrier}-${s}`),
+  ...Object.entries(SKIN_PLANE.colors.roles).flatMap(([role, steps]) => [
+    `${carrier}-${role}`,
+    ...steps.map((s) => `${carrier}-${role}-${s}`),
+  ]),
+];
+
 const EMISSION: Record<string, EmitSpec> = {
   // --- plain closed axis (no dials, no parametrics) ---
   structure: {
@@ -95,8 +118,12 @@ const EMISSION: Record<string, EmitSpec> = {
   density: { effectKind: "css", plain: densityDial("gap") },
   "flow-spacing": { effectKind: "css", plain: densityDial("flow", "margin-block-start") },
 
-  // --- skin colour carrier: the word is its socket name → direct var() read (K6) ---
-  "skin-ground": { effectKind: "css", plain: (word: string) => ({ background: `var(--${word})` }) },
+  // --- skin colour carriers: a carrier word reads one socket (K6 skin emission).
+  // Carrier steps read the carrier-prefixed socket (`ink-soft` → --ink-soft); role
+  // hues read the un-prefixed role socket (`ink-fail` → --fail), since a role is a
+  // shared hue that any carrier can wear (R-SKIN-05).
+  "skin-ground": { effectKind: "css", plain: carrierEmission("ground", "background") },
+  "skin-ink": { effectKind: "css", plain: carrierEmission("ink", "color") },
 
   // --- ordered-chain scale axis WITH sub-dials + aliasMatch (padding shape) ---
   padding: {
@@ -473,7 +500,8 @@ export const VOCABULARY: Record<string, string[]> = {
   overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip"],
   "position-mode": ["position-static", "position-relative", "position-absolute", "position-fixed", "position-sticky"],
   "stacking-context": ["isolate"],
-  "skin-ground": ["ground", ...SKIN_PLANE.colors.carriers.ground.map((s) => `ground-${s}`)],
+  "skin-ground": carrierWords("ground"),
+  "skin-ink": carrierWords("ink"),
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
   "motion-macro": ["together", "sequence", "cascade"],

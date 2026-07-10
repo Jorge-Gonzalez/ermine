@@ -8,7 +8,7 @@ import { parseWord } from "../src/lint.ts";
 
 test("ownership generation enumerates valid words for every emitted axis", () => {
   const words = emittableWords();
-  assert.equal(Object.keys(words).length, 32);
+  assert.equal(Object.keys(words).length, 33);
   for (const [axis, samples] of Object.entries(words)) {
     assert.ok(samples.length > 0, `${axis} has no emission samples`);
     for (const word of samples) assert.equal(parseWord(word).axis, axis, `${word} must resolve to ${axis}`);
@@ -31,7 +31,7 @@ test("P7 separates verified ownership from warned gap-axis fallbacks", () => {
   assert.deepEqual(report.violations, []);
   assert.deepEqual(report.unverifiedAxes, ["skin-surface", "skin-type"]);
   assert.deepEqual(report.ownership["skin-surface"], [
-    "border", "border-radius", "box-shadow", "color",
+    "border", "border-radius", "box-shadow",
   ]);
   // selection-treatment is eventTriggered (R-STATE-09): its shared-property overlaps
   // with skin-surface are sanctioned overrides, not warned collisions.

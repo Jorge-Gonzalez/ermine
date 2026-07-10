@@ -91,6 +91,9 @@
   "skin-ground": [
     "background"
   ],
+  "skin-ink": [
+    "color"
+  ],
   "selection-treatment": [
     "background",
     "color",
