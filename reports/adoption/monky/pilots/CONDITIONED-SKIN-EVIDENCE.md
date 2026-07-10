@@ -54,11 +54,11 @@ state rule competes on the same properties**.
 | Element-local hover | Guard? | Same-element state rule? | Disposition |
 | --- | --- | --- | --- |
 | `modal-nav-tab` | — | `[aria-current]` sets the **same** value | migrated (`3a12d5f`) |
-| `macro-search-item-edit` | — | none (state rule is `opacity` only) | **safe** |
+| `macro-search-item-edit` | — | none (state rule is `opacity` only) | migrated (`147c459`) |
 | `editor-popout` | — | none | **safe** |
-| `ce-toolbar-btn`, `ce-style-option` | — | none | **safe** |
 | `command-suggestion-action` (delete / cancel) | — | none | **safe** |
 | `command-suggestion-action` (confirm) | — | none | defer — `color:--base-tone` has no exact socket (contrast inversion) |
+| `ce-toolbar-btn`, `ce-style-option` | — | `.is-active` competes on bg/color | **needs render check** |
 | `macro-suggestions-command-item` | — | `[aria-selected]` competes on bg/border | **needs render check** |
 | `command-suggestion-item` | `:not([data-state])` | data-state guard | **stays local** (rework discipline) |
 | `seg-option` | `:not([aria-checked])` | aria-checked guard | **stays local** |
@@ -68,11 +68,14 @@ state rule competes on the same properties**.
 
 ## Rollout order
 
-1. **Render-safe hovers, view by view** — `macro-search-item-edit` (search), `ce-toolbar-btn` /
-   `ce-style-option` (content editor), `editor-popout` + `command-suggestion-action` delete/cancel
-   (editor). Each is bridge-equivalent by construction; verify by recompile + manifest↔CSS check.
-2. **Needs-render-check hovers** — `macro-suggestions-command-item`, `selectable-group`. Migrate
-   only with a live hover-over-selected check, since file order now arbitrates.
+1. **Render-safe hovers, view by view** — `macro-search-item-edit` (search, done), `editor-popout`
+   + `command-suggestion-action` delete/cancel (editor). Each is bridge-equivalent by
+   construction; verify by recompile + manifest↔CSS check. A hover is render-safe only when the
+   element has no competing same-property state rule — including `.is-active`, which several
+   control buttons carry.
+2. **Needs-render-check hovers** — `ce-toolbar-btn`, `ce-style-option` (`.is-active`),
+   `macro-suggestions-command-item` (`[aria-selected]`), `selectable-group` (`.is-selected`).
+   Migrate only with a live active/selected-over-hover check, since file order now arbitrates.
 3. **Guarded hovers stay local** — the `:not([data-state])` / `:not([aria-checked])` guards encode
    the exclusion that keeps `ground-fail-faint` and the checked pill authoritative.
 4. **Selected/checked** — separate task: wire through `selection-treatment`.
