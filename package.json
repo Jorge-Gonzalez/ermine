@@ -51,6 +51,7 @@
     "ownership": "node --import tsx src/derive-ownership.ts",
     "ownership:check": "node --import tsx src/derive-ownership.ts --check",
     "adoption:check": "node --import tsx adoption/validate-ledger.ts",
+    "adoption:current": "node --import tsx adoption/current-ledger.ts",
     "registry": "tsx src/registry.ts",
     "emit": "tsx src/emit.ts",
     "audit": "tsx analysis/audit.ts",
