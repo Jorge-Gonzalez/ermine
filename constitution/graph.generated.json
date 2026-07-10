@@ -43,6 +43,12 @@
       "anchor": "ADR-0007"
     },
     {
+      "id": "ADR-0008",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0008-backed-condition-prefix.md",
+      "anchor": "ADR-0008"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -679,6 +685,12 @@
       "anchor": "R-STATE-10"
     },
     {
+      "id": "R-STATE-11",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-11"
+    },
+    {
       "id": "R-STRUCTURE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1205,6 +1217,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-STATE-10"
+    },
+    {
+      "id": "RAT:R-STATE-11",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-11"
     },
     {
       "id": "RAT:R-STRUCTURE-01",
@@ -1944,6 +1962,11 @@
     {
       "from": "RAT:R-STATE-10",
       "to": "R-STATE-10",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-11",
+      "to": "R-STATE-11",
       "type": "rationale-of"
     },
     {

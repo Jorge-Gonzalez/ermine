@@ -215,6 +215,23 @@ the hover/active/focus family coherence and is overloaded, `float` collides with
 and names elevation, not pointer presence. Surfaced by the conditioned-skin evidence pass.
 Source: ADR-0007.
 
+## RAT:R-STATE-11
+The original `selection-treatment` axis offered two fixed levels (`selection-subtle`,
+`selection-strong`) that wrote `--selection-bg/ink/outline` custom properties, hard-coded to one
+hue and read by a sink. Wiring Monky's real selection revealed three mismatches at once: Monky
+selects in its accent hue, not the axis's harmonic; it draws the selected edge with `border-color`,
+not `outline`; and because the two levels' values are baked into the emitter, no theme could rebind
+them. The carrier grammar plus R-STATE-10's prefix already solve the general shape — compose
+carrier words, scope them to a condition — so selection needs nothing new except the one thing that
+separates it from hover: it is asserted by the application, not the platform, and must be backed. A
+`selected:` prefix reaching an element the container never marked selectable is a bug, so the
+linter verifies the `selectable` capability and the container's assertion (R-STATE-08) before the
+override is legal; the CSS serializes to the same attribute selector the backing already implies
+(`[aria-selected="true"]`). This unifies selection with hover under one prefix mechanism and lets a
+project's actual selected look compose from carriers, retiring the fixed subtle/strong levels that
+could express neither. `checked` is its sibling (`[aria-checked]`). Surfaced when the selection-sink
+wiring hit the hue/property mismatch. Source: ADR-0008.
+
 ## RAT:R-MOTION-01
 Source: pre-split `constitution/ERMINE.md` lines 1458–1468.
 

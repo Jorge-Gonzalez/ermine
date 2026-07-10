@@ -451,6 +451,19 @@ the prefix form when it scopes conditioned skin.
 
 → rationale: RAT:R-STATE-10 · history: ADR-0007 · code: src/registry.ts#INTERACTION_SCOPES, src/lint.ts#parseWord
 
+## R-STATE-11 — Backed condition prefix
+
+An application-asserted state — selected, checked — scopes a conditioned-skin override as a
+variant prefix (`selected:ground-defined`), the same shape as the platform-condition prefix
+(R-STATE-10) and licensed as an override by R-STATE-09. Unlike a platform condition it must be
+backed: the element carries the `selectable` capability and the container asserts the state
+(R-STATE-08), which the linter verifies — an unbacked prefix is an error. It serializes to the
+backing attribute selector (`[aria-selected="true"]`), not a pseudo-class. Composing carrier words
+under the state supersedes the fixed selection-treatment levels, which could express neither a
+project's own selection hue nor a border it drew with `border-color` rather than `outline`.
+
+→ rationale: RAT:R-STATE-11 · history: ADR-0008 · code: src/lint.ts#parseWord
+
 ## R-MOTION-01 — Closed motion grammar
 
 Motion axes have closed grammar vocabularies. Duration, delay, and stagger are open external skin
