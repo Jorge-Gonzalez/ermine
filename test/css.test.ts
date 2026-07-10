@@ -55,3 +55,11 @@ test("base skin and its hover: override compose as two rules on the same element
   assert.match(css, /\.ground \{[^}]*background: var\(--ground\);/s);
   assert.match(css, /\.hover\\:ground-subtle:hover \{[^}]*background: var\(--ground-subtle\);/s);
 });
+
+test("a backed selected: scope serializes to the [aria-selected] attribute selector (R-STATE-11)", () => {
+  const css = toCss("selectable selected:ground-defined selected:ink-accent selected:rule-accent");
+  assert.match(css, /\.selected\\:ground-defined\[aria-selected="true"\] \{[^}]*background: var\(--ground-defined\);/s);
+  assert.match(css, /\.selected\\:ink-accent\[aria-selected="true"\] \{[^}]*color: var\(--accent\);/s);
+  assert.match(css, /\.selected\\:rule-accent\[aria-selected="true"\] \{[^}]*border-color: var\(--accent\);/s);
+  assert.doesNotMatch(css, /@media/, "a backed state scope must not become an at-rule");
+});

@@ -19,7 +19,7 @@ export function createLinter(
   scopes: readonly ScopePrefix[],
 ): Linter {
   const parseWord = makeParser(records, scopes);
-  const predicates = makePredicates(records, parseWord);
+  const predicates = makePredicates(records, parseWord, scopes);
 
   const lint = (classString: string, backing = new Set<string>(), ctx: LintContext = {}): Issue[] => {
     const parsed = classString.trim().split(/\s+/).filter(Boolean).map(parseWord);
@@ -35,6 +35,7 @@ export function createLinter(
       ...predicates.p8b(parsed, ctx),
       ...predicates.p10(parsed),
       ...predicates.p11(parsed, ctx),
+      ...predicates.pBacked(parsed),
     ];
   };
 

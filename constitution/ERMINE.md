@@ -462,7 +462,7 @@ backing attribute selector (`[aria-selected="true"]`), not a pseudo-class. Compo
 under the state supersedes the fixed selection-treatment levels, which could express neither a
 project's own selection hue nor a border it drew with `border-color` rather than `outline`.
 
-→ rationale: RAT:R-STATE-11 · history: ADR-0008 · code: src/lint.ts#parseWord
+→ rationale: RAT:R-STATE-11 · history: ADR-0008 · code: src/registry.ts#STATE_SCOPES, src/lint.ts#parseWord
 
 ## R-MOTION-01 — Closed motion grammar
 

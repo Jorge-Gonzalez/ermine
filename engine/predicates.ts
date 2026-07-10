@@ -5,7 +5,7 @@
 // (P11), and per-member backing misuse (P6b). Predicates keep their P1…P11
 // identifiers as code-side IDs (the doc system's ruling).
 
-import type { AxisRecord, Issue, LintContext, Parsed } from "./types.ts";
+import type { AxisRecord, Issue, LintContext, Parsed, ScopePrefix } from "./types.ts";
 
 export interface Predicates {
   p1: (parsed: Parsed[]) => Issue[];
@@ -17,12 +17,15 @@ export interface Predicates {
   p8b: (parsed: Parsed[], ctx: LintContext) => Issue[];
   p10: (parsed: Parsed[]) => Issue[];
   p11: (parsed: Parsed[], ctx: LintContext) => Issue[];
+  pBacked: (parsed: Parsed[]) => Issue[];
 }
 
 export function makePredicates(
   records: readonly AxisRecord[],
   parseWord: (raw: string) => Parsed,
+  scopes: readonly ScopePrefix[] = [],
 ): Predicates {
+  const backedScopes = new Map(scopes.filter((s) => s.backedBy).map((s) => [s.id, s.backedBy!]));
   // --- P1: one word per axis PER SCOPE (one-word law, scope-amended) ---
   // Refinements for the two member-role sizing shapes:
   //   • whole-axis ALIASES: an alias is a COMPLETE value, so it conflicts with ANY
@@ -240,5 +243,25 @@ export function makePredicates(
     return out;
   };
 
-  return { p1, p2, p3, p4, p6, p8, p8b, p10, p11 };
+  // --- R-STATE-11: a word under a BACKED scope requires its capability word present ---
+  const pBacked = (parsed: Parsed[]): Issue[] => {
+    if (backedScopes.size === 0) return [];
+    const present = new Set(parsed.flatMap((p) => [p.member, p.raw].filter((w): w is string => !!w)));
+    const out: Issue[] = [];
+    const flagged = new Set<string>();
+    for (const p of parsed) {
+      const capability = backedScopes.get(p.scope);
+      if (!capability || flagged.has(p.scope) || present.has(capability)) continue;
+      out.push({
+        level: "error",
+        rule: "R-STATE-11",
+        msg: `'${p.scope}:' is a backed state scope — the element must also carry '${capability}'.`,
+        target: p.raw,
+      });
+      flagged.add(p.scope);
+    }
+    return out;
+  };
+
+  return { p1, p2, p3, p4, p6, p8, p8b, p10, p11, pBacked };
 }

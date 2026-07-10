@@ -199,6 +199,12 @@
       "anchor": "STATE"
     },
     {
+      "id": "CODE:STATE_SCOPES",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "STATE_SCOPES"
+    },
+    {
       "id": "CODE:Vocabulary",
       "register": "code",
       "file": "src/registry.ts",
@@ -1557,6 +1563,11 @@
     {
       "from": "CODE:STATE",
       "to": "R-STATE-06",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:STATE_SCOPES",
+      "to": "R-STATE-11",
       "type": "implements"
     },
     {

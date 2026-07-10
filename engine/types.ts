@@ -157,6 +157,10 @@ export interface ScopePrefix {
   pattern: RegExp; // matches the PREFIX part (before the colon)
   shape: string;
   role: Role;
+  // A BACKED scope: a word under this prefix is only legal when the element also carries
+  // this capability word (e.g. `selected:` requires `selectable`). Absent → no backing
+  // required (platform/environmental scopes). The declaring client owns the word.
+  backedBy?: string;
   note?: string;
 }
 

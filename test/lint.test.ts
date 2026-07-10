@@ -104,6 +104,11 @@ const cases: Case[] = [
   { s: "inline", ctx: { parentClasses: "padding-relaxed" }, expect: "ok", why: "parent is flow (no structure word) → inline is meaningful" },
   { s: "boxed", ctx: { parentClasses: "horizontal" }, expect: "ok", why: "boxed is block outer — blockification is a no-op change, not inert-inline" },
   { s: "inline", expect: "ok", why: "no parent context → P11 skipped, not failed" },
+  // R-STATE-11 — a backed condition prefix requires its capability word present
+  { s: "selected:ground-defined", expect: "fail", why: "R-STATE-11: selected: without selectable" },
+  { s: "selectable selected:ground-defined selected:ink-accent", expect: "ok", why: "backed by selectable" },
+  { s: "checked:ground-accent", expect: "fail", why: "R-STATE-11: checked: without selectable" },
+  { s: "hover:ground-subtle", expect: "ok", why: "hover: is unbacked — no capability required" },
 ];
 
 for (const c of cases) {

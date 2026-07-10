@@ -3,6 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import {
   ENVIRONMENT_SCOPES,
   INTERACTION_SCOPES,
+  STATE_SCOPES,
   REGISTRY,
   SCALES,
   type AxisRecord,
@@ -131,7 +132,7 @@ function renderEnvironmentScopes(): string {
     "| ID | Shape | Pattern | Role | Notes |",
     "|---|---|---|---|---|",
   ];
-  for (const scope of [...ENVIRONMENT_SCOPES, ...INTERACTION_SCOPES]) {
+  for (const scope of [...ENVIRONMENT_SCOPES, ...INTERACTION_SCOPES, ...STATE_SCOPES]) {
     lines.push(
       `| ${code(scope.id)} | ${tableCell(code(scope.shape))} | ${tableCell(code(scope.pattern.toString()))} | ` +
         `${code(scope.role)} | ${scope.note ? tableCell(scope.note) : "—"} |`,

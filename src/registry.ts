@@ -758,6 +758,16 @@ export const INTERACTION_SCOPES: ScopePrefix[] = [
   { id: "hover", pattern: /^hover$/, shape: "hover:", role: "none", note: "conditioned skin while the pointer is over the element" },
 ];
 
+// Application-asserted state scopes (R-STATE-11). Like interaction scopes they carry a
+// conditioned-skin override, but the condition is backed: the element must declare the
+// `selectable` capability and the container asserts the state. They serialize to the
+// backing attribute selector (`[aria-selected="true"]`), not a pseudo-class.
+// implements: R-STATE-11
+export const STATE_SCOPES: ScopePrefix[] = [
+  { id: "selected", pattern: /^selected$/, shape: "selected:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted selected" },
+  { id: "checked", pattern: /^checked$/, shape: "checked:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted checked" },
+];
+
 // ============================================================================
 // THE REGISTRY
 // ============================================================================

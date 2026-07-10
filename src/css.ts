@@ -54,9 +54,10 @@ export function buildStylesheet(classStrings: string[], ctx: LintContext = {}): 
     for (const [scope, authoredWords] of groups) {
       const base = scope === "base";
       const innerWords = base ? authoredWords : authoredWords.map((word) => word.slice(word.indexOf(":") + 1));
-      // A platform interaction scope (R-STATE-10) serializes to a pseudo-class suffix on the
-      // selector and stays in the base cascade; environmental scopes become at-rules.
-      const pseudo = base ? undefined : scopePseudo(scope);
+      // A platform interaction scope (R-STATE-10) serializes to a pseudo-class suffix and a
+      // backed state scope (R-STATE-11) to an attribute suffix; both stay in the base cascade.
+      // Environmental scopes become at-rules.
+      const pseudo = base ? undefined : scopePseudo(scope) ?? scopeAttribute(scope);
       const condition = base || pseudo ? undefined : scopeCondition(scope);
       if (!base && !pseudo && !condition) {
         notes.push(`scope '${scope}' needs a project condition binding; no CSS emitted for ${authoredWords.map((word) => `'${word}'`).join(", ")}`);
@@ -128,6 +129,16 @@ function scopeCondition(scope: string): string | undefined {
 // They append a pseudo-class to the selector rather than wrapping it in an at-rule.
 function scopePseudo(scope: string): string | undefined {
   const exact: Record<string, string> = { hover: ":hover" };
+  return exact[scope];
+}
+
+// Backed state scopes (R-STATE-11) serialize to the backing attribute selector the
+// container asserts — the same attribute the `selectable`/`selected` entailment implies.
+function scopeAttribute(scope: string): string | undefined {
+  const exact: Record<string, string> = {
+    selected: '[aria-selected="true"]',
+    checked: '[aria-checked="true"]',
+  };
   return exact[scope];
 }
 
