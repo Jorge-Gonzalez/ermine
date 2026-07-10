@@ -10,8 +10,9 @@ U8e binding at Monky `cf547f7`. Live Monky style reachability is measured at Mon
 - **Surfaces:** every Monky surface is migrated — modal/search, settings/editor,
   suggestions/delete, and the extension pages — onto one canonical Ermine grammar surface;
   the Tailwind-like utility vocabulary and the temporary legacy grammar are gone.
-- **Declarations:** of 1409 conserved baseline declarations, **77% have a terminal
-  disposition**; 23% remain `uncertain`, and every one is triaged (below).
+- **Declarations:** all 1409 conserved baseline declarations have a **terminal
+  disposition** — the U8f closure (`pilots/LEDGER-CLOSURE.md`) resolved the final 329
+  `uncertain` records; zero remain.
 - **Theme:** the skin **colour plane fully covers Monky's theme** — 23 sockets bound per
   theme × mode, contract-valid, byte-identical rendering, no colour residual.
 - **Live style reachability:** Monky's build-backed style audit now reports **198 live
@@ -21,24 +22,26 @@ U8e binding at Monky `cf547f7`. Live Monky style reachability is measured at Mon
 
 ## 1. Declaration coverage (the ledger)
 
-1409 conserved declarations, by disposition:
+1409 conserved declarations, by disposition — terminal since U8f
+(`pilots/LEDGER-CLOSURE.md`); the pre-closure baseline is preserved in git history:
 
 | Disposition | Count | Share | Meaning |
 |---|---:|---:|---|
-| grammar-exact | 104 | 7.4% | migrated to an Ermine word that reproduces the computed property |
-| grammar-composition | 46 | 3.3% | migrated to an Ermine composition |
-| skin-local | 339 | 24.1% | appearance (colour/type/border/shadow) — not grammar; theme/skin |
-| identity-local | 138 | 9.8% | component-specific geometry / product identity |
-| substrate | 37 | 2.6% | user-agent resets |
+| grammar-exact | 128 | 9.1% | migrated to an Ermine word that reproduces the computed property |
+| grammar-composition | 64 | 4.5% | migrated to an Ermine composition |
+| skin-local | 472 | 33.5% | appearance (colour/type/border/shadow/scales) — theme/skin, ruled or deliberately Monky-owned |
+| identity-local | 238 | 16.9% | component contract, product identity, kept-local or superseded exact geometry |
+| substrate | 58 | 4.1% | resets, base typography, font delivery |
+| gap | 33 | 2.3% | evidence attached to filed Gap Reports (scrollbar prominence, animation plane) |
 | dead | 416 | 29.5% | never-consumed (the Tailwind-like utility grid) — removed |
-| gap | 0 | — | no unresolved blocker holds an open Gap disposition |
-| uncertain | 329 | 23.4% | triaged, awaiting resolution (§5) |
+| uncertain | 0 | — | none — every baseline declaration is terminal |
 
-**Reading it honestly.** Grammar is 150 declarations — ~15% of the 993 *live* (non-dead)
+**Reading it honestly.** Grammar is 192 declarations — ~19% of the 993 *live* (non-dead)
 declarations. That is not a shortfall: structure is only about a third of what a stylesheet
 does, and Ermine's grammar deliberately owns structure, not appearance. The large `dead`
-share (30%) is the open utility grid that was never consumed. `skin-local` (the biggest
-live bucket) is exactly what the skin/theme plane now addresses.
+share (30%) is the open utility grid that was never consumed. `skin-local` is the biggest
+live bucket because appearance is most of what a stylesheet does; the ratified skin plane
+now backs it.
 
 ## 2. Surface coverage
 
@@ -75,10 +78,11 @@ application fact after the U8 migration and dead-style cleanup: every currently 
 Monky class is reachable by the audit, and the commented `.monky-logo-word` preservation
 note is intentionally invisible to selector accounting.
 
-The frozen ledger has now been reconciled against current Monky in
-`CURRENT-RECONCILIATION.md`. That report shows the old `skin-local = 339` bucket is mostly
-historical: 131 rows point at files that no longer exist, 92 more no longer match current
-declarations, and 116 still need current classification.
+The frozen ledger was reconciled against current Monky in `CURRENT-RECONCILIATION.md`
+and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked for now
+exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
+`current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
+hand counting.
 
 ## 4. Theme coverage (the socket plane)
 
@@ -96,18 +100,21 @@ Full detail: `pilots/THEME-LEDGER-RESOLUTION.md`.
 
 ## 5. What remains — specification
 
-### 5.1 The 329 uncertain declarations (triaged in `pilots/UNCERTAIN-TRIAGE.md`)
+### 5.1 The uncertain tail — closed (U8f, `pilots/LEDGER-CLOSURE.md`)
 
-| Bucket | Count | Status / next action |
+The 329 records triaged in `pilots/UNCERTAIN-TRIAGE.md` are terminal:
+
+| Bucket | Count | Resolution |
 |---|---:|---|
-| **Shared-ruling** | 150 | **Newly unblocked.** These were "resolvable after a skin/theme ruling" — those rulings now exist (R-SKIN-02…08, ADR-0005). Reclassify as `skin-local` under the rulings. The largest single win still open. |
-| Existing-Ermine | 93 | Semi-automatable: inverse generated-CSS lookup + computed-style confirmation → `grammar-exact`/`grammar-composition`. |
-| Identity-local | 49 | Human classification (component contract / public hook / viewport). |
-| Ermine-evolution | 37 | Feed the Gap Reports (§5.2); not terminal adoption. |
-| Dead-code | 0 | none met the reachability bar in this pass. |
+| Shared-ruling | 150 | `skin-local` under R-SKIN-02…08/R-SCALE-03 (129) and `substrate` (21) |
+| Existing-Ermine | 93 | inverse emission → `grammar-exact` 24 / `grammar-composition` 18; kept-local survivors 43 and superseded geometry 8 → `identity-local` |
+| Identity-local | 49 | `identity-local` (component contract, U-R2) |
+| Ermine-evolution | 37 | `gap` → scrollbar-prominence (24) and animation-plane (9) reports; opacity treatment (4) → `skin-local` |
 
-Uncertain records live in baseline files `layout-semantic.css` (245), `styles.css` (66),
-`pageStyles.css` (9), `utilities.css` (5), `popup.css` (4).
+Current migration status now lives in the **generated current ledger**
+(`CURRENT-LEDGER.md` / `current-ledger.json`, `npm run adoption:current`): a selector-aware
+reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes every current
+declaration and emits the `assimilable` work list for the next pass.
 
 ### 5.2 Open design questions (filed Gap Reports)
 
@@ -116,8 +123,9 @@ Uncertain records live in baseline files `layout-semantic.css` (245), `styles.cs
 | `GAP-U-dataviz-palette` | a second, versatile colour plane for graphs/dashboards |
 | `GAP-U-overflow-hidden` | an `overflow: hidden` word distinct from `clip` |
 | `GAP-U-density-2xl` | a 24px density step (between `loose` and `separated`) |
-| `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) |
+| `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) — holds 9 ledger `gap` records |
 | `GAP-U-interaction-affordance` | lift interaction affordance to capability words |
+| `GAP-U-scrollbar-prominence` | scrollbars as an explicit affordance; track/thumb sockets — holds 24 ledger `gap` records |
 | `GAP-K6-skin-surface`, `GAP-K6-skin-type` | pre-adoption skin-surface / skin-type questions (largely superseded by R-SKIN) |
 
 ### 5.3 Named follow-ups
@@ -142,7 +150,8 @@ Uncertain records live in baseline files `layout-semantic.css` (245), `styles.cs
 
 Against the order's completion definition, met: one pinned grammar, separated strata,
 utility/legacy vocabulary gone, generated classes lint+emit, one grammar revision across
-roots, skin gaps ruled or honestly local, behaviour preserved, and the live style audit is
-at zero dead-candidate declarations. **Open:** every baseline declaration terminal (329
-uncertain remain — 150 now unblocked by the skin rulings), and U9's tooling generalization
-+ final report. That is the remaining path to close.
+roots, skin gaps ruled or honestly local, behaviour preserved, the live style audit at
+zero dead-candidate declarations, and — since U8f — **every baseline declaration
+terminal** (zero uncertain, zero pending). **Open:** U9's tooling generalization + final
+case study, and the current ledger's `assimilable` work list as the ongoing
+assimilation queue. That is the remaining path to close.

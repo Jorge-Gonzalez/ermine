@@ -139,11 +139,12 @@ it must be read with the current reconciliation:
 - a future current-ledger generator should replace literal matching with selector-aware
   computed-style reconciliation against emitted Ermine CSS.
 
-Until that generator exists, the honest current status is:
-
-> Monky's live CSS is migrated and reachable; the remaining adoption work is ledger
-> reconciliation and classification of the 116 surviving historical skin-local literals,
-> not another broad visual migration pass.
+**Resolved (U8f).** That generator now exists — `adoption/current-ledger.ts`
+(`npm run adoption:current`) writes `CURRENT-LEDGER.md` / `current-ledger.json`, a
+selector-aware, reason-coded reconciliation of live Monky CSS against emitted Ermine
+CSS — and the frozen ledger itself is terminal: zero uncertain records remain
+(`pilots/LEDGER-CLOSURE.md`). This report stays as the reasoning bridge between the two
+accountings.
 
 ## Follow-up: color/background assimilation
 
