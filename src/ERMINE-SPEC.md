@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (35 axes)  ‹SHARED›
+## 2. The axis registry (37 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=5. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=7. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -717,7 +717,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (5 axes)
+### 2.5 SKIN (7 axes)
 
 #### skin-ground
 
@@ -747,13 +747,41 @@ Tokens:
 |---|---|---|---|
 | `ink[-<role\|step>[-<intensity>]]` | `/^ink(-(soft\|muted\|faint\|inverse\|selected\|accent\|accent-soft\|accent-faint\|pass\|pass-faint\|warn\|warn-faint\|fail\|fail-faint\|note\|note-faint))?$/` | — | no |
 
+#### skin-rule
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `rule` `rule-soft` `rule-accent` `rule-accent-soft` `rule-accent-faint` `rule-pass` `rule-pass-faint` `rule-warn` `rule-warn-faint` `rule-fail` `rule-fail-faint` `rule-note` `rule-note-faint`
+- default: none
+- controls: `border-color`
+- must never touch: `display` `gap` `flex` `position` `background` `color` `border-radius` `font-size`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `rule[-<role\|step>[-<intensity>]]` | `/^rule(-(soft\|accent\|accent-soft\|accent-faint\|pass\|pass-faint\|warn\|warn-faint\|fail\|fail-faint\|note\|note-faint))?$/` | — | no |
+
+#### corner
+
+- role: `self` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
+- value space: `corner-sm` `corner-md` `corner-lg` `corner-xl` `corner-2xl` `corner-3xl`
+- default: none
+- controls: `border-radius`
+- must never touch: `display` `gap` `flex` `position` `background` `color` `border-color` `font-size`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `corner-<step>` | `/^corner-(sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
+
 #### skin-surface
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
-- value space: `<radius>`
+- value space: `<border-width>` `<shadow>`
 - default: none
-- controls: `border` `border-radius` `box-shadow`
-- must never touch: `display` `gap` `flex` `position` `background` `color`
+- controls: `border-width` `border-style` `box-shadow`
+- must never touch: `display` `gap` `flex` `position` `background` `color` `border-color` `border-radius`
 
 Tokens:
 

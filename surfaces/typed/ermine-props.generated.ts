@@ -74,6 +74,10 @@ export interface ErminePlainProps {
   skinGround?: "ground" | "ground-subtle" | "ground-defined" | "ground-hover" | "ground-active" | "ground-selected" | "ground-accent" | "ground-accent-soft" | "ground-accent-faint" | "ground-pass" | "ground-pass-faint" | "ground-warn" | "ground-warn-faint" | "ground-fail" | "ground-fail-faint" | "ground-note" | "ground-note-faint";
   /** axis `skin-ink` */
   skinInk?: "ink" | "ink-soft" | "ink-muted" | "ink-faint" | "ink-inverse" | "ink-selected" | "ink-accent" | "ink-accent-soft" | "ink-accent-faint" | "ink-pass" | "ink-pass-faint" | "ink-warn" | "ink-warn-faint" | "ink-fail" | "ink-fail-faint" | "ink-note" | "ink-note-faint";
+  /** axis `skin-rule` */
+  skinRule?: "rule" | "rule-soft" | "rule-accent" | "rule-accent-soft" | "rule-accent-faint" | "rule-pass" | "rule-pass-faint" | "rule-warn" | "rule-warn-faint" | "rule-fail" | "rule-fail-faint" | "rule-note" | "rule-note-faint";
+  /** axis `corner` */
+  corner?: "corner-sm" | "corner-md" | "corner-lg" | "corner-xl" | "corner-2xl" | "corner-3xl";
   /** axis `selection-treatment` */
   selectionTreatment?: "selection-subtle" | "selection-strong";
 }
@@ -182,6 +186,8 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "relational", axis: "state.relational", kind: "group", many: true },
   { prop: "skinGround", axis: "skin-ground", kind: "word" },
   { prop: "skinInk", axis: "skin-ink", kind: "word" },
+  { prop: "skinRule", axis: "skin-rule", kind: "word" },
+  { prop: "corner", axis: "corner", kind: "word" },
   { prop: "selectionTreatment", axis: "selection-treatment", kind: "word" },
 ];
 

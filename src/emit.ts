@@ -124,6 +124,16 @@ const EMISSION: Record<string, EmitSpec> = {
   // shared hue that any carrier can wear (R-SKIN-05).
   "skin-ground": { effectKind: "css", plain: carrierEmission("ground", "background") },
   "skin-ink": { effectKind: "css", plain: carrierEmission("ink", "color") },
+  "skin-rule": { effectKind: "css", plain: carrierEmission("rule", "border-color") },
+
+  // --- corner: border-radius magnitude on the radius scale (R-SKIN-06) ---
+  corner: {
+    effectKind: "css",
+    plain: (word) => {
+      const m = word.match(new RegExp(`^corner-(${SKIN_PLANE.scales.radius.join("|")})$`));
+      return m ? { "border-radius": `var(--radius-${m[1]})` } : null;
+    },
+  },
 
   // --- ordered-chain scale axis WITH sub-dials + aliasMatch (padding shape) ---
   padding: {
@@ -502,6 +512,8 @@ export const VOCABULARY: Record<string, string[]> = {
   "stacking-context": ["isolate"],
   "skin-ground": carrierWords("ground"),
   "skin-ink": carrierWords("ink"),
+  "skin-rule": carrierWords("rule"),
+  corner: SKIN_PLANE.scales.radius.map((s) => `corner-${s}`),
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
   "motion-macro": ["together", "sequence", "cascade"],

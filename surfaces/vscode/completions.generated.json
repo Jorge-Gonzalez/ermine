@@ -1468,6 +1468,132 @@
       ]
     },
     {
+      "axis": "skin-rule",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule",
+      "items": [
+        {
+          "label": "rule",
+          "insertText": "rule",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-soft",
+          "insertText": "rule-soft",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-accent",
+          "insertText": "rule-accent",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-accent-soft",
+          "insertText": "rule-accent-soft",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-accent-faint",
+          "insertText": "rule-accent-faint",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-pass",
+          "insertText": "rule-pass",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-pass-faint",
+          "insertText": "rule-pass-faint",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-warn",
+          "insertText": "rule-warn",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-warn-faint",
+          "insertText": "rule-warn-faint",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-fail",
+          "insertText": "rule-fail",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-fail-faint",
+          "insertText": "rule-fail-faint",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-note",
+          "insertText": "rule-note",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "rule-note-faint",
+          "insertText": "rule-note-faint",
+          "kind": "word",
+          "meaning": "rule[-<role|step>[-<intensity>]]"
+        }
+      ]
+    },
+    {
+      "axis": "corner",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner",
+      "items": [
+        {
+          "label": "corner-sm",
+          "insertText": "corner-sm",
+          "kind": "word",
+          "meaning": "corner-<step>"
+        },
+        {
+          "label": "corner-md",
+          "insertText": "corner-md",
+          "kind": "word",
+          "meaning": "corner-<step>"
+        },
+        {
+          "label": "corner-lg",
+          "insertText": "corner-lg",
+          "kind": "word",
+          "meaning": "corner-<step>"
+        },
+        {
+          "label": "corner-xl",
+          "insertText": "corner-xl",
+          "kind": "word",
+          "meaning": "corner-<step>"
+        },
+        {
+          "label": "corner-2xl",
+          "insertText": "corner-2xl",
+          "kind": "word",
+          "meaning": "corner-<step>"
+        },
+        {
+          "label": "corner-3xl",
+          "insertText": "corner-3xl",
+          "kind": "word",
+          "meaning": "corner-<step>"
+        }
+      ]
+    },
+    {
       "axis": "selection-treatment",
       "reference": "src/ERMINE-SPEC.md §2.5 — selection-treatment",
       "items": [

@@ -974,6 +974,101 @@
       "meaning": "ink[-<role|step>[-<intensity>]]",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-ink"
     },
+    "rule": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-soft": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-accent": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-accent-soft": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-accent-faint": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-pass": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-pass-faint": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-warn": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-warn-faint": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-fail": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-fail-faint": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-note": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-note-faint": {
+      "axis": "skin-rule",
+      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "corner-sm": {
+      "axis": "corner",
+      "meaning": "corner-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-md": {
+      "axis": "corner",
+      "meaning": "corner-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-lg": {
+      "axis": "corner",
+      "meaning": "corner-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-xl": {
+      "axis": "corner",
+      "meaning": "corner-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-2xl": {
+      "axis": "corner",
+      "meaning": "corner-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-3xl": {
+      "axis": "corner",
+      "meaning": "corner-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
     "selection-subtle": {
       "axis": "selection-treatment",
       "meaning": "conditioned-skin: a CONDITIONAL VARIANT LAYER, not a base skin axis. It writes custom properties (--selection-bg/--selection-ink), NOT background/color directly — a sink rule reads them under the `selected` condition. This is why it does NOT collide with skin-surface's background/color (same discipline as m2 longhands / motion --stagger): conditioned layers compose with base skin by writing different variables. Entails nothing itself; conditioned by `selected`/`hover`/`active`; pairs with capability `selectable`.",

@@ -479,6 +479,14 @@ const carrierToken = (carrier: Carrier): Token => ({
   shape: `${carrier}[-<role|step>[-<intensity>]]`,
 });
 
+// R-SKIN-06 corner magnitude: an ordered radius scale, single-sourced into the
+// SKIN_PLANE scale contract below and the `corner` token.
+const RADIUS_STEPS = ["sm", "md", "lg", "xl", "2xl", "3xl"] as const;
+const scaleToken = (prefix: string, steps: readonly string[]): Token => ({
+  pattern: new RegExp(`^${prefix}-(${steps.join("|")})$`),
+  shape: `${prefix}-<step>`,
+});
+
 // implements: R-TYPE-01, R-SKIN-01
 export const SKIN: AxisRecord[] = [
   {
@@ -507,14 +515,38 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "border-color", "border-radius", "font-size"],
   },
   {
+    // skin-rule: the border carrier (R-SKIN-03). Owns `border-color`; carries the
+    // same steps + role hues as the other carriers (`rule-fail` = a fail-coloured edge).
+    axis: "skin-rule",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["rule", ...carrierSuffixes("rule").map((s) => `rule-${s}`)],
+    tokens: [carrierToken("rule")],
+    default: null,
+    controls: ["border-color"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-radius", "font-size"],
+  },
+  {
+    // corner: border-radius magnitude on an ordered radius scale (R-SKIN-06). Shape
+    // (round/bevel/…) is deferred until corner-shape has broad support.
+    axis: "corner",
+    sibling: "skin", role: "self", signature: "ordered-chain",
+    vocabulary: "closed", regime: "free",
+    valueSpace: RADIUS_STEPS.map((s) => `corner-${s}`),
+    tokens: [scaleToken("corner", RADIUS_STEPS)],
+    default: null,
+    controls: ["border-radius"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "font-size"],
+  },
+  {
     axis: "skin-surface",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
-    valueSpace: ["<radius>"],
-    tokens: [], // remaining sampled skin (border/radius/shadow) — not yet split into axes
+    valueSpace: ["<border-width>", "<shadow>"],
+    tokens: [], // remaining sampled skin (border width/style + shadow) — not yet split into axes
     default: null,
-    controls: ["border", "border-radius", "box-shadow"],
-    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color"],
+    controls: ["border-width", "border-style", "box-shadow"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius"],
   },
   {
     axis: "skin-type",
@@ -573,7 +605,7 @@ export const SKIN_PLANE = {
   },
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {
-    radius: ["sm", "md", "lg", "xl", "2xl", "3xl"], // R-SKIN-06 corner magnitude
+    radius: RADIUS_STEPS, // R-SKIN-06 corner magnitude
     type: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"], // R-SKIN-07 size
     weight: ["medium", "semibold", "bold"], // R-SKIN-07 weight
   },

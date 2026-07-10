@@ -94,6 +94,12 @@
   "skin-ink": [
     "color"
   ],
+  "skin-rule": [
+    "border-color"
+  ],
+  "corner": [
+    "border-radius"
+  ],
   "selection-treatment": [
     "background",
     "color",
