@@ -1069,6 +1069,56 @@
       "meaning": "corner-<step>",
       "reference": "src/ERMINE-SPEC.md §2.5 — corner"
     },
+    "font-xs": {
+      "axis": "font-size",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-size"
+    },
+    "font-sm": {
+      "axis": "font-size",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-size"
+    },
+    "font-md": {
+      "axis": "font-size",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-size"
+    },
+    "font-lg": {
+      "axis": "font-size",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-size"
+    },
+    "font-xl": {
+      "axis": "font-size",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-size"
+    },
+    "font-2xl": {
+      "axis": "font-size",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-size"
+    },
+    "font-3xl": {
+      "axis": "font-size",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-size"
+    },
+    "font-medium": {
+      "axis": "font-weight",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-weight"
+    },
+    "font-semibold": {
+      "axis": "font-weight",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-weight"
+    },
+    "font-bold": {
+      "axis": "font-weight",
+      "meaning": "font-<step>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-weight"
+    },
     "selection-subtle": {
       "axis": "selection-treatment",
       "meaning": "conditioned-skin: a CONDITIONAL VARIANT LAYER, not a base skin axis. It writes custom properties (--selection-bg/--selection-ink), NOT background/color directly — a sink rule reads them under the `selected` condition. This is why it does NOT collide with skin-surface's background/color (same discipline as m2 longhands / motion --stagger): conditioned layers compose with base skin by writing different variables. Entails nothing itself; conditioned by `selected`/`hover`/`active`; pairs with capability `selectable`.",

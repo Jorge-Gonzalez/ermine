@@ -479,9 +479,12 @@ const carrierToken = (carrier: Carrier): Token => ({
   shape: `${carrier}[-<role|step>[-<intensity>]]`,
 });
 
-// R-SKIN-06 corner magnitude: an ordered radius scale, single-sourced into the
-// SKIN_PLANE scale contract below and the `corner` token.
+// R-SKIN-06/07 scale-bound families, single-sourced into the SKIN_PLANE scale
+// contract below and the axis tokens. R-SKIN-07: all typography lives under `font-*`,
+// so size and weight are disjoint-property facets sharing that word namespace.
 const RADIUS_STEPS = ["sm", "md", "lg", "xl", "2xl", "3xl"] as const;
+const TYPE_STEPS = ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"] as const;
+const WEIGHT_STEPS = ["medium", "semibold", "bold"] as const;
 const scaleToken = (prefix: string, steps: readonly string[]): Token => ({
   pattern: new RegExp(`^${prefix}-(${steps.join("|")})$`),
   shape: `${prefix}-<step>`,
@@ -549,14 +552,40 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius"],
   },
   {
+    // font-size: typographic scale (R-SKIN-07 size facet), a disjoint-property facet
+    // of the `font-*` namespace. Reads the type-scale socket (`font-md` → --type-md).
+    axis: "font-size",
+    sibling: "skin", role: "self", signature: "ordered-chain",
+    vocabulary: "closed", regime: "free",
+    valueSpace: TYPE_STEPS.map((s) => `font-${s}`),
+    tokens: [scaleToken("font", TYPE_STEPS)],
+    default: null,
+    controls: ["font-size"],
+    mustNeverTouch: ["display", "gap", "flex", "margin", "font-weight", "font-family"],
+  },
+  {
+    // font-weight: the weight facet (R-SKIN-07), disjoint from size so they compose
+    // (`font-md font-bold`). Reads the weight-scale socket (`font-bold` → --weight-bold).
+    axis: "font-weight",
+    sibling: "skin", role: "self", signature: "ordered-chain",
+    vocabulary: "closed", regime: "free",
+    valueSpace: WEIGHT_STEPS.map((s) => `font-${s}`),
+    tokens: [scaleToken("font", WEIGHT_STEPS)],
+    default: null,
+    controls: ["font-weight"],
+    mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-family"],
+  },
+  {
+    // skin-type: the remaining unruled typography (line-height, typeface stack,
+    // text-align) — gap-reported until each facet's word form is ruled.
     axis: "skin-type",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
     valueSpace: ["<type-step>"],
     tokens: [],
     default: null,
-    controls: ["font-size", "line-height", "font-family", "font-weight", "text-align"],
-    mustNeverTouch: ["display", "gap", "flex", "margin"],
+    controls: ["line-height", "font-family", "text-align"],
+    mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight"],
   },
   {
     // conditioned-skin: the look a state drives. Makes `selectable + selection-subtle` operational.
@@ -606,8 +635,8 @@ export const SKIN_PLANE = {
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {
     radius: RADIUS_STEPS, // R-SKIN-06 corner magnitude
-    type: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"], // R-SKIN-07 size
-    weight: ["medium", "semibold", "bold"], // R-SKIN-07 weight
+    type: TYPE_STEPS, // R-SKIN-07 size
+    weight: WEIGHT_STEPS, // R-SKIN-07 weight
   },
 } as const;
 

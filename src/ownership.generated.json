@@ -100,6 +100,12 @@
   "corner": [
     "border-radius"
   ],
+  "font-size": [
+    "font-size"
+  ],
+  "font-weight": [
+    "font-weight"
+  ],
   "selection-treatment": [
     "background",
     "color",

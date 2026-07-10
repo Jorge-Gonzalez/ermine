@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (37 axes)  ‹SHARED›
+## 2. The axis registry (39 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=7. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=9. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -717,7 +717,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (7 axes)
+### 2.5 SKIN (9 axes)
 
 #### skin-ground
 
@@ -789,13 +789,41 @@ Tokens:
 |---|---|---|---|
 | — | — | — | — |
 
+#### font-size
+
+- role: `self` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
+- value space: `font-xs` `font-sm` `font-md` `font-lg` `font-xl` `font-2xl` `font-3xl`
+- default: none
+- controls: `font-size`
+- must never touch: `display` `gap` `flex` `margin` `font-weight` `font-family`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `font-<step>` | `/^font-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
+
+#### font-weight
+
+- role: `self` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
+- value space: `font-medium` `font-semibold` `font-bold`
+- default: none
+- controls: `font-weight`
+- must never touch: `display` `gap` `flex` `margin` `font-size` `font-family`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `font-<step>` | `/^font-(medium\|semibold\|bold)$/` | — | no |
+
 #### skin-type
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
 - value space: `<type-step>`
 - default: none
-- controls: `font-size` `line-height` `font-family` `font-weight` `text-align`
-- must never touch: `display` `gap` `flex` `margin`
+- controls: `line-height` `font-family` `text-align`
+- must never touch: `display` `gap` `flex` `margin` `font-size` `font-weight`
 
 Tokens:
 

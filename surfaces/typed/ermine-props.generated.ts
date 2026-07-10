@@ -78,6 +78,10 @@ export interface ErminePlainProps {
   skinRule?: "rule" | "rule-soft" | "rule-accent" | "rule-accent-soft" | "rule-accent-faint" | "rule-pass" | "rule-pass-faint" | "rule-warn" | "rule-warn-faint" | "rule-fail" | "rule-fail-faint" | "rule-note" | "rule-note-faint";
   /** axis `corner` */
   corner?: "corner-sm" | "corner-md" | "corner-lg" | "corner-xl" | "corner-2xl" | "corner-3xl";
+  /** axis `font-size` */
+  fontSize?: "font-xs" | "font-sm" | "font-md" | "font-lg" | "font-xl" | "font-2xl" | "font-3xl";
+  /** axis `font-weight` */
+  fontWeight?: "font-medium" | "font-semibold" | "font-bold";
   /** axis `selection-treatment` */
   selectionTreatment?: "selection-subtle" | "selection-strong";
 }
@@ -188,6 +192,8 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "skinInk", axis: "skin-ink", kind: "word" },
   { prop: "skinRule", axis: "skin-rule", kind: "word" },
   { prop: "corner", axis: "corner", kind: "word" },
+  { prop: "fontSize", axis: "font-size", kind: "word" },
+  { prop: "fontWeight", axis: "font-weight", kind: "word" },
   { prop: "selectionTreatment", axis: "selection-treatment", kind: "word" },
 ];
 

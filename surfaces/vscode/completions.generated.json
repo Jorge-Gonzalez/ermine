@@ -1594,6 +1594,78 @@
       ]
     },
     {
+      "axis": "font-size",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-size",
+      "items": [
+        {
+          "label": "font-xs",
+          "insertText": "font-xs",
+          "kind": "word",
+          "meaning": "font-<step>"
+        },
+        {
+          "label": "font-sm",
+          "insertText": "font-sm",
+          "kind": "word",
+          "meaning": "font-<step>"
+        },
+        {
+          "label": "font-md",
+          "insertText": "font-md",
+          "kind": "word",
+          "meaning": "font-<step>"
+        },
+        {
+          "label": "font-lg",
+          "insertText": "font-lg",
+          "kind": "word",
+          "meaning": "font-<step>"
+        },
+        {
+          "label": "font-xl",
+          "insertText": "font-xl",
+          "kind": "word",
+          "meaning": "font-<step>"
+        },
+        {
+          "label": "font-2xl",
+          "insertText": "font-2xl",
+          "kind": "word",
+          "meaning": "font-<step>"
+        },
+        {
+          "label": "font-3xl",
+          "insertText": "font-3xl",
+          "kind": "word",
+          "meaning": "font-<step>"
+        }
+      ]
+    },
+    {
+      "axis": "font-weight",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-weight",
+      "items": [
+        {
+          "label": "font-medium",
+          "insertText": "font-medium",
+          "kind": "word",
+          "meaning": "font-<step>"
+        },
+        {
+          "label": "font-semibold",
+          "insertText": "font-semibold",
+          "kind": "word",
+          "meaning": "font-<step>"
+        },
+        {
+          "label": "font-bold",
+          "insertText": "font-bold",
+          "kind": "word",
+          "meaning": "font-<step>"
+        }
+      ]
+    },
+    {
       "axis": "selection-treatment",
       "reference": "src/ERMINE-SPEC.md §2.5 — selection-treatment",
       "items": [

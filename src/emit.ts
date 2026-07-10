@@ -135,6 +135,24 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- font facets: size + weight on the type/weight scales (R-SKIN-07). The
+  // `font-*` word reads the scale socket, which is named for the scale not the facet
+  // (`font-md` → --type-md, `font-bold` → --weight-bold). ---
+  "font-size": {
+    effectKind: "css",
+    plain: (word) => {
+      const m = word.match(new RegExp(`^font-(${SKIN_PLANE.scales.type.join("|")})$`));
+      return m ? { "font-size": `var(--type-${m[1]})` } : null;
+    },
+  },
+  "font-weight": {
+    effectKind: "css",
+    plain: (word) => {
+      const m = word.match(new RegExp(`^font-(${SKIN_PLANE.scales.weight.join("|")})$`));
+      return m ? { "font-weight": `var(--weight-${m[1]})` } : null;
+    },
+  },
+
   // --- ordered-chain scale axis WITH sub-dials + aliasMatch (padding shape) ---
   padding: {
     effectKind: "css",
@@ -514,6 +532,8 @@ export const VOCABULARY: Record<string, string[]> = {
   "skin-ink": carrierWords("ink"),
   "skin-rule": carrierWords("rule"),
   corner: SKIN_PLANE.scales.radius.map((s) => `corner-${s}`),
+  "font-size": SKIN_PLANE.scales.type.map((s) => `font-${s}`),
+  "font-weight": SKIN_PLANE.scales.weight.map((s) => `font-${s}`),
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
   "motion-macro": ["together", "sequence", "cascade"],
