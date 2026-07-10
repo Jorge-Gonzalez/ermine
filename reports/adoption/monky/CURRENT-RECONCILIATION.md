@@ -156,3 +156,14 @@ A selector-level scan of current Monky CSS found 23 actual current declarations 
 families before the pass. The pass assimilated the safe carrier cases into Ermine words and
 left 11 local declarations, all tied to `aria-current`, parent-relational state,
 pseudo-elements, transparent reset semantics, or button recipe mechanics.
+
+## Follow-up: border/rule assimilation
+
+The next targeted pass is recorded in `pilots/BORDER-RULE-ASSIMILATION.md`. It focused on
+safe border-colour cases that Ermine can express as `rule` while component CSS keeps line
+mechanics.
+
+The pass converted modal dialog, search input-container, and segmented option separator
+colours to `rule`. In the current adoption surfaces, border-family declarations dropped
+from 16 to 13. The remaining cases are resets/absence, transparent spacing sentinels,
+`aria-current`, focus, pseudo-element geometry, and segmented-control overlap mechanics.
