@@ -144,3 +144,15 @@ Until that generator exists, the honest current status is:
 > Monky's live CSS is migrated and reachable; the remaining adoption work is ledger
 > reconciliation and classification of the 116 surviving historical skin-local literals,
 > not another broad visual migration pass.
+
+## Follow-up: color/background assimilation
+
+The first targeted reconciliation pass is recorded in
+`pilots/COLOR-BACKGROUND-ASSIMILATION.md`. It focused on the historical `color`,
+`background`, and `background-color` skin-local families.
+
+Important correction: the earlier property-family counts were historical and file-level.
+A selector-level scan of current Monky CSS found 23 actual current declarations in those
+families before the pass. The pass assimilated the safe carrier cases into Ermine words and
+left 11 local declarations, all tied to `aria-current`, parent-relational state,
+pseudo-elements, transparent reset semantics, or button recipe mechanics.
