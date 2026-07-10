@@ -439,6 +439,18 @@ is the author's responsibility.
 
 → rationale: RAT:R-STATE-09 · history: ADR-0006 · code: src/emit.ts#checkDimensionalPurity
 
+## R-STATE-10 — Platform-condition skin prefix
+
+A conditioned-skin override triggered by a platform interaction condition — hover, active, focus —
+is written as a variant prefix on the skin word (`hover:ground-subtle`), the same syntax as an
+environmental scope (R-STATE-07) and licensed as an override by R-STATE-09. These prefixes form a
+closed validated set. The platform supplies the condition, so no backing is required — the seam
+with application-asserted states (selected, checked), which keep the backed `selectable` path
+(R-STATE-08). This refines R-STATE-07: an interaction state stays bare as a predicate, but takes
+the prefix form when it scopes conditioned skin.
+
+→ rationale: RAT:R-STATE-10 · history: ADR-0007 · code: src/lint.ts#parseWord
+
 ## R-MOTION-01 — Closed motion grammar
 
 Motion axes have closed grammar vocabularies. Duration, delay, and stagger are open external skin

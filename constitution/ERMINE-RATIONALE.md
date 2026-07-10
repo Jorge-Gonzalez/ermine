@@ -196,6 +196,25 @@ the cascade because their priority is a genuine design choice, not a universal t
 rule. Resolves GAP-K6-skin-surface's B4 question. Surfaced by `how do buttons resolve this`.
 Source: ADR-0006.
 
+## RAT:R-STATE-10
+R-STATE-07 kept interaction states bare because it saw them as condition-only predicates
+(R-STATE-01). Skin carriers plus R-STATE-09 exposed a second use: a per-element skin override
+that fires only under the condition (a tab raising its own ground on hover). The Monky evidence —
+46 conditioned skin rules, hover dominant — shows those tones are per-element design choices, not
+derivable from element kind, so the platform-first cascade cannot absorb them and leaving them
+local hides real design in the stylesheet. The prefix promotes that intent into the class
+paragraph; because the values are already carrier words, only the *condition* is new. It is a
+prefix rather than a bare word because the condition scopes an existing declaration instead of
+adding a value — the R-STATE-07 shape. Platform conditions need no backing (the browser owns
+hover/active/focus), which is the seam with app-asserted selection (`selectable`, R-STATE-08); a
+bare interaction predicate and a `hover:` scope can coexist without conflict. The paragraph
+deliberately omits UA-supplied decoration such as the focus ring — redrawing what the platform
+already provides is the anti-pattern — and verbosity stays bounded because the regular treatment
+is one-to-two declarations. `over` and `float` were weighed as names and set aside: `over` loses
+the hover/active/focus family coherence and is overloaded, `float` collides with the CSS property
+and names elevation, not pointer presence. Surfaced by the conditioned-skin evidence pass.
+Source: ADR-0007.
+
 ## RAT:R-MOTION-01
 Source: pre-split `constitution/ERMINE.md` lines 1458–1468.
 

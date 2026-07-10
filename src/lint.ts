@@ -12,7 +12,7 @@ export type { Issue, LintContext, Parsed } from "../engine/types.ts";
 
 const linter = createLinter(REGISTRY, ENVIRONMENT_SCOPES);
 
-// implements: R-STATE-07
+// implements: R-STATE-07, R-STATE-10
 export const parseWord = linter.parseWord;
 // implements: LAW-2
 export const p1_oneWordPerAxisPerScope = linter.p1;

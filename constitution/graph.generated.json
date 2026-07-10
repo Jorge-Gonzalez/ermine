@@ -37,6 +37,12 @@
       "anchor": "ADR-0006"
     },
     {
+      "id": "ADR-0007",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0007-platform-condition-prefix.md",
+      "anchor": "ADR-0007"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -661,6 +667,12 @@
       "anchor": "R-STATE-09"
     },
     {
+      "id": "R-STATE-10",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-10"
+    },
+    {
       "id": "R-STRUCTURE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1183,6 +1195,12 @@
       "anchor": "RAT:R-STATE-09"
     },
     {
+      "id": "RAT:R-STATE-10",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-10"
+    },
+    {
       "id": "RAT:R-STRUCTURE-01",
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
@@ -1420,6 +1438,11 @@
     {
       "from": "CODE:parseWord",
       "to": "R-STATE-07",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:parseWord",
+      "to": "R-STATE-10",
       "type": "implements"
     },
     {
@@ -1905,6 +1928,11 @@
     {
       "from": "RAT:R-STATE-09",
       "to": "R-STATE-09",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-10",
+      "to": "R-STATE-10",
       "type": "rationale-of"
     },
     {
