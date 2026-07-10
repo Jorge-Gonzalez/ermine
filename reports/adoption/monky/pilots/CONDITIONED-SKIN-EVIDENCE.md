@@ -44,12 +44,12 @@ not vocabulary.
 
 ## The cascade-order refinement (what makes a hover render-safe)
 
-A `hover:` migration moves the hover rule into the atomic stylesheet
-(`ermine.generated.css`) while any `[aria-selected]`/`[aria-checked]`/`[data-state]` rule on the
-**same element** stays in component CSS. Hover and those states share specificity (class +
-pseudo/attribute), so when both are true the *source/file order* decides — and that order changes
-across the file boundary. An element is render-safe to migrate blind **only if no same-element
-state rule competes on the same properties**.
+A `hover:` migration moves the hover rule into the generated grammar stylesheet
+(`ermine.generated.css`). If base or state skin declarations for the same properties remain in
+component CSS, cascade layers decide before specificity: the later `components` layer defeats the
+earlier `grammar` layer. A stateful skin element is render-safe to migrate only when the competing
+base, hover, and selected/active skin declarations move together, or when no same-element state
+rule competes on the same properties.
 
 | Element-local hover | Guard? | Same-element state rule? | Disposition |
 | --- | --- | --- | --- |
@@ -59,7 +59,7 @@ state rule competes on the same properties**.
 | `command-suggestion-action` (delete / cancel) | — | none | **safe** |
 | `command-suggestion-action` (confirm) | — | none | defer — `color:--base-tone` has no exact socket (contrast inversion) |
 | `ce-toolbar-btn`, `ce-style-option` | — | `.is-active` competes on bg/color | **needs render check** |
-| `macro-suggestions-command-item` | — | `[aria-selected]` competes on bg/border | **needs render check** |
+| `macro-suggestions-command-item` | — | `[aria-selected]` competes on bg/border | migrated with base+hover+selected render smoke (`PENETRATION.md`) |
 | `command-suggestion-item` | `:not([data-state])` | data-state guard | **stays local** (rework discipline) |
 | `seg-option` | `:not([aria-checked])` | aria-checked guard | **stays local** |
 | `selectable-group > *` | — | `.is-selected` competes | **needs render check** |
@@ -73,10 +73,12 @@ state rule competes on the same properties**.
    construction; verify by recompile + manifest↔CSS check. A hover is render-safe only when the
    element has no competing same-property state rule — including `.is-active`, which several
    control buttons carry.
-2. **Needs-render-check hovers** — `ce-toolbar-btn`, `ce-style-option` (`.is-active`),
-   `macro-suggestions-command-item` (`[aria-selected]`), `selectable-group` (`.is-selected`).
-   Migrate only with a live active/selected-over-hover check, since file order now arbitrates.
+2. **Needs-render-check hovers** — `ce-toolbar-btn`, `ce-style-option` (`.is-active`) and
+   `selectable-group` (`.is-selected`). Migrate only with a live active/selected-over-hover check,
+   moving any competing base skin at the same time, since layer order now arbitrates.
 3. **Guarded hovers stay local** — the `:not([data-state])` / `:not([aria-checked])` guards encode
    the exclusion that keeps `ground-fail-faint` and the checked pill authoritative.
-4. **Selected/checked** — separate task: wire through `selection-treatment`.
+4. **Selected/checked** — prefer backed condition prefixes
+   (`selected:ground-* selected:ink-* selected:rule-*`) over the older fixed
+   `selection-treatment` sink when the project needs its own carrier composition.
 5. **focus-ring** — evidence for a future shadow/elevation ruling; no migration until then.
