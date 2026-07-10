@@ -452,14 +452,26 @@ export const MOTION: AxisRecord[] = [
 // implements: R-TYPE-01, R-SKIN-01
 export const SKIN: AxisRecord[] = [
   {
+    // skin-ground: the interior carrier (R-SKIN-03). Owns `background`; each word reads its
+    // like-named socket (K6 skin emission: anchor + hierarchy + interaction tones).
+    axis: "skin-ground",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["ground", "ground-subtle", "ground-defined", "ground-hover", "ground-active", "ground-selected"],
+    tokens: [{ pattern: /^ground(-(subtle|defined|hover|active|selected))?$/, shape: "ground[-<step>]" }],
+    default: null,
+    controls: ["background"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "color", "border-color", "border-radius", "font-size"],
+  },
+  {
     axis: "skin-surface",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
-    valueSpace: ["<tone>", "<ink>", "<radius>"],
-    tokens: [], // skin tokens are theme-bound; sampled here only for disjointness tests
+    valueSpace: ["<ink>", "<radius>"],
+    tokens: [], // remaining sampled skin (color/border/radius/shadow) — not yet split into axes
     default: null,
-    controls: ["background", "color", "border", "border-radius", "box-shadow"],
-    mustNeverTouch: ["display", "gap", "flex", "position"],
+    controls: ["color", "border", "border-radius", "box-shadow"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background"],
   },
   {
     axis: "skin-type",
@@ -476,6 +488,7 @@ export const SKIN: AxisRecord[] = [
     axis: "selection-treatment",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
+    eventTriggered: true, // R-STATE-09: conditioned by `selected`; sanctioned-overrides base skin
     valueSpace: ["selection-subtle", "selection-strong"],
     tokens: [{ pattern: /^selection-(subtle|strong)$/, shape: "selection-<x>" }],
     default: null,

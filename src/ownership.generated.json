@@ -88,6 +88,9 @@
   "state.drag": [],
   "state.continuous-input": [],
   "state.relational": [],
+  "skin-ground": [
+    "background"
+  ],
   "selection-treatment": [
     "background",
     "color",

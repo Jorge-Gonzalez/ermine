@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (33 axes)  ‹SHARED›
+## 2. The axis registry (34 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=3. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=4. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -717,15 +717,29 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (3 axes)
+### 2.5 SKIN (4 axes)
+
+#### skin-ground
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `ground` `ground-subtle` `ground-defined` `ground-hover` `ground-active` `ground-selected`
+- default: none
+- controls: `background`
+- must never touch: `display` `gap` `flex` `position` `color` `border-color` `border-radius` `font-size`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `ground[-<step>]` | `/^ground(-(subtle\|defined\|hover\|active\|selected))?$/` | — | no |
 
 #### skin-surface
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
-- value space: `<tone>` `<ink>` `<radius>`
+- value space: `<ink>` `<radius>`
 - default: none
-- controls: `background` `color` `border` `border-radius` `box-shadow`
-- must never touch: `display` `gap` `flex` `position`
+- controls: `color` `border` `border-radius` `box-shadow`
+- must never touch: `display` `gap` `flex` `position` `background`
 
 Tokens:
 

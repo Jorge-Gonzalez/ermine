@@ -183,6 +183,19 @@ Source: pre-split `constitution/ERMINE.md` lines 1394–1433.
 ## RAT:R-STATE-08
 Source: pre-split `constitution/ERMINE.md` lines 1434–1457.
 
+## RAT:R-STATE-09
+LAW-3's promise is not "no two words touch a property" but "no *ambiguous* fight over a property"
+— the thing that would force cascade-order tiebreaking. A base declaration plus an event-triggered
+override is not ambiguous: the condition partitions when each applies (`ground` when idle,
+`ground-hover` while hovered), so no winner has to be picked. So conditioned skin composes with
+base skin without violating LAW-3 — the same reason the button's `:hover` background never fought
+its base. Buttons never hit this because their state styling is CSS on a pseudo-class, not an
+axis; the collision only appears when an interaction state (selection) is modelled as an axis. The
+rule sanctions base-vs-conditioned; two conditioned words firing on the *same* event are left to
+the cascade because their priority is a genuine design choice, not a universal the grammar can
+rule. Resolves GAP-K6-skin-surface's B4 question. Surfaced by `how do buttons resolve this`.
+Source: ADR-0006.
+
 ## RAT:R-MOTION-01
 Source: pre-split `constitution/ERMINE.md` lines 1458–1468.
 

@@ -33,7 +33,7 @@
 
 import { readFileSync } from "node:fs";
 
-import { REGISTRY, SCALES, type AxisRecord } from "./registry.ts";
+import { REGISTRY, SCALES, SKIN_PLANE, type AxisRecord } from "./registry.ts";
 import { parseWord, type Parsed, type LintContext } from "./lint.ts";
 import type { EmittedRule, DeclareRule, SinkRule, FacetRule, ConditionRule, MechanismRule } from "./emitter-types.ts";
 import { deriveControls } from "./emitter-types.ts";
@@ -94,6 +94,9 @@ const EMISSION: Record<string, EmitSpec> = {
   // --- ordered-chain scale axis ---
   density: { effectKind: "css", plain: densityDial("gap") },
   "flow-spacing": { effectKind: "css", plain: densityDial("flow", "margin-block-start") },
+
+  // --- skin colour carrier: the word is its socket name → direct var() read (K6) ---
+  "skin-ground": { effectKind: "css", plain: (word: string) => ({ background: `var(--${word})` }) },
 
   // --- ordered-chain scale axis WITH sub-dials + aliasMatch (padding shape) ---
   padding: {
@@ -470,6 +473,7 @@ export const VOCABULARY: Record<string, string[]> = {
   overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip"],
   "position-mode": ["position-static", "position-relative", "position-absolute", "position-fixed", "position-sticky"],
   "stacking-context": ["isolate"],
+  "skin-ground": ["ground", ...SKIN_PLANE.colors.carriers.ground.map((s) => `ground-${s}`)],
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
   "motion-macro": ["together", "sequence", "cascade"],
@@ -604,6 +608,9 @@ export function checkDimensionalPurity(): PurityReport {
         const regimes = [a, b].map((axis) => REGISTRY.find((record) => record.axis === axis)?.regime);
         if (regimes.every((regime) => regime === "negotiated")) continue;
         if (sanctioned.has(pairKey(a, b, prop))) continue;
+        // R-STATE-09: an event-triggered (state-conditioned) axis sanctioned-overrides a base
+        // axis on a shared property — the condition scopes the override, so it is not a collision.
+        if ([a, b].some((axis) => REGISTRY.find((record) => record.axis === axis)?.eventTriggered)) continue;
         const unverified = [a, b].find((axis) => unverifiedAxes.includes(axis));
         if (unverified) {
           warnings.push({

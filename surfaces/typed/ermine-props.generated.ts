@@ -70,6 +70,8 @@ export interface ErminePlainProps {
   continuousInput?: "scroll-progress" | "drag-progress" | readonly ("scroll-progress" | "drag-progress")[];
   /** axis `state.relational` */
   relational?: "active-descendant" | readonly ("active-descendant")[];
+  /** axis `skin-ground` */
+  skinGround?: "ground" | "ground-subtle" | "ground-defined" | "ground-hover" | "ground-active" | "ground-selected";
   /** axis `selection-treatment` */
   selectionTreatment?: "selection-subtle" | "selection-strong";
 }
@@ -176,6 +178,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "drag", axis: "state.drag", kind: "group", many: true },
   { prop: "continuousInput", axis: "state.continuous-input", kind: "group", many: true },
   { prop: "relational", axis: "state.relational", kind: "group", many: true },
+  { prop: "skinGround", axis: "skin-ground", kind: "word" },
   { prop: "selectionTreatment", axis: "selection-treatment", kind: "word" },
 ];
 

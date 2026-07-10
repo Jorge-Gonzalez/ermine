@@ -1252,6 +1252,48 @@
       ]
     },
     {
+      "axis": "skin-ground",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground",
+      "items": [
+        {
+          "label": "ground",
+          "insertText": "ground",
+          "kind": "word",
+          "meaning": "ground[-<step>]"
+        },
+        {
+          "label": "ground-subtle",
+          "insertText": "ground-subtle",
+          "kind": "word",
+          "meaning": "ground[-<step>]"
+        },
+        {
+          "label": "ground-defined",
+          "insertText": "ground-defined",
+          "kind": "word",
+          "meaning": "ground[-<step>]"
+        },
+        {
+          "label": "ground-hover",
+          "insertText": "ground-hover",
+          "kind": "word",
+          "meaning": "ground[-<step>]"
+        },
+        {
+          "label": "ground-active",
+          "insertText": "ground-active",
+          "kind": "word",
+          "meaning": "ground[-<step>]"
+        },
+        {
+          "label": "ground-selected",
+          "insertText": "ground-selected",
+          "kind": "word",
+          "meaning": "ground[-<step>]"
+        }
+      ]
+    },
+    {
       "axis": "selection-treatment",
       "reference": "src/ERMINE-SPEC.md §2.5 — selection-treatment",
       "items": [

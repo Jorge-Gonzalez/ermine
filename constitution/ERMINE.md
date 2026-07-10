@@ -429,6 +429,16 @@ members; relational state asserts one member's current state from the container.
 
 → rationale: RAT:R-STATE-08 · history: ADR-0003
 
+## R-STATE-09 — Event-triggered override
+
+An event-triggered (state-conditioned) declaration may override a base declaration on a shared
+property; the condition scopes the override, so it is a sanctioned share under LAW-3, not a
+collision. An unconditional claim on a property stays exclusive. Contention among multiple
+event-triggered declarations on the same property is out of scope — the cascade decides, and it
+is the author's responsibility.
+
+→ rationale: RAT:R-STATE-09 · history: ADR-0006 · code: src/emit.ts#checkDimensionalPurity
+
 ## R-MOTION-01 — Closed motion grammar
 
 Motion axes have closed grammar vocabularies. Duration, delay, and stagger are open external skin

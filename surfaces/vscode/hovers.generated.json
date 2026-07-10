@@ -804,6 +804,36 @@
       "meaning": "inverted entailment: backing on the container",
       "reference": "src/ERMINE-SPEC.md §2.4 — state.relational"
     },
+    "ground": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<step>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-subtle": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<step>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-defined": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<step>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-hover": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<step>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-active": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<step>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
+    "ground-selected": {
+      "axis": "skin-ground",
+      "meaning": "ground[-<step>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
     "selection-subtle": {
       "axis": "selection-treatment",
       "meaning": "conditioned-skin: a CONDITIONAL VARIANT LAYER, not a base skin axis. It writes custom properties (--selection-bg/--selection-ink), NOT background/color directly — a sink rule reads them under the `selected` condition. This is why it does NOT collide with skin-surface's background/color (same discipline as m2 longhands / motion --stagger): conditioned layers compose with base skin by writing different variables. Entails nothing itself; conditioned by `selected`/`hover`/`active`; pairs with capability `selectable`.",

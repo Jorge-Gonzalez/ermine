@@ -109,6 +109,11 @@ export interface AxisRecord {
   controls: string[]; // concrete CSS properties (transcribed; see trust boundary)
   mustNeverTouch: string[];
 
+  // Conditioned/event-triggered axis: its declarations apply only under a state
+  // condition (hover/selected/…), so under R-STATE-09 they SANCTIONED-OVERRIDE a base
+  // axis on a shared property rather than colliding (the condition scopes the override).
+  eventTriggered?: boolean;
+
   // OPEN axes with independent sub-dials (grow/shrink shape). Parametric tokens
   // write DIFFERENT dials and compose one-per-dial; two values for the SAME dial
   // conflict. `dialOf` maps a parsed token to its dial name.
