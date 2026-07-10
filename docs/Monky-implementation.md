@@ -238,14 +238,22 @@ flowchart LR
   U6 -. recurring skin evidence .-> US
   U7 -. recurring skin evidence .-> US
   U8 -. recurring skin evidence .-> US
-  U8 --> U9[U9 generalize + close]
+  U8 --> U8B[U8b uncertain-tail triage]
+  U8B --> U8C[U8c theme/skin boundary]
+  U8C --> U8D[U8d theme-plane skeleton]
+  U8D --> U8E[U8e apply rulings]
+  U8E --> U8F[U8f local ownership screen]
+  U8F --> U9[U9 generalize + close]
   US --> U9
 ```
 
 U0–U4 are prerequisites. U5.1 must run after U5 and before U6/U7 so skin evidence
 does not get confused with grammar migration. U6 and U7 may proceed in parallel only
-when they touch disjoint Monky files. U-SKIN is continuous and human-gated. U9 starts
-after every declaration in the baseline ledger has a terminal disposition.
+when they touch disjoint Monky files. U8b–U8f are the post-page cleanup and
+generalization gates: first classify uncertainty, then decide the theme boundary,
+then apply it, then screen the remaining local CSS for misplaced ownership. U-SKIN is
+continuous and human-gated. U9 starts after every declaration in the baseline ledger
+has a terminal disposition and the local ownership screen has no unexplained findings.
 
 ---
 
@@ -977,6 +985,81 @@ outside U8c; redesigning Monky appearance; forcing unresolved records to zero.
 
 ---
 
+## U8f — Screen local CSS ownership after Ermine migration
+
+**Objective.** Add a reproducible analysis layer that reviews local CSS remaining
+beside Ermine classes and separates true project-local ownership from redundant,
+shadowing, or structurally misplaced declarations.
+
+This order exists because a declaration can be mappable to Ermine and still not be
+safe to delete mechanically. For example, a migrated result cell may already carry
+`padding-comfortable`, while local `padding-left: var(--spacing-xs)` expresses
+asymmetric column separation. That residual is not simply "missing Ermine"; it may be
+a candidate to relocate to the row/parent rhythm, or it may be a legitimate
+Monky-local adjustment. The adoption process needs to surface that distinction instead
+of relying on manual inspection.
+
+**Repositories.** Ermine adoption tooling primarily; Monky is the fixture project.
+
+**Preconditions.**
+
+- U8e has produced the current Monky manifest, generated CSS metadata, and coverage
+  report.
+- Monky uses Ermine classes for at least one skin/spacing/type migrated surface.
+- The screen runs against committed source, not a browser-inspector snapshot.
+
+**Steps.**
+
+1. Build or extend an adoption analyzer that reads:
+   - Monky source CSS declarations by selector, property, value, and pseudo/state
+     context;
+   - Ermine manifest class strings by element/selector when available;
+   - generated Ermine emission/ownership data for property-family ownership.
+2. For each local declaration that belongs to an Ermine-owned property family, classify
+   it into one of these finding kinds:
+   - **exact-replacement** — local declaration has a byte-equivalent Ermine word and
+     no conflicting state/context requirement;
+   - **already-covered** — the element already carries the Ermine word that emits the
+     same property/value, so the local declaration is probably redundant or shadowing;
+   - **local-adjustment** — Ermine owns the broad family, but the declaration is an
+     intentional delta, state treatment, or exactness-preserving value;
+   - **relocation-candidate** — the declaration appears to encode relationship/rhythm
+     between elements and may belong on a parent, row, grid, or wrapper instead of the
+     current leaf selector;
+   - **blocked-gap** — the recurring need lacks an Ermine ruling or word.
+3. Treat shorthand/longhand families conservatively. `padding-comfortable` may cover
+   `padding`, while a remaining `padding-left`/`padding-right` delta must not be
+   auto-deleted; report it as `local-adjustment` or `relocation-candidate` with the
+   side and parent selector evidence.
+4. Preserve state and selector context. Hover, selected, focus, media, pseudo-element,
+   and descendant selectors are not exact replacements unless the Ermine word lawfully
+   owns that state.
+5. Write a Monky report under `reports/adoption/monky/` listing findings grouped by
+   component, selector, property family, and recommended next action. Include the modal
+   search asymmetric padding case as a worked example.
+6. If the analyzer emits machine-readable JSON, keep it deterministic and wire a
+   no-diff/check command. If not, document the command and fixture expectations so U9
+   can generalize it.
+
+**Acceptance criteria.**
+
+- The screen flags local declarations that overlap with Ermine-owned families instead
+  of requiring ad-hoc grep.
+- The modal search `macro-search-item-*` padding asymmetry is reported as a
+  relocation/local-adjustment candidate, not as a simple exact replacement.
+- Existing stateful local CSS, such as hover/selected/focus treatment, is not
+  auto-classified as removable grammar.
+- Every finding has one of the five finding kinds above and cites source selector,
+  property, value, and related Ermine class evidence when available.
+- The report distinguishes stale built/browser artifacts from committed source.
+- Ermine checks and relevant Monky style checks pass, or any skipped Monky check is
+  explained with the existing environment limitation.
+
+**Out of scope.** Automatically rewriting Monky CSS; inventing new Ermine words;
+deciding parent relocation without a human review; making all local CSS disappear.
+
+---
+
 ## U-SKIN — Continuous skin evidence and ruling loop
 
 **Objective.** Use recurring Monky residuals to inform Ermine's open skin work without
@@ -1036,6 +1119,8 @@ named Gap Reports.
 - U8d has implemented any Ermine theme-plane skeleton admitted by U8c.
 - U8e has applied those decisions to the Monky adoption ledger as far as the rulings
   permit.
+- U8f has screened remaining local CSS for Ermine-owned overlap, redundant/shadowing
+  declarations, and relocation candidates.
 
 **Steps.**
 
