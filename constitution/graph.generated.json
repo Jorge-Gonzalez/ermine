@@ -85,6 +85,12 @@
       "anchor": "ENVIRONMENT_SCOPES"
     },
     {
+      "id": "CODE:INTERACTION_SCOPES",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "INTERACTION_SCOPES"
+    },
+    {
       "id": "CODE:LAYERING",
       "register": "code",
       "file": "src/registry.ts",
@@ -1293,6 +1299,11 @@
     {
       "from": "CODE:ENVIRONMENT_SCOPES",
       "to": "R-STATE-07",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:INTERACTION_SCOPES",
+      "to": "R-STATE-10",
       "type": "implements"
     },
     {

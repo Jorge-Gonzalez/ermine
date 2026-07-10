@@ -54,22 +54,27 @@ export function buildStylesheet(classStrings: string[], ctx: LintContext = {}): 
     for (const [scope, authoredWords] of groups) {
       const base = scope === "base";
       const innerWords = base ? authoredWords : authoredWords.map((word) => word.slice(word.indexOf(":") + 1));
-      const condition = base ? undefined : scopeCondition(scope);
-      if (!base && !condition) {
+      // A platform interaction scope (R-STATE-10) serializes to a pseudo-class suffix on the
+      // selector and stays in the base cascade; environmental scopes become at-rules.
+      const pseudo = base ? undefined : scopePseudo(scope);
+      const condition = base || pseudo ? undefined : scopeCondition(scope);
+      if (!base && !pseudo && !condition) {
         notes.push(`scope '${scope}' needs a project condition binding; no CSS emitted for ${authoredWords.map((word) => `'${word}'`).join(", ")}`);
         continue;
       }
 
-      const target = base
+      const target = base || pseudo
         ? bySelector
         : (byCondition.get(condition!) ?? byCondition.set(condition!, new Map()).get(condition!)!);
       const rules = emit(innerWords.join(" "), ctx, base ? undefined : scope);
-      const scopedSelector = (selector: string): string => base
-        ? selector
-        : innerWords.reduce(
+      const scopedSelector = (selector: string): string => {
+        if (base) return selector;
+        const rewritten = innerWords.reduce(
           (current, word, index) => current.replaceAll(`.${word}`, classSelector(authoredWords[index])),
           selector,
         );
+        return pseudo ? rewritten + pseudo : rewritten;
+      };
 
       for (const m of mergeFacets(rules.filter((r): r is FacetRule => r.kind === "facet")))
         put(target, scopedSelector(m.selector), m.property, m.value);
@@ -116,6 +121,13 @@ function scopeCondition(scope: string): string | undefined {
     "prefers-contrast-more": "@media (prefers-contrast: more)",
     "prefers-reduced-transparency": "@media (prefers-reduced-transparency: reduce)",
   };
+  return exact[scope];
+}
+
+// Platform interaction scopes (R-STATE-10) the browser supplies with no project binding.
+// They append a pseudo-class to the selector rather than wrapping it in an at-rule.
+function scopePseudo(scope: string): string | undefined {
+  const exact: Record<string, string> = { hover: ":hover" };
   return exact[scope];
 }
 

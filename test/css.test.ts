@@ -42,3 +42,16 @@ test("platform mechanisms are surfaced as notes, never as CSS", () => {
   assert.match(css, /dialog\.showModal\(\)/);
   assert.doesNotMatch(css, /\.modal \{/, "a mechanism must never emit a rule block");
 });
+
+test("a hover: prefix scopes conditioned skin to a :hover pseudo-class, not an at-rule (R-STATE-10)", () => {
+  const css = toCss("hover:ground-subtle");
+  assert.match(css, /\.hover\\:ground-subtle:hover \{/, "selector carries the escaped class plus :hover suffix");
+  assert.match(css, /background: var\(--ground-subtle\);/);
+  assert.doesNotMatch(css, /@media/, "an interaction scope must not become an at-rule");
+});
+
+test("base skin and its hover: override compose as two rules on the same element", () => {
+  const css = toCss("ground hover:ground-subtle");
+  assert.match(css, /\.ground \{[^}]*background: var\(--ground\);/s);
+  assert.match(css, /\.hover\\:ground-subtle:hover \{[^}]*background: var\(--ground-subtle\);/s);
+});

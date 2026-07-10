@@ -856,6 +856,7 @@ These prefixes are closed condition scopes, not registry-axis members. The guard
 | `viewport-orientation` | `viewport-<orientation>:` | `/^viewport-(portrait\|landscape)$/` | `none` | — |
 | `container-bp` | `container-<bp>:` | `/^container-(sm\|md\|lg\|xl)$/` | `container` | conditions on container size; distributes to children |
 | `prefers` | `prefers-<x>:` | `/^prefers-(reduced-motion\|color-scheme-dark\|contrast-more\|reduced-transparency)$/` | `none` | — |
+| `hover` | `hover:` | `/^hover$/` | `none` | conditioned skin while the pointer is over the element |
 <!-- END GENERATED: registry -->
 
 ---

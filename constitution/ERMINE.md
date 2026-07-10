@@ -449,7 +449,7 @@ with application-asserted states (selected, checked), which keep the backed `sel
 (R-STATE-08). This refines R-STATE-07: an interaction state stays bare as a predicate, but takes
 the prefix form when it scopes conditioned skin.
 
-→ rationale: RAT:R-STATE-10 · history: ADR-0007 · code: src/lint.ts#parseWord
+→ rationale: RAT:R-STATE-10 · history: ADR-0007 · code: src/registry.ts#INTERACTION_SCOPES, src/lint.ts#parseWord
 
 ## R-MOTION-01 — Closed motion grammar
 
