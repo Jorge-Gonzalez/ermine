@@ -351,9 +351,12 @@ Wrapping is a closed axis over `wrap-allowed`, `wrap-prevent`, and `wrap-reverse
 
 ## R-OVERFLOW-01 — Overflow
 
-Overflow is a closed axis over `scroll-y`, `scroll-x`, `scroll-auto`, and `clip`.
+Overflow is a closed axis over `scroll-y`, `scroll-x`, `scroll-auto`, `clip`, and `hidden`.
+`hidden` and `clip` are distinct intents: `hidden` establishes a clipping scroll container
+(programmatic scrolling remains possible, and `text-overflow` requires it); `clip` forbids
+scrolling entirely. Both are whole-axis words.
 
-→ rationale: RAT:R-OVERFLOW-01 · history: unrecorded · code: src/registry.ts#LAYOUT
+→ rationale: RAT:R-OVERFLOW-01 · history: ADR-0013 · code: src/registry.ts#LAYOUT
 
 ## R-CONSTRAINT-01 — Independent bounds
 
@@ -669,6 +672,17 @@ selection-indicator underlines, and pseudo-element line drawing are not line pre
 project-owned.
 
 → rationale: RAT:R-SKIN-11 · history: ADR-0012 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
+## R-SKIN-12 — Truncation treatment
+
+Truncation is a treatment: `truncate` marks text that yields to its container on one line,
+owning `text-overflow: ellipsis` and `white-space: nowrap`. It does not own overflow — the
+treatment takes effect composed with the `hidden` overflow word (`hidden truncate`), the same
+explicit-composition seam as `rule ruled`: two words, both facts visible in markup, ownership
+disjoint. Releasing truncation under a state is a conditioned override or project mechanics.
+The multi-line clamp (`truncate-N`) is the family member reserved pending evidence.
+
+→ rationale: RAT:R-SKIN-12 · history: ADR-0013 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SCALE-01 — Generator-defined scales
 

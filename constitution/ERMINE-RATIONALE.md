@@ -153,6 +153,13 @@ Source: pre-split `constitution/ERMINE.md` lines 1104–1107.
 ## RAT:R-OVERFLOW-01
 Source: pre-split `constitution/ERMINE.md` lines 1108–1111.
 
+Amended (ADR-0013): `hidden` admitted to the closed set. The question was filed pre-adoption
+as GAP-U-overflow-hidden — an `overflow: hidden` word distinct from `clip` — and the Monky
+residue screen counted 14 guarded-overflow rows plus the truncation treatment's hard
+dependency (`text-overflow` requires a hidden/clip overflow, and `clip`'s no-scrolling
+semantics are wrong for a scroll-adjacent clip). `hidden` establishes a clipping scroll
+container; `clip` forbids scrolling — two intents, two words.
+
 ## RAT:R-CONSTRAINT-01
 Source: pre-split `constitution/ERMINE.md` lines 1112–1126.
 
@@ -380,6 +387,21 @@ step (1px everywhere; the one 2px is a selection-indicator underline, which is i
 rule line), and R-SCALE discipline does not invent steps without measured need. With both the
 shadow (R-SKIN-09) and line halves ruled, the sampled skin-surface gap axis is fully resolved
 and retires. Source: ADR-0012.
+
+## RAT:R-SKIN-12
+Five selectors across four surfaces carry the identical trio — `overflow: hidden;
+text-overflow: ellipsis; white-space: nowrap` — and Monky had already half-named the intent
+for itself (`.popup-truncate`). The trio is one intent spread over three properties in two
+responsibility areas, so no carrier can own it and no lawful composition of pre-existing
+words could express it: a treatment, the R-SKIN-09 shape. It deliberately does not own
+overflow. The overflow axis owns `overflow-x/y` (P7), and folding a third property into the
+treatment would either collide or demand a new sanctioned-share mechanism; instead the
+treatment composes with the newly admitted `hidden` word — `hidden truncate` — the same
+explicit seam as `rule ruled`, where the markup states both facts and ownership stays
+disjoint. The search view's release of truncation under `aria-selected` is evidence the
+treatment wants a conditioned form eventually; today the release stays a local override.
+`truncate-N` (the line-clamp form) has one occurrence and stays reserved — the
+tween/choreography admission pattern. Source: ADR-0013.
 
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
