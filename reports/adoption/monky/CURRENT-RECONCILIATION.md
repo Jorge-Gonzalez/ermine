@@ -180,3 +180,14 @@ Result: current declarations dropped from 787 to 718, project-owned residue from
 533, and `assimilable` from 100 to 0. The only declined rows are 16 `.btn-*` recipe rows
 and one `.selectable-group > .is-selected:hover` state row, all recorded in
 `current-overrides.json` for Phase C / state-boundary rulings.
+
+## Follow-up: Phase C and D closure
+
+Phase C (`pilots/PHASE-C-RULINGS.md`) admitted and consumed the earned vocabulary:
+`focus:`, `current:`, `elevated`, and the R-SKIN-10 recipe boundary. Phase D then replaced
+the temporary override list with the Monky project profile, generalized the current-ledger
+tooling away from Monky literals, and generated `BOUNDARY.md`.
+
+Current result: 714 declarations, 525 project-owned residue, `assimilable = 0`, and
+`skin-review = identity-review = state-review = 0`. Monky's `npm run styles:reconcile`
+now checks those invariants with `adoption/current-ledger.ts --check --gate`.

@@ -20,6 +20,7 @@ Run the stages in order. Each stage consumes committed evidence from the previou
 | Rewrite | Change one bounded component surface at a time | Ledger updated before source; generated CSS regenerated |
 | Browser comparison | Compare computed styles and interaction behavior against the baseline | Equal outcomes or an explicit, human-approved difference |
 | Outcome | Re-run inventory and account for every baseline declaration | Conserved final ledger and reproducible report |
+| Current boundary | Reconcile the live project CSS against emitted Ermine CSS | `CURRENT-LEDGER.md`, `BOUNDARY.md`, and a zero-assimilable/zero-review gate |
 
 Do not skip classification because a mapping appears obvious. A class name is not evidence of the
 declaration's intent, and a numerically equal value is not automatically the same semantic choice.
@@ -49,7 +50,9 @@ This admits universal/root/native-element normalization while leaving component-
 
 ## 3. Ledger contract and conservation
 
-The version-1 TypeScript contract lives in `adoption/types.ts`. Case-study ledgers live at
+The TypeScript contract lives in `adoption/types.ts`. Version 1 used `source.monkyCommit`
+because Monky was the first case study; version 2 uses `source.projectCommit`. The validator
+accepts both spellings so old ledgers remain conserved. Case-study ledgers live at
 `reports/adoption/<project>/ledger.json` and are checked by `adoption/validate-ledger.ts`.
 
 Records are declaration-level. Their IDs are unique and stable inside the pinned baseline; the
@@ -80,6 +83,18 @@ npm run adoption:check
 
 The command checks every `reports/adoption/*/ledger.json`. It succeeds with an explicit message when
 no baseline ledger exists yet.
+
+The live current-ledger loop is separate from this conserved baseline. It scans the current project
+CSS, compiles Ermine's emitted vocabulary, and classifies every current declaration by reason code:
+
+```sh
+npm run adoption:current -- --project ../<project> --name <project> --write --gate
+npm run adoption:current -- --project ../<project> --name <project> --check --gate
+```
+
+`--gate` fails when any declaration is currently assimilable or when any review bucket remains
+non-empty. When the gate is closed, the generator emits `BOUNDARY.md` beside
+`CURRENT-LEDGER.md`.
 
 ## 4. Provenance and cross-repository commits
 
@@ -209,3 +224,19 @@ Orientation and preference scopes have fully determined platform queries and ser
 rules. Named viewport and container breakpoints deliberately do not: Ermine fixes the names but
 leaves their numeric values project-measured. Until the application supplies that binding in a
 later integration step, the serializer emits an explicit integration hint and no guessed rule.
+
+## 9. Repeatable onboarding path
+
+For a second project, follow the full arc rather than copying Monky-specific judgments:
+
+1. Run the baseline analyzer (`adoption/analyze.ts`) to freeze the starting ledger and inventory.
+2. Run bounded pilot loops: classify, map only existing words, rewrite, regenerate emitted CSS, and
+   preserve behavior.
+3. Introduce a project profile at `reports/adoption/<project>/project.json` for recipe classes,
+   user-content roots, bridge files, scan roots, and file strata that are project-specific.
+4. Use the current-ledger loop to consume existing vocabulary until `assimilable = 0`.
+5. Empty review buckets through project-profile rules or explicit overrides, not by inventing words.
+6. Publish `BOUNDARY.md`, wire the project's local reconcile command to `--check --gate`, and leave
+   remaining work only in Gap Reports.
+
+Monky's reports under `reports/adoption/monky/` are the worked example, not hidden defaults.

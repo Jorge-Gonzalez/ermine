@@ -163,11 +163,11 @@ Minimum shape:
 
 ```json
 {
-  "version": 1,
+  "version": 2,
   "project": "monky",
   "source": {
     "ermineCommit": "<40-character commit>",
-    "monkyCommit": "<40-character commit>"
+    "projectCommit": "<40-character commit>"
   },
   "records": [
     {

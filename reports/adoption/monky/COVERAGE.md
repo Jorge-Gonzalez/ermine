@@ -164,6 +164,10 @@ terminal** (zero uncertain, zero pending). Phase B left the current-ledger work 
 (`assimilable = 0`) and Phase C (`pilots/PHASE-C-RULINGS.md`) converted the earned evidence
 into rulings — `focus:` admitted, R-STATE-12 `current:`, R-SKIN-09 `elevated`, R-SKIN-10
 recipe boundary — consumed them in Monky, and gave the recipe rows their terminal
-`recipe-identity` code. **Open:** U9's tooling generalization + final case study; the
-remaining residue codes point at filed gap reports (parent-relational, scrollbar,
-animation plane) awaiting their own cycles.
+`recipe-identity` code. Phase D (`pilots/PHASE-D-CLOSURE.md`) closed U9: the generated
+current ledger is v2/project-profiled, the gate fails on assimilable or review-coded rows,
+`BOUNDARY.md` declares the live ownership boundary, and `CASE-STUDY.md` publishes the
+worked example. **Closed:** adoption. Remaining work is only post-adoption Ermine ruling
+cycles with pre-counted evidence in Gap Reports (skin-surface mechanics, interaction
+affordance, parent-relational state, scrollbar prominence, animation plane, dataviz
+palette).

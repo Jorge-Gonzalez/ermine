@@ -577,7 +577,7 @@ export function renderCurrentLedger(ledger: CurrentLedgerV2): string {
 Generated artifact. Do not hand-edit; regenerate with:
 
 \`\`\`sh
-node --import tsx adoption/current-ledger.ts --project ../${ledger.project} --name ${ledger.project} --write
+node --import tsx adoption/current-ledger.ts --project ../${ledger.project} --name ${ledger.project} --write --gate
 \`\`\`
 
 ## Provenance
