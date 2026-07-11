@@ -56,7 +56,7 @@ export const REASON_CODES = [
   "affordance-mechanics", // interaction affordance mechanics held for GAP-U-interaction-affordance
   "component-contract",// component-owned mechanics and exact product contract
   "state-mechanics",   // JS/native state mechanics that are not backed Ermine conditions
-  "state-review",      // same-element state condition without a matching backed prefix
+  "state-review",      // gate vocabulary: review bucket, must be zero once the boundary is declared
   "focus-state",       // :focus-conditioned remainder (focus: is ruled; rings/mechanics stay)
   "aria-current",      // [aria-current]-conditioned remainder (current: is ruled)
   "parent-relational", // ancestor state drives a descendant; conditions are same-element
@@ -68,8 +68,8 @@ export const REASON_CODES = [
   "reset-absence",     // none/transparent/0 absence mechanics, not a positive carrier
   "user-content",      // rich-text defaults inside user-authored content
   "identity-geometry", // grammar-family property carrying project-exact geometry
-  "skin-review",       // paint awaiting a carrier or recipe judgment
-  "identity-review",   // remaining declarations awaiting project judgment
+  "skin-review",       // gate vocabulary: review bucket, must be zero once the boundary is declared
+  "identity-review",   // gate vocabulary: review bucket, must be zero once the boundary is declared
 ] as const;
 
 export type ReasonCode = typeof REASON_CODES[number];
@@ -538,7 +538,7 @@ const CODE_MEANING: Record<ReasonCode, string> = {
   "affordance-mechanics": "cursor/user-select affordance mechanics (GAP-U-interaction-affordance)",
   "component-contract": "component-owned mechanics, exact geometry, or product contract",
   "state-mechanics": "JS/native state mechanics outside backed Ermine conditions",
-  "state-review": "same-element state condition with no matching backed prefix yet",
+  "state-review": "review bucket (gate vocabulary) — zero while the boundary is declared",
   "focus-state": "focus-conditioned remainder — rings and mechanics (focus: itself is ruled, R-STATE-10)",
   "aria-current": "aria-current-conditioned remainder (current: itself is ruled, R-STATE-12)",
   "parent-relational": "ancestor state drives a descendant (GAP-U-parent-relational-state)",
@@ -550,8 +550,8 @@ const CODE_MEANING: Record<ReasonCode, string> = {
   "reset-absence": "absence/reset mechanics, not a positive carrier",
   "user-content": "rich-text defaults inside user-authored content",
   "identity-geometry": "project-exact geometry on a grammar-family property",
-  "skin-review": "paint awaiting a carrier or recipe judgment",
-  "identity-review": "awaiting project judgment",
+  "skin-review": "review bucket (gate vocabulary) — zero while the boundary is declared",
+  "identity-review": "review bucket (gate vocabulary) — zero while the boundary is declared",
 };
 
 export function renderCurrentLedger(ledger: CurrentLedgerV2): string {
@@ -635,7 +635,7 @@ const GAP_CODES: Partial<Record<ReasonCode, string>> = {
   "parent-relational": "reports/GAP-U-parent-relational-state.md",
   "scrollbar-followup": "reports/GAP-U-scrollbar-prominence.md",
   "motion-followup": "reports/GAP-U-animation-plane.md",
-  "opacity-followup": "reports/GAP-U-interaction-affordance.md",
+  "opacity-followup": "named follow-up: opacity prominence treatment (no report filed yet)",
   "focus-state": "R-STATE-10 follow-up: focus ring/mechanics boundary",
   "aria-current": "R-STATE-12 follow-up: current-layer mechanics",
   "elevation-followup": "R-SKIN-09 boundary clause",
@@ -654,6 +654,7 @@ function boundaryRow(ledger: CurrentLedgerV2, codes: readonly ReasonCode[]): str
 
 export function renderBoundary(ledger: CurrentLedgerV2): string | undefined {
   if (countCodes(ledger, REVIEW_CODES) !== 0) return undefined;
+  const project = ledger.project.charAt(0).toUpperCase() + ledger.project.slice(1);
   const identityCodes: ReasonCode[] = [
     "recipe-identity", "identity-geometry", "brand-identity", "elevation-followup",
   ];
@@ -665,7 +666,7 @@ export function renderBoundary(ledger: CurrentLedgerV2): string | undefined {
     .filter(([code]) => ledger.summary.byCode[code] > 0)
     .map(([code, reference]) => `| \`${code}\` | ${ledger.summary.byCode[code]} | ${reference} |`)
     .join("\n");
-  return `# Monky / Ermine boundary manifest
+  return `# ${project} / Ermine boundary manifest
 
 Generated artifact. Do not hand-edit; regenerate with:
 
@@ -673,7 +674,7 @@ Generated artifact. Do not hand-edit; regenerate with:
 node --import tsx adoption/current-ledger.ts --project ../${ledger.project} --name ${ledger.project} --write --gate
 \`\`\`
 
-This is the declared boundary for Monky's closed adoption. It supersedes the scattered
+This is the declared boundary for ${project}'s closed adoption. It supersedes the scattered
 per-pilot "Left local" tables: those reports remain history, while this document is the
 machine-checked current contract.
 
@@ -694,7 +695,7 @@ machine-checked current contract.
 
 ## Product Identity
 
-Monky keeps recipe bundles, exact product geometry, brand type, and identity shadows. The
+${project} keeps recipe bundles, exact product geometry, brand type, and identity shadows. The
 licensing rules are R-SKIN-10 for recipes, U-R2 for project intent and exact geometry, and
 R-SKIN-09's boundary clause for shadows that are signatures rather than the shared
 \`elevated\` treatment.
@@ -705,10 +706,10 @@ ${boundaryRow(ledger, identityCodes) || "| _(none)_ | 0 | |"}
 
 ## Mechanics
 
-Monky keeps mechanics that are selector or component contracts rather than reusable grammar:
+${project} keeps mechanics that are selector or component contracts rather than reusable grammar:
 pseudo-element geometry, absence sentinels, border/rule mechanics, native or JS-toggled state
 mechanics, overlap/layer tricks, and exact component behavior. Phase C's cascade-layer finding
-remains a standing caveat: a local rule in Monky's component layer can outrank generated grammar
+remains a standing caveat: a local rule in the project's component layer can outrank generated grammar
 even when both carry the same socket.
 
 | code | count | boundary |
@@ -718,7 +719,7 @@ ${boundaryRow(ledger, mechanicsCodes) || "| _(none)_ | 0 | |"}
 ## User Content
 
 The editor body's authored rich-text defaults remain a user-content contract. Ermine words style
-Monky's UI chrome around that content; the content surface itself keeps its own HTML defaults.
+${project}'s UI chrome around that content; the content surface itself keeps its own HTML defaults.
 
 | code | count | boundary |
 |---|---:|---|
