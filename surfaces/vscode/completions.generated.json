@@ -677,25 +677,31 @@
           "label": "scroll-x",
           "insertText": "scroll-x",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto and clip are whole-axis (both directions), so they conflict with a per-axis dial."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
         },
         {
           "label": "scroll-y",
           "insertText": "scroll-y",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto and clip are whole-axis (both directions), so they conflict with a per-axis dial."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
         },
         {
           "label": "scroll-auto",
           "insertText": "scroll-auto",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto and clip are whole-axis (both directions), so they conflict with a per-axis dial."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
         },
         {
           "label": "clip",
           "insertText": "clip",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto and clip are whole-axis (both directions), so they conflict with a per-axis dial."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
+        },
+        {
+          "label": "hidden",
+          "insertText": "hidden",
+          "kind": "word",
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
         }
       ]
     },
@@ -1722,6 +1728,18 @@
           "insertText": "elevated",
           "kind": "word",
           "meaning": "<elevation>"
+        }
+      ]
+    },
+    {
+      "axis": "truncation",
+      "reference": "src/ERMINE-SPEC.md §2.5 — truncation",
+      "items": [
+        {
+          "label": "truncate",
+          "insertText": "truncate",
+          "kind": "word",
+          "meaning": "<truncation>"
         }
       ]
     },

@@ -310,10 +310,22 @@ export function buildInverseErmineMap(environment: VarEnvironment): InverseErmin
     const parsed = parseCssDeclarations(css, word).filter((declaration) => !declaration.file.includes("not CSS"));
     if (!parsed.length) continue;
     const partial = parsed.length > 1;
+    const perCondition = new Map<string, Map<string, string>>();
     for (const declaration of parsed) {
       const condition = selectorCondition(declaration.selector);
-      const key = matchKey(condition, declaration.property, resolveValue(declaration.value, environment));
+      const value = resolveValue(declaration.value, environment);
+      const key = matchKey(condition, declaration.property, value);
       (map.get(key) ?? map.set(key, []).get(key)!).push({ word, partial });
+      (perCondition.get(condition) ?? perCondition.set(condition, new Map()).get(condition)!).set(declaration.property, value);
+    }
+    // A word emitting both overflow axes at one value also matches the local
+    // `overflow` shorthand — the only shorthand applications write for it.
+    for (const [condition, props] of perCondition) {
+      const x = props.get("overflow-x");
+      if (x && x === props.get("overflow-y")) {
+        const key = matchKey(condition, "overflow", x);
+        (map.get(key) ?? map.set(key, []).get(key)!).push({ word, partial });
+      }
     }
   }
   return map;

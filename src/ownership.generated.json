@@ -124,6 +124,10 @@
   "elevation": [
     "box-shadow"
   ],
+  "truncation": [
+    "text-overflow",
+    "white-space"
+  ],
   "selection-treatment": [
     "background",
     "color",

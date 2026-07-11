@@ -161,6 +161,14 @@ const EMISSION: Record<string, EmitSpec> = {
       word === "font-mono" ? { "font-family": "var(--font-mono, monospace)" } : null,
   },
 
+  // --- truncation: one-line yielding text (R-SKIN-12). Composes with the
+  // `hidden` overflow word; owns only the two unowned text properties. ---
+  truncation: {
+    effectKind: "css",
+    plain: (word) =>
+      word === "truncate" ? { "text-overflow": "ellipsis", "white-space": "nowrap" } : null,
+  },
+
   // --- rule-presence: a line's existence (R-SKIN-11). Width from the line-weight
   // socket, style solid; the rule carrier supplies the colour. ---
   "rule-presence": {
@@ -276,6 +284,7 @@ const EMISSION: Record<string, EmitSpec> = {
         case "scroll-y": return { "overflow-y": "scroll" };
         case "scroll-auto": return { "overflow-x": "auto", "overflow-y": "auto" };
         case "clip": return { "overflow-x": "clip", "overflow-y": "clip" };
+        case "hidden": return { "overflow-x": "hidden", "overflow-y": "hidden" };
         default: return null;
       }
     },
@@ -556,7 +565,7 @@ export const VOCABULARY: Record<string, string[]> = {
   ],
   "m4-self-alignment": ["self-start", "self-center", "self-end", "self-stretch", "self-baseline"],
   "alignment-container": ["align-start", "align-center", "align-end", "align-stretch", "align-baseline", "justify-start", "justify-center", "justify-end", "justify-between", "justify-around"],
-  overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip"],
+  overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip", "hidden"],
   "position-mode": ["position-static", "position-relative", "position-absolute", "position-fixed", "position-sticky"],
   "stacking-context": ["isolate"],
   "skin-ground": carrierWords("ground"),
@@ -567,6 +576,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "font-weight": SKIN_PLANE.scales.weight.map((s) => `font-${s}`),
   "font-family": ["font-mono"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
+  truncation: ["truncate"],
   elevation: ["elevated"],
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],

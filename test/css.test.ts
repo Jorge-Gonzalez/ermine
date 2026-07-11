@@ -89,6 +89,19 @@ test("elevated composes with base skin as independent atomic rules", () => {
   assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
 });
 
+test("hidden emits both overflow axes; clip stays distinct (R-OVERFLOW-01)", () => {
+  const css = toCss("hidden");
+  assert.match(css, /\.hidden \{[^}]*overflow-x: hidden;[^}]*overflow-y: hidden;/s);
+  assert.match(toCss("clip"), /overflow-x: clip/);
+});
+
+test("truncate owns only the text properties and composes with hidden (R-SKIN-12)", () => {
+  const css = toCss("hidden truncate");
+  assert.match(css, /\.truncate \{[^}]*text-overflow: ellipsis;[^}]*white-space: nowrap;/s);
+  assert.match(css, /\.hidden \{[^}]*overflow-x: hidden;/s);
+  assert.doesNotMatch(css, /\.truncate \{[^}]*overflow-[xy]/s, "truncate must not touch the overflow axis's properties");
+});
+
 test("ruled emits all-side width and style at the line-weight socket; rule keeps colour (R-SKIN-11)", () => {
   const css = toCss("rule ruled");
   assert.match(css, /\.ruled \{[^}]*border-width: var\(--rule-weight, 1px\);[^}]*border-style: solid;/s);

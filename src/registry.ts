@@ -320,15 +320,15 @@ export const LAYOUT: AxisRecord[] = [
     axis: "overflow",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["scroll-y", "scroll-x", "scroll-auto", "clip"],
-    tokens: [{ pattern: /^(scroll-y|scroll-x|scroll-auto|clip)$/, shape: "<overflow>" }],
+    valueSpace: ["scroll-y", "scroll-x", "scroll-auto", "clip", "hidden"],
+    tokens: [{ pattern: /^(scroll-y|scroll-x|scroll-auto|clip|hidden)$/, shape: "<overflow>" }],
     subDials: ["x", "y"],
     dialOf: (word: string) => word === "scroll-x" ? "x" : word === "scroll-y" ? "y" : null,
-    aliasMatch: (word: string) => word === "scroll-auto" || word === "clip",
+    aliasMatch: (word: string) => word === "scroll-auto" || word === "clip" || word === "hidden",
     default: null,
     controls: ["overflow-x", "overflow-y"],
     mustNeverTouch: ["display", "padding"],
-    notes: "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto and clip are whole-axis (both directions), so they conflict with a per-axis dial.",
+    notes: "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01).",
   },
   {
     axis: "constraints",
@@ -625,6 +625,21 @@ export const SKIN: AxisRecord[] = [
     default: null,
     controls: ["box-shadow"],
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "font-size"],
+  },
+  {
+    // truncation: text that yields to its container on one line (R-SKIN-12).
+    // Owns text-overflow + white-space; takes effect composed with the `hidden`
+    // overflow word (`hidden truncate`) — ownership stays disjoint from the
+    // overflow axis. `truncate-N` (clamp) is the family member reserved pending
+    // evidence.
+    axis: "truncation",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["truncate"],
+    tokens: [{ pattern: /^(truncate)$/, shape: "<truncation>" }],
+    default: null,
+    controls: ["text-overflow", "white-space"],
+    mustNeverTouch: ["display", "gap", "flex", "overflow-x", "overflow-y", "background", "color", "font-size"],
   },
   {
     // conditioned-skin: the look a state drives. Makes `selectable + selection-subtle` operational.

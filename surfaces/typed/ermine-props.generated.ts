@@ -88,6 +88,8 @@ export interface ErminePlainProps {
   fontFamily?: "font-mono";
   /** axis `elevation` */
   elevation?: "elevated";
+  /** axis `truncation` */
+  truncation?: "truncate";
   /** axis `selection-treatment` */
   selectionTreatment?: "selection-subtle" | "selection-strong";
 }
@@ -109,7 +111,7 @@ export type MarginExclusive =
 
 // axis `overflow`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type OverflowExclusive =
-  | ({ overflow?: "scroll-auto" | "clip"; } & None<"overflowX" | "overflowY">)
+  | ({ overflow?: "scroll-auto" | "clip" | "hidden"; } & None<"overflowX" | "overflowY">)
   | ({ overflowX?: "scroll-x"; overflowY?: "scroll-y"; } & None<"overflow">);
 
 // base surface: everything except environment scopes
@@ -203,6 +205,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "fontWeight", axis: "font-weight", kind: "word" },
   { prop: "fontFamily", axis: "font-family", kind: "word" },
   { prop: "elevation", axis: "elevation", kind: "word" },
+  { prop: "truncation", axis: "truncation", kind: "word" },
   { prop: "selectionTreatment", axis: "selection-treatment", kind: "word" },
 ];
 

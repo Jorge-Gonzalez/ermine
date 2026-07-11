@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (41 axes)  ‹SHARED›
+## 2. The axis registry (42 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=11. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=12. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -375,20 +375,20 @@ Tokens:
 #### overflow
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `scroll-y` `scroll-x` `scroll-auto` `clip`
+- value space: `scroll-y` `scroll-x` `scroll-auto` `clip` `hidden`
 - default: none
 - controls: `overflow-x` `overflow-y`
 - must never touch: `display` `padding`
 - sub-dials: `x` `y`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto and clip are whole-axis (both directions), so they conflict with a per-axis dial.
+- notes: two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01).
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<overflow>` | `/^(scroll-y\|scroll-x\|scroll-auto\|clip)$/` | — | no |
+| `<overflow>` | `/^(scroll-y\|scroll-x\|scroll-auto\|clip\|hidden)$/` | — | no |
 
 #### constraints
 
@@ -717,7 +717,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (11 axes)
+### 2.5 SKIN (12 axes)
 
 #### skin-ground
 
@@ -858,6 +858,20 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<elevation>` | `/^(elevated)$/` | — | no |
+
+#### truncation
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `truncate`
+- default: none
+- controls: `text-overflow` `white-space`
+- must never touch: `display` `gap` `flex` `overflow-x` `overflow-y` `background` `color` `font-size`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<truncation>` | `/^(truncate)$/` | — | no |
 
 #### selection-treatment
 

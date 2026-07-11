@@ -17,10 +17,10 @@ Real-property FAMILY coverage (the ceiling on what an ingestor could express):
 
 | corpus | coverage | theme custom-props |
 |---|---|---|
-| playwright-trace-viewer | 51.3% | 49.9% |
+| playwright-trace-viewer | 54.1% | 49.9% |
 
 Declarations: 4199 total; 2103 real properties; 2096 theme custom properties.
-Top uncovered families: content (576), height (44), cursor (39), top (36), width (35), white-space (34), -webkit-user-select (26), user-select (26), left (25), text-overflow (24), text-decoration (22), outline (21).
+Top uncovered families: content (576), height (44), cursor (39), top (36), width (35), -webkit-user-select (26), user-select (26), left (25), text-decoration (22), outline (21), bottom (20), right (19).
 
 ## Layer 2 — value distribution (do real values snap to a small scale?)
 
