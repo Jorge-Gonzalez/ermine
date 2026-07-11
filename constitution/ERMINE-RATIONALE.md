@@ -365,6 +365,22 @@ that keeps the seam honest is socket consumption — a recipe class may not cont
 literal (Monky enforces this with its Phase B stylelint guard). This gives the recipe rows a
 terminal citation without inventing vocabulary the admission test rejects. Source: ADR-0011.
 
+## RAT:R-SKIN-11
+The largest single family in the Monky residue screen: ~49 declarations that say nothing but
+"this element has an edge line" — `border-width: 1px; border-style: solid`, all-sides or
+per-side, on every separator, container edge, and keycap. The colour half was solved by the
+`rule` carrier; every pilot then split shorthands by hand (width/style local, colour to the
+carrier) and the width/style halves accumulated as mechanics with no words. The presence word
+completes the split. `ruled` was chosen because it pairs with the carrier it composes with —
+`rule ruled` reads as one thing — over `edged`/`bordered`, which name the CSS property rather
+than the design intent and lose the carrier tie. Physical sides follow the evidence (separators
+are visually top/bottom lines); logical-side forms remain open for when writing-mode evidence
+exists. Weight is a socket with an Ermine default, not a scale: the evidence shows exactly one
+step (1px everywhere; the one 2px is a selection-indicator underline, which is identity, not a
+rule line), and R-SCALE discipline does not invent steps without measured need. With both the
+shadow (R-SKIN-09) and line halves ruled, the sampled skin-surface gap axis is fully resolved
+and retires. Source: ADR-0012.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 
