@@ -348,6 +348,23 @@ takes `elevated`/`recessed`; size-graded names (`shadow-sm/md`) were set aside b
 treatment names what the surface does — sits above or below its ground — not how many pixels of
 blur that takes, the what-not-how bar. Source: ADR-0010.
 
+## RAT:R-SKIN-10
+Every assimilation pilot since the colour pass hit the same wall and named it: `.settings-view
+.btn-outlined` "is blocked by the shared `.btn-outlined` skin rule; changing it requires a button
+recipe decision". The Monky evidence is the `.btn` family (base, secondary, outlined, success,
+link, link-danger, disabled, active) plus `.alert-*`, `.card`, and `.input` — bundles that
+repeat across surfaces as one decision. Two resolutions were weighed and rejected. Admitting
+recipe words (`btn`, `alert`) fails the admission test: the word names a component kind, and its
+content — which carriers, which radius, what disabled looks like — is project identity that no
+two projects share. Dissolving recipes into markup composition fails the other way: a recipe is
+one decision made in many places, and repeating six words per button is repetition masquerading
+as flexibility, while the recipe's conditional identity (disabled, active, context overrides like
+the settings-view competition) still needs a stylesheet home. The boundary is the resolution: the
+grammar rules the planes recipes are built from, the project owns the bundle, and the discipline
+that keeps the seam honest is socket consumption — a recipe class may not contain a colour
+literal (Monky enforces this with its Phase B stylelint guard). This gives the recipe rows a
+terminal citation without inventing vocabulary the admission test rejects. Source: ADR-0011.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 

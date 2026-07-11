@@ -61,6 +61,12 @@
       "anchor": "ADR-0010"
     },
     {
+      "id": "ADR-0011",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0011-recipe-boundary.md",
+      "anchor": "ADR-0011"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -631,6 +637,12 @@
       "anchor": "R-SKIN-09"
     },
     {
+      "id": "R-SKIN-10",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SKIN-10"
+    },
+    {
       "id": "R-SPACE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1175,6 +1187,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SKIN-09"
+    },
+    {
+      "id": "RAT:R-SKIN-10",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SKIN-10"
     },
     {
       "id": "RAT:R-SPACE-01",
@@ -1954,6 +1972,11 @@
     {
       "from": "RAT:R-SKIN-09",
       "to": "R-SKIN-09",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SKIN-10",
+      "to": "R-SKIN-10",
       "type": "rationale-of"
     },
     {

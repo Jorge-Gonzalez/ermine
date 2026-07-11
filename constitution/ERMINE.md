@@ -642,6 +642,20 @@ not elevation and stay project-owned.
 
 → rationale: RAT:R-SKIN-09 · history: ADR-0010 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
+## R-SKIN-10 — Recipes are project compositions
+
+A recipe — a named bundle of carrier values, geometry, and conditioned states styling a component
+kind (button, alert, card, input) — is not grammar vocabulary. A recipe word fails admission
+twice: it names a thing, not a property choice, and its content is one project's design decisions,
+not a general pattern. The grammar supplies what recipes are made of — carriers, treatments,
+condition prefixes, capabilities — and a project recipe class is product identity whose discipline
+is socket consumption: it draws every colour from theme sockets and may compose grammar words in
+markup, but its bundle, its states, and its context overrides stay project-owned. The seam with
+interaction affordance stays open: what makes an element button-*like* is a capability candidate
+(GAP-U-interaction-affordance); what makes it *this* project's button is a recipe.
+
+→ rationale: RAT:R-SKIN-10 · history: ADR-0011
+
 ## R-SCALE-01 — Generator-defined scales
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.
