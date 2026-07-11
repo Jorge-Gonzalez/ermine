@@ -50,9 +50,10 @@ export const REASON_CODES = [
   "config-departure",  // explicit project departure in ermine.config.css
   // residue — each code names why the declaration is still project CSS
   "assimilable",       // an existing Ermine word expresses this now (work list)
+  "recipe-identity",   // a project recipe class bundle (R-SKIN-10) — socket-consuming identity
   "state-review",      // same-element state condition without a matching backed prefix
-  "focus-state",       // :focus treatment; pending a focus condition ruling
-  "aria-current",      // [aria-current] backing; not Ermine's selected:/checked:
+  "focus-state",       // :focus-conditioned remainder (focus: is ruled; rings/mechanics stay)
+  "aria-current",      // [aria-current]-conditioned remainder (current: is ruled)
   "parent-relational", // ancestor state drives a descendant; conditions are same-element
   "pseudo-mechanics",  // ::before/::after geometry, fills, and content
   "scrollbar-followup",// scrollbar prominence — named follow-up question
@@ -200,7 +201,7 @@ interface WordMatch {
 export type InverseErmineMap = Map<string, WordMatch[]>;
 
 const PREFIXABLE_AXES = new Set(["skin-ground", "skin-ink", "skin-rule"]);
-const CONDITION_PREFIXES = ["hover", "selected", "checked"];
+const CONDITION_PREFIXES = ["hover", "focus", "selected", "checked", "current"];
 
 function candidateWords(): string[] {
   const plain = Object.values(VOCABULARY).flat();
@@ -221,8 +222,10 @@ function canonicalProperty(property: string): string {
 // platform interaction, or the backing attribute for backed states.
 function selectorCondition(compound: string): string {
   if (/:hover\b/.test(compound)) return ":hover";
+  if (/:focus\b(?!-)/.test(compound)) return ":focus";
   if (/\[aria-selected="true"\]/.test(compound)) return '[aria-selected="true"]';
   if (/\[aria-checked="true"\]/.test(compound)) return '[aria-checked="true"]';
+  if (/\[aria-current\b/.test(compound)) return "[aria-current]";
   return "";
 }
 
@@ -290,6 +293,16 @@ function classify(
   const ancestors = parts.slice(0, -1);
   const subject = parts[parts.length - 1] ?? "";
   if (ancestors.some((part) => STATE_MARK.test(part))) return { code: "parent-relational" };
+
+  // Ruled conditions (hover:/focus:/selected:/checked:/current:) attempt a
+  // condition-aware inverse match before falling to their remainder codes.
+  const condition = selectorCondition(subject);
+  if (condition) {
+    const matches = inverse.get(matchKey(condition, property, value));
+    if (matches?.length) {
+      return { code: "assimilable", words: [...new Set(matches.map((match) => match.word))].sort() };
+    }
+  }
   if (/\[aria-current/.test(subject)) return { code: "aria-current" };
   if (/:focus(-within|-visible)?\b/.test(subject)) return { code: "focus-state" };
 
@@ -303,11 +316,12 @@ function classify(
 
   // A state the grammar cannot condition on yet (.is-active, :active, :checked…)
   // must not receive a plain-word suggestion; the declaration is state-driven.
-  const condition = selectorCondition(subject);
   if (!condition && STATE_MARK.test(subject)) return { code: "state-review" };
-  const matches = inverse.get(matchKey(condition, property, value));
-  if (matches?.length) {
-    return { code: "assimilable", words: [...new Set(matches.map((match) => match.word))].sort() };
+  if (!condition) {
+    const matches = inverse.get(matchKey("", property, value));
+    if (matches?.length) {
+      return { code: "assimilable", words: [...new Set(matches.map((match) => match.word))].sort() };
+    }
   }
   if (condition) return { code: "state-review" };
   if (SKIN_PROPERTY.test(property)) return { code: "skin-review" };
@@ -412,15 +426,16 @@ const CODE_MEANING: Record<ReasonCode, string> = {
   "theme-metric": "project scale values and Ermine scale bindings (deliberate non-coverage)",
   "config-departure": "explicit project departure recorded in ermine.config.css",
   "assimilable": "an existing Ermine word expresses this now — next assimilation pass",
+  "recipe-identity": "a project recipe class bundle (R-SKIN-10) — socket-consuming product identity",
   "state-review": "same-element state condition with no matching backed prefix yet",
-  "focus-state": "focus treatment pending a focus condition ruling",
-  "aria-current": "aria-current backing; deliberately not recast as selected:/checked:",
-  "parent-relational": "ancestor state drives a descendant; conditions are same-element today",
+  "focus-state": "focus-conditioned remainder — rings and mechanics (focus: itself is ruled, R-STATE-10)",
+  "aria-current": "aria-current-conditioned remainder (current: itself is ruled, R-STATE-12)",
+  "parent-relational": "ancestor state drives a descendant (GAP-U-parent-relational-state)",
   "pseudo-mechanics": "pseudo-element geometry, fills, and content",
-  "scrollbar-followup": "scrollbar prominence (named follow-up question)",
-  "motion-followup": "transition/animation timing (named follow-up question)",
+  "scrollbar-followup": "scrollbar prominence (GAP-U-scrollbar-prominence)",
+  "motion-followup": "transition/animation timing (deferred to GAP-U-animation-plane)",
   "opacity-followup": "opacity state treatment (named follow-up question)",
-  "elevation-followup": "shadow geometry pending raised/sunken (named follow-up question)",
+  "elevation-followup": "box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09)",
   "reset-absence": "absence/reset mechanics, not a positive carrier",
   "user-content": "rich-text defaults inside user-authored content",
   "identity-geometry": "project-exact geometry on a grammar-family property",
