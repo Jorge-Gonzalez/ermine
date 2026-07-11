@@ -542,13 +542,22 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "font-size"],
   },
   {
-    axis: "skin-surface",
+    // rule-presence: a line's existence, separate from its colour (R-SKIN-11).
+    // `ruled` / `ruled-<side>` own border width+style at the theme's line weight
+    // (`--rule-weight`, default 1px); the `rule` carrier owns the colour. This axis
+    // replaces the retired skin-surface gap axis: its shadow half fell to R-SKIN-09,
+    // its border half is ruled here.
+    axis: "rule-presence",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
-    vocabulary: "open", regime: "free",
-    valueSpace: ["<border-width>"],
-    tokens: [], // remaining sampled skin (border width/style) — shadow is ruled (R-SKIN-09 elevation)
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
+    tokens: [{ pattern: /^ruled(?:-(top|bottom|left|right))?$/, shape: "ruled[-<side>]" }],
     default: null,
-    controls: ["border-width", "border-style"],
+    controls: [
+      "border-width", "border-style",
+      "border-top-width", "border-top-style", "border-bottom-width", "border-bottom-style",
+      "border-left-width", "border-left-style", "border-right-width", "border-right-style",
+    ],
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "box-shadow"],
   },
   {
@@ -669,6 +678,8 @@ export const SKIN_PLANE = {
   treatments: {
     elevation: ["shadow-elevated"],
     typeface: ["font-mono"],
+    // R-SKIN-11: the line weight the presence words emit; themes rebind for heavier rules.
+    line: ["rule-weight"],
   },
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {

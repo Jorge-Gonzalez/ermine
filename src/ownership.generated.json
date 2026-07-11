@@ -100,6 +100,18 @@
   "corner": [
     "border-radius"
   ],
+  "rule-presence": [
+    "border-bottom-style",
+    "border-bottom-width",
+    "border-left-style",
+    "border-left-width",
+    "border-right-style",
+    "border-right-width",
+    "border-style",
+    "border-top-style",
+    "border-top-width",
+    "border-width"
+  ],
   "font-size": [
     "font-size"
   ],

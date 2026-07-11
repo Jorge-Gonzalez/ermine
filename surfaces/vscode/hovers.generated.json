@@ -1069,6 +1069,31 @@
       "meaning": "corner-<step>",
       "reference": "src/ERMINE-SPEC.md §2.5 — corner"
     },
+    "ruled": {
+      "axis": "rule-presence",
+      "meaning": "ruled[-<side>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
+    },
+    "ruled-top": {
+      "axis": "rule-presence",
+      "meaning": "ruled[-<side>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
+    },
+    "ruled-bottom": {
+      "axis": "rule-presence",
+      "meaning": "ruled[-<side>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
+    },
+    "ruled-left": {
+      "axis": "rule-presence",
+      "meaning": "ruled[-<side>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
+    },
+    "ruled-right": {
+      "axis": "rule-presence",
+      "meaning": "ruled[-<side>]",
+      "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
+    },
     "font-xs": {
       "axis": "font-size",
       "meaning": "font-<step>",

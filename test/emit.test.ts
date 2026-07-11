@@ -12,11 +12,11 @@ test("P7: no unsanctioned property collisions across covered axes", () => {
     [],
     report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
   );
-  assert.equal(report.verifiedAxes.length, 39);
-  assert.deepEqual(report.unverifiedAxes, ["skin-surface", "skin-type"]);
+  assert.equal(report.verifiedAxes.length, 40);
+  assert.deepEqual(report.unverifiedAxes, ["skin-type"]);
   assert.deepEqual(
     report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
-    ["skin-surface", "skin-type"],
+    ["skin-type"],
   );
 });
 

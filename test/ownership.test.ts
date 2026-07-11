@@ -8,7 +8,7 @@ import { parseWord } from "../src/lint.ts";
 
 test("ownership generation enumerates valid words for every emitted axis", () => {
   const words = emittableWords();
-  assert.equal(Object.keys(words).length, 39);
+  assert.equal(Object.keys(words).length, 40);
   for (const [axis, samples] of Object.entries(words)) {
     assert.ok(samples.length > 0, `${axis} has no emission samples`);
     for (const word of samples) assert.equal(parseWord(word).axis, axis, `${word} must resolve to ${axis}`);
@@ -29,12 +29,17 @@ test("the committed ownership artifact exactly matches emission", async () => {
 test("P7 separates verified ownership from warned gap-axis fallbacks", () => {
   const report = checkDimensionalPurity();
   assert.deepEqual(report.violations, []);
-  assert.deepEqual(report.unverifiedAxes, ["skin-surface", "skin-type"]);
-  assert.deepEqual(report.ownership["skin-surface"], [
-    "border-style", "border-width",
+  assert.deepEqual(report.unverifiedAxes, ["skin-type"]);
+  assert.deepEqual(report.ownership["rule-presence"], [
+    "border-bottom-style", "border-bottom-width",
+    "border-left-style", "border-left-width",
+    "border-right-style", "border-right-width",
+    "border-style",
+    "border-top-style", "border-top-width",
+    "border-width",
   ]);
   // selection-treatment is eventTriggered (R-STATE-09): its shared-property overlaps
-  // with skin-surface are sanctioned overrides, not warned collisions.
+  // with base skin are sanctioned overrides, not warned collisions.
   assert.deepEqual(
     report.warnings
       .filter((warning) => warning.rule === "unverified-overlap")

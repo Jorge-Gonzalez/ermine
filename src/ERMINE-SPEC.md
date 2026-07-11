@@ -775,19 +775,19 @@ Tokens:
 |---|---|---|---|
 | `corner-<step>` | `/^corner-(sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
 
-#### skin-surface
+#### rule-presence
 
-- role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
-- value space: `<border-width>`
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `ruled` `ruled-top` `ruled-bottom` `ruled-left` `ruled-right`
 - default: none
-- controls: `border-width` `border-style`
+- controls: `border-width` `border-style` `border-top-width` `border-top-style` `border-bottom-width` `border-bottom-style` `border-left-width` `border-left-style` `border-right-width` `border-right-style`
 - must never touch: `display` `gap` `flex` `position` `background` `color` `border-color` `border-radius` `box-shadow`
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| — | — | — | — |
+| `ruled[-<side>]` | `/^ruled(?:-(top\|bottom\|left\|right))?$/` | — | no |
 
 #### font-size
 

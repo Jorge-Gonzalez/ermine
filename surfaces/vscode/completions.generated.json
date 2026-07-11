@@ -1594,6 +1594,42 @@
       ]
     },
     {
+      "axis": "rule-presence",
+      "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence",
+      "items": [
+        {
+          "label": "ruled",
+          "insertText": "ruled",
+          "kind": "word",
+          "meaning": "ruled[-<side>]"
+        },
+        {
+          "label": "ruled-top",
+          "insertText": "ruled-top",
+          "kind": "word",
+          "meaning": "ruled[-<side>]"
+        },
+        {
+          "label": "ruled-bottom",
+          "insertText": "ruled-bottom",
+          "kind": "word",
+          "meaning": "ruled[-<side>]"
+        },
+        {
+          "label": "ruled-left",
+          "insertText": "ruled-left",
+          "kind": "word",
+          "meaning": "ruled[-<side>]"
+        },
+        {
+          "label": "ruled-right",
+          "insertText": "ruled-right",
+          "kind": "word",
+          "meaning": "ruled[-<side>]"
+        }
+      ]
+    },
+    {
       "axis": "font-size",
       "reference": "src/ERMINE-SPEC.md §2.5 — font-size",
       "items": [

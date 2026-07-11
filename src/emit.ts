@@ -26,10 +26,10 @@
 // through FACET_EMISSION; top-layer-mechanism through MECHANISM; motion-macro
 // through the stagger SINK; all 9 state.* axes through the generic ConditionRule,
 // because state is condition-only — R-STATE-01 — and controls nothing).
-// 2 axes are gap-reported: skin-surface and skin-type have no sanctioned
+// 1 axis is gap-reported: skin-type has no sanctioned
 // vocabulary to map (registry tokens are empty by design — R-SKIN-01 leaves
 // open sockets to the theme, and which skin words the GRAMMAR fixes is unruled;
-// see reports/GAP-K6-skin-surface.md and reports/GAP-K6-skin-type.md).
+// see reports/GAP-K6-skin-type.md; skin-surface retired via R-SKIN-09/R-SKIN-11).
 
 import { readFileSync } from "node:fs";
 
@@ -159,6 +159,21 @@ const EMISSION: Record<string, EmitSpec> = {
     effectKind: "css",
     plain: (word) =>
       word === "font-mono" ? { "font-family": "var(--font-mono, monospace)" } : null,
+  },
+
+  // --- rule-presence: a line's existence (R-SKIN-11). Width from the line-weight
+  // socket, style solid; the rule carrier supplies the colour. ---
+  "rule-presence": {
+    effectKind: "css",
+    plain: (word) => {
+      const m = word.match(/^ruled(?:-(top|bottom|left|right))?$/);
+      if (!m) return null;
+      const side = m[1] ? `-${m[1]}` : "";
+      return {
+        [`border${side}-width`]: "var(--rule-weight, 1px)",
+        [`border${side}-style`]: "solid",
+      };
+    },
   },
 
   // --- elevation: the cast-shadow treatment (R-SKIN-09). Socket with an Ermine
@@ -551,6 +566,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "font-size": SKIN_PLANE.scales.type.map((s) => `font-${s}`),
   "font-weight": SKIN_PLANE.scales.weight.map((s) => `font-${s}`),
   "font-family": ["font-mono"],
+  "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   elevation: ["elevated"],
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
@@ -591,7 +607,7 @@ export interface PurityReport {
 
 const OWNERSHIP_PATH = new URL("./ownership.generated.json", import.meta.url);
 const GENERATED_KEY = "_generated";
-const GAP_REPORTED_AXES = new Set(["skin-surface", "skin-type"]);
+const GAP_REPORTED_AXES = new Set(["skin-type"]);
 
 function generatedOwnership(): Record<string, string[]> {
   const parsed = JSON.parse(readFileSync(OWNERSHIP_PATH, "utf8")) as Record<string, unknown>;

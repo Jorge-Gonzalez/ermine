@@ -89,6 +89,19 @@ test("elevated composes with base skin as independent atomic rules", () => {
   assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
 });
 
+test("ruled emits all-side width and style at the line-weight socket; rule keeps colour (R-SKIN-11)", () => {
+  const css = toCss("rule ruled");
+  assert.match(css, /\.ruled \{[^}]*border-width: var\(--rule-weight, 1px\);[^}]*border-style: solid;/s);
+  assert.match(css, /\.rule \{[^}]*border-color: var\(--rule\);/s);
+  assert.doesNotMatch(css, /\.ruled \{[^}]*border-color/s, "presence must not touch the carrier's colour");
+});
+
+test("a per-side ruled word emits only that side's width and style (R-SKIN-11)", () => {
+  const css = toCss("ruled-bottom");
+  assert.match(css, /\.ruled-bottom \{[^}]*border-bottom-width: var\(--rule-weight, 1px\);[^}]*border-bottom-style: solid;/s);
+  assert.doesNotMatch(css, /border-top|border-left|border-right/, "other sides stay untouched");
+});
+
 test("font-mono reads its typeface socket with the platform generic as default (R-SKIN-07)", () => {
   const css = toCss("font-mono");
   assert.match(css, /\.font-mono \{[^}]*font-family: var\(--font-mono, monospace\);/s);
