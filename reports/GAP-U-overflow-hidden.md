@@ -1,5 +1,7 @@
 # Gap Report — no `overflow: hidden` word
 
+> **Resolved.** R-OVERFLOW-01 amended (ADR-0013): `hidden` admitted to the closed overflow set, distinct from `clip`; consumed in Monky at 2bf5ab2.
+
 ## What I was doing
 Migrating Monky's SiteToggle (U8). A text container used `overflow: hidden` to enable
 flex truncation. Ermine's overflow axis has `scroll-x/y/auto` and `clip` — but `clip`

@@ -1,5 +1,7 @@
 # Gap Report — K6 (skin-surface)
 
+> **Resolved.** R-SKIN-09 (shadow half) and R-SKIN-11 (line-presence half, ADR-0012); the skin-surface gap axis is retired and the ~49-row border-mechanics family consumed in Monky at 2218f6e.
+
 ## What I was doing
 Completing the EMISSION table (work order K6): every axis in `REGISTRY` gets a
 word→declaration mapping in `src/emit.ts`, derived from its constitution ruling or the

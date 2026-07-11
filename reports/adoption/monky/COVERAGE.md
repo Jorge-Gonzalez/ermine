@@ -127,13 +127,19 @@ Phase D's gate holds the list at zero — the declared boundary is `BOUNDARY.md`
 | Gap Report | Question |
 |---|---|
 | `GAP-U-dataviz-palette` | a second, versatile colour plane for graphs/dashboards |
-| `GAP-U-overflow-hidden` | an `overflow: hidden` word distinct from `clip` |
 | `GAP-U-density-2xl` | a 24px density step (between `loose` and `separated`) |
 | `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) — holds 9 ledger `gap` records and the duration-step naming (Phase C defer) |
-| `GAP-U-interaction-affordance` | lift interaction affordance to capability words |
+| `GAP-U-interaction-affordance` | lift interaction affordance to capability words — pattern screen counts ~30 pressability rows |
 | `GAP-U-scrollbar-prominence` | scrollbars as an explicit affordance; track/thumb sockets — holds 24 ledger `gap` records |
 | `GAP-U-parent-relational-state` | ancestor state driving descendant skin (the reveal-on-row-state pattern, 14 rows incl. the reveal bases) |
-| `GAP-K6-skin-surface`, `GAP-K6-skin-type` | pre-adoption skin-surface / skin-type questions (largely superseded by R-SKIN; shadow half of skin-surface resolved by R-SKIN-09) |
+| `GAP-U-focus-ring` | the themed focus halo as a ruled treatment vs platform-first outline (7+7 paired rows) |
+| `GAP-U-min-content-escape` | naming the flex min-size floor escape (6 rows, structure plane) |
+| `GAP-K6-skin-type` | the remaining unruled type facets (line-height, text-align) |
+
+Resolved by the post-closure conversion cycles: `GAP-U-overflow-hidden` (R-OVERFLOW-01
+amended: `hidden`), `GAP-U-truncation` (R-SKIN-12 `truncate`), and `GAP-K6-skin-surface`
+(R-SKIN-09 shadow half + R-SKIN-11 `ruled` line-presence half; the gap axis retired).
+`font-mono` was admitted under R-SKIN-07 without a new ruling.
 
 ### 5.3 Named follow-ups
 

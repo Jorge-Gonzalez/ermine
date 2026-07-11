@@ -1,5 +1,7 @@
 # Gap Report — truncation treatment
 
+> **Resolved.** R-SKIN-12 (ADR-0013): `truncate` ruled as a treatment composing with the `hidden` overflow word; consumed in Monky at 2bf5ab2. The clamp form stays reserved.
+
 ## What I was doing
 Screening the Monky residue for repeated patterns (`pilots/PATTERN-SCREEN.md`). Five
 distinct selectors across four surfaces carry the identical trio —
