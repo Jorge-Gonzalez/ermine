@@ -31,3 +31,14 @@ R-MOTION-01/02/04.
 ## What is blocked
 Nothing immediate — motion works as ruled. This is a clarity/architecture revision,
 sequenced after the skin/theme work.
+
+## Phase C evidence — duration step names deliberately wait here
+Phase C considered naming duration steps now (R-MOTION-01 already places duration on an
+open external skin scale; R-SCALE-02 leaves its step names open). The Monky evidence is
+strong and uniform — ~19 transition declarations, essentially all `var(--transition-fast)`
+(0.15s), with a single `--transition-medium` (0.3s) — a two-step scale waiting for names.
+Deferred anyway: this report proposes renaming the motion family itself
+(`motion → animation`, `tween`/`choreography`), and christening duration steps under the
+old framing risks naming them twice. The ledger's nine motion `gap` rows and the current
+ledger's `motion-followup` count stay attached here; whoever takes this reframe should
+name the duration steps in the same cycle.
