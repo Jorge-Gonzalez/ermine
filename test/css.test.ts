@@ -56,6 +56,19 @@ test("base skin and its hover: override compose as two rules on the same element
   assert.match(css, /\.hover\\:ground-subtle:hover \{[^}]*background: var\(--ground-subtle\);/s);
 });
 
+test("a focus: prefix scopes conditioned skin to a :focus pseudo-class, not an at-rule (R-STATE-10)", () => {
+  const css = toCss("focus:rule-accent");
+  assert.match(css, /\.focus\\:rule-accent:focus \{/, "selector carries the escaped class plus :focus suffix");
+  assert.match(css, /border-color: var\(--accent\);/);
+  assert.doesNotMatch(css, /@media/, "an interaction scope must not become an at-rule");
+});
+
+test("base rule and its focus: override compose as two rules on the same element", () => {
+  const css = toCss("rule focus:rule-accent");
+  assert.match(css, /\.rule \{[^}]*border-color: var\(--rule\);/s);
+  assert.match(css, /\.focus\\:rule-accent:focus \{[^}]*border-color: var\(--accent\);/s);
+});
+
 test("a backed selected: scope serializes to the [aria-selected] attribute selector (R-STATE-11)", () => {
   const css = toCss("selectable selected:ground-defined selected:ink-accent selected:rule-accent");
   assert.match(css, /\.selected\\:ground-defined\[aria-selected="true"\] \{[^}]*background: var\(--ground-defined\);/s);

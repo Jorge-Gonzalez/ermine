@@ -857,6 +857,7 @@ These prefixes are closed condition scopes, not registry-axis members. The guard
 | `container-bp` | `container-<bp>:` | `/^container-(sm\|md\|lg\|xl)$/` | `container` | conditions on container size; distributes to children |
 | `prefers` | `prefers-<x>:` | `/^prefers-(reduced-motion\|color-scheme-dark\|contrast-more\|reduced-transparency)$/` | `none` | — |
 | `hover` | `hover:` | `/^hover$/` | `none` | conditioned skin while the pointer is over the element |
+| `focus` | `focus:` | `/^focus$/` | `none` | conditioned skin while the element holds focus |
 | `selected` | `selected:` | `/^selected$/` | `none` | backed conditioned skin while the element is asserted selected |
 | `checked` | `checked:` | `/^checked$/` | `none` | backed conditioned skin while the element is asserted checked |
 <!-- END GENERATED: registry -->

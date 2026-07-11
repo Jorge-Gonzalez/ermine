@@ -751,11 +751,14 @@ export const ENVIRONMENT_SCOPES: ScopePrefix[] = [
 
 // Platform interaction conditions the browser supplies for free (R-STATE-10). A prefix
 // scopes a conditioned-skin override to the pseudo-class; unlike environmental scopes it
-// serializes to a selector suffix (`:hover`), not an at-rule. `hover` is admitted now;
-// `active`/`focus` are the family the rule opens, admitted as their own evidence lands.
+// serializes to a selector suffix (`:hover`), not an at-rule. `hover` and `focus` are
+// admitted on evidence; `active` is the family member still reserved, admitted as its
+// own evidence lands. `focus:` recolors carriers while focused — it does not redraw the
+// UA focus ring, which stays platform-supplied (RAT:R-STATE-10).
 // implements: R-STATE-10
 export const INTERACTION_SCOPES: ScopePrefix[] = [
   { id: "hover", pattern: /^hover$/, shape: "hover:", role: "none", note: "conditioned skin while the pointer is over the element" },
+  { id: "focus", pattern: /^focus$/, shape: "focus:", role: "none", note: "conditioned skin while the element holds focus" },
 ];
 
 // Application-asserted state scopes (R-STATE-11). Like interaction scopes they carry a

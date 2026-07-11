@@ -128,7 +128,7 @@ function scopeCondition(scope: string): string | undefined {
 // Platform interaction scopes (R-STATE-10) the browser supplies with no project binding.
 // They append a pseudo-class to the selector rather than wrapping it in an at-rule.
 function scopePseudo(scope: string): string | undefined {
-  const exact: Record<string, string> = { hover: ":hover" };
+  const exact: Record<string, string> = { hover: ":hover", focus: ":focus" };
   return exact[scope];
 }
 
