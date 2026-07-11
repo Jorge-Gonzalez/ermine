@@ -331,6 +331,23 @@ kind (single property). The apparent asymmetry with ink dissolves at the descrip
 words name intent, not CSS properties (the R-SKIN-01 seam). Namespace locality keeps all
 typography under `font-*`.
 
+## RAT:R-SKIN-09
+The `shadow` colour socket shipped with the theme plane, but every shadow *geometry* stayed a
+project literal — the Monky current ledger carries five elevation rows (modal dialog, style
+dropdown, editor toast, suggestions container, command suggestions), a named follow-up since the
+theme binding. Elevation is a treatment, not a carrier: a carrier is a colour riding one property,
+while a cast shadow is a composite value whose colour is themed and whose geometry is a number
+choice — exactly the grammar-owns-the-word / theme-owns-the-numbers seam (R-SCALE-03). The socket
+carries a default geometry the way carriers carry default colours (R-SKIN-03), so `elevated`
+works before a theme binds `--shadow-elevated`. Only `elevated` is admitted: the dropdown-tier
+evidence is uniform, but the modal's two-layer multiply-blend shadow is an identity signature, and
+the one inset occurrence is an error ring, not depth — so `recessed` stays reserved, the
+hover/focus admission pattern. Naming: the follow-up's working names were `raised`/`sunken`, but
+`raised` is already a z-scale stacking tier and one word resolves to one axis, so the treatment
+takes `elevated`/`recessed`; size-graded names (`shadow-sm/md`) were set aside because a
+treatment names what the surface does — sits above or below its ground — not how many pixels of
+blur that takes, the what-not-how bar. Source: ADR-0010.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 

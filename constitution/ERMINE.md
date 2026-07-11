@@ -628,6 +628,20 @@ socket list is registry-defined; a theme may not invent unregistered sockets.
 
 → rationale: RAT:R-SKIN-08 · history: ADR-0005
 
+## R-SKIN-09 — Elevation treatment
+
+Elevation is a skin treatment with a closed set: `elevated` (cast shadow), admitted on evidence;
+`recessed` (inset) is the family member reserved pending its own. The treatment owns `box-shadow`.
+The word reads its like-named socket (`--shadow-elevated`) with an Ermine default geometry
+composed on the standalone `shadow` colour socket, so the theme owns the numbers and the colour it
+already binds — the seam R-SKIN-03's plane data anticipated ("shadow is the cast-shadow colour;
+its geometry belongs to the elevation treatment") made normative. The treatment describes visual
+depth on the skin plane; it is disjoint from the z-scale's stacking tiers (whose `raised` names an
+order, not a look). Identity shadows — multi-layer signatures, blend-mode compositing, rings — are
+not elevation and stay project-owned.
+
+→ rationale: RAT:R-SKIN-09 · history: ADR-0010 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
 ## R-SCALE-01 — Generator-defined scales
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.

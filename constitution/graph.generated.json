@@ -55,6 +55,12 @@
       "anchor": "ADR-0009"
     },
     {
+      "id": "ADR-0010",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0010-elevation-treatment.md",
+      "anchor": "ADR-0010"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -619,6 +625,12 @@
       "anchor": "R-SKIN-08"
     },
     {
+      "id": "R-SKIN-09",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SKIN-09"
+    },
+    {
       "id": "R-SPACE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1157,6 +1169,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SKIN-08"
+    },
+    {
+      "id": "RAT:R-SKIN-09",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SKIN-09"
     },
     {
       "id": "RAT:R-SPACE-01",
@@ -1931,6 +1949,11 @@
     {
       "from": "RAT:R-SKIN-08",
       "to": "R-SKIN-08",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SKIN-09",
+      "to": "R-SKIN-09",
       "type": "rationale-of"
     },
     {
