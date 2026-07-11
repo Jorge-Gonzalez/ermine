@@ -1,0 +1,26 @@
+Non-Ermine used classes by source file:
+src/styles/skin/controls.css: btn, btn-link, btn-link-danger, btn-outlined, btn-secondary, btn-success, button-group, checkbox, editor-content, flash, input, input-error, is-selected, label, min-selected-1, panel-button, radio, radio-label, selectable-group, shake
+
+src/styles/skin/surfaces.css: alert, card, divider, empty-state, section, section-description, section-title, text-mono
+
+src/styles/components/content-editor.css: ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep, content-editor, content-editor-body
+
+src/content/overlays/modal/modalStyles.css: modal-backdrop, modal-content, modal-dialog, modal-nav-branding, modal-nav-container, modal-nav-icon, modal-nav-label, modal-nav-tab
+
+src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css: macro-suggestions-arrow, macro-suggestions-command-item, macro-suggestions-commands-list, macro-suggestions-container, macro-suggestions-footer, macro-suggestions-kbd, macro-suggestions-text-preview
+
+src/content/overlays/deleteConfirm/deleteConfirmStyles.css: delete-confirm-command, delete-confirm-message, macro-suggestions-command-item, macro-suggestions-container
+
+src/content/overlays/views/macroEditor/editorViewStyles.css: command-suggestion-action, command-suggestion-actions, command-suggestion-command, command-suggestion-item, command-suggestion-text, command-suggestions, command-suggestions-label, content-editor-body, editor-command, editor-command-error, editor-content, editor-form, editor-popout, editor-sensitive, editor-title, editor-toast, input, input-dropdown-open, macro-editor-view
+
+src/content/overlays/views/search/searchViewStyles.css: macro-search-count, macro-search-empty, macro-search-footer, macro-search-input, macro-search-input-container, macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-kbd, macro-search-results, macro-search-shortcut, macro-search-view, modal-command-description, modal-command-item, modal-command-name
+
+src/content/overlays/views/settings/settingsViewStyles.css: btn-outlined, is-selected, seg-control, seg-option, settings-body, settings-divider, settings-group, settings-import-status, settings-prefix-btn, settings-rows, settings-section-label, settings-view
+
+src/popup/popup.css: popup-button, popup-card, popup-container, popup-icon-button, popup-item-detail, popup-item-toggle, popup-macro-text, popup-result-item, popup-results, popup-search-input, popup-section, popup-site-copy, popup-toggle-label, popup-truncate
+
+src/options/options.css: mode-choice, mode-row, prefix-cell
+
+src/styles/entries/pages.css: page-container, page-title
+
+There are also non-class local selectors in the ledger, notably body, :host, #macro-suggestions, button/input/textarea/select, scrollbar pseudo-selectors, and @keyframes flash/pulse/shake.
