@@ -464,6 +464,19 @@ project's own selection hue nor a border it drew with `border-color` rather than
 
 → rationale: RAT:R-STATE-11 · history: ADR-0008 · code: src/registry.ts#STATE_SCOPES, src/lint.ts#parseWord
 
+## R-STATE-12 — Attribute-backed condition prefix
+
+An application-asserted state whose backing lives on the element itself — `current`, backed by
+`aria-current` — scopes a conditioned-skin override as a variant prefix (`current:ink-accent`),
+the R-STATE-10/11 shape. It differs from R-STATE-11 in how backing is verified: there is no
+capability word, because the assertion contract is the attribute the element carries, not a
+container's distributed state. The linter cannot see markup attributes, and does not need to —
+the override serializes to the backing attribute selector
+(`[aria-current]:not([aria-current="false"])`), so an element the application never marked
+current can never match. The set is closed and validated; `current` is admitted on evidence.
+
+→ rationale: RAT:R-STATE-12 · history: ADR-0009 · code: src/registry.ts#STATE_SCOPES, src/css.ts#buildStylesheet
+
 ## R-MOTION-01 — Closed motion grammar
 
 Motion axes have closed grammar vocabularies. Duration, delay, and stagger are open external skin

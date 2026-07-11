@@ -232,6 +232,24 @@ project's actual selected look compose from carriers, retiring the fixed subtle/
 could express neither. `checked` is its sibling (`[aria-checked]`). Surfaced when the selection-sink
 wiring hit the hue/property mismatch. Source: ADR-0008.
 
+## RAT:R-STATE-12
+Monky's modal navigation marks the active tab with `aria-current="page"` and colours it locally —
+three declarations (accent ink, subtle ground, accent bottom rule) that every reconciliation pass
+since U5 deliberately refused to recast as `selected:`, because `aria-current` is a different
+assertion with different semantics: currency within a set (navigation, steps, pagination), not
+selection. The carriers and the prefix mechanism already fit; what was missing was a backing
+story. `selected:`/`checked:` verify a capability word because their state is distributed — a
+container asserts it onto children, and a prefix without the `selectable` contract is a bug the
+linter can catch from the class string alone. `aria-current` has no container contract to verify:
+the element itself carries the attribute, so the only honest backing is the attribute, and the
+serialization enforces it — `[aria-current]:not([aria-current="false"])` cannot match an element
+the application never asserted. The `:not` guard exists because `aria-current="false"` is a legal
+way to write "not current"; matching it would fire the override on an explicit negative. A
+capability word (`navigable`) was weighed and set aside: it would verify nothing real, since no
+distributed container state exists to entail, and inventing one to satisfy the R-STATE-11 shape
+puts ceremony ahead of truth. Surfaced by the aria-current rows held back across three
+assimilation pilots. Source: ADR-0009.
+
 ## RAT:R-MOTION-01
 Source: pre-split `constitution/ERMINE.md` lines 1458–1468.
 
