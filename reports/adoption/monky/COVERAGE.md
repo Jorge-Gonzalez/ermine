@@ -128,16 +128,19 @@ overrides for later rulings.
 | `GAP-U-dataviz-palette` | a second, versatile colour plane for graphs/dashboards |
 | `GAP-U-overflow-hidden` | an `overflow: hidden` word distinct from `clip` |
 | `GAP-U-density-2xl` | a 24px density step (between `loose` and `separated`) |
-| `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) — holds 9 ledger `gap` records |
+| `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) — holds 9 ledger `gap` records and the duration-step naming (Phase C defer) |
 | `GAP-U-interaction-affordance` | lift interaction affordance to capability words |
 | `GAP-U-scrollbar-prominence` | scrollbars as an explicit affordance; track/thumb sockets — holds 24 ledger `gap` records |
-| `GAP-K6-skin-surface`, `GAP-K6-skin-type` | pre-adoption skin-surface / skin-type questions (largely superseded by R-SKIN) |
+| `GAP-U-parent-relational-state` | ancestor state driving descendant skin (the reveal-on-row-state pattern, 12 rows) |
+| `GAP-K6-skin-surface`, `GAP-K6-skin-type` | pre-adoption skin-surface / skin-type questions (largely superseded by R-SKIN; shadow half of skin-surface resolved by R-SKIN-09) |
 
 ### 5.3 Named follow-ups
 
-- **Ratify `raised`/`sunken`** as the elevation treatment — the formal home for the shadow
-  *geometry* (offset/blur) that pairs with the `shadow` colour socket.
-- **Duration/stagger step names** — scale-bound per R-SCALE-03 but unnamed (R-SCALE-02).
+- ~~Ratify the elevation treatment~~ — **done** (Phase C): R-SKIN-09 `elevated`
+  (`recessed` reserved; the working name `raised` collided with the z-scale tier).
+- **Duration/stagger step names** — scale-bound per R-SCALE-03 but unnamed (R-SCALE-02);
+  Phase C deferred the christening to the animation-plane reframe (evidence attached to
+  `GAP-U-animation-plane`).
 - **U9** — generalize the adoption tooling away from Monky specifics and publish the final
   case study (the adoption's own closing order).
 
@@ -157,6 +160,10 @@ Against the order's completion definition, met: one pinned grammar, separated st
 utility/legacy vocabulary gone, generated classes lint+emit, one grammar revision across
 roots, skin gaps ruled or honestly local, behaviour preserved, the live style audit at
 zero dead-candidate declarations, and — since U8f — **every baseline declaration
-terminal** (zero uncertain, zero pending). Phase B also leaves the current-ledger work list
-empty (`assimilable = 0`). **Open:** U9's tooling generalization + final case study and the
-Phase C rulings explicitly deferred by `current-overrides.json`.
+terminal** (zero uncertain, zero pending). Phase B left the current-ledger work list empty
+(`assimilable = 0`) and Phase C (`pilots/PHASE-C-RULINGS.md`) converted the earned evidence
+into rulings — `focus:` admitted, R-STATE-12 `current:`, R-SKIN-09 `elevated`, R-SKIN-10
+recipe boundary — consumed them in Monky, and gave the recipe rows their terminal
+`recipe-identity` code. **Open:** U9's tooling generalization + final case study; the
+remaining residue codes point at filed gap reports (parent-relational, scrollbar,
+animation plane) awaiting their own cycles.
