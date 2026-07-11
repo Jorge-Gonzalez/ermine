@@ -153,6 +153,14 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- elevation: the cast-shadow treatment (R-SKIN-09). Socket with an Ermine
+  // default geometry composed on the standalone shadow colour socket. ---
+  elevation: {
+    effectKind: "css",
+    plain: (word) =>
+      word === "elevated" ? { "box-shadow": "var(--shadow-elevated, 0 4px 12px var(--shadow))" } : null,
+  },
+
   // --- ordered-chain scale axis WITH sub-dials + aliasMatch (padding shape) ---
   padding: {
     effectKind: "css",
@@ -534,6 +542,7 @@ export const VOCABULARY: Record<string, string[]> = {
   corner: SKIN_PLANE.scales.radius.map((s) => `corner-${s}`),
   "font-size": SKIN_PLANE.scales.type.map((s) => `font-${s}`),
   "font-weight": SKIN_PLANE.scales.weight.map((s) => `font-${s}`),
+  elevation: ["elevated"],
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
   "motion-macro": ["together", "sequence", "cascade"],

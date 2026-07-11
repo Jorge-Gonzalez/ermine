@@ -1666,6 +1666,18 @@
       ]
     },
     {
+      "axis": "elevation",
+      "reference": "src/ERMINE-SPEC.md §2.5 — elevation",
+      "items": [
+        {
+          "label": "elevated",
+          "insertText": "elevated",
+          "kind": "word",
+          "meaning": "<elevation>"
+        }
+      ]
+    },
+    {
       "axis": "selection-treatment",
       "reference": "src/ERMINE-SPEC.md §2.5 — selection-treatment",
       "items": [

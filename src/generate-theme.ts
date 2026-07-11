@@ -14,6 +14,7 @@ interface Derived {
   radius: string[];
   type: string[];
   weight: string[];
+  elevation: string[];
   required: string[];
 }
 
@@ -34,11 +35,14 @@ function derive(): Derived {
   const radius = scale("radius");
   const type = scale("type");
   const weight = scale("weight");
+  // R-SKIN-09: treatment sockets — full box-shadow values; optional (emitter default).
+  const elevation = [...SKIN_PLANE.treatments.elevation];
   // Required floor (R-SKIN-08): the carrier anchors — a themed surface minimally needs a
-  // background, text, and border color. Role anchors, all color steps, and scales are
-  // optional: mode-invariant scales may come through the plane or a project metric layer.
+  // background, text, and border color. Role anchors, all color steps, scales, and
+  // treatment sockets are optional: mode-invariant scales may come through the plane or a
+  // project metric layer.
   const required = carriers.map(([anchor]) => anchor);
-  return { color, radius, type, weight, required };
+  return { color, radius, type, weight, elevation, required };
 }
 
 function list(name: string, values: string[]): string[] {
@@ -46,8 +50,8 @@ function list(name: string, values: string[]): string[] {
 }
 
 function render(): string {
-  const { color, radius, type, weight, required } = derive();
-  const all = [...color, ...radius, ...type, ...weight];
+  const { color, radius, type, weight, elevation, required } = derive();
+  const all = [...color, ...radius, ...type, ...weight, ...elevation];
   return [
     "// GENERATED from src/registry.ts SKIN_PLANE by src/generate-theme.ts — do not edit.",
     "// The socket list is the theme plane's identity (R-SKIN-08).",
@@ -64,6 +68,7 @@ function render(): string {
     `  radius: [${radius.map((s) => `"${s}"`).join(", ")}],`,
     `  type: [${type.map((s) => `"${s}"`).join(", ")}],`,
     `  weight: [${weight.map((s) => `"${s}"`).join(", ")}],`,
+    `  elevation: [${elevation.map((s) => `"${s}"`).join(", ")}],`,
     "} as const satisfies Record<string, readonly SkinSocket[]>;",
     "",
   ].join("\n");

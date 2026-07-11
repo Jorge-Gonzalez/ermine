@@ -77,6 +77,24 @@ test("a backed selected: scope serializes to the [aria-selected] attribute selec
   assert.doesNotMatch(css, /@media/, "a backed state scope must not become an at-rule");
 });
 
+test("elevated reads its socket with the default geometry composed on the shadow colour (R-SKIN-09)", () => {
+  const css = toCss("elevated");
+  assert.match(css, /\.elevated \{[^}]*box-shadow: var\(--shadow-elevated, 0 4px 12px var\(--shadow\)\);/s);
+});
+
+test("elevated composes with base skin as independent atomic rules", () => {
+  const css = toCss("ground corner-md elevated");
+  assert.match(css, /\.ground \{[^}]*background: var\(--ground\);/s);
+  assert.match(css, /\.corner-md \{[^}]*border-radius: var\(--radius-md\);/s);
+  assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
+});
+
+test("the z-scale raised stacking tier is untouched by the elevation treatment", () => {
+  const css = toCss("raised");
+  assert.match(css, /\.raised \{[^}]*z-index: var\(--z-raised\);/s);
+  assert.doesNotMatch(css, /box-shadow/);
+});
+
 test("an attribute-backed current: scope serializes to [aria-current] with the false guard (R-STATE-12)", () => {
   const css = toCss("current:ink-accent current:ground-subtle");
   assert.match(css, /\.current\\:ink-accent\[aria-current\]:not\(\[aria-current="false"\]\) \{[^}]*color: var\(--accent\);/s);

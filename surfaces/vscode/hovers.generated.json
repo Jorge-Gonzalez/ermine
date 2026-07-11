@@ -1119,6 +1119,11 @@
       "meaning": "font-<step>",
       "reference": "src/ERMINE-SPEC.md §2.5 — font-weight"
     },
+    "elevated": {
+      "axis": "elevation",
+      "meaning": "<elevation>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — elevation"
+    },
     "selection-subtle": {
       "axis": "selection-treatment",
       "meaning": "conditioned-skin: a CONDITIONAL VARIANT LAYER, not a base skin axis. It writes custom properties (--selection-bg/--selection-ink), NOT background/color directly — a sink rule reads them under the `selected` condition. This is why it does NOT collide with skin-surface's background/color (same discipline as m2 longhands / motion --stagger): conditioned layers compose with base skin by writing different variables. Entails nothing itself; conditioned by `selected`/`hover`/`active`; pairs with capability `selectable`.",

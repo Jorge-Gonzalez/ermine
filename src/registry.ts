@@ -545,11 +545,11 @@ export const SKIN: AxisRecord[] = [
     axis: "skin-surface",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
-    valueSpace: ["<border-width>", "<shadow>"],
-    tokens: [], // remaining sampled skin (border width/style + shadow) — not yet split into axes
+    valueSpace: ["<border-width>"],
+    tokens: [], // remaining sampled skin (border width/style) — shadow is ruled (R-SKIN-09 elevation)
     default: null,
-    controls: ["border-width", "border-style", "box-shadow"],
-    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius"],
+    controls: ["border-width", "border-style"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "box-shadow"],
   },
   {
     // font-size: typographic scale (R-SKIN-07 size facet), a disjoint-property facet
@@ -586,6 +586,22 @@ export const SKIN: AxisRecord[] = [
     default: null,
     controls: ["line-height", "font-family", "text-align"],
     mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight"],
+  },
+  {
+    // elevation: the cast-shadow treatment (R-SKIN-09). Owns box-shadow; the word reads
+    // its like-named socket with an Ermine default geometry composed on the standalone
+    // `shadow` colour socket, so a theme owns the numbers. `elevated` admitted;
+    // `recessed` (inset) is the family member reserved pending evidence. Distinct from
+    // the z-scale's `raised` stacking tier — order, not look. Identity shadows stay
+    // project-owned.
+    axis: "elevation",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["elevated"],
+    tokens: [{ pattern: /^(elevated)$/, shape: "<elevation>" }],
+    default: null,
+    controls: ["box-shadow"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "font-size"],
   },
   {
     // conditioned-skin: the look a state drives. Makes `selectable + selection-subtle` operational.
@@ -631,6 +647,11 @@ export const SKIN_PLANE = {
     // not typed by an author. `shadow` is the cast-shadow colour (its geometry belongs to
     // the elevation treatment, not here).
     standalone: ["shadow"],
+  },
+  // R-SKIN-09: elevation treatment sockets — full box-shadow values (geometry + colour).
+  // Optional: the emitter composes a default geometry on `var(--shadow)` when unbound.
+  treatments: {
+    elevation: ["shadow-elevated"],
   },
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {

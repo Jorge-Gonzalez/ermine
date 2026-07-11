@@ -106,6 +106,9 @@
   "font-weight": [
     "font-weight"
   ],
+  "elevation": [
+    "box-shadow"
+  ],
   "selection-treatment": [
     "background",
     "color",
