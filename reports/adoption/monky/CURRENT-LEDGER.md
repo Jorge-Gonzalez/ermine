@@ -3,21 +3,22 @@
 Generated artifact. Do not hand-edit; regenerate with:
 
 ```sh
-node --import tsx adoption/current-ledger.ts --project ../monky --name monky --write
+node --import tsx adoption/current-ledger.ts --project ../monky --name monky --write --gate
 ```
 
 ## Provenance
 
 | source | commit |
 |---|---|
-| Ermine | `fea1d7ad61654bc56b19a60508935cf4b61f9868` |
-| monky | `a4833c3358020c180e9451e98e30a585d542c2e4` |
+| Ermine | `05362f5266005b000f253ba4f1b5e548dfba62d3` |
+| monky | `31c571782ecc03ccc22f8dcd04d8b37f9e8b918a` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
 matches (condition, property, resolved value) after routing both sides through the
-project's scale bindings and socket bridge. Human judgments are recorded in
-`current-overrides.json` and re-validated on every run.
+project's scale bindings and socket bridge. Project-wide judgments are recorded in
+`project.json`; any one-off overrides live in `current-overrides.json` and are
+re-validated on every run.
 
 ## Headline
 
@@ -36,21 +37,23 @@ project's scale bindings and socket bridge. Human judgments are recorded in
 | `substrate` | 51 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
-| `recipe-identity` | 19 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `state-review` | 18 | same-element state condition with no matching backed prefix yet |
-| `focus-state` | 9 | focus-conditioned remainder — rings and mechanics (focus: itself is ruled, R-STATE-10) |
+| `recipe-identity` | 116 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `rule-mechanics` | 49 | border/rule mechanics held for GAP-K6-skin-surface |
+| `brand-identity` | 22 | project brand typography and type treatment |
+| `affordance-mechanics` | 12 | cursor/user-select affordance mechanics (GAP-U-interaction-affordance) |
+| `component-contract` | 74 | component-owned mechanics, exact geometry, or product contract |
+| `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
+| `focus-state` | 4 | focus-conditioned remainder — rings and mechanics (focus: itself is ruled, R-STATE-10) |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
 | `parent-relational` | 12 | ancestor state drives a descendant (GAP-U-parent-relational-state) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `scrollbar-followup` | 19 | scrollbar prominence (GAP-U-scrollbar-prominence) |
-| `motion-followup` | 28 | transition/animation timing (deferred to GAP-U-animation-plane) |
-| `opacity-followup` | 9 | opacity state treatment (named follow-up question) |
+| `motion-followup` | 23 | transition/animation timing (deferred to GAP-U-animation-plane) |
+| `opacity-followup` | 6 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
-| `reset-absence` | 41 | absence/reset mechanics, not a positive carrier |
+| `reset-absence` | 26 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 99 | project-exact geometry on a grammar-family property |
-| `skin-review` | 106 | paint awaiting a carrier or recipe judgment |
-| `identity-review` | 95 | awaiting project judgment |
+| `identity-geometry` | 87 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -70,6 +73,6 @@ project's scale bindings and socket bridge. Human judgments are recorded in
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 5 |
 | `src/options/options.css` | 5 |
 
-No assimilable declarations remain — the residue is boundary, follow-up questions, and open judgments.
+No assimilable declarations remain — the residue is declared boundary and follow-up questions.
 
 Every record with its code is in `current-ledger.json`.
