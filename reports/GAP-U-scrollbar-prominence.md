@@ -25,6 +25,12 @@ Monky evidence: `src/styles/skin/controls.css` (global `::-webkit-scrollbar*` wi
 here. Related: the skin colour plane (R-SKIN-02…08) covers every other themed colour;
 `GAP-U-interaction-affordance` covers affordance words generally.
 
+Phase B evidence (`pilots/PHASE-B-ASSIMILATION.md`): the popup scrollbar no longer uses
+literal hexes or a manual `.dark` override. It now consumes existing sockets only
+(`--ground-subtle` track, `--rule` thumb, `--ground-defined` hover), and the current
+ledger's scrollbar follow-up count dropped from 24 to 19. This strengthens the option
+that track/thumb colour can be socketed without deciding scrollbar prominence vocabulary.
+
 ## Options I can see (NOT a recommendation)
 - Rule a `scrollbar-*` prominence treatment in the skin plane, with track/thumb sockets
   in the theme contract; emit both the standard and `::-webkit-*` forms.
@@ -33,6 +39,6 @@ here. Related: the skin colour plane (R-SKIN-02…08) covers every other themed 
   (ground/rule) instead of literals, without new vocabulary.
 
 ## What is blocked
-Nothing structural — Monky's scrollbars render today. Blocked is honest closure of the
-popup's literal-hex scrollbar colours (the last off-socket colours in the project) and
-retirement of the duplicated global/per-surface scrollbar styling.
+Nothing structural — Monky's scrollbars render today. The popup colour residual is closed.
+Blocked is only the prominence decision itself and whether Ermine should retire the
+duplicated global/per-surface scrollbar styling behind a named affordance.

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "src/styles/skin/controls.css::.btn::border-radius::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips the shared .btn recipe block; button shape belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn::font-size::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips the shared .btn recipe block; button typography belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn::font-weight::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips the shared .btn recipe block; button typography belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-secondary::background-color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; secondary button paint belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-secondary::color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; secondary button ink belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-secondary:hover::background-color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; hover treatment belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-outlined::background-color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; outlined button paint belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-outlined::color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; outlined button ink belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-outlined:hover::background-color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; hover treatment belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-success::background-color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; success button paint belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-success::color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; success button ink belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-link::color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; link-button ink belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-link::font-size::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; link-button typography belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-link-danger::color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; danger link-button ink belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn-link-danger::font-size::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips .btn-* variants; danger link-button typography belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.btn:disabled:hover::background-color::1",
+    "code": "skin-review",
+    "note": "Phase B deliberately skips the shared .btn state recipe; disabled hover paint belongs to the Phase C recipe ruling."
+  },
+  {
+    "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::background-color::1",
+    "code": "state-review",
+    "note": "SelectableGroup still uses a JS-toggled .is-selected class for this compound hover state; do not recast it as a backed selected:/checked: condition in Phase B."
+  }
+]

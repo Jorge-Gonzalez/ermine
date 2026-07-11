@@ -2,8 +2,8 @@
 
 Status snapshot of the adoption. Declaration figures are the frozen U2 baseline ledger
 (`reports/adoption/monky/ledger.json`), measured at Monky `bd4bc41`. Theme figures are the
-U8e binding at Monky `cf547f7`. Live Monky style reachability is measured at Monky
-`9a6ff91`. Ermine at `fb87529`.
+U8e binding at Monky `cf547f7`. Live Monky style reachability is measured after the Phase B
+assimilation at Monky `6b457f2`. Ermine at `fb87529`.
 
 ## Summary
 
@@ -14,9 +14,12 @@ U8e binding at Monky `cf547f7`. Live Monky style reachability is measured at Mon
   disposition** — the U8f closure (`pilots/LEDGER-CLOSURE.md`) resolved the final 329
   `uncertain` records; zero remain.
 - **Theme:** the skin **colour plane fully covers Monky's theme** — 23 sockets bound per
-  theme × mode, contract-valid, byte-identical rendering, no colour residual.
-- **Live style reachability:** Monky's build-backed style audit now reports **198 live
-  static classes and 0 dead-candidate declarations** at `9a6ff91`.
+  theme × mode, contract-valid, byte-identical rendering, no colour residual; Phase B now
+  enforces colour-literal drift with Stylelint.
+- **Live style reachability:** Monky's build-backed style audit now reports **204 live
+  static classes and 0 dead-candidate declarations** at `6b457f2`.
+- **Current assimilation:** the generated current ledger now reports **0 assimilable
+  declarations**; the only declined rows are recorded in `current-overrides.json`.
 - **Nothing is lost:** every residual is either a triaged uncertain record or a filed Gap
   Report.
 
@@ -63,13 +66,13 @@ Monky now carries its own build-backed style coverage report at
 audit combines static class references, built-entry inspection, runtime DOM observation for
 the popup/options/editor pages, and Playwright CSS coverage.
 
-Measured at Monky `9a6ff91`:
+Measured at Monky `6b457f2`:
 
 | Metric | Value |
 |---|---:|
-| Defined classes | 198 |
-| Selector blocks | 288 |
-| Live static classes | 198 |
+| Defined classes | 204 |
+| Selector blocks | 275 |
+| Live static classes | 204 |
 | Dead-candidate declarations | 0 |
 | Runtime pages exercised | 3 |
 
@@ -82,7 +85,7 @@ The frozen ledger was reconciled against current Monky in `CURRENT-RECONCILIATIO
 and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked for now
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
-hand counting.
+hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
 
 ## 4. Theme coverage (the socket plane)
 
@@ -114,7 +117,9 @@ The 329 records triaged in `pilots/UNCERTAIN-TRIAGE.md` are terminal:
 Current migration status now lives in the **generated current ledger**
 (`CURRENT-LEDGER.md` / `current-ledger.json`, `npm run adoption:current`): a selector-aware
 reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes every current
-declaration and emits the `assimilable` work list for the next pass.
+declaration. After Phase B (`pilots/PHASE-B-ASSIMILATION.md`), the assimilable work list is
+empty; `.btn-*` recipe rows and the `.is-selected:hover` state case are validated
+overrides for later rulings.
 
 ### 5.2 Open design questions (filed Gap Reports)
 
@@ -152,6 +157,6 @@ Against the order's completion definition, met: one pinned grammar, separated st
 utility/legacy vocabulary gone, generated classes lint+emit, one grammar revision across
 roots, skin gaps ruled or honestly local, behaviour preserved, the live style audit at
 zero dead-candidate declarations, and — since U8f — **every baseline declaration
-terminal** (zero uncertain, zero pending). **Open:** U9's tooling generalization + final
-case study, and the current ledger's `assimilable` work list as the ongoing
-assimilation queue. That is the remaining path to close.
+terminal** (zero uncertain, zero pending). Phase B also leaves the current-ledger work list
+empty (`assimilable = 0`). **Open:** U9's tooling generalization + final case study and the
+Phase C rulings explicitly deferred by `current-overrides.json`.
