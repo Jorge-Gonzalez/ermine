@@ -765,10 +765,13 @@ export const INTERACTION_SCOPES: ScopePrefix[] = [
 // conditioned-skin override, but the condition is backed: the element must declare the
 // `selectable` capability and the container asserts the state. They serialize to the
 // backing attribute selector (`[aria-selected="true"]`), not a pseudo-class.
-// implements: R-STATE-11
+// `current` (R-STATE-12) is attribute-backed instead: the element carries `aria-current`
+// itself, so no capability word exists — the attribute selector is the backing.
+// implements: R-STATE-11, R-STATE-12
 export const STATE_SCOPES: ScopePrefix[] = [
   { id: "selected", pattern: /^selected$/, shape: "selected:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted selected" },
   { id: "checked", pattern: /^checked$/, shape: "checked:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted checked" },
+  { id: "current", pattern: /^current$/, shape: "current:", role: "none", note: "attribute-backed conditioned skin while the element is asserted current (aria-current)" },
 ];
 
 // ============================================================================

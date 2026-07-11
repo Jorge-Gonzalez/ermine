@@ -1589,6 +1589,11 @@
       "type": "implements"
     },
     {
+      "from": "CODE:STATE_SCOPES",
+      "to": "R-STATE-12",
+      "type": "implements"
+    },
+    {
       "from": "CODE:Vocabulary",
       "to": "R-VOCAB-01",
       "type": "implements"

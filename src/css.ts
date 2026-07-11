@@ -134,10 +134,13 @@ function scopePseudo(scope: string): string | undefined {
 
 // Backed state scopes (R-STATE-11) serialize to the backing attribute selector the
 // container asserts — the same attribute the `selectable`/`selected` entailment implies.
+// `current` (R-STATE-12) is backed by the element's own attribute; the :not guard keeps
+// an explicit aria-current="false" from matching.
 function scopeAttribute(scope: string): string | undefined {
   const exact: Record<string, string> = {
     selected: '[aria-selected="true"]',
     checked: '[aria-checked="true"]',
+    current: '[aria-current]:not([aria-current="false"])',
   };
   return exact[scope];
 }

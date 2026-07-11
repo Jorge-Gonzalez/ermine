@@ -860,6 +860,7 @@ These prefixes are closed condition scopes, not registry-axis members. The guard
 | `focus` | `focus:` | `/^focus$/` | `none` | conditioned skin while the element holds focus |
 | `selected` | `selected:` | `/^selected$/` | `none` | backed conditioned skin while the element is asserted selected |
 | `checked` | `checked:` | `/^checked$/` | `none` | backed conditioned skin while the element is asserted checked |
+| `current` | `current:` | `/^current$/` | `none` | attribute-backed conditioned skin while the element is asserted current (aria-current) |
 <!-- END GENERATED: registry -->
 
 ---

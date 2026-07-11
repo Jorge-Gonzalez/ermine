@@ -76,3 +76,10 @@ test("a backed selected: scope serializes to the [aria-selected] attribute selec
   assert.match(css, /\.selected\\:rule-accent\[aria-selected="true"\] \{[^}]*border-color: var\(--accent\);/s);
   assert.doesNotMatch(css, /@media/, "a backed state scope must not become an at-rule");
 });
+
+test("an attribute-backed current: scope serializes to [aria-current] with the false guard (R-STATE-12)", () => {
+  const css = toCss("current:ink-accent current:ground-subtle");
+  assert.match(css, /\.current\\:ink-accent\[aria-current\]:not\(\[aria-current="false"\]\) \{[^}]*color: var\(--accent\);/s);
+  assert.match(css, /\.current\\:ground-subtle\[aria-current\]:not\(\[aria-current="false"\]\) \{[^}]*background: var\(--ground-subtle\);/s);
+  assert.doesNotMatch(css, /@media/, "an attribute-backed scope must not become an at-rule");
+});

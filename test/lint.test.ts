@@ -109,6 +109,8 @@ const cases: Case[] = [
   { s: "selectable selected:ground-defined selected:ink-accent", expect: "ok", why: "backed by selectable" },
   { s: "checked:ground-accent", expect: "fail", why: "R-STATE-11: checked: without selectable" },
   { s: "hover:ground-subtle", expect: "ok", why: "hover: is unbacked — no capability required" },
+  // R-STATE-12 — attribute-backed: the aria-current selector is the backing, no capability word
+  { s: "current:ink-accent current:ground-subtle", expect: "ok", why: "R-STATE-12: attribute-backed, no capability required" },
 ];
 
 for (const c of cases) {
