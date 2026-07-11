@@ -590,8 +590,9 @@ node --import tsx adoption/current-ledger.ts --project ../${ledger.project} --na
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
 matches (condition, property, resolved value) after routing both sides through the
-project's scale bindings and socket bridge. Human judgments are recorded in
-\`current-overrides.json\` and re-validated on every run.
+project's scale bindings and socket bridge. Project-wide judgments are recorded in
+\`project.json\`; any one-off overrides live in \`current-overrides.json\` and are
+re-validated on every run.
 
 ## Headline
 
