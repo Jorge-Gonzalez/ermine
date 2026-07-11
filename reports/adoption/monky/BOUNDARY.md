@@ -14,8 +14,8 @@ machine-checked current contract.
 
 | source | commit |
 |---|---|
-| Ermine | `4c232653342f8892912be2cf5366a8c34bf15c74` |
-| monky | `31c571782ecc03ccc22f8dcd04d8b37f9e8b918a` |
+| Ermine | `b1a7d6efc93a2ebcb241ba46b3ab56edd2ad5b3d` |
+| monky | `2218f6e2d806c401d046beb9653e51c8d8df9dda` |
 
 ## Closure Gate
 
@@ -23,7 +23,7 @@ machine-checked current contract.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 525 |
+| project-owned residue | 471 |
 
 ## Product Identity
 
@@ -36,7 +36,7 @@ R-SKIN-09's boundary clause for shadows that are signatures rather than the shar
 |---|---:|---|
 | `recipe-identity` | 116 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `identity-geometry` | 87 | project-exact geometry on a grammar-family property |
-| `brand-identity` | 22 | project brand typography and type treatment |
+| `brand-identity` | 17 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
 ## Mechanics
@@ -51,7 +51,6 @@ even when both carry the same socket.
 |---|---:|---|
 | `component-contract` | 74 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
-| `rule-mechanics` | 49 | border/rule mechanics held for GAP-K6-skin-surface |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `reset-absence` | 26 | absence/reset mechanics, not a positive carrier |
 
@@ -70,7 +69,6 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 
 | code | rows | evidence |
 |---|---:|---|
-| `rule-mechanics` | 49 | reports/GAP-K6-skin-surface.md |
 | `affordance-mechanics` | 12 | reports/GAP-U-interaction-affordance.md |
 | `parent-relational` | 14 | reports/GAP-U-parent-relational-state.md |
 | `scrollbar-followup` | 19 | reports/GAP-U-scrollbar-prominence.md |

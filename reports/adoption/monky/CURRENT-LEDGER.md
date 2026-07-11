@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `4c232653342f8892912be2cf5366a8c34bf15c74` |
-| monky | `31c571782ecc03ccc22f8dcd04d8b37f9e8b918a` |
+| Ermine | `b1a7d6efc93a2ebcb241ba46b3ab56edd2ad5b3d` |
+| monky | `2218f6e2d806c401d046beb9653e51c8d8df9dda` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,22 +24,21 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 714 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 189 |
-| **residue — project-owned declarations** | **525** |
+| current declarations | 668 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 197 |
+| **residue — project-owned declarations** | **471** |
 | assimilable now (work list below) | 0 |
 
 ## Residue by reason code
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 98 | the generated Ermine grammar surface (adopted, not residue) |
-| `substrate` | 51 | reset, base typography, and font delivery below grammar authoring |
+| `ermine-emitted` | 105 | the generated Ermine grammar surface (adopted, not residue) |
+| `substrate` | 52 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 116 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `rule-mechanics` | 49 | border/rule mechanics held for GAP-K6-skin-surface |
-| `brand-identity` | 22 | project brand typography and type treatment |
+| `brand-identity` | 17 | project brand typography and type treatment |
 | `affordance-mechanics` | 12 | cursor/user-select affordance mechanics (GAP-U-interaction-affordance) |
 | `component-contract` | 74 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
@@ -60,18 +59,18 @@ re-validated on every run.
 | file | declarations |
 |---|---:|
 | `src/styles/skin/controls.css` | 104 |
-| `src/styles/components/content-editor.css` | 97 |
-| `src/content/overlays/views/search/searchViewStyles.css` | 71 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 48 |
-| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 47 |
-| `src/popup/popup.css` | 47 |
-| `src/content/overlays/views/settings/settingsViewStyles.css` | 45 |
-| `src/content/overlays/modal/modalStyles.css` | 19 |
-| `src/styles/skin/surfaces.css` | 18 |
+| `src/styles/components/content-editor.css` | 91 |
+| `src/content/overlays/views/search/searchViewStyles.css` | 57 |
+| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 43 |
+| `src/content/overlays/views/settings/settingsViewStyles.css` | 43 |
+| `src/popup/popup.css` | 39 |
+| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 37 |
+| `src/content/overlays/modal/modalStyles.css` | 17 |
+| `src/styles/skin/surfaces.css` | 14 |
 | `src/styles/entries/pages.css` | 10 |
 | `src/styles/theme/metrics.css` | 9 |
-| `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 5 |
 | `src/options/options.css` | 5 |
+| `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.
 
