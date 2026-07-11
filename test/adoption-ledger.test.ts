@@ -26,6 +26,17 @@ test("the complete version-1 fixture is valid", () => {
   assert.equal(result.ledger?.summary.totalRecords, 8);
 });
 
+test("a version-2 fixture uses projectCommit provenance", () => {
+  const ledger = structuredClone(validFixture);
+  ledger.version = 2;
+  ledger.source.projectCommit = ledger.source.monkyCommit;
+  delete ledger.source.monkyCommit;
+  const result = validateLedger(ledger);
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.valid, true);
+  assert.equal(result.ledger?.version, 2);
+});
+
 test("duplicate record IDs name both occurrences", () => {
   const errors = corrupted((ledger) => { ledger.records[1].id = ledger.records[0].id; });
   assert.ok(errors.includes(
@@ -36,7 +47,7 @@ test("duplicate record IDs name both occurrences", () => {
 test("missing provenance names the exact source field", () => {
   const errors = corrupted((ledger) => { delete ledger.source.monkyCommit; });
   assert.ok(errors.includes(
-    "source.monkyCommit: expected a 40-character lowercase hexadecimal commit",
+    "source.projectCommit: expected a 40-character lowercase hexadecimal commit",
   ));
 });
 

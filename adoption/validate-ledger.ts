@@ -6,7 +6,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import {
   ADOPTION_DISPOSITIONS,
   type AdoptionDisposition,
-  type AdoptionLedgerV1,
+  type AdoptionLedger,
 } from "./types.ts";
 
 type JsonObject = Record<string, unknown>;
@@ -14,11 +14,11 @@ type JsonObject = Record<string, unknown>;
 export interface LedgerValidationResult {
   valid: boolean;
   errors: string[];
-  ledger?: AdoptionLedgerV1;
+  ledger?: AdoptionLedger;
 }
 
 const ROOT_KEYS = new Set(["version", "project", "source", "records", "summary"]);
-const SOURCE_KEYS = new Set(["ermineCommit", "monkyCommit"]);
+const SOURCE_KEYS = new Set(["ermineCommit", "monkyCommit", "projectCommit"]);
 const RECORD_KEYS = new Set([
   "id", "file", "selector", "property", "value", "disposition", "axis", "words",
   "evidence", "gapReport", "pending",
@@ -39,7 +39,7 @@ function own(object: JsonObject, key: string): boolean {
 
 function rejectUnknown(object: JsonObject, allowed: Set<string>, path: string, errors: string[]): void {
   for (const key of Object.keys(object)) {
-    if (!allowed.has(key)) errors.push(`${path}.${key}: unknown field in ledger version 1`);
+    if (!allowed.has(key)) errors.push(`${path}.${key}: unknown ledger field`);
   }
 }
 
@@ -60,15 +60,28 @@ function requireString(object: JsonObject, key: string, path: string, errors: st
   return value;
 }
 
+function validateCommit(value: unknown, path: string, errors: string[]): boolean {
+  if (typeof value !== "string" || !COMMIT.test(value)) {
+    errors.push(`${path}: expected a 40-character lowercase hexadecimal commit`);
+    return false;
+  }
+  return true;
+}
+
 function validateSource(value: unknown, errors: string[]): void {
   const source = requireObject(value, "source", errors);
   if (!source) return;
   rejectUnknown(source, SOURCE_KEYS, "source", errors);
-  for (const key of SOURCE_KEYS) {
-    const commit = source[key];
-    if (typeof commit !== "string" || !COMMIT.test(commit)) {
-      errors.push(`source.${key}: expected a 40-character lowercase hexadecimal commit`);
-    }
+  validateCommit(source.ermineCommit, "source.ermineCommit", errors);
+  const hasMonky = own(source, "monkyCommit");
+  const hasProject = own(source, "projectCommit");
+  if (!hasMonky && !hasProject) {
+    errors.push("source.projectCommit: expected a 40-character lowercase hexadecimal commit");
+  }
+  if (hasMonky) validateCommit(source.monkyCommit, "source.monkyCommit", errors);
+  if (hasProject) validateCommit(source.projectCommit, "source.projectCommit", errors);
+  if (hasMonky && hasProject && source.monkyCommit !== source.projectCommit) {
+    errors.push("source.projectCommit: must match source.monkyCommit when both compatibility fields are present");
   }
 }
 
@@ -206,7 +219,7 @@ export function validateLedger(value: unknown): LedgerValidationResult {
   if (!root) return { valid: false, errors };
   rejectUnknown(root, ROOT_KEYS, "ledger", errors);
 
-  if (root.version !== 1) errors.push("ledger.version: expected exactly 1");
+  if (root.version !== 1 && root.version !== 2) errors.push("ledger.version: expected 1 or 2");
   requireString(root, "project", "ledger", errors);
   validateSource(root.source, errors);
 
@@ -224,7 +237,7 @@ export function validateLedger(value: unknown): LedgerValidationResult {
 
   return errors.length
     ? { valid: false, errors }
-    : { valid: true, errors, ledger: root as unknown as AdoptionLedgerV1 };
+    : { valid: true, errors, ledger: root as unknown as AdoptionLedger };
 }
 
 export async function findLedgerPaths(repositoryRoot: string): Promise<string[]> {

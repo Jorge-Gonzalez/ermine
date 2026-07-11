@@ -10,7 +10,7 @@ import { lint, parseWord } from "../src/lint.ts";
 import { displaySelector, parseCssDeclarations, type ParsedCssDeclaration } from "./css-parser.ts";
 import {
   ADOPTION_DISPOSITIONS,
-  type AdoptionLedgerV1,
+  type AdoptionLedgerV2,
   type AdoptionRecord,
   type AdoptionSummary,
 } from "./types.ts";
@@ -123,9 +123,9 @@ interface SerializedMeasurements {
 }
 
 export interface AdoptionInventory {
-  version: 1;
+  version: 2;
   project: string;
-  source: { ermineCommit: string; monkyCommit: string };
+  source: { ermineCommit: string; projectCommit: string };
   scan: { root: string; excluded: string[] };
   counts: {
     cssFiles: number;
@@ -177,7 +177,7 @@ export interface AdoptionInventory {
 
 export interface AnalysisArtifacts {
   inventory: AdoptionInventory;
-  ledger: AdoptionLedgerV1;
+  ledger: AdoptionLedgerV2;
   baseline: string;
 }
 
@@ -618,9 +618,9 @@ function resetSubstrate(declaration: ParsedCssDeclaration): boolean {
 
 function ledgerFrom(
   name: string,
-  source: { ermineCommit: string; monkyCommit: string },
+  source: { ermineCommit: string; projectCommit: string },
   declarations: readonly ParsedCssDeclaration[],
-): AdoptionLedgerV1 {
+): AdoptionLedgerV2 {
   const occurrences = new Map<string, number>();
   const records: AdoptionRecord[] = declarations.map((declaration) => {
     const selector = displaySelector(declaration);
@@ -656,7 +656,7 @@ function ledgerFrom(
     records.filter((record) => record.disposition === disposition).length,
   ])) as AdoptionSummary["byDisposition"];
   return {
-    version: 1,
+    version: 2,
     project: name,
     source,
     records,
@@ -668,7 +668,7 @@ function percent(value: number, total: number): string {
   return total ? `${(value / total * 100).toFixed(1)}%` : "—";
 }
 
-function renderBaseline(inventory: AdoptionInventory, ledger: AdoptionLedgerV1): string {
+function renderBaseline(inventory: AdoptionInventory, ledger: AdoptionLedgerV2): string {
   const counts = inventory.counts;
   const scope = inventory.measurements.scope;
   const dispositions = ADOPTION_DISPOSITIONS.map((disposition) =>
@@ -682,7 +682,7 @@ Generated artifact. Do not hand-edit; run the commands below.
 | source | commit |
 |---|---|
 | Ermine analyzer | \`${inventory.source.ermineCommit}\` |
-| ${inventory.project} | \`${inventory.source.monkyCommit}\` |
+| ${inventory.project} | \`${inventory.source.projectCommit}\` |
 
 Reproduce from the Ermine repository root:
 
@@ -837,7 +837,7 @@ export async function analyzeProject(options: AnalyzeProjectOptions): Promise<An
       css: template.css,
     })),
   ];
-  const source = { ermineCommit: options.ermineCommit, monkyCommit: options.projectCommit };
+  const source = { ermineCommit: options.ermineCommit, projectCommit: options.projectCommit };
   const ledger = ledgerFrom(options.name, source, declarations);
   const grammarPropertyCandidates = declarations.filter((declaration) =>
     !declaration.property.startsWith("--") && grammarFamilies.has(propertyFamily(declaration.property))).length;
@@ -852,7 +852,7 @@ export async function analyzeProject(options: AnalyzeProjectOptions): Promise<An
     "Property-family coverage comes from analysis/lib.ts and is a compatibility ceiling, not proof of semantic equivalence.",
   ];
   const inventory: AdoptionInventory = {
-    version: 1,
+    version: 2,
     project: options.name,
     source,
     scan: {

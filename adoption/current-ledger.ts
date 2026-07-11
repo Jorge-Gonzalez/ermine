@@ -51,6 +51,11 @@ export const REASON_CODES = [
   // residue — each code names why the declaration is still project CSS
   "assimilable",       // an existing Ermine word expresses this now (work list)
   "recipe-identity",   // a project recipe class bundle (R-SKIN-10) — socket-consuming identity
+  "rule-mechanics",    // rule/border mechanics held for GAP-K6-skin-surface
+  "brand-identity",    // project brand typography / type treatment
+  "affordance-mechanics", // interaction affordance mechanics held for GAP-U-interaction-affordance
+  "component-contract",// component-owned mechanics and exact product contract
+  "state-mechanics",   // JS/native state mechanics that are not backed Ermine conditions
   "state-review",      // same-element state condition without a matching backed prefix
   "focus-state",       // :focus-conditioned remainder (focus: is ruled; rings/mechanics stay)
   "aria-current",      // [aria-current]-conditioned remainder (current: is ruled)
@@ -85,8 +90,8 @@ export interface CurrentRecord {
   note?: string;
 }
 
-export interface CurrentLedgerV1 {
-  version: 1;
+export interface CurrentLedgerV2 {
+  version: 2;
   project: string;
   source: { ermineCommit: string; projectCommit: string };
   summary: {
@@ -104,12 +109,75 @@ export interface CurrentOverride {
   note: string;
 }
 
+export interface ProjectProfile {
+  recipes: string[];
+  userContent: string[];
+  bridge: string[];
+  scanRoot?: string;
+  generatedGrammar: string[];
+  configFiles: string[];
+  substrate: string[];
+  theme: string[];
+}
+
+export const DEFAULT_PROJECT_PROFILE: ProjectProfile = {
+  recipes: [],
+  userContent: [],
+  bridge: ["src/theme/socketPalette.ts"],
+  generatedGrammar: ["src/styles/grammar/"],
+  configFiles: ["ermine.config.css"],
+  substrate: ["src/styles/substrate/", "font.css", "font-face.css"],
+  theme: ["src/styles/theme/"],
+};
+
 // ---------------------------------------------------------------------------
 // project CSS scan
 // ---------------------------------------------------------------------------
 
 function slash(path: string): string {
   return path.split(sep).join("/");
+}
+
+function uniqueStrings(values: readonly string[]): string[] {
+  return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
+}
+
+async function loadProjectProfile(path: string): Promise<ProjectProfile> {
+  const source = await readFile(path, "utf8").catch(() => "");
+  if (!source) return { ...DEFAULT_PROJECT_PROFILE };
+  const value = JSON.parse(source) as Partial<ProjectProfile> & {
+    bridge?: string | string[];
+  };
+  const stringArray = (field: keyof ProjectProfile, fallback: string[]): string[] => {
+    const candidate = value[field];
+    if (candidate === undefined) return fallback;
+    if (!Array.isArray(candidate) || candidate.some((item) => typeof item !== "string")) {
+      throw new Error(`${slash(path)}.${String(field)}: expected an array of strings`);
+    }
+    return uniqueStrings(candidate);
+  };
+  const bridgeValue = value.bridge;
+  const bridge = bridgeValue === undefined
+    ? DEFAULT_PROJECT_PROFILE.bridge
+    : typeof bridgeValue === "string"
+      ? uniqueStrings([bridgeValue])
+      : Array.isArray(bridgeValue) && bridgeValue.every((item) => typeof item === "string")
+        ? uniqueStrings(bridgeValue)
+        : undefined;
+  if (!bridge) throw new Error(`${slash(path)}.bridge: expected a string or array of strings`);
+  if (value.scanRoot !== undefined && typeof value.scanRoot !== "string") {
+    throw new Error(`${slash(path)}.scanRoot: expected a string`);
+  }
+  return {
+    recipes: stringArray("recipes", DEFAULT_PROJECT_PROFILE.recipes),
+    userContent: stringArray("userContent", DEFAULT_PROJECT_PROFILE.userContent),
+    bridge,
+    ...(value.scanRoot ? { scanRoot: value.scanRoot } : {}),
+    generatedGrammar: stringArray("generatedGrammar", DEFAULT_PROJECT_PROFILE.generatedGrammar),
+    configFiles: stringArray("configFiles", DEFAULT_PROJECT_PROFILE.configFiles),
+    substrate: stringArray("substrate", DEFAULT_PROJECT_PROFILE.substrate),
+    theme: stringArray("theme", DEFAULT_PROJECT_PROFILE.theme),
+  };
 }
 
 function isTestFile(file: string): boolean {
@@ -131,8 +199,10 @@ async function walkCss(root: string): Promise<string[]> {
   return output;
 }
 
-async function projectDeclarations(projectRoot: string): Promise<ParsedCssDeclaration[]> {
-  const scanRoot = existsSync(resolve(projectRoot, "src")) ? resolve(projectRoot, "src") : projectRoot;
+async function projectDeclarations(projectRoot: string, profile: ProjectProfile): Promise<ParsedCssDeclaration[]> {
+  const scanRoot = profile.scanRoot
+    ? resolve(projectRoot, profile.scanRoot)
+    : existsSync(resolve(projectRoot, "src")) ? resolve(projectRoot, "src") : projectRoot;
   const paths = await walkCss(scanRoot);
   const declarations: ParsedCssDeclaration[] = [];
   for (const absolute of paths) {
@@ -152,10 +222,9 @@ async function projectDeclarations(projectRoot: string): Promise<ParsedCssDeclar
 // The project's runtime socket aliases (e.g. --tone-dim → var(--ground-subtle))
 // live in its palette module, not in CSS. Extract the literal alias pairs so
 // value comparison happens in socket terms on both sides.
-async function bridgeAliases(projectRoot: string): Promise<Record<string, string>> {
-  const candidates = ["src/theme/socketPalette.ts"];
+async function bridgeAliases(projectRoot: string, profile: ProjectProfile): Promise<Record<string, string>> {
   const aliases: Record<string, string> = {};
-  for (const candidate of candidates) {
+  for (const candidate of profile.bridge) {
     const source = await readFile(resolve(projectRoot, candidate), "utf8").catch(() => "");
     for (const match of source.matchAll(/'(--[\w-]+)':\s*'(var\(--[\w-]+\))'/g)) {
       aliases[match[1]] = match[2];
@@ -258,9 +327,40 @@ const STATE_MARK = /:(hover|active|focus-within|focus-visible|focus|checked|disa
 const ABSENCE_VALUES = new Set(["none", "transparent", "inherit", "normal", "unset", "initial"]);
 const PAINT_PROPERTY = /^(color|background|border|outline|box-shadow|fill|stroke|caret-color|accent-color|text-decoration)/;
 const SKIN_PROPERTY = /^(color|background|border|outline|fill|stroke|caret-color|accent-color|text-decoration|font|line-height|letter-spacing|text-transform|text-align|font-variant)/;
+const RULE_MECHANICS_PROPERTY = /^border(?:-(?:top|right|bottom|left))?-(?:width|style)$/;
+const BRAND_TYPE_PROPERTY = /^(font|line-height|letter-spacing|text-transform|font-variant|text-decoration|text-align)/;
 
 function compounds(fullSelector: string): string[] {
   return fullSelector.split(/\s*[\s>+~]\s*/).filter(Boolean);
+}
+
+function fileMatches(file: string, patterns: readonly string[]): boolean {
+  return patterns.some((pattern) => file === pattern || file.endsWith(pattern) || file.includes(pattern));
+}
+
+function selectorContainsUserContentDescendant(selector: string, profile: ProjectProfile): boolean {
+  return profile.userContent.some((root) => {
+    const escaped = root.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`${escaped}[^,{]*\\s`).test(selector);
+  });
+}
+
+function classNames(compound: string): string[] {
+  return [...compound.matchAll(/\.([_a-zA-Z][\w-]*)/g)].map((match) => match[1]);
+}
+
+function recipeTokenMatches(className: string, token: string): boolean {
+  const normalized = token.startsWith(".") ? token.slice(1) : token;
+  if (!normalized) return false;
+  if (normalized.endsWith("-")) return className.startsWith(normalized);
+  return className === normalized || className.startsWith(`${normalized}-`);
+}
+
+function selectorMatchesRecipe(parts: readonly string[], profile: ProjectProfile): boolean {
+  if (!profile.recipes.length) return false;
+  return parts.some((part) =>
+    classNames(part).some((className) =>
+      profile.recipes.some((recipe) => recipeTokenMatches(className, recipe))));
 }
 
 interface Classified {
@@ -272,27 +372,29 @@ function classify(
   declaration: ParsedCssDeclaration,
   inverse: InverseErmineMap,
   environment: VarEnvironment,
+  profile: ProjectProfile,
 ): Classified {
   const { file, property } = declaration;
   const selector = displaySelector(declaration);
   const value = resolveValue(declaration.value, environment);
 
-  if (file.includes("/grammar/")) return { code: "ermine-emitted" };
-  if (file.endsWith("ermine.config.css")) return { code: "config-departure" };
+  if (fileMatches(file, profile.generatedGrammar)) return { code: "ermine-emitted" };
+  if (fileMatches(file, profile.configFiles)) return { code: "config-departure" };
   if (declaration.context.some((context) => context.startsWith("@keyframes"))) return { code: "motion-followup" };
   if (/-webkit-scrollbar|^scrollbar-/.test(selector) || /^scrollbar-/.test(property)) return { code: "scrollbar-followup" };
-  if (file.includes("/substrate/") || /font(-face)?\.css$/.test(file)) return { code: "substrate" };
-  if (file.includes("/theme/")) return { code: "theme-metric" };
+  if (fileMatches(file, profile.substrate)) return { code: "substrate" };
+  if (fileMatches(file, profile.theme)) return { code: "theme-metric" };
 
   if (/::(before|after|placeholder|selection|marker)/.test(selector) || property === "content") {
     return { code: "pseudo-mechanics" };
   }
-  if (/\.content-editor-body[^,{]*\s/.test(selector)) return { code: "user-content" };
+  if (selectorContainsUserContentDescendant(selector, profile)) return { code: "user-content" };
 
   const parts = compounds(selector);
   const ancestors = parts.slice(0, -1);
   const subject = parts[parts.length - 1] ?? "";
   if (ancestors.some((part) => STATE_MARK.test(part))) return { code: "parent-relational" };
+  if (selectorMatchesRecipe(parts, profile)) return { code: "recipe-identity" };
 
   // Ruled conditions (hover:/focus:/selected:/checked:/current:) attempt a
   // condition-aware inverse match before falling to their remainder codes.
@@ -316,19 +418,22 @@ function classify(
 
   // A state the grammar cannot condition on yet (.is-active, :active, :checked…)
   // must not receive a plain-word suggestion; the declaration is state-driven.
-  if (!condition && STATE_MARK.test(subject)) return { code: "state-review" };
+  if (!condition && STATE_MARK.test(subject)) return { code: "state-mechanics" };
   if (!condition) {
     const matches = inverse.get(matchKey("", property, value));
     if (matches?.length) {
       return { code: "assimilable", words: [...new Set(matches.map((match) => match.word))].sort() };
     }
   }
-  if (condition) return { code: "state-review" };
-  if (SKIN_PROPERTY.test(property)) return { code: "skin-review" };
+  if (condition) return { code: "state-mechanics" };
+  if (property === "cursor" || property === "user-select") return { code: "affordance-mechanics" };
+  if (RULE_MECHANICS_PROPERTY.test(property)) return { code: "rule-mechanics" };
+  if (BRAND_TYPE_PROPERTY.test(property)) return { code: "brand-identity" };
+  if (SKIN_PROPERTY.test(property)) return { code: "component-contract" };
   if (!property.startsWith("--") && grammarFamilies.has(propertyFamily(property))) {
     return { code: "identity-geometry" };
   }
-  return { code: "identity-review" };
+  return { code: "component-contract" };
 }
 
 // ---------------------------------------------------------------------------
@@ -360,11 +465,12 @@ export interface GenerateOptions {
   ermineCommit: string;
   projectCommit: string;
   overrides: CurrentOverride[];
+  profile: ProjectProfile;
 }
 
-export async function generateCurrentLedger(options: GenerateOptions): Promise<CurrentLedgerV1> {
-  const declarations = await projectDeclarations(options.projectRoot);
-  const environment = buildEnvironment(declarations, await bridgeAliases(options.projectRoot));
+export async function generateCurrentLedger(options: GenerateOptions): Promise<CurrentLedgerV2> {
+  const declarations = await projectDeclarations(options.projectRoot, options.profile);
+  const environment = buildEnvironment(declarations, await bridgeAliases(options.projectRoot, options.profile));
   const inverse = buildInverseErmineMap(environment);
 
   const occurrences = new Map<string, number>();
@@ -377,7 +483,7 @@ export async function generateCurrentLedger(options: GenerateOptions): Promise<C
     const occurrence = (occurrences.get(key) ?? 0) + 1;
     occurrences.set(key, occurrence);
     const id = `${key}::${occurrence}`;
-    const { code, words } = classify(declaration, inverse, environment);
+    const { code, words } = classify(declaration, inverse, environment, options.profile);
     const override = overrideById.get(id);
     if (override) applied.add(id);
     return {
@@ -403,7 +509,7 @@ export async function generateCurrentLedger(options: GenerateOptions): Promise<C
     records.filter((record) => record.code === code).length,
   ])) as Record<ReasonCode, number>;
   return {
-    version: 1,
+    version: 2,
     project: options.name,
     source: { ermineCommit: options.ermineCommit, projectCommit: options.projectCommit },
     summary: {
@@ -427,6 +533,11 @@ const CODE_MEANING: Record<ReasonCode, string> = {
   "config-departure": "explicit project departure recorded in ermine.config.css",
   "assimilable": "an existing Ermine word expresses this now — next assimilation pass",
   "recipe-identity": "a project recipe class bundle (R-SKIN-10) — socket-consuming product identity",
+  "rule-mechanics": "border/rule mechanics held for GAP-K6-skin-surface",
+  "brand-identity": "project brand typography and type treatment",
+  "affordance-mechanics": "cursor/user-select affordance mechanics (GAP-U-interaction-affordance)",
+  "component-contract": "component-owned mechanics, exact geometry, or product contract",
+  "state-mechanics": "JS/native state mechanics outside backed Ermine conditions",
   "state-review": "same-element state condition with no matching backed prefix yet",
   "focus-state": "focus-conditioned remainder — rings and mechanics (focus: itself is ruled, R-STATE-10)",
   "aria-current": "aria-current-conditioned remainder (current: itself is ruled, R-STATE-12)",
@@ -443,7 +554,7 @@ const CODE_MEANING: Record<ReasonCode, string> = {
   "identity-review": "awaiting project judgment",
 };
 
-export function renderCurrentLedger(ledger: CurrentLedgerV1): string {
+export function renderCurrentLedger(ledger: CurrentLedgerV2): string {
   const rows = REASON_CODES
     .filter((code) => ledger.summary.byCode[code] > 0)
     .map((code) => `| \`${code}\` | ${ledger.summary.byCode[code]} | ${CODE_MEANING[code]} |`)
@@ -510,9 +621,126 @@ Declarations an existing Ermine word can express today.
 | file | selector | property | word(s) |
 |---|---|---|---|
 ${workList}
-` : "No assimilable declarations remain — the residue is boundary, follow-up questions, and open judgments.\n"}
+` : "No assimilable declarations remain — the residue is declared boundary and follow-up questions.\n"}
 Every record with its code is in \`current-ledger.json\`.
 `;
+}
+
+const REVIEW_CODES: ReasonCode[] = ["skin-review", "identity-review", "state-review"];
+
+const GAP_CODES: Partial<Record<ReasonCode, string>> = {
+  "rule-mechanics": "reports/GAP-K6-skin-surface.md",
+  "affordance-mechanics": "reports/GAP-U-interaction-affordance.md",
+  "parent-relational": "reports/GAP-U-parent-relational-state.md",
+  "scrollbar-followup": "reports/GAP-U-scrollbar-prominence.md",
+  "motion-followup": "reports/GAP-U-animation-plane.md",
+  "opacity-followup": "reports/GAP-U-interaction-affordance.md",
+  "focus-state": "R-STATE-10 follow-up: focus ring/mechanics boundary",
+  "aria-current": "R-STATE-12 follow-up: current-layer mechanics",
+  "elevation-followup": "R-SKIN-09 boundary clause",
+};
+
+function countCodes(ledger: CurrentLedgerV2, codes: readonly ReasonCode[]): number {
+  return codes.reduce((total, code) => total + ledger.summary.byCode[code], 0);
+}
+
+function boundaryRow(ledger: CurrentLedgerV2, codes: readonly ReasonCode[]): string {
+  return codes
+    .filter((code) => ledger.summary.byCode[code] > 0)
+    .map((code) => `| \`${code}\` | ${ledger.summary.byCode[code]} | ${CODE_MEANING[code]} |`)
+    .join("\n");
+}
+
+export function renderBoundary(ledger: CurrentLedgerV2): string | undefined {
+  if (countCodes(ledger, REVIEW_CODES) !== 0) return undefined;
+  const identityCodes: ReasonCode[] = [
+    "recipe-identity", "identity-geometry", "brand-identity", "elevation-followup",
+  ];
+  const mechanicsCodes: ReasonCode[] = [
+    "component-contract", "state-mechanics", "rule-mechanics", "pseudo-mechanics", "reset-absence",
+  ];
+  const followupRows = Object.entries(GAP_CODES)
+    .map(([code, reference]) => [code as ReasonCode, reference] as const)
+    .filter(([code]) => ledger.summary.byCode[code] > 0)
+    .map(([code, reference]) => `| \`${code}\` | ${ledger.summary.byCode[code]} | ${reference} |`)
+    .join("\n");
+  return `# Monky / Ermine boundary manifest
+
+Generated artifact. Do not hand-edit; regenerate with:
+
+\`\`\`sh
+node --import tsx adoption/current-ledger.ts --project ../${ledger.project} --name ${ledger.project} --write --gate
+\`\`\`
+
+This is the declared boundary for Monky's closed adoption. It supersedes the scattered
+per-pilot "Left local" tables: those reports remain history, while this document is the
+machine-checked current contract.
+
+## Provenance
+
+| source | commit |
+|---|---|
+| Ermine | \`${ledger.source.ermineCommit}\` |
+| ${ledger.project} | \`${ledger.source.projectCommit}\` |
+
+## Closure Gate
+
+| measure | count |
+|---|---:|
+| assimilable declarations | ${ledger.summary.assimilable} |
+| review-coded declarations | ${countCodes(ledger, REVIEW_CODES)} |
+| project-owned residue | ${ledger.summary.residueDeclarations} |
+
+## Product Identity
+
+Monky keeps recipe bundles, exact product geometry, brand type, and identity shadows. The
+licensing rules are R-SKIN-10 for recipes, U-R2 for project intent and exact geometry, and
+R-SKIN-09's boundary clause for shadows that are signatures rather than the shared
+\`elevated\` treatment.
+
+| code | count | boundary |
+|---|---:|---|
+${boundaryRow(ledger, identityCodes) || "| _(none)_ | 0 | |"}
+
+## Mechanics
+
+Monky keeps mechanics that are selector or component contracts rather than reusable grammar:
+pseudo-element geometry, absence sentinels, border/rule mechanics, native or JS-toggled state
+mechanics, overlap/layer tricks, and exact component behavior. Phase C's cascade-layer finding
+remains a standing caveat: a local rule in Monky's component layer can outrank generated grammar
+even when both carry the same socket.
+
+| code | count | boundary |
+|---|---:|---|
+${boundaryRow(ledger, mechanicsCodes) || "| _(none)_ | 0 | |"}
+
+## User Content
+
+The editor body's authored rich-text defaults remain a user-content contract. Ermine words style
+Monky's UI chrome around that content; the content surface itself keeps its own HTML defaults.
+
+| code | count | boundary |
+|---|---:|---|
+${boundaryRow(ledger, ["user-content"]) || "| _(none)_ | 0 | |"}
+
+## Filed Questions
+
+These rows are not adoption work. They are pre-counted evidence for future Ermine ruling cycles.
+
+| code | rows | evidence |
+|---|---:|---|
+${followupRows || "| _(none)_ | 0 | |"}
+`;
+}
+
+export function gateFailures(ledger: CurrentLedgerV2): string[] {
+  const failures: string[] = [];
+  if (ledger.summary.assimilable > 0) failures.push(`assimilable=${ledger.summary.assimilable}`);
+  for (const code of REVIEW_CODES) {
+    const count = ledger.summary.byCode[code];
+    if (count > 0) failures.push(`${code}=${count}`);
+  }
+  return failures;
 }
 
 // ---------------------------------------------------------------------------
@@ -547,7 +775,7 @@ async function writeOrCheck(output: string, expected: string, check: boolean): P
   }
 }
 
-interface CliOptions { project: string; name: string; check: boolean }
+interface CliOptions { project: string; name: string; check: boolean; gate: boolean }
 
 function parseCli(args: string[]): CliOptions {
   const value = (flag: string): string | undefined => {
@@ -558,15 +786,17 @@ function parseCli(args: string[]): CliOptions {
   const name = value("--name");
   const write = args.includes("--write");
   const check = args.includes("--check");
+  const gate = args.includes("--gate");
   if (!project || !name || write === check || !/^[a-z0-9][a-z0-9-]*$/.test(name)) {
-    throw new Error("usage: current-ledger.ts --project <path> --name <slug> (--write|--check)");
+    throw new Error("usage: current-ledger.ts --project <path> --name <slug> (--write|--check) [--gate]");
   }
-  return { project: resolve(project), name, check };
+  return { project: resolve(project), name, check, gate };
 }
 
 async function main(): Promise<void> {
   const options = parseCli(process.argv.slice(2));
   const reportRoot = resolve(REPOSITORY_ROOT, "reports/adoption", options.name);
+  const profile = await loadProjectProfile(resolve(reportRoot, "project.json"));
   const overrides = await loadOverrides(resolve(reportRoot, "current-overrides.json"));
   const ledger = await generateCurrentLedger({
     projectRoot: options.project,
@@ -574,10 +804,17 @@ async function main(): Promise<void> {
     ermineCommit: await toolCommit(),
     projectCommit: await projectCommit(options.project),
     overrides,
+    profile,
   });
+  if (options.gate) {
+    const failures = gateFailures(ledger);
+    if (failures.length) throw new Error(`current-ledger gate failed: ${failures.join(", ")}`);
+  }
   if (!options.check) await mkdir(reportRoot, { recursive: true });
   await writeOrCheck(resolve(reportRoot, "current-ledger.json"), `${JSON.stringify(ledger, null, 2)}\n`, options.check);
   await writeOrCheck(resolve(reportRoot, "CURRENT-LEDGER.md"), renderCurrentLedger(ledger), options.check);
+  const boundary = renderBoundary(ledger);
+  if (boundary) await writeOrCheck(resolve(reportRoot, "BOUNDARY.md"), boundary, options.check);
 }
 
 const invokedPath = process.argv[1] ? pathToFileURL(resolve(process.argv[1])).href : "";

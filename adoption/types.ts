@@ -15,10 +15,17 @@ export type GrammarDisposition = Extract<
   "grammar-exact" | "grammar-composition"
 >;
 
-export interface AdoptionSource {
+export interface AdoptionSourceV1 {
   ermineCommit: string;
   monkyCommit: string;
 }
+
+export interface AdoptionSourceV2 {
+  ermineCommit: string;
+  projectCommit: string;
+}
+
+export type AdoptionSource = AdoptionSourceV1 | AdoptionSourceV2;
 
 export interface AdoptionMapping {
   axis: string;
@@ -78,7 +85,17 @@ export interface AdoptionSummary {
 export interface AdoptionLedgerV1 {
   version: 1;
   project: string;
-  source: AdoptionSource;
+  source: AdoptionSourceV1;
   records: AdoptionRecord[];
   summary: AdoptionSummary;
 }
+
+export interface AdoptionLedgerV2 {
+  version: 2;
+  project: string;
+  source: AdoptionSourceV2;
+  records: AdoptionRecord[];
+  summary: AdoptionSummary;
+}
+
+export type AdoptionLedger = AdoptionLedgerV1 | AdoptionLedgerV2;

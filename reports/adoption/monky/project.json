@@ -1,0 +1,19 @@
+{
+  "recipes": [
+    ".btn",
+    ".input",
+    ".label",
+    ".checkbox",
+    ".radio",
+    ".alert",
+    ".card",
+    ".section",
+    ".seg-",
+    ".selectable-group",
+    ".panel-button"
+  ],
+  "userContent": [
+    ".content-editor-body"
+  ],
+  "bridge": "src/theme/socketPalette.ts"
+}
