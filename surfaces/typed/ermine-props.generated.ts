@@ -82,6 +82,8 @@ export interface ErminePlainProps {
   fontSize?: "font-xs" | "font-sm" | "font-md" | "font-lg" | "font-xl" | "font-2xl" | "font-3xl";
   /** axis `font-weight` */
   fontWeight?: "font-medium" | "font-semibold" | "font-bold";
+  /** axis `font-family` */
+  fontFamily?: "font-mono";
   /** axis `elevation` */
   elevation?: "elevated";
   /** axis `selection-treatment` */
@@ -196,6 +198,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "corner", axis: "corner", kind: "word" },
   { prop: "fontSize", axis: "font-size", kind: "word" },
   { prop: "fontWeight", axis: "font-weight", kind: "word" },
+  { prop: "fontFamily", axis: "font-family", kind: "word" },
   { prop: "elevation", axis: "elevation", kind: "word" },
   { prop: "selectionTreatment", axis: "selection-treatment", kind: "word" },
 ];

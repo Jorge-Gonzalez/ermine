@@ -45,6 +45,7 @@ export const SKIN_SOCKETS = [
   "weight-semibold",
   "weight-bold",
   "shadow-elevated",
+  "font-mono",
 ] as const;
 
 export type SkinSocket = (typeof SKIN_SOCKETS)[number];
@@ -62,4 +63,5 @@ export const SOCKET_FAMILIES = {
   type: ["type-xs", "type-sm", "type-md", "type-lg", "type-xl", "type-2xl", "type-3xl"],
   weight: ["weight-medium", "weight-semibold", "weight-bold"],
   elevation: ["shadow-elevated"],
+  typeface: ["font-mono"],
 } as const satisfies Record<string, readonly SkinSocket[]>;

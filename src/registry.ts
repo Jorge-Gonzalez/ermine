@@ -576,16 +576,30 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-family"],
   },
   {
-    // skin-type: the remaining unruled typography (line-height, typeface stack,
-    // text-align) — gap-reported until each facet's word form is ruled.
+    // font-family: the typeface-variant facet (R-SKIN-07: "size, weight, and typeface
+    // variant (mono)"). `font-mono` marks code/key marks; it reads its like-named socket
+    // with the platform's own generic as the default, so a theme owns the stack.
+    axis: "font-family",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["font-mono"],
+    tokens: [{ pattern: /^font-(mono)$/, shape: "font-<typeface>" }],
+    default: null,
+    controls: ["font-family"],
+    mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight", "line-height"],
+  },
+  {
+    // skin-type: the remaining unruled typography (line-height, text-align) —
+    // gap-reported until each facet's word form is ruled. The typeface facet is
+    // ruled (R-SKIN-07 font-mono); font-family left this residue.
     axis: "skin-type",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
     valueSpace: ["<type-step>"],
     tokens: [],
     default: null,
-    controls: ["line-height", "font-family", "text-align"],
-    mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight"],
+    controls: ["line-height", "text-align"],
+    mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight", "font-family"],
   },
   {
     // elevation: the cast-shadow treatment (R-SKIN-09). Owns box-shadow; the word reads
@@ -650,8 +664,11 @@ export const SKIN_PLANE = {
   },
   // R-SKIN-09: elevation treatment sockets — full box-shadow values (geometry + colour).
   // Optional: the emitter composes a default geometry on `var(--shadow)` when unbound.
+  // R-SKIN-07: the typeface-variant facet reads its socket the same way (default:
+  // the platform's generic).
   treatments: {
     elevation: ["shadow-elevated"],
+    typeface: ["font-mono"],
   },
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {

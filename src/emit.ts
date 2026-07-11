@@ -153,6 +153,14 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- font-family: the typeface-variant facet (R-SKIN-07). Socket with the
+  // platform generic as default; a theme binds the brand stack. ---
+  "font-family": {
+    effectKind: "css",
+    plain: (word) =>
+      word === "font-mono" ? { "font-family": "var(--font-mono, monospace)" } : null,
+  },
+
   // --- elevation: the cast-shadow treatment (R-SKIN-09). Socket with an Ermine
   // default geometry composed on the standalone shadow colour socket. ---
   elevation: {
@@ -542,6 +550,7 @@ export const VOCABULARY: Record<string, string[]> = {
   corner: SKIN_PLANE.scales.radius.map((s) => `corner-${s}`),
   "font-size": SKIN_PLANE.scales.type.map((s) => `font-${s}`),
   "font-weight": SKIN_PLANE.scales.weight.map((s) => `font-${s}`),
+  "font-family": ["font-mono"],
   elevation: ["elevated"],
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],

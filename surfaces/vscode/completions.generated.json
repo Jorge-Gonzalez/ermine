@@ -1666,6 +1666,18 @@
       ]
     },
     {
+      "axis": "font-family",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-family",
+      "items": [
+        {
+          "label": "font-mono",
+          "insertText": "font-mono",
+          "kind": "word",
+          "meaning": "font-<typeface>"
+        }
+      ]
+    },
+    {
       "axis": "elevation",
       "reference": "src/ERMINE-SPEC.md §2.5 — elevation",
       "items": [

@@ -89,6 +89,18 @@ test("elevated composes with base skin as independent atomic rules", () => {
   assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
 });
 
+test("font-mono reads its typeface socket with the platform generic as default (R-SKIN-07)", () => {
+  const css = toCss("font-mono");
+  assert.match(css, /\.font-mono \{[^}]*font-family: var\(--font-mono, monospace\);/s);
+});
+
+test("font facets compose without touching each other's properties", () => {
+  const css = toCss("font-mono font-sm font-medium");
+  assert.match(css, /\.font-mono \{[^}]*font-family:/s);
+  assert.match(css, /\.font-sm \{[^}]*font-size:/s);
+  assert.match(css, /\.font-medium \{[^}]*font-weight:/s);
+});
+
 test("the z-scale raised stacking tier is untouched by the elevation treatment", () => {
   const css = toCss("raised");
   assert.match(css, /\.raised \{[^}]*z-index: var\(--z-raised\);/s);

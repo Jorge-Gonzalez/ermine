@@ -106,6 +106,9 @@
   "font-weight": [
     "font-weight"
   ],
+  "font-family": [
+    "font-family"
+  ],
   "elevation": [
     "box-shadow"
   ],

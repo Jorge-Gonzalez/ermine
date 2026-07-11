@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (40 axes)  ‹SHARED›
+## 2. The axis registry (41 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=10. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=11. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -717,7 +717,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (10 axes)
+### 2.5 SKIN (11 axes)
 
 #### skin-ground
 
@@ -817,13 +817,27 @@ Tokens:
 |---|---|---|---|
 | `font-<step>` | `/^font-(medium\|semibold\|bold)$/` | — | no |
 
+#### font-family
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `font-mono`
+- default: none
+- controls: `font-family`
+- must never touch: `display` `gap` `flex` `margin` `font-size` `font-weight` `line-height`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `font-<typeface>` | `/^font-(mono)$/` | — | no |
+
 #### skin-type
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
 - value space: `<type-step>`
 - default: none
-- controls: `line-height` `font-family` `text-align`
-- must never touch: `display` `gap` `flex` `margin` `font-size` `font-weight`
+- controls: `line-height` `text-align`
+- must never touch: `display` `gap` `flex` `margin` `font-size` `font-weight` `font-family`
 
 Tokens:
 

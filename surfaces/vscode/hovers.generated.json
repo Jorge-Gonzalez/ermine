@@ -1119,6 +1119,11 @@
       "meaning": "font-<step>",
       "reference": "src/ERMINE-SPEC.md §2.5 — font-weight"
     },
+    "font-mono": {
+      "axis": "font-family",
+      "meaning": "font-<typeface>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — font-family"
+    },
     "elevated": {
       "axis": "elevation",
       "meaning": "<elevation>",
