@@ -18,8 +18,8 @@ The test bench produced concrete Ermine rulings and vocabulary:
 - The theme socket plane was validated against a real palette resolver and a generated CSS
   consumer.
 - Gap reports now hold counted evidence for animation timing, scrollbar prominence,
-  parent-relational state, interaction affordance, data visualization palette, and skin-surface
-  mechanics.
+  parent-relational state, interaction affordance, and skin-surface mechanics (the dataviz
+  palette question was filed earlier, without Monky rows).
 
 ## What Stayed Local
 

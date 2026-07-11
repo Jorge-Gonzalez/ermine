@@ -14,7 +14,7 @@ machine-checked current contract.
 
 | source | commit |
 |---|---|
-| Ermine | `05362f5266005b000f253ba4f1b5e548dfba62d3` |
+| Ermine | `4c232653342f8892912be2cf5366a8c34bf15c74` |
 | monky | `31c571782ecc03ccc22f8dcd04d8b37f9e8b918a` |
 
 ## Closure Gate
@@ -44,7 +44,7 @@ R-SKIN-09's boundary clause for shadows that are signatures rather than the shar
 Monky keeps mechanics that are selector or component contracts rather than reusable grammar:
 pseudo-element geometry, absence sentinels, border/rule mechanics, native or JS-toggled state
 mechanics, overlap/layer tricks, and exact component behavior. Phase C's cascade-layer finding
-remains a standing caveat: a local rule in Monky's component layer can outrank generated grammar
+remains a standing caveat: a local rule in the project's component layer can outrank generated grammar
 even when both carry the same socket.
 
 | code | count | boundary |
@@ -72,10 +72,10 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 |---|---:|---|
 | `rule-mechanics` | 49 | reports/GAP-K6-skin-surface.md |
 | `affordance-mechanics` | 12 | reports/GAP-U-interaction-affordance.md |
-| `parent-relational` | 12 | reports/GAP-U-parent-relational-state.md |
+| `parent-relational` | 14 | reports/GAP-U-parent-relational-state.md |
 | `scrollbar-followup` | 19 | reports/GAP-U-scrollbar-prominence.md |
 | `motion-followup` | 23 | reports/GAP-U-animation-plane.md |
-| `opacity-followup` | 6 | reports/GAP-U-interaction-affordance.md |
+| `opacity-followup` | 4 | named follow-up: opacity prominence treatment (no report filed yet) |
 | `focus-state` | 4 | R-STATE-10 follow-up: focus ring/mechanics boundary |
 | `aria-current` | 1 | R-STATE-12 follow-up: current-layer mechanics |
 | `elevation-followup` | 3 | R-SKIN-09 boundary clause |

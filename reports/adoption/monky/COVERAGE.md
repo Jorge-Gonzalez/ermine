@@ -2,8 +2,9 @@
 
 Status snapshot of the adoption. Declaration figures are the frozen U2 baseline ledger
 (`reports/adoption/monky/ledger.json`), measured at Monky `bd4bc41`. Theme figures are the
-U8e binding at Monky `cf547f7`. Live Monky style reachability is measured after the Phase B
-assimilation at Monky `6b457f2`. Ermine at `fb87529`.
+U8e binding at Monky `cf547f7`. Live Monky style reachability is measured after the Phase C
+consumption (audit committed at Monky `31c5717`). Current-ledger and boundary figures carry
+their own pinned provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
 
 ## Summary
 
@@ -16,8 +17,8 @@ assimilation at Monky `6b457f2`. Ermine at `fb87529`.
 - **Theme:** the skin **colour plane fully covers Monky's theme** — 23 sockets bound per
   theme × mode, contract-valid, byte-identical rendering, no colour residual; Phase B now
   enforces colour-literal drift with Stylelint.
-- **Live style reachability:** Monky's build-backed style audit now reports **204 live
-  static classes and 0 dead-candidate declarations** at `6b457f2`.
+- **Live style reachability:** Monky's build-backed style audit now reports **208 live
+  static classes and 0 dead-candidate declarations** at `31c5717`.
 - **Current assimilation:** the generated current ledger now reports **0 assimilable
   declarations**; the only declined rows are recorded in `current-overrides.json`.
 - **Nothing is lost:** every residual is either a triaged uncertain record or a filed Gap
@@ -66,13 +67,13 @@ Monky now carries its own build-backed style coverage report at
 audit combines static class references, built-entry inspection, runtime DOM observation for
 the popup/options/editor pages, and Playwright CSS coverage.
 
-Measured at Monky `6b457f2`:
+Measured at Monky `31c5717`:
 
 | Metric | Value |
 |---|---:|
-| Defined classes | 204 |
-| Selector blocks | 275 |
-| Live static classes | 204 |
+| Defined classes | 208 |
+| Selector blocks | 279 |
+| Live static classes | 208 |
 | Dead-candidate declarations | 0 |
 | Runtime pages exercised | 3 |
 
@@ -117,9 +118,9 @@ The 329 records triaged in `pilots/UNCERTAIN-TRIAGE.md` are terminal:
 Current migration status now lives in the **generated current ledger**
 (`CURRENT-LEDGER.md` / `current-ledger.json`, `npm run adoption:current`): a selector-aware
 reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes every current
-declaration. After Phase B (`pilots/PHASE-B-ASSIMILATION.md`), the assimilable work list is
-empty; `.btn-*` recipe rows and the `.is-selected:hover` state case are validated
-overrides for later rulings.
+declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
+Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
+Phase D's gate holds the list at zero — the declared boundary is `BOUNDARY.md`.
 
 ### 5.2 Open design questions (filed Gap Reports)
 
@@ -131,7 +132,7 @@ overrides for later rulings.
 | `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) — holds 9 ledger `gap` records and the duration-step naming (Phase C defer) |
 | `GAP-U-interaction-affordance` | lift interaction affordance to capability words |
 | `GAP-U-scrollbar-prominence` | scrollbars as an explicit affordance; track/thumb sockets — holds 24 ledger `gap` records |
-| `GAP-U-parent-relational-state` | ancestor state driving descendant skin (the reveal-on-row-state pattern, 12 rows) |
+| `GAP-U-parent-relational-state` | ancestor state driving descendant skin (the reveal-on-row-state pattern, 14 rows incl. the reveal bases) |
 | `GAP-K6-skin-surface`, `GAP-K6-skin-type` | pre-adoption skin-surface / skin-type questions (largely superseded by R-SKIN; shadow half of skin-surface resolved by R-SKIN-09) |
 
 ### 5.3 Named follow-ups

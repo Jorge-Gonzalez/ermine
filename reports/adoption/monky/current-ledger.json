@@ -2,7 +2,7 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "05362f5266005b000f253ba4f1b5e548dfba62d3",
+    "ermineCommit": "4c232653342f8892912be2cf5366a8c34bf15c74",
     "projectCommit": "31c571782ecc03ccc22f8dcd04d8b37f9e8b918a"
   },
   "summary": {
@@ -24,11 +24,11 @@
       "state-review": 0,
       "focus-state": 4,
       "aria-current": 1,
-      "parent-relational": 12,
+      "parent-relational": 14,
       "pseudo-mechanics": 23,
       "scrollbar-followup": 19,
       "motion-followup": 23,
-      "opacity-followup": 6,
+      "opacity-followup": 4,
       "elevation-followup": 3,
       "reset-absence": 26,
       "user-content": 43,
@@ -1080,7 +1080,8 @@
       "selector": ".command-suggestion-action",
       "property": "opacity",
       "value": "0",
-      "code": "opacity-followup"
+      "code": "parent-relational",
+      "note": "Base half of the reveal-on-row-state pattern: opacity 0 until the row is hovered, selected, or confirming. Evidence belongs with GAP-U-parent-relational-state, next to its reveal half."
     },
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-action::transition::1",
@@ -1485,7 +1486,8 @@
       "selector": ".macro-search-item-edit",
       "property": "opacity",
       "value": "0",
-      "code": "opacity-followup"
+      "code": "parent-relational",
+      "note": "Base half of the reveal-on-row-state pattern: opacity 0 until the row is hovered or selected. Evidence belongs with GAP-U-parent-relational-state, next to its reveal half."
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::transition::1",

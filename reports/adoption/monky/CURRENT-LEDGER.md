@@ -10,7 +10,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `05362f5266005b000f253ba4f1b5e548dfba62d3` |
+| Ermine | `4c232653342f8892912be2cf5366a8c34bf15c74` |
 | monky | `31c571782ecc03ccc22f8dcd04d8b37f9e8b918a` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
@@ -45,11 +45,11 @@ re-validated on every run.
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `focus-state` | 4 | focus-conditioned remainder — rings and mechanics (focus: itself is ruled, R-STATE-10) |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
-| `parent-relational` | 12 | ancestor state drives a descendant (GAP-U-parent-relational-state) |
+| `parent-relational` | 14 | ancestor state drives a descendant (GAP-U-parent-relational-state) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `scrollbar-followup` | 19 | scrollbar prominence (GAP-U-scrollbar-prominence) |
 | `motion-followup` | 23 | transition/animation timing (deferred to GAP-U-animation-plane) |
-| `opacity-followup` | 6 | opacity state treatment (named follow-up question) |
+| `opacity-followup` | 4 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 26 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
