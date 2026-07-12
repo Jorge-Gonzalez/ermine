@@ -1,5 +1,7 @@
 # Gap Report — parent-relational state
 
+> **Resolved.** R-STATE-13 + R-SKIN-16 (ADR-0018): relational prefixes (`parent-hover:`/`parent-selected:`) anchored on the `selectable` capability, plus the `concealed`/`revealed` pair they scope. Consumed in Monky at f5bef9e; the guarded tinting rows and JS-state mechanics stay local as the ruling's boundary.
+
 ## What I was doing
 Phase C of the Monky adoption: ruling the condition prefixes the evidence had earned
 (`focus:` under R-STATE-10, `current:` as R-STATE-12). The remaining conditioned-skin
