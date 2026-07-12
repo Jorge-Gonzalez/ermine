@@ -129,7 +129,7 @@ Phase D's gate holds the list at zero — the declared boundary is `BOUNDARY.md`
 | `GAP-U-dataviz-palette` | a second, versatile colour plane for graphs/dashboards |
 | `GAP-U-density-2xl` | a 24px density step (between `loose` and `separated`) |
 | `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) — holds 9 ledger `gap` records and the duration-step naming (Phase C defer) |
-| `GAP-U-interaction-affordance` | lift interaction affordance to capability words — pattern screen counts ~30 pressability rows |
+| `GAP-U-interaction-affordance` | remaining affordance family members (`draggable`/`editable`/`expandable`) — the pressable half is ruled (R-SKIN-17) |
 Resolved by the post-closure conversion cycles: `GAP-U-overflow-hidden` (R-OVERFLOW-01
 amended: `hidden`), `GAP-U-truncation` (R-SKIN-12 `truncate`), `GAP-K6-skin-surface`
 (R-SKIN-09 shadow half + R-SKIN-11 `ruled` line-presence half; the gap axis retired),

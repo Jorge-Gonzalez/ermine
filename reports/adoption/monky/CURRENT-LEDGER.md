@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `685b9c8438402d91d4c4162630d313b04cf5e10a` |
-| monky | `f5bef9e367cbaa3067a967ca4aaf4fecd1df56ec` |
+| Ermine | `5cac75069c6d2f8b08fd22ad5f13aee1541b4847` |
+| monky | `47f0cd42d8fb11ca49b31436823029f22567a73f` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,22 +24,21 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 625 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 212 |
-| **residue — project-owned declarations** | **413** |
+| current declarations | 614 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 213 |
+| **residue — project-owned declarations** | **401** |
 | assimilable now (work list below) | 0 |
 
 ## Residue by reason code
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 120 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 121 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 52 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 116 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 12 | project brand typography and type treatment |
-| `affordance-mechanics` | 12 | cursor/user-select affordance mechanics (GAP-U-interaction-affordance) |
 | `component-contract` | 65 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
@@ -58,12 +57,12 @@ re-validated on every run.
 | file | declarations |
 |---|---:|
 | `src/styles/skin/controls.css` | 102 |
-| `src/styles/components/content-editor.css` | 84 |
-| `src/content/overlays/views/search/searchViewStyles.css` | 46 |
+| `src/styles/components/content-editor.css` | 82 |
+| `src/content/overlays/views/search/searchViewStyles.css` | 44 |
 | `src/content/overlays/views/settings/settingsViewStyles.css` | 42 |
-| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 34 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 30 |
-| `src/popup/popup.css` | 22 |
+| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 30 |
+| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 29 |
+| `src/popup/popup.css` | 19 |
 | `src/content/overlays/modal/modalStyles.css` | 14 |
 | `src/styles/skin/surfaces.css` | 13 |
 | `src/styles/entries/pages.css` | 10 |

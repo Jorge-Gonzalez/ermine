@@ -1,5 +1,7 @@
 # Gap Report — interaction-affordance plane
 
+> **Resolved (the ruled half).** R-SKIN-17 (ADR-0019): `pressable` is a skin treatment owning `cursor` — the read side of interaction; behaviour stays JavaScript, the IoC boundary this report drew. Consumed in Monky at 47f0cd4 (twelve non-recipe cursor rows). `draggable`/`editable`/`expandable` remain reserved family members, evidence-gated within the ruled shape.
+
 ## What I was doing
 Gaming the plane model and finding that interaction is only *partly* first-class in
 Ermine: the STATE axis (hover/focus/selected/disabled/dragging), capabilities
