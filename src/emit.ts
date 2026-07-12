@@ -26,10 +26,10 @@
 // through FACET_EMISSION; top-layer-mechanism through MECHANISM; motion-macro
 // through the stagger SINK; all 9 state.* axes through the generic ConditionRule,
 // because state is condition-only — R-STATE-01 — and controls nothing).
-// 1 axis is gap-reported: skin-type has no sanctioned
-// vocabulary to map (registry tokens are empty by design — R-SKIN-01 leaves
-// open sockets to the theme, and which skin words the GRAMMAR fixes is unruled;
-// see reports/GAP-K6-skin-type.md; skin-surface retired via R-SKIN-09/R-SKIN-11).
+// No axis is gap-reported any longer: skin-surface retired via R-SKIN-09/R-SKIN-11,
+// skin-type via R-SKIN-14 (alignment ruled; leading dispositioned to substrate).
+
+
 
 import { readFileSync } from "node:fs";
 
@@ -159,6 +159,15 @@ const EMISSION: Record<string, EmitSpec> = {
     effectKind: "css",
     plain: (word) =>
       word === "font-mono" ? { "font-family": "var(--font-mono, monospace)" } : null,
+  },
+
+  // --- text-align: inline-content alignment facet (R-SKIN-14), logical values. ---
+  "text-align": {
+    effectKind: "css",
+    plain: (word) => {
+      const m = word.match(/^text-(start|center)$/);
+      return m ? { "text-align": m[1] } : null;
+    },
   },
 
   // --- focus-ring: the platform's focus indicator, restyled (R-SKIN-13).
@@ -593,6 +602,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "font-size": SKIN_PLANE.scales.type.map((s) => `font-${s}`),
   "font-weight": SKIN_PLANE.scales.weight.map((s) => `font-${s}`),
   "font-family": ["font-mono"],
+  "text-align": ["text-start", "text-center"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   truncation: ["truncate"],
   "focus-ring": ["ring"],
@@ -636,7 +646,7 @@ export interface PurityReport {
 
 const OWNERSHIP_PATH = new URL("./ownership.generated.json", import.meta.url);
 const GENERATED_KEY = "_generated";
-const GAP_REPORTED_AXES = new Set(["skin-type"]);
+const GAP_REPORTED_AXES = new Set<string>();
 
 function generatedOwnership(): Record<string, string[]> {
   const parsed = JSON.parse(readFileSync(OWNERSHIP_PATH, "utf8")) as Record<string, unknown>;

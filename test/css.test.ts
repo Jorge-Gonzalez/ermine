@@ -89,6 +89,11 @@ test("elevated composes with base skin as independent atomic rules", () => {
   assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
 });
 
+test("text alignment facet emits logical values (R-SKIN-14)", () => {
+  assert.match(toCss("text-center"), /\.text-center \{[^}]*text-align: center;/s);
+  assert.match(toCss("text-start"), /\.text-start \{[^}]*text-align: start;/s);
+});
+
 test("focus:ring restyles the platform outline under the focus condition (R-SKIN-13)", () => {
   const css = toCss("focus:ring");
   assert.match(css, /\.focus\\:ring:focus \{[^}]*outline: var\(--ring, 2px solid var\(--ground-defined\)\);[^}]*outline-offset: var\(--ring-offset, 0px\);/s);

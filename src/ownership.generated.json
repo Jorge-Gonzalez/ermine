@@ -121,6 +121,9 @@
   "font-family": [
     "font-family"
   ],
+  "text-align": [
+    "text-align"
+  ],
   "elevation": [
     "box-shadow"
   ],

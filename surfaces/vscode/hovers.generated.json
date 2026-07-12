@@ -1164,6 +1164,16 @@
       "meaning": "font-<typeface>",
       "reference": "src/ERMINE-SPEC.md §2.5 — font-family"
     },
+    "text-start": {
+      "axis": "text-align",
+      "meaning": "text-<alignment>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — text-align"
+    },
+    "text-center": {
+      "axis": "text-align",
+      "meaning": "text-<alignment>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — text-align"
+    },
     "elevated": {
       "axis": "elevation",
       "meaning": "<elevation>",

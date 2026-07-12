@@ -832,19 +832,19 @@ Tokens:
 |---|---|---|---|
 | `font-<typeface>` | `/^font-(mono)$/` | — | no |
 
-#### skin-type
+#### text-align
 
-- role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
-- value space: `<type-step>`
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `text-start` `text-center`
 - default: none
-- controls: `line-height` `text-align`
-- must never touch: `display` `gap` `flex` `margin` `font-size` `font-weight` `font-family`
+- controls: `text-align`
+- must never touch: `display` `gap` `flex` `margin` `font-size` `font-weight` `font-family` `line-height`
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| — | — | — | — |
+| `text-<alignment>` | `/^text-(start\|center)$/` | — | no |
 
 #### elevation
 

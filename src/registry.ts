@@ -600,17 +600,19 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight", "line-height"],
   },
   {
-    // skin-type: the remaining unruled typography (line-height, text-align) —
-    // gap-reported until each facet's word form is ruled. The typeface facet is
-    // ruled (R-SKIN-07 font-mono); font-family left this residue.
-    axis: "skin-type",
+    // text-align: inline-content alignment facet (R-SKIN-14). Logical values;
+    // text-start chiefly restores natural alignment where the platform centres
+    // (buttons). text-end reserved pending evidence. Leading (line-height) is
+    // deliberately not a facet — substrate/theme-owned, deviations are identity —
+    // so this axis's ruling retired the old skin-type gap axis.
+    axis: "text-align",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
-    vocabulary: "open", regime: "free",
-    valueSpace: ["<type-step>"],
-    tokens: [],
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["text-start", "text-center"],
+    tokens: [{ pattern: /^text-(start|center)$/, shape: "text-<alignment>" }],
     default: null,
-    controls: ["line-height", "text-align"],
-    mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight", "font-family"],
+    controls: ["text-align"],
+    mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight", "font-family", "line-height"],
   },
   {
     // elevation: the cast-shadow treatment (R-SKIN-09). Owns box-shadow; the word reads

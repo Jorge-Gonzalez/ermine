@@ -1732,6 +1732,24 @@
       ]
     },
     {
+      "axis": "text-align",
+      "reference": "src/ERMINE-SPEC.md §2.5 — text-align",
+      "items": [
+        {
+          "label": "text-start",
+          "insertText": "text-start",
+          "kind": "word",
+          "meaning": "text-<alignment>"
+        },
+        {
+          "label": "text-center",
+          "insertText": "text-center",
+          "kind": "word",
+          "meaning": "text-<alignment>"
+        }
+      ]
+    },
+    {
       "axis": "elevation",
       "reference": "src/ERMINE-SPEC.md §2.5 — elevation",
       "items": [
