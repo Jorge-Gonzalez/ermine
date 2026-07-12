@@ -547,7 +547,7 @@ const CODE_MEANING: Record<ReasonCode, string> = {
   "recipe-identity": "a project recipe class bundle (R-SKIN-10) — socket-consuming product identity",
   "rule-mechanics": "border/rule mechanics held for GAP-K6-skin-surface",
   "brand-identity": "project brand typography and type treatment",
-  "affordance-mechanics": "cursor/user-select affordance mechanics (GAP-U-interaction-affordance)",
+  "affordance-mechanics": "affordance mechanics outside the ruled pressable treatment (R-SKIN-17)",
   "component-contract": "component-owned mechanics, exact geometry, or product contract",
   "state-mechanics": "JS/native state mechanics outside backed Ermine conditions",
   "state-review": "review bucket (gate vocabulary) — zero while the boundary is declared",
@@ -643,7 +643,7 @@ const REVIEW_CODES: ReasonCode[] = ["skin-review", "identity-review", "state-rev
 
 const GAP_CODES: Partial<Record<ReasonCode, string>> = {
   "rule-mechanics": "reports/GAP-K6-skin-surface.md",
-  "affordance-mechanics": "reports/GAP-U-interaction-affordance.md",
+  "affordance-mechanics": "R-SKIN-17 boundary: affordance mechanics outside pressable",
   "parent-relational": "R-STATE-13 boundary: guarded/JS-state relational mechanics",
   "scrollbar-followup": "R-SKIN-15 boundary: engine-drawn identity outside the treatment",
   "motion-followup": "reports/GAP-U-animation-plane.md",
