@@ -97,6 +97,12 @@
       "anchor": "ADR-0016"
     },
     {
+      "id": "ADR-0017",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0017-scrollbar-prominence.md",
+      "anchor": "ADR-0017"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -697,6 +703,12 @@
       "anchor": "R-SKIN-14"
     },
     {
+      "id": "R-SKIN-15",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SKIN-15"
+    },
+    {
       "id": "R-SPACE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1271,6 +1283,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SKIN-14"
+    },
+    {
+      "id": "RAT:R-SKIN-15",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SKIN-15"
     },
     {
       "id": "RAT:R-SPACE-01",
@@ -2075,6 +2093,11 @@
     {
       "from": "RAT:R-SKIN-14",
       "to": "R-SKIN-14",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SKIN-15",
+      "to": "R-SKIN-15",
       "type": "rationale-of"
     },
     {

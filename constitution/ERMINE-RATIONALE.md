@@ -442,6 +442,21 @@ admitted: `font-variant-numeric: tabular-nums` (a natural `font-*` facet if numb
 the uppercase/letter-spaced label treatment. With alignment ruled and leading dispositioned,
 skin-type retires — the registry's last gap axis. Source: ADR-0016.
 
+## RAT:R-SKIN-15
+Scrollbars were the adoption's longest-standing follow-up: 24 frozen-ledger rows, 19 live ones,
+and two competing implementations in one codebase — a global engine-drawn treatment
+(`::-webkit-scrollbar*` at 12px with `!important`) and the popup's standard-property thin form,
+which Phase B had already moved onto sockets. The ruling follows the platform seam the evidence
+exposes. The standard properties (`scrollbar-width`, `scrollbar-color`) are what both target
+engines support and what the platform itself prefers when both forms are present, so prominence
+is ruled there: `scrollbar-subtle` = thin, thumb/track from like-named sockets, defaulting to
+the `rule` carrier over a transparent track — a scrollbar coloured like the project's lines.
+The engine-drawn form cannot be a treatment without inventing multi-selector pseudo-element
+emission for one word, and its 12px/radius/hover geometry is a look, not a prominence — it
+stays identity, exactly as the modal's blend-mode shadow did under R-SKIN-09. `scrollbar-hidden`
+(carousels, kiosk surfaces) is anticipated but unevidenced, so reserved. Naming rides the
+existing intensity vocabulary (`subtle`) rather than coining size words. Source: ADR-0017.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 

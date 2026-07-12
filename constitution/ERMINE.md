@@ -712,6 +712,19 @@ so with alignment ruled here, the sampled skin-type gap axis retires and no gap 
 
 → rationale: RAT:R-SKIN-14 · history: ADR-0016 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
+## R-SKIN-15 — Scrollbar prominence
+
+A scroll region's scrollbar is a skin treatment on the platform's standard properties:
+`scrollbar-subtle` owns `scrollbar-width` and `scrollbar-color`, emitting `thin` coloured by the
+`--scrollbar-thumb` / `--scrollbar-track` sockets (defaults compose the `rule` carrier's socket
+over a transparent track). `scrollbar-hidden` (width `none`) is the family member reserved
+pending evidence. Engine-drawn scrollbars (`::-webkit-scrollbar` pseudo styling) are not the
+treatment: they are project identity, and when both are present the platform itself prefers the
+standard properties. The treatment names prominence, not geometry — a project wanting a drawn
+scrollbar signature keeps it as identity.
+
+→ rationale: RAT:R-SKIN-15 · history: ADR-0017 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
 ## R-SCALE-01 — Generator-defined scales
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.
