@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `362f21f10226cc9df78c47c7d772acd43a1ca74c` |
-| monky | `1601fdcf930f9a089ecc532c01d33d283cdfede4` |
+| Ermine | `81559c2d6cae1105d0fa055cd51c264569f7955f` |
+| monky | `a30cc0151856fcbd41d6cac5ca8d95e8584b4cfc` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,16 +24,16 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 635 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 207 |
-| **residue — project-owned declarations** | **428** |
+| current declarations | 627 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 209 |
+| **residue — project-owned declarations** | **418** |
 | assimilable now (work list below) | 0 |
 
 ## Residue by reason code
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 115 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 117 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 52 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
@@ -45,7 +45,7 @@ re-validated on every run.
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
 | `parent-relational` | 14 | ancestor state drives a descendant (GAP-U-parent-relational-state) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
-| `scrollbar-followup` | 19 | scrollbar prominence (GAP-U-scrollbar-prominence) |
+| `scrollbar-followup` | 9 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `motion-followup` | 23 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 4 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
@@ -62,8 +62,8 @@ re-validated on every run.
 | `src/content/overlays/views/search/searchViewStyles.css` | 48 |
 | `src/content/overlays/views/settings/settingsViewStyles.css` | 42 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 37 |
-| `src/popup/popup.css` | 32 |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 30 |
+| `src/popup/popup.css` | 22 |
 | `src/content/overlays/modal/modalStyles.css` | 14 |
 | `src/styles/skin/surfaces.css` | 13 |
 | `src/styles/entries/pages.css` | 10 |

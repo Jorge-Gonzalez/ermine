@@ -1,5 +1,7 @@
 # Gap Report — scrollbar prominence
 
+> **Resolved.** R-SKIN-15 (ADR-0017): prominence ruled on the standard properties (`scrollbar-subtle` + thumb/track sockets); engine-drawn `::-webkit-*` styling is identity outside the treatment. Consumed in Monky at a30cc01; the 24 frozen gap rows reclassified (4 skin-local, 20 identity-local).
+
 ## What I was doing
 Closing the U2 uncertain ledger tail (U8f). The U8b triage isolated 24 declarations that
 style scrollbars as an explicit UI affordance: `::-webkit-scrollbar` width/height,

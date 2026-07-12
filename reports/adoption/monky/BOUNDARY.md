@@ -14,8 +14,8 @@ machine-checked current contract.
 
 | source | commit |
 |---|---|
-| Ermine | `362f21f10226cc9df78c47c7d772acd43a1ca74c` |
-| monky | `1601fdcf930f9a089ecc532c01d33d283cdfede4` |
+| Ermine | `81559c2d6cae1105d0fa055cd51c264569f7955f` |
+| monky | `a30cc0151856fcbd41d6cac5ca8d95e8584b4cfc` |
 
 ## Closure Gate
 
@@ -23,7 +23,7 @@ machine-checked current contract.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 428 |
+| project-owned residue | 418 |
 
 ## Product Identity
 
@@ -71,7 +71,7 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 |---|---:|---|
 | `affordance-mechanics` | 12 | reports/GAP-U-interaction-affordance.md |
 | `parent-relational` | 14 | reports/GAP-U-parent-relational-state.md |
-| `scrollbar-followup` | 19 | reports/GAP-U-scrollbar-prominence.md |
+| `scrollbar-followup` | 9 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
 | `motion-followup` | 23 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 4 | named follow-up: opacity prominence treatment (no report filed yet) |
 | `aria-current` | 1 | R-STATE-12 follow-up: current-layer mechanics |

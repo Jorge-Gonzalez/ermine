@@ -130,15 +130,16 @@ Phase D's gate holds the list at zero — the declared boundary is `BOUNDARY.md`
 | `GAP-U-density-2xl` | a 24px density step (between `loose` and `separated`) |
 | `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) — holds 9 ledger `gap` records and the duration-step naming (Phase C defer) |
 | `GAP-U-interaction-affordance` | lift interaction affordance to capability words — pattern screen counts ~30 pressability rows |
-| `GAP-U-scrollbar-prominence` | scrollbars as an explicit affordance; track/thumb sockets — holds 24 ledger `gap` records |
 | `GAP-U-parent-relational-state` | ancestor state driving descendant skin (the reveal-on-row-state pattern, 14 rows incl. the reveal bases) |
 Resolved by the post-closure conversion cycles: `GAP-U-overflow-hidden` (R-OVERFLOW-01
 amended: `hidden`), `GAP-U-truncation` (R-SKIN-12 `truncate`), `GAP-K6-skin-surface`
 (R-SKIN-09 shadow half + R-SKIN-11 `ruled` line-presence half; the gap axis retired),
 `GAP-U-focus-ring` (R-SKIN-13 `focus:ring` — the treatment restyles the platform outline,
 dissolving the suppress-and-redraw hazard), `GAP-U-min-content-escape` (R-CONSTRAINT-01
-`none` endpoints), and `GAP-K6-skin-type` (R-SKIN-14 text alignment; leading dispositioned
-to substrate — **no gap axis remains in the registry**). `font-mono` was admitted under
+`none` endpoints), `GAP-K6-skin-type` (R-SKIN-14 text alignment; leading dispositioned
+to substrate — **no gap axis remains in the registry**), and `GAP-U-scrollbar-prominence`
+(R-SKIN-15 `scrollbar-subtle` on the standard properties; engine-drawn styling is identity —
+the 24 frozen `gap` rows reclassified 4/20 skin/identity). `font-mono` was admitted under
 R-SKIN-07 without a new ruling.
 
 ### 5.3 Named follow-ups
