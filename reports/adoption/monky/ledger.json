@@ -5371,9 +5371,8 @@
       "selector": ".macro-search-results",
       "property": "scrollbar-width",
       "value": "thin",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: standard-property scrollbar prominence is ruled (scrollbar-subtle + thumb/track sockets); the live equivalent is the word consumed at Monky a30cc01.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::scrollbar-color::1",
@@ -5381,9 +5380,8 @@
       "selector": ".macro-search-results",
       "property": "scrollbar-color",
       "value": "#cbd5e1 #f1f5f9",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: standard-property scrollbar prominence is ruled (scrollbar-subtle + thumb/track sockets); the live equivalent is the word consumed at Monky a30cc01.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::-webkit-scrollbar::width::1",
@@ -5391,9 +5389,8 @@
       "selector": ".macro-search-results::-webkit-scrollbar",
       "property": "width",
       "value": "8px",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::-webkit-scrollbar::height::1",
@@ -5401,9 +5398,8 @@
       "selector": ".macro-search-results::-webkit-scrollbar",
       "property": "height",
       "value": "8px",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::-webkit-scrollbar-track::background::1",
@@ -5411,9 +5407,8 @@
       "selector": ".macro-search-results::-webkit-scrollbar-track",
       "property": "background",
       "value": "#f1f5f9",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::-webkit-scrollbar-track::border-radius::1",
@@ -5421,9 +5416,8 @@
       "selector": ".macro-search-results::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "4px",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::-webkit-scrollbar-thumb::background::1",
@@ -5431,9 +5425,8 @@
       "selector": ".macro-search-results::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "#cbd5e1",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::-webkit-scrollbar-thumb::border-radius::1",
@@ -5441,9 +5434,8 @@
       "selector": ".macro-search-results::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "4px",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::-webkit-scrollbar-thumb::border::1",
@@ -5451,9 +5443,8 @@
       "selector": ".macro-search-results::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid #f1f5f9",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.macro-search-results::-webkit-scrollbar-thumb:hover::background::1",
@@ -5461,9 +5452,8 @@
       "selector": ".macro-search-results::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "#94a3b8",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.dark .macro-search-results::scrollbar-color::1",
@@ -5471,9 +5461,8 @@
       "selector": ".dark .macro-search-results",
       "property": "scrollbar-color",
       "value": "#4b5563 #1f2937",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: standard-property scrollbar prominence is ruled (scrollbar-subtle + thumb/track sockets); the live equivalent is the word consumed at Monky a30cc01.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/styles.css::.dark .macro-search-results::-webkit-scrollbar-track::background::1",
@@ -5481,9 +5470,8 @@
       "selector": ".dark .macro-search-results::-webkit-scrollbar-track",
       "property": "background",
       "value": "#1f2937",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.dark .macro-search-results::-webkit-scrollbar-thumb::background::1",
@@ -5491,9 +5479,8 @@
       "selector": ".dark .macro-search-results::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "#4b5563",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.dark .macro-search-results::-webkit-scrollbar-thumb::border::1",
@@ -5501,9 +5488,8 @@
       "selector": ".dark .macro-search-results::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid #1f2937",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.dark .macro-search-results::-webkit-scrollbar-thumb:hover::background::1",
@@ -5511,9 +5497,8 @@
       "selector": ".dark .macro-search-results::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "#6b7280",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles.css::.macro-search-empty::padding::1",
@@ -6118,9 +6103,8 @@
       "selector": ":root, :host",
       "property": "scrollbar-color",
       "value": "var(---tone) var(--tone-dim)",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: standard-property scrollbar prominence is ruled (scrollbar-subtle + thumb/track sockets); the live equivalent is the word consumed at Monky a30cc01.",
+      "disposition": "skin-local"
     },
     {
       "id": "src/styles/layout-semantic.css::@keyframes shake > 10%, 90%::transform::1",
@@ -6307,9 +6291,8 @@
       "selector": "::-webkit-scrollbar",
       "property": "width",
       "value": "var(--spacing-md) !important",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles/layout-semantic.css::::-webkit-scrollbar::height::1",
@@ -6317,9 +6300,8 @@
       "selector": "::-webkit-scrollbar",
       "property": "height",
       "value": "var(--spacing-md) !important",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles/layout-semantic.css::::-webkit-scrollbar-track::background::1",
@@ -6327,9 +6309,8 @@
       "selector": "::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--tone-dim) !important",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles/layout-semantic.css::::-webkit-scrollbar-track::border-radius::1",
@@ -6337,9 +6318,8 @@
       "selector": "::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles/layout-semantic.css::::-webkit-scrollbar-thumb::background::1",
@@ -6347,9 +6327,8 @@
       "selector": "::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--tone) !important",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles/layout-semantic.css::::-webkit-scrollbar-thumb::border-radius::1",
@@ -6357,9 +6336,8 @@
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles/layout-semantic.css::::-webkit-scrollbar-thumb::border::1",
@@ -6367,9 +6345,8 @@
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--tone-dim) !important",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles/layout-semantic.css::::-webkit-scrollbar-thumb:hover::background::1",
@@ -6377,9 +6354,8 @@
       "selector": "::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--accent-dim) !important",
-      "evidence": "U8f: scrollbar prominence is an open Ermine design question (explicit track/thumb colour, width, radius, and hover treatment); evidence filed in the Gap Report.",
-      "disposition": "gap",
-      "gapReport": "reports/GAP-U-scrollbar-prominence.md"
+      "evidence": "R-SKIN-15 resolution: engine-drawn scrollbar styling is project identity outside the ruled standard-property treatment; the popup instance was retired at Monky a30cc01, the overlay signature remains by choice.",
+      "disposition": "identity-local"
     },
     {
       "id": "src/styles/layout-semantic.css::.horizontal::display::1",
@@ -13515,10 +13491,10 @@
     "byDisposition": {
       "grammar-exact": 128,
       "grammar-composition": 64,
-      "skin-local": 472,
-      "identity-local": 238,
+      "skin-local": 476,
+      "identity-local": 258,
       "substrate": 58,
-      "gap": 33,
+      "gap": 9,
       "dead": 416,
       "uncertain": 0
     }
