@@ -163,6 +163,13 @@ container; `clip` forbids scrolling — two intents, two words.
 ## RAT:R-CONSTRAINT-01
 Source: pre-split `constitution/ERMINE.md` lines 1112–1126.
 
+Amended (ADR-0015): the min dials gain a fixed `none` endpoint. The evidence is the flexbox
+min-content floor: six Monky selectors set `min-width: 0` or `min-height: 0` so a scrolling or
+truncating region inside a flex track cannot force its container open — a load-bearing layout
+decision that read as an unexplained `0` in component sheets. `none` names the intent (no
+minimum at all) rather than the number, and the endpoint-word-over-scale-step shape is
+R-SKIN-06's square/pill pattern. Max endpoints wait for their own evidence.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 
@@ -402,6 +409,23 @@ disjoint. The search view's release of truncation under `aria-selected` is evide
 treatment wants a conditioned form eventually; today the release stays a local override.
 `truncate-N` (the line-clamp form) has one occurrence and stays reserved — the
 tween/choreography admission pattern. Source: ADR-0013.
+
+## RAT:R-SKIN-13
+The pattern screen found the focus indicator was never scattered mechanics: seven
+`outline: none` suppressions pairing seven `box-shadow: 0 0 0 2px var(--tone)` draws, one
+treatment implemented per-component. The pairing is also the hazard — one suppression already
+rides without its ring, which is exactly the accessibility failure mode the suppress-and-redraw
+discipline invites. RAT:R-STATE-10 called redrawing the UA indicator the anti-pattern; the
+resolution is not to bless the redraw but to dissolve it: `ring` restyles the platform's own
+`outline`, so the indicator never leaves the platform's hands, the colour and weight come from
+the theme (`--ring` socket, default on the `ground-defined` tone the evidence uses), and there
+is no suppression left to drift. `outline` was verified unowned; `box-shadow` stays with
+elevation, which is why box-shadow rings are explicitly not `ring`. The authored form is
+`focus:ring` — the treatment has no meaning outside a condition, and the existing R-STATE-10
+prefix supplies it; serialization to `:focus-visible` instead of `:focus` is the anticipated
+refinement once the platform-condition family admits it (today's evidence is all text inputs,
+where the two match identically). The error-tinted inset ring on `.input-error:focus` is recipe
+conditional identity and stays in the recipe. Source: ADR-0014.
 
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.

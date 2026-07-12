@@ -361,9 +361,13 @@ scrolling entirely. Both are whole-axis words.
 ## R-CONSTRAINT-01 — Independent bounds
 
 Minimum and maximum width and height are four independent parametric sub-dials. A min and max on
-the same dimension form a composable band; two values on one dial conflict.
+the same dimension form a composable band; two values on one dial conflict. The min dials carry a
+fixed `none` endpoint (`min-width-none`, `min-height-none`): no minimum at all, escaping the
+automatic min-content floor a flex or grid item otherwise keeps — the interior of the dial stays
+scale-bound, the endpoint is a word (the R-SKIN-06 endpoint pattern). Max-dial endpoints are
+reserved pending evidence.
 
-→ rationale: RAT:R-CONSTRAINT-01 · history: ADR-0004 · code: src/registry.ts#LAYOUT
+→ rationale: RAT:R-CONSTRAINT-01 · history: ADR-0004, ADR-0015 · code: src/registry.ts#LAYOUT
 
 ## R-TYPE-01 — Type belongs to skin
 
@@ -683,6 +687,19 @@ disjoint. Releasing truncation under a state is a conditioned override or projec
 The multi-line clamp (`truncate-N`) is the family member reserved pending evidence.
 
 → rationale: RAT:R-SKIN-12 · history: ADR-0013 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
+## R-SKIN-13 — Focus ring treatment
+
+The focus indicator is a skin treatment that restyles the platform's own mechanism rather than
+replacing it: `ring`, authored under the focus condition (`focus:ring`, R-STATE-10), owns
+`outline` and `outline-offset`, reading the `--ring` socket with an Ermine default
+(`2px solid var(--ground-defined)`). Because the treatment styles the outline itself, there is
+nothing to suppress — the suppress-and-redraw pair (`outline: none` plus a box-shadow ring) that
+RAT:R-STATE-10 names as the anti-pattern becomes inexpressible drift instead of a discipline.
+Box-shadow rings are not `ring` (box-shadow belongs to elevation); status-tinted recipe rings
+stay recipe identity (R-SKIN-10).
+
+→ rationale: RAT:R-SKIN-13 · history: ADR-0014 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SCALE-01 — Generator-defined scales
 
