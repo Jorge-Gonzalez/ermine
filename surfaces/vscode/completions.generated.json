@@ -1762,6 +1762,18 @@
       ]
     },
     {
+      "axis": "affordance",
+      "reference": "src/ERMINE-SPEC.md §2.5 — affordance",
+      "items": [
+        {
+          "label": "pressable",
+          "insertText": "pressable",
+          "kind": "word",
+          "meaning": "<affordance>"
+        }
+      ]
+    },
+    {
       "axis": "concealment",
       "reference": "src/ERMINE-SPEC.md §2.5 — concealment",
       "items": [

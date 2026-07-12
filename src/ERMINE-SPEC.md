@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (45 axes)  ‹SHARED›
+## 2. The axis registry (46 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=15. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -718,7 +718,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (15 axes)
+### 2.5 SKIN (16 axes)
 
 #### skin-ground
 
@@ -859,6 +859,20 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<elevation>` | `/^(elevated)$/` | — | no |
+
+#### affordance
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `pressable`
+- default: none
+- controls: `cursor`
+- must never touch: `display` `gap` `flex` `background` `color` `pointer-events` `user-select`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<affordance>` | `/^(pressable)$/` | — | no |
 
 #### concealment
 

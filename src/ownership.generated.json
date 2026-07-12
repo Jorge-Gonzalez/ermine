@@ -127,6 +127,9 @@
   "elevation": [
     "box-shadow"
   ],
+  "affordance": [
+    "cursor"
+  ],
   "concealment": [
     "opacity"
   ],

@@ -170,6 +170,12 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- affordance: the invitation to press (R-SKIN-17). ---
+  affordance: {
+    effectKind: "css",
+    plain: (word) => (word === "pressable" ? { cursor: "pointer" } : null),
+  },
+
   // --- concealment: presence at the opacity endpoints (R-SKIN-16). ---
   concealment: {
     effectKind: "css",
@@ -629,6 +635,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "text-align": ["text-start", "text-center"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   truncation: ["truncate"],
+  affordance: ["pressable"],
   concealment: ["concealed", "revealed"],
   scrollbar: ["scrollbar-subtle"],
   "focus-ring": ["ring"],

@@ -631,6 +631,19 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "font-size"],
   },
   {
+    // affordance: the invitation to press (R-SKIN-17). `pressable` owns cursor — the
+    // read side of interaction; behaviour stays JavaScript (IoC boundary). Family
+    // members draggable/editable/expandable reserved pending evidence.
+    axis: "affordance",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["pressable"],
+    tokens: [{ pattern: /^(pressable)$/, shape: "<affordance>" }],
+    default: null,
+    controls: ["cursor"],
+    mustNeverTouch: ["display", "gap", "flex", "background", "color", "pointer-events", "user-select"],
+  },
+  {
     // concealment: presence at the opacity endpoints (R-SKIN-16). `concealed` keeps
     // layout and measurement while invisible; `revealed` restores. Meant for the
     // reveal-on-parent-state affordance (`concealed parent-hover:revealed`).

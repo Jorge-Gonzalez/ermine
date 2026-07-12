@@ -89,6 +89,12 @@ test("elevated composes with base skin as independent atomic rules", () => {
   assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
 });
 
+test("pressable declares the press invitation via cursor only (R-SKIN-17)", () => {
+  const css = toCss("pressable");
+  assert.match(css, /\.pressable \{[^}]*cursor: pointer;/s);
+  assert.doesNotMatch(css, /pointer-events|user-select/, "the affordance never touches behaviour-adjacent properties");
+});
+
 test("relational prefixes serialize as selectable-anchored ancestor compounds (R-STATE-13)", () => {
   const css = toCss("concealed parent-hover:revealed parent-selected:revealed");
   assert.match(css, /\.concealed \{[^}]*opacity: 0;/s);
