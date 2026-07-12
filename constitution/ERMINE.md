@@ -484,6 +484,21 @@ current can never match. The set is closed and validated; `current` is admitted 
 
 → rationale: RAT:R-STATE-12 · history: ADR-0009 · code: src/registry.ts#STATE_SCOPES, src/css.ts#buildStylesheet
 
+## R-STATE-13 — Relational condition prefix
+
+An ancestor's state may scope a descendant's conditioned skin: `parent-hover:` and
+`parent-selected:` are variant prefixes in the R-STATE-10/11 shape whose condition lives on an
+ancestor rather than the element itself. The backing is R-STATE-08's distributed contract read
+from below: the ancestor must carry the `selectable` capability — the linter verifies it through
+parent context where available — and serialization compounds the ancestor
+(`.selectable:hover .parent-hover\:word`, `.selectable[aria-selected="true"] .parent-selected\:word`),
+so an unmarked ancestor can never fire the override. A naked relational condition
+(`*:hover descendant`) is unexpressible by design: hover propagates through every ancestor, and
+only the capability word bounds which one speaks. The set is closed and validated; further
+relational members are reserved pending evidence.
+
+→ rationale: RAT:R-STATE-13 · history: ADR-0018 · code: src/registry.ts#RELATIONAL_SCOPES, src/css.ts#buildStylesheet
+
 ## R-MOTION-01 — Closed motion grammar
 
 Motion axes have closed grammar vocabularies. Duration, delay, and stagger are open external skin
@@ -724,6 +739,17 @@ standard properties. The treatment names prominence, not geometry — a project 
 scrollbar signature keeps it as identity.
 
 → rationale: RAT:R-SKIN-15 · history: ADR-0017 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
+## R-SKIN-16 — Concealment treatment
+
+Concealment is a skin treatment owning `opacity` at its endpoints only: `concealed` (opacity 0 —
+present for layout and measurement, invisible) and `revealed` (opacity 1). Its purpose is
+conditioned visibility: the reveal-on-parent-state affordance is written
+`concealed parent-hover:revealed parent-selected:revealed` (R-STATE-13). Mid-scale opacity —
+prominence dimming, wash effects — is not concealment and remains unruled; a treatment that
+names presence must not blur into one that names emphasis.
+
+→ rationale: RAT:R-SKIN-16 · history: ADR-0018 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SCALE-01 — Generator-defined scales
 

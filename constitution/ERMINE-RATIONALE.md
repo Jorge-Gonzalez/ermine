@@ -457,6 +457,33 @@ stays identity, exactly as the modal's blend-mode shadow did under R-SKIN-09. `s
 (carousels, kiosk surfaces) is anticipated but unevidenced, so reserved. Naming rides the
 existing intensity vocabulary (`subtle`) rather than coining size words. Source: ADR-0017.
 
+## RAT:R-STATE-13
+The reveal-on-row-state pattern appeared independently in two surfaces (the search row's edit
+icon, the suggestion row's delete action) — the same recurrence bar that admitted `hover:` —
+plus row-tinting variants, fourteen rows in all. Same-element prefixes cannot express any of it.
+The mechanism question was the hard part: a naive relational serialization (`*:hover .word`) is
+wrong by construction, because hover propagates through the whole ancestor chain — hovering
+anywhere in the modal would reveal every icon. The bound comes from the same place selection's
+backing came from: R-STATE-08's distributed contract. Both evidence ancestors are selectable
+rows, so the relational prefixes anchor on the `selectable` capability — the ancestor that
+declares itself the interactive unit is the one whose state speaks — and the linter verifies
+the pair through parent context (the P11 pattern: verify when context is given, skip when it
+is not, and the serialization remains safe either way because an unmarked ancestor never
+matches). Narrow admission: `parent-hover:` and `parent-selected:` only; the guarded tinting
+rows (`:not([data-state])` refinements) stay local as component mechanics rather than
+stretching the prefix to carry guards. Source: ADR-0018.
+
+## RAT:R-SKIN-16
+The relational prefixes alone could not consume their own evidence: the revealed property is
+opacity, which had no word to scope. The endpoints earn words — `concealed`/`revealed` name
+presence (a thing that occupies space but does not show), which is a real platform distinction
+(opacity 0 keeps layout, hit-testing, and measurement; `display: none` and `visibility` do
+not). The mid-scale does not: 0.35 marks, 0.6 carets, and 0.95 disabled washes each name a
+different emphasis intent, one occurrence apiece — admitting a scale there would repeat the
+line-height mistake R-SKIN-14 refused. Pointer-events is deliberately left out of `concealed`:
+the evidence keeps concealed controls clickable, and folding interactivity into a visibility
+word would smuggle behaviour into skin. Source: ADR-0018.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 
