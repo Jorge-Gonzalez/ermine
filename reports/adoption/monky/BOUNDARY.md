@@ -14,8 +14,8 @@ machine-checked current contract.
 
 | source | commit |
 |---|---|
-| Ermine | `5c28433bd3ff1f746135846c55e4eb996df5932e` |
-| monky | `2bf5ab26041f27495557c5758b551a0ba524f495` |
+| Ermine | `33654a8e4c05931126a14ad4a17bf05a0b6425ed` |
+| monky | `0c7891233d4a38ff8eb0065a5812738ca7240afe` |
 
 ## Closure Gate
 
@@ -23,7 +23,7 @@ machine-checked current contract.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 446 |
+| project-owned residue | 433 |
 
 ## Product Identity
 
@@ -35,7 +35,7 @@ R-SKIN-09's boundary clause for shadows that are signatures rather than the shar
 | code | count | boundary |
 |---|---:|---|
 | `recipe-identity` | 116 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `identity-geometry` | 73 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 67 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 17 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
@@ -49,10 +49,10 @@ even when both carry the same socket.
 
 | code | count | boundary |
 |---|---:|---|
-| `component-contract` | 63 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 65 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
-| `reset-absence` | 26 | absence/reset mechanics, not a positive carrier |
+| `reset-absence` | 21 | absence/reset mechanics, not a positive carrier |
 
 ## User Content
 
@@ -74,6 +74,5 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 | `scrollbar-followup` | 19 | reports/GAP-U-scrollbar-prominence.md |
 | `motion-followup` | 23 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 4 | named follow-up: opacity prominence treatment (no report filed yet) |
-| `focus-state` | 4 | R-STATE-10 follow-up: focus ring/mechanics boundary |
 | `aria-current` | 1 | R-STATE-12 follow-up: current-layer mechanics |
 | `elevation-followup` | 3 | R-SKIN-09 boundary clause |

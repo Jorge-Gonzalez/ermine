@@ -1,5 +1,7 @@
 # Gap Report — min-content escape
 
+> **Resolved.** R-CONSTRAINT-01 amended (ADR-0015): the min dials gain the `none` endpoint (`min-width-none`/`min-height-none`); consumed in Monky at 0c78912. Two context-scoped escapes stay local (cascade-layer finding).
+
 ## What I was doing
 Screening the Monky residue for repeated patterns (`pilots/PATTERN-SCREEN.md`). Six
 selectors across four surfaces set `min-width: 0` or `min-height: 0` on flex items —

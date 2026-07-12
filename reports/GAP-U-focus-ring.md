@@ -1,5 +1,7 @@
 # Gap Report — focus ring treatment
 
+> **Resolved.** R-SKIN-13 (ADR-0014): `ring` restyles the platform outline under `focus:ring` — nothing left to suppress, so the drift hazard is inexpressible; consumed in Monky at 0c78912. Recipe rings stay recipe identity.
+
 ## What I was doing
 Screening the Monky residue for repeated patterns (`pilots/PATTERN-SCREEN.md`). The
 focus-conditioned remainder after the `focus:` admission is not scattered mechanics — it is

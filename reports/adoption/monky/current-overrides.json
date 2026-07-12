@@ -18,5 +18,15 @@
     "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-command::white-space::1",
     "code": "component-contract",
     "note": "nowrap without ellipsis: the rigid command chip must not wrap; the text cell beside it truncates instead."
+  },
+  {
+    "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::min-height::1",
+    "code": "component-contract",
+    "note": "Context-scoped floor escape: the body keeps min-height 150px everywhere except inside the modal editor. A min-height-none word on the body would lose to that components-layer base — the Phase C layer finding — so the contextual zero stays local."
+  },
+  {
+    "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content.content-editor::min-height::1",
+    "code": "component-contract",
+    "note": "Context-scoped floor escape: the editor-content recipe base keeps min-height 150px; inside the modal editor the wrapper must collapse. A min-height-none word loses to the skin-layer base (the Phase C layer finding), so the contextual zero stays local."
   }
 ]
