@@ -1,15 +1,5 @@
 [
   {
-    "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::opacity::1",
-    "code": "parent-relational",
-    "note": "Base half of the reveal-on-row-state pattern: opacity 0 until the row is hovered or selected. Evidence belongs with GAP-U-parent-relational-state, next to its reveal half."
-  },
-  {
-    "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-action::opacity::1",
-    "code": "parent-relational",
-    "note": "Base half of the reveal-on-row-state pattern: opacity 0 until the row is hovered, selected, or confirming. Evidence belongs with GAP-U-parent-relational-state, next to its reveal half."
-  },
-  {
     "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::white-space::1",
     "code": "component-contract",
     "note": "nowrap without ellipsis: the toast refuses to wrap so it never reflows the action bar — geometry, not truncation (R-SKIN-12 does not apply without hidden+ellipsis intent)."

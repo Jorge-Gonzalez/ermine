@@ -553,7 +553,7 @@ const CODE_MEANING: Record<ReasonCode, string> = {
   "state-review": "review bucket (gate vocabulary) — zero while the boundary is declared",
   "focus-state": "focus-conditioned remainder — rings and mechanics (focus: itself is ruled, R-STATE-10)",
   "aria-current": "aria-current-conditioned remainder (current: itself is ruled, R-STATE-12)",
-  "parent-relational": "ancestor state drives a descendant (GAP-U-parent-relational-state)",
+  "parent-relational": "guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13)",
   "pseudo-mechanics": "pseudo-element geometry, fills, and content",
   "scrollbar-followup": "engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15)",
   "motion-followup": "transition/animation timing (deferred to GAP-U-animation-plane)",
@@ -644,7 +644,7 @@ const REVIEW_CODES: ReasonCode[] = ["skin-review", "identity-review", "state-rev
 const GAP_CODES: Partial<Record<ReasonCode, string>> = {
   "rule-mechanics": "reports/GAP-K6-skin-surface.md",
   "affordance-mechanics": "reports/GAP-U-interaction-affordance.md",
-  "parent-relational": "reports/GAP-U-parent-relational-state.md",
+  "parent-relational": "R-STATE-13 boundary: guarded/JS-state relational mechanics",
   "scrollbar-followup": "R-SKIN-15 boundary: engine-drawn identity outside the treatment",
   "motion-followup": "reports/GAP-U-animation-plane.md",
   "opacity-followup": "named follow-up: opacity prominence treatment (no report filed yet)",
