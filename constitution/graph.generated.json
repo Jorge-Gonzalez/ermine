@@ -91,6 +91,12 @@
       "anchor": "ADR-0015"
     },
     {
+      "id": "ADR-0016",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0016-text-alignment-facet.md",
+      "anchor": "ADR-0016"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -685,6 +691,12 @@
       "anchor": "R-SKIN-13"
     },
     {
+      "id": "R-SKIN-14",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SKIN-14"
+    },
+    {
       "id": "R-SPACE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1253,6 +1265,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SKIN-13"
+    },
+    {
+      "id": "RAT:R-SKIN-14",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SKIN-14"
     },
     {
       "id": "RAT:R-SPACE-01",
@@ -2052,6 +2070,11 @@
     {
       "from": "RAT:R-SKIN-13",
       "to": "R-SKIN-13",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SKIN-14",
+      "to": "R-SKIN-14",
       "type": "rationale-of"
     },
     {

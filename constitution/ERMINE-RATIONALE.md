@@ -427,6 +427,21 @@ refinement once the platform-condition family admits it (today's evidence is all
 where the two match identically). The error-tinted inset ring on `.input-error:focus` is recipe
 conditional identity and stays in the recipe. Source: ADR-0014.
 
+## RAT:R-SKIN-14
+The skin-type gap axis held two properties. They resolved oppositely, which is the point of
+evidence-gated admission. Text alignment has real vocabulary: four `center`s (chips and empty
+states) and two `left`s that are both the same intent — a button restoring natural alignment
+against the platform's centring — so the words are logical (`text-start`, `text-center`),
+platform-first, with `text-end` reserved. Line-height has none: the 1.5 base is already
+substrate (reset and entry-point font), the one component-sheet copy is that substrate
+duplicated into a shadow root, `normal` on the editor body is user-content neutralization, and
+the single `line-height: 1` is the keycap identity signature. A leading scale invented from
+one deviation would violate R-SCALE discipline, so leading stays substrate/theme-owned with
+identity deviations local. Two single-occurrence candidates are noted for future evidence, not
+admitted: `font-variant-numeric: tabular-nums` (a natural `font-*` facet if numbers recur) and
+the uppercase/letter-spaced label treatment. With alignment ruled and leading dispositioned,
+skin-type retires — the registry's last gap axis. Source: ADR-0016.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 

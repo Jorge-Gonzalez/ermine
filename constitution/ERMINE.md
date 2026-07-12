@@ -701,6 +701,17 @@ stay recipe identity (R-SKIN-10).
 
 → rationale: RAT:R-SKIN-13 · history: ADR-0014 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
+## R-SKIN-14 — Text alignment facet
+
+Inline-content alignment is a skin facet: `text-start` and `text-center` own `text-align` in
+logical values (`text-end` is the family member reserved pending evidence). `text-start`
+exists chiefly to restore natural alignment where the platform centres content (buttons).
+Leading is deliberately not a facet: the base line-height belongs to the entry-point substrate
+and the theme, and its deviations in the evidence are identity signatures, not scale steps —
+so with alignment ruled here, the sampled skin-type gap axis retires and no gap axis remains.
+
+→ rationale: RAT:R-SKIN-14 · history: ADR-0016 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
 ## R-SCALE-01 — Generator-defined scales
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.
