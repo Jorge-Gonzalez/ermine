@@ -109,6 +109,12 @@
       "anchor": "ADR-0018"
     },
     {
+      "id": "ADR-0019",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0019-press-affordance.md",
+      "anchor": "ADR-0019"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -727,6 +733,12 @@
       "anchor": "R-SKIN-16"
     },
     {
+      "id": "R-SKIN-17",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SKIN-17"
+    },
+    {
       "id": "R-SPACE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1319,6 +1331,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SKIN-16"
+    },
+    {
+      "id": "RAT:R-SKIN-17",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SKIN-17"
     },
     {
       "id": "RAT:R-SPACE-01",
@@ -2144,6 +2162,11 @@
     {
       "from": "RAT:R-SKIN-16",
       "to": "R-SKIN-16",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SKIN-17",
+      "to": "R-SKIN-17",
       "type": "rationale-of"
     },
     {

@@ -484,6 +484,20 @@ line-height mistake R-SKIN-14 refused. Pointer-events is deliberately left out o
 the evidence keeps concealed controls clickable, and folding interactivity into a visibility
 word would smuggle behaviour into skin. Source: ADR-0018.
 
+## RAT:R-SKIN-17
+The pattern screen's largest single recurrence: `cursor: pointer`, twenty-one rows, twelve of
+them outside recipes — every clickable chip, cell, icon, toggle, and option repeating the same
+declaration. GAP-U-interaction-affordance asked whether affordance becomes capability
+vocabulary in the `selectable` mould; the constitution answers no by its own law: capabilities
+live on the state plane, and state controls nothing (P7-4d), while this affordance's entire
+substance is a painted property. So the read side of interaction is skin — `pressable` names
+the invitation and owns `cursor` — and the write side (wiring, keyboard, focus) stays
+JavaScript, which is exactly the inversion-of-control boundary the gap report drew. The seam
+with recipes holds: `.btn` keeps its cursor inside the bundle, and `pressable` serves the
+elements that are not recipes. `user-select` stays out (its evidence is recipe-only);
+`draggable`/`editable`/`expandable` wait for occurrences that exist outside speculation.
+Source: ADR-0019.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 
