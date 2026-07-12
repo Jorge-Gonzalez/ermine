@@ -88,6 +88,8 @@ export interface ErminePlainProps {
   fontFamily?: "font-mono";
   /** axis `elevation` */
   elevation?: "elevated";
+  /** axis `focus-ring` */
+  focusRing?: "ring";
   /** axis `truncation` */
   truncation?: "truncate";
   /** axis `selection-treatment` */
@@ -205,6 +207,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "fontWeight", axis: "font-weight", kind: "word" },
   { prop: "fontFamily", axis: "font-family", kind: "word" },
   { prop: "elevation", axis: "elevation", kind: "word" },
+  { prop: "focusRing", axis: "focus-ring", kind: "word" },
   { prop: "truncation", axis: "truncation", kind: "word" },
   { prop: "selectionTreatment", axis: "selection-treatment", kind: "word" },
 ];

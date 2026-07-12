@@ -337,6 +337,8 @@ export const LAYOUT: AxisRecord[] = [
     valueSpace: ["min-width-<size>", "max-width-<size>", "min-height-<size>", "max-height-<size>"],
     tokens: [
       { pattern: new RegExp(`^(min-width|max-width|min-height|max-height)-(${SCALES.size.join("|")})$`), shape: "min/max-width/height-<size>", valueDomain: "size-step" },
+      // R-CONSTRAINT-01 endpoint: no minimum at all — escapes the flex min-content floor.
+      { pattern: /^(min-width|min-height)-(none)$/, shape: "min-width/height-none" },
       { pattern: /^(min-width|max-width|min-height|max-height)-.+$/, shape: "min/max-width/height-<bad>", valueDomain: "size-step", fallback: true },
     ],
     // four independent dials — min/max-width form a band, min/max-height form a separate band.
@@ -627,6 +629,20 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "font-size"],
   },
   {
+    // focus-ring: the focus indicator as a treatment (R-SKIN-13). `ring` restyles the
+    // platform's own outline — authored under the focus condition (`focus:ring`) — so
+    // there is never an outline suppression to drift from its indicator. Reads the
+    // `--ring` socket; box-shadow rings are elevation's property and not this axis.
+    axis: "focus-ring",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["ring"],
+    tokens: [{ pattern: /^(ring)$/, shape: "<focus-ring>" }],
+    default: null,
+    controls: ["outline", "outline-offset"],
+    mustNeverTouch: ["display", "gap", "flex", "box-shadow", "border-width", "border-color", "background", "color"],
+  },
+  {
     // truncation: text that yields to its container on one line (R-SKIN-12).
     // Owns text-overflow + white-space; takes effect composed with the `hidden`
     // overflow word (`hidden truncate`) — ownership stays disjoint from the
@@ -695,6 +711,8 @@ export const SKIN_PLANE = {
     typeface: ["font-mono"],
     // R-SKIN-11: the line weight the presence words emit; themes rebind for heavier rules.
     line: ["rule-weight"],
+    // R-SKIN-13: the focus indicator (full outline value) and its offset.
+    ring: ["ring", "ring-offset"],
   },
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {

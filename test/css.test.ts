@@ -89,6 +89,19 @@ test("elevated composes with base skin as independent atomic rules", () => {
   assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
 });
 
+test("focus:ring restyles the platform outline under the focus condition (R-SKIN-13)", () => {
+  const css = toCss("focus:ring");
+  assert.match(css, /\.focus\\:ring:focus \{[^}]*outline: var\(--ring, 2px solid var\(--ground-defined\)\);[^}]*outline-offset: var\(--ring-offset, 0px\);/s);
+  assert.doesNotMatch(css, /box-shadow/, "the ring is the outline, not a shadow redraw");
+  assert.doesNotMatch(css, /outline: none/, "there is nothing to suppress");
+});
+
+test("the min dials' none endpoint escapes the min-content floor (R-CONSTRAINT-01)", () => {
+  const css = toCss("min-height-none min-width-none");
+  assert.match(css, /\.min-height-none \{[^}]*min-height: 0;/s);
+  assert.match(css, /\.min-width-none \{[^}]*min-width: 0;/s);
+});
+
 test("hidden emits both overflow axes; clip stays distinct (R-OVERFLOW-01)", () => {
   const css = toCss("hidden");
   assert.match(css, /\.hidden \{[^}]*overflow-x: hidden;[^}]*overflow-y: hidden;/s);

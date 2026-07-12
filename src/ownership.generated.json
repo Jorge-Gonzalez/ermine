@@ -124,6 +124,10 @@
   "elevation": [
     "box-shadow"
   ],
+  "focus-ring": [
+    "outline",
+    "outline-offset"
+  ],
   "truncation": [
     "text-overflow",
     "white-space"

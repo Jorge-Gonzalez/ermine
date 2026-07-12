@@ -806,6 +806,18 @@
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
+          "label": "min-width-none",
+          "insertText": "min-width-none",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-none",
+          "insertText": "min-height-none",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
           "label": "min-width-<size>",
           "insertText": "min-width-${1|sm,md,lg,xl|}",
           "kind": "snippet",
@@ -1728,6 +1740,18 @@
           "insertText": "elevated",
           "kind": "word",
           "meaning": "<elevation>"
+        }
+      ]
+    },
+    {
+      "axis": "focus-ring",
+      "reference": "src/ERMINE-SPEC.md §2.5 — focus-ring",
+      "items": [
+        {
+          "label": "ring",
+          "insertText": "ring",
+          "kind": "word",
+          "meaning": "<focus-ring>"
         }
       ]
     },

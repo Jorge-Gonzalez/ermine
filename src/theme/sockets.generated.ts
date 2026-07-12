@@ -47,6 +47,8 @@ export const SKIN_SOCKETS = [
   "shadow-elevated",
   "font-mono",
   "rule-weight",
+  "ring",
+  "ring-offset",
 ] as const;
 
 export type SkinSocket = (typeof SKIN_SOCKETS)[number];
@@ -66,4 +68,5 @@ export const SOCKET_FAMILIES = {
   elevation: ["shadow-elevated"],
   typeface: ["font-mono"],
   line: ["rule-weight"],
+  ring: ["ring", "ring-offset"],
 } as const satisfies Record<string, readonly SkinSocket[]>;

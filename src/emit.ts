@@ -161,6 +161,19 @@ const EMISSION: Record<string, EmitSpec> = {
       word === "font-mono" ? { "font-family": "var(--font-mono, monospace)" } : null,
   },
 
+  // --- focus-ring: the platform's focus indicator, restyled (R-SKIN-13).
+  // Authored under the focus condition (focus:ring); nothing to suppress. ---
+  "focus-ring": {
+    effectKind: "css",
+    plain: (word) =>
+      word === "ring"
+        ? {
+            outline: "var(--ring, 2px solid var(--ground-defined))",
+            "outline-offset": "var(--ring-offset, 0px)",
+          }
+        : null,
+  },
+
   // --- truncation: one-line yielding text (R-SKIN-12). Composes with the
   // `hidden` overflow word; owns only the two unowned text properties. ---
   truncation: {
@@ -235,6 +248,8 @@ const EMISSION: Record<string, EmitSpec> = {
   constraints: {
     effectKind: "css",
     plain: (word) => {
+      const none = word.match(/^(min-width|min-height)-none$/);
+      if (none) return { [none[1]]: "0" };
       const m = word.match(new RegExp(`^(min-width|max-width|min-height|max-height)-(${SCALES.size.join("|")})$`));
       return m ? { [m[1]]: `var(--size-${m[2]})` } : null;
     },
@@ -557,7 +572,10 @@ export const VOCABULARY: Record<string, string[]> = {
   ],
   "m2-flex": ["rigid", "compressible", "expandable", "elastic", "grow-1", "grow-2", "shrink-1"],
   "m3-self-size": ["basis-content", "basis-ratio", ...SCALES.size.map((s) => `basis-exact-${s}`)],
-  constraints: ["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
+  constraints: [
+    ...["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
+    "min-width-none", "min-height-none",
+  ],
   margin: [
     ...SCALES.density.map((s) => `margin-${s}`),
     ...SCALES.density.map((s) => `margin-inline-${s}`),
@@ -577,6 +595,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "font-family": ["font-mono"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   truncation: ["truncate"],
+  "focus-ring": ["ring"],
   elevation: ["elevated"],
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
