@@ -127,6 +127,10 @@
   "elevation": [
     "box-shadow"
   ],
+  "scrollbar": [
+    "scrollbar-color",
+    "scrollbar-width"
+  ],
   "focus-ring": [
     "outline",
     "outline-offset"

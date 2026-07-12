@@ -170,6 +170,18 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- scrollbar: prominence on the standard properties (R-SKIN-15). ---
+  scrollbar: {
+    effectKind: "css",
+    plain: (word) =>
+      word === "scrollbar-subtle"
+        ? {
+            "scrollbar-width": "thin",
+            "scrollbar-color": "var(--scrollbar-thumb, var(--rule)) var(--scrollbar-track, transparent)",
+          }
+        : null,
+  },
+
   // --- focus-ring: the platform's focus indicator, restyled (R-SKIN-13).
   // Authored under the focus condition (focus:ring); nothing to suppress. ---
   "focus-ring": {
@@ -605,6 +617,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "text-align": ["text-start", "text-center"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   truncation: ["truncate"],
+  scrollbar: ["scrollbar-subtle"],
   "focus-ring": ["ring"],
   elevation: ["elevated"],
   "selection-treatment": ["selection-subtle", "selection-strong"],

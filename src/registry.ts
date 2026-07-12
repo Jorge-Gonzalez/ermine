@@ -631,6 +631,20 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "font-size"],
   },
   {
+    // scrollbar: prominence on the platform's standard properties (R-SKIN-15).
+    // `scrollbar-subtle` = thin, thumb/track from like-named sockets (default: the
+    // rule carrier over a transparent track). `scrollbar-hidden` reserved.
+    // Engine-drawn ::-webkit-scrollbar styling is project identity, not this axis.
+    axis: "scrollbar",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["scrollbar-subtle"],
+    tokens: [{ pattern: /^scrollbar-(subtle)$/, shape: "scrollbar-<prominence>" }],
+    default: null,
+    controls: ["scrollbar-width", "scrollbar-color"],
+    mustNeverTouch: ["display", "gap", "flex", "overflow-x", "overflow-y", "background", "color"],
+  },
+  {
     // focus-ring: the focus indicator as a treatment (R-SKIN-13). `ring` restyles the
     // platform's own outline — authored under the focus condition (`focus:ring`) — so
     // there is never an outline suppression to drift from its indicator. Reads the
@@ -715,6 +729,8 @@ export const SKIN_PLANE = {
     line: ["rule-weight"],
     // R-SKIN-13: the focus indicator (full outline value) and its offset.
     ring: ["ring", "ring-offset"],
+    // R-SKIN-15: scrollbar thumb/track colours for the subtle treatment.
+    scrollbar: ["scrollbar-thumb", "scrollbar-track"],
   },
   // R-SCALE-03: scale-bound families — grammar owns step names, theme owns numbers.
   scales: {

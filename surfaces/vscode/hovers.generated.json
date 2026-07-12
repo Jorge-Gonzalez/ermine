@@ -1179,6 +1179,11 @@
       "meaning": "<elevation>",
       "reference": "src/ERMINE-SPEC.md §2.5 — elevation"
     },
+    "scrollbar-subtle": {
+      "axis": "scrollbar",
+      "meaning": "scrollbar-<prominence>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — scrollbar"
+    },
     "ring": {
       "axis": "focus-ring",
       "meaning": "<focus-ring>",

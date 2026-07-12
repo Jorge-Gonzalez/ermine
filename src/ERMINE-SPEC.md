@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (43 axes)  ‹SHARED›
+## 2. The axis registry (44 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=13. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=14. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -718,7 +718,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (13 axes)
+### 2.5 SKIN (14 axes)
 
 #### skin-ground
 
@@ -859,6 +859,20 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<elevation>` | `/^(elevated)$/` | — | no |
+
+#### scrollbar
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `scrollbar-subtle`
+- default: none
+- controls: `scrollbar-width` `scrollbar-color`
+- must never touch: `display` `gap` `flex` `overflow-x` `overflow-y` `background` `color`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `scrollbar-<prominence>` | `/^scrollbar-(subtle)$/` | — | no |
 
 #### focus-ring
 

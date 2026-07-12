@@ -1762,6 +1762,18 @@
       ]
     },
     {
+      "axis": "scrollbar",
+      "reference": "src/ERMINE-SPEC.md §2.5 — scrollbar",
+      "items": [
+        {
+          "label": "scrollbar-subtle",
+          "insertText": "scrollbar-subtle",
+          "kind": "word",
+          "meaning": "scrollbar-<prominence>"
+        }
+      ]
+    },
+    {
       "axis": "focus-ring",
       "reference": "src/ERMINE-SPEC.md §2.5 — focus-ring",
       "items": [

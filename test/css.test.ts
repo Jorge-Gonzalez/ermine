@@ -89,6 +89,12 @@ test("elevated composes with base skin as independent atomic rules", () => {
   assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
 });
 
+test("scrollbar-subtle emits standard properties with socketed colours (R-SKIN-15)", () => {
+  const css = toCss("scrollbar-subtle");
+  assert.match(css, /\.scrollbar-subtle \{[^}]*scrollbar-width: thin;[^}]*scrollbar-color: var\(--scrollbar-thumb, var\(--rule\)\) var\(--scrollbar-track, transparent\);/s);
+  assert.doesNotMatch(css, /-webkit-scrollbar/, "the treatment never emits engine-drawn pseudo styling");
+});
+
 test("text alignment facet emits logical values (R-SKIN-14)", () => {
   assert.match(toCss("text-center"), /\.text-center \{[^}]*text-align: center;/s);
   assert.match(toCss("text-start"), /\.text-start \{[^}]*text-align: start;/s);

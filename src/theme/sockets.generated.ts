@@ -49,6 +49,8 @@ export const SKIN_SOCKETS = [
   "rule-weight",
   "ring",
   "ring-offset",
+  "scrollbar-thumb",
+  "scrollbar-track",
 ] as const;
 
 export type SkinSocket = (typeof SKIN_SOCKETS)[number];
@@ -69,4 +71,5 @@ export const SOCKET_FAMILIES = {
   typeface: ["font-mono"],
   line: ["rule-weight"],
   ring: ["ring", "ring-offset"],
+  scrollbar: ["scrollbar-thumb", "scrollbar-track"],
 } as const satisfies Record<string, readonly SkinSocket[]>;
