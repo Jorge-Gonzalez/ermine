@@ -1,5 +1,7 @@
 # Gap Report — K6 (skin-type)
 
+> **Resolved.** R-SKIN-14 (ADR-0016): alignment ruled (`text-start`/`text-center`, logical; `text-end` reserved); leading dispositioned to substrate/theme with identity deviations. The skin-type gap axis is retired — no gap axis remains. Consumed in Monky at 1601fdc.
+
 ## What I was doing
 Completing the EMISSION table (work order K6): every axis in `REGISTRY` gets a
 word→declaration mapping in `src/emit.ts`, derived from its constitution ruling or the

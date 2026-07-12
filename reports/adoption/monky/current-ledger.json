@@ -2,22 +2,22 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "33654a8e4c05931126a14ad4a17bf05a0b6425ed",
-    "projectCommit": "0c7891233d4a38ff8eb0065a5812738ca7240afe"
+    "ermineCommit": "362f21f10226cc9df78c47c7d772acd43a1ca74c",
+    "projectCommit": "1601fdcf930f9a089ecc532c01d33d283cdfede4"
   },
   "summary": {
-    "totalDeclarations": 638,
-    "residueDeclarations": 433,
+    "totalDeclarations": 635,
+    "residueDeclarations": 428,
     "assimilable": 0,
     "byCode": {
-      "ermine-emitted": 113,
+      "ermine-emitted": 115,
       "substrate": 52,
       "theme-metric": 39,
       "config-departure": 1,
       "assimilable": 0,
       "recipe-identity": 116,
       "rule-mechanics": 0,
-      "brand-identity": 17,
+      "brand-identity": 12,
       "affordance-mechanics": 12,
       "component-contract": 65,
       "state-mechanics": 5,
@@ -408,18 +408,9 @@
       "code": "motion-followup"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::text-align::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 51,
-      "selector": ".macro-suggestions-command-item",
-      "property": "text-align",
-      "value": "center",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::display::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 55,
+      "line": 54,
       "selector": ".macro-suggestions-text-preview",
       "property": "display",
       "value": "-webkit-box",
@@ -428,7 +419,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::-webkit-line-clamp::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 56,
+      "line": 55,
       "selector": ".macro-suggestions-text-preview",
       "property": "-webkit-line-clamp",
       "value": "3",
@@ -437,7 +428,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-text-preview::-webkit-box-orient::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 57,
+      "line": 56,
       "selector": ".macro-suggestions-text-preview",
       "property": "-webkit-box-orient",
       "value": "vertical",
@@ -446,7 +437,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::justify-content::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 61,
+      "line": 60,
       "selector": ".macro-suggestions-footer",
       "property": "justify-content",
       "value": "flex-end",
@@ -455,7 +446,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 66,
+      "line": 65,
       "selector": ".macro-suggestions-kbd",
       "property": "padding",
       "value": "1px 4px",
@@ -863,18 +854,9 @@
       "code": "component-contract"
     },
     {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-empty::text-align::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 28,
-      "selector": ".macro-search-empty",
-      "property": "text-align",
-      "value": "center",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item::grid-template-columns::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 33,
+      "line": 28,
       "selector": ".macro-search-item",
       "property": "grid-template-columns",
       "value": "subgrid",
@@ -883,7 +865,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::cursor::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 38,
+      "line": 33,
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "cursor",
       "value": "pointer",
@@ -892,7 +874,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command, .macro-search-item-text::transition::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 39,
+      "line": 34,
       "selector": ".macro-search-item-command, .macro-search-item-text",
       "property": "transition",
       "value": "background-color var(--transition-fast)",
@@ -901,7 +883,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-command::padding-right::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 43,
+      "line": 38,
       "selector": ".macro-search-item-command",
       "property": "padding-right",
       "value": "var(--spacing-xs)",
@@ -910,7 +892,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text::padding-left::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 47,
+      "line": 42,
       "selector": ".macro-search-item-text",
       "property": "padding-left",
       "value": "var(--spacing-xs)",
@@ -919,7 +901,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item[aria-selected=\"true\"] .macro-search-item-text::white-space::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 51,
+      "line": 46,
       "selector": ".macro-search-item[aria-selected=\"true\"] .macro-search-item-text",
       "property": "white-space",
       "value": "normal",
@@ -928,7 +910,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item[aria-selected=\"true\"] .macro-search-item-text::overflow::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 52,
+      "line": 47,
       "selector": ".macro-search-item[aria-selected=\"true\"] .macro-search-item-text",
       "property": "overflow",
       "value": "visible",
@@ -937,7 +919,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item[aria-selected=\"true\"] .macro-search-item-text::text-overflow::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 53,
+      "line": 48,
       "selector": ".macro-search-item[aria-selected=\"true\"] .macro-search-item-text",
       "property": "text-overflow",
       "value": "clip",
@@ -946,7 +928,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item:not([data-state=\"confirming-delete\"]):hover .macro-search-item-command, .macro-search-item:not([data-state=\"confirming-delete\"]):hover .macro-search-item-text::background-color::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 58,
+      "line": 53,
       "selector": ".macro-search-item:not([data-state=\"confirming-delete\"]):hover .macro-search-item-command, .macro-search-item:not([data-state=\"confirming-delete\"]):hover .macro-search-item-text",
       "property": "background-color",
       "value": "var(--tone-dim)",
@@ -955,7 +937,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item:not([data-state=\"confirming-delete\"])[aria-selected=\"true\"] .macro-search-item-command, .macro-search-item:not([data-state=\"confirming-delete\"])[aria-selected=\"true\"] .macro-search-item-text::background-color::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 63,
+      "line": 58,
       "selector": ".macro-search-item:not([data-state=\"confirming-delete\"])[aria-selected=\"true\"] .macro-search-item-command, .macro-search-item:not([data-state=\"confirming-delete\"])[aria-selected=\"true\"] .macro-search-item-text",
       "property": "background-color",
       "value": "var(--tone)",
@@ -964,7 +946,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-confirm::padding-left::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 68,
+      "line": 63,
       "selector": ".macro-search-item-confirm",
       "property": "padding-left",
       "value": "var(--spacing-xs)",
@@ -973,7 +955,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::right::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 72,
+      "line": 67,
       "selector": ".macro-search-item-edit",
       "property": "right",
       "value": "var(--spacing-sm)",
@@ -982,7 +964,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::top::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 73,
+      "line": 68,
       "selector": ".macro-search-item-edit",
       "property": "top",
       "value": "50%",
@@ -991,7 +973,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::transform::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 74,
+      "line": 69,
       "selector": ".macro-search-item-edit",
       "property": "transform",
       "value": "translateY(-50%)",
@@ -1000,7 +982,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::border::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 75,
+      "line": 70,
       "selector": ".macro-search-item-edit",
       "property": "border",
       "value": "none",
@@ -1009,7 +991,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::background::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 76,
+      "line": 71,
       "selector": ".macro-search-item-edit",
       "property": "background",
       "value": "transparent",
@@ -1018,7 +1000,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::cursor::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 77,
+      "line": 72,
       "selector": ".macro-search-item-edit",
       "property": "cursor",
       "value": "pointer",
@@ -1027,7 +1009,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::opacity::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 78,
+      "line": 73,
       "selector": ".macro-search-item-edit",
       "property": "opacity",
       "value": "0",
@@ -1037,7 +1019,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::transition::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 79,
+      "line": 74,
       "selector": ".macro-search-item-edit",
       "property": "transition",
       "value": "opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)",
@@ -1046,7 +1028,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item:hover .macro-search-item-edit, .macro-search-item[aria-selected=\"true\"] .macro-search-item-edit::opacity::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 84,
+      "line": 79,
       "selector": ".macro-search-item:hover .macro-search-item-edit, .macro-search-item[aria-selected=\"true\"] .macro-search-item-edit",
       "property": "opacity",
       "value": "1",
@@ -1055,7 +1037,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::background::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 88,
+      "line": 83,
       "selector": ".macro-search-item-text mark",
       "property": "background",
       "value": "transparent",
@@ -1064,7 +1046,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::color::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 89,
+      "line": 84,
       "selector": ".macro-search-item-text mark",
       "property": "color",
       "value": "inherit",
@@ -1073,7 +1055,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::font-style::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 90,
+      "line": 85,
       "selector": ".macro-search-item-text mark",
       "property": "font-style",
       "value": "normal",
@@ -1082,7 +1064,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark span::opacity::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 94,
+      "line": 89,
       "selector": ".macro-search-item-text mark span",
       "property": "opacity",
       "value": "0.35",
@@ -1091,7 +1073,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-count::font-variant-numeric::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 98,
+      "line": 93,
       "selector": ".macro-search-count",
       "property": "font-variant-numeric",
       "value": "tabular-nums",
@@ -1100,7 +1082,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-description::font-style::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 104,
+      "line": 99,
       "selector": ".modal-command-item .modal-command-description",
       "property": "font-style",
       "value": "italic",
@@ -1109,7 +1091,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-shortcut::margin-right::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 120,
+      "line": 115,
       "selector": ".macro-search-shortcut",
       "property": "margin-right",
       "value": "var(--spacing-xl)",
@@ -1118,7 +1100,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::line-height::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 125,
+      "line": 120,
       "selector": ".macro-search-kbd",
       "property": "line-height",
       "value": "1",
@@ -1127,7 +1109,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::padding::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 126,
+      "line": 121,
       "selector": ".macro-search-kbd",
       "property": "padding",
       "value": "3px 6px 6px",
@@ -1136,7 +1118,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::min-width::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 127,
+      "line": 122,
       "selector": ".macro-search-kbd",
       "property": "min-width",
       "value": "26px",
@@ -1145,7 +1127,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::border-radius::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 128,
+      "line": 123,
       "selector": ".macro-search-kbd",
       "property": "border-radius",
       "value": "4px",
@@ -1154,7 +1136,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::z-index::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 129,
+      "line": 124,
       "selector": ".macro-search-kbd",
       "property": "z-index",
       "value": "0",
@@ -1163,7 +1145,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::content::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 133,
+      "line": 128,
       "selector": ".macro-search-kbd::after",
       "property": "content",
       "value": "''",
@@ -1172,7 +1154,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::position::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 134,
+      "line": 129,
       "selector": ".macro-search-kbd::after",
       "property": "position",
       "value": "absolute",
@@ -1181,7 +1163,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::background::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 135,
+      "line": 130,
       "selector": ".macro-search-kbd::after",
       "property": "background",
       "value": "var(--tone-dim)",
@@ -1190,7 +1172,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::inset::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 136,
+      "line": 131,
       "selector": ".macro-search-kbd::after",
       "property": "inset",
       "value": "0 2px 4px",
@@ -1199,7 +1181,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 137,
+      "line": 132,
       "selector": ".macro-search-kbd::after",
       "property": "border",
       "value": "1px solid var(--harmonic-minor)",
@@ -1208,7 +1190,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border-radius::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 138,
+      "line": 133,
       "selector": ".macro-search-kbd::after",
       "property": "border-radius",
       "value": "2px",
@@ -1217,7 +1199,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::pointer-events::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 139,
+      "line": 134,
       "selector": ".macro-search-kbd::after",
       "property": "pointer-events",
       "value": "none",
@@ -1226,7 +1208,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::z-index::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 140,
+      "line": 135,
       "selector": ".macro-search-kbd::after",
       "property": "z-index",
       "value": "-1",
@@ -1235,7 +1217,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd:first-child::margin-left::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 144,
+      "line": 139,
       "selector": ".macro-search-kbd:first-child",
       "property": "margin-left",
       "value": "0",
@@ -1746,18 +1728,9 @@
       "code": "component-contract"
     },
     {
-      "id": "src/popup/popup.css::.popup-item-toggle::text-align::1",
-      "file": "src/popup/popup.css",
-      "line": 30,
-      "selector": ".popup-item-toggle",
-      "property": "text-align",
-      "value": "left",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/popup/popup.css::.popup-item-toggle::border::1",
       "file": "src/popup/popup.css",
-      "line": 31,
+      "line": 30,
       "selector": ".popup-item-toggle",
       "property": "border",
       "value": "none",
@@ -1766,7 +1739,7 @@
     {
       "id": "src/popup/popup.css::.popup-item-toggle::background::1",
       "file": "src/popup/popup.css",
-      "line": 32,
+      "line": 31,
       "selector": ".popup-item-toggle",
       "property": "background",
       "value": "transparent",
@@ -1775,7 +1748,7 @@
     {
       "id": "src/popup/popup.css::.popup-item-toggle::cursor::1",
       "file": "src/popup/popup.css",
-      "line": 33,
+      "line": 32,
       "selector": ".popup-item-toggle",
       "property": "cursor",
       "value": "pointer",
@@ -1784,7 +1757,7 @@
     {
       "id": "src/popup/popup.css::.popup-item-detail::margin-top::1",
       "file": "src/popup/popup.css",
-      "line": 38,
+      "line": 37,
       "selector": ".popup-item-detail",
       "property": "margin-top",
       "value": "var(--spacing-sm)",
@@ -1793,7 +1766,7 @@
     {
       "id": "src/popup/popup.css::.popup-item-detail::padding-top::1",
       "file": "src/popup/popup.css",
-      "line": 39,
+      "line": 38,
       "selector": ".popup-item-detail",
       "property": "padding-top",
       "value": "var(--spacing-sm)",
@@ -1802,7 +1775,7 @@
     {
       "id": "src/popup/popup.css::.popup-macro-text::white-space::1",
       "file": "src/popup/popup.css",
-      "line": 43,
+      "line": 42,
       "selector": ".popup-macro-text",
       "property": "white-space",
       "value": "pre-wrap",
@@ -1811,7 +1784,7 @@
     {
       "id": "src/popup/popup.css::.popup-macro-text::margin::1",
       "file": "src/popup/popup.css",
-      "line": 44,
+      "line": 43,
       "selector": ".popup-macro-text",
       "property": "margin",
       "value": "0",
@@ -1820,7 +1793,7 @@
     {
       "id": "src/popup/popup.css::.popup-toggle-label::cursor::1",
       "file": "src/popup/popup.css",
-      "line": 49,
+      "line": 48,
       "selector": ".popup-toggle-label",
       "property": "cursor",
       "value": "pointer",
@@ -1829,7 +1802,7 @@
     {
       "id": "src/popup/popup.css::.popup-toggle-label::margin-left::1",
       "file": "src/popup/popup.css",
-      "line": 50,
+      "line": 49,
       "selector": ".popup-toggle-label",
       "property": "margin-left",
       "value": "var(--spacing-sm)",
@@ -1838,7 +1811,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::max-height::1",
       "file": "src/popup/popup.css",
-      "line": 55,
+      "line": 54,
       "selector": ".popup-results",
       "property": "max-height",
       "value": "256px",
@@ -1847,7 +1820,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::padding::1",
       "file": "src/popup/popup.css",
-      "line": 56,
+      "line": 55,
       "selector": ".popup-results",
       "property": "padding",
       "value": "var(--spacing-sm) 0",
@@ -1856,7 +1829,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::margin::1",
       "file": "src/popup/popup.css",
-      "line": 57,
+      "line": 56,
       "selector": ".popup-results",
       "property": "margin",
       "value": "0",
@@ -1865,7 +1838,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::list-style::1",
       "file": "src/popup/popup.css",
-      "line": 58,
+      "line": 57,
       "selector": ".popup-results",
       "property": "list-style",
       "value": "none",
@@ -1874,7 +1847,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::scrollbar-width::1",
       "file": "src/popup/popup.css",
-      "line": 59,
+      "line": 58,
       "selector": ".popup-results",
       "property": "scrollbar-width",
       "value": "thin",
@@ -1883,7 +1856,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::scrollbar-color::1",
       "file": "src/popup/popup.css",
-      "line": 60,
+      "line": 59,
       "selector": ".popup-results",
       "property": "scrollbar-color",
       "value": "var(--rule) var(--ground-subtle)",
@@ -1892,7 +1865,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::-webkit-scrollbar::width::1",
       "file": "src/popup/popup.css",
-      "line": 64,
+      "line": 63,
       "selector": ".popup-results::-webkit-scrollbar",
       "property": "width",
       "value": "8px",
@@ -1901,7 +1874,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::-webkit-scrollbar::height::1",
       "file": "src/popup/popup.css",
-      "line": 65,
+      "line": 64,
       "selector": ".popup-results::-webkit-scrollbar",
       "property": "height",
       "value": "8px",
@@ -1910,7 +1883,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::-webkit-scrollbar-track::background::1",
       "file": "src/popup/popup.css",
-      "line": 69,
+      "line": 68,
       "selector": ".popup-results::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--ground-subtle)",
@@ -1919,7 +1892,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::-webkit-scrollbar-track::border-radius::1",
       "file": "src/popup/popup.css",
-      "line": 70,
+      "line": 69,
       "selector": ".popup-results::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "4px",
@@ -1928,7 +1901,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::-webkit-scrollbar-thumb::background::1",
       "file": "src/popup/popup.css",
-      "line": 74,
+      "line": 73,
       "selector": ".popup-results::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--rule)",
@@ -1937,7 +1910,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::-webkit-scrollbar-thumb::border-radius::1",
       "file": "src/popup/popup.css",
-      "line": 75,
+      "line": 74,
       "selector": ".popup-results::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "4px",
@@ -1946,7 +1919,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::-webkit-scrollbar-thumb::border::1",
       "file": "src/popup/popup.css",
-      "line": 76,
+      "line": 75,
       "selector": ".popup-results::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--ground-subtle)",
@@ -1955,7 +1928,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::-webkit-scrollbar-thumb:hover::background::1",
       "file": "src/popup/popup.css",
-      "line": 80,
+      "line": 79,
       "selector": ".popup-results::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--ground-defined)",
@@ -2214,18 +2187,9 @@
       "code": "affordance-mechanics"
     },
     {
-      "id": "src/styles/components/content-editor.css::.ce-style-option::text-align::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 59,
-      "selector": ".ce-style-option",
-      "property": "text-align",
-      "value": "left",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/styles/components/content-editor.css::.ce-style-option::transition::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 60,
+      "line": 59,
       "selector": ".ce-style-option",
       "property": "transition",
       "value": "background var(--transition-fast)",
@@ -2234,7 +2198,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option.is-active::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 64,
+      "line": 63,
       "selector": ".ce-style-option.is-active",
       "property": "color",
       "value": "var(--accent)",
@@ -2243,7 +2207,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option.is-active::background-color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 65,
+      "line": 64,
       "selector": ".ce-style-option.is-active",
       "property": "background-color",
       "value": "var(--tone)",
@@ -2252,7 +2216,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option-short::width::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 69,
+      "line": 68,
       "selector": ".ce-style-option-short",
       "property": "width",
       "value": "24px",
@@ -2261,7 +2225,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option.is-active .ce-style-option-short::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 73,
+      "line": 72,
       "selector": ".ce-style-option.is-active .ce-style-option-short",
       "property": "color",
       "value": "var(--accent)",
@@ -2270,7 +2234,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-link-input::height::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 77,
+      "line": 76,
       "selector": ".ce-link-input",
       "property": "height",
       "value": "28px",
@@ -2279,7 +2243,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-link-input::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 78,
+      "line": 77,
       "selector": ".ce-link-input",
       "property": "padding",
       "value": "0 var(--spacing-sm)",
@@ -2288,7 +2252,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body::min-height::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 83,
+      "line": 82,
       "selector": ".content-editor-body",
       "property": "min-height",
       "value": "150px",
@@ -2297,7 +2261,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body::font-family::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 86,
+      "line": 85,
       "selector": ".content-editor-body",
       "property": "font-family",
       "value": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
@@ -2306,7 +2270,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body::line-height::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 87,
+      "line": 86,
       "selector": ".content-editor-body",
       "property": "line-height",
       "value": "normal",
@@ -2315,7 +2279,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::content::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 91,
+      "line": 90,
       "selector": ".content-editor-body:empty::before",
       "property": "content",
       "value": "attr(data-placeholder)",
@@ -2324,7 +2288,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 92,
+      "line": 91,
       "selector": ".content-editor-body:empty::before",
       "property": "color",
       "value": "var(--ink-soft)",
@@ -2333,7 +2297,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::pointer-events::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 93,
+      "line": 92,
       "selector": ".content-editor-body:empty::before",
       "property": "pointer-events",
       "value": "none",
@@ -2342,7 +2306,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body p::margin-bottom::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 98,
+      "line": 97,
       "selector": ".content-editor-body p",
       "property": "margin-bottom",
       "value": "0.75em",
@@ -2351,7 +2315,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body p:last-child::margin-bottom::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 102,
+      "line": 101,
       "selector": ".content-editor-body p:last-child",
       "property": "margin-bottom",
       "value": "0",
@@ -2360,7 +2324,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h1::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 106,
+      "line": 105,
       "selector": ".content-editor-body h1",
       "property": "font-size",
       "value": "1.75em",
@@ -2369,7 +2333,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h1::font-weight::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 107,
+      "line": 106,
       "selector": ".content-editor-body h1",
       "property": "font-weight",
       "value": "700",
@@ -2378,7 +2342,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h1::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 108,
+      "line": 107,
       "selector": ".content-editor-body h1",
       "property": "margin",
       "value": "0.75em 0 0.4em",
@@ -2387,7 +2351,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h2::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 112,
+      "line": 111,
       "selector": ".content-editor-body h2",
       "property": "font-size",
       "value": "1.4em",
@@ -2396,7 +2360,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h2::font-weight::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 113,
+      "line": 112,
       "selector": ".content-editor-body h2",
       "property": "font-weight",
       "value": "700",
@@ -2405,7 +2369,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h2::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 114,
+      "line": 113,
       "selector": ".content-editor-body h2",
       "property": "margin",
       "value": "0.75em 0 0.4em",
@@ -2414,7 +2378,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h3::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 118,
+      "line": 117,
       "selector": ".content-editor-body h3",
       "property": "font-size",
       "value": "1.15em",
@@ -2423,7 +2387,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h3::font-weight::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 119,
+      "line": 118,
       "selector": ".content-editor-body h3",
       "property": "font-weight",
       "value": "700",
@@ -2432,7 +2396,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h3::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 120,
+      "line": 119,
       "selector": ".content-editor-body h3",
       "property": "margin",
       "value": "0.75em 0 0.4em",
@@ -2441,7 +2405,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child::margin-top::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 126,
+      "line": 125,
       "selector": ".content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child",
       "property": "margin-top",
       "value": "0",
@@ -2450,7 +2414,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body strong, .content-editor-body b::font-weight::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 131,
+      "line": 130,
       "selector": ".content-editor-body strong, .content-editor-body b",
       "property": "font-weight",
       "value": "700",
@@ -2459,7 +2423,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body em, .content-editor-body i::font-style::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 136,
+      "line": 135,
       "selector": ".content-editor-body em, .content-editor-body i",
       "property": "font-style",
       "value": "italic",
@@ -2468,7 +2432,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body u::text-decoration::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 140,
+      "line": 139,
       "selector": ".content-editor-body u",
       "property": "text-decoration",
       "value": "underline",
@@ -2477,7 +2441,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body s::text-decoration::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 144,
+      "line": 143,
       "selector": ".content-editor-body s",
       "property": "text-decoration",
       "value": "line-through",
@@ -2486,7 +2450,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::font-family::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 148,
+      "line": 147,
       "selector": ".content-editor-body code",
       "property": "font-family",
       "value": "'IBM Plex Mono', 'Fira Code', monospace",
@@ -2495,7 +2459,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 149,
+      "line": 148,
       "selector": ".content-editor-body code",
       "property": "font-size",
       "value": "0.88em",
@@ -2504,7 +2468,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::background-color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 150,
+      "line": 149,
       "selector": ".content-editor-body code",
       "property": "background-color",
       "value": "var(--tone)",
@@ -2513,7 +2477,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 151,
+      "line": 150,
       "selector": ".content-editor-body code",
       "property": "color",
       "value": "var(--ink)",
@@ -2522,7 +2486,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 152,
+      "line": 151,
       "selector": ".content-editor-body code",
       "property": "padding",
       "value": "0.1em 0.35em",
@@ -2531,7 +2495,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::border-radius::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 153,
+      "line": 152,
       "selector": ".content-editor-body code",
       "property": "border-radius",
       "value": "var(--radius-sm)",
@@ -2540,7 +2504,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::font-family::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 157,
+      "line": 156,
       "selector": ".content-editor-body pre",
       "property": "font-family",
       "value": "'IBM Plex Mono', 'Fira Code', monospace",
@@ -2549,7 +2513,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 158,
+      "line": 157,
       "selector": ".content-editor-body pre",
       "property": "font-size",
       "value": "0.88em",
@@ -2558,7 +2522,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::background-color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 159,
+      "line": 158,
       "selector": ".content-editor-body pre",
       "property": "background-color",
       "value": "var(--tone)",
@@ -2567,7 +2531,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 160,
+      "line": 159,
       "selector": ".content-editor-body pre",
       "property": "padding",
       "value": "var(--spacing-md)",
@@ -2576,7 +2540,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::border-radius::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 161,
+      "line": 160,
       "selector": ".content-editor-body pre",
       "property": "border-radius",
       "value": "var(--radius-sm)",
@@ -2585,7 +2549,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::overflow-x::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 162,
+      "line": 161,
       "selector": ".content-editor-body pre",
       "property": "overflow-x",
       "value": "auto",
@@ -2594,7 +2558,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 163,
+      "line": 162,
       "selector": ".content-editor-body pre",
       "property": "margin",
       "value": "0.75em 0",
@@ -2603,7 +2567,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::border-left::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 167,
+      "line": 166,
       "selector": ".content-editor-body blockquote",
       "property": "border-left",
       "value": "3px solid var(--accent-dim)",
@@ -2612,7 +2576,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::padding-left::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 168,
+      "line": 167,
       "selector": ".content-editor-body blockquote",
       "property": "padding-left",
       "value": "var(--spacing-md)",
@@ -2621,7 +2585,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 169,
+      "line": 168,
       "selector": ".content-editor-body blockquote",
       "property": "margin",
       "value": "0.75em 0",
@@ -2630,7 +2594,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 170,
+      "line": 169,
       "selector": ".content-editor-body blockquote",
       "property": "color",
       "value": "var(--ink-soft)",
@@ -2639,7 +2603,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::font-style::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 171,
+      "line": 170,
       "selector": ".content-editor-body blockquote",
       "property": "font-style",
       "value": "italic",
@@ -2648,7 +2612,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul, .content-editor .content-editor-body ol::padding-left::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 176,
+      "line": 175,
       "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
       "property": "padding-left",
       "value": "1.5em",
@@ -2657,7 +2621,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul, .content-editor .content-editor-body ol::margin-bottom::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 177,
+      "line": 176,
       "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
       "property": "margin-bottom",
       "value": "0.75em",
@@ -2666,7 +2630,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul::list-style-type::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 181,
+      "line": 180,
       "selector": ".content-editor .content-editor-body ul",
       "property": "list-style-type",
       "value": "disc",
@@ -2675,7 +2639,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ol::list-style-type::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 185,
+      "line": 184,
       "selector": ".content-editor .content-editor-body ol",
       "property": "list-style-type",
       "value": "decimal",
@@ -2684,7 +2648,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body li::display::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 189,
+      "line": 188,
       "selector": ".content-editor-body li",
       "property": "display",
       "value": "list-item",
@@ -2693,7 +2657,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body li::margin-bottom::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 190,
+      "line": 189,
       "selector": ".content-editor-body li",
       "property": "margin-bottom",
       "value": "0.2em",
@@ -2702,7 +2666,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body a::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 194,
+      "line": 193,
       "selector": ".content-editor-body a",
       "property": "color",
       "value": "var(--accent)",
@@ -2711,7 +2675,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body a::text-decoration::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 195,
+      "line": 194,
       "selector": ".content-editor-body a",
       "property": "text-decoration",
       "value": "underline",
@@ -2720,7 +2684,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body a:hover::opacity::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 199,
+      "line": 198,
       "selector": ".content-editor-body a:hover",
       "property": "opacity",
       "value": "0.8",
@@ -2916,12 +2880,12 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.position-fixed::position::1",
+      "id": "src/styles/grammar/ermine.generated.css::.text-start::text-align::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 39,
-      "selector": ".position-fixed",
-      "property": "position",
-      "value": "fixed",
+      "selector": ".text-start",
+      "property": "text-align",
+      "value": "start",
       "code": "ermine-emitted"
     },
     {
@@ -2934,234 +2898,36 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.justify-center::justify-content::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 47,
-      "selector": ".justify-center",
-      "property": "justify-content",
-      "value": "center",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hidden::overflow-x::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 51,
-      "selector": ".hidden",
-      "property": "overflow-x",
-      "value": "hidden",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hidden::overflow-y::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 52,
-      "selector": ".hidden",
-      "property": "overflow-y",
-      "value": "hidden",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ground::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 56,
-      "selector": ".ground",
-      "property": "background",
-      "value": "var(--ground)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.rule::border-color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 60,
-      "selector": ".rule",
-      "property": "border-color",
-      "value": "var(--rule)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-lg::border-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 64,
-      "selector": ".corner-lg",
-      "property": "border-radius",
-      "value": "var(--radius-lg)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled::border-width::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 68,
-      "selector": ".ruled",
-      "property": "border-width",
-      "value": "var(--rule-weight, 1px)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled::border-style::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 69,
-      "selector": ".ruled",
-      "property": "border-style",
-      "value": "solid",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.justify-between::justify-content::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 73,
-      "selector": ".justify-between",
-      "property": "justify-content",
-      "value": "space-between",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.padding-inline-relaxed::padding-inline::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 77,
-      "selector": ".padding-inline-relaxed",
-      "property": "padding-inline",
-      "value": "var(--spacing-relaxed)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.gap-snug::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 81,
+      "line": 47,
       "selector": ".gap-snug",
       "property": "gap",
       "value": "var(--spacing-snug)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-accent::color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.padding-block-tight::padding-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 85,
-      "selector": ".ink-accent",
-      "property": "color",
-      "value": "var(--accent)",
+      "line": 51,
+      "selector": ".padding-block-tight",
+      "property": "padding-block",
+      "value": "var(--spacing-tight)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-soft::color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.padding-inline-snug::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 89,
-      "selector": ".ink-soft",
-      "property": "color",
-      "value": "var(--ink-soft)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-subtle:hover::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 93,
-      "selector": ".hover\\:ground-subtle:hover",
-      "property": "background",
-      "value": "var(--ground-subtle)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink:hover::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 97,
-      "selector": ".hover\\:ink:hover",
-      "property": "color",
-      "value": "var(--ink)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.current\\:ink-accent[aria-current]:not([aria-current=\"false\"])::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 101,
-      "selector": ".current\\:ink-accent[aria-current]:not([aria-current=\"false\"])",
-      "property": "color",
-      "value": "var(--accent)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.current\\:ground-subtle[aria-current]:not([aria-current=\"false\"])::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 105,
-      "selector": ".current\\:ground-subtle[aria-current]:not([aria-current=\"false\"])",
-      "property": "background",
-      "value": "var(--ground-subtle)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.padding-comfortable::padding::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 109,
-      "selector": ".padding-comfortable",
-      "property": "padding",
-      "value": "var(--spacing-comfortable)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-md::border-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 113,
-      "selector": ".corner-md",
-      "property": "border-radius",
-      "value": "var(--radius-md)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ground-fail-faint::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 117,
-      "selector": ".ground-fail-faint",
-      "property": "background",
-      "value": "var(--fail-faint)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.rule-fail::border-color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 121,
-      "selector": ".rule-fail",
-      "property": "border-color",
-      "value": "var(--fail)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-fail::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 125,
-      "selector": ".ink-fail",
-      "property": "color",
-      "value": "var(--fail)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ground-pass-faint::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 129,
-      "selector": ".ground-pass-faint",
-      "property": "background",
-      "value": "var(--pass-faint)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.rule-pass::border-color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 133,
-      "selector": ".rule-pass",
-      "property": "border-color",
-      "value": "var(--pass)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-pass::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 137,
-      "selector": ".ink-pass",
-      "property": "color",
-      "value": "var(--pass)",
+      "line": 55,
+      "selector": ".padding-inline-snug",
+      "property": "padding-inline",
+      "value": "var(--spacing-snug)",
       "code": "ermine-emitted"
     },
     {
       "id": "src/styles/grammar/ermine.generated.css::.corner-sm::border-radius::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 141,
+      "line": 59,
       "selector": ".corner-sm",
       "property": "border-radius",
       "value": "var(--radius-sm)",
@@ -3170,16 +2936,259 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ink::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 145,
+      "line": 63,
       "selector": ".ink",
       "property": "color",
       "value": "var(--ink)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.font-md::font-size::1",
+      "id": "src/styles/grammar/ermine.generated.css::.font-sm::font-size::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 67,
+      "selector": ".font-sm",
+      "property": "font-size",
+      "value": "var(--type-sm)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-defined:hover::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 71,
+      "selector": ".hover\\:ground-defined:hover",
+      "property": "background",
+      "value": "var(--ground-defined)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.position-fixed::position::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 75,
+      "selector": ".position-fixed",
+      "property": "position",
+      "value": "fixed",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.justify-center::justify-content::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 79,
+      "selector": ".justify-center",
+      "property": "justify-content",
+      "value": "center",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hidden::overflow-x::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 83,
+      "selector": ".hidden",
+      "property": "overflow-x",
+      "value": "hidden",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hidden::overflow-y::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 84,
+      "selector": ".hidden",
+      "property": "overflow-y",
+      "value": "hidden",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ground::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 88,
+      "selector": ".ground",
+      "property": "background",
+      "value": "var(--ground)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.rule::border-color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 92,
+      "selector": ".rule",
+      "property": "border-color",
+      "value": "var(--rule)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-lg::border-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 96,
+      "selector": ".corner-lg",
+      "property": "border-radius",
+      "value": "var(--radius-lg)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled::border-width::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 100,
+      "selector": ".ruled",
+      "property": "border-width",
+      "value": "var(--rule-weight, 1px)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled::border-style::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 101,
+      "selector": ".ruled",
+      "property": "border-style",
+      "value": "solid",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.justify-between::justify-content::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 105,
+      "selector": ".justify-between",
+      "property": "justify-content",
+      "value": "space-between",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.padding-inline-relaxed::padding-inline::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 109,
+      "selector": ".padding-inline-relaxed",
+      "property": "padding-inline",
+      "value": "var(--spacing-relaxed)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink-accent::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 113,
+      "selector": ".ink-accent",
+      "property": "color",
+      "value": "var(--accent)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink-soft::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 117,
+      "selector": ".ink-soft",
+      "property": "color",
+      "value": "var(--ink-soft)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-subtle:hover::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 121,
+      "selector": ".hover\\:ground-subtle:hover",
+      "property": "background",
+      "value": "var(--ground-subtle)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink:hover::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 125,
+      "selector": ".hover\\:ink:hover",
+      "property": "color",
+      "value": "var(--ink)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.current\\:ink-accent[aria-current]:not([aria-current=\"false\"])::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 129,
+      "selector": ".current\\:ink-accent[aria-current]:not([aria-current=\"false\"])",
+      "property": "color",
+      "value": "var(--accent)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.current\\:ground-subtle[aria-current]:not([aria-current=\"false\"])::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 133,
+      "selector": ".current\\:ground-subtle[aria-current]:not([aria-current=\"false\"])",
+      "property": "background",
+      "value": "var(--ground-subtle)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.padding-comfortable::padding::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 137,
+      "selector": ".padding-comfortable",
+      "property": "padding",
+      "value": "var(--spacing-comfortable)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-md::border-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 141,
+      "selector": ".corner-md",
+      "property": "border-radius",
+      "value": "var(--radius-md)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ground-fail-faint::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 145,
+      "selector": ".ground-fail-faint",
+      "property": "background",
+      "value": "var(--fail-faint)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.rule-fail::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 149,
+      "selector": ".rule-fail",
+      "property": "border-color",
+      "value": "var(--fail)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink-fail::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 153,
+      "selector": ".ink-fail",
+      "property": "color",
+      "value": "var(--fail)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ground-pass-faint::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 157,
+      "selector": ".ground-pass-faint",
+      "property": "background",
+      "value": "var(--pass-faint)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.rule-pass::border-color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 161,
+      "selector": ".rule-pass",
+      "property": "border-color",
+      "value": "var(--pass)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink-pass::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 165,
+      "selector": ".ink-pass",
+      "property": "color",
+      "value": "var(--pass)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-md::font-size::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 169,
       "selector": ".font-md",
       "property": "font-size",
       "value": "var(--type-md)",
@@ -3188,7 +3197,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.scroll-auto::overflow-x::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 153,
+      "line": 173,
       "selector": ".scroll-auto",
       "property": "overflow-x",
       "value": "auto",
@@ -3197,7 +3206,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.scroll-auto::overflow-y::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 154,
+      "line": 174,
       "selector": ".scroll-auto",
       "property": "overflow-y",
       "value": "auto",
@@ -3206,7 +3215,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.focus\\:rule-accent:focus::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 158,
+      "line": 178,
       "selector": ".focus\\:rule-accent:focus",
       "property": "border-color",
       "value": "var(--accent)",
@@ -3215,7 +3224,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.focus\\:ring:focus::outline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 162,
+      "line": 182,
       "selector": ".focus\\:ring:focus",
       "property": "outline",
       "value": "var(--ring, 2px solid var(--ground-defined))",
@@ -3224,7 +3233,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.focus\\:ring:focus::outline-offset::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 163,
+      "line": 183,
       "selector": ".focus\\:ring:focus",
       "property": "outline-offset",
       "value": "var(--ring-offset, 0px)",
@@ -3233,7 +3242,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ground-subtle::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 167,
+      "line": 187,
       "selector": ".ground-subtle",
       "property": "background",
       "value": "var(--ground-subtle)",
@@ -3242,7 +3251,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-relaxed::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 171,
+      "line": 191,
       "selector": ".padding-relaxed",
       "property": "padding",
       "value": "var(--spacing-relaxed)",
@@ -3251,7 +3260,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.boxed::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 175,
+      "line": 195,
       "selector": ".boxed",
       "property": "display",
       "value": "block",
@@ -3260,7 +3269,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-tight::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 179,
+      "line": 199,
       "selector": ".padding-tight",
       "property": "padding",
       "value": "var(--spacing-tight)",
@@ -3269,7 +3278,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.boxed-inline::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 183,
+      "line": 203,
       "selector": ".boxed-inline",
       "property": "display",
       "value": "inline-block",
@@ -3278,25 +3287,16 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.corner-3xl::border-radius::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 187,
+      "line": 207,
       "selector": ".corner-3xl",
       "property": "border-radius",
       "value": "var(--radius-3xl)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.font-sm::font-size::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 191,
-      "selector": ".font-sm",
-      "property": "font-size",
-      "value": "var(--type-sm)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.font-medium::font-weight::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 195,
+      "line": 211,
       "selector": ".font-medium",
       "property": "font-weight",
       "value": "var(--weight-medium)",
@@ -3305,7 +3305,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.font-2xl::font-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 199,
+      "line": 215,
       "selector": ".font-2xl",
       "property": "font-size",
       "value": "var(--type-2xl)",
@@ -3314,7 +3314,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.position-absolute::position::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 203,
+      "line": 219,
       "selector": ".position-absolute",
       "property": "position",
       "value": "absolute",
@@ -3323,7 +3323,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.rigid::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 207,
+      "line": 223,
       "selector": ".rigid",
       "property": "flex-grow",
       "value": "0",
@@ -3332,7 +3332,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.rigid::flex-shrink::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 208,
+      "line": 224,
       "selector": ".rigid",
       "property": "flex-shrink",
       "value": "0",
@@ -3341,52 +3341,25 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.font-lg::font-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 212,
+      "line": 228,
       "selector": ".font-lg",
       "property": "font-size",
       "value": "var(--type-lg)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-defined:hover::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 216,
-      "selector": ".hover\\:ground-defined:hover",
-      "property": "background",
-      "value": "var(--ground-defined)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.padding-snug::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 220,
+      "line": 232,
       "selector": ".padding-snug",
       "property": "padding",
       "value": "var(--spacing-snug)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.padding-inline-snug::padding-inline::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 224,
-      "selector": ".padding-inline-snug",
-      "property": "padding-inline",
-      "value": "var(--spacing-snug)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.padding-block-tight::padding-block::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 228,
-      "selector": ".padding-block-tight",
-      "property": "padding-block",
-      "value": "var(--spacing-tight)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.ground-fail::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 232,
+      "line": 236,
       "selector": ".ground-fail",
       "property": "background",
       "value": "var(--fail)",
@@ -3395,7 +3368,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ink-inverse::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 236,
+      "line": 240,
       "selector": ".ink-inverse",
       "property": "color",
       "value": "var(--ink-inverse)",
@@ -3404,7 +3377,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.rule-soft::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 240,
+      "line": 244,
       "selector": ".rule-soft",
       "property": "border-color",
       "value": "var(--rule-soft)",
@@ -3413,7 +3386,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ruled-top::border-top-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 244,
+      "line": 248,
       "selector": ".ruled-top",
       "property": "border-top-width",
       "value": "var(--rule-weight, 1px)",
@@ -3422,7 +3395,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ruled-top::border-top-style::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 245,
+      "line": 249,
       "selector": ".ruled-top",
       "property": "border-top-style",
       "value": "solid",
@@ -3431,7 +3404,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ground-accent::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 249,
+      "line": 253,
       "selector": ".ground-accent",
       "property": "background",
       "value": "var(--accent)",
@@ -3440,7 +3413,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.font-xs::font-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 253,
+      "line": 257,
       "selector": ".font-xs",
       "property": "font-size",
       "value": "var(--type-xs)",
@@ -3449,7 +3422,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.font-semibold::font-weight::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 257,
+      "line": 261,
       "selector": ".font-semibold",
       "property": "font-weight",
       "value": "var(--weight-semibold)",
@@ -3458,7 +3431,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.font-bold::font-weight::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 261,
+      "line": 265,
       "selector": ".font-bold",
       "property": "font-weight",
       "value": "var(--weight-bold)",
@@ -3467,7 +3440,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ruled-bottom::border-bottom-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 265,
+      "line": 269,
       "selector": ".ruled-bottom",
       "property": "border-bottom-width",
       "value": "var(--rule-weight, 1px)",
@@ -3476,7 +3449,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ruled-bottom::border-bottom-style::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 266,
+      "line": 270,
       "selector": ".ruled-bottom",
       "property": "border-bottom-style",
       "value": "solid",
@@ -3485,7 +3458,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-tight::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 270,
+      "line": 274,
       "selector": ".gap-tight",
       "property": "gap",
       "value": "var(--spacing-tight)",
@@ -3494,7 +3467,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.font-mono::font-family::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 274,
+      "line": 278,
       "selector": ".font-mono",
       "property": "font-family",
       "value": "var(--font-mono, monospace)",
@@ -3503,7 +3476,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.truncate::text-overflow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 278,
+      "line": 282,
       "selector": ".truncate",
       "property": "text-overflow",
       "value": "ellipsis",
@@ -3512,7 +3485,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.truncate::white-space::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 279,
+      "line": 283,
       "selector": ".truncate",
       "property": "white-space",
       "value": "nowrap",
@@ -3521,16 +3494,25 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.span-all::grid-column::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 283,
+      "line": 287,
       "selector": ".span-all",
       "property": "grid-column",
       "value": "1 / -1",
       "code": "ermine-emitted"
     },
     {
+      "id": "src/styles/grammar/ermine.generated.css::.text-center::text-align::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 291,
+      "selector": ".text-center",
+      "property": "text-align",
+      "value": "center",
+      "code": "ermine-emitted"
+    },
+    {
       "id": "src/styles/grammar/ermine.generated.css::.padding-block-snug::padding-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 287,
+      "line": 295,
       "selector": ".padding-block-snug",
       "property": "padding-block",
       "value": "var(--spacing-snug)",
@@ -3539,7 +3521,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-comfortable::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 291,
+      "line": 299,
       "selector": ".padding-inline-comfortable",
       "property": "padding-inline",
       "value": "var(--spacing-comfortable)",
@@ -3548,7 +3530,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.rule-accent-soft::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 295,
+      "line": 303,
       "selector": ".rule-accent-soft",
       "property": "border-color",
       "value": "var(--accent-soft)",
@@ -3557,7 +3539,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grid::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 299,
+      "line": 307,
       "selector": ".grid",
       "property": "display",
       "value": "grid",
@@ -3566,7 +3548,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grid::grid-auto-flow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 300,
+      "line": 308,
       "selector": ".grid",
       "property": "grid-auto-flow",
       "value": "row",
@@ -3575,7 +3557,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-accent:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 304,
+      "line": 312,
       "selector": ".hover\\:ink-accent:hover",
       "property": "color",
       "value": "var(--accent)",
@@ -3584,7 +3566,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.horizontal.inline::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 308,
+      "line": 316,
       "selector": ".horizontal.inline",
       "property": "display",
       "value": "inline flex",
@@ -3593,7 +3575,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 312,
+      "line": 320,
       "selector": ".hover\\:ground-fail:hover",
       "property": "background",
       "value": "var(--fail)",
@@ -3602,7 +3584,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-inverse:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 316,
+      "line": 324,
       "selector": ".hover\\:ink-inverse:hover",
       "property": "color",
       "value": "var(--ink-inverse)",
@@ -3611,7 +3593,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail-faint:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 320,
+      "line": 328,
       "selector": ".hover\\:ground-fail-faint:hover",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3620,7 +3602,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-fail:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 324,
+      "line": 332,
       "selector": ".hover\\:ink-fail:hover",
       "property": "color",
       "value": "var(--fail)",
@@ -3629,7 +3611,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 328,
+      "line": 336,
       "selector": ".hover\\:ground:hover",
       "property": "background",
       "value": "var(--ground)",
@@ -3638,7 +3620,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-defined[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 332,
+      "line": 340,
       "selector": ".selected\\:ground-defined[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--ground-defined)",
@@ -3647,7 +3629,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.elevated::box-shadow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 336,
+      "line": 344,
       "selector": ".elevated",
       "property": "box-shadow",
       "value": "var(--shadow-elevated, 0 4px 12px var(--shadow))",
@@ -3656,7 +3638,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.wrap-allowed::flex-wrap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 340,
+      "line": 348,
       "selector": ".wrap-allowed",
       "property": "flex-wrap",
       "value": "wrap",
@@ -3665,7 +3647,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-relaxed::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 344,
+      "line": 352,
       "selector": ".gap-relaxed",
       "property": "gap",
       "value": "var(--spacing-relaxed)",
@@ -3674,7 +3656,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-loose::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 348,
+      "line": 356,
       "selector": ".padding-loose",
       "property": "padding",
       "value": "var(--spacing-loose)",
@@ -3683,7 +3665,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.checked\\:ground-accent[aria-checked=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 352,
+      "line": 360,
       "selector": ".checked\\:ground-accent[aria-checked=\"true\"]",
       "property": "background",
       "value": "var(--accent)",
@@ -3692,7 +3674,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.checked\\:ink-inverse[aria-checked=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 356,
+      "line": 364,
       "selector": ".checked\\:ink-inverse[aria-checked=\"true\"]",
       "property": "color",
       "value": "var(--ink-inverse)",
@@ -3701,7 +3683,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ink-accent-soft::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 360,
+      "line": 368,
       "selector": ".ink-accent-soft",
       "property": "color",
       "value": "var(--accent-soft)",
@@ -3710,7 +3692,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-block-loose::padding-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 364,
+      "line": 372,
       "selector": ".padding-block-loose",
       "property": "padding-block",
       "value": "var(--spacing-loose)",
@@ -3719,7 +3701,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-separated::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 368,
+      "line": 376,
       "selector": ".padding-inline-separated",
       "property": "padding-inline",
       "value": "var(--spacing-separated)",
@@ -3728,7 +3710,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule-fail:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 372,
+      "line": 380,
       "selector": ".hover\\:rule-fail:hover",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3737,7 +3719,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-fail-faint[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 376,
+      "line": 384,
       "selector": ".selected\\:ground-fail-faint[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3746,7 +3728,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-fail[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 380,
+      "line": 388,
       "selector": ".selected\\:ink-fail[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--fail)",
@@ -3755,7 +3737,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-fail[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 384,
+      "line": 392,
       "selector": ".selected\\:rule-fail[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3764,7 +3746,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 388,
+      "line": 396,
       "selector": ".hover\\:rule:hover",
       "property": "border-color",
       "value": "var(--rule)",
@@ -3773,7 +3755,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-accent[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 392,
+      "line": 400,
       "selector": ".selected\\:ink-accent[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--accent)",
@@ -3782,7 +3764,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-accent[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 396,
+      "line": 404,
       "selector": ".selected\\:rule-accent[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--accent)",
@@ -3791,7 +3773,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 400,
+      "line": 408,
       "selector": ".compressible",
       "property": "flex-grow",
       "value": "0",
@@ -3800,7 +3782,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-shrink::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 401,
+      "line": 409,
       "selector": ".compressible",
       "property": "flex-shrink",
       "value": "1",
@@ -3809,7 +3791,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-loose::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 405,
+      "line": 413,
       "selector": ".gap-loose",
       "property": "gap",
       "value": "var(--spacing-loose)",
@@ -3818,7 +3800,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grow-1::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 409,
+      "line": 417,
       "selector": ".grow-1",
       "property": "flex-grow",
       "value": "1",
@@ -3827,7 +3809,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.margin-block-snug::margin-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 413,
+      "line": 421,
       "selector": ".margin-block-snug",
       "property": "margin-block",
       "value": "var(--spacing-snug)",
@@ -4860,18 +4842,9 @@
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/surfaces.css::.empty-state::text-align::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 52,
-      "selector": ".empty-state",
-      "property": "text-align",
-      "value": "center",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/styles/skin/surfaces.css::.divider::margin::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 57,
+      "line": 53,
       "selector": ".divider",
       "property": "margin",
       "value": "var(--spacing-2xl) 0",
