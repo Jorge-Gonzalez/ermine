@@ -1,5 +1,7 @@
 # Gap Report — animation plane (motion reframe)
 
+> **Impact analysis complete** — `reports/ANIMATION-PLANE-IMPACT.md`. Decisive finding: no application consumes any motion word, so the reframe is Ermine-internal renaming plus one contained design question (the tween consumption word). Execution recommended; awaiting the go.
+
 ## What I was doing
 Gaming the motion family and finding that Ermine's MOTION axes, though already ruled
 (R-MOTION-01/02/04), carry a category error in their framing and names.

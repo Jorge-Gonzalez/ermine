@@ -1,5 +1,7 @@
 # Gap Report — data/graph color plane (Plane 2)
 
+> **Held for evidence.** The conversion arc (2026-07) deliberately did not take this question: it has zero Monky rows, and every ruling that landed cleanly was evidence-gated. It waits for a real graph/dashboard consumer.
+
 ## What I was doing
 Ruling the skin color plane (R-SKIN-05). The interface palette is deliberately
 constrained (ground/ink/rule + accent + pass/warn/fail/note); dashboards, graphs, and
