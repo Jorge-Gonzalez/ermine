@@ -6,11 +6,11 @@
 // the predicate symbols, so the implements comments live on the bindings.
 
 import { createLinter } from "../engine/index.ts";
-import { ENVIRONMENT_SCOPES, INTERACTION_SCOPES, REGISTRY, STATE_SCOPES } from "./registry.ts";
+import { ENVIRONMENT_SCOPES, INTERACTION_SCOPES, REGISTRY, RELATIONAL_SCOPES, STATE_SCOPES } from "./registry.ts";
 
 export type { Issue, LintContext, Parsed } from "../engine/types.ts";
 
-const linter = createLinter(REGISTRY, [...ENVIRONMENT_SCOPES, ...INTERACTION_SCOPES, ...STATE_SCOPES]);
+const linter = createLinter(REGISTRY, [...ENVIRONMENT_SCOPES, ...INTERACTION_SCOPES, ...STATE_SCOPES, ...RELATIONAL_SCOPES]);
 
 // implements: R-STATE-07, R-STATE-10
 export const parseWord = linter.parseWord;

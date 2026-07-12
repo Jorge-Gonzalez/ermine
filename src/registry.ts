@@ -631,6 +631,20 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "font-size"],
   },
   {
+    // concealment: presence at the opacity endpoints (R-SKIN-16). `concealed` keeps
+    // layout and measurement while invisible; `revealed` restores. Meant for the
+    // reveal-on-parent-state affordance (`concealed parent-hover:revealed`).
+    // Mid-scale opacity (emphasis dimming) is deliberately not this axis.
+    axis: "concealment",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["concealed", "revealed"],
+    tokens: [{ pattern: /^(concealed|revealed)$/, shape: "<concealment>" }],
+    default: null,
+    controls: ["opacity"],
+    mustNeverTouch: ["display", "visibility", "pointer-events", "background", "color"],
+  },
+  {
     // scrollbar: prominence on the platform's standard properties (R-SKIN-15).
     // `scrollbar-subtle` = thin, thumb/track from like-named sockets (default: the
     // rule carrier over a transparent track). `scrollbar-hidden` reserved.
@@ -872,6 +886,16 @@ export const STATE_SCOPES: ScopePrefix[] = [
   { id: "selected", pattern: /^selected$/, shape: "selected:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted selected" },
   { id: "checked", pattern: /^checked$/, shape: "checked:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted checked" },
   { id: "current", pattern: /^current$/, shape: "current:", role: "none", note: "attribute-backed conditioned skin while the element is asserted current (aria-current)" },
+];
+
+// Relational condition scopes (R-STATE-13): the condition lives on an ancestor that
+// carries the `selectable` capability — the R-STATE-08 contract read from below.
+// Serialization anchors on the capability class, so an unmarked ancestor never fires
+// the override; the linter verifies the pair through parent context when available.
+// implements: R-STATE-13
+export const RELATIONAL_SCOPES: ScopePrefix[] = [
+  { id: "parent-hover", pattern: /^parent-hover$/, shape: "parent-hover:", role: "none", parentBackedBy: "selectable", note: "conditioned skin while the selectable ancestor is hovered" },
+  { id: "parent-selected", pattern: /^parent-selected$/, shape: "parent-selected:", role: "none", parentBackedBy: "selectable", note: "conditioned skin while the selectable ancestor is asserted selected" },
 ];
 
 // ============================================================================

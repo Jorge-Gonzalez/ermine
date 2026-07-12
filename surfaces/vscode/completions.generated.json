@@ -1762,6 +1762,24 @@
       ]
     },
     {
+      "axis": "concealment",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment",
+      "items": [
+        {
+          "label": "concealed",
+          "insertText": "concealed",
+          "kind": "word",
+          "meaning": "<concealment>"
+        },
+        {
+          "label": "revealed",
+          "insertText": "revealed",
+          "kind": "word",
+          "meaning": "<concealment>"
+        }
+      ]
+    },
+    {
       "axis": "scrollbar",
       "reference": "src/ERMINE-SPEC.md §2.5 — scrollbar",
       "items": [

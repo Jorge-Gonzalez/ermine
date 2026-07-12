@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (44 axes)  ‹SHARED›
+## 2. The axis registry (45 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=14. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=15 · layering=4 · motion=2 · state=9 · skin=15. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -718,7 +718,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (14 axes)
+### 2.5 SKIN (15 axes)
 
 #### skin-ground
 
@@ -860,6 +860,20 @@ Tokens:
 |---|---|---|---|
 | `<elevation>` | `/^(elevated)$/` | — | no |
 
+#### concealment
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `concealed` `revealed`
+- default: none
+- controls: `opacity`
+- must never touch: `display` `visibility` `pointer-events` `background` `color`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<concealment>` | `/^(concealed\|revealed)$/` | — | no |
+
 #### scrollbar
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
@@ -932,6 +946,8 @@ These prefixes are closed condition scopes, not registry-axis members. The guard
 | `selected` | `selected:` | `/^selected$/` | `none` | backed conditioned skin while the element is asserted selected |
 | `checked` | `checked:` | `/^checked$/` | `none` | backed conditioned skin while the element is asserted checked |
 | `current` | `current:` | `/^current$/` | `none` | attribute-backed conditioned skin while the element is asserted current (aria-current) |
+| `parent-hover` | `parent-hover:` | `/^parent-hover$/` | `none` | conditioned skin while the selectable ancestor is hovered |
+| `parent-selected` | `parent-selected:` | `/^parent-selected$/` | `none` | conditioned skin while the selectable ancestor is asserted selected |
 <!-- END GENERATED: registry -->
 
 ---

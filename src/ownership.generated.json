@@ -127,6 +127,9 @@
   "elevation": [
     "box-shadow"
   ],
+  "concealment": [
+    "opacity"
+  ],
   "scrollbar": [
     "scrollbar-color",
     "scrollbar-width"

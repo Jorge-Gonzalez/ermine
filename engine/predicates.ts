@@ -18,6 +18,7 @@ export interface Predicates {
   p10: (parsed: Parsed[]) => Issue[];
   p11: (parsed: Parsed[], ctx: LintContext) => Issue[];
   pBacked: (parsed: Parsed[]) => Issue[];
+  pParentBacked: (parsed: Parsed[], ctx: LintContext) => Issue[];
 }
 
 export function makePredicates(
@@ -263,5 +264,30 @@ export function makePredicates(
     return out;
   };
 
-  return { p1, p2, p3, p4, p6, p8, p8b, p10, p11, pBacked };
+  // --- R-STATE-13: a word under a RELATIONAL scope requires the capability on an
+  // ancestor — verified through parent context when provided, skipped otherwise
+  // (the P11 shape; serialization stays safe because unmarked ancestors never match).
+  const parentBackedScopes = new Map(
+    scopes.filter((s) => s.parentBackedBy).map((s) => [s.id, s.parentBackedBy!]),
+  );
+  const pParentBacked = (parsed: Parsed[], ctx: LintContext): Issue[] => {
+    if (parentBackedScopes.size === 0 || ctx.parentClasses === undefined) return [];
+    const parentWords = new Set(ctx.parentClasses.trim().split(/\s+/).filter(Boolean));
+    const out: Issue[] = [];
+    const flagged = new Set<string>();
+    for (const p of parsed) {
+      const capability = parentBackedScopes.get(p.scope);
+      if (!capability || flagged.has(p.scope) || parentWords.has(capability)) continue;
+      out.push({
+        level: "error",
+        rule: "R-STATE-13",
+        msg: `'${p.scope}:' is a relational scope — an ancestor must carry '${capability}'.`,
+        target: p.raw,
+      });
+      flagged.add(p.scope);
+    }
+    return out;
+  };
+
+  return { p1, p2, p3, p4, p6, p8, p8b, p10, p11, pBacked, pParentBacked };
 }

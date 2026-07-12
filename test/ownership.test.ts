@@ -8,7 +8,7 @@ import { parseWord } from "../src/lint.ts";
 
 test("ownership generation enumerates valid words for every emitted axis", () => {
   const words = emittableWords();
-  assert.equal(Object.keys(words).length, 44);
+  assert.equal(Object.keys(words).length, 45);
   for (const [axis, samples] of Object.entries(words)) {
     assert.ok(samples.length > 0, `${axis} has no emission samples`);
     for (const word of samples) assert.equal(parseWord(word).axis, axis, `${word} must resolve to ${axis}`);

@@ -170,6 +170,18 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- concealment: presence at the opacity endpoints (R-SKIN-16). ---
+  concealment: {
+    effectKind: "css",
+    plain: (word) => {
+      switch (word) {
+        case "concealed": return { opacity: "0" };
+        case "revealed": return { opacity: "1" };
+        default: return null;
+      }
+    },
+  },
+
   // --- scrollbar: prominence on the standard properties (R-SKIN-15). ---
   scrollbar: {
     effectKind: "css",
@@ -617,6 +629,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "text-align": ["text-start", "text-center"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   truncation: ["truncate"],
+  concealment: ["concealed", "revealed"],
   scrollbar: ["scrollbar-subtle"],
   "focus-ring": ["ring"],
   elevation: ["elevated"],

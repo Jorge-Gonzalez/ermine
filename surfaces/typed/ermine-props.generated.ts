@@ -89,6 +89,8 @@ export interface ErminePlainProps {
   textAlign?: "text-start" | "text-center";
   /** axis `elevation` */
   elevation?: "elevated";
+  /** axis `concealment` */
+  concealment?: "concealed" | "revealed";
   /** axis `scrollbar` */
   scrollbar?: "scrollbar-subtle";
   /** axis `focus-ring` */
@@ -211,6 +213,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "fontFamily", axis: "font-family", kind: "word" },
   { prop: "textAlign", axis: "text-align", kind: "word" },
   { prop: "elevation", axis: "elevation", kind: "word" },
+  { prop: "concealment", axis: "concealment", kind: "word" },
   { prop: "scrollbar", axis: "scrollbar", kind: "word" },
   { prop: "focusRing", axis: "focus-ring", kind: "word" },
   { prop: "truncation", axis: "truncation", kind: "word" },

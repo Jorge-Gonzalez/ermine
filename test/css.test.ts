@@ -89,6 +89,19 @@ test("elevated composes with base skin as independent atomic rules", () => {
   assert.match(css, /\.elevated \{[^}]*box-shadow:/s);
 });
 
+test("relational prefixes serialize as selectable-anchored ancestor compounds (R-STATE-13)", () => {
+  const css = toCss("concealed parent-hover:revealed parent-selected:revealed");
+  assert.match(css, /\.concealed \{[^}]*opacity: 0;/s);
+  assert.match(css, /\.selectable:hover \.parent-hover\\:revealed \{[^}]*opacity: 1;/s);
+  assert.match(css, /\.selectable\[aria-selected="true"\] \.parent-selected\\:revealed \{[^}]*opacity: 1;/s);
+  assert.doesNotMatch(css, /@media/, "a relational scope must not become an at-rule");
+});
+
+test("relational prefixes scope carriers too, not just concealment", () => {
+  const css = toCss("parent-hover:ground-defined");
+  assert.match(css, /\.selectable:hover \.parent-hover\\:ground-defined \{[^}]*background: var\(--ground-defined\);/s);
+});
+
 test("scrollbar-subtle emits standard properties with socketed colours (R-SKIN-15)", () => {
   const css = toCss("scrollbar-subtle");
   assert.match(css, /\.scrollbar-subtle \{[^}]*scrollbar-width: thin;[^}]*scrollbar-color: var\(--scrollbar-thumb, var\(--rule\)\) var\(--scrollbar-track, transparent\);/s);

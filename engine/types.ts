@@ -161,6 +161,11 @@ export interface ScopePrefix {
   // this capability word (e.g. `selected:` requires `selectable`). Absent → no backing
   // required (platform/environmental scopes). The declaring client owns the word.
   backedBy?: string;
+  // A RELATIONAL scope (R-STATE-13): the condition lives on an ancestor, which must carry
+  // this capability word. Verified through LintContext.parentClasses when provided (the
+  // P11 shape); serialization anchors on the capability's class, so an unmarked ancestor
+  // never matches even when the check is skipped.
+  parentBackedBy?: string;
   note?: string;
 }
 

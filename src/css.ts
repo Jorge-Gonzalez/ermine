@@ -54,17 +54,19 @@ export function buildStylesheet(classStrings: string[], ctx: LintContext = {}): 
     for (const [scope, authoredWords] of groups) {
       const base = scope === "base";
       const innerWords = base ? authoredWords : authoredWords.map((word) => word.slice(word.indexOf(":") + 1));
-      // A platform interaction scope (R-STATE-10) serializes to a pseudo-class suffix and a
-      // backed state scope (R-STATE-11) to an attribute suffix; both stay in the base cascade.
+      // A platform interaction scope (R-STATE-10) serializes to a pseudo-class suffix, a
+      // backed state scope (R-STATE-11) to an attribute suffix, and a relational scope
+      // (R-STATE-13) to an ancestor compound prefix; all stay in the base cascade.
       // Environmental scopes become at-rules.
       const pseudo = base ? undefined : scopePseudo(scope) ?? scopeAttribute(scope);
-      const condition = base || pseudo ? undefined : scopeCondition(scope);
-      if (!base && !pseudo && !condition) {
+      const ancestor = base || pseudo ? undefined : scopeAncestor(scope);
+      const condition = base || pseudo || ancestor ? undefined : scopeCondition(scope);
+      if (!base && !pseudo && !ancestor && !condition) {
         notes.push(`scope '${scope}' needs a project condition binding; no CSS emitted for ${authoredWords.map((word) => `'${word}'`).join(", ")}`);
         continue;
       }
 
-      const target = base || pseudo
+      const target = base || pseudo || ancestor
         ? bySelector
         : (byCondition.get(condition!) ?? byCondition.set(condition!, new Map()).get(condition!)!);
       const rules = emit(innerWords.join(" "), ctx, base ? undefined : scope);
@@ -74,6 +76,7 @@ export function buildStylesheet(classStrings: string[], ctx: LintContext = {}): 
           (current, word, index) => current.replaceAll(`.${word}`, classSelector(authoredWords[index])),
           selector,
         );
+        if (ancestor) return `${ancestor} ${rewritten}`;
         return pseudo ? rewritten + pseudo : rewritten;
       };
 
@@ -129,6 +132,16 @@ function scopeCondition(scope: string): string | undefined {
 // They append a pseudo-class to the selector rather than wrapping it in an at-rule.
 function scopePseudo(scope: string): string | undefined {
   const exact: Record<string, string> = { hover: ":hover", focus: ":focus" };
+  return exact[scope];
+}
+
+// Relational scopes (R-STATE-13) serialize to an ancestor compound anchored on the
+// `selectable` capability class — the anchor is what makes the condition bounded.
+function scopeAncestor(scope: string): string | undefined {
+  const exact: Record<string, string> = {
+    "parent-hover": ".selectable:hover",
+    "parent-selected": '.selectable[aria-selected="true"]',
+  };
   return exact[scope];
 }
 

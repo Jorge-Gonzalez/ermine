@@ -1179,6 +1179,16 @@
       "meaning": "<elevation>",
       "reference": "src/ERMINE-SPEC.md §2.5 — elevation"
     },
+    "concealed": {
+      "axis": "concealment",
+      "meaning": "<concealment>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "revealed": {
+      "axis": "concealment",
+      "meaning": "<concealment>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
     "scrollbar-subtle": {
       "axis": "scrollbar",
       "meaning": "scrollbar-<prominence>",

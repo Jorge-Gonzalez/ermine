@@ -103,6 +103,12 @@
       "anchor": "ADR-0017"
     },
     {
+      "id": "ADR-0018",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0018-relational-condition-and-concealment.md",
+      "anchor": "ADR-0018"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -215,6 +221,12 @@
       "register": "code",
       "file": "src/lint.ts",
       "anchor": "parseWord"
+    },
+    {
+      "id": "CODE:RELATIONAL_SCOPES",
+      "register": "code",
+      "file": "src/registry.ts",
+      "anchor": "RELATIONAL_SCOPES"
     },
     {
       "id": "CODE:Role",
@@ -709,6 +721,12 @@
       "anchor": "R-SKIN-15"
     },
     {
+      "id": "R-SKIN-16",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SKIN-16"
+    },
+    {
       "id": "R-SPACE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -797,6 +815,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-STATE-12"
+    },
+    {
+      "id": "R-STATE-13",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STATE-13"
     },
     {
       "id": "R-STRUCTURE-01",
@@ -1291,6 +1315,12 @@
       "anchor": "RAT:R-SKIN-15"
     },
     {
+      "id": "RAT:R-SKIN-16",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SKIN-16"
+    },
+    {
       "id": "RAT:R-SPACE-01",
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
@@ -1379,6 +1409,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-STATE-12"
+    },
+    {
+      "id": "RAT:R-STATE-13",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STATE-13"
     },
     {
       "id": "RAT:R-STRUCTURE-01",
@@ -1628,6 +1664,11 @@
     {
       "from": "CODE:parseWord",
       "to": "R-STATE-10",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:RELATIONAL_SCOPES",
+      "to": "R-STATE-13",
       "type": "implements"
     },
     {
@@ -2101,6 +2142,11 @@
       "type": "rationale-of"
     },
     {
+      "from": "RAT:R-SKIN-16",
+      "to": "R-SKIN-16",
+      "type": "rationale-of"
+    },
+    {
       "from": "RAT:R-SPACE-01",
       "to": "R-SPACE-01",
       "type": "rationale-of"
@@ -2173,6 +2219,11 @@
     {
       "from": "RAT:R-STATE-12",
       "to": "R-STATE-12",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STATE-13",
+      "to": "R-STATE-13",
       "type": "rationale-of"
     },
     {

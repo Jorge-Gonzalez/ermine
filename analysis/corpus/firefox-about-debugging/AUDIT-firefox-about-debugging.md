@@ -39,7 +39,7 @@ Real-property FAMILY coverage (the ceiling on what an ingestor could express):
 
 | corpus | coverage | theme custom-props |
 |---|---|---|
-| firefox-about-debugging | 74.7% | 70.1% |
+| firefox-about-debugging | 74.9% | 70.1% |
 
 Declarations: 1504 total; 450 real properties; 1054 theme custom properties.
 Top uncovered families: height (21), width (15), fill (14), line-height (13), -moz-context-properties (10), column-gap (6), box-sizing (4), syntax (3), inherits (3), initial-value (3), content (3), transform (3).

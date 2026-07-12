@@ -36,6 +36,7 @@ export function createLinter(
       ...predicates.p10(parsed),
       ...predicates.p11(parsed, ctx),
       ...predicates.pBacked(parsed),
+      ...predicates.pParentBacked(parsed, ctx),
     ];
   };
 
