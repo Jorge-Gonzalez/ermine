@@ -121,6 +121,12 @@
       "anchor": "ADR-0020"
     },
     {
+      "id": "ADR-0021",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0021-disabled-condition.md",
+      "anchor": "ADR-0021"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

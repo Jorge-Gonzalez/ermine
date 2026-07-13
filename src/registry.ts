@@ -887,6 +887,7 @@ export const INTERACTION_SCOPES: ScopePrefix[] = [
   { id: "hover", pattern: /^hover$/, shape: "hover:", role: "none", note: "conditioned skin while the pointer is over the element" },
   { id: "focus", pattern: /^focus$/, shape: "focus:", role: "none", note: "conditioned skin while the element holds focus" },
   { id: "active", pattern: /^active$/, shape: "active:", role: "none", note: "conditioned skin during the press" },
+  { id: "disabled", pattern: /^disabled$/, shape: "disabled:", role: "none", note: "conditioned skin while the form control is disabled" },
 ];
 
 // Application-asserted state scopes (R-STATE-11). Like interaction scopes they carry a

@@ -70,6 +70,13 @@ test("an active: prefix scopes conditioned skin to an :active pseudo-class, not 
   assert.doesNotMatch(css, /@media/, "an interaction scope must not become an at-rule");
 });
 
+test("a disabled: prefix scopes conditioned skin to a :disabled pseudo-class (R-STATE-10, ADR-0021)", () => {
+  const css = toCss("disabled:ground-subtle disabled:ink-soft");
+  assert.match(css, /\.disabled\\:ground-subtle:disabled \{[^}]*background: var\(--ground-subtle\);/s);
+  assert.match(css, /\.disabled\\:ink-soft:disabled \{[^}]*color: var\(--ink-soft\);/s);
+  assert.doesNotMatch(css, /@media/, "an interaction scope must not become an at-rule");
+});
+
 test("base rule and its focus: override compose as two rules on the same element", () => {
   const css = toCss("rule focus:rule-accent");
   assert.match(css, /\.rule \{[^}]*border-color: var\(--rule\);/s);

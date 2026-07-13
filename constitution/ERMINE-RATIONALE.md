@@ -229,6 +229,13 @@ the hover/active/focus family coherence and is overloaded, `float` collides with
 and names elevation, not pointer presence. Surfaced by the conditioned-skin evidence pass.
 Source: ADR-0007.
 
+Amended (ADR-0021): `disabled` admitted — the platform supplies it exactly as it supplies hover
+(form state, no application assertion, no backing), and the button evidence (`.btn:disabled`
+ground/ink washes across every consumer) is the recurrence. The interaction/form seam does not
+divide the closed set: what unites hover/active/focus/disabled is platform authorship, which
+`disabled` shares. The affordance mechanics that ride disabled — `cursor: not-allowed`, the dimming
+`opacity` — stay project-local; the prefix carries only the conditioned skin.
+
 ## RAT:R-STATE-11
 The original `selection-treatment` axis offered two fixed levels (`selection-subtle`,
 `selection-strong`) that wrote `--selection-bg/ink/outline` custom properties, hard-coded to one

@@ -448,15 +448,16 @@ is the author's responsibility.
 
 ## R-STATE-10 — Platform-condition skin prefix
 
-A conditioned-skin override triggered by a platform interaction condition — hover, active, focus —
-is written as a variant prefix on the skin word (`hover:ground-subtle`), the same syntax as an
-environmental scope (R-STATE-07) and licensed as an override by R-STATE-09. These prefixes form a
-closed validated set. The platform supplies the condition, so no backing is required — the seam
+A conditioned-skin override triggered by a platform interaction condition — hover, active, focus,
+disabled — is written as a variant prefix on the skin word (`hover:ground-subtle`), the same syntax
+as an environmental scope (R-STATE-07) and licensed as an override by R-STATE-09. These prefixes form
+a closed validated set. The platform supplies the condition, so no backing is required — the seam
 with application-asserted states (selected, checked), which keep the backed `selectable` path
 (R-STATE-08). This refines R-STATE-07: an interaction state stays bare as a predicate, but takes
-the prefix form when it scopes conditioned skin.
+the prefix form when it scopes conditioned skin. `disabled` is platform-backed form state; its prefix
+serializes to `:disabled`.
 
-→ rationale: RAT:R-STATE-10 · history: ADR-0007 · code: src/registry.ts#INTERACTION_SCOPES, src/lint.ts#parseWord
+→ rationale: RAT:R-STATE-10 · history: ADR-0007, ADR-0021 · code: src/registry.ts#INTERACTION_SCOPES, src/lint.ts#parseWord
 
 ## R-STATE-11 — Backed condition prefix
 
