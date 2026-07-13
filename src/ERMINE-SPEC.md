@@ -957,6 +957,7 @@ These prefixes are closed condition scopes, not registry-axis members. The guard
 | `prefers` | `prefers-<x>:` | `/^prefers-(reduced-motion\|color-scheme-dark\|contrast-more\|reduced-transparency)$/` | `none` | — |
 | `hover` | `hover:` | `/^hover$/` | `none` | conditioned skin while the pointer is over the element |
 | `focus` | `focus:` | `/^focus$/` | `none` | conditioned skin while the element holds focus |
+| `active` | `active:` | `/^active$/` | `none` | conditioned skin during the press |
 | `selected` | `selected:` | `/^selected$/` | `none` | backed conditioned skin while the element is asserted selected |
 | `checked` | `checked:` | `/^checked$/` | `none` | backed conditioned skin while the element is asserted checked |
 | `current` | `current:` | `/^current$/` | `none` | attribute-backed conditioned skin while the element is asserted current (aria-current) |

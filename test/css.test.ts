@@ -63,6 +63,13 @@ test("a focus: prefix scopes conditioned skin to a :focus pseudo-class, not an a
   assert.doesNotMatch(css, /@media/, "an interaction scope must not become an at-rule");
 });
 
+test("an active: prefix scopes conditioned skin to an :active pseudo-class, not an at-rule (R-STATE-10)", () => {
+  const css = toCss("active:ground-accent");
+  assert.match(css, /\.active\\:ground-accent:active \{/, "selector carries the escaped class plus :active suffix");
+  assert.match(css, /background: var\(--accent\);/);
+  assert.doesNotMatch(css, /@media/, "an interaction scope must not become an at-rule");
+});
+
 test("base rule and its focus: override compose as two rules on the same element", () => {
   const css = toCss("rule focus:rule-accent");
   assert.match(css, /\.rule \{[^}]*border-color: var\(--rule\);/s);
