@@ -2,7 +2,6 @@
   "recipes": [
     ".btn",
     ".input",
-    ".label",
     ".checkbox",
     ".radio",
     ".seg-",

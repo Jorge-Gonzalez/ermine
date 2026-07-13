@@ -187,15 +187,23 @@ string. Manifest: add missing words to the matching entries (search by classStri
 | `.btn:disabled` ground/ink | `disabled:ground-subtle disabled:ink-soft` | needs E2; `cursor: not-allowed` + `opacity: .6` + the `:disabled:hover` guard stay local (disabled affordance identity) |
 | `.btn-secondary` | `ground-subtle ink ruled rule hover:ground-defined` | |
 | `.btn-outlined` | `ground ink ruled rule hover:ground-defined` | in settings-view consumers use `ground-subtle` instead of `ground` and **delete** the `.settings-view .btn-outlined:not(…)` context rule — variant-by-context becomes words at the call site |
-| `.btn-success` | `ground-pass ink-inverse` | the color-mix darkened hover stays local (identity line) |
+| `.btn-success` | `ground-pass ink-inverse` | the color-mix darkened hover stays local (identity line); when stacked with `.btn-outlined`, the border still comes from outlined, so Save becomes `ground-pass ink-inverse ruled rule` |
 | `.btn-link`, `.btn-link-danger` | `ink-accent font-sm` / `ink-fail font-sm` | `background/border/padding/font-weight:400` lines delete (substrate or initial); `text-decoration` base+hover stays local — note the *link affordance* watch |
 | `.button-group { display: inline-flex }` | `horizontal inline` | facet merge — verify emitted `.horizontal.inline` compound appears |
 | `.panel-button { cursor }` | `pressable` | |
 | `.panel-button { font-size: var(--text-base) }` | `font-md` — **recorded correction** 14→15px (the stranded-off-scale rule, section-description precedent) | |
 
-Consumers stack variants (`btn btn-outlined btn-secondary` exists): resolve the stack to
-**one** coherent word set per element, preferring the *last* variant's colours; note each
-resolution in the commit.
+Consumers stack variants (`btn btn-outlined btn-secondary` exists): resolve the stack by
+the CSS cascade **per property**, not by class-attribute order. All three variant
+selectors have the same specificity and layer, so source order in `controls.css` wins
+property-by-property: `.btn-secondary` < `.btn-outlined` < `.btn-success`. The
+`btn btn-outlined btn-secondary` Cancel stack is an existing dead-class finding, the
+legacy mirror of R-IMPL-02: `btn-secondary` never takes effect because `.btn-outlined`
+comes later. The correct conversion drops the dead secondary assertion and records the
+finding; Cancel keeps the rendered outlined word set (`ground ink ruled rule
+hover:ground-defined`). The `btn btn-outlined btn-success` Save stack keeps success
+ground/ink from `.btn-success` and keeps the harmonic border from `.btn-outlined` because
+success sets no border (`ground-pass ink-inverse ruled rule`); record that resolution too.
 
 ### F2. Stays in controls.css, untouched
 
@@ -206,6 +214,14 @@ pass; leave, with its `user-select: none` and `:active` transform), `.shake`/`.f
 `transition` lines.
 
 ### F3. Checkpoint
+
+Before changing the button family, capture computed backgrounds/borders for representative
+buttons that the smoke does not otherwise protect; after conversion, assert identical
+computed values. Probe at least: editor/modal Cancel (`base-tone`, harmonic border),
+editor/modal Save (`status-success` background plus harmonic border), settings
+export/import (`tone-dim`, harmonic border, because `.settings-view` used to retint
+outlined buttons), and one options-page prefix button (`base-tone`, harmonic border, with
+the parked `.selectable-group > .is-selected` accent still winning when selected).
 
 Full monky gates. Then the ermine gated reconcile — expect `shadowedWords 0` (the
 outline deletions in F1 are exactly what R-IMPL-02 exists to verify), `assimilable 0`,

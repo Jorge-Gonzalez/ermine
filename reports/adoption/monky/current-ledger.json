@@ -3,19 +3,19 @@
   "project": "monky",
   "source": {
     "ermineCommit": "c29d615f9a06b786fb956cf2d4ebdae91a933740",
-    "projectCommit": "ec2d26af4a396e2d5afb1e2f37596794e41e0b55"
+    "projectCommit": "ae8f5d869a6e3c3821cec60cc17e515c9e294711"
   },
   "summary": {
-    "totalDeclarations": 577,
-    "residueDeclarations": 362,
+    "totalDeclarations": 527,
+    "residueDeclarations": 305,
     "assimilable": 0,
     "byCode": {
-      "ermine-emitted": 123,
-      "substrate": 52,
+      "ermine-emitted": 129,
+      "substrate": 53,
       "theme-metric": 39,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 92,
+      "recipe-identity": 37,
       "rule-mechanics": 0,
       "brand-identity": 11,
       "affordance-mechanics": 0,
@@ -24,7 +24,7 @@
       "state-review": 0,
       "focus-state": 0,
       "aria-current": 1,
-      "parent-relational": 9,
+      "parent-relational": 8,
       "pseudo-mechanics": 23,
       "scrollbar-followup": 9,
       "motion-followup": 23,
@@ -32,7 +32,7 @@
       "elevation-followup": 3,
       "reset-absence": 13,
       "user-content": 43,
-      "identity-geometry": 62,
+      "identity-geometry": 61,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -1321,15 +1321,6 @@
       "code": "parent-relational"
     },
     {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-view .btn-outlined:not(.is-selected, :hover, :active)::background-color::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 97,
-      "selector": ".settings-view .btn-outlined:not(.is-selected, :hover, :active)",
-      "property": "background-color",
-      "value": "var(--tone-dim)",
-      "code": "parent-relational"
-    },
-    {
       "id": "src/options/options.css::.prefix-cell::aspect-ratio::1",
       "file": "src/options/options.css",
       "line": 5,
@@ -2608,9 +2599,36 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-soft::color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.pressable::cursor::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 117,
+      "selector": ".pressable",
+      "property": "cursor",
+      "value": "pointer",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-md::font-size::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 121,
+      "selector": ".font-md",
+      "property": "font-size",
+      "value": "var(--type-md)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-medium::font-weight::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 125,
+      "selector": ".font-medium",
+      "property": "font-weight",
+      "value": "var(--weight-medium)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink-soft::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 129,
       "selector": ".ink-soft",
       "property": "color",
       "value": "var(--ink-soft)",
@@ -2619,7 +2637,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-subtle:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 121,
+      "line": 133,
       "selector": ".hover\\:ground-subtle:hover",
       "property": "background",
       "value": "var(--ground-subtle)",
@@ -2628,7 +2646,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 125,
+      "line": 137,
       "selector": ".hover\\:ink:hover",
       "property": "color",
       "value": "var(--ink)",
@@ -2637,7 +2655,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.current\\:ink-accent[aria-current]:not([aria-current=\"false\"])::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 129,
+      "line": 141,
       "selector": ".current\\:ink-accent[aria-current]:not([aria-current=\"false\"])",
       "property": "color",
       "value": "var(--accent)",
@@ -2646,7 +2664,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.current\\:ground-subtle[aria-current]:not([aria-current=\"false\"])::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 133,
+      "line": 145,
       "selector": ".current\\:ground-subtle[aria-current]:not([aria-current=\"false\"])",
       "property": "background",
       "value": "var(--ground-subtle)",
@@ -2655,7 +2673,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-comfortable::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 137,
+      "line": 149,
       "selector": ".padding-comfortable",
       "property": "padding",
       "value": "var(--spacing-comfortable)",
@@ -2664,7 +2682,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.corner-md::border-radius::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 141,
+      "line": 153,
       "selector": ".corner-md",
       "property": "border-radius",
       "value": "var(--radius-md)",
@@ -2673,7 +2691,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ground-fail-faint::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 145,
+      "line": 157,
       "selector": ".ground-fail-faint",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -2682,7 +2700,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.rule-fail::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 149,
+      "line": 161,
       "selector": ".rule-fail",
       "property": "border-color",
       "value": "var(--fail)",
@@ -2691,7 +2709,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ink-fail::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 153,
+      "line": 165,
       "selector": ".ink-fail",
       "property": "color",
       "value": "var(--fail)",
@@ -2700,7 +2718,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ground-pass-faint::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 157,
+      "line": 169,
       "selector": ".ground-pass-faint",
       "property": "background",
       "value": "var(--pass-faint)",
@@ -2709,7 +2727,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.rule-pass::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 161,
+      "line": 173,
       "selector": ".rule-pass",
       "property": "border-color",
       "value": "var(--pass)",
@@ -2718,52 +2736,16 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ink-pass::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 165,
+      "line": 177,
       "selector": ".ink-pass",
       "property": "color",
       "value": "var(--pass)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.font-md::font-size::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 169,
-      "selector": ".font-md",
-      "property": "font-size",
-      "value": "var(--type-md)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.scroll-auto::overflow-x::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 173,
-      "selector": ".scroll-auto",
-      "property": "overflow-x",
-      "value": "auto",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.scroll-auto::overflow-y::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 174,
-      "selector": ".scroll-auto",
-      "property": "overflow-y",
-      "value": "auto",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.focus\\:rule-accent:focus::border-color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 178,
-      "selector": ".focus\\:rule-accent:focus",
-      "property": "border-color",
-      "value": "var(--accent)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.focus\\:ring:focus::outline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 182,
+      "line": 181,
       "selector": ".focus\\:ring:focus",
       "property": "outline",
       "value": "var(--ring, 2px solid var(--ground-defined))",
@@ -2772,16 +2754,43 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.focus\\:ring:focus::outline-offset::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 183,
+      "line": 182,
       "selector": ".focus\\:ring:focus",
       "property": "outline-offset",
       "value": "var(--ring-offset, 0px)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ground-subtle::background::1",
+      "id": "src/styles/grammar/ermine.generated.css::.scroll-auto::overflow-x::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 186,
+      "selector": ".scroll-auto",
+      "property": "overflow-x",
+      "value": "auto",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.scroll-auto::overflow-y::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 187,
+      "selector": ".scroll-auto",
+      "property": "overflow-y",
+      "value": "auto",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.focus\\:rule-accent:focus::border-color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 191,
+      "selector": ".focus\\:rule-accent:focus",
+      "property": "border-color",
+      "value": "var(--accent)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ground-subtle::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 195,
       "selector": ".ground-subtle",
       "property": "background",
       "value": "var(--ground-subtle)",
@@ -2790,7 +2799,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-relaxed::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 191,
+      "line": 199,
       "selector": ".padding-relaxed",
       "property": "padding",
       "value": "var(--spacing-relaxed)",
@@ -2799,7 +2808,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.boxed::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 195,
+      "line": 203,
       "selector": ".boxed",
       "property": "display",
       "value": "block",
@@ -2808,7 +2817,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-tight::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 199,
+      "line": 207,
       "selector": ".padding-tight",
       "property": "padding",
       "value": "var(--spacing-tight)",
@@ -2817,268 +2826,16 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.boxed-inline::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 203,
+      "line": 211,
       "selector": ".boxed-inline",
       "property": "display",
       "value": "inline-block",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-3xl::border-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 207,
-      "selector": ".corner-3xl",
-      "property": "border-radius",
-      "value": "var(--radius-3xl)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.font-medium::font-weight::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 211,
-      "selector": ".font-medium",
-      "property": "font-weight",
-      "value": "var(--weight-medium)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.font-2xl::font-size::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 215,
-      "selector": ".font-2xl",
-      "property": "font-size",
-      "value": "var(--type-2xl)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.position-absolute::position::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 219,
-      "selector": ".position-absolute",
-      "property": "position",
-      "value": "absolute",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.rigid::flex-grow::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 223,
-      "selector": ".rigid",
-      "property": "flex-grow",
-      "value": "0",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.rigid::flex-shrink::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 224,
-      "selector": ".rigid",
-      "property": "flex-shrink",
-      "value": "0",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.font-lg::font-size::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 228,
-      "selector": ".font-lg",
-      "property": "font-size",
-      "value": "var(--type-lg)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.padding-snug::padding::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 232,
-      "selector": ".padding-snug",
-      "property": "padding",
-      "value": "var(--spacing-snug)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ground-fail::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 236,
-      "selector": ".ground-fail",
-      "property": "background",
-      "value": "var(--fail)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-inverse::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 240,
-      "selector": ".ink-inverse",
-      "property": "color",
-      "value": "var(--ink-inverse)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.pressable::cursor::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 244,
-      "selector": ".pressable",
-      "property": "cursor",
-      "value": "pointer",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.rule-soft::border-color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 248,
-      "selector": ".rule-soft",
-      "property": "border-color",
-      "value": "var(--rule-soft)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled-top::border-top-width::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 252,
-      "selector": ".ruled-top",
-      "property": "border-top-width",
-      "value": "var(--rule-weight, 1px)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled-top::border-top-style::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 253,
-      "selector": ".ruled-top",
-      "property": "border-top-style",
-      "value": "solid",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ground-accent::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 257,
-      "selector": ".ground-accent",
-      "property": "background",
-      "value": "var(--accent)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.font-xs::font-size::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 261,
-      "selector": ".font-xs",
-      "property": "font-size",
-      "value": "var(--type-xs)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.font-semibold::font-weight::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 265,
-      "selector": ".font-semibold",
-      "property": "font-weight",
-      "value": "var(--weight-semibold)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.font-bold::font-weight::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 269,
-      "selector": ".font-bold",
-      "property": "font-weight",
-      "value": "var(--weight-bold)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled-bottom::border-bottom-width::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 273,
-      "selector": ".ruled-bottom",
-      "property": "border-bottom-width",
-      "value": "var(--rule-weight, 1px)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled-bottom::border-bottom-style::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 274,
-      "selector": ".ruled-bottom",
-      "property": "border-bottom-style",
-      "value": "solid",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.gap-tight::gap::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 278,
-      "selector": ".gap-tight",
-      "property": "gap",
-      "value": "var(--spacing-tight)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.scrollbar-subtle::scrollbar-width::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 282,
-      "selector": ".scrollbar-subtle",
-      "property": "scrollbar-width",
-      "value": "thin",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.scrollbar-subtle::scrollbar-color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 283,
-      "selector": ".scrollbar-subtle",
-      "property": "scrollbar-color",
-      "value": "var(--scrollbar-thumb, var(--rule)) var(--scrollbar-track, transparent)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.font-mono::font-family::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 287,
-      "selector": ".font-mono",
-      "property": "font-family",
-      "value": "var(--font-mono, monospace)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.truncate::text-overflow::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 291,
-      "selector": ".truncate",
-      "property": "text-overflow",
-      "value": "ellipsis",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.truncate::white-space::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 292,
-      "selector": ".truncate",
-      "property": "white-space",
-      "value": "nowrap",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.span-all::grid-column::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 296,
-      "selector": ".span-all",
-      "property": "grid-column",
-      "value": "1 / -1",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.text-center::text-align::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 300,
-      "selector": ".text-center",
-      "property": "text-align",
-      "value": "center",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.padding-block-snug::padding-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 304,
+      "line": 215,
       "selector": ".padding-block-snug",
       "property": "padding-block",
       "value": "var(--spacing-snug)",
@@ -3087,16 +2844,313 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-comfortable::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 308,
+      "line": 219,
       "selector": ".padding-inline-comfortable",
       "property": "padding-inline",
       "value": "var(--spacing-comfortable)",
       "code": "ermine-emitted"
     },
     {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-3xl::border-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 223,
+      "selector": ".corner-3xl",
+      "property": "border-radius",
+      "value": "var(--radius-3xl)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.focus\\:rule-fail:focus::border-color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 227,
+      "selector": ".focus\\:rule-fail:focus",
+      "property": "border-color",
+      "value": "var(--fail)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-2xl::font-size::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 231,
+      "selector": ".font-2xl",
+      "property": "font-size",
+      "value": "var(--type-2xl)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.position-absolute::position::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 235,
+      "selector": ".position-absolute",
+      "property": "position",
+      "value": "absolute",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.rigid::flex-grow::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 239,
+      "selector": ".rigid",
+      "property": "flex-grow",
+      "value": "0",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.rigid::flex-shrink::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 240,
+      "selector": ".rigid",
+      "property": "flex-shrink",
+      "value": "0",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-lg::font-size::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 244,
+      "selector": ".font-lg",
+      "property": "font-size",
+      "value": "var(--type-lg)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.horizontal.inline::display::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 248,
+      "selector": ".horizontal.inline",
+      "property": "display",
+      "value": "inline flex",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.active\\:ground-accent:active::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 252,
+      "selector": ".active\\:ground-accent:active",
+      "property": "background",
+      "value": "var(--accent)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.active\\:ink-inverse:active::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 256,
+      "selector": ".active\\:ink-inverse:active",
+      "property": "color",
+      "value": "var(--ink-inverse)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.disabled\\:ground-subtle:disabled::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 260,
+      "selector": ".disabled\\:ground-subtle:disabled",
+      "property": "background",
+      "value": "var(--ground-subtle)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.disabled\\:ink-soft:disabled::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 264,
+      "selector": ".disabled\\:ink-soft:disabled",
+      "property": "color",
+      "value": "var(--ink-soft)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ground-pass::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 268,
+      "selector": ".ground-pass",
+      "property": "background",
+      "value": "var(--pass)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink-inverse::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 272,
+      "selector": ".ink-inverse",
+      "property": "color",
+      "value": "var(--ink-inverse)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.padding-snug::padding::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 276,
+      "selector": ".padding-snug",
+      "property": "padding",
+      "value": "var(--spacing-snug)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ground-fail::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 280,
+      "selector": ".ground-fail",
+      "property": "background",
+      "value": "var(--fail)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.rule-soft::border-color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 284,
+      "selector": ".rule-soft",
+      "property": "border-color",
+      "value": "var(--rule-soft)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled-top::border-top-width::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 288,
+      "selector": ".ruled-top",
+      "property": "border-top-width",
+      "value": "var(--rule-weight, 1px)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled-top::border-top-style::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 289,
+      "selector": ".ruled-top",
+      "property": "border-top-style",
+      "value": "solid",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ground-accent::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 293,
+      "selector": ".ground-accent",
+      "property": "background",
+      "value": "var(--accent)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-xs::font-size::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 297,
+      "selector": ".font-xs",
+      "property": "font-size",
+      "value": "var(--type-xs)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-semibold::font-weight::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 301,
+      "selector": ".font-semibold",
+      "property": "font-weight",
+      "value": "var(--weight-semibold)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-bold::font-weight::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 305,
+      "selector": ".font-bold",
+      "property": "font-weight",
+      "value": "var(--weight-bold)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled-bottom::border-bottom-width::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 309,
+      "selector": ".ruled-bottom",
+      "property": "border-bottom-width",
+      "value": "var(--rule-weight, 1px)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled-bottom::border-bottom-style::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 310,
+      "selector": ".ruled-bottom",
+      "property": "border-bottom-style",
+      "value": "solid",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.gap-tight::gap::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 314,
+      "selector": ".gap-tight",
+      "property": "gap",
+      "value": "var(--spacing-tight)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.scrollbar-subtle::scrollbar-width::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 318,
+      "selector": ".scrollbar-subtle",
+      "property": "scrollbar-width",
+      "value": "thin",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.scrollbar-subtle::scrollbar-color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 319,
+      "selector": ".scrollbar-subtle",
+      "property": "scrollbar-color",
+      "value": "var(--scrollbar-thumb, var(--rule)) var(--scrollbar-track, transparent)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.font-mono::font-family::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 323,
+      "selector": ".font-mono",
+      "property": "font-family",
+      "value": "var(--font-mono, monospace)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.truncate::text-overflow::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 327,
+      "selector": ".truncate",
+      "property": "text-overflow",
+      "value": "ellipsis",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.truncate::white-space::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 328,
+      "selector": ".truncate",
+      "property": "white-space",
+      "value": "nowrap",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.span-all::grid-column::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 332,
+      "selector": ".span-all",
+      "property": "grid-column",
+      "value": "1 / -1",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.text-center::text-align::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 336,
+      "selector": ".text-center",
+      "property": "text-align",
+      "value": "center",
+      "code": "ermine-emitted"
+    },
+    {
       "id": "src/styles/grammar/ermine.generated.css::.rule-accent-soft::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 312,
+      "line": 340,
       "selector": ".rule-accent-soft",
       "property": "border-color",
       "value": "var(--accent-soft)",
@@ -3105,7 +3159,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grid::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 316,
+      "line": 344,
       "selector": ".grid",
       "property": "display",
       "value": "grid",
@@ -3114,7 +3168,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grid::grid-auto-flow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 317,
+      "line": 345,
       "selector": ".grid",
       "property": "grid-auto-flow",
       "value": "row",
@@ -3123,7 +3177,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.concealed::opacity::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 321,
+      "line": 349,
       "selector": ".concealed",
       "property": "opacity",
       "value": "0",
@@ -3132,7 +3186,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-accent:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 325,
+      "line": 353,
       "selector": ".hover\\:ink-accent:hover",
       "property": "color",
       "value": "var(--accent)",
@@ -3141,7 +3195,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selectable:hover .parent-hover\\:revealed::opacity::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 329,
+      "line": 357,
       "selector": ".selectable:hover .parent-hover\\:revealed",
       "property": "opacity",
       "value": "1",
@@ -3150,25 +3204,16 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selectable[aria-selected=\"true\"] .parent-selected\\:revealed::opacity::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 333,
+      "line": 361,
       "selector": ".selectable[aria-selected=\"true\"] .parent-selected\\:revealed",
       "property": "opacity",
       "value": "1",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.horizontal.inline::display::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 337,
-      "selector": ".horizontal.inline",
-      "property": "display",
-      "value": "inline flex",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 341,
+      "line": 365,
       "selector": ".hover\\:ground-fail:hover",
       "property": "background",
       "value": "var(--fail)",
@@ -3177,7 +3222,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-inverse:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 345,
+      "line": 369,
       "selector": ".hover\\:ink-inverse:hover",
       "property": "color",
       "value": "var(--ink-inverse)",
@@ -3186,7 +3231,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail-faint:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 349,
+      "line": 373,
       "selector": ".hover\\:ground-fail-faint:hover",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3195,7 +3240,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-fail:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 353,
+      "line": 377,
       "selector": ".hover\\:ink-fail:hover",
       "property": "color",
       "value": "var(--fail)",
@@ -3204,7 +3249,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 357,
+      "line": 381,
       "selector": ".hover\\:ground:hover",
       "property": "background",
       "value": "var(--ground)",
@@ -3213,7 +3258,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-defined[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 361,
+      "line": 385,
       "selector": ".selected\\:ground-defined[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--ground-defined)",
@@ -3222,7 +3267,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.elevated::box-shadow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 365,
+      "line": 389,
       "selector": ".elevated",
       "property": "box-shadow",
       "value": "var(--shadow-elevated, 0 4px 12px var(--shadow))",
@@ -3231,7 +3276,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.wrap-allowed::flex-wrap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 369,
+      "line": 393,
       "selector": ".wrap-allowed",
       "property": "flex-wrap",
       "value": "wrap",
@@ -3240,7 +3285,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-relaxed::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 373,
+      "line": 397,
       "selector": ".gap-relaxed",
       "property": "gap",
       "value": "var(--spacing-relaxed)",
@@ -3249,7 +3294,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-loose::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 377,
+      "line": 401,
       "selector": ".padding-loose",
       "property": "padding",
       "value": "var(--spacing-loose)",
@@ -3258,7 +3303,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ruled-right::border-right-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 381,
+      "line": 405,
       "selector": ".ruled-right",
       "property": "border-right-width",
       "value": "var(--rule-weight, 1px)",
@@ -3267,7 +3312,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ruled-right::border-right-style::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 382,
+      "line": 406,
       "selector": ".ruled-right",
       "property": "border-right-style",
       "value": "solid",
@@ -3276,7 +3321,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.checked\\:ground-accent[aria-checked=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 386,
+      "line": 410,
       "selector": ".checked\\:ground-accent[aria-checked=\"true\"]",
       "property": "background",
       "value": "var(--accent)",
@@ -3285,7 +3330,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.checked\\:ink-inverse[aria-checked=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 390,
+      "line": 414,
       "selector": ".checked\\:ink-inverse[aria-checked=\"true\"]",
       "property": "color",
       "value": "var(--ink-inverse)",
@@ -3294,7 +3339,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ink-accent-soft::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 394,
+      "line": 418,
       "selector": ".ink-accent-soft",
       "property": "color",
       "value": "var(--accent-soft)",
@@ -3303,7 +3348,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-block-loose::padding-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 398,
+      "line": 422,
       "selector": ".padding-block-loose",
       "property": "padding-block",
       "value": "var(--spacing-loose)",
@@ -3312,7 +3357,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-separated::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 402,
+      "line": 426,
       "selector": ".padding-inline-separated",
       "property": "padding-inline",
       "value": "var(--spacing-separated)",
@@ -3321,7 +3366,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule-fail:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 406,
+      "line": 430,
       "selector": ".hover\\:rule-fail:hover",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3330,7 +3375,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-fail-faint[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 410,
+      "line": 434,
       "selector": ".selected\\:ground-fail-faint[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3339,7 +3384,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-fail[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 414,
+      "line": 438,
       "selector": ".selected\\:ink-fail[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--fail)",
@@ -3348,7 +3393,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-fail[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 418,
+      "line": 442,
       "selector": ".selected\\:rule-fail[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3357,7 +3402,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 422,
+      "line": 446,
       "selector": ".hover\\:rule:hover",
       "property": "border-color",
       "value": "var(--rule)",
@@ -3366,7 +3411,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-accent[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 426,
+      "line": 450,
       "selector": ".selected\\:ink-accent[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--accent)",
@@ -3375,7 +3420,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-accent[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 430,
+      "line": 454,
       "selector": ".selected\\:rule-accent[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--accent)",
@@ -3384,7 +3429,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 434,
+      "line": 458,
       "selector": ".compressible",
       "property": "flex-grow",
       "value": "0",
@@ -3393,7 +3438,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-shrink::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 435,
+      "line": 459,
       "selector": ".compressible",
       "property": "flex-shrink",
       "value": "1",
@@ -3402,7 +3447,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-loose::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 439,
+      "line": 463,
       "selector": ".gap-loose",
       "property": "gap",
       "value": "var(--spacing-loose)",
@@ -3411,7 +3456,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grow-1::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 443,
+      "line": 467,
       "selector": ".grow-1",
       "property": "flex-grow",
       "value": "1",
@@ -3420,133 +3465,43 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.margin-block-snug::margin-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 447,
+      "line": 471,
       "selector": ".margin-block-snug",
       "property": "margin-block",
       "value": "var(--spacing-snug)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/skin/controls.css::.label::margin-bottom::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 4,
-      "selector": ".label",
-      "property": "margin-bottom",
-      "value": "var(--spacing-xs)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.input::width::1",
       "file": "src/styles/skin/controls.css",
-      "line": 8,
+      "line": 4,
       "selector": ".input",
       "property": "width",
       "value": "100%",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.input::padding::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 9,
-      "selector": ".input",
-      "property": "padding",
-      "value": "var(--spacing-sm) var(--spacing-md)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.input::border-width::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 10,
-      "selector": ".input",
-      "property": "border-width",
-      "value": "1px",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.input::border-style::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 11,
-      "selector": ".input",
-      "property": "border-style",
-      "value": "solid",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.input::outline::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 12,
-      "selector": ".input",
-      "property": "outline",
-      "value": "none",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.input::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 13,
+      "line": 5,
       "selector": ".input",
       "property": "transition",
       "value": "border-color var(--transition-fast)",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.input:focus::border-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 17,
-      "selector": ".input:focus",
-      "property": "border-color",
-      "value": "var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.input:focus::box-shadow::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 18,
-      "selector": ".input:focus",
-      "property": "box-shadow",
-      "value": "0 0 0 2px var(--tone)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.input-error:focus::border-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 22,
-      "selector": ".input-error:focus",
-      "property": "border-color",
-      "value": "var(--status-error)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.input-error:focus::box-shadow::1",
       "file": "src/styles/skin/controls.css",
-      "line": 23,
+      "line": 9,
       "selector": ".input-error:focus",
       "property": "box-shadow",
       "value": "inset 0 0 0 2px var(--status-error-wash)",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.radio::margin-right::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 27,
-      "selector": ".radio",
-      "property": "margin-right",
-      "value": "var(--spacing-sm)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.radio::cursor::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 28,
-      "selector": ".radio",
-      "property": "cursor",
-      "value": "pointer",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.radio::width::1",
       "file": "src/styles/skin/controls.css",
-      "line": 29,
+      "line": 13,
       "selector": ".radio",
       "property": "width",
       "value": "16px",
@@ -3555,25 +3510,16 @@
     {
       "id": "src/styles/skin/controls.css::.radio::height::1",
       "file": "src/styles/skin/controls.css",
-      "line": 30,
+      "line": 14,
       "selector": ".radio",
       "property": "height",
       "value": "16px",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.radio::accent-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 31,
-      "selector": ".radio",
-      "property": "accent-color",
-      "value": "var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.radio-label::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 35,
+      "line": 18,
       "selector": ".radio-label",
       "property": "cursor",
       "value": "pointer",
@@ -3582,7 +3528,7 @@
     {
       "id": "src/styles/skin/controls.css::.radio-label::user-select::1",
       "file": "src/styles/skin/controls.css",
-      "line": 36,
+      "line": 19,
       "selector": ".radio-label",
       "property": "user-select",
       "value": "none",
@@ -3591,7 +3537,7 @@
     {
       "id": "src/styles/skin/controls.css::.checkbox::width::1",
       "file": "src/styles/skin/controls.css",
-      "line": 40,
+      "line": 23,
       "selector": ".checkbox",
       "property": "width",
       "value": "16px",
@@ -3600,457 +3546,79 @@
     {
       "id": "src/styles/skin/controls.css::.checkbox::height::1",
       "file": "src/styles/skin/controls.css",
-      "line": 41,
+      "line": 24,
       "selector": ".checkbox",
       "property": "height",
       "value": "16px",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.checkbox::border-width::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 42,
-      "selector": ".checkbox",
-      "property": "border-width",
-      "value": "1px",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.checkbox::border-style::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 43,
-      "selector": ".checkbox",
-      "property": "border-style",
-      "value": "solid",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.checkbox::cursor::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 44,
-      "selector": ".checkbox",
-      "property": "cursor",
-      "value": "pointer",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.checkbox:checked::accent-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 48,
-      "selector": ".checkbox:checked",
-      "property": "accent-color",
-      "value": "var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.checkbox:focus::outline::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 52,
-      "selector": ".checkbox:focus",
-      "property": "outline",
-      "value": "2px solid var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.checkbox:focus::outline-offset::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 53,
-      "selector": ".checkbox:focus",
-      "property": "outline-offset",
-      "value": "2px",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.editor-content::min-height::1",
       "file": "src/styles/skin/controls.css",
-      "line": 58,
+      "line": 29,
       "selector": ".editor-content",
       "property": "min-height",
       "value": "150px",
       "code": "identity-geometry"
     },
     {
-      "id": "src/styles/skin/controls.css::.btn::padding::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 64,
-      "selector": ".btn",
-      "property": "padding",
-      "value": "var(--spacing-sm) var(--spacing-lg)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn::border-radius::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 65,
-      "selector": ".btn",
-      "property": "border-radius",
-      "value": "var(--radius-md)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn::font-size::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 66,
-      "selector": ".btn",
-      "property": "font-size",
-      "value": "var(--text-md)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn::font-weight::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 67,
-      "selector": ".btn",
-      "property": "font-weight",
-      "value": "500",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn::cursor::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 68,
-      "selector": ".btn",
-      "property": "cursor",
-      "value": "pointer",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.btn::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 69,
+      "line": 35,
       "selector": ".btn",
       "property": "transition",
       "value": "all var(--transition-fast)",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.btn::border::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 70,
-      "selector": ".btn",
-      "property": "border",
-      "value": "none",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn::outline::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 71,
-      "selector": ".btn",
-      "property": "outline",
-      "value": "none",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn:focus::box-shadow::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 75,
-      "selector": ".btn:focus",
-      "property": "box-shadow",
-      "value": "0 0 0 2px var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-secondary::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 79,
-      "selector": ".btn-secondary",
-      "property": "background-color",
-      "value": "var(--tone-dim)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-secondary::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 80,
-      "selector": ".btn-secondary",
-      "property": "color",
-      "value": "var(--ink)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-secondary::border::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 81,
-      "selector": ".btn-secondary",
-      "property": "border",
-      "value": "1px solid var(--harmonic)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-secondary:hover::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 85,
-      "selector": ".btn-secondary:hover",
-      "property": "background-color",
-      "value": "var(--tone)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-outlined::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 89,
-      "selector": ".btn-outlined",
-      "property": "background-color",
-      "value": "var(--base-tone)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-outlined::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 90,
-      "selector": ".btn-outlined",
-      "property": "color",
-      "value": "var(--ink)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-outlined::border::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 91,
-      "selector": ".btn-outlined",
-      "property": "border",
-      "value": "1px solid var(--harmonic)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-outlined:hover::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 95,
-      "selector": ".btn-outlined:hover",
-      "property": "background-color",
-      "value": "var(--tone)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-success::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 99,
-      "selector": ".btn-success",
-      "property": "background-color",
-      "value": "var(--status-success)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-success::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 100,
-      "selector": ".btn-success",
-      "property": "color",
-      "value": "var(--ink-alt)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.btn-success:hover::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 104,
+      "line": 39,
       "selector": ".btn-success:hover",
       "property": "background-color",
       "value": "color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.btn-link::background::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 108,
-      "selector": ".btn-link",
-      "property": "background",
-      "value": "none",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link::border::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 109,
-      "selector": ".btn-link",
-      "property": "border",
-      "value": "none",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 110,
-      "selector": ".btn-link",
-      "property": "color",
-      "value": "var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.btn-link::text-decoration::1",
       "file": "src/styles/skin/controls.css",
-      "line": 111,
+      "line": 43,
       "selector": ".btn-link",
       "property": "text-decoration",
       "value": "none",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.btn-link::font-size::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 112,
-      "selector": ".btn-link",
-      "property": "font-size",
-      "value": "var(--text-sm)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link::padding::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 113,
-      "selector": ".btn-link",
-      "property": "padding",
-      "value": "0",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link::cursor::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 114,
-      "selector": ".btn-link",
-      "property": "cursor",
-      "value": "pointer",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link::font-weight::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 115,
-      "selector": ".btn-link",
-      "property": "font-weight",
-      "value": "400",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.btn-link:hover::text-decoration::1",
       "file": "src/styles/skin/controls.css",
-      "line": 119,
+      "line": 47,
       "selector": ".btn-link:hover",
       "property": "text-decoration",
       "value": "underline",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.btn-link-danger::background::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 123,
-      "selector": ".btn-link-danger",
-      "property": "background",
-      "value": "none",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link-danger::border::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 124,
-      "selector": ".btn-link-danger",
-      "property": "border",
-      "value": "none",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link-danger::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 125,
-      "selector": ".btn-link-danger",
-      "property": "color",
-      "value": "var(--status-error)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.btn-link-danger::text-decoration::1",
       "file": "src/styles/skin/controls.css",
-      "line": 126,
+      "line": 51,
       "selector": ".btn-link-danger",
       "property": "text-decoration",
       "value": "none",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.btn-link-danger::font-size::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 127,
-      "selector": ".btn-link-danger",
-      "property": "font-size",
-      "value": "var(--text-sm)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link-danger::padding::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 128,
-      "selector": ".btn-link-danger",
-      "property": "padding",
-      "value": "0",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link-danger::cursor::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 129,
-      "selector": ".btn-link-danger",
-      "property": "cursor",
-      "value": "pointer",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn-link-danger::font-weight::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 130,
-      "selector": ".btn-link-danger",
-      "property": "font-weight",
-      "value": "400",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.btn-link-danger:hover::text-decoration::1",
       "file": "src/styles/skin/controls.css",
-      "line": 134,
+      "line": 55,
       "selector": ".btn-link-danger:hover",
       "property": "text-decoration",
       "value": "underline",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.btn:active::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 138,
-      "selector": ".btn:active",
-      "property": "background-color",
-      "value": "var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn:active::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 139,
-      "selector": ".btn:active",
-      "property": "color",
-      "value": "var(--ink-alt)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn:disabled::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 143,
-      "selector": ".btn:disabled",
-      "property": "background-color",
-      "value": "var(--tone-dim)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn:disabled::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 144,
-      "selector": ".btn:disabled",
-      "property": "color",
-      "value": "var(--ink-soft)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.btn:disabled::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 145,
+      "line": 59,
       "selector": ".btn:disabled",
       "property": "cursor",
       "value": "not-allowed",
@@ -4059,7 +3627,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn:disabled::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 146,
+      "line": 60,
       "selector": ".btn:disabled",
       "property": "opacity",
       "value": "0.6",
@@ -4068,7 +3636,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn:disabled:hover::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 150,
+      "line": 64,
       "selector": ".btn:disabled:hover",
       "property": "background-color",
       "value": "var(--tone-dim)",
@@ -4077,43 +3645,16 @@
     {
       "id": "src/styles/skin/controls.css::.btn:disabled:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 151,
+      "line": 65,
       "selector": ".btn:disabled:hover",
       "property": "opacity",
       "value": "0.6",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.button-group::display::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 155,
-      "selector": ".button-group",
-      "property": "display",
-      "value": "inline-flex",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.panel-button::cursor::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 163,
-      "selector": ".panel-button",
-      "property": "cursor",
-      "value": "pointer",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.panel-button::font-size::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 164,
-      "selector": ".panel-button",
-      "property": "font-size",
-      "value": "var(--text-base)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.panel-button::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 165,
+      "line": 73,
       "selector": ".panel-button",
       "property": "transition",
       "value": "all var(--transition-fast)",
@@ -4122,7 +3663,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar::width::1",
       "file": "src/styles/skin/controls.css",
-      "line": 169,
+      "line": 77,
       "selector": "::-webkit-scrollbar",
       "property": "width",
       "value": "var(--spacing-md) !important",
@@ -4131,7 +3672,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar::height::1",
       "file": "src/styles/skin/controls.css",
-      "line": 170,
+      "line": 78,
       "selector": "::-webkit-scrollbar",
       "property": "height",
       "value": "var(--spacing-md) !important",
@@ -4140,7 +3681,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-track::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 174,
+      "line": 82,
       "selector": "::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--tone-dim) !important",
@@ -4149,7 +3690,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-track::border-radius::1",
       "file": "src/styles/skin/controls.css",
-      "line": 175,
+      "line": 83,
       "selector": "::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -4158,7 +3699,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 179,
+      "line": 87,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--tone) !important",
@@ -4167,7 +3708,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::border-radius::1",
       "file": "src/styles/skin/controls.css",
-      "line": 180,
+      "line": 88,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -4176,7 +3717,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::border::1",
       "file": "src/styles/skin/controls.css",
-      "line": 181,
+      "line": 89,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--tone-dim) !important",
@@ -4185,7 +3726,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb:hover::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 185,
+      "line": 93,
       "selector": "::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--accent-dim) !important",
@@ -4194,7 +3735,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 192,
+      "line": 100,
       "selector": ".selectable-group > *",
       "property": "cursor",
       "value": "pointer",
@@ -4203,7 +3744,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 193,
+      "line": 101,
       "selector": ".selectable-group > *",
       "property": "transition",
       "value": "all var(--transition-fast)",
@@ -4212,7 +3753,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::user-select::1",
       "file": "src/styles/skin/controls.css",
-      "line": 194,
+      "line": 102,
       "selector": ".selectable-group > *",
       "property": "user-select",
       "value": "none",
@@ -4221,7 +3762,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *:active::transform::1",
       "file": "src/styles/skin/controls.css",
-      "line": 198,
+      "line": 106,
       "selector": ".selectable-group > *:active",
       "property": "transform",
       "value": "scale(0.98)",
@@ -4230,7 +3771,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 202,
+      "line": 110,
       "selector": ".selectable-group > .is-selected",
       "property": "background-color",
       "value": "var(--accent)",
@@ -4239,7 +3780,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 203,
+      "line": 111,
       "selector": ".selectable-group > .is-selected",
       "property": "color",
       "value": "var(--ink-alt)",
@@ -4248,7 +3789,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::border-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 204,
+      "line": 112,
       "selector": ".selectable-group > .is-selected",
       "property": "border-color",
       "value": "var(--accent)",
@@ -4257,7 +3798,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 208,
+      "line": 116,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "background-color",
       "value": "var(--accent)",
@@ -4266,7 +3807,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 209,
+      "line": 117,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "opacity",
       "value": "0.9",
@@ -4275,7 +3816,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 213,
+      "line": 121,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "cursor",
       "value": "not-allowed",
@@ -4284,7 +3825,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 214,
+      "line": 122,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "opacity",
       "value": "0.95",
@@ -4293,7 +3834,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 218,
+      "line": 126,
       "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
       "property": "opacity",
       "value": "0.95",
@@ -4302,7 +3843,7 @@
     {
       "id": "src/styles/skin/controls.css::.shake::animation::1",
       "file": "src/styles/skin/controls.css",
-      "line": 224,
+      "line": 132,
       "selector": ".shake",
       "property": "animation",
       "value": "shake 0.4s cubic-bezier(.36,.07,.19,.97) both",
@@ -4311,7 +3852,7 @@
     {
       "id": "src/styles/skin/controls.css::.shake::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 225,
+      "line": 133,
       "selector": ".shake",
       "property": "transition",
       "value": "none !important",
@@ -4320,7 +3861,7 @@
     {
       "id": "src/styles/skin/controls.css::.flash::animation::1",
       "file": "src/styles/skin/controls.css",
-      "line": 229,
+      "line": 137,
       "selector": ".flash",
       "property": "animation",
       "value": "flash 0.3s ease",
@@ -4480,9 +4021,18 @@
       "code": "substrate"
     },
     {
+      "id": "src/styles/substrate/reset.css::input, select, textarea::accent-color::1",
+      "file": "src/styles/substrate/reset.css",
+      "line": 63,
+      "selector": "input, select, textarea",
+      "property": "accent-color",
+      "value": "var(--accent)",
+      "code": "substrate"
+    },
+    {
       "id": "src/styles/substrate/reset.css::button::background::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 62,
+      "line": 67,
       "selector": "button",
       "property": "background",
       "value": "none",
@@ -4491,7 +4041,7 @@
     {
       "id": "src/styles/substrate/reset.css::button::border::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 63,
+      "line": 68,
       "selector": "button",
       "property": "border",
       "value": "none",
@@ -4500,7 +4050,7 @@
     {
       "id": "src/styles/substrate/reset.css::button::cursor::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 64,
+      "line": 69,
       "selector": "button",
       "property": "cursor",
       "value": "pointer",
@@ -4509,7 +4059,7 @@
     {
       "id": "src/styles/substrate/reset.css::table::border-collapse::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 69,
+      "line": 74,
       "selector": "table",
       "property": "border-collapse",
       "value": "collapse",
@@ -4518,7 +4068,7 @@
     {
       "id": "src/styles/substrate/reset.css::table::border-spacing::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 70,
+      "line": 75,
       "selector": "table",
       "property": "border-spacing",
       "value": "0",
@@ -4527,7 +4077,7 @@
     {
       "id": "src/styles/substrate/reset.css::a::color::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 75,
+      "line": 80,
       "selector": "a",
       "property": "color",
       "value": "inherit",
@@ -4536,7 +4086,7 @@
     {
       "id": "src/styles/substrate/reset.css::a::text-decoration::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 76,
+      "line": 81,
       "selector": "a",
       "property": "text-decoration",
       "value": "inherit",
@@ -4545,7 +4095,7 @@
     {
       "id": "src/styles/substrate/reset.css::p, h1, h2, h3, h4, h5, h6::overflow-wrap::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 81,
+      "line": 86,
       "selector": "p, h1, h2, h3, h4, h5, h6",
       "property": "overflow-wrap",
       "value": "break-word",
@@ -4554,7 +4104,7 @@
     {
       "id": "src/styles/substrate/reset.css::button, input, select, textarea::background-color::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 86,
+      "line": 91,
       "selector": "button, input, select, textarea",
       "property": "background-color",
       "value": "transparent",
@@ -4563,7 +4113,7 @@
     {
       "id": "src/styles/substrate/reset.css::button, input, select, textarea::border::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 87,
+      "line": 92,
       "selector": "button, input, select, textarea",
       "property": "border",
       "value": "none",
@@ -4572,7 +4122,7 @@
     {
       "id": "src/styles/substrate/reset.css::input::-webkit-outer-spin-button, input::-webkit-inner-spin-button::-webkit-appearance::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 93,
+      "line": 98,
       "selector": "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button",
       "property": "-webkit-appearance",
       "value": "none",
@@ -4581,7 +4131,7 @@
     {
       "id": "src/styles/substrate/reset.css::input::-webkit-outer-spin-button, input::-webkit-inner-spin-button::margin::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 94,
+      "line": 99,
       "selector": "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button",
       "property": "margin",
       "value": "0",
@@ -4590,7 +4140,7 @@
     {
       "id": "src/styles/substrate/reset.css::input[type=number]::-moz-appearance::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 98,
+      "line": 103,
       "selector": "input[type=number]",
       "property": "-moz-appearance",
       "value": "textfield",
@@ -4599,7 +4149,7 @@
     {
       "id": "src/styles/substrate/reset.css:::focus-visible::outline::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 103,
+      "line": 108,
       "selector": ":focus-visible",
       "property": "outline",
       "value": "2px solid var(--accent, #3b82f6)",
@@ -4608,7 +4158,7 @@
     {
       "id": "src/styles/substrate/reset.css:::focus-visible::outline-offset::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 104,
+      "line": 109,
       "selector": ":focus-visible",
       "property": "outline-offset",
       "value": "2px",
@@ -4617,7 +4167,7 @@
     {
       "id": "src/styles/substrate/reset.css::@media (prefers-reduced-motion: reduce) > *, *::before, *::after::animation-duration::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 112,
+      "line": 117,
       "selector": "@media (prefers-reduced-motion: reduce) > *, *::before, *::after",
       "property": "animation-duration",
       "value": "0.01ms !important",
@@ -4626,7 +4176,7 @@
     {
       "id": "src/styles/substrate/reset.css::@media (prefers-reduced-motion: reduce) > *, *::before, *::after::animation-iteration-count::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 113,
+      "line": 118,
       "selector": "@media (prefers-reduced-motion: reduce) > *, *::before, *::after",
       "property": "animation-iteration-count",
       "value": "1 !important",
@@ -4635,7 +4185,7 @@
     {
       "id": "src/styles/substrate/reset.css::@media (prefers-reduced-motion: reduce) > *, *::before, *::after::transition-duration::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 114,
+      "line": 119,
       "selector": "@media (prefers-reduced-motion: reduce) > *, *::before, *::after",
       "property": "transition-duration",
       "value": "0.01ms !important",
@@ -4644,7 +4194,7 @@
     {
       "id": "src/styles/substrate/reset.css::@media (prefers-reduced-motion: reduce) > *, *::before, *::after::scroll-behavior::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 115,
+      "line": 120,
       "selector": "@media (prefers-reduced-motion: reduce) > *, *::before, *::after",
       "property": "scroll-behavior",
       "value": "auto !important",
@@ -4653,7 +4203,7 @@
     {
       "id": "src/styles/substrate/reset.css::*::box-sizing::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 122,
+      "line": 127,
       "selector": "*",
       "property": "box-sizing",
       "value": "border-box",
@@ -4662,7 +4212,7 @@
     {
       "id": "src/styles/substrate/reset.css::*::line-height::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 123,
+      "line": 128,
       "selector": "*",
       "property": "line-height",
       "value": "1.5",
@@ -4671,7 +4221,7 @@
     {
       "id": "src/styles/substrate/reset.css:::host *::box-sizing::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 128,
+      "line": 133,
       "selector": ":host *",
       "property": "box-sizing",
       "value": "border-box",
@@ -4680,7 +4230,7 @@
     {
       "id": "src/styles/substrate/reset.css:::host *::line-height::1",
       "file": "src/styles/substrate/reset.css",
-      "line": 129,
+      "line": 134,
       "selector": ":host *",
       "property": "line-height",
       "value": "1.5",

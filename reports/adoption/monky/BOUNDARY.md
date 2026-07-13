@@ -15,7 +15,7 @@ machine-checked current contract.
 | source | commit |
 |---|---|
 | Ermine | `c29d615f9a06b786fb956cf2d4ebdae91a933740` |
-| monky | `ec2d26af4a396e2d5afb1e2f37596794e41e0b55` |
+| monky | `ae8f5d869a6e3c3821cec60cc17e515c9e294711` |
 
 ## Closure Gate
 
@@ -23,7 +23,7 @@ machine-checked current contract.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 362 |
+| project-owned residue | 305 |
 
 ## Product Identity
 
@@ -34,8 +34,8 @@ R-SKIN-09's boundary clause for shadows that are signatures rather than the shar
 
 | code | count | boundary |
 |---|---:|---|
-| `recipe-identity` | 92 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `identity-geometry` | 62 | project-exact geometry on a grammar-family property |
+| `recipe-identity` | 37 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `identity-geometry` | 61 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 11 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
@@ -69,7 +69,7 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 
 | code | rows | evidence |
 |---|---:|---|
-| `parent-relational` | 9 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
+| `parent-relational` | 8 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
 | `scrollbar-followup` | 9 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
 | `motion-followup` | 23 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 4 | named follow-up: opacity prominence treatment (no report filed yet) |
