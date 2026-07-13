@@ -3,11 +3,11 @@
   "project": "monky",
   "source": {
     "ermineCommit": "5cac75069c6d2f8b08fd22ad5f13aee1541b4847",
-    "projectCommit": "47f0cd42d8fb11ca49b31436823029f22567a73f"
+    "projectCommit": "f35405a614271ca89bc688bbabab3da35c9f4e0d"
   },
   "summary": {
-    "totalDeclarations": 614,
-    "residueDeclarations": 401,
+    "totalDeclarations": 607,
+    "residueDeclarations": 394,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 121,
@@ -15,9 +15,9 @@
       "theme-metric": 39,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 116,
+      "recipe-identity": 112,
       "rule-mechanics": 0,
-      "brand-identity": 12,
+      "brand-identity": 11,
       "affordance-mechanics": 0,
       "component-contract": 65,
       "state-mechanics": 5,
@@ -32,7 +32,7 @@
       "elevation-followup": 3,
       "reset-absence": 21,
       "user-content": 43,
-      "identity-geometry": 67,
+      "identity-geometry": 65,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -2482,36 +2482,18 @@
       "code": "identity-geometry"
     },
     {
-      "id": "src/styles/entries/pages.css::.page-title::font-weight::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 18,
-      "selector": ".page-title",
-      "property": "font-weight",
-      "value": "200",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/styles/entries/pages.css::.page-title::font-family::1",
       "file": "src/styles/entries/pages.css",
-      "line": 19,
+      "line": 21,
       "selector": ".page-title",
       "property": "font-family",
       "value": "'IBM Plex Condensed Light', sans-serif",
       "code": "brand-identity"
     },
     {
-      "id": "src/styles/entries/pages.css::.page-title::margin::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 20,
-      "selector": ".page-title",
-      "property": "margin",
-      "value": "0 0 var(--spacing-lg) 0",
-      "code": "identity-geometry"
-    },
-    {
       "id": "src/styles/entries/pages.css::body::font-family::1",
       "file": "src/styles/entries/pages.css",
-      "line": 24,
+      "line": 25,
       "selector": "body",
       "property": "font-family",
       "value": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial",
@@ -2520,7 +2502,7 @@
     {
       "id": "src/styles/entries/pages.css::body::margin::1",
       "file": "src/styles/entries/pages.css",
-      "line": 25,
+      "line": 26,
       "selector": "body",
       "property": "margin",
       "value": "0",
@@ -2529,7 +2511,7 @@
     {
       "id": "src/styles/entries/pages.css::body::padding::1",
       "file": "src/styles/entries/pages.css",
-      "line": 26,
+      "line": 27,
       "selector": "body",
       "property": "padding",
       "value": "0",
@@ -4545,7 +4527,7 @@
     {
       "id": "src/styles/skin/surfaces.css::.section::border-width::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 4,
+      "line": 9,
       "selector": ".section",
       "property": "border-width",
       "value": "1px",
@@ -4554,61 +4536,25 @@
     {
       "id": "src/styles/skin/surfaces.css::.section::border-style::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 5,
+      "line": 10,
       "selector": ".section",
       "property": "border-style",
       "value": "solid",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/surfaces.css::.section::margin-bottom::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 6,
-      "selector": ".section",
-      "property": "margin-bottom",
-      "value": "var(--spacing-lg)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.section-title::font-weight::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 10,
-      "selector": ".section-title",
-      "property": "font-weight",
-      "value": "200",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.section-title::margin::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 11,
-      "selector": ".section-title",
-      "property": "margin",
-      "value": "0 0 var(--spacing-md) 0",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/surfaces.css::.section-description::font-size::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 15,
+      "line": 14,
       "selector": ".section-description",
       "property": "font-size",
       "value": "var(--text-base)",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/surfaces.css::.section-description::margin::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 16,
-      "selector": ".section-description",
-      "property": "margin",
-      "value": "var(--spacing-sm) 0 0 0",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/surfaces.css::.alert::border-width::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 22,
+      "line": 20,
       "selector": ".alert",
       "property": "border-width",
       "value": "1px",
@@ -4617,7 +4563,7 @@
     {
       "id": "src/styles/skin/surfaces.css::.alert::border-style::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 23,
+      "line": 21,
       "selector": ".alert",
       "property": "border-style",
       "value": "solid",
@@ -4626,7 +4572,7 @@
     {
       "id": "src/styles/skin/surfaces.css::.alert::margin-bottom::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 24,
+      "line": 22,
       "selector": ".alert",
       "property": "margin-bottom",
       "value": "var(--spacing-lg)",
@@ -4635,7 +4581,7 @@
     {
       "id": "src/styles/skin/surfaces.css::.card::border-width::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 30,
+      "line": 28,
       "selector": ".card",
       "property": "border-width",
       "value": "1px",
@@ -4644,20 +4590,11 @@
     {
       "id": "src/styles/skin/surfaces.css::.card::border-style::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 31,
+      "line": 29,
       "selector": ".card",
       "property": "border-style",
       "value": "solid",
       "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.divider::margin::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 53,
-      "selector": ".divider",
-      "property": "margin",
-      "value": "var(--spacing-2xl) 0",
-      "code": "identity-geometry"
     },
     {
       "id": "src/styles/substrate/reset.css::*, *::before, *::after::box-sizing::1",

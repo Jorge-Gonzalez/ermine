@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `5cac75069c6d2f8b08fd22ad5f13aee1541b4847` |
-| monky | `47f0cd42d8fb11ca49b31436823029f22567a73f` |
+| monky | `f35405a614271ca89bc688bbabab3da35c9f4e0d` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 614 |
+| current declarations | 607 |
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 213 |
-| **residue — project-owned declarations** | **401** |
+| **residue — project-owned declarations** | **394** |
 | assimilable now (work list below) | 0 |
 
 ## Residue by reason code
@@ -37,8 +37,8 @@ re-validated on every run.
 | `substrate` | 52 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
-| `recipe-identity` | 116 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `brand-identity` | 12 | project brand typography and type treatment |
+| `recipe-identity` | 112 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `brand-identity` | 11 | project brand typography and type treatment |
 | `component-contract` | 65 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
@@ -50,7 +50,7 @@ re-validated on every run.
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 21 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 67 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 65 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -64,9 +64,9 @@ re-validated on every run.
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 29 |
 | `src/popup/popup.css` | 19 |
 | `src/content/overlays/modal/modalStyles.css` | 14 |
-| `src/styles/skin/surfaces.css` | 13 |
-| `src/styles/entries/pages.css` | 10 |
 | `src/styles/theme/metrics.css` | 9 |
+| `src/styles/entries/pages.css` | 8 |
+| `src/styles/skin/surfaces.css` | 8 |
 | `src/options/options.css` | 5 |
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 
