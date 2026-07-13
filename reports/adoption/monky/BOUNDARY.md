@@ -14,7 +14,7 @@ machine-checked current contract.
 
 | source | commit |
 |---|---|
-| Ermine | `3596610363fbac8e5fe6a0fce442a44e97bd4f7a` |
+| Ermine | `c29d615f9a06b786fb956cf2d4ebdae91a933740` |
 | monky | `ec2d26af4a396e2d5afb1e2f37596794e41e0b55` |
 
 ## Closure Gate
