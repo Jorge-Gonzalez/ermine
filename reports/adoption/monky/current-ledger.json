@@ -3,11 +3,11 @@
   "project": "monky",
   "source": {
     "ermineCommit": "5cac75069c6d2f8b08fd22ad5f13aee1541b4847",
-    "projectCommit": "f35405a614271ca89bc688bbabab3da35c9f4e0d"
+    "projectCommit": "f540500e332b98f256e8c80c37d171cc9bb4f473"
   },
   "summary": {
-    "totalDeclarations": 607,
-    "residueDeclarations": 394,
+    "totalDeclarations": 604,
+    "residueDeclarations": 391,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 121,
@@ -15,7 +15,7 @@
       "theme-metric": 39,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 112,
+      "recipe-identity": 109,
       "rule-mechanics": 0,
       "brand-identity": 11,
       "affordance-mechanics": 0,
@@ -4525,36 +4525,9 @@
       "code": "motion-followup"
     },
     {
-      "id": "src/styles/skin/surfaces.css::.section::border-width::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 9,
-      "selector": ".section",
-      "property": "border-width",
-      "value": "1px",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.section::border-style::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 10,
-      "selector": ".section",
-      "property": "border-style",
-      "value": "solid",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.section-description::font-size::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 14,
-      "selector": ".section-description",
-      "property": "font-size",
-      "value": "var(--text-base)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/surfaces.css::.alert::border-width::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 20,
+      "line": 14,
       "selector": ".alert",
       "property": "border-width",
       "value": "1px",
@@ -4563,7 +4536,7 @@
     {
       "id": "src/styles/skin/surfaces.css::.alert::border-style::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 21,
+      "line": 15,
       "selector": ".alert",
       "property": "border-style",
       "value": "solid",
@@ -4572,7 +4545,7 @@
     {
       "id": "src/styles/skin/surfaces.css::.alert::margin-bottom::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 22,
+      "line": 16,
       "selector": ".alert",
       "property": "margin-bottom",
       "value": "var(--spacing-lg)",
@@ -4581,7 +4554,7 @@
     {
       "id": "src/styles/skin/surfaces.css::.card::border-width::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 28,
+      "line": 22,
       "selector": ".card",
       "property": "border-width",
       "value": "1px",
@@ -4590,7 +4563,7 @@
     {
       "id": "src/styles/skin/surfaces.css::.card::border-style::1",
       "file": "src/styles/skin/surfaces.css",
-      "line": 29,
+      "line": 23,
       "selector": ".card",
       "property": "border-style",
       "value": "solid",
