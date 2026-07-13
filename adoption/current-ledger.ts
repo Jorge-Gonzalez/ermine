@@ -541,13 +541,16 @@ export async function findShadowedWords(
       const parts = compounds(selector);
       const subject = parts[parts.length - 1] ?? "";
       if (PSEUDO_ELEMENT.test(subject)) continue; // a pseudo-element is a different box
+      // A state condition on an ANCESTOR compound narrows the rule below the word's
+      // firing set — refinement layering, never a defeat.
+      const ancestorConditioned = parts.slice(0, -1).some((part) => STATE_MARK.test(part));
       for (const className of classNames(subject)) {
         (byIdentity.get(className) ?? byIdentity.set(className, []).get(className)!).push({
           property: declaration.property,
           selector,
           file: declaration.file,
-          conditioned: STATE_MARK.test(subject) || selectorCondition(subject) !== "",
-          condition: selectorCondition(subject),
+          conditioned: ancestorConditioned || STATE_MARK.test(subject) || selectorCondition(subject) !== "",
+          condition: ancestorConditioned ? " narrowed" : selectorCondition(subject),
         });
       }
     }
