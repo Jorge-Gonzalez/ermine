@@ -1,26 +1,50 @@
-Non-Ermine used classes by source file:
-src/styles/skin/controls.css: btn, btn-link, btn-link-danger, btn-outlined, btn-secondary, btn-success, button-group, checkbox, editor-content, flash, input, input-error, is-selected, label, min-selected-1, panel-button, radio, radio-label, selectable-group, shake
+Non-Ermine class tokens in current Monky.
 
-src/styles/skin/surfaces.css: alert, card, divider, empty-state, section, section-description, section-title, text-mono
+Ermine grammar words are omitted. This list covers the current source tree after
+the paragraph-format pass. CSS-backed entries are grouped by the stylesheet that
+declares them; markup-only entries are authored in JSX/TSX but do not currently
+have their own local CSS selector.
 
-src/styles/components/content-editor.css: ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep, content-editor, content-editor-body
+CSS-backed local class selectors by source file:
 
-src/content/overlays/modal/modalStyles.css: modal-backdrop, modal-content, modal-dialog, modal-nav-branding, modal-nav-container, modal-nav-icon, modal-nav-label, modal-nav-tab
+src/styles/skin/controls.css:
+btn, btn-link, btn-link-danger, btn-success, checkbox, editor-content, flash, input, input-error, is-selected, min-selected-1, panel-button, radio, radio-label, selectable-group, shake
 
-src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css: macro-suggestions-arrow, macro-suggestions-command-item, macro-suggestions-commands-list, macro-suggestions-container, macro-suggestions-footer, macro-suggestions-kbd, macro-suggestions-text-preview
+src/styles/components/content-editor.css:
+ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep, content-editor, content-editor-body, is-active
 
-src/content/overlays/deleteConfirm/deleteConfirmStyles.css: delete-confirm-command, delete-confirm-message, macro-suggestions-command-item, macro-suggestions-container
+src/content/overlays/modal/modalStyles.css:
+modal-backdrop, modal-dialog, modal-nav-branding, modal-nav-container, modal-nav-icon, modal-nav-label, modal-nav-tab
 
-src/content/overlays/views/macroEditor/editorViewStyles.css: command-suggestion-action, command-suggestion-actions, command-suggestion-command, command-suggestion-item, command-suggestion-text, command-suggestions, command-suggestions-label, content-editor-body, editor-command, editor-command-error, editor-content, editor-form, editor-popout, editor-sensitive, editor-title, editor-toast, input, input-dropdown-open, macro-editor-view
+src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:
+bottom, macro-suggestions-arrow, macro-suggestions-command-item, macro-suggestions-container, macro-suggestions-footer, macro-suggestions-kbd, macro-suggestions-text-preview, top
 
-src/content/overlays/views/search/searchViewStyles.css: macro-search-count, macro-search-empty, macro-search-footer, macro-search-input, macro-search-input-container, macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-kbd, macro-search-results, macro-search-shortcut, macro-search-view, modal-command-description, modal-command-item, modal-command-name
+src/content/overlays/deleteConfirm/deleteConfirmStyles.css:
+delete-confirm, delete-confirm-option, macro-suggestions-command-item, macro-suggestions-container
 
-src/content/overlays/views/settings/settingsViewStyles.css: btn-outlined, is-selected, seg-control, seg-option, settings-body, settings-divider, settings-group, settings-import-status, settings-prefix-btn, settings-rows, settings-section-label, settings-view
+src/content/overlays/views/macroEditor/editorViewStyles.css:
+command-suggestion-action, command-suggestion-actions, command-suggestion-command, command-suggestion-item, command-suggestions, content-editor, content-editor-body, editor-command, editor-command-error, editor-content, editor-popout, editor-toast, input-dropdown-open, macro-editor-view
 
-src/popup/popup.css: popup-button, popup-card, popup-container, popup-icon-button, popup-item-detail, popup-item-toggle, popup-macro-text, popup-result-item, popup-results, popup-search-input, popup-section, popup-site-copy, popup-toggle-label, popup-truncate
+src/content/overlays/views/search/searchViewStyles.css:
+macro-search-count, macro-search-input, macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-kbd, macro-search-results, macro-search-shortcut, macro-search-view, modal-command-description, modal-command-item
 
-src/options/options.css: mode-choice, mode-row, prefix-cell
+src/content/overlays/views/settings/settingsViewStyles.css:
+is-sliding, seg-control, seg-option, seg-snap, settings-body, settings-divider, settings-group, settings-import-status, settings-prefix-btn, settings-section-label, settings-view
 
-src/styles/entries/pages.css: page-container, page-title
+src/popup/popup.css:
+popup-button, popup-container, popup-icon-button, popup-item-detail, popup-item-toggle, popup-macro-text, popup-results, popup-search-input, popup-toggle-label
 
-There are also non-class local selectors in the ledger, notably body, :host, #macro-suggestions, button/input/textarea/select, scrollbar pseudo-selectors, and @keyframes flash/pulse/shake.
+src/options/options.css:
+mode-choice, mode-row, prefix-cell
+
+src/styles/entries/pages.css:
+page-container, page-title
+
+Markup-only local class tokens:
+action-toolbar, alert, alert-error, alert-success, button-group, button-label, cancel, card, ce-link-field, ce-style-menu, ce-style-option-label, ce-toolbar, clear-button, command-input, command-input-container, command-input-error, command-input-error-message, command-input-hint, command-input-label, command-suggestion-text, command-suggestion-wrapper, command-suggestions-label, confirm, dark, delete, delete-confirm-command, delete-confirm-danger, delete-confirm-message, divider, editor-bottombar, editor-form, editor-sensitive, editor-title, editor-topbar, editor-topbar-lead, empty, empty-state, enabled, focused, fuzzy-search-field, icon-text, import-status--error, import-status--ok, light, list, list-item, macro-search-empty, macro-search-footer, macro-search-input-container, macro-suggestions-commands-list, modal-command-hint, modal-command-name, modal-content, multi-select-list, popup-card, popup-result-item, popup-section, popup-site-copy, search-field, search-focused-item, search-input, search-input-wrapper, search-spinner, searchable-list-container, searchable-list-search, searchable-list-toolbar, searchable-list-view, section, section-description, section-title, settings-appearance-controls, settings-row, settings-row-label, settings-rows, show, toggle-field, toggle-field-description, toggle-field-input, toggle-field-label, toggle-field-text, toolbar, toolbar-button, validation-error
+
+CSS-backed tokens reached through dynamic values or not found in literal class attributes:
+bottom, flash, min-selected-1, top
+
+Non-class local selectors and mechanics still in the ledger/review boundary:
+body, :host, #macro-suggestions, #macro-suggestions *, button/input/textarea/select inheritance rules, input number-spin pseudo-elements, content-editor rich-text descendants, scrollbar pseudo-elements, and @keyframes flash/pulse/shake.

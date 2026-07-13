@@ -2,9 +2,9 @@
 
 Status snapshot of the adoption. Declaration figures are the frozen U2 baseline ledger
 (`reports/adoption/monky/ledger.json`), measured at Monky `bd4bc41`. Theme figures are the
-U8e binding at Monky `cf547f7`. Live Monky style reachability is measured after the Phase C
-consumption (audit committed at Monky `31c5717`). Current-ledger and boundary figures carry
-their own pinned provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
+U8e binding at Monky `cf547f7`. Live Monky style reachability is measured from the current
+Monky style audit at `d58cac0`. Current-ledger and boundary figures carry their own pinned
+provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
 
 ## Summary
 
@@ -17,12 +17,13 @@ their own pinned provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
 - **Theme:** the skin **colour plane fully covers Monky's theme** — 23 sockets bound per
   theme × mode, contract-valid, byte-identical rendering, no colour residual; Phase B now
   enforces colour-literal drift with Stylelint.
-- **Live style reachability:** Monky's build-backed style audit now reports **208 live
-  static classes and 0 dead-candidate declarations** at `31c5717`.
-- **Current assimilation:** the generated current ledger now reports **0 assimilable
-  declarations**; the only declined rows are recorded in `current-overrides.json`.
-- **Nothing is lost:** every residual is either a triaged uncertain record or a filed Gap
-  Report.
+- **Live style reachability:** Monky's build-backed style audit now reports **201 live
+  static classes and 0 dead-candidate declarations** at `d58cac0`.
+- **Current assimilation:** the generated current ledger now reports **527 current
+  declarations**, **222 adopted/infrastructure declarations**, **305 project-owned
+  residue**, **0 assimilable declarations**, and **0 shadowed words**.
+- **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
+  pre-counted evidence for a named follow-up/ruling question.
 
 ## 1. Declaration coverage (the ledger)
 
@@ -67,26 +68,28 @@ Monky now carries its own build-backed style coverage report at
 audit combines static class references, built-entry inspection, runtime DOM observation for
 the popup/options/editor pages, and Playwright CSS coverage.
 
-Measured at Monky `31c5717`:
+Measured at Monky `d58cac0`:
 
 | Metric | Value |
 |---|---:|
-| Defined classes | 208 |
-| Selector blocks | 279 |
-| Live static classes | 208 |
+| Defined classes | 201 |
+| Selector blocks | 249 |
+| Live static classes | 201 |
 | Dead-candidate declarations | 0 |
 | Runtime pages exercised | 3 |
 
 This does not rewrite the frozen U2 declaration ledger above. It records the current
-application fact after the U8 migration and dead-style cleanup: every currently defined
-Monky class is reachable by the audit, and the commented `.monky-logo-word` preservation
-note is intentionally invisible to selector accounting.
+application fact after the U8 migration, dead-style cleanup, and paragraph-format pass:
+every currently defined Monky class is reachable by the audit.
 
 The frozen ledger was reconciled against current Monky in `CURRENT-RECONCILIATION.md`
 and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked for now
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
+The current generated ledger is at Monky `d58cac0`: 527 declarations, 222
+adopted/infrastructure declarations, 305 project-owned residue declarations,
+`assimilable = 0`, and `shadowed = 0`.
 
 ## 4. Theme coverage (the socket plane)
 
@@ -120,7 +123,9 @@ Current migration status now lives in the **generated current ledger**
 reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes every current
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
-Phase D's gate holds the list at zero — the declared boundary is `BOUNDARY.md`.
+Phase D's gate holds the list at zero. The current gate at Monky `d58cac0` reports 527
+current declarations, 305 project-owned residue, `assimilable = 0`, and no shadowed words;
+the declared boundary is `BOUNDARY.md`.
 
 ### 5.2 Open design questions (filed Gap Reports)
 
@@ -150,8 +155,8 @@ R-SKIN-16 `concealed`/`revealed`; guarded tinting and JS-state mechanics stay bo
 - **Duration/stagger step names** — scale-bound per R-SCALE-03 but unnamed (R-SCALE-02);
   Phase C deferred the christening to the animation-plane reframe (evidence attached to
   `GAP-U-animation-plane`).
-- **U9** — generalize the adoption tooling away from Monky specifics and publish the final
-  case study (the adoption's own closing order).
+- ~~U9~~ — **done** (Phase D): the current-ledger tooling is project-profiled, the
+  boundary is generated, and `CASE-STUDY.md` publishes the worked example.
 
 ## 6. Deliberate non-coverage (boundaries, not gaps)
 
@@ -176,7 +181,10 @@ recipe boundary — consumed them in Monky, and gave the recipe rows their termi
 `recipe-identity` code. Phase D (`pilots/PHASE-D-CLOSURE.md`) closed U9: the generated
 current ledger is v2/project-profiled, the gate fails on assimilable or review-coded rows,
 `BOUNDARY.md` declares the live ownership boundary, and `CASE-STUDY.md` publishes the
-worked example. **Closed:** adoption. Remaining work is only post-adoption Ermine ruling
-cycles with pre-counted evidence in Gap Reports (skin-surface mechanics, interaction
-affordance, parent-relational state, scrollbar prominence, animation plane, dataviz
-palette).
+worked example. The paragraph-format pass then reduced churn without changing the ledger
+counts: 527 current declarations, 305 project-owned residue, `assimilable = 0`, and
+`shadowed = 0`. **Closed:** adoption. Remaining work is only post-adoption Ermine ruling
+cycles with pre-counted evidence in the boundary and Gap Reports: interaction affordance,
+parent-relational mechanics, engine scrollbar identity, animation plane, opacity treatment,
+aria-current layer mechanics, elevation identity signatures, dataviz palette, and the 2xl
+density step.
