@@ -3,7 +3,7 @@
   "project": "monky",
   "source": {
     "ermineCommit": "c29d615f9a06b786fb956cf2d4ebdae91a933740",
-    "projectCommit": "ae8f5d869a6e3c3821cec60cc17e515c9e294711"
+    "projectCommit": "d58cac0d2de1cda798dc5c6d42aa6766a90f6b54"
   },
   "summary": {
     "totalDeclarations": 527,
@@ -2329,18 +2329,9 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.position-relative::position::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 9,
-      "selector": ".position-relative",
-      "property": "position",
-      "value": "relative",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.elastic::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 13,
+      "line": 9,
       "selector": ".elastic",
       "property": "flex-grow",
       "value": "1",
@@ -2349,7 +2340,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.elastic::flex-shrink::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 14,
+      "line": 10,
       "selector": ".elastic",
       "property": "flex-shrink",
       "value": "1",
@@ -2358,7 +2349,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.basis-ratio::flex-basis::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 18,
+      "line": 14,
       "selector": ".basis-ratio",
       "property": "flex-basis",
       "value": "0%",
@@ -2367,7 +2358,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-comfortable::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 22,
+      "line": 18,
       "selector": ".gap-comfortable",
       "property": "gap",
       "value": "var(--spacing-comfortable)",
@@ -2376,10 +2367,19 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.min-height-none::min-height::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 26,
+      "line": 22,
       "selector": ".min-height-none",
       "property": "min-height",
       "value": "0",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.position-relative::position::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 26,
+      "selector": ".position-relative",
+      "property": "position",
+      "value": "relative",
       "code": "ermine-emitted"
     },
     {
@@ -2410,27 +2410,9 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.text-start::text-align::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 39,
-      "selector": ".text-start",
-      "property": "text-align",
-      "value": "start",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.align-center::align-items::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 43,
-      "selector": ".align-center",
-      "property": "align-items",
-      "value": "center",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.gap-snug::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 47,
+      "line": 39,
       "selector": ".gap-snug",
       "property": "gap",
       "value": "var(--spacing-snug)",
@@ -2439,7 +2421,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-block-tight::padding-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 51,
+      "line": 43,
       "selector": ".padding-block-tight",
       "property": "padding-block",
       "value": "var(--spacing-tight)",
@@ -2448,10 +2430,28 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-snug::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 55,
+      "line": 47,
       "selector": ".padding-inline-snug",
       "property": "padding-inline",
       "value": "var(--spacing-snug)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.align-center::align-items::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 51,
+      "selector": ".align-center",
+      "property": "align-items",
+      "value": "center",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 55,
+      "selector": ".ink",
+      "property": "color",
+      "value": "var(--ink)",
       "code": "ermine-emitted"
     },
     {
@@ -2464,21 +2464,21 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ink::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 63,
-      "selector": ".ink",
-      "property": "color",
-      "value": "var(--ink)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.font-sm::font-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 67,
+      "line": 63,
       "selector": ".font-sm",
       "property": "font-size",
       "value": "var(--type-sm)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.text-start::text-align::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 67,
+      "selector": ".text-start",
+      "property": "text-align",
+      "value": "start",
       "code": "ermine-emitted"
     },
     {
@@ -2491,21 +2491,21 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.position-fixed::position::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 75,
-      "selector": ".position-fixed",
-      "property": "position",
-      "value": "fixed",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.justify-center::justify-content::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 79,
+      "line": 75,
       "selector": ".justify-center",
       "property": "justify-content",
       "value": "center",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.position-fixed::position::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 79,
+      "selector": ".position-fixed",
+      "property": "position",
+      "value": "fixed",
       "code": "ermine-emitted"
     },
     {
@@ -2572,21 +2572,21 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.justify-between::justify-content::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 105,
-      "selector": ".justify-between",
-      "property": "justify-content",
-      "value": "space-between",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-relaxed::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 109,
+      "line": 105,
       "selector": ".padding-inline-relaxed",
       "property": "padding-inline",
       "value": "var(--spacing-relaxed)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.justify-between::justify-content::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 109,
+      "selector": ".justify-between",
+      "property": "justify-content",
+      "value": "space-between",
       "code": "ermine-emitted"
     },
     {
@@ -2599,12 +2599,12 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.pressable::cursor::1",
+      "id": "src/styles/grammar/ermine.generated.css::.ink-soft::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 117,
-      "selector": ".pressable",
-      "property": "cursor",
-      "value": "pointer",
+      "selector": ".ink-soft",
+      "property": "color",
+      "value": "var(--ink-soft)",
       "code": "ermine-emitted"
     },
     {
@@ -2626,12 +2626,12 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-soft::color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.pressable::cursor::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 129,
-      "selector": ".ink-soft",
-      "property": "color",
-      "value": "var(--ink-soft)",
+      "selector": ".pressable",
+      "property": "cursor",
+      "value": "pointer",
       "code": "ermine-emitted"
     },
     {
@@ -2653,21 +2653,21 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.current\\:ink-accent[aria-current]:not([aria-current=\"false\"])::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 141,
-      "selector": ".current\\:ink-accent[aria-current]:not([aria-current=\"false\"])",
-      "property": "color",
-      "value": "var(--accent)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.current\\:ground-subtle[aria-current]:not([aria-current=\"false\"])::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 145,
+      "line": 141,
       "selector": ".current\\:ground-subtle[aria-current]:not([aria-current=\"false\"])",
       "property": "background",
       "value": "var(--ground-subtle)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.current\\:ink-accent[aria-current]:not([aria-current=\"false\"])::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 145,
+      "selector": ".current\\:ink-accent[aria-current]:not([aria-current=\"false\"])",
+      "property": "color",
+      "value": "var(--accent)",
       "code": "ermine-emitted"
     },
     {
@@ -2680,21 +2680,21 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-md::border-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 153,
-      "selector": ".corner-md",
-      "property": "border-radius",
-      "value": "var(--radius-md)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.ground-fail-faint::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 157,
+      "line": 153,
       "selector": ".ground-fail-faint",
       "property": "background",
       "value": "var(--fail-faint)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink-fail::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 157,
+      "selector": ".ink-fail",
+      "property": "color",
+      "value": "var(--fail)",
       "code": "ermine-emitted"
     },
     {
@@ -2707,12 +2707,12 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-fail::color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.corner-md::border-radius::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 165,
-      "selector": ".ink-fail",
-      "property": "color",
-      "value": "var(--fail)",
+      "selector": ".corner-md",
+      "property": "border-radius",
+      "value": "var(--radius-md)",
       "code": "ermine-emitted"
     },
     {
@@ -2725,20 +2725,20 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.rule-pass::border-color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.ink-pass::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 173,
-      "selector": ".rule-pass",
-      "property": "border-color",
+      "selector": ".ink-pass",
+      "property": "color",
       "value": "var(--pass)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-pass::color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.rule-pass::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 177,
-      "selector": ".ink-pass",
-      "property": "color",
+      "selector": ".rule-pass",
+      "property": "border-color",
       "value": "var(--pass)",
       "code": "ermine-emitted"
     },

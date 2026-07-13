@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `c29d615f9a06b786fb956cf2d4ebdae91a933740` |
-| monky | `ae8f5d869a6e3c3821cec60cc17e515c9e294711` |
+| monky | `d58cac0d2de1cda798dc5c6d42aa6766a90f6b54` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
