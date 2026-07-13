@@ -18,6 +18,7 @@
   "packageManager": "pnpm@9.0.0",
   "files": [
     "src/registry.ts",
+    "src/format-paragraph.ts",
     "src/lint.ts",
     "src/emit.ts",
     "src/emitter-types.ts",

@@ -145,6 +145,12 @@ the new decision is applied.
 - Rewrite one bounded surface at a time and run its unit, build, and browser comparisons before
   proceeding.
 
+Class paragraphs are formatted mechanically, not by author memory. The paragraph formatter derives
+canonical order from the registry: unresolved identity hooks stay first in source order, base words
+then follow by registry plane and axis order, and scoped words group by the imported scope-prefix
+tables before their inner words use the same base order. Adoption projects run
+`adoption/format-paragraphs.ts --check` beside their other generated-artifact checks.
+
 ### Theme and scale binding gate
 
 Scale values and breakpoint values are late-bound project parameters, not values that adoption may
