@@ -115,6 +115,12 @@
       "anchor": "ADR-0019"
     },
     {
+      "id": "ADR-0020",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0020-paragraph-integrity.md",
+      "anchor": "ADR-0020"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -425,6 +431,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-IMPL-01"
+    },
+    {
+      "id": "R-IMPL-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-IMPL-02"
     },
     {
       "id": "R-LAYER-01",
@@ -1025,6 +1037,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-IMPL-01"
+    },
+    {
+      "id": "RAT:R-IMPL-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-IMPL-02"
     },
     {
       "id": "RAT:R-LAYER-01",
@@ -1907,6 +1925,11 @@
     {
       "from": "RAT:R-IMPL-01",
       "to": "R-IMPL-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-IMPL-02",
+      "to": "R-IMPL-02",
       "type": "rationale-of"
     },
     {

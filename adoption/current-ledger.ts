@@ -26,6 +26,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { grammarFamilies, propertyFamily } from "../analysis/lib.ts";
 import { toCss } from "../src/css.ts";
 import { VOCABULARY } from "../src/emit.ts";
+import { parseWord } from "../src/lint.ts";
 import { displaySelector, parseCssDeclarations, type ParsedCssDeclaration } from "./css-parser.ts";
 
 const execFile = promisify(execFileCallback);
@@ -101,6 +102,8 @@ export interface CurrentLedgerV2 {
     byCode: Record<ReasonCode, number>;
   };
   records: CurrentRecord[];
+  // R-IMPL-02: words defeated by later cascade layers (paragraph-integrity check).
+  shadowedWords: ShadowedWord[];
 }
 
 export interface CurrentOverride {
@@ -118,6 +121,8 @@ export interface ProjectProfile {
   configFiles: string[];
   substrate: string[];
   theme: string[];
+  // R-IMPL-02: files whose shadowing of a word is a *declared* override.
+  overridesLayer: string[];
 }
 
 export const DEFAULT_PROJECT_PROFILE: ProjectProfile = {
@@ -128,6 +133,7 @@ export const DEFAULT_PROJECT_PROFILE: ProjectProfile = {
   configFiles: ["ermine.config.css"],
   substrate: ["src/styles/substrate/", "font.css", "font-face.css"],
   theme: ["src/styles/theme/"],
+  overridesLayer: ["/overrides/", "overrides.css"],
 };
 
 // ---------------------------------------------------------------------------
@@ -177,6 +183,7 @@ async function loadProjectProfile(path: string): Promise<ProjectProfile> {
     configFiles: stringArray("configFiles", DEFAULT_PROJECT_PROFILE.configFiles),
     substrate: stringArray("substrate", DEFAULT_PROJECT_PROFILE.substrate),
     theme: stringArray("theme", DEFAULT_PROJECT_PROFILE.theme),
+    overridesLayer: stringArray("overridesLayer", DEFAULT_PROJECT_PROFILE.overridesLayer),
   };
 }
 
@@ -449,6 +456,145 @@ function classify(
 }
 
 // ---------------------------------------------------------------------------
+// shadowed words (R-IMPL-02) — a word defeated by a later cascade layer makes
+// the paragraph lie. The check reads real markup class strings (the invariant
+// is about what elements wear, and the manifest records words only), maps each
+// word to its owned properties through the true emission path, and matches
+// later-layer declarations by identity class. Condition-aware: a local
+// declaration flags only when it applies unconditionally or under the same
+// condition as the word — distinct conditions are legitimate state layering.
+// ---------------------------------------------------------------------------
+
+export interface ShadowedWord {
+  markupFile: string;
+  identity: string;
+  word: string;
+  property: string;
+  selector: string;
+  cssFile: string;
+  sanctioned: boolean; // the shadowing file is a declared overrides-layer file
+}
+
+const MARKUP_EXTENSIONS = new Set([".tsx", ".ts", ".jsx", ".js", ".html"]);
+const PSEUDO_ELEMENT = /::(before|after|placeholder|selection|marker|backdrop)|::-webkit-/;
+
+async function walkMarkup(root: string): Promise<string[]> {
+  const output: string[] = [];
+  async function visit(directory: string): Promise<void> {
+    const entries = await readdir(directory, { withFileTypes: true });
+    for (const entry of entries.sort((left, right) => left.name.localeCompare(right.name))) {
+      if (entry.isDirectory() && SKIP_DIRECTORIES.has(entry.name)) continue;
+      const path = resolve(directory, entry.name);
+      if (entry.isDirectory()) await visit(path);
+      else if (entry.isFile() && MARKUP_EXTENSIONS.has(entry.name.slice(entry.name.lastIndexOf(".")))) output.push(path);
+    }
+  }
+  await visit(root);
+  return output;
+}
+
+// Class strings from markup: plain attributes plus the static text of template
+// literals (interpolations become separators — their tokens are dynamic and
+// out of scope for a static integrity check).
+function markupClassStrings(source: string): string[] {
+  const output: string[] = [];
+  const attribute = /\bclass(?:Name)?\s*=\s*(?:"([^"]*)"|'([^']*)'|\{\s*`([\s\S]*?)`\s*\})/g;
+  let match: RegExpExecArray | null;
+  while ((match = attribute.exec(source))) {
+    const template = match[3];
+    output.push(template !== undefined ? template.replace(/\$\{[\s\S]*?\}/g, " ") : (match[1] ?? match[2] ?? ""));
+  }
+  return output;
+}
+
+// The properties a word paints, with the condition it paints them under —
+// derived from the same serializer the generated CSS uses.
+function wordProperties(word: string, cache: Map<string, Array<{ property: string; condition: string }>>): Array<{ property: string; condition: string }> {
+  const cached = cache.get(word);
+  if (cached) return cached;
+  let entries: Array<{ property: string; condition: string }> = [];
+  try {
+    const parsed = parseCssDeclarations(toCss(word), word);
+    entries = parsed.map((declaration) => ({
+      property: declaration.property,
+      condition: selectorCondition(declaration.selector),
+    }));
+  } catch { /* unknown words paint nothing */ }
+  cache.set(word, entries);
+  return entries;
+}
+
+export async function findShadowedWords(
+  projectRoot: string,
+  profile: ProjectProfile,
+  declarations: readonly ParsedCssDeclaration[],
+): Promise<ShadowedWord[]> {
+  // Later-layer declarations (everything past grammar), indexed by identity class.
+  const laterLayer = declarations.filter((declaration) =>
+    !fileMatches(declaration.file, profile.generatedGrammar) &&
+    !fileMatches(declaration.file, profile.substrate) &&
+    !fileMatches(declaration.file, profile.theme) &&
+    !fileMatches(declaration.file, profile.configFiles));
+  const byIdentity = new Map<string, Array<{ property: string; selector: string; file: string; conditioned: boolean; condition: string }>>();
+  for (const declaration of laterLayer) {
+    for (const selector of displaySelector(declaration).split(",").map((part) => part.trim())) {
+      const parts = compounds(selector);
+      const subject = parts[parts.length - 1] ?? "";
+      if (PSEUDO_ELEMENT.test(subject)) continue; // a pseudo-element is a different box
+      for (const className of classNames(subject)) {
+        (byIdentity.get(className) ?? byIdentity.set(className, []).get(className)!).push({
+          property: declaration.property,
+          selector,
+          file: declaration.file,
+          conditioned: STATE_MARK.test(subject) || selectorCondition(subject) !== "",
+          condition: selectorCondition(subject),
+        });
+      }
+    }
+  }
+
+  const scanRoot = existsSync(resolve(projectRoot, profile.scanRoot ?? "src"))
+    ? resolve(projectRoot, profile.scanRoot ?? "src")
+    : projectRoot;
+  const cache = new Map<string, Array<{ property: string; condition: string }>>();
+  const found = new Map<string, ShadowedWord>();
+  for (const absolute of await walkMarkup(scanRoot)) {
+    const file = slash(relative(projectRoot, absolute));
+    if (isTestFile(file)) continue;
+    const source = await readFile(absolute, "utf8");
+    for (const classString of markupClassStrings(source)) {
+      const tokens = classString.split(/\s+/).filter(Boolean);
+      const words = tokens.filter((token) => parseWord(token).axis);
+      const identities = tokens.filter((token) => !parseWord(token).axis && /^[_a-zA-Z][\w-]*$/.test(token));
+      if (!words.length || !identities.length) continue;
+      for (const word of words) {
+        for (const painted of wordProperties(word, cache)) {
+          for (const identity of identities) {
+            for (const local of byIdentity.get(identity) ?? []) {
+              if (local.property !== painted.property) continue;
+              // Unconditioned local CSS defeats the word everywhere; same-condition
+              // local CSS defeats it exactly where it fires. Distinct conditions
+              // are state layering, not shadowing.
+              if (local.conditioned && local.condition !== painted.condition) continue;
+              const sanctioned = fileMatches(local.file, profile.overridesLayer);
+              const key = `${file}|${identity}|${word}|${painted.property}|${local.selector}`;
+              if (!found.has(key)) {
+                found.set(key, {
+                  markupFile: file, identity, word,
+                  property: painted.property,
+                  selector: local.selector, cssFile: local.file, sanctioned,
+                });
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return [...found.values()].sort((left, right) => left.identity.localeCompare(right.identity) || left.word.localeCompare(right.word));
+}
+
+// ---------------------------------------------------------------------------
 // overrides — recorded human judgments, validated against the scan
 // ---------------------------------------------------------------------------
 
@@ -520,6 +666,7 @@ export async function generateCurrentLedger(options: GenerateOptions): Promise<C
     code,
     records.filter((record) => record.code === code).length,
   ])) as Record<ReasonCode, number>;
+  const shadowedWords = await findShadowedWords(options.projectRoot, options.profile, declarations);
   return {
     version: 2,
     project: options.name,
@@ -531,6 +678,7 @@ export async function generateCurrentLedger(options: GenerateOptions): Promise<C
       byCode,
     },
     records,
+    shadowedWords,
   };
 }
 
@@ -614,6 +762,7 @@ re-validated on every run.
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | ${ledger.summary.totalDeclarations - ledger.summary.residueDeclarations} |
 | **residue — project-owned declarations** | **${ledger.summary.residueDeclarations}** |
 | assimilable now (work list below) | ${ledger.summary.assimilable} |
+| shadowed words (R-IMPL-02) | ${ledger.shadowedWords.filter((shadow) => !shadow.sanctioned).length} undeclared / ${ledger.shadowedWords.filter((shadow) => shadow.sanctioned).length} declared |
 
 ## Residue by reason code
 
@@ -635,6 +784,16 @@ Declarations an existing Ermine word can express today.
 |---|---|---|---|
 ${workList}
 ` : "No assimilable declarations remain — the residue is declared boundary and follow-up questions.\n"}
+${ledger.shadowedWords.length ? `## Shadowed words (R-IMPL-02)
+
+A later cascade layer defeats these words on their elements; each must become a deletion
+(conversion leftover) or a declared override in the overrides layer.
+
+| element (identity) | word | property | defeated by | file |
+|---|---|---|---|---|
+${ledger.shadowedWords.map((shadow) =>
+  `| \`${shadow.identity}\` | \`${shadow.word}\` | \`${shadow.property}\` | \`${shadow.selector}\`${shadow.sanctioned ? " *(declared)*" : ""} | \`${shadow.cssFile}\` |`).join("\n")}
+` : "No shadowed words — every paragraph is true or silent about every property (R-IMPL-02).\n"}
 Every record with its code is in \`current-ledger.json\`.
 `;
 }
@@ -720,9 +879,9 @@ ${boundaryRow(ledger, identityCodes) || "| _(none)_ | 0 | |"}
 
 ${project} keeps mechanics that are selector or component contracts rather than reusable grammar:
 pseudo-element geometry, absence sentinels, border/rule mechanics, native or JS-toggled state
-mechanics, overlap/layer tricks, and exact component behavior. Phase C's cascade-layer finding
-remains a standing caveat: a local rule in the project's component layer can outrank generated grammar
-even when both carry the same socket.
+mechanics, overlap/layer tricks, and exact component behavior. The cascade-layer seam — a local
+rule in a later layer outranks generated grammar — is machine-checked under R-IMPL-02: the
+shadowed-words gate holds every paragraph true or silent about every property.
 
 | code | count | boundary |
 |---|---:|---|
@@ -754,6 +913,8 @@ export function gateFailures(ledger: CurrentLedgerV2): string[] {
     const count = ledger.summary.byCode[code];
     if (count > 0) failures.push(`${code}=${count}`);
   }
+  const undeclaredShadows = ledger.shadowedWords.filter((shadow) => !shadow.sanctioned).length;
+  if (undeclaredShadows > 0) failures.push(`shadowed-words=${undeclaredShadows} (R-IMPL-02: a defeated word makes the paragraph lie)`);
   return failures;
 }
 

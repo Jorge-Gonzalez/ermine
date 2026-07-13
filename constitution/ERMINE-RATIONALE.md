@@ -521,6 +521,24 @@ Source: pre-split `constitution/ERMINE.md` lines 1769–1797.
 ## RAT:R-IMPL-01
 Source: pre-split `constitution/ERMINE.md` lines 1798–1820.
 
+## RAT:R-IMPL-02
+The layer order that makes recipes possible (specific beats generic, always) has a one-way
+membrane as its price: local CSS can override words, words can never override local CSS. That
+is the right steady state and a real transition hazard — the Monky conversion hit it three
+times, once shipping an 88px regression when a word was added while its local counterpart
+survived in a later layer. The failure is informational before it is visual: a defeated word
+makes the paragraph claim what the pixels contradict, and a lying paragraph is worse than a
+silent one because the whole system asks readers and tools to trust the markup. The invariant
+is deliberately per-element, not global — a blanket "later layers may not touch grammar-owned
+properties" would abolish recipes, whose elements honour the invariant by not carrying words
+for bundled properties. The `overrides` layer, present in the stack since U8 and never used,
+turns out to be the declaration mechanism: intent readable in the cascade itself. The
+unlayered-CSS clause exists because the cascade spec ranks unlayered author styles above all
+layers — the one override no in-system check can see coming, so it is excluded by contract.
+Enforcement lives in the reconciler (`findShadowedWords`), which reads real markup paragraphs
+rather than the manifest, because the manifest records words only and the invariant is about
+what elements actually wear. Source: ADR-0020.
+
 ## RAT:R-TEST-01
 Source: pre-split `constitution/ERMINE.md` lines 1921–1949.
 

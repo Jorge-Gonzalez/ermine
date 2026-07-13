@@ -816,6 +816,20 @@ scope, or mangling. Unprefixed light DOM without membership is unsupported.
 
 → rationale: RAT:R-IMPL-01 · history: ADR-0002
 
+## R-IMPL-02 — Paragraph integrity
+
+A class paragraph must be true or silent about every property: a word's declaration may be
+overridden by a later cascade layer only as a declared decision. Project layers between
+`grammar` and `overrides` must never shadow a property that a word on the same element carries —
+an element takes a property from its recipe bundle *or* from a word, never both undeclared. A
+sanctioned override lives in the `overrides` layer, where the layer name itself declares the
+intent. All project CSS must be layered: the cascade ranks unlayered author styles above every
+layer, so an unlayered stylesheet defeats words invisibly and sits outside the contract. The
+reconciler verifies the invariant — an undeclared shadowed word is an error, because a defeated
+word makes the markup lie, and the paragraph's authority is the system's value.
+
+→ rationale: RAT:R-IMPL-02 · history: ADR-0020
+
 ## R-TEST-01 — Outcome testing
 
 Tests cover rules and invariants rather than enumerating the configuration space. Negotiated outcome
