@@ -15,7 +15,7 @@ machine-checked current contract.
 | source | commit |
 |---|---|
 | Ermine | `3596610363fbac8e5fe6a0fce442a44e97bd4f7a` |
-| monky | `1faa1cc0f0db95d00588ad6a5a3e210c265e3225` |
+| monky | `16624ec2c1392e1d72383670268513339073d1a4` |
 
 ## Closure Gate
 
@@ -23,7 +23,7 @@ machine-checked current contract.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 378 |
+| project-owned residue | 363 |
 
 ## Product Identity
 
@@ -34,8 +34,8 @@ R-SKIN-09's boundary clause for shadows that are signatures rather than the shar
 
 | code | count | boundary |
 |---|---:|---|
-| `recipe-identity` | 102 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `identity-geometry` | 65 | project-exact geometry on a grammar-family property |
+| `recipe-identity` | 92 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `identity-geometry` | 62 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 11 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
@@ -52,7 +52,7 @@ shadowed-words gate holds every paragraph true or silent about every property.
 | `component-contract` | 65 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
-| `reset-absence` | 15 | absence/reset mechanics, not a positive carrier |
+| `reset-absence` | 13 | absence/reset mechanics, not a positive carrier |
 
 ## User Content
 
