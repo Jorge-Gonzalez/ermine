@@ -573,9 +573,11 @@ export async function findShadowedWords(
             for (const local of byIdentity.get(identity) ?? []) {
               if (local.property !== painted.property) continue;
               // Unconditioned local CSS defeats the word everywhere; same-condition
-              // local CSS defeats it exactly where it fires. Distinct conditions
-              // are state layering, not shadowing.
-              if (local.conditioned && local.condition !== painted.condition) continue;
+              // local CSS defeats it exactly where it fires. A *conditioned* local
+              // rule against an unconditioned or differently-conditioned word is
+              // state layering (e.g. .is-active recolouring a base ink), not shadow.
+              const sameTrigger = local.condition !== "" && local.condition === painted.condition;
+              if (local.conditioned && !sameTrigger) continue;
               const sanctioned = fileMatches(local.file, profile.overridesLayer);
               const key = `${file}|${identity}|${word}|${painted.property}|${local.selector}`;
               if (!found.has(key)) {
