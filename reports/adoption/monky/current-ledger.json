@@ -2,12 +2,12 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "5cac75069c6d2f8b08fd22ad5f13aee1541b4847",
-    "projectCommit": "a15607cee336ae8249e587220f4267b45fda9763"
+    "ermineCommit": "3596610363fbac8e5fe6a0fce442a44e97bd4f7a",
+    "projectCommit": "1faa1cc0f0db95d00588ad6a5a3e210c265e3225"
   },
   "summary": {
-    "totalDeclarations": 599,
-    "residueDeclarations": 386,
+    "totalDeclarations": 591,
+    "residueDeclarations": 378,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 121,
@@ -15,7 +15,7 @@
       "theme-metric": 39,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 104,
+      "recipe-identity": 102,
       "rule-mechanics": 0,
       "brand-identity": 11,
       "affordance-mechanics": 0,
@@ -30,7 +30,7 @@
       "motion-followup": 23,
       "opacity-followup": 4,
       "elevation-followup": 3,
-      "reset-absence": 21,
+      "reset-absence": 15,
       "user-content": 43,
       "identity-geometry": 65,
       "skin-review": 0,
@@ -898,27 +898,9 @@
       "code": "component-contract"
     },
     {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::border::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 69,
-      "selector": ".macro-search-item-edit",
-      "property": "border",
-      "value": "none",
-      "code": "reset-absence"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::background::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 70,
-      "selector": ".macro-search-item-edit",
-      "property": "background",
-      "value": "transparent",
-      "code": "reset-absence"
-    },
-    {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::transition::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 71,
+      "line": 69,
       "selector": ".macro-search-item-edit",
       "property": "transition",
       "value": "opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)",
@@ -927,7 +909,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::background::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 75,
+      "line": 73,
       "selector": ".macro-search-item-text mark",
       "property": "background",
       "value": "transparent",
@@ -936,7 +918,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::color::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 76,
+      "line": 74,
       "selector": ".macro-search-item-text mark",
       "property": "color",
       "value": "inherit",
@@ -945,7 +927,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::font-style::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 77,
+      "line": 75,
       "selector": ".macro-search-item-text mark",
       "property": "font-style",
       "value": "normal",
@@ -954,7 +936,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark span::opacity::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 81,
+      "line": 79,
       "selector": ".macro-search-item-text mark span",
       "property": "opacity",
       "value": "0.35",
@@ -963,7 +945,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-count::font-variant-numeric::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 85,
+      "line": 83,
       "selector": ".macro-search-count",
       "property": "font-variant-numeric",
       "value": "tabular-nums",
@@ -972,7 +954,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-description::font-style::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 91,
+      "line": 89,
       "selector": ".modal-command-item .modal-command-description",
       "property": "font-style",
       "value": "italic",
@@ -981,7 +963,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-shortcut::margin-right::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 107,
+      "line": 105,
       "selector": ".macro-search-shortcut",
       "property": "margin-right",
       "value": "var(--spacing-xl)",
@@ -990,7 +972,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::line-height::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 112,
+      "line": 110,
       "selector": ".macro-search-kbd",
       "property": "line-height",
       "value": "1",
@@ -999,7 +981,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::padding::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 113,
+      "line": 111,
       "selector": ".macro-search-kbd",
       "property": "padding",
       "value": "3px 6px 6px",
@@ -1008,7 +990,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::min-width::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 114,
+      "line": 112,
       "selector": ".macro-search-kbd",
       "property": "min-width",
       "value": "26px",
@@ -1017,7 +999,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::border-radius::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 115,
+      "line": 113,
       "selector": ".macro-search-kbd",
       "property": "border-radius",
       "value": "4px",
@@ -1026,7 +1008,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::z-index::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 116,
+      "line": 114,
       "selector": ".macro-search-kbd",
       "property": "z-index",
       "value": "0",
@@ -1035,7 +1017,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::content::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 120,
+      "line": 118,
       "selector": ".macro-search-kbd::after",
       "property": "content",
       "value": "''",
@@ -1044,7 +1026,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::position::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 121,
+      "line": 119,
       "selector": ".macro-search-kbd::after",
       "property": "position",
       "value": "absolute",
@@ -1053,7 +1035,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::background::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 122,
+      "line": 120,
       "selector": ".macro-search-kbd::after",
       "property": "background",
       "value": "var(--tone-dim)",
@@ -1062,7 +1044,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::inset::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 123,
+      "line": 121,
       "selector": ".macro-search-kbd::after",
       "property": "inset",
       "value": "0 2px 4px",
@@ -1071,7 +1053,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 124,
+      "line": 122,
       "selector": ".macro-search-kbd::after",
       "property": "border",
       "value": "1px solid var(--harmonic-minor)",
@@ -1080,7 +1062,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border-radius::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 125,
+      "line": 123,
       "selector": ".macro-search-kbd::after",
       "property": "border-radius",
       "value": "2px",
@@ -1089,7 +1071,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::pointer-events::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 126,
+      "line": 124,
       "selector": ".macro-search-kbd::after",
       "property": "pointer-events",
       "value": "none",
@@ -1098,7 +1080,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::z-index::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 127,
+      "line": 125,
       "selector": ".macro-search-kbd::after",
       "property": "z-index",
       "value": "-1",
@@ -1107,7 +1089,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd:first-child::margin-left::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 131,
+      "line": 129,
       "selector": ".macro-search-kbd:first-child",
       "property": "margin-left",
       "value": "0",
@@ -1762,27 +1744,9 @@
       "code": "component-contract"
     },
     {
-      "id": "src/styles/components/content-editor.css::.ce-toolbar-btn::border::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 19,
-      "selector": ".ce-toolbar-btn",
-      "property": "border",
-      "value": "none",
-      "code": "reset-absence"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.ce-toolbar-btn::background::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 20,
-      "selector": ".ce-toolbar-btn",
-      "property": "background",
-      "value": "transparent",
-      "code": "reset-absence"
-    },
-    {
       "id": "src/styles/components/content-editor.css::.ce-toolbar-btn::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 21,
+      "line": 19,
       "selector": ".ce-toolbar-btn",
       "property": "padding",
       "value": "0",
@@ -1791,7 +1755,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-toolbar-btn::transition::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 22,
+      "line": 20,
       "selector": ".ce-toolbar-btn",
       "property": "transition",
       "value": "background var(--transition-fast), color var(--transition-fast)",
@@ -1800,7 +1764,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-toolbar-btn.is-active::background-color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 26,
+      "line": 24,
       "selector": ".ce-toolbar-btn.is-active",
       "property": "background-color",
       "value": "var(--tone)",
@@ -1809,7 +1773,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-toolbar-btn.is-active::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 27,
+      "line": 25,
       "selector": ".ce-toolbar-btn.is-active",
       "property": "color",
       "value": "var(--accent)",
@@ -1818,7 +1782,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-toolbar-icon::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 31,
+      "line": 29,
       "selector": ".ce-toolbar-icon",
       "property": "padding",
       "value": "0 var(--spacing-xs)",
@@ -1827,7 +1791,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-trigger::width::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 36,
+      "line": 34,
       "selector": ".ce-style-trigger",
       "property": "width",
       "value": "auto",
@@ -1836,7 +1800,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-trigger::min-width::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 37,
+      "line": 35,
       "selector": ".ce-style-trigger",
       "property": "min-width",
       "value": "36px",
@@ -1845,7 +1809,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-trigger::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 38,
+      "line": 36,
       "selector": ".ce-style-trigger",
       "property": "padding",
       "value": "0 var(--spacing-xs)",
@@ -1854,7 +1818,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-trigger::gap::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 39,
+      "line": 37,
       "selector": ".ce-style-trigger",
       "property": "gap",
       "value": "2px",
@@ -1863,7 +1827,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-caret::opacity::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 42,
+      "line": 40,
       "selector": ".ce-style-caret",
       "property": "opacity",
       "value": "0.6",
@@ -1872,7 +1836,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-dropdown::top::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 46,
+      "line": 44,
       "selector": ".ce-style-dropdown",
       "property": "top",
       "value": "calc(100% + 4px)",
@@ -1881,7 +1845,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-dropdown::left::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 47,
+      "line": 45,
       "selector": ".ce-style-dropdown",
       "property": "left",
       "value": "0",
@@ -1890,7 +1854,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-dropdown::z-index::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 48,
+      "line": 46,
       "selector": ".ce-style-dropdown",
       "property": "z-index",
       "value": "10",
@@ -1899,7 +1863,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-dropdown::min-width::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 49,
+      "line": 47,
       "selector": ".ce-style-dropdown",
       "property": "min-width",
       "value": "140px",
@@ -1908,7 +1872,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-dropdown::gap::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 50,
+      "line": 48,
       "selector": ".ce-style-dropdown",
       "property": "gap",
       "value": "2px",
@@ -1917,34 +1881,16 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option::width::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 54,
+      "line": 52,
       "selector": ".ce-style-option",
       "property": "width",
       "value": "100%",
       "code": "component-contract"
     },
     {
-      "id": "src/styles/components/content-editor.css::.ce-style-option::border::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 55,
-      "selector": ".ce-style-option",
-      "property": "border",
-      "value": "none",
-      "code": "reset-absence"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.ce-style-option::background::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 56,
-      "selector": ".ce-style-option",
-      "property": "background",
-      "value": "transparent",
-      "code": "reset-absence"
-    },
-    {
       "id": "src/styles/components/content-editor.css::.ce-style-option::transition::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 57,
+      "line": 53,
       "selector": ".ce-style-option",
       "property": "transition",
       "value": "background var(--transition-fast)",
@@ -1953,7 +1899,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option.is-active::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 61,
+      "line": 57,
       "selector": ".ce-style-option.is-active",
       "property": "color",
       "value": "var(--accent)",
@@ -1962,7 +1908,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option.is-active::background-color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 62,
+      "line": 58,
       "selector": ".ce-style-option.is-active",
       "property": "background-color",
       "value": "var(--tone)",
@@ -1971,7 +1917,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option-short::width::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 66,
+      "line": 62,
       "selector": ".ce-style-option-short",
       "property": "width",
       "value": "24px",
@@ -1980,7 +1926,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-style-option.is-active .ce-style-option-short::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 70,
+      "line": 66,
       "selector": ".ce-style-option.is-active .ce-style-option-short",
       "property": "color",
       "value": "var(--accent)",
@@ -1989,7 +1935,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-link-input::height::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 74,
+      "line": 70,
       "selector": ".ce-link-input",
       "property": "height",
       "value": "28px",
@@ -1998,7 +1944,7 @@
     {
       "id": "src/styles/components/content-editor.css::.ce-link-input::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 75,
+      "line": 71,
       "selector": ".ce-link-input",
       "property": "padding",
       "value": "0 var(--spacing-sm)",
@@ -2007,7 +1953,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body::min-height::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 80,
+      "line": 76,
       "selector": ".content-editor-body",
       "property": "min-height",
       "value": "150px",
@@ -2016,7 +1962,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body::font-family::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 83,
+      "line": 79,
       "selector": ".content-editor-body",
       "property": "font-family",
       "value": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
@@ -2025,7 +1971,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body::line-height::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 84,
+      "line": 80,
       "selector": ".content-editor-body",
       "property": "line-height",
       "value": "normal",
@@ -2034,7 +1980,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::content::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 88,
+      "line": 84,
       "selector": ".content-editor-body:empty::before",
       "property": "content",
       "value": "attr(data-placeholder)",
@@ -2043,7 +1989,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 89,
+      "line": 85,
       "selector": ".content-editor-body:empty::before",
       "property": "color",
       "value": "var(--ink-soft)",
@@ -2052,7 +1998,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::pointer-events::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 90,
+      "line": 86,
       "selector": ".content-editor-body:empty::before",
       "property": "pointer-events",
       "value": "none",
@@ -2061,7 +2007,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body p::margin-bottom::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 95,
+      "line": 91,
       "selector": ".content-editor-body p",
       "property": "margin-bottom",
       "value": "0.75em",
@@ -2070,7 +2016,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body p:last-child::margin-bottom::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 99,
+      "line": 95,
       "selector": ".content-editor-body p:last-child",
       "property": "margin-bottom",
       "value": "0",
@@ -2079,7 +2025,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h1::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 103,
+      "line": 99,
       "selector": ".content-editor-body h1",
       "property": "font-size",
       "value": "1.75em",
@@ -2088,7 +2034,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h1::font-weight::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 104,
+      "line": 100,
       "selector": ".content-editor-body h1",
       "property": "font-weight",
       "value": "700",
@@ -2097,7 +2043,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h1::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 105,
+      "line": 101,
       "selector": ".content-editor-body h1",
       "property": "margin",
       "value": "0.75em 0 0.4em",
@@ -2106,7 +2052,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h2::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 109,
+      "line": 105,
       "selector": ".content-editor-body h2",
       "property": "font-size",
       "value": "1.4em",
@@ -2115,7 +2061,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h2::font-weight::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 110,
+      "line": 106,
       "selector": ".content-editor-body h2",
       "property": "font-weight",
       "value": "700",
@@ -2124,7 +2070,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h2::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 111,
+      "line": 107,
       "selector": ".content-editor-body h2",
       "property": "margin",
       "value": "0.75em 0 0.4em",
@@ -2133,7 +2079,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h3::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 115,
+      "line": 111,
       "selector": ".content-editor-body h3",
       "property": "font-size",
       "value": "1.15em",
@@ -2142,7 +2088,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h3::font-weight::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 116,
+      "line": 112,
       "selector": ".content-editor-body h3",
       "property": "font-weight",
       "value": "700",
@@ -2151,7 +2097,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h3::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 117,
+      "line": 113,
       "selector": ".content-editor-body h3",
       "property": "margin",
       "value": "0.75em 0 0.4em",
@@ -2160,7 +2106,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child::margin-top::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 123,
+      "line": 119,
       "selector": ".content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child",
       "property": "margin-top",
       "value": "0",
@@ -2169,7 +2115,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body strong, .content-editor-body b::font-weight::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 128,
+      "line": 124,
       "selector": ".content-editor-body strong, .content-editor-body b",
       "property": "font-weight",
       "value": "700",
@@ -2178,7 +2124,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body em, .content-editor-body i::font-style::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 133,
+      "line": 129,
       "selector": ".content-editor-body em, .content-editor-body i",
       "property": "font-style",
       "value": "italic",
@@ -2187,7 +2133,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body u::text-decoration::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 137,
+      "line": 133,
       "selector": ".content-editor-body u",
       "property": "text-decoration",
       "value": "underline",
@@ -2196,7 +2142,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body s::text-decoration::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 141,
+      "line": 137,
       "selector": ".content-editor-body s",
       "property": "text-decoration",
       "value": "line-through",
@@ -2205,7 +2151,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::font-family::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 145,
+      "line": 141,
       "selector": ".content-editor-body code",
       "property": "font-family",
       "value": "'IBM Plex Mono', 'Fira Code', monospace",
@@ -2214,7 +2160,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 146,
+      "line": 142,
       "selector": ".content-editor-body code",
       "property": "font-size",
       "value": "0.88em",
@@ -2223,7 +2169,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::background-color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 147,
+      "line": 143,
       "selector": ".content-editor-body code",
       "property": "background-color",
       "value": "var(--tone)",
@@ -2232,7 +2178,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 148,
+      "line": 144,
       "selector": ".content-editor-body code",
       "property": "color",
       "value": "var(--ink)",
@@ -2241,7 +2187,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 149,
+      "line": 145,
       "selector": ".content-editor-body code",
       "property": "padding",
       "value": "0.1em 0.35em",
@@ -2250,7 +2196,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body code::border-radius::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 150,
+      "line": 146,
       "selector": ".content-editor-body code",
       "property": "border-radius",
       "value": "var(--radius-sm)",
@@ -2259,7 +2205,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::font-family::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 154,
+      "line": 150,
       "selector": ".content-editor-body pre",
       "property": "font-family",
       "value": "'IBM Plex Mono', 'Fira Code', monospace",
@@ -2268,7 +2214,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::font-size::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 155,
+      "line": 151,
       "selector": ".content-editor-body pre",
       "property": "font-size",
       "value": "0.88em",
@@ -2277,7 +2223,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::background-color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 156,
+      "line": 152,
       "selector": ".content-editor-body pre",
       "property": "background-color",
       "value": "var(--tone)",
@@ -2286,7 +2232,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::padding::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 157,
+      "line": 153,
       "selector": ".content-editor-body pre",
       "property": "padding",
       "value": "var(--spacing-md)",
@@ -2295,7 +2241,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::border-radius::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 158,
+      "line": 154,
       "selector": ".content-editor-body pre",
       "property": "border-radius",
       "value": "var(--radius-sm)",
@@ -2304,7 +2250,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::overflow-x::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 159,
+      "line": 155,
       "selector": ".content-editor-body pre",
       "property": "overflow-x",
       "value": "auto",
@@ -2313,7 +2259,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body pre::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 160,
+      "line": 156,
       "selector": ".content-editor-body pre",
       "property": "margin",
       "value": "0.75em 0",
@@ -2322,7 +2268,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::border-left::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 164,
+      "line": 160,
       "selector": ".content-editor-body blockquote",
       "property": "border-left",
       "value": "3px solid var(--accent-dim)",
@@ -2331,7 +2277,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::padding-left::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 165,
+      "line": 161,
       "selector": ".content-editor-body blockquote",
       "property": "padding-left",
       "value": "var(--spacing-md)",
@@ -2340,7 +2286,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::margin::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 166,
+      "line": 162,
       "selector": ".content-editor-body blockquote",
       "property": "margin",
       "value": "0.75em 0",
@@ -2349,7 +2295,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 167,
+      "line": 163,
       "selector": ".content-editor-body blockquote",
       "property": "color",
       "value": "var(--ink-soft)",
@@ -2358,7 +2304,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::font-style::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 168,
+      "line": 164,
       "selector": ".content-editor-body blockquote",
       "property": "font-style",
       "value": "italic",
@@ -2367,7 +2313,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul, .content-editor .content-editor-body ol::padding-left::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 173,
+      "line": 169,
       "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
       "property": "padding-left",
       "value": "1.5em",
@@ -2376,7 +2322,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul, .content-editor .content-editor-body ol::margin-bottom::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 174,
+      "line": 170,
       "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
       "property": "margin-bottom",
       "value": "0.75em",
@@ -2385,7 +2331,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul::list-style-type::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 178,
+      "line": 174,
       "selector": ".content-editor .content-editor-body ul",
       "property": "list-style-type",
       "value": "disc",
@@ -2394,7 +2340,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ol::list-style-type::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 182,
+      "line": 178,
       "selector": ".content-editor .content-editor-body ol",
       "property": "list-style-type",
       "value": "decimal",
@@ -2403,7 +2349,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body li::display::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 186,
+      "line": 182,
       "selector": ".content-editor-body li",
       "property": "display",
       "value": "list-item",
@@ -2412,7 +2358,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body li::margin-bottom::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 187,
+      "line": 183,
       "selector": ".content-editor-body li",
       "property": "margin-bottom",
       "value": "0.2em",
@@ -2421,7 +2367,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body a::color::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 191,
+      "line": 187,
       "selector": ".content-editor-body a",
       "property": "color",
       "value": "var(--accent)",
@@ -2430,7 +2376,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body a::text-decoration::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 192,
+      "line": 188,
       "selector": ".content-editor-body a",
       "property": "text-decoration",
       "value": "underline",
@@ -2439,7 +2385,7 @@
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body a:hover::opacity::1",
       "file": "src/styles/components/content-editor.css",
-      "line": 196,
+      "line": 192,
       "selector": ".content-editor-body a:hover",
       "property": "opacity",
       "value": "0.8",
@@ -4275,34 +4221,16 @@
     {
       "id": "src/styles/skin/controls.css::.panel-button::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 160,
+      "line": 163,
       "selector": ".panel-button",
       "property": "cursor",
       "value": "pointer",
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.panel-button::border::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 161,
-      "selector": ".panel-button",
-      "property": "border",
-      "value": "none",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.panel-button::background::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 162,
-      "selector": ".panel-button",
-      "property": "background",
-      "value": "transparent",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.panel-button::font-size::1",
       "file": "src/styles/skin/controls.css",
-      "line": 163,
+      "line": 164,
       "selector": ".panel-button",
       "property": "font-size",
       "value": "var(--text-base)",
@@ -4311,7 +4239,7 @@
     {
       "id": "src/styles/skin/controls.css::.panel-button::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 164,
+      "line": 165,
       "selector": ".panel-button",
       "property": "transition",
       "value": "all var(--transition-fast)",
@@ -4320,7 +4248,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar::width::1",
       "file": "src/styles/skin/controls.css",
-      "line": 168,
+      "line": 169,
       "selector": "::-webkit-scrollbar",
       "property": "width",
       "value": "var(--spacing-md) !important",
@@ -4329,7 +4257,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar::height::1",
       "file": "src/styles/skin/controls.css",
-      "line": 169,
+      "line": 170,
       "selector": "::-webkit-scrollbar",
       "property": "height",
       "value": "var(--spacing-md) !important",
@@ -4338,7 +4266,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-track::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 173,
+      "line": 174,
       "selector": "::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--tone-dim) !important",
@@ -4347,7 +4275,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-track::border-radius::1",
       "file": "src/styles/skin/controls.css",
-      "line": 174,
+      "line": 175,
       "selector": "::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -4356,7 +4284,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 178,
+      "line": 179,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--tone) !important",
@@ -4365,7 +4293,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::border-radius::1",
       "file": "src/styles/skin/controls.css",
-      "line": 179,
+      "line": 180,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -4374,7 +4302,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::border::1",
       "file": "src/styles/skin/controls.css",
-      "line": 180,
+      "line": 181,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--tone-dim) !important",
@@ -4383,7 +4311,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb:hover::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 184,
+      "line": 185,
       "selector": "::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--accent-dim) !important",
@@ -4392,7 +4320,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 191,
+      "line": 192,
       "selector": ".selectable-group > *",
       "property": "cursor",
       "value": "pointer",
@@ -4401,7 +4329,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 192,
+      "line": 193,
       "selector": ".selectable-group > *",
       "property": "transition",
       "value": "all var(--transition-fast)",
@@ -4410,7 +4338,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::user-select::1",
       "file": "src/styles/skin/controls.css",
-      "line": 193,
+      "line": 194,
       "selector": ".selectable-group > *",
       "property": "user-select",
       "value": "none",
@@ -4419,7 +4347,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *:active::transform::1",
       "file": "src/styles/skin/controls.css",
-      "line": 197,
+      "line": 198,
       "selector": ".selectable-group > *:active",
       "property": "transform",
       "value": "scale(0.98)",
@@ -4428,7 +4356,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 201,
+      "line": 202,
       "selector": ".selectable-group > .is-selected",
       "property": "background-color",
       "value": "var(--accent)",
@@ -4437,7 +4365,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 202,
+      "line": 203,
       "selector": ".selectable-group > .is-selected",
       "property": "color",
       "value": "var(--ink-alt)",
@@ -4446,7 +4374,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::border-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 203,
+      "line": 204,
       "selector": ".selectable-group > .is-selected",
       "property": "border-color",
       "value": "var(--accent)",
@@ -4455,7 +4383,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 207,
+      "line": 208,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "background-color",
       "value": "var(--accent)",
@@ -4464,7 +4392,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 208,
+      "line": 209,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "opacity",
       "value": "0.9",
@@ -4473,7 +4401,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 212,
+      "line": 213,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "cursor",
       "value": "not-allowed",
@@ -4482,7 +4410,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 213,
+      "line": 214,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "opacity",
       "value": "0.95",
@@ -4491,7 +4419,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 217,
+      "line": 218,
       "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
       "property": "opacity",
       "value": "0.95",
@@ -4500,7 +4428,7 @@
     {
       "id": "src/styles/skin/controls.css::.shake::animation::1",
       "file": "src/styles/skin/controls.css",
-      "line": 223,
+      "line": 224,
       "selector": ".shake",
       "property": "animation",
       "value": "shake 0.4s cubic-bezier(.36,.07,.19,.97) both",
@@ -4509,7 +4437,7 @@
     {
       "id": "src/styles/skin/controls.css::.shake::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 224,
+      "line": 225,
       "selector": ".shake",
       "property": "transition",
       "value": "none !important",
@@ -4518,7 +4446,7 @@
     {
       "id": "src/styles/skin/controls.css::.flash::animation::1",
       "file": "src/styles/skin/controls.css",
-      "line": 228,
+      "line": 229,
       "selector": ".flash",
       "property": "animation",
       "value": "flash 0.3s ease",
@@ -5433,5 +5361,6 @@
       "value": "0.4",
       "code": "motion-followup"
     }
-  ]
+  ],
+  "shadowedWords": []
 }

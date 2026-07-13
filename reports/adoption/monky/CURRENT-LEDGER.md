@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `5cac75069c6d2f8b08fd22ad5f13aee1541b4847` |
-| monky | `a15607cee336ae8249e587220f4267b45fda9763` |
+| Ermine | `3596610363fbac8e5fe6a0fce442a44e97bd4f7a` |
+| monky | `1faa1cc0f0db95d00588ad6a5a3e210c265e3225` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,10 +24,11 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 599 |
+| current declarations | 591 |
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 213 |
-| **residue — project-owned declarations** | **386** |
+| **residue — project-owned declarations** | **378** |
 | assimilable now (work list below) | 0 |
+| shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
 ## Residue by reason code
 
@@ -37,7 +38,7 @@ re-validated on every run.
 | `substrate` | 52 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
-| `recipe-identity` | 104 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 102 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 11 | project brand typography and type treatment |
 | `component-contract` | 65 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
@@ -48,7 +49,7 @@ re-validated on every run.
 | `motion-followup` | 23 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 4 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
-| `reset-absence` | 21 | absence/reset mechanics, not a positive carrier |
+| `reset-absence` | 15 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
 | `identity-geometry` | 65 | project-exact geometry on a grammar-family property |
 
@@ -56,9 +57,9 @@ re-validated on every run.
 
 | file | declarations |
 |---|---:|
-| `src/styles/skin/controls.css` | 102 |
-| `src/styles/components/content-editor.css` | 82 |
-| `src/content/overlays/views/search/searchViewStyles.css` | 44 |
+| `src/styles/skin/controls.css` | 100 |
+| `src/styles/components/content-editor.css` | 78 |
+| `src/content/overlays/views/search/searchViewStyles.css` | 42 |
 | `src/content/overlays/views/settings/settingsViewStyles.css` | 42 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 30 |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 29 |
@@ -70,5 +71,7 @@ re-validated on every run.
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.
+
+No shadowed words — every paragraph is true or silent about every property (R-IMPL-02).
 
 Every record with its code is in `current-ledger.json`.

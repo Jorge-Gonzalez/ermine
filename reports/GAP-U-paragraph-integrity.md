@@ -1,5 +1,7 @@
 # Gap Report — paragraph integrity across cascade layers
 
+> **Resolved.** R-IMPL-02 (ADR-0020): the paragraph must be true or silent about every property; sanctioned overrides live in the `overrides` layer; all project CSS must be layered. Enforced by the `findShadowedWords` gate — whose first run found six real defeats (dead hover highlights shipped by earlier conversions, fixed at Monky 1faa1cc) and whose condition model distinguishes state layering and ancestor narrowing from genuine shadowing.
+
 ## What I was doing
 Reviewing the transition dynamics after the surface-family dissolution. The layer order that
 makes recipes work (`reset, theme, grammar, skin, components, overrides`) has a corollary:
