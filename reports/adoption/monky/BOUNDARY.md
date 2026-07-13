@@ -15,7 +15,7 @@ machine-checked current contract.
 | source | commit |
 |---|---|
 | Ermine | `5cac75069c6d2f8b08fd22ad5f13aee1541b4847` |
-| monky | `f540500e332b98f256e8c80c37d171cc9bb4f473` |
+| monky | `a15607cee336ae8249e587220f4267b45fda9763` |
 
 ## Closure Gate
 
@@ -23,7 +23,7 @@ machine-checked current contract.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 391 |
+| project-owned residue | 386 |
 
 ## Product Identity
 
@@ -34,7 +34,7 @@ R-SKIN-09's boundary clause for shadows that are signatures rather than the shar
 
 | code | count | boundary |
 |---|---:|---|
-| `recipe-identity` | 109 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 104 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `identity-geometry` | 65 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 11 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |

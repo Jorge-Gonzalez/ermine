@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `5cac75069c6d2f8b08fd22ad5f13aee1541b4847` |
-| monky | `f540500e332b98f256e8c80c37d171cc9bb4f473` |
+| monky | `a15607cee336ae8249e587220f4267b45fda9763` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 604 |
+| current declarations | 599 |
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 213 |
-| **residue — project-owned declarations** | **391** |
+| **residue — project-owned declarations** | **386** |
 | assimilable now (work list below) | 0 |
 
 ## Residue by reason code
@@ -37,7 +37,7 @@ re-validated on every run.
 | `substrate` | 52 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
-| `recipe-identity` | 109 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 104 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 11 | project brand typography and type treatment |
 | `component-contract` | 65 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
@@ -67,7 +67,6 @@ re-validated on every run.
 | `src/styles/theme/metrics.css` | 9 |
 | `src/styles/entries/pages.css` | 8 |
 | `src/options/options.css` | 5 |
-| `src/styles/skin/surfaces.css` | 5 |
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.

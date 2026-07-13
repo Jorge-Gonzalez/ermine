@@ -3,11 +3,11 @@
   "project": "monky",
   "source": {
     "ermineCommit": "5cac75069c6d2f8b08fd22ad5f13aee1541b4847",
-    "projectCommit": "f540500e332b98f256e8c80c37d171cc9bb4f473"
+    "projectCommit": "a15607cee336ae8249e587220f4267b45fda9763"
   },
   "summary": {
-    "totalDeclarations": 604,
-    "residueDeclarations": 391,
+    "totalDeclarations": 599,
+    "residueDeclarations": 386,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 121,
@@ -15,7 +15,7 @@
       "theme-metric": 39,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 109,
+      "recipe-identity": 104,
       "rule-mechanics": 0,
       "brand-identity": 11,
       "affordance-mechanics": 0,
@@ -4523,51 +4523,6 @@
       "property": "animation",
       "value": "flash 0.3s ease",
       "code": "motion-followup"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.alert::border-width::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 14,
-      "selector": ".alert",
-      "property": "border-width",
-      "value": "1px",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.alert::border-style::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 15,
-      "selector": ".alert",
-      "property": "border-style",
-      "value": "solid",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.alert::margin-bottom::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 16,
-      "selector": ".alert",
-      "property": "margin-bottom",
-      "value": "var(--spacing-lg)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.card::border-width::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 22,
-      "selector": ".card",
-      "property": "border-width",
-      "value": "1px",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/surfaces.css::.card::border-style::1",
-      "file": "src/styles/skin/surfaces.css",
-      "line": 23,
-      "selector": ".card",
-      "property": "border-style",
-      "value": "solid",
-      "code": "recipe-identity"
     },
     {
       "id": "src/styles/substrate/reset.css::*, *::before, *::after::box-sizing::1",
