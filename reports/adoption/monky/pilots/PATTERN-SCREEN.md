@@ -24,8 +24,10 @@ Ranked by evidence × generality. "Rows" are distinct selectors carrying the pat
 | **truncation** (`overflow: hidden` + `text-overflow: ellipsis` + `white-space: nowrap`; one `-webkit-line-clamp` sibling) | "this text yields to its container on one line" | 5 + 1 | **new** — `GAP-U-truncation` |
 | **min-content escape** (`min-width: 0` / `min-height: 0` on flex items) | "this item may shrink below its content's natural size" | 6 | **new** — `GAP-U-min-content-escape` |
 | **mono typeface** (`font-family: monospace`) | "these marks are code/keys" — the `mono` facet R-SKIN-07 already names | 5 | admit `font-mono` under R-SKIN-07 (the `focus:` admission shape) |
-| **full-inline fill** (`width: 100%` on controls) | "this control fills its inline axis" | 6 | below the bar for now — self-size axis extension; watch |
+| **full-inline fill** (`width: 100%`, some `height: 100%`) | "this control fills its axis" | ~7 | below the bar — self-size axis extension; watch (search input, macro-search-input, popup input, editor command input, seg pieces…) |
 | **edge-pin centring** (`left/top: 50%` + `translate(-50%)`) | "centred on the parent's edge regardless of own size" | 4 | below the bar — placement pattern; watch |
+| **content-alignment** (`align-content: start` on grids) | "pack grid tracks to the start, don't stretch" | 1 | below the bar — grid alignment facet; watch |
+| **inline-end push** (`margin-left: auto` on flex items) | "push me to the inline end of the row" | 2 | below the bar — the flex auto-margin idiom; watch |
 | **centred text** (`text-align: center`) | type-plane alignment facet | 4 | `GAP-K6-skin-type` |
 
 ## Recurrence that is rightly boundary

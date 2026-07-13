@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `3596610363fbac8e5fe6a0fce442a44e97bd4f7a` |
-| monky | `16624ec2c1392e1d72383670268513339073d1a4` |
+| monky | `ec2d26af4a396e2d5afb1e2f37596794e41e0b55` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 578 |
+| current declarations | 577 |
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 215 |
-| **residue — project-owned declarations** | **363** |
+| **residue — project-owned declarations** | **362** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -40,7 +40,7 @@ re-validated on every run.
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 92 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 11 | project brand typography and type treatment |
-| `component-contract` | 65 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 64 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
 | `parent-relational` | 9 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
@@ -59,7 +59,7 @@ re-validated on every run.
 |---|---:|
 | `src/styles/skin/controls.css` | 100 |
 | `src/styles/components/content-editor.css` | 78 |
-| `src/content/overlays/views/search/searchViewStyles.css` | 42 |
+| `src/content/overlays/views/search/searchViewStyles.css` | 41 |
 | `src/content/overlays/views/settings/settingsViewStyles.css` | 32 |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 29 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 25 |

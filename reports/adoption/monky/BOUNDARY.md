@@ -15,7 +15,7 @@ machine-checked current contract.
 | source | commit |
 |---|---|
 | Ermine | `3596610363fbac8e5fe6a0fce442a44e97bd4f7a` |
-| monky | `16624ec2c1392e1d72383670268513339073d1a4` |
+| monky | `ec2d26af4a396e2d5afb1e2f37596794e41e0b55` |
 
 ## Closure Gate
 
@@ -23,7 +23,7 @@ machine-checked current contract.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 363 |
+| project-owned residue | 362 |
 
 ## Product Identity
 
@@ -49,7 +49,7 @@ shadowed-words gate holds every paragraph true or silent about every property.
 
 | code | count | boundary |
 |---|---:|---|
-| `component-contract` | 65 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 64 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `reset-absence` | 13 | absence/reset mechanics, not a positive carrier |
