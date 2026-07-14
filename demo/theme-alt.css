@@ -3,12 +3,13 @@
    index.html from theme.css to this and reload: the whole UI re-proportions
    and re-tints without a single class changing. That swap IS the thesis. */
 :root {
-  --spacing-tight: 2px;
-  --spacing-snug: 5px;
-  --spacing-comfortable: 10px;
-  --spacing-relaxed: 15px;
-  --spacing-loose: 24px;
-  --spacing-separated: 40px;
+  --spacing-xs: 2px;
+  --spacing-sm: 5px;
+  --spacing-md: 10px;
+  --spacing-lg: 15px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 40px;
 
   --size-sm: 9rem;
   --size-md: 15rem;

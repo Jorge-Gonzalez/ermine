@@ -5,20 +5,20 @@
   flex-direction: column;
 }
 
-.gap-comfortable {
-  gap: var(--spacing-comfortable);
+.gap-md {
+  gap: var(--spacing-md);
 }
 
-.padding-relaxed {
-  padding: var(--spacing-relaxed);
+.padding-lg {
+  padding: var(--spacing-lg);
 }
 
-.gap-snug {
-  gap: var(--spacing-snug);
+.gap-sm {
+  gap: var(--spacing-sm);
 }
 
-.padding-comfortable {
-  padding: var(--spacing-comfortable);
+.padding-md {
+  padding: var(--spacing-md);
 }
 
 .max-width-lg {
@@ -42,12 +42,12 @@
   display: inline flex;
 }
 
-.gap-tight {
-  gap: var(--spacing-tight);
+.gap-xs {
+  gap: var(--spacing-xs);
 }
 
-.padding-snug {
-  padding: var(--spacing-snug);
+.padding-sm {
+  padding: var(--spacing-sm);
 }
 
 .expandable {

@@ -6,14 +6,14 @@ import { REGISTRY } from "../src/registry.ts";
 
 const corpus = [
   "settings-view vertical scroll-auto",
-  "btn pressable padding-block-snug padding-inline-relaxed corner-md font-md font-medium focus:ring active:ground-accent active:ink-inverse disabled:ground-subtle disabled:ink-soft ground ink ruled rule hover:ground-defined",
+  "btn pressable padding-block-sm padding-inline-lg corner-md font-md font-medium focus:ring active:ground-accent active:ink-inverse disabled:ground-subtle disabled:ink-soft ground ink ruled rule hover:ground-defined",
   "macro-suggestions-command-item pressable compressible min-width-none text-center ground-subtle ink rule-soft ruled corner-md hidden truncate font-sm selectable hover:ground-defined hover:rule selected:ground-defined selected:ink-accent selected:rule-accent",
-  "seg-option pressable text-center elastic basis-ratio padding-block-tight padding-inline-comfortable position-relative font-sm ink-soft rule ruled-right selectable hover:ground-defined hover:ink checked:ground-accent checked:ink-inverse",
-  "editor-form position-relative elastic basis-ratio vertical gap-comfortable min-height-none",
-  "content-editor-body padding-comfortable ink font-md corner-lg rule ruled scroll-auto focus:rule-accent focus:ring",
-  "modal-nav-tab panel-button pressable font-md font-medium horizontal align-center justify-center gap-snug ink-soft hover:ground-subtle hover:ink current:ink-accent current:ground-subtle",
-  "search-item-edit pressable position-absolute horizontal align-center justify-center padding-tight ink-soft corner-sm hover:ground-defined hover:ink-accent concealed parent-hover:revealed parent-selected:revealed",
-  "popup-section horizontal align-center justify-between padding-snug ground-subtle rule corner-md ruled",
+  "seg-option pressable text-center elastic basis-ratio padding-block-xs padding-inline-md position-relative font-sm ink-soft rule ruled-right selectable hover:ground-defined hover:ink checked:ground-accent checked:ink-inverse",
+  "editor-form position-relative elastic basis-ratio vertical gap-md min-height-none",
+  "content-editor-body padding-md ink font-md corner-lg rule ruled scroll-auto focus:rule-accent focus:ring",
+  "modal-nav-tab panel-button pressable font-md font-medium horizontal align-center justify-center gap-sm ink-soft hover:ground-subtle hover:ink current:ink-accent current:ground-subtle",
+  "search-item-edit pressable position-absolute horizontal align-center justify-center padding-xs ink-soft corner-sm hover:ground-defined hover:ink-accent concealed parent-hover:revealed parent-selected:revealed",
+  "popup-section horizontal align-center justify-between padding-sm ground-subtle rule corner-md ruled",
   "selectable grid parent-hover:ground-defined hover:ground-subtle selected:ink-accent",
 ];
 

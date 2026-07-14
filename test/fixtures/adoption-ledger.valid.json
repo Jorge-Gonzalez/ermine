@@ -25,7 +25,7 @@
       "value": "8px 16px",
       "disposition": "grammar-composition",
       "axis": "padding",
-      "words": ["padding-inline-comfortable", "padding-block-snug"],
+      "words": ["padding-inline-md", "padding-block-sm"],
       "evidence": "The pair preserves independent inline and block intent"
     },
     {

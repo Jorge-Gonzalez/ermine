@@ -9,7 +9,7 @@ import { lint, type LintContext } from "../src/lint.ts";
 type Case = { s: string; backing?: string[]; ctx?: LintContext; expect: "ok" | "warn" | "fail"; why?: string };
 
 const cases: Case[] = [
-  { s: "horizontal gap-comfortable padding-relaxed", expect: "ok" },
+  { s: "horizontal gap-md padding-lg", expect: "ok" },
   { s: "horizontal vertical", expect: "fail", why: "P1 same axis/scope" },
   { s: "horizontal viewport-md:vertical", expect: "ok", why: "Law 2: different scopes" },
   { s: "viewport-md:horizontal viewport-md:vertical", expect: "fail", why: "same scope, same axis" },
@@ -46,7 +46,7 @@ const cases: Case[] = [
   { s: "position-sticky", expect: "ok", why: "position-mode, unambiguous after prefixing" },
   { s: "sticky", expect: "ok", why: "resolves to z-scale only now" },
   { s: "position-sticky sticky", expect: "ok", why: "different axes (position-mode vs z-scale), compose freely" },
-  { s: "grid padding-comfortable selectable selection-subtle", backing: [], expect: "ok" },
+  { s: "grid padding-md selectable selection-subtle", backing: [], expect: "ok" },
   // P10 — divider/wrap interaction
   { s: "divided wrap-allowed", expect: "warn", why: "P10: between-children line + wrapping is a real hazard, not an error" },
   { s: "divided wrap-reverse", expect: "warn", why: "P10: reversed order is the same hazard as wrapping" },
@@ -56,8 +56,8 @@ const cases: Case[] = [
   // sub-dial axes compose
   { s: "align-center justify-between", expect: "ok", why: "different sub-dials (align-items vs justify-content)" },
   { s: "align-center align-start", expect: "fail", why: "two values on the align sub-dial" },
-  { s: "padding-inline-relaxed padding-block-snug", expect: "ok", why: "different padding sub-dials" },
-  { s: "padding-comfortable padding-inline-relaxed", expect: "fail", why: "whole-axis padding + a per-side dial" },
+  { s: "padding-inline-lg padding-block-sm", expect: "ok", why: "different padding sub-dials" },
+  { s: "padding-md padding-inline-lg", expect: "fail", why: "whole-axis padding + a per-side dial" },
   { s: "scroll-x scroll-y", expect: "ok", why: "different overflow sub-dials" },
   { s: "scroll-x scroll-auto", expect: "fail", why: "per-axis dial + whole-axis clip/auto" },
   // constraints — min/max compose as a band
@@ -99,9 +99,9 @@ const cases: Case[] = [
   { s: "rows", expect: "fail", why: "P2: `rows` retired — it decomposes to `horizontal wrap-allowed`" },
   { s: "horizontal wrap-allowed", expect: "ok", why: "the composition `rows` used to coin" },
   // P11 — m1 flow-participation inert on a flex/grid item (needs parent context)
-  { s: "inline", ctx: { parentClasses: "horizontal gap-snug" }, expect: "warn", why: "P11: inline outer blockified on a flex item" },
+  { s: "inline", ctx: { parentClasses: "horizontal gap-sm" }, expect: "warn", why: "P11: inline outer blockified on a flex item" },
   { s: "boxed-inline", ctx: { parentClasses: "grid" }, expect: "warn", why: "P11: grid items blockify too" },
-  { s: "inline", ctx: { parentClasses: "padding-relaxed" }, expect: "ok", why: "parent is flow (no structure word) → inline is meaningful" },
+  { s: "inline", ctx: { parentClasses: "padding-lg" }, expect: "ok", why: "parent is flow (no structure word) → inline is meaningful" },
   { s: "boxed", ctx: { parentClasses: "horizontal" }, expect: "ok", why: "boxed is block outer — blockification is a no-op change, not inert-inline" },
   { s: "inline", expect: "ok", why: "no parent context → P11 skipped, not failed" },
   // R-STATE-11 — a backed condition prefix requires its capability word present
@@ -112,7 +112,7 @@ const cases: Case[] = [
   // R-STATE-12 — attribute-backed: the aria-current selector is the backing, no capability word
   { s: "current:ink-accent current:ground-subtle", expect: "ok", why: "R-STATE-12: attribute-backed, no capability required" },
   // R-STATE-13 — relational: the ancestor must carry selectable when parent context is given
-  { s: "concealed parent-hover:revealed", ctx: { parentClasses: "horizontal gap-snug" }, expect: "fail", why: "R-STATE-13: relational scope without selectable ancestor" },
+  { s: "concealed parent-hover:revealed", ctx: { parentClasses: "horizontal gap-sm" }, expect: "fail", why: "R-STATE-13: relational scope without selectable ancestor" },
   { s: "concealed parent-hover:revealed parent-selected:revealed", ctx: { parentClasses: "selectable grid" }, expect: "ok", why: "ancestor carries selectable" },
   { s: "concealed parent-hover:revealed", expect: "ok", why: "no parent context → check skipped (serialization stays safe)" },
 ];

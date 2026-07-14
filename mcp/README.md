@@ -95,8 +95,8 @@ with `{ "id": "R-DENSITY-01" }` returns:
 
 ## R-DENSITY-01 — Density scale
 
-Density is a closed ordered chain `tight`, `snug`, `comfortable`, `relaxed`, `loose`, `separated`,
-with provisional unmarked default `comfortable`.
+Spacing magnitude is a closed ordered T-shirt scale `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`,
+with unmarked default `md`.
 
 → rationale: RAT:R-DENSITY-01 · history: ADR-0001 · code: src/registry.ts#SCALES
 

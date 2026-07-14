@@ -1,15 +1,16 @@
 /* theme.css — a starter theme: VALUES for the slots the grammar exposes.
-   The grammar owns the step names (--spacing-comfortable exists); the theme
+   The grammar owns the step names (--spacing-md exists); the theme
    owns what they are worth. Swap this file (or edit the numbers) to re-skin;
    the markup and ermine.css do not change. */
 :root {
   /* §5.1 spacing scale (ad-hoc starter values; the generator is the open slot) */
-  --spacing-tight: 4px;
-  --spacing-snug: 8px;
-  --spacing-comfortable: 16px;
-  --spacing-relaxed: 24px;
-  --spacing-loose: 40px;
-  --spacing-separated: 64px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 52px;
+  --spacing-3xl: 64px;
 
   /* §5.1 size scale */
   --size-sm: 12rem;

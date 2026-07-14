@@ -206,44 +206,50 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — density",
       "items": [
         {
-          "label": "gap-tight",
-          "insertText": "gap-tight",
+          "label": "gap-xs",
+          "insertText": "gap-xs",
           "kind": "word",
           "meaning": "space **between** children (the default for rhythm). `gap-comfortable`"
         },
         {
-          "label": "gap-snug",
-          "insertText": "gap-snug",
+          "label": "gap-sm",
+          "insertText": "gap-sm",
           "kind": "word",
           "meaning": "space **between** children (the default for rhythm). `gap-comfortable`"
         },
         {
-          "label": "gap-comfortable",
-          "insertText": "gap-comfortable",
+          "label": "gap-md",
+          "insertText": "gap-md",
           "kind": "word",
           "meaning": "space **between** children (the default for rhythm). `gap-comfortable`"
         },
         {
-          "label": "gap-relaxed",
-          "insertText": "gap-relaxed",
+          "label": "gap-lg",
+          "insertText": "gap-lg",
           "kind": "word",
           "meaning": "space **between** children (the default for rhythm). `gap-comfortable`"
         },
         {
-          "label": "gap-loose",
-          "insertText": "gap-loose",
+          "label": "gap-xl",
+          "insertText": "gap-xl",
           "kind": "word",
           "meaning": "space **between** children (the default for rhythm). `gap-comfortable`"
         },
         {
-          "label": "gap-separated",
-          "insertText": "gap-separated",
+          "label": "gap-2xl",
+          "insertText": "gap-2xl",
           "kind": "word",
           "meaning": "space **between** children (the default for rhythm). `gap-comfortable`"
         },
         {
-          "label": "gap-<density>",
-          "insertText": "gap-${1|tight,snug,comfortable,relaxed,loose,separated|}",
+          "label": "gap-3xl",
+          "insertText": "gap-3xl",
+          "kind": "word",
+          "meaning": "space **between** children (the default for rhythm). `gap-comfortable`"
+        },
+        {
+          "label": "gap-<spacing>",
+          "insertText": "gap-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
           "meaning": "space **between** children (the default for rhythm). `gap-comfortable`"
         }
@@ -254,44 +260,50 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing",
       "items": [
         {
-          "label": "flow-tight",
-          "insertText": "flow-tight",
+          "label": "flow-xs",
+          "insertText": "flow-xs",
           "kind": "word",
           "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`"
         },
         {
-          "label": "flow-snug",
-          "insertText": "flow-snug",
+          "label": "flow-sm",
+          "insertText": "flow-sm",
           "kind": "word",
           "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`"
         },
         {
-          "label": "flow-comfortable",
-          "insertText": "flow-comfortable",
+          "label": "flow-md",
+          "insertText": "flow-md",
           "kind": "word",
           "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`"
         },
         {
-          "label": "flow-relaxed",
-          "insertText": "flow-relaxed",
+          "label": "flow-lg",
+          "insertText": "flow-lg",
           "kind": "word",
           "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`"
         },
         {
-          "label": "flow-loose",
-          "insertText": "flow-loose",
+          "label": "flow-xl",
+          "insertText": "flow-xl",
           "kind": "word",
           "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`"
         },
         {
-          "label": "flow-separated",
-          "insertText": "flow-separated",
+          "label": "flow-2xl",
+          "insertText": "flow-2xl",
           "kind": "word",
           "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`"
         },
         {
-          "label": "flow-<density>",
-          "insertText": "flow-${1|tight,snug,comfortable,relaxed,loose,separated|}",
+          "label": "flow-3xl",
+          "insertText": "flow-3xl",
+          "kind": "word",
+          "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`"
+        },
+        {
+          "label": "flow-<spacing>",
+          "insertText": "flow-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
           "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`"
         }
@@ -302,128 +314,146 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — padding",
       "items": [
         {
-          "label": "padding-tight",
-          "insertText": "padding-tight",
+          "label": "padding-xs",
+          "insertText": "padding-xs",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-snug",
-          "insertText": "padding-snug",
+          "label": "padding-sm",
+          "insertText": "padding-sm",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-comfortable",
-          "insertText": "padding-comfortable",
+          "label": "padding-md",
+          "insertText": "padding-md",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-relaxed",
-          "insertText": "padding-relaxed",
+          "label": "padding-lg",
+          "insertText": "padding-lg",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-loose",
-          "insertText": "padding-loose",
+          "label": "padding-xl",
+          "insertText": "padding-xl",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-separated",
-          "insertText": "padding-separated",
+          "label": "padding-2xl",
+          "insertText": "padding-2xl",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-inline-tight",
-          "insertText": "padding-inline-tight",
+          "label": "padding-3xl",
+          "insertText": "padding-3xl",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-inline-snug",
-          "insertText": "padding-inline-snug",
+          "label": "padding-inline-xs",
+          "insertText": "padding-inline-xs",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-inline-comfortable",
-          "insertText": "padding-inline-comfortable",
+          "label": "padding-inline-sm",
+          "insertText": "padding-inline-sm",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-inline-relaxed",
-          "insertText": "padding-inline-relaxed",
+          "label": "padding-inline-md",
+          "insertText": "padding-inline-md",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-inline-loose",
-          "insertText": "padding-inline-loose",
+          "label": "padding-inline-lg",
+          "insertText": "padding-inline-lg",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-inline-separated",
-          "insertText": "padding-inline-separated",
+          "label": "padding-inline-xl",
+          "insertText": "padding-inline-xl",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-block-tight",
-          "insertText": "padding-block-tight",
+          "label": "padding-inline-2xl",
+          "insertText": "padding-inline-2xl",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-block-snug",
-          "insertText": "padding-block-snug",
+          "label": "padding-inline-3xl",
+          "insertText": "padding-inline-3xl",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-block-comfortable",
-          "insertText": "padding-block-comfortable",
+          "label": "padding-block-xs",
+          "insertText": "padding-block-xs",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-block-relaxed",
-          "insertText": "padding-block-relaxed",
+          "label": "padding-block-sm",
+          "insertText": "padding-block-sm",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-block-loose",
-          "insertText": "padding-block-loose",
+          "label": "padding-block-md",
+          "insertText": "padding-block-md",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-block-separated",
-          "insertText": "padding-block-separated",
+          "label": "padding-block-lg",
+          "insertText": "padding-block-lg",
           "kind": "word",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-<density>",
-          "insertText": "padding-${1|tight,snug,comfortable,relaxed,loose,separated|}",
+          "label": "padding-block-xl",
+          "insertText": "padding-block-xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-block-2xl",
+          "insertText": "padding-block-2xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-block-3xl",
+          "insertText": "padding-block-3xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-<spacing>",
+          "insertText": "padding-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-inline-<density>",
-          "insertText": "padding-inline-${1|tight,snug,comfortable,relaxed,loose,separated|}",
+          "label": "padding-inline-<spacing>",
+          "insertText": "padding-inline-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
-          "label": "padding-block-<density>",
-          "insertText": "padding-block-${1|tight,snug,comfortable,relaxed,loose,separated|}",
+          "label": "padding-block-<spacing>",
+          "insertText": "padding-block-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
           "meaning": "space **inside** an element. `padding-snug`"
         }
@@ -434,128 +464,146 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — margin",
       "items": [
         {
-          "label": "margin-tight",
-          "insertText": "margin-tight",
+          "label": "margin-xs",
+          "insertText": "margin-xs",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-snug",
-          "insertText": "margin-snug",
+          "label": "margin-sm",
+          "insertText": "margin-sm",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-comfortable",
-          "insertText": "margin-comfortable",
+          "label": "margin-md",
+          "insertText": "margin-md",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-relaxed",
-          "insertText": "margin-relaxed",
+          "label": "margin-lg",
+          "insertText": "margin-lg",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-loose",
-          "insertText": "margin-loose",
+          "label": "margin-xl",
+          "insertText": "margin-xl",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-separated",
-          "insertText": "margin-separated",
+          "label": "margin-2xl",
+          "insertText": "margin-2xl",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-inline-tight",
-          "insertText": "margin-inline-tight",
+          "label": "margin-3xl",
+          "insertText": "margin-3xl",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-inline-snug",
-          "insertText": "margin-inline-snug",
+          "label": "margin-inline-xs",
+          "insertText": "margin-inline-xs",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-inline-comfortable",
-          "insertText": "margin-inline-comfortable",
+          "label": "margin-inline-sm",
+          "insertText": "margin-inline-sm",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-inline-relaxed",
-          "insertText": "margin-inline-relaxed",
+          "label": "margin-inline-md",
+          "insertText": "margin-inline-md",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-inline-loose",
-          "insertText": "margin-inline-loose",
+          "label": "margin-inline-lg",
+          "insertText": "margin-inline-lg",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-inline-separated",
-          "insertText": "margin-inline-separated",
+          "label": "margin-inline-xl",
+          "insertText": "margin-inline-xl",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-block-tight",
-          "insertText": "margin-block-tight",
+          "label": "margin-inline-2xl",
+          "insertText": "margin-inline-2xl",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-block-snug",
-          "insertText": "margin-block-snug",
+          "label": "margin-inline-3xl",
+          "insertText": "margin-inline-3xl",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-block-comfortable",
-          "insertText": "margin-block-comfortable",
+          "label": "margin-block-xs",
+          "insertText": "margin-block-xs",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-block-relaxed",
-          "insertText": "margin-block-relaxed",
+          "label": "margin-block-sm",
+          "insertText": "margin-block-sm",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-block-loose",
-          "insertText": "margin-block-loose",
+          "label": "margin-block-md",
+          "insertText": "margin-block-md",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-block-separated",
-          "insertText": "margin-block-separated",
+          "label": "margin-block-lg",
+          "insertText": "margin-block-lg",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-<density>",
-          "insertText": "margin-${1|tight,snug,comfortable,relaxed,loose,separated|}",
+          "label": "margin-block-xl",
+          "insertText": "margin-block-xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-block-2xl",
+          "insertText": "margin-block-2xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-block-3xl",
+          "insertText": "margin-block-3xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-<spacing>",
+          "insertText": "margin-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-inline-<density>",
-          "insertText": "margin-inline-${1|tight,snug,comfortable,relaxed,loose,separated|}",
+          "label": "margin-inline-<spacing>",
+          "insertText": "margin-inline-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },
         {
-          "label": "margin-block-<density>",
-          "insertText": "margin-block-${1|tight,snug,comfortable,relaxed,loose,separated|}",
+          "label": "margin-block-<spacing>",
+          "insertText": "margin-block-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         }

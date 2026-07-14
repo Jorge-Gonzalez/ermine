@@ -127,6 +127,12 @@
       "anchor": "ADR-0021"
     },
     {
+      "id": "ADR-0022",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0022-spacing-tshirt.md",
+      "anchor": "ADR-0022"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

@@ -24,7 +24,7 @@
 
 // implements: R-SPACE-02, R-DENSITY-01, R-DENSITY-04, R-SCALE-01
 export const SCALES = {
-  density: ["tight", "snug", "comfortable", "relaxed", "loose", "separated"],
+  spacing: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"], // R-DENSITY-01 T-shirt spacing scale (density words retired → aliases)
   size: ["sm", "md", "lg", "xl"], // R-SCALE-01 size scale — basis-exact-<step>, constraints
   breakpoint: ["sm", "md", "lg", "xl"], // R-SCALE-01-style named breakpoint scale
   zTier2: ["base", "content", "raised", "dropdown", "sticky", "tooltip"],
@@ -85,11 +85,11 @@ export type Alias = EngineAlias;
 // implements: LAW-1
 export type AxisRecord = EngineAxisRecord;
 
-// helper: build a density-token regex for a property prefix
-const densityToken = (prefix: string): Token => ({
-  pattern: new RegExp(`^${prefix}-(${SCALES.density.join("|")})$`),
-  shape: `${prefix}-<density>`,
-  valueDomain: "density-step",
+// helper: build a spacing-token regex for a property prefix
+const spacingToken = (prefix: string): Token => ({
+  pattern: new RegExp(`^${prefix}-(${SCALES.spacing.join("|")})$`),
+  shape: `${prefix}-<spacing>`,
+  valueDomain: "spacing-step",
 });
 
 // ============================================================================
@@ -215,9 +215,9 @@ export const LAYOUT: AxisRecord[] = [
     axis: "density",
     sibling: "layout", role: "container", signature: "ordered-chain",
     vocabulary: "closed", regime: "free",
-    valueSpace: SCALES.density,
-    tokens: [densityToken("gap")],
-    default: "comfortable",
+    valueSpace: SCALES.spacing,
+    tokens: [spacingToken("gap")],
+    default: "md",
     controls: ["gap"],
     mustNeverTouch: ["padding", "margin", "structure"],
   },
@@ -225,8 +225,8 @@ export const LAYOUT: AxisRecord[] = [
     axis: "flow-spacing",
     sibling: "layout", role: "container", signature: "ordered-chain",
     vocabulary: "closed", regime: "free",
-    valueSpace: SCALES.density,
-    tokens: [densityToken("flow")],
+    valueSpace: SCALES.spacing,
+    tokens: [spacingToken("flow")],
     default: null,
     controls: ["margin-block-start"], // the owl > * + *
     mustNeverTouch: ["gap", "padding", "display"],
@@ -236,32 +236,32 @@ export const LAYOUT: AxisRecord[] = [
     axis: "padding",
     sibling: "layout", role: "self", signature: "ordered-chain",
     vocabulary: "closed", regime: "free",
-    valueSpace: SCALES.density,
-    tokens: [densityToken("padding"), densityToken("padding-inline"), densityToken("padding-block")],
+    valueSpace: SCALES.spacing,
+    tokens: [spacingToken("padding"), spacingToken("padding-inline"), spacingToken("padding-block")],
     subDials: ["inline", "block"],
     dialOf: (word: string) => word.startsWith("padding-inline-") ? "inline" : word.startsWith("padding-block-") ? "block" : null,
-    aliasMatch: (word: string) => /^padding-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word),
+    aliasMatch: (word: string) => new RegExp(`^padding-(${SCALES.spacing.join("|")})$`).test(word),
     default: null,
     // longhands, not the shorthand: the whole-axis form emits `padding` (all sides), the
     // dials emit `padding-inline` / `padding-block`. Listed so the hand `controls` face
     // matches the emitter's real footprint (controls-fidelity check, emit.ts).
     controls: ["padding", "padding-inline", "padding-block"],
     mustNeverTouch: ["margin", "gap", "display"],
-    notes: "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<density>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-relaxed padding-block-snug` composes.",
+    notes: "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<spacing>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-lg padding-block-sm` composes.",
   },
   {
     axis: "margin",
     sibling: "layout", role: "member", signature: "ordered-chain",
     vocabulary: "closed", regime: "free",
-    valueSpace: SCALES.density,
-    tokens: [densityToken("margin"), densityToken("margin-inline"), densityToken("margin-block")],
+    valueSpace: SCALES.spacing,
+    tokens: [spacingToken("margin"), spacingToken("margin-inline"), spacingToken("margin-block")],
     subDials: ["inline", "block"],
     dialOf: (word: string) => word.startsWith("margin-inline-") ? "inline" : word.startsWith("margin-block-") ? "block" : null,
-    aliasMatch: (word: string) => /^margin-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word),
+    aliasMatch: (word: string) => new RegExp(`^margin-(${SCALES.spacing.join("|")})$`).test(word),
     default: null,
     controls: ["margin", "margin-inline", "margin-block"], // longhands, per padding (controls-fidelity)
     mustNeverTouch: ["padding", "gap", "display"],
-    notes: "two sub-dials inline/block; `margin-<density>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
+    notes: "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
   },
   {
     axis: "alignment-container",

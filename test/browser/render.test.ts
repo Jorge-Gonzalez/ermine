@@ -31,8 +31,8 @@ async function openDemo(): Promise<Page> {
 
 test("var seam resolves in the browser: theme value → computed style", async () => {
   const page = await openDemo();
-  assert.equal(await css(page, "body", "row-gap"), "16px", "gap-comfortable → var(--spacing-comfortable)=16px");
-  assert.equal(await css(page, "body", "padding-top"), "24px", "padding-relaxed → var(--spacing-relaxed)=24px");
+  assert.equal(await css(page, "body", "row-gap"), "16px", "gap-md → var(--spacing-md)=16px");
+  assert.equal(await css(page, "body", "padding-top"), "24px", "padding-lg → var(--spacing-lg)=24px");
   assert.equal(await css(page, "#card", "max-width"), "512px", "max-width-lg → var(--size-lg)=32rem=512px");
   await page.close();
 });

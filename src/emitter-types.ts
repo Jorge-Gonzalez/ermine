@@ -36,8 +36,8 @@ export type EffectKind =
 export interface DeclareRule {
   kind: "declares";
   axis: string;              // registry axis id, e.g. "gap", "selection-treatment"
-  token: string;              // the authored word, e.g. "gap-comfortable"
-  selector: string;           // e.g. ".gap-comfortable"
+  token: string;              // the authored word, e.g. "gap-md"
+  selector: string;           // e.g. ".gap-md"
   declarations: Record<string, string>; // property -> value; MAY be custom
                                           // properties (--selection-bg: ...)
   effectKind: Extract<EffectKind, "css" | "custom-property">;
@@ -131,9 +131,9 @@ export type EmittedRule = DeclareRule | SinkRule | FacetRule | ConditionRule | M
 // 1. DECLARES — the ordinary case (layout, sizing, alignment, ~90% of the registry)
 const example_gap: DeclareRule = {
   kind: "declares",
-  axis: "density", token: "gap-comfortable",
-  selector: ".gap-comfortable",
-  declarations: { gap: "var(--spacing-comfortable)" },
+  axis: "density", token: "gap-md",
+  selector: ".gap-md",
+  declarations: { gap: "var(--spacing-md)" },
   effectKind: "css",
 };
 

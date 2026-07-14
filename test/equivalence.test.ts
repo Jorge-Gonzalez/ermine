@@ -23,23 +23,23 @@ interface EquivalenceFixture {
 const FIXTURES: readonly EquivalenceFixture[] = [
   {
     name: "P01 stacked content",
-    classString: "vertical gap-comfortable padding-relaxed",
-    props: { structure: "vertical", gap: "comfortable", padding: "relaxed" },
+    classString: "vertical gap-md padding-lg",
+    props: { structure: "vertical", gap: "md", padding: "lg" },
   },
   {
     name: "P02 aligned header row",
-    classString: "horizontal gap-snug align-center justify-between",
-    props: { structure: "horizontal", gap: "snug", align: "align-center", justify: "justify-between" },
+    classString: "horizontal gap-sm align-center justify-between",
+    props: { structure: "horizontal", gap: "sm", align: "align-center", justify: "justify-between" },
   },
   {
     name: "P04 structure plus m1 display facets",
-    classString: "horizontal inline gap-tight padding-snug",
-    props: { structure: "horizontal", flowParticipation: "inline", gap: "tight", padding: "snug" },
+    classString: "horizontal inline gap-xs padding-sm",
+    props: { structure: "horizontal", flowParticipation: "inline", gap: "xs", padding: "sm" },
   },
   {
     name: "P07 whole-axis flex alias",
-    classString: "vertical expandable gap-tight",
-    props: { structure: "vertical", flex: "expandable", gap: "tight" },
+    classString: "vertical expandable gap-xs",
+    props: { structure: "vertical", flex: "expandable", gap: "xs" },
   },
   {
     name: "P10 numeric flex dials",
@@ -119,6 +119,6 @@ for (const fixture of FIXTURES) {
 
 test("the byte comparison is sensitive to noncanonical rule order", () => {
   const canonical = FIXTURES.find((fixture) => fixture.name === "P02 aligned header row")!;
-  const reordered = "justify-between align-center gap-snug horizontal";
+  const reordered = "justify-between align-center gap-sm horizontal";
   assert.notDeepEqual(Buffer.from(toCss(reordered)), Buffer.from(toCss(canonical.classString)));
 });

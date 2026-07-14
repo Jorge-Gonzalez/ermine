@@ -119,242 +119,282 @@
       "meaning": "closed-with-parametric-member: membership closed {span, row-span, span-all}; span/row-span carry integers, span-all is contextual (spans every column). Same member-level mechanism as m3 / enumerated states — NOT open at axis scope. Only meaningful under a grid parent.",
       "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
     },
-    "gap-tight": {
+    "gap-xs": {
       "axis": "density",
       "meaning": "space **between** children (the default for rhythm). `gap-comfortable`",
       "reference": "src/ERMINE-SPEC.md §2.1 — density"
     },
-    "gap-snug": {
+    "gap-sm": {
       "axis": "density",
       "meaning": "space **between** children (the default for rhythm). `gap-comfortable`",
       "reference": "src/ERMINE-SPEC.md §2.1 — density"
     },
-    "gap-comfortable": {
+    "gap-md": {
       "axis": "density",
       "meaning": "space **between** children (the default for rhythm). `gap-comfortable`",
       "reference": "src/ERMINE-SPEC.md §2.1 — density"
     },
-    "gap-relaxed": {
+    "gap-lg": {
       "axis": "density",
       "meaning": "space **between** children (the default for rhythm). `gap-comfortable`",
       "reference": "src/ERMINE-SPEC.md §2.1 — density"
     },
-    "gap-loose": {
+    "gap-xl": {
       "axis": "density",
       "meaning": "space **between** children (the default for rhythm). `gap-comfortable`",
       "reference": "src/ERMINE-SPEC.md §2.1 — density"
     },
-    "gap-separated": {
+    "gap-2xl": {
       "axis": "density",
       "meaning": "space **between** children (the default for rhythm). `gap-comfortable`",
       "reference": "src/ERMINE-SPEC.md §2.1 — density"
     },
-    "flow-tight": {
+    "gap-3xl": {
+      "axis": "density",
+      "meaning": "space **between** children (the default for rhythm). `gap-comfortable`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — density"
+    },
+    "flow-xs": {
       "axis": "flow-spacing",
       "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`",
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
     },
-    "flow-snug": {
+    "flow-sm": {
       "axis": "flow-spacing",
       "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`",
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
     },
-    "flow-comfortable": {
+    "flow-md": {
       "axis": "flow-spacing",
       "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`",
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
     },
-    "flow-relaxed": {
+    "flow-lg": {
       "axis": "flow-spacing",
       "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`",
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
     },
-    "flow-loose": {
+    "flow-xl": {
       "axis": "flow-spacing",
       "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`",
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
     },
-    "flow-separated": {
+    "flow-2xl": {
       "axis": "flow-spacing",
       "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`",
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
     },
-    "padding-tight": {
+    "flow-3xl": {
+      "axis": "flow-spacing",
+      "meaning": "space between children in **prose/block flow** where `gap` can't reach. `flow-relaxed`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
+    },
+    "padding-xs": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-snug": {
+    "padding-sm": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-comfortable": {
+    "padding-md": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-relaxed": {
+    "padding-lg": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-loose": {
+    "padding-xl": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-separated": {
+    "padding-2xl": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-inline-tight": {
+    "padding-3xl": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-inline-snug": {
+    "padding-inline-xs": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-inline-comfortable": {
+    "padding-inline-sm": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-inline-relaxed": {
+    "padding-inline-md": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-inline-loose": {
+    "padding-inline-lg": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-inline-separated": {
+    "padding-inline-xl": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-block-tight": {
+    "padding-inline-2xl": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-block-snug": {
+    "padding-inline-3xl": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-block-comfortable": {
+    "padding-block-xs": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-block-relaxed": {
+    "padding-block-sm": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-block-loose": {
+    "padding-block-md": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "padding-block-separated": {
+    "padding-block-lg": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
-    "margin-tight": {
+    "padding-block-xl": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
+    "padding-block-2xl": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
+    "padding-block-3xl": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
+    "margin-xs": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-snug": {
+    "margin-sm": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-comfortable": {
+    "margin-md": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-relaxed": {
+    "margin-lg": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-loose": {
+    "margin-xl": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-separated": {
+    "margin-2xl": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-inline-tight": {
+    "margin-3xl": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-inline-snug": {
+    "margin-inline-xs": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-inline-comfortable": {
+    "margin-inline-sm": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-inline-relaxed": {
+    "margin-inline-md": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-inline-loose": {
+    "margin-inline-lg": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-inline-separated": {
+    "margin-inline-xl": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-block-tight": {
+    "margin-inline-2xl": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-block-snug": {
+    "margin-inline-3xl": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-block-comfortable": {
+    "margin-block-xs": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-block-relaxed": {
+    "margin-block-sm": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-block-loose": {
+    "margin-block-md": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
-    "margin-block-separated": {
+    "margin-block-lg": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-block-xl": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-block-2xl": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-block-3xl": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
@@ -1240,51 +1280,51 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
     },
     {
-      "pattern": "^gap-(tight|snug|comfortable|relaxed|loose|separated)$",
+      "pattern": "^gap-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "density",
-      "meaning": "gap-<density>",
+      "meaning": "gap-<spacing>",
       "reference": "src/ERMINE-SPEC.md §2.1 — density"
     },
     {
-      "pattern": "^flow-(tight|snug|comfortable|relaxed|loose|separated)$",
+      "pattern": "^flow-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "flow-spacing",
       "meaning": "correct only for single-line, source-ordered block/prose flow",
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
     },
     {
-      "pattern": "^padding-(tight|snug|comfortable|relaxed|loose|separated)$",
+      "pattern": "^padding-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "padding",
-      "meaning": "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<density>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-relaxed padding-block-snug` composes.",
+      "meaning": "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<spacing>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-lg padding-block-sm` composes.",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
     {
-      "pattern": "^padding-inline-(tight|snug|comfortable|relaxed|loose|separated)$",
+      "pattern": "^padding-inline-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "padding",
-      "meaning": "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<density>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-relaxed padding-block-snug` composes.",
+      "meaning": "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<spacing>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-lg padding-block-sm` composes.",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
     {
-      "pattern": "^padding-block-(tight|snug|comfortable|relaxed|loose|separated)$",
+      "pattern": "^padding-block-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "padding",
-      "meaning": "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<density>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-relaxed padding-block-snug` composes.",
+      "meaning": "two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<spacing>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-lg padding-block-sm` composes.",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
     {
-      "pattern": "^margin-(tight|snug|comfortable|relaxed|loose|separated)$",
+      "pattern": "^margin-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<density>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
-      "pattern": "^margin-inline-(tight|snug|comfortable|relaxed|loose|separated)$",
+      "pattern": "^margin-inline-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<density>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
-      "pattern": "^margin-block-(tight|snug|comfortable|relaxed|loose|separated)$",
+      "pattern": "^margin-block-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<density>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {

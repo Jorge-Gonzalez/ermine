@@ -47,9 +47,9 @@ test("state words alone warn nothing — entailment is a runtime obligation, not
 test("each attribute is one element: facet compounds survive into the stylesheet", () => {
   const { elements } = scanSources([{
     file: "facet.html",
-    content: `<span class="horizontal inline gap-tight">chip</span>`,
+    content: `<span class="horizontal inline gap-xs">chip</span>`,
   }]);
-  assert.deepEqual(elements, ["horizontal inline gap-tight"]);
+  assert.deepEqual(elements, ["horizontal inline gap-xs"]);
   const css = buildStylesheet(elements);
   assert.match(css, /\.horizontal\.inline \{\n  display: inline flex;/);
 });
@@ -57,19 +57,19 @@ test("each attribute is one element: facet compounds survive into the stylesheet
 test("attribute forms: class, className, and literal template — interpolation is invisible", () => {
   const content = [
     `<div class="vertical">a</div>`,
-    `<div className='gap-snug'>b</div>`,
-    "<div className={`padding-relaxed`}>c</div>",
+    `<div className='gap-sm'>b</div>`,
+    "<div className={`padding-lg`}>c</div>",
     "<div className={`gap-${size}`}>dynamic — skipped</div>",
   ].join("\n");
-  assert.deepEqual(classAttributes(content), ["vertical", "gap-snug", "padding-relaxed"]);
+  assert.deepEqual(classAttributes(content), ["vertical", "gap-sm", "padding-lg"]);
 });
 
 test("duplicate elements dedupe; distinct compositions do not", () => {
   const { elements } = scanSources([{
     file: "dup.html",
-    content: `<div class="vertical gap-snug"></div><div class="vertical gap-snug"></div><div class="vertical"></div>`,
+    content: `<div class="vertical gap-sm"></div><div class="vertical gap-sm"></div><div class="vertical"></div>`,
   }]);
-  assert.deepEqual(elements, ["vertical gap-snug", "vertical"]);
+  assert.deepEqual(elements, ["vertical gap-sm", "vertical"]);
 });
 
 test("building the demo through the plugin reproduces demo/ermine.css modulo provenance headers", () => {

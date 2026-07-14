@@ -56,7 +56,7 @@ then apply one-word-per-axis within each bucket.
 - **Sub-dial refinement:** axes with sub-dials (m2 grow/shrink, alignment align/justify, padding/margin
   inline/block, overflow x/y, constraints min/max-width/min/max-height) admit one value *per dial*,
   since dials write disjoint CSS properties: `align-center justify-between` and
-  `padding-inline-relaxed padding-block-snug` and `min-width-sm max-width-lg` compose; two values on
+  `padding-inline-lg padding-block-sm` and `min-width-sm max-width-lg` compose; two values on
   one dial conflict. A **whole-axis** word (an m2 corner, `padding-<density>`, `scroll-auto`/`clip`)
   writes every dial, so it is mutually exclusive with any other word on the axis. (Constraints has no
   whole-axis word — there's no single term that sets all four bounds at once.)

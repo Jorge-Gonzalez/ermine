@@ -14,8 +14,8 @@ import type { ErmineProps } from "../surfaces/typed/ermine-props.generated.ts";
 
 const roundTrips: { name: string; props: ErmineProps; expect: string; backing?: string[] }[] = [
   { name: "plain closed axes", props: { structure: "horizontal", flowParticipation: "boxed" }, expect: "horizontal boxed" },
-  { name: "scale-step props (density, padding whole-axis)", props: { structure: "vertical", gap: "comfortable", padding: "relaxed" }, expect: "vertical gap-comfortable padding-relaxed" },
-  { name: "step dials compose (padding sides)", props: { paddingInline: "snug", paddingBlock: "tight" }, expect: "padding-inline-snug padding-block-tight" },
+  { name: "scale-step props (density, padding whole-axis)", props: { structure: "vertical", gap: "md", padding: "lg" }, expect: "vertical gap-md padding-lg" },
+  { name: "step dials compose (padding sides)", props: { paddingInline: "sm", paddingBlock: "xs" }, expect: "padding-inline-sm padding-block-xs" },
   { name: "numeric dials (m2)", props: { grow: 2, shrink: 0 }, expect: "grow-2 shrink-0" },
   { name: "whole-axis alias (m2)", props: { flex: "elastic", selfSize: "basis-ratio" }, expect: "elastic basis-ratio" },
   { name: "parametric member (m3 size step)", props: { flex: "rigid", selfSize: "basis-exact-md" }, expect: "rigid basis-exact-md" },
@@ -43,8 +43,8 @@ for (const { name, props, expect, backing } of roundTrips) {
 
 test("canonical order is descriptor order, not props-literal order", () => {
   assert.equal(
-    toClassString({ gap: "comfortable", structure: "horizontal" }),
-    "horizontal gap-comfortable",
+    toClassString({ gap: "md", structure: "horizontal" }),
+    "horizontal gap-md",
   );
 });
 
@@ -70,9 +70,9 @@ export const compileRejections = [
   // @ts-expect-error P5/XOR: a whole-axis m2 alias cannot combine with a dial
   accepts({ flex: "elastic", grow: 2 }),
   // @ts-expect-error P5/XOR: whole-axis padding cannot combine with a side dial
-  accepts({ padding: "snug", paddingInline: "tight" }),
+  accepts({ padding: "sm", paddingInline: "xs" }),
   // @ts-expect-error P5/XOR: whole-axis margin cannot combine with a side dial
-  accepts({ margin: "loose", marginBlock: "snug" }),
+  accepts({ margin: "xl", marginBlock: "sm" }),
   // @ts-expect-error P5/XOR: whole-axis overflow cannot combine with an axis dial
   accepts({ overflow: "clip", overflowX: "scroll-x" }),
   // @ts-expect-error P2/coining: `rows` was retired (compose `horizontal wrap-allowed`)

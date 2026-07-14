@@ -136,13 +136,13 @@ function snippetShapes(record: AxisRecord): SnippetShape[] {
     if (value.endsWith("-N")) add(value);
     const placeholder = value.match(/<([^>]+)>/i)?.[1];
     if (placeholder === "size") add(value, SCALES.size);
-    if (placeholder === "density") add(value, SCALES.density);
+    if (placeholder === "spacing") add(value, SCALES.spacing);
   }
 
   for (const token of record.tokens) {
     if (token.fallback) continue;
     for (const shape of token.shape.split(" | ")) {
-      if (/^[a-z][a-z-]*-<density>$/.test(shape)) add(shape, SCALES.density);
+      if (/^[a-z][a-z-]*-<spacing>$/.test(shape)) add(shape, SCALES.spacing);
       if (/^[a-z][a-z-]*-<size>$/.test(shape)) add(shape, SCALES.size);
     }
   }

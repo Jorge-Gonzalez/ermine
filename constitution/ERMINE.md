@@ -262,7 +262,7 @@ toward the outside. Sibling rhythm belongs to `gap` or `flow`, not per-child mar
 ## R-SPACE-02 — Four spacing families
 
 `gap-*`, `flow-*`, `padding-*`, and directional `margin-*` families are independent per-property
-classes over one shared scale. Use the full property name followed by the density word.
+classes over one shared scale. Use the full property name followed by the T-shirt step.
 
 → rationale: RAT:R-SPACE-02 · history: ADR-0001 · code: src/registry.ts#SCALES
 
@@ -273,36 +273,38 @@ unmarked structure default. The `flow-*` spacing family remains distinct.
 
 → rationale: RAT:R-SPACE-03 · history: ADR-0002
 
-## R-DENSITY-01 — Density scale
+## R-DENSITY-01 — Spacing scale
 
-Density is a closed ordered chain `tight`, `snug`, `comfortable`, `relaxed`, `loose`, `separated`,
-with provisional unmarked default `comfortable`.
+Spacing magnitude is a closed ordered T-shirt scale `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`,
+with unmarked default `md`. The retired density words (`tight`…`separated`) are reserved as
+future container-density aliases (R-PROPORTION-01), never as per-property words.
 
-→ rationale: RAT:R-DENSITY-01 · history: ADR-0001 · code: src/registry.ts#SCALES
+→ rationale: RAT:R-DENSITY-01 · history: ADR-0001, ADR-0022 · code: src/registry.ts#SCALES
 
 ## R-DENSITY-02 — Synonym collapse
 
-`relaxed` and `spaced` are synonyms. Keep `relaxed`; drop `spaced`.
+`relaxed` and `spaced` are synonyms. Keep `relaxed`; drop `spaced`. (Historical: both words are
+retired under R-DENSITY-01's T-shirt scale; this settled the synonym before retirement.)
 
 → rationale: RAT:R-DENSITY-02 · history: ADR-0001
 
 ## R-DENSITY-03 — Derived directional composites
 
-`comfortable-relaxed` is derived from per-side atomic spacing classes, never hand-authored as a
-primitive. What is safe to derive is derived.
+A directional composite (e.g. `md`-inline with `lg`-block) is derived from per-side atomic spacing
+classes, never hand-authored as a primitive. What is safe to derive is derived.
 
 → rationale: RAT:R-DENSITY-03 · history: ADR-0001
 
 ## R-DENSITY-04 — Shared spacing scale
 
-Gap, padding, flow, and margin reference one shared scale through independent per-property classes.
-The runtime value channel is retired.
+Gap, padding, flow, and margin reference one shared spacing scale through independent per-property
+classes. The runtime value channel is retired.
 
 → rationale: RAT:R-DENSITY-04 · history: ADR-0001 · code: src/registry.ts#SCALES
 
 ## R-PADDING-01 — Padding family
 
-Padding is an independent per-property ordered-chain family over the shared density scale, including
+Padding is an independent per-property ordered-chain family over the shared spacing scale, including
 inline and block variants.
 
 → rationale: RAT:R-PADDING-01 · history: ADR-0002 · code: src/registry.ts#LAYOUT

@@ -35,7 +35,7 @@ When intent doesn't obviously map to a word, work down this list and **stop at t
    not an axis — it is `expandable` (m2, main-axis) + `self-stretch` (m4, cross-axis). "A circle" is
    size grammar + a skin radius, not a `circle` word.)
 3. **Use the open parameter.** If the axis is `open`, the distinction is a *value*, not a new word:
-   `grow-2`, `span-3`, `basis-exact-md`, `padding-relaxed`. Emit a value matching the axis
+   `grow-2`, `span-3`, `basis-exact-md`, `padding-lg`. Emit a value matching the axis
    `parameter.pattern`; never a new word.
 4. **Stop and report the gap.** If 1–3 fail on a `closed` axis, the word does **not** exist and you may
    **not** mint it. Surface a structured gap (§3.4) and stop. This is a legitimate terminal state, not
@@ -63,7 +63,7 @@ parameterize*, never coin:
 |---|---|---|
 | `stretchy` | conflates two axes | `expandable` (grow) or `self-stretch` (cross-axis) — pick the one meant |
 | `centered-grow` | bundles two axes | `expandable self-center` |
-| `loose-wide` | density + a retired proportion idea | `padding-inline-relaxed padding-block-snug` (per-side) |
+| `loose-wide` | density + a retired proportion idea | `padding-inline-lg padding-block-sm` (per-side) |
 | `greedy` / `fill` | named a *symptom* of surplus | `elastic basis-ratio` |
 | `circle` | plane-mix (size + skin) | size grammar + a skin radius token |
 | `fixed` (sizing) | collides with `position:fixed` | `basis-exact-<size>` |
@@ -125,7 +125,7 @@ Some intent has no grammar word *by design*. Route it; never invent a property:
 
 ## Output protocol
 
-When asked for a class string, emit **exactly one line of space-separated grammar words — nothing
+When asked for a class string, emit **exactly one line of space-3xl grammar words — nothing
 else**. No markdown, no code fences, no quotes, no commentary, no trailing punctuation. The line is
 the entire output.
 
@@ -148,14 +148,14 @@ generation time.
 Twenty worked intent→string pairs, sourced from the demo page, the six audited components
 (disclosure, responsive, sort, validity, combobox, tree), and the guide's examples. Every string
 below is linter-verified. The fenced blocks tagged `ermine` are the stable machine delimiter for
-this section; a `backing=` field on a fence names the comma-separated platform truths the author
+this section; a `backing=` field on a fence names the comma-3xl platform truths the author
 must ensure exist when emitting that string (the P8 obligation — the verifier lints each string
 with exactly that backing).
 
 **P01 — a stacked content section with comfortable rhythm and inner breathing room**
 
 ```ermine
-vertical gap-comfortable padding-relaxed
+vertical gap-md padding-lg
 ```
 
 axes: structure · density · padding — source: demo page
@@ -163,7 +163,7 @@ axes: structure · density · padding — source: demo page
 **P02 — a header row: controls vertically centered, groups pushed to opposite ends**
 
 ```ermine
-horizontal gap-snug align-center justify-between
+horizontal gap-sm align-center justify-between
 ```
 
 axes: structure · density · alignment-container — source: demo page
@@ -171,7 +171,7 @@ axes: structure · density · alignment-container — source: demo page
 **P03 — a card body that never grows past its readable width**
 
 ```ermine
-vertical gap-snug padding-comfortable max-width-lg
+vertical gap-sm padding-md max-width-lg
 ```
 
 axes: structure · density · padding · constraints — source: demo page
@@ -179,7 +179,7 @@ axes: structure · density · padding · constraints — source: demo page
 **P04 — a compact chip that sits inline in running text**
 
 ```ermine
-horizontal inline gap-tight padding-snug
+horizontal inline gap-xs padding-sm
 ```
 
 axes: structure · m1-flow-participation · density · padding — source: demo page
@@ -187,7 +187,7 @@ axes: structure · m1-flow-participation · density · padding — source: demo 
 **P05 — a chip that can be selected, with a quiet selected look**
 
 ```ermine
-selectable selection-subtle padding-snug
+selectable selection-subtle padding-sm
 ```
 
 axes: state.selection (capability) · selection-treatment · padding — source: demo page
@@ -203,7 +203,7 @@ axes: state.selection · selection-treatment — source: demo page
 **P07 — a sidebar column whose list absorbs the leftover space**
 
 ```ermine
-vertical gap-tight expandable
+vertical gap-xs expandable
 ```
 
 axes: structure · density · m2-flex — source: demo page
@@ -259,7 +259,7 @@ axes: selection-treatment under a preference scope — source: guide, preference
 **P14 — a list with a stroke between items, never around them**
 
 ```ermine
-vertical gap-comfortable divided
+vertical gap-md divided
 ```
 
 axes: structure · density · divider — source: guide, container words

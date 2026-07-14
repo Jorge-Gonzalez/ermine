@@ -4,7 +4,7 @@
 //
 // WHY WALK CLASS STRINGS, NOT ENUMERATE THE REGISTRY: registry.ts's
 // valueSpace mixes literal word lists (structure: horizontal/vertical/...)
-// with scale references (density: SCALES.density) and open patterns
+// with scale references (spacing: SCALES.spacing) and open patterns
 // (m2: grow-N). Reverse-enumerating "every possible word" from that would
 // mean re-deriving a mini token-generation DSL — fragile, and pointless: a
 // real emitter's job is to compile the words actually AUTHORED, exactly the
@@ -49,15 +49,15 @@ interface EmitSpec {
   plain: (word: string) => Record<string, string> | null;
 }
 
-// shared helper: density-scale axes read the same var(--spacing-<step>)
+// shared helper: spacing-scale axes read the same var(--spacing-<step>)
 // convention. wordPrefix and property are SEPARATE — they coincide for gap
-// (word "gap-comfortable" -> property "gap") and padding, but NOT for
-// flow-spacing (word "flow-relaxed" -> property "margin-block-start"). Found
+// (word "gap-md" -> property "gap") and padding, but NOT for
+// flow-spacing (word "flow-lg" -> property "margin-block-start"). Found
 // by checking the real token pattern in registry.ts before trusting the
 // emission entry — conflating the two would have silently produced nothing
 // for every real flow-* word despite the axis resolving correctly.
-const densityDial = (wordPrefix: string, property = wordPrefix) => (word: string): Record<string, string> | null => {
-  const m = word.match(new RegExp(`^${wordPrefix}-(${SCALES.density.join("|")})$`));
+const spacingDial = (wordPrefix: string, property = wordPrefix) => (word: string): Record<string, string> | null => {
+  const m = word.match(new RegExp(`^${wordPrefix}-(${SCALES.spacing.join("|")})$`));
   return m ? { [property]: `var(--spacing-${m[1]})` } : null;
 };
 
@@ -115,8 +115,8 @@ const EMISSION: Record<string, EmitSpec> = {
   },
 
   // --- ordered-chain scale axis ---
-  density: { effectKind: "css", plain: densityDial("gap") },
-  "flow-spacing": { effectKind: "css", plain: densityDial("flow", "margin-block-start") },
+  density: { effectKind: "css", plain: spacingDial("gap") },
+  "flow-spacing": { effectKind: "css", plain: spacingDial("flow", "margin-block-start") },
 
   // --- skin colour carriers: a carrier word reads one socket (K6 skin emission).
   // Carrier steps read the carrier-prefixed socket (`ink-soft` → --ink-soft); role
@@ -248,11 +248,11 @@ const EMISSION: Record<string, EmitSpec> = {
   padding: {
     effectKind: "css",
     plain: (word) => {
-      if (/^padding-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word))
-        return densityDial("padding")(word);
-      const inline = densityDial("padding-inline")(word);
+      if (new RegExp(`^padding-(${SCALES.spacing.join("|")})$`).test(word))
+        return spacingDial("padding")(word);
+      const inline = spacingDial("padding-inline")(word);
       if (inline) return inline;
-      return densityDial("padding-block")(word);
+      return spacingDial("padding-block")(word);
     },
   },
 
@@ -298,11 +298,11 @@ const EMISSION: Record<string, EmitSpec> = {
   margin: {
     effectKind: "css",
     plain: (word) => {
-      if (/^margin-(tight|snug|comfortable|relaxed|loose|separated)$/.test(word))
-        return densityDial("margin")(word);
-      const inline = densityDial("margin-inline")(word);
+      if (new RegExp(`^margin-(${SCALES.spacing.join("|")})$`).test(word))
+        return spacingDial("margin")(word);
+      const inline = spacingDial("margin-inline")(word);
       if (inline) return inline;
-      return densityDial("margin-block")(word);
+      return spacingDial("margin-block")(word);
     },
   },
 
@@ -602,12 +602,12 @@ export const VOCABULARY: Record<string, string[]> = {
   structure: ["horizontal", "vertical", "grid"],
   wrapping: ["wrap-allowed", "wrap-prevent", "wrap-reverse"],
   "m1-flow-participation": ["inline", "boxed", "boxed-inline"],
-  density: SCALES.density.map((s) => `gap-${s}`),
-  "flow-spacing": SCALES.density.map((s) => `flow-${s}`),
+  density: SCALES.spacing.map((s) => `gap-${s}`),
+  "flow-spacing": SCALES.spacing.map((s) => `flow-${s}`),
   padding: [
-    ...SCALES.density.map((s) => `padding-${s}`),
-    ...SCALES.density.map((s) => `padding-inline-${s}`),
-    ...SCALES.density.map((s) => `padding-block-${s}`),
+    ...SCALES.spacing.map((s) => `padding-${s}`),
+    ...SCALES.spacing.map((s) => `padding-inline-${s}`),
+    ...SCALES.spacing.map((s) => `padding-block-${s}`),
   ],
   "m2-flex": ["rigid", "compressible", "expandable", "elastic", "grow-1", "grow-2", "shrink-1"],
   "m3-self-size": ["basis-content", "basis-ratio", ...SCALES.size.map((s) => `basis-exact-${s}`)],
@@ -616,9 +616,9 @@ export const VOCABULARY: Record<string, string[]> = {
     "min-width-none", "min-height-none",
   ],
   margin: [
-    ...SCALES.density.map((s) => `margin-${s}`),
-    ...SCALES.density.map((s) => `margin-inline-${s}`),
-    ...SCALES.density.map((s) => `margin-block-${s}`),
+    ...SCALES.spacing.map((s) => `margin-${s}`),
+    ...SCALES.spacing.map((s) => `margin-inline-${s}`),
+    ...SCALES.spacing.map((s) => `margin-block-${s}`),
   ],
   "m4-self-alignment": ["self-start", "self-center", "self-end", "self-stretch", "self-baseline"],
   "alignment-container": ["align-start", "align-center", "align-end", "align-stretch", "align-baseline", "justify-start", "justify-center", "justify-end", "justify-between", "justify-around"],
@@ -804,7 +804,7 @@ export function checkDimensionalPurity(): PurityReport {
 // covers — the actual build gate, run via `npx tsx emit.ts`.
 // ============================================================================
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const cls = "horizontal inline gap-comfortable basis-content selectable selected selection-subtle modal decelerate cascade";
+  const cls = "horizontal inline gap-md basis-content selectable selected selection-subtle modal decelerate cascade";
   console.log(`emit("${cls}")\n`);
   const rules = emit(cls);
   for (const r of rules) console.log(JSON.stringify(r, null, 0));

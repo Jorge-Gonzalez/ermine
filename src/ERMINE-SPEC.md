@@ -143,7 +143,7 @@ layout=15 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 
 | Scale | Ordered values |
 |---|---|
-| `density` | `tight` `snug` `comfortable` `relaxed` `loose` `separated` |
+| `spacing` | `xs` `sm` `md` `lg` `xl` `2xl` `3xl` |
 | `size` | `sm` `md` `lg` `xl` |
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
@@ -259,8 +259,8 @@ Tokens:
 #### density
 
 - role: `container` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
-- value space: `tight` `snug` `comfortable` `relaxed` `loose` `separated`
-- default: `comfortable`
+- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl`
+- default: `md`
 - controls: `gap`
 - must never touch: `padding` `margin` `structure`
 
@@ -268,12 +268,12 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `gap-<density>` | `/^gap-(tight\|snug\|comfortable\|relaxed\|loose\|separated)$/` | `density-step` | no |
+| `gap-<spacing>` | `/^gap-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 
 #### flow-spacing
 
 - role: `container` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
-- value space: `tight` `snug` `comfortable` `relaxed` `loose` `separated`
+- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl`
 - default: none
 - controls: `margin-block-start`
 - must never touch: `gap` `padding` `display`
@@ -283,47 +283,47 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `flow-<density>` | `/^flow-(tight\|snug\|comfortable\|relaxed\|loose\|separated)$/` | `density-step` | no |
+| `flow-<spacing>` | `/^flow-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 
 #### padding
 
 - role: `self` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
-- value space: `tight` `snug` `comfortable` `relaxed` `loose` `separated`
+- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl`
 - default: none
 - controls: `padding` `padding-inline` `padding-block`
 - must never touch: `margin` `gap` `display`
 - sub-dials: `inline` `block`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<density>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-relaxed padding-block-snug` composes.
+- notes: two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<spacing>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-lg padding-block-sm` composes.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `padding-<density>` | `/^padding-(tight\|snug\|comfortable\|relaxed\|loose\|separated)$/` | `density-step` | no |
-| `padding-inline-<density>` | `/^padding-inline-(tight\|snug\|comfortable\|relaxed\|loose\|separated)$/` | `density-step` | no |
-| `padding-block-<density>` | `/^padding-block-(tight\|snug\|comfortable\|relaxed\|loose\|separated)$/` | `density-step` | no |
+| `padding-<spacing>` | `/^padding-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `padding-inline-<spacing>` | `/^padding-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `padding-block-<spacing>` | `/^padding-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 
 #### margin
 
 - role: `member` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
-- value space: `tight` `snug` `comfortable` `relaxed` `loose` `separated`
+- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl`
 - default: none
 - controls: `margin` `margin-inline` `margin-block`
 - must never touch: `padding` `gap` `display`
 - sub-dials: `inline` `block`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: two sub-dials inline/block; `margin-<density>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.
+- notes: two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `margin-<density>` | `/^margin-(tight\|snug\|comfortable\|relaxed\|loose\|separated)$/` | `density-step` | no |
-| `margin-inline-<density>` | `/^margin-inline-(tight\|snug\|comfortable\|relaxed\|loose\|separated)$/` | `density-step` | no |
-| `margin-block-<density>` | `/^margin-block-(tight\|snug\|comfortable\|relaxed\|loose\|separated)$/` | `density-step` | no |
+| `margin-<spacing>` | `/^margin-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `margin-inline-<spacing>` | `/^margin-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `margin-block-<spacing>` | `/^margin-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 
 #### alignment-container
 

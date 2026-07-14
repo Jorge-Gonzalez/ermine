@@ -119,16 +119,16 @@ function renderStructure(current: string): string {
 }
 
 function renderDensityScale(_current: string): string {
-  return `${code(SCALES.density.join(" · "))}.`;
+  return `${code(SCALES.spacing.join(" · "))}.`;
 }
 
 function densityShape(axisId: string): string {
   const record = axis(axisId);
   const token = record.tokens.find(
-    (candidate) => candidate.valueDomain === "density-step" && !candidate.fallback,
+    (candidate) => candidate.valueDomain === "spacing-step" && !candidate.fallback,
   );
-  if (!token) throw new Error(`Guide spacing axis ${axisId} has no density token`);
-  return token.shape.replace("<density>", "*");
+  if (!token) throw new Error(`Guide spacing axis ${axisId} has no spacing token`);
+  return token.shape.replace("<spacing>", "*");
 }
 
 function renderSpacingFamilies(current: string): string {

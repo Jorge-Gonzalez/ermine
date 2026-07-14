@@ -7,9 +7,9 @@ import assert from "node:assert/strict";
 import { toCss, buildStylesheet } from "../src/css.ts";
 
 test("a plain scale word serializes to an atomic rule reading a theme var", () => {
-  const css = toCss("gap-comfortable");
-  assert.match(css, /\.gap-comfortable \{/);
-  assert.match(css, /gap: var\(--spacing-comfortable\);/);
+  const css = toCss("gap-md");
+  assert.match(css, /\.gap-md \{/);
+  assert.match(css, /gap: var\(--spacing-md\);/);
 });
 
 test("the display facet MERGES onto a compound selector (not two atomic rules)", () => {
@@ -32,8 +32,8 @@ test("a sink renders on its compound selector, reading contributor vars", () => 
 });
 
 test("atomic rules shared across elements dedup to a single block", () => {
-  const css = buildStylesheet(["gap-comfortable padding-relaxed", "gap-comfortable vertical"]);
-  assert.equal(css.match(/\.gap-comfortable \{/g)?.length, 1, "one block for a shared atomic class");
+  const css = buildStylesheet(["gap-md padding-lg", "gap-md vertical"]);
+  assert.equal(css.match(/\.gap-md \{/g)?.length, 1, "one block for a shared atomic class");
 });
 
 test("platform mechanisms are surfaced as notes, never as CSS", () => {

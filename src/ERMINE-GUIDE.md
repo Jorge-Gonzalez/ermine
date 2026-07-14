@@ -64,7 +64,7 @@ Bare (no word) = normal document flow. You only add a word when you want flex or
 
 All spacing reads the **same scale**, so the density words are always the same:
 <!-- BEGIN GENERATED: guide-density-scale (registry words generated; teaching prose editable) -->
-`tight · snug · comfortable · relaxed · loose · separated`.
+`xs · sm · md · lg · xl · 2xl · 3xl`.
 <!-- END GENERATED: guide-density-scale -->
 
 What changes is *which property* owns the space:

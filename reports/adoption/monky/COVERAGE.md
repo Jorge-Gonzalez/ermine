@@ -127,6 +127,21 @@ Phase D's gate holds the list at zero. The current gate at Monky `d58cac0` repor
 current declarations, 305 project-owned residue, `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
+`RESIDUE-THREE-WAY.md` re-reads those 305 residue declarations through a lens the retroactive
+assimilation pipeline lacks — separating *genuine identity* (69, Ermine's floor) from
+*general-intent/specific-value* (21, already correct) from *unnamed-but-universal idiom*
+(215, the growth roadmap: 119 shared-grammar atoms + 96 project-scoped molecules). It is
+analytical and non-destructive — it changes no ledger count and no Monky output — and its
+largest finding, an unnamed spatial word-set (`pad`/`gap`/`fill`/`center`/`anchor`/`layer`,
+already scale-token-backed), is the biggest and most on-mission gap the residue hides.
+
+`ABSORPTION-PLAN.md` then triages that re-reading against `src/registry.ts` (Phase 0) and
+corrects it: much of the apparent gap is already a ruled word needing only migration
+(`padding`/`gap`, `z-scale`/`top-layer`, `position-fixed`, `truncate`, `pressable`,
+`elevated`), 96 rows are Monky-local molecules, and 17 wait on the filed animation-plane
+duration naming — leaving only ~57 rows that genuinely need a new shared-grammar ruling. The
+plan sequences the migrations, Gap Reports, and Monky-local naming across Phases 1–5.
+
 ### 5.2 Open design questions (filed Gap Reports)
 
 | Gap Report | Question |

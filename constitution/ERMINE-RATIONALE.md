@@ -120,6 +120,16 @@ Source: pre-split `constitution/ERMINE.md` lines 982–990.
 ## RAT:R-DENSITY-01
 Source: pre-split `constitution/ERMINE.md` lines 991–998.
 
+Amended (ADR-0022) to a T-shirt scale. The named density chain passed the grammar-admission
+test as words but was the wrong *structure* for a magnitude: its order was not self-evident
+(`snug` vs `comfortable`), it hit an extensibility wall (`GAP-U-density-2xl` needed a step
+between `loose` and `separated` and had no orderable name for it), and its coinages carried a
+memorization cost that universal names like `medium`/`bold` do not. The in-situ evidence was
+`font-md font-medium` — Ermine already runs T-shirt (magnitude) beside named (universal/role)
+in one word, so spacing, a pure magnitude, takes T-shirt and aligns with `corner`/`type`/`size`.
+The words are reserved as future container-density aliases (R-PROPORTION-01), never per-property.
+Full derivation: `reports/adoption/monky/DENSITY-WORDS-RETIRED.md`.
+
 ## RAT:R-DENSITY-02
 Source: pre-split `constitution/ERMINE.md` lines 999–1000.
 

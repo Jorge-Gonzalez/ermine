@@ -3,7 +3,7 @@
 // exclusions below; everything else is the runtime linter's job (see ENFORCEMENT.md).
 
 export type SizeStep = "sm" | "md" | "lg" | "xl";
-export type DensityStep = "tight" | "snug" | "comfortable" | "relaxed" | "loose" | "separated";
+export type SpacingStep = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
 
 type None<K extends PropertyKey> = { [P in K]?: never };
 
@@ -20,9 +20,9 @@ export interface ErminePlainProps {
   /** axis `m5-grid-placement` */
   gridPlacement?: `span-${number}` | `row-span-${number}` | "span-all";
   /** axis `density` */
-  gap?: DensityStep;
+  gap?: SpacingStep;
   /** axis `flow-spacing` */
-  flow?: DensityStep;
+  flow?: SpacingStep;
   /** axis `alignment-container` */
   align?: "align-start" | "align-center" | "align-end" | "align-stretch" | "align-baseline";
   /** axis `alignment-container` */
@@ -110,13 +110,13 @@ export type FlexExclusive =
 
 // axis `padding`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type PaddingExclusive =
-  | ({ padding?: DensityStep; } & None<"paddingInline" | "paddingBlock">)
-  | ({ paddingInline?: DensityStep; paddingBlock?: DensityStep; } & None<"padding">);
+  | ({ padding?: SpacingStep; } & None<"paddingInline" | "paddingBlock">)
+  | ({ paddingInline?: SpacingStep; paddingBlock?: SpacingStep; } & None<"padding">);
 
 // axis `margin`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type MarginExclusive =
-  | ({ margin?: DensityStep; } & None<"marginInline" | "marginBlock">)
-  | ({ marginInline?: DensityStep; marginBlock?: DensityStep; } & None<"margin">);
+  | ({ margin?: SpacingStep; } & None<"marginInline" | "marginBlock">)
+  | ({ marginInline?: SpacingStep; marginBlock?: SpacingStep; } & None<"margin">);
 
 // axis `overflow`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type OverflowExclusive =

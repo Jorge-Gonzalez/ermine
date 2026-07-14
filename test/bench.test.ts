@@ -20,8 +20,8 @@ test("intents.json is frozen at exactly 30 entries with unique ids", () => {
 });
 
 test("semantic checker: axis ids and scope shapes, include and exclude", () => {
-  assert.ok(touchesToken("vertical gap-comfortable", "structure"));
-  assert.ok(!touchesToken("vertical gap-comfortable", "padding"));
+  assert.ok(touchesToken("vertical gap-md", "structure"));
+  assert.ok(!touchesToken("vertical gap-md", "padding"));
   assert.ok(touchesToken("vertical viewport-md:horizontal", "viewport-*:"));
   assert.ok(!touchesToken("vertical", "viewport-*:"));
   const responsive: BenchIntent = { id: "X", intent: "x", mustInclude: ["structure", "viewport-*:"], mustNotInclude: ["z-scale"] };
