@@ -159,6 +159,27 @@ Monky spacing row. After it lands, `pad`/`gap` migrate 1:1.
 **Verify:** `npm run audit:styles` + style-smoke **byte-identical** parity; `npm run
 adoption:current`; `styles:reconcile --check --gate`. Residue drops; `assimilable` stays 0.
 
+**Result (executed 2026-07-14).** The spacing slice — `pad`/`gap`, the bulk of Group A — is
+migrated (density→T-shirt work order + Monky rewrite; style-smoke byte-identical; reconcile
+gate green). The T-shirt scale also unlocked one assimilation the density scale could not name
+(`.page-container padding: var(--spacing-2xl)` → the word `padding-2xl`, 24px). **The rest of
+Group A does not survive inspection and is reclassified — none is a clean byte-identical
+migration:**
+- `cursor:pointer` → `pressable`: **blocked by R-SKIN-10** — every case is recipe-owned
+  (`.radio-label`, `.selectable-group > *`); the ruling explicitly lets a recipe own its cursor.
+  Stays identity.
+- `white-space:nowrap` → `truncate`: **not equivalent** — all three cases are *bare* nowrap
+  (floating toast, command label, segment), no ellipsis; `truncate` emits ellipsis + nowrap, a
+  behaviour change. No Ermine word exists for prevent-wrap-without-truncate → a genuine small
+  gap (`nowrap`), not a migration.
+- `position:fixed` → `position-fixed`: the only case is `:host { position: fixed !important }`
+  on the injected overlay; the `!important` is load-bearing and the word emits without it. Stays local.
+- `layer`/z-index, `elevated`/box-shadow, `measure`/max-width: off-scale or bespoke values →
+  not byte-identical. Stay identity (or later Gap Reports).
+
+So Phase 1 is **complete**: the automated `assimilable=0` and this manual pass agree that
+nothing byte-identical remains. The reclassified rows move to identity or to Phase 3 gaps.
+
 # Phase 2 — Reserved-member Gap Reports
 
 **Goal:** unlock `truncate-N` with Monky as the evidence.
@@ -206,8 +227,12 @@ hand-edited.
 ## Status
 
 - [x] **Phase 0** — registry triage complete; headline corrected above.
-- [x] **Spacing scale ruled** — density retired → T-shirt (`DENSITY-WORDS-RETIRED.md`).
-- [ ] Phase 1 — migrate to existing words (needs the density→T-shirt work order first).
+- [x] **Spacing scale ruled** — density retired → T-shirt (`DENSITY-WORDS-RETIRED.md`,
+  `WORKORDER-SPACING-TSHIRT.md`; Ermine committed, `npm run check` green).
+- [x] **Phase 1 — complete.** Spacing migrated in Monky (style-smoke byte-identical, reconcile
+  gate `assimilable=0`); `padding-2xl` assimilation unlocked. Remaining Group-A candidates
+  reclassified — none byte-identical (recipe-owned cursor, bare nowrap ≠ truncate,
+  `!important` position, off-scale layer/elevation/measure). See Phase 1 §Result.
 - [ ] Phase 2 — `truncate-N` Gap Report.
 - [ ] Phase 3 — new Gap Reports (spatial arc first).
 - [ ] Phase 4 — animation plane.
