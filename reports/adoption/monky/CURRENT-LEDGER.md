@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `c29d615f9a06b786fb956cf2d4ebdae91a933740` |
-| monky | `d58cac0d2de1cda798dc5c6d42aa6766a90f6b54` |
+| Ermine | `d4f0ef4e2d7cd4322b07c599d7242a5ca7260596` |
+| monky | `0c8708ae5c9cca40fdaea8a52eb8bf599fab583c` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 527 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 222 |
-| **residue — project-owned declarations** | **305** |
+| current declarations | 521 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 217 |
+| **residue — project-owned declarations** | **304** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,9 +34,9 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 129 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 130 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
-| `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
+| `theme-metric` | 33 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 37 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 11 | project brand typography and type treatment |
@@ -51,7 +51,7 @@ re-validated on every run.
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 13 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 61 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 60 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -66,7 +66,7 @@ re-validated on every run.
 | `src/popup/popup.css` | 19 |
 | `src/content/overlays/modal/modalStyles.css` | 14 |
 | `src/styles/theme/metrics.css` | 9 |
-| `src/styles/entries/pages.css` | 8 |
+| `src/styles/entries/pages.css` | 7 |
 | `src/options/options.css` | 5 |
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 
