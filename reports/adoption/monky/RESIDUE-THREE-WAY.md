@@ -26,8 +26,8 @@ reclassified.
 > `ABSORPTION-PLAN.md`.
 
 > **Superseded as live accounting by the regenerated current ledger.** Later `clamp-3`,
-> `fill`, `square`, `cover`, and `push` migrations moved the live ledger to 516 current
-> declarations and 291 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
+> `fill`, `square`, `cover`, `push`, and `hug-inline` migrations moved the live ledger to 516
+> current declarations and 290 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
 > for live counts, and `RESIDUE-INVARIANCE.md` / `docs/non-ermine.txt` for the corrected
 > two-metric analysis of the remaining residue.
 
@@ -236,7 +236,7 @@ gap to close.
 | macroEditor:56 | `.command-suggestions` |
 
 **`aspect` (1)** — `options:5` `.prefix-cell` (aspect-ratio:1). &nbsp; **`fit` (1)** —
-`options:14` `.mode-row, .mode-choice` (width:fit-content). &nbsp; **`push` (1)** —
+`options:14` `.mode-row, .mode-choice` (width:fit-content; later migrated as `hug-inline`). &nbsp; **`push` (1)** —
 `macroEditor:71` `.command-suggestion-action` (margin-left:auto; later migrated).
 
 ### Animation (17)

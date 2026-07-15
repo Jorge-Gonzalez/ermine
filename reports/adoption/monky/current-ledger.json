@@ -2,15 +2,15 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "0bb6e9e1181310ed2155d343ee0575db680745b9",
-    "projectCommit": "0774e189d2781587087aca59ca863f38f3f3dc07"
+    "ermineCommit": "5085018fa5f5ec0ec00ddcec02469296f359706a",
+    "projectCommit": "8231ef4e74b3bf55ab9ff018eca3b69c2fcbb9fa"
   },
   "summary": {
     "totalDeclarations": 516,
-    "residueDeclarations": 291,
+    "residueDeclarations": 290,
     "assimilable": 0,
     "byCode": {
-      "ermine-emitted": 138,
+      "ermine-emitted": 139,
       "substrate": 53,
       "theme-metric": 33,
       "config-departure": 1,
@@ -19,7 +19,7 @@
       "rule-mechanics": 0,
       "brand-identity": 11,
       "affordance-mechanics": 0,
-      "component-contract": 53,
+      "component-contract": 52,
       "state-mechanics": 5,
       "state-review": 0,
       "focus-state": 0,
@@ -1265,15 +1265,6 @@
       "property": "flex",
       "value": "0 0 auto",
       "code": "identity-geometry"
-    },
-    {
-      "id": "src/options/options.css::.mode-row, .mode-choice::width::1",
-      "file": "src/options/options.css",
-      "line": 13,
-      "selector": ".mode-row, .mode-choice",
-      "property": "width",
-      "value": "fit-content",
-      "code": "component-contract"
     },
     {
       "id": "src/popup/popup.css::.popup-container::width::1",
@@ -3400,9 +3391,18 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.gap-xl::gap::1",
+      "id": "src/styles/grammar/ermine.generated.css::.hug-inline::inline-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 493,
+      "selector": ".hug-inline",
+      "property": "inline-size",
+      "value": "fit-content",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.gap-xl::gap::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 497,
       "selector": ".gap-xl",
       "property": "gap",
       "value": "var(--spacing-xl)",
@@ -3411,7 +3411,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grow-1::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 497,
+      "line": 501,
       "selector": ".grow-1",
       "property": "flex-grow",
       "value": "1",
@@ -3420,7 +3420,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.margin-block-sm::margin-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 501,
+      "line": 505,
       "selector": ".margin-block-sm",
       "property": "margin-block",
       "value": "var(--spacing-sm)",

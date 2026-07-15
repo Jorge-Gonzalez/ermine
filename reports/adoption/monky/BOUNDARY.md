@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `0bb6e9e1181310ed2155d343ee0575db680745b9` |
-| monky | `0774e189d2781587087aca59ca863f38f3f3dc07` |
+| Ermine | `5085018fa5f5ec0ec00ddcec02469296f359706a` |
+| monky | `8231ef4e74b3bf55ab9ff018eca3b69c2fcbb9fa` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 291 |
+| project-owned residue | 290 |
 
 ## Product Identity
 
@@ -60,7 +60,7 @@ does not mean every row is final product identity. The invariance-test analysis 
 | `identity-geometry` + `component-contract` | 46 | 25 | 33 | 10 |
 
 Relational rows are evidence for the proportional/relational plane (`cover`, `center`,
-`push`, `fit/hug`, `measure`, viewport fill, and grid intent-proportions). Scale-backed
+`push`, `hug-inline`, grid fit, `measure`, viewport fill, and grid intent-proportions). Scale-backed
 rows are candidates for existing or near spacing/corner grammar, especially where per-edge
 spacing is the missing shape. Only the off-grid slice is the hard local floor.
 
@@ -74,7 +74,7 @@ shadowed-words gate holds every paragraph true or silent about every property.
 
 | code | count | boundary |
 |---|---:|---|
-| `component-contract` | 53 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 52 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `reset-absence` | 13 | absence/reset mechanics, not a positive carrier |

@@ -10,8 +10,8 @@ parts of the ledger are true local boundary and which are future grammar evidenc
 | measure | count |
 |---|---:|
 | current declarations | 516 |
-| adopted/infrastructure declarations | 225 |
-| project-owned residue declarations | 291 |
+| adopted/infrastructure declarations | 226 |
+| project-owned residue declarations | 290 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 
@@ -32,7 +32,7 @@ The corrected pass sampled the two buckets most likely to hide the metric trap:
 Reading:
 
 - **Relational** values survive re-resolution: order, proportion, edge attachment, centering,
-  self-ratio, fit/hug, measure, and grid proportions. These are future grammar words.
+  self-ratio, content sizing, measure, grid-track fit, and grid proportions. These are future grammar words.
 - **Scale-backed** values already ride Monky/Ermine scales but may need a missing shape, such as
   per-edge spacing, before they can migrate cleanly.
 - **Off-grid identity** values are raw constants with no continuum or scale behind them. This is

@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `0bb6e9e1181310ed2155d343ee0575db680745b9` |
-| monky | `0774e189d2781587087aca59ca863f38f3f3dc07` |
+| Ermine | `5085018fa5f5ec0ec00ddcec02469296f359706a` |
+| monky | `8231ef4e74b3bf55ab9ff018eca3b69c2fcbb9fa` |
 
 ## Summary
 
 - Current declarations: 516
-- Adopted/infrastructure declarations: 225
-- Project-owned residue declarations: 291
+- Adopted/infrastructure declarations: 226
+- Project-owned residue declarations: 290
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -21,7 +21,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 |---|---:|---|
 | `recipe-identity` | 37 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 11 | Monky-specific brand typography and type treatment. |
-| `component-contract` | 53 | Component-owned mechanics, exact geometry, or product contract. |
+| `component-contract` | 52 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
 | `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
 | `parent-relational` | 8 | Guarded parent/descendant state mechanics outside ruled relational words. |
@@ -135,7 +135,7 @@ Monky-specific brand typography and type treatment.
 | 21 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 25 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (53)
+## component-contract (52)
 
 Component-owned mechanics, exact geometry, or product contract.
 
@@ -202,13 +202,12 @@ Component-owned mechanics, exact geometry, or product contract.
 | 29 | `.settings-prefix-btn` | `width: 2rem` |
 | 30 | `.settings-prefix-btn` | `height: 2rem` |
 
-### src/options/options.css (3)
+### src/options/options.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
 | 5 | `.prefix-cell` | `width: 3rem` |
 | 6 | `.prefix-cell` | `height: 3rem` |
-| 13 | `.mode-row, .mode-choice` | `width: fit-content` |
 
 ### src/popup/popup.css (2)
 

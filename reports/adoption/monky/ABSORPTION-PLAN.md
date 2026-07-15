@@ -3,8 +3,8 @@
 The step-by-step plan for converting Monky project-owned residue declarations into Ermine
 words or Monky-local semantic classes — without changing Monky's rendered output. The first
 version targeted the 305-declaration snapshot re-read in `RESIDUE-THREE-WAY.md`; the live
-current ledger is now 291 project-owned declarations after the `fill`, `square`, `cover`, and
-`push` migrations. Live counts come from `CURRENT-LEDGER.md`; the corrected invariance overlay is
+current ledger is now 290 project-owned declarations after the `fill`, `square`, `cover`, `push`,
+and `hug-inline` migrations. Live counts come from `CURRENT-LEDGER.md`; the corrected invariance overlay is
 `RESIDUE-INVARIANCE.md`.
 
 ## Provenance
@@ -84,14 +84,14 @@ affordances are also reserved but have no Monky residue.)
 | `unselectable` (user-select:none) | 2 | no word; guarded on `affordance` |
 | `overline` (uppercase + letter-spacing) | 2 | no text-transform/letter-spacing axis |
 | `aspect` (aspect-ratio) | 1 | **done** — admitted as `square` (R-SIZE-02/ADR-0025) and migrated |
-| `fit` (width:fit-content) | 1 | no sizing word |
+| `fit` (width:fit-content) | 1 | **done** — admitted as `hug-inline` (R-SIZE-05/ADR-0028) and migrated |
 | `push` (margin auto) | 1 | **done** — admitted as `push` (R-SIZE-04/ADR-0027) and migrated |
 | `tabular` (font-variant-numeric) | 1 | no axis |
 | `press-feedback` (`:active` transform) | 1 | `pressable` owns cursor only |
 | `emphasis` (italic) | 1 | no word (may be prose-internal) |
 
-**~52 rows need new shared-grammar rulings after `push`** — and most are small, single-site atoms. The
-spatial cluster (`fill`/`anchor`/`center`/`cover-inset`/`push`, ~23 remaining) is the one coherent
+**~51 rows need new shared-grammar rulings after `hug-inline`** — and most are small, single-site atoms. The
+spatial cluster (`fill`/`anchor`/`center`/`cover-inset`/`push`/`hug-inline`, ~22 remaining) is the one coherent
 arc; it finishes the spatial plane Ermine started but never atomized.
 
 ### D — Blocked on the animation-plane ruling (already filed)
@@ -127,7 +127,7 @@ needs a ruled duration name, which is the deferred `R-SCALE-02`/animation-plane 
 | **Monky-local molecule** | 96 | no ruling (Phase 5) |
 | **Blocked on animation-plane duration naming** | 17 | filed follow-up (Phase 4) |
 | **Reserved-member Gap Report** | 3 | anticipated ruling (Phase 2) |
-| **New shared-grammar Gap Report** | ~52 | new rulings (Phase 3; `square`/`push` consumed) |
+| **New shared-grammar Gap Report** | ~51 | new rulings (Phase 3; `square`/`push`/`hug-inline` consumed) |
 
 The load-bearing correction: of the 215 my report called "missing," only **~56 genuinely
 need new grammar after `square`** (reserved + new), and even those are mostly small single-site atoms.
@@ -201,7 +201,8 @@ nothing byte-identical remains. The reclassified rows move to identity or to Pha
    gate green); **`cover`**
    (`inset: 0`) — **done** (R-SIZE-03/ADR-0026; Monky modal backdrop migrated, gate green);
    **`push`** (`margin-inline-start: auto`) — **done** (R-SIZE-04/ADR-0027; Monky command
-   actions migrated, gate green);
+   actions migrated, gate green); **`hug-inline`** (`inline-size: fit-content`) — **done**
+   (R-SIZE-05/ADR-0028; Monky options row/choices migrated, gate green);
    **absolute-`center`** (~4 sites, but needs
    a `transform` concept Ermine lacks). The broader proportional plane — `columns-N` +
    intent-proportions — is captured in `docs/proportional-plane.md`.
@@ -250,7 +251,7 @@ hand-edited.
   number now reads as the retained-line limit), R-SKIN-12/ADR-0023; Monky's 3-line preview
   migrated to `clamp-3` (style-smoke identical, gate green). `GAP-U-truncate-clamp` resolved.
 - [ ] **Phase 3 — underway.** Spatial/proportional arc has landed `fill`, `square`,
-  `cover`, and `push`. Next clean candidates are `center`, `fit/hug`, `measure`, then
-  `columns-12` + intent-proportions. See `RESIDUE-INVARIANCE.md`.
+  `cover`, `push`, and `hug-inline`. Next clean candidates are `center`, `measure`, then
+  grid fit / `columns-12` + intent-proportions. See `RESIDUE-INVARIANCE.md`.
 - [ ] Phase 4 — animation plane.
 - [ ] Phase 5 — Monky-local molecules.
