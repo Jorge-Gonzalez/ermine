@@ -1,5 +1,11 @@
 # Gap Report — `fill` (100% container sizing)
 
+> **Resolved.** Admitted as `fill` (R-SIZE-01, ADR-0024): `fill` (both), `fill-inline`
+> (`inline-size: 100%`), `fill-block` (`block-size: 100%`), the overflow/padding dial shape —
+> the first member of the proportional layout plane (`docs/proportional-plane.md`). A relational
+> metric (no socket), ownership clean. Consumed in Monky at `386c4fb` (7 container-100% sites;
+> recipe `.input`, substrate reset, and viewport `100vh` stay local — the last two reserved).
+
 ## What I was doing
 Adopting Monky's spatial residue (Phase 3). Roughly nine selectors across popup, search,
 settings, editor, and the extension pages set `width: 100%`, `height: 100%`, or

@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `3cbd62e5872a6d821e3b5f51e9bf384fda91c5d3` |
-| monky | `1472c8790a7ceba931513c7179c81cff07d37f44` |
+| Ermine | `ebcf85bbd8bef32bcea47f0ecf33c2aea2baab96` |
+| monky | `386c4fb504ba6d6196fdc923382bd06eab49f9a1` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 521 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 220 |
-| **residue — project-owned declarations** | **301** |
+| current declarations | 516 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 222 |
+| **residue — project-owned declarations** | **294** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,13 +34,13 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 133 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 135 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 33 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 37 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 11 | project brand typography and type treatment |
-| `component-contract` | 62 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 55 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
 | `parent-relational` | 8 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
@@ -57,13 +57,13 @@ re-validated on every run.
 
 | file | declarations |
 |---|---:|
-| `src/styles/components/content-editor.css` | 78 |
+| `src/styles/components/content-editor.css` | 77 |
 | `src/styles/skin/controls.css` | 44 |
-| `src/content/overlays/views/search/searchViewStyles.css` | 41 |
-| `src/content/overlays/views/settings/settingsViewStyles.css` | 31 |
+| `src/content/overlays/views/search/searchViewStyles.css` | 39 |
+| `src/content/overlays/views/settings/settingsViewStyles.css` | 30 |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 26 |
-| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 25 |
-| `src/popup/popup.css` | 19 |
+| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 24 |
+| `src/popup/popup.css` | 17 |
 | `src/content/overlays/modal/modalStyles.css` | 14 |
 | `src/styles/theme/metrics.css` | 9 |
 | `src/styles/entries/pages.css` | 7 |
