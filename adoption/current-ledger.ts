@@ -905,7 +905,7 @@ does not mean every row is final product identity. The invariance-test analysis 
 | \`identity-geometry\` + \`component-contract\` | 46 | 25 | 33 | 10 |
 
 Relational rows are evidence for the proportional/relational plane (\`cover\`, \`center\`,
-\`push\`, \`fit/hug\`, \`measure\`, viewport fill, and grid intent-proportions). Scale-backed
+\`push\`, \`hug-inline\`, grid fit, \`measure\`, viewport fill, and grid intent-proportions). Scale-backed
 rows are candidates for existing or near spacing/corner grammar, especially where per-edge
 spacing is the missing shape. Only the off-grid slice is the hard local floor.
 
