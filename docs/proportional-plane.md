@@ -187,3 +187,20 @@ seventh grid — it is **intent-proportions over a ruled parametric grid**, just
 relational/parametric split, with the structural relationships kept atomic (compose-don't-coin) and
 the responsive/topological layer left to the existing scopes. Relates to [[grammar-admission-test]]
 and the plane model (`docs/plane-model.md`).
+
+## Grid — evidence status (2026-07-15 pass)
+
+The columns / intent-proportions model is **designed but not yet admitted**, deliberately, because
+it has **no byte-identical Monky evidence**. Monky's only grid is `.settings-group {
+grid-template-columns: 1fr 3fr }` — a *two-track proportional split*, not an N-column grid with
+child spans. A `columns-12` grid (`repeat(12, 1fr)`) computes to twelve equal tracks, so migrating
+that split would change the container's computed `grid-template-columns` (the smoke probe reads
+`300px 900px`), i.e. it is **not byte-identical**. And a bespoke two-track `split-<ratio>` word for
+one component's specific 1:3 is thin, isolated evidence.
+
+Decision: the `1fr 3fr` split stays **component identity** (a settings-view design choice), and
+columns / intent-proportions remains the **top reserved direction**, to be admitted when a project
+supplies a real reusable N-column grid with child spans (the Bootstrap/CSS-Grid case the model is
+for). This holds the byte-identical + earn-from-evidence discipline over shipping speculative
+grammar. The reference-frame question (open question 3) is settled the same way — deferred until the
+grid it governs has a consumer.
