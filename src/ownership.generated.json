@@ -5,7 +5,8 @@
   "structure": [
     "display",
     "flex-direction",
-    "grid-auto-flow"
+    "grid-auto-flow",
+    "grid-template-columns"
   ],
   "m1-flow-participation": [
     "display"

@@ -56,6 +56,7 @@ One word, picks the arrangement of direct children:
 - `horizontal` — a row
 - `vertical` — a column
 - `grid` — a grid
+- `grid-fit-<size>` — a grid with one content-fit track and one filling track
 <!-- END GENERATED: guide-structure -->
 
 Bare (no word) = normal document flow. You only add a word when you want flex or grid.

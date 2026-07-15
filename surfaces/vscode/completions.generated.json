@@ -24,6 +24,42 @@
           "insertText": "grid",
           "kind": "word",
           "meaning": "a grid"
+        },
+        {
+          "label": "grid-fit-sm",
+          "insertText": "grid-fit-sm",
+          "kind": "word",
+          "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape."
+        },
+        {
+          "label": "grid-fit-md",
+          "insertText": "grid-fit-md",
+          "kind": "word",
+          "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape."
+        },
+        {
+          "label": "grid-fit-lg",
+          "insertText": "grid-fit-lg",
+          "kind": "word",
+          "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape."
+        },
+        {
+          "label": "grid-fit-xl",
+          "insertText": "grid-fit-xl",
+          "kind": "word",
+          "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape."
+        },
+        {
+          "label": "grid-fit-2xl",
+          "insertText": "grid-fit-2xl",
+          "kind": "word",
+          "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape."
+        },
+        {
+          "label": "grid-fit-<size>",
+          "insertText": "grid-fit-${1|sm,md,lg,xl,2xl|}",
+          "kind": "snippet",
+          "meaning": "a grid with one content-fit track and one filling track"
         }
       ]
     },

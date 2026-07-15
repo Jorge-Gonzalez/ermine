@@ -10,7 +10,7 @@ type None<K extends PropertyKey> = { [P in K]?: never };
 // props with no cross-prop exclusion (single prop = single word: P1 by construction)
 export interface ErminePlainProps {
   /** axis `structure` */
-  structure?: "horizontal" | "vertical" | "grid";
+  structure?: "horizontal" | "vertical" | "grid" | `grid-fit-${SizeStep}`;
   /** axis `m1-flow-participation` */
   flowParticipation?: "inline" | "boxed" | "boxed-inline";
   /** axis `m3-self-size` */

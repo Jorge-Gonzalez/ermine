@@ -24,6 +24,31 @@
       "meaning": "a grid",
       "reference": "src/ERMINE-SPEC.md §2.1 — structure"
     },
+    "grid-fit-sm": {
+      "axis": "structure",
+      "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — structure"
+    },
+    "grid-fit-md": {
+      "axis": "structure",
+      "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — structure"
+    },
+    "grid-fit-lg": {
+      "axis": "structure",
+      "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — structure"
+    },
+    "grid-fit-xl": {
+      "axis": "structure",
+      "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — structure"
+    },
+    "grid-fit-2xl": {
+      "axis": "structure",
+      "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — structure"
+    },
     "inline": {
       "axis": "m1-flow-participation",
       "meaning": "surface names provisional (alias-law, guide-level). OUTCOME CONSTRAINT (browser-verified, demo/test): the outer display is INERT on a flex/grid ITEM — CSS blockifies a flex/grid item's outer display, so `inline`/`boxed-inline` are no-ops on a child of a flex/grid container. Enforced by lint WARNING P11 (`flow-participation-inert`, lint.ts), which reads the parent's classes from LintContext. Not a property collision, so P7 can't see it — it needs parent context.",
@@ -1341,6 +1366,12 @@
     }
   },
   "patterns": [
+    {
+      "pattern": "^grid-fit-(sm|md|lg|xl|2xl)$",
+      "axis": "structure",
+      "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — structure"
+    },
     {
       "pattern": "^(grow|shrink)-(\\d+)$",
       "axis": "m2-flex",

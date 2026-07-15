@@ -153,16 +153,20 @@ layout=20 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 #### structure
 
 - role: `container` · signature: `container-operation` · vocabulary: `closed` · regime: `free`
-- value space: `horizontal` `vertical` `grid`
+- value space: `horizontal` `vertical` `grid` `grid-fit-<size>`
 - default: `flow`
 - controls: `display.inner` `flex-direction` `grid-template-columns` `grid-auto-flow`
 - must never touch: `gap` `padding` `margin` `align-self` `flex` `flex-wrap` `background` `border` `display.outer`
+- parametric members: `grid-fit`
+- notes: `grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<structure>` | `/^(horizontal\|vertical\|grid)$/` | — | no |
+| `grid-fit-<size>` | `/^grid-fit-(sm\|md\|lg\|xl\|2xl)$/` | `size-step` | no |
+| `grid-fit-<bad>` | `/^grid-fit-.+$/` | `size-step` | yes |
 
 #### m1-flow-participation
 

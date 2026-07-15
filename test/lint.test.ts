@@ -36,6 +36,9 @@ const cases: Case[] = [
   { s: "grid span-all", expect: "ok", why: "contextual member under grid" },
   { s: "grid span-2 span-all", expect: "fail", why: "two members of one closed axis" },
   { s: "grid span-2", expect: "ok", why: "parametric member" },
+  { s: "grid-fit-sm span-2", expect: "ok", why: "grid-fit is a grid structure variant over a size token" },
+  { s: "grid grid-fit-sm", expect: "fail", why: "two structure members" },
+  { s: "grid-fit-huge", expect: "fail", why: "P3: shape recognized (grid-fit-), value not a sanctioned size step" },
   // state
   { s: "selected", expect: "fail", why: "P8 no backing" },
   { s: "selected", backing: ["aria-pressed"], expect: "ok", why: "P8 Law-6b disjunction" },

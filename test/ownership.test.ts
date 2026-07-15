@@ -19,7 +19,7 @@ test("the committed ownership artifact exactly matches emission", async () => {
   const current = await readFile(new URL("../src/ownership.generated.json", import.meta.url), "utf8");
   assert.equal(current, renderOwnership());
   const ownership = deriveOwnership();
-  assert.deepEqual(ownership.structure, ["display", "flex-direction", "grid-auto-flow"]);
+  assert.deepEqual(ownership.structure, ["display", "flex-direction", "grid-auto-flow", "grid-template-columns"]);
   assert.deepEqual(ownership.constraints, ["max-height", "max-width", "min-height", "min-width"]);
   assert.deepEqual(ownership["state.focus"], []);
   assert.equal(Object.hasOwn(ownership, "skin-surface"), false);

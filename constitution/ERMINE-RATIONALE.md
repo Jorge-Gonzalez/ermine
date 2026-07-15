@@ -69,6 +69,18 @@ Source: pre-split `constitution/ERMINE.md` lines 674–695.
 ## RAT:R-STRUCTURE-01
 Source: pre-split `constitution/ERMINE.md` lines 721–750.
 
+## RAT:R-STRUCTURE-02
+Source: ADR-0032. Monky's search results grid uses `fit-content(140px) 1fr`: the command column
+hugs its command text up to a cap, while the description column takes the remaining space. The
+relationship is general, but the cap must not enter the grammar as raw `140px`; the ruling therefore
+admits `grid-fit-<size>`, parameterized by the existing layout size scale. In Monky this evidence is
+`grid-fit-sm` plus a project binding of `--size-sm: 140px`.
+
+The word lives on the `structure` axis because it chooses the grid container's inner structure and
+writes `grid-template-columns`, already owned by structure. It replaces plain `grid` rather than
+composing with it. This keeps P7 property ownership clean and keeps `subgrid` / `1fr 3fr` /
+intent-proportion grids as separate future questions.
+
 ## RAT:R-M1-01
 Source: pre-split `constitution/ERMINE.md` lines 769–788.
 

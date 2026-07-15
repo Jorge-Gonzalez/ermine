@@ -106,11 +106,17 @@ export const LAYOUT: AxisRecord[] = [
     // and it smuggled flex-wrap — which the `wrapping` axis owns — into an axis whose
     // mandate is inner-display-type (+ direction) only. The collision was latent (P7
     // missed it only because `wrapping` had no emission entry yet).
-    valueSpace: ["horizontal", "vertical", "grid"],
-    tokens: [{ pattern: /^(horizontal|vertical|grid)$/, shape: "<structure>" }],
+    valueSpace: ["horizontal", "vertical", "grid", "grid-fit-<size>"],
+    tokens: [
+      { pattern: /^(horizontal|vertical|grid)$/, shape: "<structure>" },
+      { pattern: new RegExp(`^grid-fit-(${SCALES.size.join("|")})$`), shape: "grid-fit-<size>", valueDomain: "size-step" },
+      { pattern: /^grid-fit-.+$/, shape: "grid-fit-<bad>", valueDomain: "size-step", fallback: true },
+    ],
+    parametricMembers: ["grid-fit"],
     default: "flow", // unmarked inner display; `flow` reserved for default, never a member
     controls: ["display.inner", "flex-direction", "grid-template-columns", "grid-auto-flow"],
     mustNeverTouch: ["gap", "padding", "margin", "align-self", "flex", "flex-wrap", "background", "border", "display.outer"],
+    notes: "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
   },
   {
     axis: "m1-flow-participation",

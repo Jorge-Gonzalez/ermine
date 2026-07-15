@@ -152,11 +152,22 @@ regime are orthogonal.
 
 ## R-STRUCTURE-01 — Inner display structure
 
-Structure is a closed container operation over `horizontal`, `vertical`, and `grid`, with unmarked
-default `flow`. It controls inner display only. `block` and `inline` are outer display and belong to
-member role. `rows` is retired; use `horizontal wrap-allowed`.
+Structure is a closed container operation over `horizontal`, `vertical`, `grid`, and ruled
+grid-structure variants, with unmarked default `flow`. It controls inner display only. `block` and
+`inline` are outer display and belong to member role. `rows` is retired; use
+`horizontal wrap-allowed`.
 
 → rationale: RAT:R-STRUCTURE-01 · history: ADR-0002 · code: src/registry.ts#LAYOUT
+
+## R-STRUCTURE-02 — Grid Fit Track
+
+A grid container may declare a content-fit first track and a filling second track:
+`grid-fit-<size>` sets `display: grid`, `grid-auto-flow: row`, and
+`grid-template-columns: fit-content(var(--size-<size>)) 1fr`. The size parameter is a layout size
+scale token, not a raw CSS length. `grid-fit-*` is a structure member and replaces plain `grid`
+rather than composing with it.
+
+→ rationale: RAT:R-STRUCTURE-02 · history: ADR-0032 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
 ## R-M1-01 — Flow participation
 

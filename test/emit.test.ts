@@ -43,6 +43,15 @@ test("the selection sink fires only when its three words co-occur", () => {
 const declOf = (cls: string) =>
   emit(cls).filter((r) => r.kind === "declares").flatMap((r) => Object.entries((r as { declarations: Record<string, string> }).declarations));
 
+test("grid-fit: grid with one fit-content track and one fill track (R-STRUCTURE-02)", () => {
+  assert.deepEqual(declOf("grid-fit-sm"), [
+    ["grid-auto-flow", "row"],
+    ["grid-template-columns", "fit-content(var(--size-sm)) 1fr"],
+  ]);
+  const { paints } = deriveControls(emit("grid-fit-sm"));
+  assert.ok(paints["structure"]?.has("display"), "grid-fit-sm → display:grid facet");
+});
+
 test("overflow whole-axis word writes BOTH longhands, never the shorthand", () => {
   assert.deepEqual(declOf("scroll-auto"), [["overflow-x", "auto"], ["overflow-y", "auto"]]);
   assert.deepEqual(declOf("scroll-x"), [["overflow-x", "scroll"]]);

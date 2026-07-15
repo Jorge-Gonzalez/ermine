@@ -187,6 +187,12 @@
       "anchor": "ADR-0031"
     },
     {
+      "id": "ADR-0032",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0032-grid-fit-track.md",
+      "anchor": "ADR-0032"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -961,6 +967,12 @@
       "anchor": "R-STRUCTURE-01"
     },
     {
+      "id": "R-STRUCTURE-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STRUCTURE-02"
+    },
+    {
       "id": "R-TEST-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1607,6 +1619,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-STRUCTURE-01"
+    },
+    {
+      "id": "RAT:R-STRUCTURE-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STRUCTURE-02"
     },
     {
       "id": "RAT:R-TEST-01",
@@ -2475,6 +2493,11 @@
     {
       "from": "RAT:R-STRUCTURE-01",
       "to": "R-STRUCTURE-01",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STRUCTURE-02",
+      "to": "R-STRUCTURE-02",
       "type": "rationale-of"
     },
     {
