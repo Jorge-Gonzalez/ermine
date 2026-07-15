@@ -19,8 +19,8 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
   enforces colour-literal drift with Stylelint.
 - **Live style reachability:** Monky's build-backed style audit now reports **201 live
   static classes and 0 dead-candidate declarations** at `d58cac0`.
-- **Current assimilation:** the generated current ledger now reports **516 current
-  declarations**, **239 adopted/infrastructure declarations**, **277 project-owned
+- **Current assimilation:** the generated current ledger now reports **520 current
+  declarations**, **244 adopted/infrastructure declarations**, **276 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
@@ -88,7 +88,7 @@ exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
 The current generated ledger is at Monky `5ff992b`: 516 declarations, 238
-adopted/infrastructure declarations, 277 project-owned residue declarations,
+adopted/infrastructure declarations, 276 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
 ## 4. Theme coverage (the socket plane)
@@ -124,7 +124,7 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate holds the list at zero. The current gate at Monky `5ff992b` reports 516
-current declarations, 277 project-owned residue, `assimilable = 0`, and no shadowed words;
+current declarations, 276 project-owned residue, `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
 `RESIDUE-THREE-WAY.md` re-read the earlier 305-declaration residue snapshot through a lens
@@ -203,7 +203,7 @@ current ledger is v2/project-profiled, the gate fails on assimilable or review-c
 worked example. The paragraph-format pass then reduced churn without changing the ledger
 counts at that checkpoint; later `fill`, `square`, `cover`, `push`, `hug-inline`, `center-x`,
 `center-y`, size `2xl`/`max-width-2xl`, `centered flush-block`, `grid-fit-sm`, and
-`min-width-sm` migrations moved the live ledger to 516 current declarations, 278
+`min-width-sm` migrations moved the live ledger to 520 current declarations, 278
 project-owned residue, `assimilable = 0`,
 and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted
