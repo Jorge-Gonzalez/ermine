@@ -323,6 +323,12 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word === "cover" ? { inset: "0" } : null),
   },
 
+  // --- push: auto inline-start margin in available inline space (R-SIZE-04). ---
+  push: {
+    effectKind: "css",
+    plain: (word) => (word === "push" ? { "margin-inline-start": "auto" } : null),
+  },
+
   // --- ordered-chain scale axis, sub-dials + aliasMatch (same shape as padding) ---
   margin: {
     effectKind: "css",
@@ -647,6 +653,7 @@ export const VOCABULARY: Record<string, string[]> = {
   fill: ["fill", "fill-inline", "fill-block"],
   aspect: ["square"],
   cover: ["cover"],
+  push: ["push"],
   margin: [
     ...SCALES.spacing.map((s) => `margin-${s}`),
     ...SCALES.spacing.map((s) => `margin-inline-${s}`),

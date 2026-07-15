@@ -23,6 +23,8 @@ export interface ErminePlainProps {
   gap?: SpacingStep;
   /** axis `flow-spacing` */
   flow?: SpacingStep;
+  /** axis `push` */
+  push?: "push";
   /** axis `alignment-container` */
   align?: "align-start" | "align-center" | "align-end" | "align-stretch" | "align-baseline";
   /** axis `alignment-container` */
@@ -188,6 +190,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "margin", axis: "margin", kind: "step-prefix", prefix: "margin" },
   { prop: "marginInline", axis: "margin", kind: "step-prefix", prefix: "margin-inline" },
   { prop: "marginBlock", axis: "margin", kind: "step-prefix", prefix: "margin-block" },
+  { prop: "push", axis: "push", kind: "word" },
   { prop: "align", axis: "alignment-container", kind: "word" },
   { prop: "justify", axis: "alignment-container", kind: "word" },
   { prop: "divider", axis: "divider", kind: "word" },

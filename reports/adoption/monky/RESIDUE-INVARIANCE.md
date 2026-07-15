@@ -48,12 +48,12 @@ Already admitted and migrated:
 | `fill` / `fill-inline` / `fill-block` | R-SIZE-01 / ADR-0024 | `inline-size` / `block-size: 100%` |
 | `square` | R-SIZE-02 / ADR-0025 | `aspect-ratio: 1` |
 | `cover` | R-SIZE-03 / ADR-0026 | `inset: 0` |
+| `push` | R-SIZE-04 / ADR-0027 | `margin-inline-start: auto` |
 
 Next candidates by cleanliness:
 
 | candidate | evidence shape | note |
 |---|---|---|
-| `push` | `margin-left: auto` / auto-margin push | Clean, but needs axis/reference wording. |
 | `center` | `left: 50%` + translate, `margin: 0 auto` | Valuable, but needs transform/position framing. |
 | `fit` / `hug` | `width: fit-content`, `fit-content(...) 1fr` | Related to existing flex/content sizing words. |
 | `measure` | readable/clamped widths | Needs a ruled relation to size scale or viewport. |

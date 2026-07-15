@@ -399,6 +399,11 @@
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
+    "push": {
+      "axis": "push",
+      "meaning": "auto inline-start margin; consumes available inline-start free space to push the member toward inline end. Relational and socket-free, distinct from scale-backed margin.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — push"
+    },
     "align-start": {
       "axis": "alignment-container",
       "meaning": "Container aligns its children: `align-start|center|end|stretch|baseline`, `justify-start|center|end|between|around`.",
@@ -1337,19 +1342,19 @@
     {
       "pattern": "^margin-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
       "pattern": "^margin-inline-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
       "pattern": "^margin-block-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {

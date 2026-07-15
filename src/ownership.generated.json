@@ -40,6 +40,9 @@
     "margin-block",
     "margin-inline"
   ],
+  "push": [
+    "margin-inline-start"
+  ],
   "alignment-container": [
     "align-items",
     "justify-content"

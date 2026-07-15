@@ -610,6 +610,18 @@
       ]
     },
     {
+      "axis": "push",
+      "reference": "src/ERMINE-SPEC.md §2.1 — push",
+      "items": [
+        {
+          "label": "push",
+          "insertText": "push",
+          "kind": "word",
+          "meaning": "auto inline-start margin; consumes available inline-start free space to push the member toward inline end. Relational and socket-free, distinct from scale-backed margin."
+        }
+      ]
+    },
+    {
       "axis": "alignment-container",
       "reference": "src/ERMINE-SPEC.md §2.1 — alignment-container",
       "items": [

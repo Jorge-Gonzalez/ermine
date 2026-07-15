@@ -402,6 +402,15 @@ and positioned element already exist.
 
 → rationale: RAT:R-SIZE-03 · history: ADR-0026 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-SIZE-04 — Push
+
+An element may consume available inline-start free space with an automatic margin: `push` sets
+`margin-inline-start: auto`. This is a relational metric with no theme socket: the margin is not a
+spacing step, but the remaining available inline space in the current formatting context. `push`
+does not imply flex, grid, flow, or container alignment; those remain authored by their own axes.
+
+→ rationale: RAT:R-SIZE-04 · history: ADR-0027 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

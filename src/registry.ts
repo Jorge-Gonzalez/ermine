@@ -260,8 +260,22 @@ export const LAYOUT: AxisRecord[] = [
     aliasMatch: (word: string) => new RegExp(`^margin-(${SCALES.spacing.join("|")})$`).test(word),
     default: null,
     controls: ["margin", "margin-inline", "margin-block"], // longhands, per padding (controls-fidelity)
-    mustNeverTouch: ["padding", "gap", "display"],
-    notes: "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.",
+    mustNeverTouch: ["margin-inline-start", "margin-inline-end", "padding", "gap", "display"],
+    notes: "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.",
+  },
+  {
+    // push: an element consumes available inline-start margin and moves toward inline end
+    // (R-SIZE-04). It composes with flow/flex/grid contexts that have free inline space;
+    // it does not imply flex, justify-content, or a spacing socket.
+    axis: "push",
+    sibling: "layout", role: "member", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["push"],
+    tokens: [{ pattern: /^push$/, shape: "<push>" }],
+    default: null,
+    controls: ["margin-inline-start"],
+    mustNeverTouch: ["margin", "margin-inline", "margin-block", "margin-inline-end", "padding", "gap", "display"],
+    notes: "auto inline-start margin; consumes available inline-start free space to push the member toward inline end. Relational and socket-free, distinct from scale-backed margin.",
   },
   {
     axis: "alignment-container",

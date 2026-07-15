@@ -212,6 +212,16 @@ Evidence comes from the Monky invariance overlay (`RESIDUE-INVARIANCE.md`) and t
 backdrop residue; adjacent edge-attach words (`top:100%`, `bottom:100%`, etc.) are reserved for
 their own ruling cycle.
 
+## RAT:R-SIZE-04
+Source: ADR-0027. `push` is the auto-margin member of the proportional plane: it consumes the
+remaining inline-start free space in the current formatting context, expressed as
+`margin-inline-start: auto`. It is relational rather than scale-backed — the amount is resolved
+from the surrounding layout, so it reads no spacing socket and must stay separate from the
+scale-backed `margin-*` axis. Evidence comes from Monky's command-suggestion actions, where the
+delete/confirmation controls are members pushed to the row's inline end. The word names the
+effect, not the property (`margin-left-auto`), and it does not imply flex/grid/flow or container
+alignment.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

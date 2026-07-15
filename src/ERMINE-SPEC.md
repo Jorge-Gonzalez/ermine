@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (49 axes)  ‹SHARED›
+## 2. The axis registry (50 axes)  ‹SHARED›
 
-layout=18 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=19 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -148,7 +148,7 @@ layout=18 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
 
-### 2.1 LAYOUT (18 axes)
+### 2.1 LAYOUT (19 axes)
 
 #### structure
 
@@ -311,11 +311,11 @@ Tokens:
 - value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl`
 - default: none
 - controls: `margin` `margin-inline` `margin-block`
-- must never touch: `padding` `gap` `display`
+- must never touch: `margin-inline-start` `margin-inline-end` `padding` `gap` `display`
 - sub-dials: `inline` `block`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. marked-by-preference: reach for it only outside container rhythm.
+- notes: two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.
 
 Tokens:
 
@@ -324,6 +324,21 @@ Tokens:
 | `margin-<spacing>` | `/^margin-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `margin-inline-<spacing>` | `/^margin-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `margin-block-<spacing>` | `/^margin-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+
+#### push
+
+- role: `member` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `push`
+- default: none
+- controls: `margin-inline-start`
+- must never touch: `margin` `margin-inline` `margin-block` `margin-inline-end` `padding` `gap` `display`
+- notes: auto inline-start margin; consumes available inline-start free space to push the member toward inline end. Relational and socket-free, distinct from scale-backed margin.
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<push>` | `/^push$/` | — | no |
 
 #### alignment-container
 
