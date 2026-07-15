@@ -14,7 +14,7 @@ Real-property FAMILY coverage (the ceiling on what an ingestor could express):
 
 | corpus | coverage | theme custom-props |
 |---|---|---|
-| playwright-recorder | 39.1% | 48.7% |
+| playwright-recorder | 39.2% | 48.7% |
 
 Declarations: 2157 total; 1107 real properties; 1050 theme custom properties.
 Top uncovered families: content (573), height (15), bottom (11), width (10), right (9), visibility (7), text-decoration (6), line-height (6), color-scheme (3), -webkit-user-select (3), user-select (3), direction (2).
