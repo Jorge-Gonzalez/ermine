@@ -2,22 +2,22 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "a33e7da7ce406f96d6d5bc1cec21edb71eac6a91",
-    "projectCommit": "3bac52ad36503ccf6e84819c4cea69dc4e6e3f06"
+    "ermineCommit": "fe2b49b9f44d0d197f70a01b32bf1945043a6bbc",
+    "projectCommit": "0240fff79120326c491a2997e9b661a50483301c"
   },
   "summary": {
     "totalDeclarations": 520,
-    "residueDeclarations": 275,
+    "residueDeclarations": 272,
     "assimilable": 0,
     "byCode": {
-      "ermine-emitted": 156,
+      "ermine-emitted": 159,
       "substrate": 53,
       "theme-metric": 35,
       "config-departure": 1,
       "assimilable": 0,
       "recipe-identity": 37,
       "rule-mechanics": 0,
-      "brand-identity": 11,
+      "brand-identity": 8,
       "affordance-mechanics": 0,
       "component-contract": 39,
       "state-mechanics": 5,
@@ -727,18 +727,9 @@
       "code": "opacity-followup"
     },
     {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-count::font-variant-numeric::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 69,
-      "selector": ".macro-search-count",
-      "property": "font-variant-numeric",
-      "value": "tabular-nums",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-description::font-style::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 75,
+      "line": 72,
       "selector": ".modal-command-item .modal-command-description",
       "property": "font-style",
       "value": "italic",
@@ -747,7 +738,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-shortcut::margin-right::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 91,
+      "line": 88,
       "selector": ".macro-search-shortcut",
       "property": "margin-right",
       "value": "var(--spacing-xl)",
@@ -756,7 +747,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::line-height::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 96,
+      "line": 93,
       "selector": ".macro-search-kbd",
       "property": "line-height",
       "value": "1",
@@ -765,7 +756,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::padding::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 97,
+      "line": 94,
       "selector": ".macro-search-kbd",
       "property": "padding",
       "value": "3px 6px 6px",
@@ -774,7 +765,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::min-width::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 98,
+      "line": 95,
       "selector": ".macro-search-kbd",
       "property": "min-width",
       "value": "26px",
@@ -783,7 +774,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::border-radius::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 99,
+      "line": 96,
       "selector": ".macro-search-kbd",
       "property": "border-radius",
       "value": "4px",
@@ -792,7 +783,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::z-index::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 100,
+      "line": 97,
       "selector": ".macro-search-kbd",
       "property": "z-index",
       "value": "0",
@@ -801,7 +792,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::content::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 104,
+      "line": 101,
       "selector": ".macro-search-kbd::after",
       "property": "content",
       "value": "''",
@@ -810,7 +801,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::position::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 105,
+      "line": 102,
       "selector": ".macro-search-kbd::after",
       "property": "position",
       "value": "absolute",
@@ -819,7 +810,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::background::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 106,
+      "line": 103,
       "selector": ".macro-search-kbd::after",
       "property": "background",
       "value": "var(--tone-dim)",
@@ -828,7 +819,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::inset::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 107,
+      "line": 104,
       "selector": ".macro-search-kbd::after",
       "property": "inset",
       "value": "0 2px 4px",
@@ -837,7 +828,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 108,
+      "line": 105,
       "selector": ".macro-search-kbd::after",
       "property": "border",
       "value": "1px solid var(--harmonic-minor)",
@@ -846,7 +837,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border-radius::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 109,
+      "line": 106,
       "selector": ".macro-search-kbd::after",
       "property": "border-radius",
       "value": "2px",
@@ -855,7 +846,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::pointer-events::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 110,
+      "line": 107,
       "selector": ".macro-search-kbd::after",
       "property": "pointer-events",
       "value": "none",
@@ -864,7 +855,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::z-index::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 111,
+      "line": 108,
       "selector": ".macro-search-kbd::after",
       "property": "z-index",
       "value": "-1",
@@ -873,7 +864,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd:first-child::margin-left::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 115,
+      "line": 112,
       "selector": ".macro-search-kbd:first-child",
       "property": "margin-left",
       "value": "0",
@@ -889,27 +880,9 @@
       "code": "identity-geometry"
     },
     {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-section-label::letter-spacing::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 14,
-      "selector": ".settings-section-label",
-      "property": "letter-spacing",
-      "value": "0.07em",
-      "code": "brand-identity"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-section-label::text-transform::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 15,
-      "selector": ".settings-section-label",
-      "property": "text-transform",
-      "value": "uppercase",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-section-label::padding::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 16,
+      "line": 15,
       "selector": ".settings-section-label",
       "property": "padding",
       "value": "var(--spacing-md) var(--spacing-sm) 0 0",
@@ -918,7 +891,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-divider::height::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 21,
+      "line": 20,
       "selector": ".settings-divider",
       "property": "height",
       "value": "0",
@@ -927,7 +900,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-divider::margin::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 22,
+      "line": 21,
       "selector": ".settings-divider",
       "property": "margin",
       "value": "var(--spacing-sm) var(--spacing-xl)",
@@ -936,7 +909,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-prefix-btn::width::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 26,
+      "line": 25,
       "selector": ".settings-prefix-btn",
       "property": "width",
       "value": "2rem",
@@ -945,7 +918,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-prefix-btn::height::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 27,
+      "line": 26,
       "selector": ".settings-prefix-btn",
       "property": "height",
       "value": "2rem",
@@ -954,7 +927,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-prefix-btn::padding::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 28,
+      "line": 27,
       "selector": ".settings-prefix-btn",
       "property": "padding",
       "value": "0",
@@ -963,7 +936,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.settings-import-status::padding::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 32,
+      "line": 31,
       "selector": ".settings-import-status",
       "property": "padding",
       "value": "var(--spacing-xs) var(--spacing-xl) var(--spacing-sm)",
@@ -972,7 +945,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::content::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 42,
+      "line": 41,
       "selector": ".seg-control::before",
       "property": "content",
       "value": "''",
@@ -981,7 +954,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::position::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 43,
+      "line": 42,
       "selector": ".seg-control::before",
       "property": "position",
       "value": "absolute",
@@ -990,7 +963,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::top::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 44,
+      "line": 43,
       "selector": ".seg-control::before",
       "property": "top",
       "value": "0",
@@ -999,7 +972,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::bottom::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 45,
+      "line": 44,
       "selector": ".seg-control::before",
       "property": "bottom",
       "value": "0",
@@ -1008,7 +981,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::left::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 46,
+      "line": 45,
       "selector": ".seg-control::before",
       "property": "left",
       "value": "var(--pill-left, 0)",
@@ -1017,7 +990,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::width::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 47,
+      "line": 46,
       "selector": ".seg-control::before",
       "property": "width",
       "value": "var(--pill-width, 0)",
@@ -1026,7 +999,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::background::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 48,
+      "line": 47,
       "selector": ".seg-control::before",
       "property": "background",
       "value": "var(--accent)",
@@ -1035,7 +1008,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::opacity::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 49,
+      "line": 48,
       "selector": ".seg-control::before",
       "property": "opacity",
       "value": "0",
@@ -1044,7 +1017,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::transition::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 50,
+      "line": 49,
       "selector": ".seg-control::before",
       "property": "transition",
       "value": "left 0.1s ease, width 0.1s ease",
@@ -1053,7 +1026,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::pointer-events::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 51,
+      "line": 50,
       "selector": ".seg-control::before",
       "property": "pointer-events",
       "value": "none",
@@ -1062,7 +1035,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.is-sliding::before::opacity::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 54,
+      "line": 53,
       "selector": ".seg-control.is-sliding::before",
       "property": "opacity",
       "value": "1",
@@ -1071,7 +1044,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.seg-snap::before::transition::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 57,
+      "line": 56,
       "selector": ".seg-control.seg-snap::before",
       "property": "transition",
       "value": "none",
@@ -1080,7 +1053,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option::white-space::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 62,
+      "line": 61,
       "selector": ".seg-option",
       "property": "white-space",
       "value": "nowrap",
@@ -1089,7 +1062,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option::z-index::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 63,
+      "line": 62,
       "selector": ".seg-option",
       "property": "z-index",
       "value": "1",
@@ -1098,7 +1071,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option::transition::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 64,
+      "line": 63,
       "selector": ".seg-option",
       "property": "transition",
       "value": "color var(--transition-fast)",
@@ -1107,7 +1080,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option svg::vertical-align::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 70,
+      "line": 69,
       "selector": ".seg-option svg",
       "property": "vertical-align",
       "value": "middle",
@@ -1116,7 +1089,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option:last-child::border-right::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 75,
+      "line": 74,
       "selector": ".seg-option:last-child",
       "property": "border-right",
       "value": "none",
@@ -1125,7 +1098,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option[aria-checked=\"true\"]::border-right-color::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 79,
+      "line": 78,
       "selector": ".seg-option[aria-checked=\"true\"]",
       "property": "border-right-color",
       "value": "transparent",
@@ -1134,7 +1107,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.is-sliding .seg-option[aria-checked=\"true\"]::background::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 85,
+      "line": 84,
       "selector": ".seg-control.is-sliding .seg-option[aria-checked=\"true\"]",
       "property": "background",
       "value": "transparent",
@@ -3274,9 +3247,36 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.ink-accent-soft::color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.overline::text-transform::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 489,
+      "selector": ".overline",
+      "property": "text-transform",
+      "value": "uppercase",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.overline::letter-spacing::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 490,
+      "selector": ".overline",
+      "property": "letter-spacing",
+      "value": "var(--overline-tracking, 0.07em)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.tabular::font-variant-numeric::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 494,
+      "selector": ".tabular",
+      "property": "font-variant-numeric",
+      "value": "tabular-nums",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ink-accent-soft::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 498,
       "selector": ".ink-accent-soft",
       "property": "color",
       "value": "var(--accent-soft)",
@@ -3285,7 +3285,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-block-xl::padding-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 493,
+      "line": 502,
       "selector": ".padding-block-xl",
       "property": "padding-block",
       "value": "var(--spacing-xl)",
@@ -3294,7 +3294,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-3xl::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 497,
+      "line": 506,
       "selector": ".padding-inline-3xl",
       "property": "padding-inline",
       "value": "var(--spacing-3xl)",
@@ -3303,7 +3303,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule-fail:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 501,
+      "line": 510,
       "selector": ".hover\\:rule-fail:hover",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3312,7 +3312,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-fail-faint[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 505,
+      "line": 514,
       "selector": ".selected\\:ground-fail-faint[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3321,7 +3321,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-fail[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 509,
+      "line": 518,
       "selector": ".selected\\:ink-fail[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--fail)",
@@ -3330,7 +3330,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-fail[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 513,
+      "line": 522,
       "selector": ".selected\\:rule-fail[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3339,7 +3339,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 517,
+      "line": 526,
       "selector": ".hover\\:rule:hover",
       "property": "border-color",
       "value": "var(--rule)",
@@ -3348,7 +3348,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-accent[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 521,
+      "line": 530,
       "selector": ".selected\\:ink-accent[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--accent)",
@@ -3357,7 +3357,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-accent[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 525,
+      "line": 534,
       "selector": ".selected\\:rule-accent[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--accent)",
@@ -3366,7 +3366,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 529,
+      "line": 538,
       "selector": ".compressible",
       "property": "flex-grow",
       "value": "0",
@@ -3375,7 +3375,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-shrink::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 530,
+      "line": 539,
       "selector": ".compressible",
       "property": "flex-shrink",
       "value": "1",
@@ -3384,7 +3384,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 534,
+      "line": 543,
       "selector": ".clamp-3",
       "property": "display",
       "value": "-webkit-box",
@@ -3393,7 +3393,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::-webkit-box-orient::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 535,
+      "line": 544,
       "selector": ".clamp-3",
       "property": "-webkit-box-orient",
       "value": "vertical",
@@ -3402,7 +3402,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::-webkit-line-clamp::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 536,
+      "line": 545,
       "selector": ".clamp-3",
       "property": "-webkit-line-clamp",
       "value": "3",
@@ -3411,7 +3411,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hug-inline::inline-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 540,
+      "line": 549,
       "selector": ".hug-inline",
       "property": "inline-size",
       "value": "fit-content",
@@ -3420,7 +3420,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-xl::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 544,
+      "line": 553,
       "selector": ".gap-xl",
       "property": "gap",
       "value": "var(--spacing-xl)",
@@ -3429,7 +3429,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grow-1::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 548,
+      "line": 557,
       "selector": ".grow-1",
       "property": "flex-grow",
       "value": "1",
@@ -3438,7 +3438,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.margin-block-sm::margin-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 552,
+      "line": 561,
       "selector": ".margin-block-sm",
       "property": "margin-block",
       "value": "var(--spacing-sm)",
