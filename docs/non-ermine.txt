@@ -1,9 +1,82 @@
-Non-Ermine class tokens in current Monky.
+Non-Ermine in current Monky — inventory + generalizability analysis.
 
-Ermine grammar words are omitted. This list covers the current source tree after
-the paragraph-format pass. CSS-backed entries are grouped by the stylesheet that
-declares them; markup-only entries are authored in JSX/TSX but do not currently
-have their own local CSS selector.
+Two parts: (A) the invariance-test analysis pass over the residue declarations, and
+(B) the class-token inventory. Part A supersedes the earlier "mostly genuine identity"
+reading of the residue.
+
+========================================================================
+PART A — ANALYSIS PASS: how much of the "identity" residue is actually non-Ermine?
+========================================================================
+
+Method — the two-metric invariance test (docs/proportional-plane.md). For each residue
+declaration, ask: would the value survive if the design were re-rendered at a different
+resolution?
+  R  relational  — survives (a proportion, ratio, order, edge, alignment) → a WORD
+  S  scale-backed — rides the grain (var(--spacing-*), var(--radius-*)) → EXPRESSIBLE via
+                    existing/near spacing/corner grammar
+  O  off-grid    — neither (a raw px/rem/em not on any scale) → GENUINE identity (the floor)
+  X  substrate/reset — box-sizing, margin:0, auto, mechanism → not a positive carrier
+
+Applied to the two buckets previously called "genuine identity" (measured from
+current-ledger.json, Monky 386c4fb):
+
+  identity-geometry (59):   R 18   S 17   O 17   X 7
+  component-contract (55):  R 28   S  8   O 16   X 3
+  ------------------------------------------------------------------
+  combined (114):           R 46   S 25   O 33   X 10
+
+So of 114 declarations called "the floor," only 33 are genuinely off-grid identity.
+46 are RELATIONAL (generalizable to words) and 25 are SCALE-BACKED (expressible today).
+
+The relational 46, by intent:
+  - already grammar (migrate, no ruling): flex:1 / flex:0 0 auto (grow-1/rigid),
+    justify-content:flex-end / align-content:start (justify-end/align-start), subgrid,
+    min-height:0 (min-height-none), position:fixed (position-fixed). ~12
+  - done: width/height:100% (fill). (migrated this session)
+  - the proportional/relational plane (new words, docs/proportional-plane.md):
+      layer        z-index:10000 / 2147483646 / 10 / 0        (stacking ORDER, not size)
+      cover        inset:0
+      center       left:50% + translateX(-50%) ; margin:0 auto
+      edge-attach  top:100% / bottom:100% / left:0 / right:0
+      push         margin-left:auto
+      aspect/square aspect-ratio:1
+      fit / hug    width:fit-content ; fit-content(140px) 1fr
+      measure      max-width:672px / 8em ; width:min(600px, 100vw-2rem)
+      fill-viewport min-height:100vh
+      intent-proportions over a grid   grid-template-columns:1fr 3fr / fit-content 1fr
+                    (= third/three-quarters, hug+fill — the columns model, exactly)
+  - text-wrap family: white-space:nowrap (bare, not truncate) ; pre-wrap
+
+The scale-backed 25 are var(--spacing-*) paddings/margins and var(--radius-*) corners:
+expressible today via the padding/margin dials and corner scale, except where the value is
+per-EDGE asymmetric (e.g. padding: 2xl 0 xl) which Ermine's block/inline dials cannot yet
+split — a real, narrow gap (per-edge spacing).
+
+The genuine off-grid floor (33) is the raw constants: 240px/200px/280px/320px widths, 48px
+min-heights, 18px/24px/28px icon sizes, 2rem/3rem squares, 1px hairlines, 3px/6px paddings,
+52px toast offset, gap:2px. These are the true "no continuum" resolution violations — and even
+these could snap to a size scale, becoming scale-backed rather than identity.
+
+CONSEQUENCE. The residue is NOT near its floor. Extrapolating the 114-declaration sample,
+the genuine off-grid identity across the whole residue is far smaller than the ~255 I claimed
+last pass; a large fraction is relational (the proportional/relational plane absorbs it) or
+scale-backed (already expressible). The plane we are building is the mechanism that converts
+most of this "identity" into grammar. The bucket names (identity-geometry, component-contract)
+encode the metric trap: they read exact-looking CSS as bespoke, when order/proportion/edge/
+alignment are the most general things there are.
+
+The named-follow-up residue (motion 23, opacity 4, scrollbar 9, elevation 3 = 39) is unchanged
+— still waiting on its rulings. user-content (43 = the `prose` molecule) and recipe-identity
+(37, R-SKIN-10) are the genuinely-licensed-local bundles.
+
+========================================================================
+PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
+========================================================================
+
+Note: the fill/clamp migrations this session removed the CSS rules for macro-editor-view,
+macro-search-view, settings-view (now markup-only) and macro-suggestions-text-preview's
+clamp block; the width/height:100% declarations left component CSS. The token names below
+otherwise persist.
 
 CSS-backed local class selectors by source file:
 
@@ -17,19 +90,19 @@ src/content/overlays/modal/modalStyles.css:
 modal-backdrop, modal-dialog, modal-nav-branding, modal-nav-container, modal-nav-icon, modal-nav-label, modal-nav-tab
 
 src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:
-bottom, macro-suggestions-arrow, macro-suggestions-command-item, macro-suggestions-container, macro-suggestions-footer, macro-suggestions-kbd, macro-suggestions-text-preview, top
+bottom, macro-suggestions-arrow, macro-suggestions-command-item, macro-suggestions-container, macro-suggestions-footer, macro-suggestions-kbd, top
 
 src/content/overlays/deleteConfirm/deleteConfirmStyles.css:
 delete-confirm, delete-confirm-option, macro-suggestions-command-item, macro-suggestions-container
 
 src/content/overlays/views/macroEditor/editorViewStyles.css:
-command-suggestion-action, command-suggestion-actions, command-suggestion-command, command-suggestion-item, command-suggestions, content-editor, content-editor-body, editor-command, editor-command-error, editor-content, editor-popout, editor-toast, input-dropdown-open, macro-editor-view
+command-suggestion-action, command-suggestion-actions, command-suggestion-command, command-suggestion-item, command-suggestions, content-editor, content-editor-body, editor-command, editor-command-error, editor-content, editor-popout, editor-toast, input-dropdown-open
 
 src/content/overlays/views/search/searchViewStyles.css:
-macro-search-count, macro-search-input, macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-kbd, macro-search-results, macro-search-shortcut, macro-search-view, modal-command-description, modal-command-item
+macro-search-count, macro-search-input, macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-kbd, macro-search-results, macro-search-shortcut, modal-command-description, modal-command-item
 
 src/content/overlays/views/settings/settingsViewStyles.css:
-is-sliding, seg-control, seg-option, seg-snap, settings-body, settings-divider, settings-group, settings-import-status, settings-prefix-btn, settings-section-label, settings-view
+is-sliding, seg-control, seg-option, seg-snap, settings-body, settings-divider, settings-group, settings-import-status, settings-prefix-btn, settings-section-label
 
 src/popup/popup.css:
 popup-button, popup-container, popup-icon-button, popup-item-detail, popup-item-toggle, popup-macro-text, popup-results, popup-search-input, popup-toggle-label
@@ -40,11 +113,9 @@ mode-choice, mode-row, prefix-cell
 src/styles/entries/pages.css:
 page-container, page-title
 
-Markup-only local class tokens:
+Markup-only local class tokens (now includes the three view shells):
+macro-editor-view, macro-search-view, settings-view, macro-suggestions-text-preview,
 action-toolbar, alert, alert-error, alert-success, button-group, button-label, cancel, card, ce-link-field, ce-style-menu, ce-style-option-label, ce-toolbar, clear-button, command-input, command-input-container, command-input-error, command-input-error-message, command-input-hint, command-input-label, command-suggestion-text, command-suggestion-wrapper, command-suggestions-label, confirm, dark, delete, delete-confirm-command, delete-confirm-danger, delete-confirm-message, divider, editor-bottombar, editor-form, editor-sensitive, editor-title, editor-topbar, editor-topbar-lead, empty, empty-state, enabled, focused, fuzzy-search-field, icon-text, import-status--error, import-status--ok, light, list, list-item, macro-search-empty, macro-search-footer, macro-search-input-container, macro-suggestions-commands-list, modal-command-hint, modal-command-name, modal-content, multi-select-list, popup-card, popup-result-item, popup-section, popup-site-copy, search-field, search-focused-item, search-input, search-input-wrapper, search-spinner, searchable-list-container, searchable-list-search, searchable-list-toolbar, searchable-list-view, section, section-description, section-title, settings-appearance-controls, settings-row, settings-row-label, settings-rows, show, toggle-field, toggle-field-description, toggle-field-input, toggle-field-label, toggle-field-text, toolbar, toolbar-button, validation-error
-
-CSS-backed tokens reached through dynamic values or not found in literal class attributes:
-bottom, flash, min-selected-1, top
 
 Non-class local selectors and mechanics still in the ledger/review boundary:
 body, :host, #macro-suggestions, #macro-suggestions *, button/input/textarea/select inheritance rules, input number-spin pseudo-elements, content-editor rich-text descendants, scrollbar pseudo-elements, and @keyframes flash/pulse/shake.
