@@ -3,16 +3,16 @@
 The step-by-step plan for converting Monky project-owned residue declarations into Ermine
 words or Monky-local semantic classes — without changing Monky's rendered output. The first
 version targeted the 305-declaration snapshot re-read in `RESIDUE-THREE-WAY.md`; the live
-current ledger is now 284 project-owned declarations after the `fill`, `square`, `cover`, `push`,
-`hug-inline`, and `center-x` migrations. Live counts come from `CURRENT-LEDGER.md`; the corrected invariance overlay is
-`RESIDUE-INVARIANCE.md`.
+current ledger is now 281 project-owned declarations after the `fill`, `square`, `cover`, `push`,
+`hug-inline`, `center-x`, `center-y`, and `max-width-2xl` migrations. Live counts come from
+`CURRENT-LEDGER.md`; the corrected invariance overlay is `RESIDUE-INVARIANCE.md`.
 
 ## Provenance
 
 | source | commit |
 |---|---|
-| Ermine | `fc501c16896229308e39fa991b8c14ad3961d2bf` |
-| monky | `986115cf73446389c2aedcecc64db3b605076bbe` |
+| Ermine | `53aa24a18a49e83d138e32bd08f0947acb97b7b8` |
+| monky | `8053670ede3b73f3c3d88e76aa47b639ccc9863a` |
 
 Registry state read from `src/registry.ts` at the Ermine commit above.
 
@@ -55,7 +55,7 @@ or blocked on the already-filed animation-plane duration naming.
 | `pressable` (cursor) | 2 | `affordance: pressable` (owns `cursor`) | press-feedback transform is *not* covered |
 | `cover` (position) | 1 | `position-fixed` | the `inset:0` half is missing (below) |
 | `elevation` | 3 | `elevation: elevated` | migrate only if the shared shadow is acceptable; else identity |
-| `measure` | 4 | `constraints` (`max-width-<size>`) | migrate only if the px value maps to a size step; else identity |
+| `measure` | 4 | `constraints` (`max-width-<size>`) | page `672px` migrated as `max-width-2xl`; remaining values need type/viewport rulings |
 
 **~35 rows migrate with no ruling.** This is the bulk of Phase 1.
 
@@ -76,7 +76,7 @@ affordances are also reserved but have no Monky residue.)
 | `fill` (width/height:100%, flex:1 basis-0) | 10 | no plain width/height word; `constraints` is min/max only, `width` is guarded |
 | `anchor` (top/left/right/bottom offsets) | 6 | no inset axis; `inset` is in position-mode `mustNeverTouch` |
 | `prominence` (mid-scale opacity) | 6 | `concealment` is endpoints only — mid-scale dimming *explicitly excluded* |
-| `center-x` / `center-y` / flow-center | 5 | `center-x` is **done** (R-SIZE-06/ADR-0029); vertical translate centering and auto-margin flow centering remain separate questions |
+| `center-x` / `center-y` / flow-center | 5 | `center-x` and `center-y` are **done** (R-SIZE-06/ADR-0029/ADR-0030); auto-margin flow centering remains a separate question |
 | `join-corner` (per-corner squaring) | 5 | `corner` axis is whole-element radius, no per-corner member |
 | `link` (text-decoration) | 4 | no text-decoration axis |
 | `disabled` treatment (not-allowed cursor + dim) | 3 | `disabled` state exists; the *treatment* has no word |
@@ -90,8 +90,9 @@ affordances are also reserved but have no Monky residue.)
 | `press-feedback` (`:active` transform) | 1 | `pressable` owns cursor only |
 | `emphasis` (italic) | 1 | no word (may be prose-internal) |
 
-**~51 rows needed new shared-grammar rulings after `hug-inline`; `center-x` has since consumed the positioned horizontal-centering slice.** Most remaining rows are small, single-site atoms. The
-spatial cluster (`fill`/`anchor`/`center-y`/flow-center/`cover-inset`/`push`/`hug-inline`/`center-x`) is the one coherent
+**~51 rows needed new shared-grammar rulings after `hug-inline`; `center-x`, `center-y`,
+and size `2xl` have since consumed the positioned-centering and page-measure slices.** Most remaining rows are small, single-site atoms. The
+spatial cluster (`fill`/`anchor`/flow-center/`cover-inset`/`push`/`hug-inline`/`center-x`/`center-y`) is the one coherent
 arc; it finishes the spatial plane Ermine started but never atomized.
 
 ### D — Blocked on the animation-plane ruling (already filed)
@@ -127,7 +128,7 @@ needs a ruled duration name, which is the deferred `R-SCALE-02`/animation-plane 
 | **Monky-local molecule** | 96 | no ruling (Phase 5) |
 | **Blocked on animation-plane duration naming** | 17 | filed follow-up (Phase 4) |
 | **Reserved-member Gap Report** | 3 | anticipated ruling (Phase 2) |
-| **New shared-grammar Gap Report** | ~51 | new rulings (Phase 3; `square`/`push`/`hug-inline`/`center-x` consumed) |
+| **New shared-grammar Gap Report** | ~51 | new rulings (Phase 3; `square`/`push`/`hug-inline`/`center-x`/`center-y` and size `2xl` consumed) |
 
 The load-bearing correction: of the 215 my report called "missing," only a minority genuinely
 need new shared grammar after the spatial migrations (reserved + new), and even those are mostly small single-site atoms.
@@ -177,8 +178,9 @@ migration:**
   gap (`nowrap`), not a migration.
 - `position:fixed` → `position-fixed`: the only case is `:host { position: fixed !important }`
   on the injected overlay; the `!important` is load-bearing and the word emits without it. Stays local.
-- `layer`/z-index, `elevated`/box-shadow, `measure`/max-width: off-scale or bespoke values →
-  not byte-identical. Stay identity (or later Gap Reports).
+- `layer`/z-index, `elevated`/box-shadow, remaining `measure` values: off-scale or bespoke
+  values → not byte-identical. Stay identity (or later Gap Reports). The page-container
+  `672px` case was later admitted by adding size `2xl` and migrated as `max-width-2xl`.
 
 So Phase 1 is **complete**: the automated `assimilable=0` and this manual pass agree that
 nothing byte-identical remains. The reclassified rows move to identity or to Phase 3 gaps.
@@ -204,8 +206,11 @@ nothing byte-identical remains. The reclassified rows move to identity or to Pha
    actions migrated, gate green); **`hug-inline`** (`inline-size: fit-content`) — **done**
    (R-SIZE-05/ADR-0028; Monky options row/choices migrated, gate green);
    **`center-x`** (`left: 50%` + `translateX(-50%)`) — **done** (R-SIZE-06/ADR-0029;
-   suggestion arrows/editor toast migrated, gate green). Remaining centering evidence is
-   narrower: `center-y` / flow-center (`translateY(-50%)`, `margin: 0 auto`). The broader proportional plane — `columns-N` +
+   suggestion arrows/editor toast migrated, gate green); **`center-y`** (`top: 50%` +
+   `translateY(-50%)`) — **done** (R-SIZE-06/ADR-0030; search edit action migrated, gate
+   green); and size **`2xl`** — **done** (R-SCALE-01/ADR-0030; page `max-width-2xl`
+   migrated, gate green). Remaining centering evidence is narrower: flow-center
+   (`margin: 0 auto`). The broader proportional plane — `columns-N` +
    intent-proportions — is captured in `docs/proportional-plane.md`.
 2. **`prominence`** — mid-scale opacity as a ruled scale (new axis; explicitly not `concealment`).
 3. **Treatments** — `link`, `disabled`-treatment, `press-feedback`, `unselectable`.
@@ -252,8 +257,8 @@ hand-edited.
   number now reads as the retained-line limit), R-SKIN-12/ADR-0023; Monky's 3-line preview
   migrated to `clamp-3` (style-smoke identical, gate green). `GAP-U-truncate-clamp` resolved.
 - [ ] **Phase 3 — underway.** Spatial/proportional arc has landed `fill`, `square`,
-  `cover`, `push`, `hug-inline`, and `center-x`. Next clean candidates are `measure`,
-  `center-y` / flow-center, then
-  grid fit / `columns-12` + intent-proportions. See `RESIDUE-INVARIANCE.md`.
+  `cover`, `push`, `hug-inline`, `center-x`, `center-y`, and size `2xl`/`max-width-2xl`.
+  Next clean candidates are flow-center, grid fit, remaining measure, then `columns-12` +
+  intent-proportions. See `RESIDUE-INVARIANCE.md`.
 - [ ] Phase 4 — animation plane.
 - [ ] Phase 5 — Monky-local molecules.

@@ -38,13 +38,14 @@ The relational 46, by intent:
       layer        z-index:10000 / 2147483646 / 10 / 0        (stacking ORDER, not size)
       cover        inset:0                                      (done: R-SIZE-03 / migrated)
       center-x     left:50% + translateX(-50%)              (done: R-SIZE-06 / migrated)
-      center-y / flow-center translateY(-50%) ; margin:0 auto
+      center-y     top:50% + translateY(-50%)                (done: R-SIZE-06 / migrated)
+      flow-center  margin:0 auto
       edge-attach  top:100% / bottom:100% / left:0 / right:0
       push         margin-left:auto                             (done: R-SIZE-04 / migrated)
       aspect/square aspect-ratio:1
       hug-inline   width:fit-content                            (done: R-SIZE-05 / migrated)
       grid-fit     fit-content(140px) 1fr
-      measure      max-width:672px / 8em ; width:min(600px, 100vw-2rem)
+      measure      max-width:672px (done via max-width-2xl) / 8em ; width:min(600px, 100vw-2rem)
       fill-viewport min-height:100vh
       intent-proportions over a grid   grid-template-columns:1fr 3fr / fit-content 1fr
                     (= third/three-quarters, hug+fill — the columns model, exactly)
@@ -76,10 +77,11 @@ The named-follow-up residue (motion 23, opacity 4, scrollbar 9, elevation 3 = 39
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
 ========================================================================
 
-Note: the fill/clamp/center-x migrations removed the CSS rules for macro-editor-view,
+Note: the fill/clamp/center-x/center-y/max-width-2xl migrations removed the CSS rules for macro-editor-view,
 macro-search-view, settings-view (now markup-only), macro-suggestions-text-preview's
-clamp block, and the local horizontal-centering declarations for suggestion arrows/editor
-toast. The token names below otherwise persist.
+clamp block, local positioned-centering declarations for suggestion arrows/editor
+toast/search edit actions, and the page-container `max-width: 672px` rule. The token names
+below otherwise persist.
 
 CSS-backed local class selectors by source file:
 

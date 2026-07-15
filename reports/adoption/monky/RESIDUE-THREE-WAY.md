@@ -27,8 +27,9 @@ reclassified.
 > `ABSORPTION-PLAN.md`.
 
 > **Superseded as live accounting by the regenerated current ledger.** Later `clamp-3`,
-> `fill`, `square`, `cover`, `push`, `hug-inline`, and `center-x` migrations moved the live ledger to 512
-> current declarations and 284 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
+> `fill`, `square`, `cover`, `push`, `hug-inline`, `center-x`, `center-y`, and size `2xl`
+> migrations moved the live ledger to 513 current declarations and 281 project-owned residue
+> declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
 > for live counts, and `RESIDUE-INVARIANCE.md` / `docs/non-ermine.txt` for the corrected
 > two-metric analysis of the remaining residue.
 
