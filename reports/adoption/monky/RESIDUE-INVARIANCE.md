@@ -9,9 +9,9 @@ parts of the ledger are true local boundary and which are future grammar evidenc
 
 | measure | count |
 |---|---:|
-| current declarations | 513 |
-| adopted/infrastructure declarations | 232 |
-| project-owned residue declarations | 281 |
+| current declarations | 514 |
+| adopted/infrastructure declarations | 234 |
+| project-owned residue declarations | 280 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 
@@ -22,9 +22,9 @@ does not mean every remaining declaration is final product identity.
 
 The corrected pass originally sampled the two buckets most likely to hide the metric trap:
 `identity-geometry` and `component-contract`. The table below remains that frozen
-classification sample; the live ledger has since migrated `center-x`, `center-y`, and the
-page-container `max-width-2xl` slice, so the current bucket counts are now
-`identity-geometry = 62` and `component-contract = 39`.
+classification sample; the live ledger has since migrated `center-x`, `center-y`, the
+page-container `max-width-2xl` slice, and flow centering (`centered flush-block`), so the current
+bucket counts are now `identity-geometry = 61` and `component-contract = 39`.
 
 | bucket | declarations | relational | scale-backed | off-grid identity | substrate/reset |
 |---|---:|---:|---:|---:|---:|
@@ -56,12 +56,12 @@ Already admitted and migrated:
 | `center-x` | R-SIZE-06 / ADR-0029 | `left: 50%` + `transform: translateX(-50%)` |
 | `center-y` | R-SIZE-06 / ADR-0030 | `top: 50%` + `transform: translateY(-50%)` |
 | size `2xl` / `max-width-2xl` | R-SCALE-01 / ADR-0030 | `max-width: var(--size-2xl)` through constraints |
+| `centered` + `flush-block` | R-SIZE-07 / ADR-0031 | `margin-inline: auto` + `margin-block: 0` |
 
 Next candidates by cleanliness:
 
 | candidate | evidence shape | note |
 |---|---|---|
-| flow-center | `margin: 0 auto` | Valuable, but separate from positioned centering; shorthand zero margins need a deliberate ruling. |
 | grid fit | `fit-content(...) 1fr` | Related to columns/track sizing; keep separate from `hug-inline`. |
 | remaining measure | `max-width: 8em`, `width: min(...)`, viewport clamps | The page-container `672px` case migrated via size `2xl`; remaining evidence needs a ruled relation to type scale or viewport. |
 | `columns-12` + intent proportions | `1fr 3fr`, `fit-content(...) 1fr` | Highest leverage; should be a deliberate ruling cycle. |

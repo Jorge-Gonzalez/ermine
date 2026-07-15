@@ -39,7 +39,7 @@ The relational 46, by intent:
       cover        inset:0                                      (done: R-SIZE-03 / migrated)
       center-x     left:50% + translateX(-50%)              (done: R-SIZE-06 / migrated)
       center-y     top:50% + translateY(-50%)                (done: R-SIZE-06 / migrated)
-      flow-center  margin:0 auto
+      flow-center  margin:0 auto                              (done: centered + flush-block)
       edge-attach  top:100% / bottom:100% / left:0 / right:0
       push         margin-left:auto                             (done: R-SIZE-04 / migrated)
       aspect/square aspect-ratio:1
@@ -77,11 +77,11 @@ The named-follow-up residue (motion 23, opacity 4, scrollbar 9, elevation 3 = 39
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
 ========================================================================
 
-Note: the fill/clamp/center-x/center-y/max-width-2xl migrations removed the CSS rules for macro-editor-view,
+Note: the fill/clamp/center-x/center-y/max-width-2xl/centered+flush-block migrations removed the CSS rules for macro-editor-view,
 macro-search-view, settings-view (now markup-only), macro-suggestions-text-preview's
 clamp block, local positioned-centering declarations for suggestion arrows/editor
-toast/search edit actions, and the page-container `max-width: 672px` rule. The token names
-below otherwise persist.
+toast/search edit actions, and the page-container `max-width: 672px` plus `margin: 0 auto`
+rules. The token names below otherwise persist.
 
 CSS-backed local class selectors by source file:
 

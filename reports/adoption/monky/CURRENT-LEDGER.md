@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `53aa24a18a49e83d138e32bd08f0947acb97b7b8` |
-| monky | `8053670ede3b73f3c3d88e76aa47b639ccc9863a` |
+| Ermine | `4f73b2f2aa6ed254c7ccc7e6c9609e66c51dd30d` |
+| monky | `cefa8a6489398d6af82689b442987aba144bde5c` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 513 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 232 |
-| **residue — project-owned declarations** | **281** |
+| current declarations | 514 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 234 |
+| **residue — project-owned declarations** | **280** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,7 +34,7 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 144 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 146 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 34 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
@@ -51,7 +51,7 @@ re-validated on every run.
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 13 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 62 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 61 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -66,7 +66,7 @@ re-validated on every run.
 | `src/popup/popup.css` | 17 |
 | `src/content/overlays/modal/modalStyles.css` | 13 |
 | `src/styles/theme/metrics.css` | 9 |
-| `src/styles/entries/pages.css` | 6 |
+| `src/styles/entries/pages.css` | 5 |
 | `src/options/options.css` | 3 |
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 

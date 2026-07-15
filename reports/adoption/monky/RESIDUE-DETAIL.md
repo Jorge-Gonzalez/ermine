@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `53aa24a18a49e83d138e32bd08f0947acb97b7b8` |
-| monky | `8053670ede3b73f3c3d88e76aa47b639ccc9863a` |
+| Ermine | `4f73b2f2aa6ed254c7ccc7e6c9609e66c51dd30d` |
+| monky | `cefa8a6489398d6af82689b442987aba144bde5c` |
 
 ## Summary
 
-- Current declarations: 513
-- Adopted/infrastructure declarations: 232
-- Project-owned residue declarations: 281
+- Current declarations: 514
+- Adopted/infrastructure declarations: 234
+- Project-owned residue declarations: 280
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -32,7 +32,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 13 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 62 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 61 | Project-exact dimensions, spacing, positioning, and geometry. |
 
 ## recipe-identity (37)
 
@@ -132,8 +132,8 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 20 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
-| 24 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
+| 19 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
+| 23 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
 ## component-contract (39)
 
@@ -555,7 +555,7 @@ Rich-text defaults inside user-authored editor content.
 | 187 | `.content-editor-body a` | `text-decoration: underline` |
 | 191 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (62)
+## identity-geometry (61)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -661,18 +661,16 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 70 | `.ce-link-input` | `padding: 0 var(--spacing-sm)` |
 | 75 | `.content-editor-body` | `min-height: 150px` |
 
-### src/styles/entries/pages.css (4)
+### src/styles/entries/pages.css (3)
 
 | line | selector | declaration |
 |---:|---|---|
-| 12 | `.page-container` | `margin: 0 auto` |
-| 13 | `.page-container` | `min-height: 100vh` |
-| 25 | `body` | `margin: 0` |
-| 26 | `body` | `padding: 0` |
+| 12 | `.page-container` | `min-height: 100vh` |
+| 24 | `body` | `margin: 0` |
+| 25 | `body` | `padding: 0` |
 
 ### src/styles/skin/controls.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
 | 29 | `.editor-content` | `min-height: 150px` |
-
