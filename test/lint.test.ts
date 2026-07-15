@@ -60,6 +60,8 @@ const cases: Case[] = [
   { s: "padding-md padding-inline-lg", expect: "fail", why: "whole-axis padding + a per-side dial" },
   { s: "scroll-x scroll-y", expect: "ok", why: "different overflow sub-dials" },
   { s: "scroll-x scroll-auto", expect: "fail", why: "per-axis dial + whole-axis clip/auto" },
+  { s: "centered flush-block", expect: "ok", why: "flow centering and block flush are different logical margin dials" },
+  { s: "centered centered", expect: "fail", why: "two values on the same flow-centering dial" },
   // constraints — min/max compose as a band
   { s: "min-width-sm max-width-lg", expect: "ok", why: "width band: min + max compose" },
   { s: "min-width-sm min-width-lg", expect: "fail", why: "two values on the same min-width dial" },

@@ -308,14 +308,14 @@ Tokens:
 #### margin
 
 - role: `member` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
-- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl`
+- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl` `centered` `flush-block`
 - default: none
 - controls: `margin` `margin-inline` `margin-block`
 - must never touch: `margin-inline-start` `margin-inline-end` `padding` `gap` `display`
 - sub-dials: `inline` `block`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.
+- notes: two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm.
 
 Tokens:
 
@@ -324,6 +324,7 @@ Tokens:
 | `margin-<spacing>` | `/^margin-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `margin-inline-<spacing>` | `/^margin-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `margin-block-<spacing>` | `/^margin-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `centered \| flush-block` | `/^(centered\|flush-block)$/` | — | no |
 
 #### push
 

@@ -299,6 +299,16 @@
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
+    "centered": {
+      "axis": "margin",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "flush-block": {
+      "axis": "margin",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
     "margin-xs": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
@@ -1382,19 +1392,19 @@
     {
       "pattern": "^margin-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
       "pattern": "^margin-inline-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
       "pattern": "^margin-block-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "margin",
-      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.",
+      "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {

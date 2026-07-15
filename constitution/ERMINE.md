@@ -428,9 +428,20 @@ A positioned element may align one of its centers with the containing block's ma
 `transform: translateY(-50%)`. These are relational metrics with no theme socket: the midpoint
 and compensation are resolved from the element and its containing block. They do not imply
 `position:absolute` or `position:fixed`. Because both members write `transform`, they are exclusive
-until a tuple transform composition rule is admitted; flow centering remains separate evidence.
+until a tuple transform composition rule is admitted.
 
 → rationale: RAT:R-SIZE-06 · history: ADR-0029, ADR-0030 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
+## R-SIZE-07 — Flow Centering And Block Flush
+
+A normal-flow block may center itself in the available inline space with automatic inline margins:
+`centered` sets `margin-inline: auto`. The block-axis reset is a separate word:
+`flush-block` sets `margin-block: 0`. Together, `centered flush-block` reproduces the common
+`margin: 0 auto` idiom without making centering erase block-axis spacing or making a reset imply
+centering. Both words are logical-property declarations, relational/socket-free, and do not imply
+flex, grid, width constraints, text alignment, or positioned centering.
+
+→ rationale: RAT:R-SIZE-07 · history: ADR-0031 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
 ## R-TYPE-01 — Type belongs to skin
 

@@ -470,6 +470,18 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — margin",
       "items": [
         {
+          "label": "centered",
+          "insertText": "centered",
+          "kind": "word",
+          "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm."
+        },
+        {
+          "label": "flush-block",
+          "insertText": "flush-block",
+          "kind": "word",
+          "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm."
+        },
+        {
           "label": "margin-xs",
           "insertText": "margin-xs",
           "kind": "word",

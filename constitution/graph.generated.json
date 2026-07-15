@@ -181,6 +181,12 @@
       "anchor": "ADR-0030"
     },
     {
+      "id": "ADR-0031",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0031-flow-centering-flush-block.md",
+      "anchor": "ADR-0031"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -743,6 +749,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-SIZE-06"
+    },
+    {
+      "id": "R-SIZE-07",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SIZE-07"
     },
     {
       "id": "R-SKIN-01",
@@ -1385,6 +1397,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SIZE-06"
+    },
+    {
+      "id": "RAT:R-SIZE-07",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SIZE-07"
     },
     {
       "id": "RAT:R-SKIN-01",
@@ -2282,6 +2300,11 @@
     {
       "from": "RAT:R-SIZE-06",
       "to": "R-SIZE-06",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SIZE-07",
+      "to": "R-SIZE-07",
       "type": "rationale-of"
     },
     {

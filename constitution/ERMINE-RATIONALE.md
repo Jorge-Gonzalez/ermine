@@ -238,7 +238,7 @@ Source: ADR-0029. `center-x` admits the positioned horizontal-centering pair
 the anchor is the containing block's inline midpoint, and the transform compensates by half the
 element's own inline size. It composes with `position-absolute` / `position-fixed` instead of
 implying either, matching the `cover` precedent. It is deliberately narrow: vertical centering
-(`translateY(-50%)`), flow centering (`margin-inline:auto`), transform animation, and edge
+(`translateY(-50%)`), transform animation, and edge
 attachment remain separate evidence/ruling cycles. Evidence comes from Monky's suggestion arrows
 and editor toast.
 
@@ -252,6 +252,20 @@ ADR-0030 also admits `2xl` into the layout size scale. The evidence is Monky's r
 measure (`max-width: 672px`, historically `.max-w-2xl` = 42rem). This does not make size values
 grammar-owned; it adds a stable step name, while the theme remains responsible for the actual
 `--size-2xl` value under R-SCALE-01.
+
+## RAT:R-SIZE-07
+Source: ADR-0031. Monky's page container used the shorthand `margin: 0 auto`, which bundles two
+independent meanings: inline auto margins center a normal-flow block inside available inline space,
+while zero block margins remove outside spacing on the block axis. Treating the shorthand as a
+single `centered` word would smuggle the reset into centering and make later block-margin
+composition hazardous. Treating it as only a reset would lose the relational centering intent.
+
+The ruling therefore admits two composable words. `centered` writes `margin-inline: auto`: a
+relational, socket-free value resolved from the formatting context and the element's own used
+inline size. `flush-block` writes `margin-block: 0`: an absence/reset word for the block axis.
+Together they reproduce the evidence after logical expansion, while keeping each word's ownership
+narrow. The words do not imply a width constraint; in Monky the centering effect is made useful by
+the separate `max-width-2xl` constraint.
 
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.

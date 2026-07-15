@@ -343,7 +343,9 @@ const EMISSION: Record<string, EmitSpec> = {
   // --- ordered-chain scale axis, sub-dials + aliasMatch (same shape as padding) ---
   margin: {
     effectKind: "css",
-    plain: (word) => {
+    plain: (word): Record<string, string> | null => {
+      if (word === "centered") return { "margin-inline": "auto" };
+      if (word === "flush-block") return { "margin-block": "0" };
       if (new RegExp(`^margin-(${SCALES.spacing.join("|")})$`).test(word))
         return spacingDial("margin")(word);
       const inline = spacingDial("margin-inline")(word);
@@ -667,6 +669,8 @@ export const VOCABULARY: Record<string, string[]> = {
   "positioned-centering": ["center-x", "center-y"],
   push: ["push"],
   margin: [
+    "centered",
+    "flush-block",
     ...SCALES.spacing.map((s) => `margin-${s}`),
     ...SCALES.spacing.map((s) => `margin-inline-${s}`),
     ...SCALES.spacing.map((s) => `margin-block-${s}`),

@@ -70,6 +70,12 @@ two-declaration relation: containing-block midpoint plus self-size compensation.
 `position-absolute` / `position-fixed`; they do not imply either position mode or a general
 transform vocabulary. They remain exclusive until Ermine has a tuple transform composition rule.
 
+`centered` / `flush-block` = the decomposed normal-flow centering idiom. `centered` sets
+`margin-inline: auto`; `flush-block` sets `margin-block: 0`. Together they reproduce
+`margin: 0 auto`, but keeping them separate prevents inline centering from erasing block-axis
+spacing by accident. They do not imply a width constraint, text alignment, flex/grid alignment, or
+positioned centering.
+
 ### 2. Self-relative — `aspect` / `square`
 Know one of the element's *own* dimensions; the other follows by ratio. The relatum is *self*,
 not the parent. `square` (1:1) is the concrete member (Monky evidence: `aspect-ratio: 1`);

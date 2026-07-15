@@ -85,6 +85,12 @@ test("positioned centering: centers a positioned element on one containing-block
   assert.deepEqual(declOf("center-y"), [["top", "50%"], ["transform", "translateY(-50%)"]]);
 });
 
+test("flow centering: decomposes margin:0 auto into centering and block flush (R-SIZE-07)", () => {
+  assert.deepEqual(declOf("centered"), [["margin-inline", "auto"]]);
+  assert.deepEqual(declOf("flush-block"), [["margin-block", "0"]]);
+  assert.deepEqual(declOf("centered flush-block"), [["margin-inline", "auto"], ["margin-block", "0"]]);
+});
+
 test("push: consumes inline-start free space with auto margin (R-SIZE-04)", () => {
   assert.deepEqual(declOf("push"), [["margin-inline-start", "auto"]]);
 });

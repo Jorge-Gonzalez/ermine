@@ -253,15 +253,20 @@ export const LAYOUT: AxisRecord[] = [
     axis: "margin",
     sibling: "layout", role: "member", signature: "ordered-chain",
     vocabulary: "closed", regime: "free",
-    valueSpace: SCALES.spacing,
-    tokens: [spacingToken("margin"), spacingToken("margin-inline"), spacingToken("margin-block")],
+    valueSpace: [...SCALES.spacing, "centered", "flush-block"],
+    tokens: [
+      spacingToken("margin"),
+      spacingToken("margin-inline"),
+      spacingToken("margin-block"),
+      { pattern: /^(centered|flush-block)$/, shape: "centered | flush-block" },
+    ],
     subDials: ["inline", "block"],
-    dialOf: (word: string) => word.startsWith("margin-inline-") ? "inline" : word.startsWith("margin-block-") ? "block" : null,
+    dialOf: (word: string) => word.startsWith("margin-inline-") || word === "centered" ? "inline" : word.startsWith("margin-block-") || word === "flush-block" ? "block" : null,
     aliasMatch: (word: string) => new RegExp(`^margin-(${SCALES.spacing.join("|")})$`).test(word),
     default: null,
     controls: ["margin", "margin-inline", "margin-block"], // longhands, per padding (controls-fidelity)
     mustNeverTouch: ["margin-inline-start", "margin-inline-end", "padding", "gap", "display"],
-    notes: "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `push` owns auto inline-start margin separately because auto is relational, not scale-backed. marked-by-preference: reach for it only outside container rhythm.",
+    notes: "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm.",
   },
   {
     // push: an element consumes available inline-start margin and moves toward inline end
