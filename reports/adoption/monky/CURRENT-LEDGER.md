@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `c33cce42c033004aa8750c0a9c8d00c035d96699` |
-| monky | `5ff992bd9ad27944d570149aadb9ca219478db73` |
+| Ermine | `79be09eee32d802e0f88d3d21854a21201619b3f` |
+| monky | `450d8aff6f9eeb0871cd4cb9e72f6a752d3f8a07` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -25,8 +25,8 @@ re-validated on every run.
 | measure | count |
 |---|---:|
 | current declarations | 516 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 238 |
-| **residue — project-owned declarations** | **278** |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 239 |
+| **residue — project-owned declarations** | **277** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,7 +34,7 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 149 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 150 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 35 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
@@ -51,7 +51,7 @@ re-validated on every run.
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 13 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 59 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 58 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -66,7 +66,7 @@ re-validated on every run.
 | `src/popup/popup.css` | 17 |
 | `src/content/overlays/modal/modalStyles.css` | 13 |
 | `src/styles/theme/metrics.css` | 9 |
-| `src/styles/entries/pages.css` | 5 |
+| `src/styles/entries/pages.css` | 4 |
 | `src/options/options.css` | 3 |
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 
