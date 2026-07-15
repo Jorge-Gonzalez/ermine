@@ -2,15 +2,15 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "5085018fa5f5ec0ec00ddcec02469296f359706a",
-    "projectCommit": "8231ef4e74b3bf55ab9ff018eca3b69c2fcbb9fa"
+    "ermineCommit": "fc501c16896229308e39fa991b8c14ad3961d2bf",
+    "projectCommit": "986115cf73446389c2aedcecc64db3b605076bbe"
   },
   "summary": {
-    "totalDeclarations": 516,
-    "residueDeclarations": 290,
+    "totalDeclarations": 512,
+    "residueDeclarations": 284,
     "assimilable": 0,
     "byCode": {
-      "ermine-emitted": 139,
+      "ermine-emitted": 141,
       "substrate": 53,
       "theme-metric": 33,
       "config-departure": 1,
@@ -19,7 +19,7 @@
       "rule-mechanics": 0,
       "brand-identity": 11,
       "affordance-mechanics": 0,
-      "component-contract": 52,
+      "component-contract": 43,
       "state-mechanics": 5,
       "state-review": 0,
       "focus-state": 0,
@@ -32,7 +32,7 @@
       "elevation-followup": 3,
       "reset-absence": 13,
       "user-content": 43,
-      "identity-geometry": 58,
+      "identity-geometry": 61,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -300,27 +300,9 @@
       "code": "component-contract"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::left::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 34,
-      "selector": ".macro-suggestions-arrow.top",
-      "property": "left",
-      "value": "50%",
-      "code": "component-contract"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::transform::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 35,
-      "selector": ".macro-suggestions-arrow.top",
-      "property": "transform",
-      "value": "translateX(-50%)",
-      "code": "component-contract"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::border-top-color::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 36,
+      "line": 34,
       "selector": ".macro-suggestions-arrow.top",
       "property": "border-top-color",
       "value": "var(--base-tone)",
@@ -329,34 +311,16 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::bottom::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 40,
+      "line": 38,
       "selector": ".macro-suggestions-arrow.bottom",
       "property": "bottom",
       "value": "100%",
       "code": "component-contract"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::left::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 41,
-      "selector": ".macro-suggestions-arrow.bottom",
-      "property": "left",
-      "value": "50%",
-      "code": "component-contract"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::transform::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 42,
-      "selector": ".macro-suggestions-arrow.bottom",
-      "property": "transform",
-      "value": "translateX(-50%)",
-      "code": "component-contract"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::border-bottom-color::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 43,
+      "line": 39,
       "selector": ".macro-suggestions-arrow.bottom",
       "property": "border-bottom-color",
       "value": "var(--base-tone)",
@@ -365,7 +329,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::max-width::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 47,
+      "line": 43,
       "selector": ".macro-suggestions-command-item",
       "property": "max-width",
       "value": "8em",
@@ -374,7 +338,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 48,
+      "line": 44,
       "selector": ".macro-suggestions-command-item",
       "property": "padding",
       "value": "3px 6px",
@@ -383,7 +347,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::transition::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 49,
+      "line": 45,
       "selector": ".macro-suggestions-command-item",
       "property": "transition",
       "value": "all 0.15s ease",
@@ -392,7 +356,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::justify-content::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 53,
+      "line": 49,
       "selector": ".macro-suggestions-footer",
       "property": "justify-content",
       "value": "flex-end",
@@ -401,7 +365,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 58,
+      "line": 54,
       "selector": ".macro-suggestions-kbd",
       "property": "padding",
       "value": "1px 4px",
@@ -473,36 +437,18 @@
       "note": "Context-scoped floor escape: the body keeps min-height 150px everywhere except inside the modal editor. A min-height-none word on the body would lose to that components-layer base — the Phase C layer finding — so the contextual zero stays local."
     },
     {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::left::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 34,
-      "selector": ".editor-toast",
-      "property": "left",
-      "value": "50%",
-      "code": "component-contract"
-    },
-    {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::bottom::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 35,
+      "line": 34,
       "selector": ".editor-toast",
       "property": "bottom",
       "value": "52px",
       "code": "component-contract"
     },
     {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::transform::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 36,
-      "selector": ".editor-toast",
-      "property": "transform",
-      "value": "translateX(-50%)",
-      "code": "component-contract"
-    },
-    {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::white-space::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 37,
+      "line": 35,
       "selector": ".editor-toast",
       "property": "white-space",
       "value": "nowrap",
@@ -512,7 +458,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::box-shadow::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 38,
+      "line": 36,
       "selector": ".editor-toast",
       "property": "box-shadow",
       "value": "0 6px 16px -4px rgb(0 0 0 / 25%)",
@@ -521,7 +467,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.input-dropdown-open::border-bottom-left-radius::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 42,
+      "line": 40,
       "selector": ".input-dropdown-open",
       "property": "border-bottom-left-radius",
       "value": "0",
@@ -530,7 +476,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.input-dropdown-open::border-bottom-right-radius::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 43,
+      "line": 41,
       "selector": ".input-dropdown-open",
       "property": "border-bottom-right-radius",
       "value": "0",
@@ -539,16 +485,16 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::left::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 48,
+      "line": 46,
       "selector": ".command-suggestions",
       "property": "left",
       "value": "0",
-      "code": "component-contract"
+      "code": "identity-geometry"
     },
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::right::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 49,
+      "line": 47,
       "selector": ".command-suggestions",
       "property": "right",
       "value": "0",
@@ -557,7 +503,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::top::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 50,
+      "line": 48,
       "selector": ".command-suggestions",
       "property": "top",
       "value": "100%",
@@ -566,7 +512,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-top::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 51,
+      "line": 49,
       "selector": ".command-suggestions",
       "property": "border-top",
       "value": "none",
@@ -575,7 +521,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-radius::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 52,
+      "line": 50,
       "selector": ".command-suggestions",
       "property": "border-radius",
       "value": "0 0 var(--radius-md) var(--radius-md)",
@@ -584,7 +530,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::z-index::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 53,
+      "line": 51,
       "selector": ".command-suggestions",
       "property": "z-index",
       "value": "10",
@@ -593,7 +539,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-item::transition::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 57,
+      "line": 55,
       "selector": ".command-suggestion-item",
       "property": "transition",
       "value": "background-color var(--transition-fast)",
@@ -602,7 +548,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-command::white-space::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 61,
+      "line": 59,
       "selector": ".command-suggestion-command",
       "property": "white-space",
       "value": "nowrap",
@@ -612,7 +558,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-action::transition::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 65,
+      "line": 63,
       "selector": ".command-suggestion-action",
       "property": "transition",
       "value": "opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)",
@@ -769,7 +715,7 @@
       "selector": ".macro-search-item-edit",
       "property": "transform",
       "value": "translateY(-50%)",
-      "code": "component-contract"
+      "code": "identity-geometry"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::transition::1",
@@ -1579,7 +1525,7 @@
       "selector": ".ce-style-dropdown",
       "property": "left",
       "value": "0",
-      "code": "component-contract"
+      "code": "identity-geometry"
     },
     {
       "id": "src/styles/components/content-editor.css::.ce-style-dropdown::z-index::1",
@@ -3121,9 +3067,27 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.push::margin-inline-start::1",
+      "id": "src/styles/grammar/ermine.generated.css::.center-x::left::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 385,
+      "selector": ".center-x",
+      "property": "left",
+      "value": "50%",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.center-x::transform::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 386,
+      "selector": ".center-x",
+      "property": "transform",
+      "value": "translateX(-50%)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.push::margin-inline-start::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 390,
       "selector": ".push",
       "property": "margin-inline-start",
       "value": "auto",
@@ -3132,7 +3096,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 389,
+      "line": 394,
       "selector": ".hover\\:ground-fail:hover",
       "property": "background",
       "value": "var(--fail)",
@@ -3141,7 +3105,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-inverse:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 393,
+      "line": 398,
       "selector": ".hover\\:ink-inverse:hover",
       "property": "color",
       "value": "var(--ink-inverse)",
@@ -3150,7 +3114,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail-faint:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 397,
+      "line": 402,
       "selector": ".hover\\:ground-fail-faint:hover",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3159,7 +3123,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-fail:hover::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 401,
+      "line": 406,
       "selector": ".hover\\:ink-fail:hover",
       "property": "color",
       "value": "var(--fail)",
@@ -3168,7 +3132,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground:hover::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 405,
+      "line": 410,
       "selector": ".hover\\:ground:hover",
       "property": "background",
       "value": "var(--ground)",
@@ -3177,7 +3141,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-defined[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 409,
+      "line": 414,
       "selector": ".selected\\:ground-defined[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--ground-defined)",
@@ -3186,7 +3150,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.elevated::box-shadow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 413,
+      "line": 418,
       "selector": ".elevated",
       "property": "box-shadow",
       "value": "var(--shadow-elevated, 0 4px 12px var(--shadow))",
@@ -3195,7 +3159,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.wrap-allowed::flex-wrap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 417,
+      "line": 422,
       "selector": ".wrap-allowed",
       "property": "flex-wrap",
       "value": "wrap",
@@ -3204,7 +3168,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.fill-block::block-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 421,
+      "line": 426,
       "selector": ".fill-block",
       "property": "block-size",
       "value": "100%",
@@ -3213,7 +3177,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-xl::padding::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 425,
+      "line": 430,
       "selector": ".padding-xl",
       "property": "padding",
       "value": "var(--spacing-xl)",
@@ -3222,7 +3186,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ruled-right::border-right-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 429,
+      "line": 434,
       "selector": ".ruled-right",
       "property": "border-right-width",
       "value": "var(--rule-weight, 1px)",
@@ -3231,7 +3195,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ruled-right::border-right-style::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 430,
+      "line": 435,
       "selector": ".ruled-right",
       "property": "border-right-style",
       "value": "solid",
@@ -3240,7 +3204,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.checked\\:ground-accent[aria-checked=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 434,
+      "line": 439,
       "selector": ".checked\\:ground-accent[aria-checked=\"true\"]",
       "property": "background",
       "value": "var(--accent)",
@@ -3249,7 +3213,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.checked\\:ink-inverse[aria-checked=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 438,
+      "line": 443,
       "selector": ".checked\\:ink-inverse[aria-checked=\"true\"]",
       "property": "color",
       "value": "var(--ink-inverse)",
@@ -3258,7 +3222,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ink-accent-soft::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 442,
+      "line": 447,
       "selector": ".ink-accent-soft",
       "property": "color",
       "value": "var(--accent-soft)",
@@ -3267,7 +3231,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-block-xl::padding-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 446,
+      "line": 451,
       "selector": ".padding-block-xl",
       "property": "padding-block",
       "value": "var(--spacing-xl)",
@@ -3276,7 +3240,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-3xl::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 450,
+      "line": 455,
       "selector": ".padding-inline-3xl",
       "property": "padding-inline",
       "value": "var(--spacing-3xl)",
@@ -3285,7 +3249,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule-fail:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 454,
+      "line": 459,
       "selector": ".hover\\:rule-fail:hover",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3294,7 +3258,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-fail-faint[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 458,
+      "line": 463,
       "selector": ".selected\\:ground-fail-faint[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3303,7 +3267,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-fail[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 462,
+      "line": 467,
       "selector": ".selected\\:ink-fail[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--fail)",
@@ -3312,7 +3276,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-fail[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 466,
+      "line": 471,
       "selector": ".selected\\:rule-fail[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3321,7 +3285,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 470,
+      "line": 475,
       "selector": ".hover\\:rule:hover",
       "property": "border-color",
       "value": "var(--rule)",
@@ -3330,7 +3294,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-accent[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 474,
+      "line": 479,
       "selector": ".selected\\:ink-accent[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--accent)",
@@ -3339,7 +3303,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-accent[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 478,
+      "line": 483,
       "selector": ".selected\\:rule-accent[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--accent)",
@@ -3348,7 +3312,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 482,
+      "line": 487,
       "selector": ".compressible",
       "property": "flex-grow",
       "value": "0",
@@ -3357,7 +3321,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-shrink::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 483,
+      "line": 488,
       "selector": ".compressible",
       "property": "flex-shrink",
       "value": "1",
@@ -3366,7 +3330,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 487,
+      "line": 492,
       "selector": ".clamp-3",
       "property": "display",
       "value": "-webkit-box",
@@ -3375,7 +3339,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::-webkit-box-orient::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 488,
+      "line": 493,
       "selector": ".clamp-3",
       "property": "-webkit-box-orient",
       "value": "vertical",
@@ -3384,7 +3348,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::-webkit-line-clamp::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 489,
+      "line": 494,
       "selector": ".clamp-3",
       "property": "-webkit-line-clamp",
       "value": "3",
@@ -3393,7 +3357,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hug-inline::inline-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 493,
+      "line": 498,
       "selector": ".hug-inline",
       "property": "inline-size",
       "value": "fit-content",
@@ -3402,7 +3366,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-xl::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 497,
+      "line": 502,
       "selector": ".gap-xl",
       "property": "gap",
       "value": "var(--spacing-xl)",
@@ -3411,7 +3375,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grow-1::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 501,
+      "line": 506,
       "selector": ".grow-1",
       "property": "flex-grow",
       "value": "1",
@@ -3420,7 +3384,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.margin-block-sm::margin-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 505,
+      "line": 510,
       "selector": ".margin-block-sm",
       "property": "margin-block",
       "value": "var(--spacing-sm)",

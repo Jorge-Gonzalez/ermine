@@ -17,8 +17,9 @@ resolution?
   O  off-grid    — neither (a raw px/rem/em not on any scale) → GENUINE identity (the floor)
   X  substrate/reset — box-sizing, margin:0, auto, mechanism → not a positive carrier
 
-Applied to the two buckets previously called "genuine identity" (measured from
-current-ledger.json, Monky 386c4fb):
+Applied to the two buckets previously called "genuine identity" (originally measured from
+current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
+were migrated):
 
   identity-geometry (59):   R 18   S 17   O 17   X 7
   component-contract (55):  R 28   S  8   O 16   X 3
@@ -36,7 +37,8 @@ The relational 46, by intent:
   - the proportional/relational plane (new words, docs/proportional-plane.md):
       layer        z-index:10000 / 2147483646 / 10 / 0        (stacking ORDER, not size)
       cover        inset:0                                      (done: R-SIZE-03 / migrated)
-      center       left:50% + translateX(-50%) ; margin:0 auto
+      center-x     left:50% + translateX(-50%)              (done: R-SIZE-06 / migrated)
+      center-y / flow-center translateY(-50%) ; margin:0 auto
       edge-attach  top:100% / bottom:100% / left:0 / right:0
       push         margin-left:auto                             (done: R-SIZE-04 / migrated)
       aspect/square aspect-ratio:1
@@ -74,10 +76,10 @@ The named-follow-up residue (motion 23, opacity 4, scrollbar 9, elevation 3 = 39
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
 ========================================================================
 
-Note: the fill/clamp migrations this session removed the CSS rules for macro-editor-view,
-macro-search-view, settings-view (now markup-only) and macro-suggestions-text-preview's
-clamp block; the width/height:100% declarations left component CSS. The token names below
-otherwise persist.
+Note: the fill/clamp/center-x migrations removed the CSS rules for macro-editor-view,
+macro-search-view, settings-view (now markup-only), macro-suggestions-text-preview's
+clamp block, and the local horizontal-centering declarations for suggestion arrows/editor
+toast. The token names below otherwise persist.
 
 CSS-backed local class selectors by source file:
 

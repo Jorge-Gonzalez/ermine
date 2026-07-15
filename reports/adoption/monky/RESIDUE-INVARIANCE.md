@@ -9,9 +9,9 @@ parts of the ledger are true local boundary and which are future grammar evidenc
 
 | measure | count |
 |---|---:|
-| current declarations | 516 |
-| adopted/infrastructure declarations | 226 |
-| project-owned residue declarations | 290 |
+| current declarations | 512 |
+| adopted/infrastructure declarations | 228 |
+| project-owned residue declarations | 284 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 
@@ -20,8 +20,10 @@ does not mean every remaining declaration is final product identity.
 
 ## Invariance Sample
 
-The corrected pass sampled the two buckets most likely to hide the metric trap:
-`identity-geometry` and `component-contract`.
+The corrected pass originally sampled the two buckets most likely to hide the metric trap:
+`identity-geometry` and `component-contract`. The table below remains that frozen
+classification sample; the live ledger has since migrated `center-x`, so the current bucket
+counts are now `identity-geometry = 61` and `component-contract = 43`.
 
 | bucket | declarations | relational | scale-backed | off-grid identity | substrate/reset |
 |---|---:|---:|---:|---:|---:|
@@ -56,7 +58,7 @@ Next candidates by cleanliness:
 
 | candidate | evidence shape | note |
 |---|---|---|
-| `center-y` / flow-center | `translateY(-50%)`, `margin: 0 auto` | Valuable, but separate from positioned horizontal centering. |
+| `center-y` / flow-center | `translateY(-50%)`, `margin: 0 auto` | Valuable, but separate from the migrated positioned horizontal centering. |
 | grid fit | `fit-content(...) 1fr` | Related to columns/track sizing; keep separate from `hug-inline`. |
 | `measure` | readable/clamped widths | Needs a ruled relation to size scale or viewport. |
 | `columns-12` + intent proportions | `1fr 3fr`, `fit-content(...) 1fr` | Highest leverage; should be a deliberate ruling cycle. |

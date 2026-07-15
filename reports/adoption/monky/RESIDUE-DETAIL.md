@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `5085018fa5f5ec0ec00ddcec02469296f359706a` |
-| monky | `8231ef4e74b3bf55ab9ff018eca3b69c2fcbb9fa` |
+| Ermine | `fc501c16896229308e39fa991b8c14ad3961d2bf` |
+| monky | `986115cf73446389c2aedcecc64db3b605076bbe` |
 
 ## Summary
 
-- Current declarations: 516
-- Adopted/infrastructure declarations: 226
-- Project-owned residue declarations: 290
+- Current declarations: 512
+- Adopted/infrastructure declarations: 228
+- Project-owned residue declarations: 284
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -21,7 +21,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 |---|---:|---|
 | `recipe-identity` | 37 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 11 | Monky-specific brand typography and type treatment. |
-| `component-contract` | 52 | Component-owned mechanics, exact geometry, or product contract. |
+| `component-contract` | 43 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
 | `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
 | `parent-relational` | 8 | Guarded parent/descendant state mechanics outside ruled relational words. |
@@ -32,7 +32,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 13 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 58 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 61 | Project-exact dimensions, spacing, positioning, and geometry. |
 
 ## recipe-identity (37)
 
@@ -42,8 +42,8 @@ Project recipe bundles licensed by R-SKIN-10.
 
 | line | selector | declaration |
 |---:|---|---|
-| 42 | `.input-dropdown-open` | `border-bottom-left-radius: 0` |
-| 43 | `.input-dropdown-open` | `border-bottom-right-radius: 0` |
+| 40 | `.input-dropdown-open` | `border-bottom-left-radius: 0` |
+| 41 | `.input-dropdown-open` | `border-bottom-right-radius: 0` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (6)
 
@@ -135,7 +135,7 @@ Monky-specific brand typography and type treatment.
 | 21 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 25 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (52)
+## component-contract (43)
 
 Component-owned mechanics, exact geometry, or product contract.
 
@@ -149,7 +149,7 @@ Component-owned mechanics, exact geometry, or product contract.
 | 30 | `.modal-dialog` | `height: min(560px, 85vh)` |
 | 65 | `.modal-nav-icon` | `height: 18px` |
 
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (11)
+### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (7)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -157,15 +157,11 @@ Component-owned mechanics, exact geometry, or product contract.
 | 27 | `.macro-suggestions-arrow` | `width: 0` |
 | 28 | `.macro-suggestions-arrow` | `height: 0` |
 | 33 | `.macro-suggestions-arrow.top` | `top: 100%` |
-| 34 | `.macro-suggestions-arrow.top` | `left: 50%` |
-| 35 | `.macro-suggestions-arrow.top` | `transform: translateX(-50%)` |
-| 36 | `.macro-suggestions-arrow.top` | `border-top-color: var(--base-tone)` |
-| 40 | `.macro-suggestions-arrow.bottom` | `bottom: 100%` |
-| 41 | `.macro-suggestions-arrow.bottom` | `left: 50%` |
-| 42 | `.macro-suggestions-arrow.bottom` | `transform: translateX(-50%)` |
-| 43 | `.macro-suggestions-arrow.bottom` | `border-bottom-color: var(--base-tone)` |
+| 34 | `.macro-suggestions-arrow.top` | `border-top-color: var(--base-tone)` |
+| 38 | `.macro-suggestions-arrow.bottom` | `bottom: 100%` |
+| 39 | `.macro-suggestions-arrow.bottom` | `border-bottom-color: var(--base-tone)` |
 
-### src/content/overlays/views/macroEditor/editorViewStyles.css (14)
+### src/content/overlays/views/macroEditor/editorViewStyles.css (11)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -174,24 +170,20 @@ Component-owned mechanics, exact geometry, or product contract.
 | 17 | `.editor-command-error` | `border-bottom-right-radius: var(--radius-md)` |
 | 24 | `.editor-content.content-editor` | `min-height: 0` |
 | 29 | `.editor-content .content-editor-body` | `min-height: 0` |
-| 34 | `.editor-toast` | `left: 50%` |
-| 35 | `.editor-toast` | `bottom: 52px` |
-| 36 | `.editor-toast` | `transform: translateX(-50%)` |
-| 37 | `.editor-toast` | `white-space: nowrap` |
-| 48 | `.command-suggestions` | `left: 0` |
-| 49 | `.command-suggestions` | `right: 0` |
-| 50 | `.command-suggestions` | `top: 100%` |
-| 52 | `.command-suggestions` | `border-radius: 0 0 var(--radius-md) var(--radius-md)` |
-| 61 | `.command-suggestion-command` | `white-space: nowrap` |
+| 34 | `.editor-toast` | `bottom: 52px` |
+| 35 | `.editor-toast` | `white-space: nowrap` |
+| 47 | `.command-suggestions` | `right: 0` |
+| 48 | `.command-suggestions` | `top: 100%` |
+| 50 | `.command-suggestions` | `border-radius: 0 0 var(--radius-md) var(--radius-md)` |
+| 59 | `.command-suggestion-command` | `white-space: nowrap` |
 
-### src/content/overlays/views/search/searchViewStyles.css (5)
+### src/content/overlays/views/search/searchViewStyles.css (4)
 
 | line | selector | declaration |
 |---:|---|---|
 | 16 | `.macro-search-results` | `align-content: start` |
 | 59 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
 | 60 | `.macro-search-item-edit` | `top: 50%` |
-| 61 | `.macro-search-item-edit` | `transform: translateY(-50%)` |
 | 106 | `.macro-search-kbd` | `border-radius: 4px` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (3)
@@ -216,7 +208,7 @@ Component-owned mechanics, exact geometry, or product contract.
 | 6 | `.popup-container` | `width: 320px` |
 | 21 | `.popup-search-input` | `box-sizing: border-box` |
 
-### src/styles/components/content-editor.css (10)
+### src/styles/components/content-editor.css (9)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -227,7 +219,6 @@ Component-owned mechanics, exact geometry, or product contract.
 | 18 | `.ce-toolbar-btn` | `height: 28px` |
 | 34 | `.ce-style-trigger` | `width: auto` |
 | 44 | `.ce-style-dropdown` | `top: calc(100% + 4px)` |
-| 45 | `.ce-style-dropdown` | `left: 0` |
 | 61 | `.ce-style-option-short` | `width: 24px` |
 | 69 | `.ce-link-input` | `height: 28px` |
 
@@ -366,15 +357,15 @@ Transition/animation timing evidence for the animation-plane follow-up.
 | line | selector | declaration |
 |---:|---|---|
 | 23 | `.macro-suggestions-container` | `transition: opacity 0.15s ease, transform 0.15s ease` |
-| 49 | `.macro-suggestions-command-item` | `transition: all 0.15s ease` |
+| 45 | `.macro-suggestions-command-item` | `transition: all 0.15s ease` |
 
 ### src/content/overlays/views/macroEditor/editorViewStyles.css (3)
 
 | line | selector | declaration |
 |---:|---|---|
 | 7 | `.editor-popout` | `transition: background-color var(--transition-fast), color var(--transition-fast)` |
-| 57 | `.command-suggestion-item` | `transition: background-color var(--transition-fast)` |
-| 65 | `.command-suggestion-action` | `transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)` |
+| 55 | `.command-suggestion-item` | `transition: background-color var(--transition-fast)` |
+| 63 | `.command-suggestion-action` | `transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (3)
 
@@ -462,7 +453,7 @@ Identity shadows/rings outside the shared elevated treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 38 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
+| 36 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
 
 ## reset-absence (13)
 
@@ -491,7 +482,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 51 | `.command-suggestions` | `border-top: none` |
+| 49 | `.command-suggestions` | `border-top: none` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (3)
 
@@ -568,7 +559,7 @@ Rich-text defaults inside user-authored editor content.
 | 187 | `.content-editor-body a` | `text-decoration: underline` |
 | 191 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (58)
+## identity-geometry (61)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -595,19 +586,20 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 6 | `:host, #macro-suggestions` | `z-index: 2147483646 !important` |
 | 21 | `.macro-suggestions-container` | `min-width: 200px` |
 | 22 | `.macro-suggestions-container` | `max-width: 360px` |
-| 47 | `.macro-suggestions-command-item` | `max-width: 8em` |
-| 48 | `.macro-suggestions-command-item` | `padding: 3px 6px` |
-| 53 | `.macro-suggestions-footer` | `justify-content: flex-end` |
-| 58 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
+| 43 | `.macro-suggestions-command-item` | `max-width: 8em` |
+| 44 | `.macro-suggestions-command-item` | `padding: 3px 6px` |
+| 49 | `.macro-suggestions-footer` | `justify-content: flex-end` |
+| 54 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
 
-### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
+### src/content/overlays/views/macroEditor/editorViewStyles.css (3)
 
 | line | selector | declaration |
 |---:|---|---|
 | 28 | `.editor-content .content-editor-body` | `flex: 1` |
-| 53 | `.command-suggestions` | `z-index: 10` |
+| 46 | `.command-suggestions` | `left: 0` |
+| 51 | `.command-suggestions` | `z-index: 10` |
 
-### src/content/overlays/views/search/searchViewStyles.css (11)
+### src/content/overlays/views/search/searchViewStyles.css (12)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -617,6 +609,7 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 30 | `.macro-search-item-command` | `padding-right: var(--spacing-xs)` |
 | 34 | `.macro-search-item-text` | `padding-left: var(--spacing-xs)` |
 | 55 | `.macro-search-item-confirm` | `padding-left: var(--spacing-xs)` |
+| 61 | `.macro-search-item-edit` | `transform: translateY(-50%)` |
 | 98 | `.macro-search-shortcut` | `margin-right: var(--spacing-xl)` |
 | 104 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
 | 105 | `.macro-search-kbd` | `min-width: 26px` |
@@ -653,7 +646,7 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 52 | `.popup-results` | `padding: var(--spacing-sm) 0` |
 | 53 | `.popup-results` | `margin: 0` |
 
-### src/styles/components/content-editor.css (11)
+### src/styles/components/content-editor.css (12)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -663,6 +656,7 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 35 | `.ce-style-trigger` | `min-width: 36px` |
 | 36 | `.ce-style-trigger` | `padding: 0 var(--spacing-xs)` |
 | 37 | `.ce-style-trigger` | `gap: 2px` |
+| 45 | `.ce-style-dropdown` | `left: 0` |
 | 46 | `.ce-style-dropdown` | `z-index: 10` |
 | 47 | `.ce-style-dropdown` | `min-width: 140px` |
 | 48 | `.ce-style-dropdown` | `gap: 2px` |
@@ -684,3 +678,4 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | line | selector | declaration |
 |---:|---|---|
 | 29 | `.editor-content` | `min-height: 150px` |
+

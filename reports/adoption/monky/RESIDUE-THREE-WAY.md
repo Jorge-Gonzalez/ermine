@@ -21,13 +21,14 @@ reclassified.
 > ~35 rows already have an Ermine word (`padding`/`margin`/`gap`, `z-scale`/`top-layer`,
 > `position-fixed`, `truncate`, `pressable`, `elevated`) and only need migrating; 96 rows
 > are Monky-local molecules; 17 are blocked on the already-filed animation-plane duration
-> naming. After `square`, only **~56 rows genuinely need a new shared-grammar ruling.**
+> naming. Later spatial rulings have consumed part of that set; use
+> `ABSORPTION-PLAN.md` / `RESIDUE-INVARIANCE.md` for the current roadmap.
 > Read the category shapes below for the analysis, but take the corrected counts from
 > `ABSORPTION-PLAN.md`.
 
 > **Superseded as live accounting by the regenerated current ledger.** Later `clamp-3`,
-> `fill`, `square`, `cover`, `push`, and `hug-inline` migrations moved the live ledger to 516
-> current declarations and 290 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
+> `fill`, `square`, `cover`, `push`, `hug-inline`, and `center-x` migrations moved the live ledger to 512
+> current declarations and 284 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
 > for live counts, and `RESIDUE-INVARIANCE.md` / `docs/non-ermine.txt` for the corrected
 > two-metric analysis of the remaining residue.
 
