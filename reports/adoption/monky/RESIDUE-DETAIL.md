@@ -11,9 +11,9 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 ## Summary
 
-- Current declarations: 520
-- Adopted/infrastructure declarations: 248
-- Project-owned residue declarations: 272
+- Current declarations: 515
+- Adopted/infrastructure declarations: 253
+- Project-owned residue declarations: 262
 - Assimilable declarations: 0
 - Shadowed words: 0
 

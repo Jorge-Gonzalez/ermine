@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `fe2b49b9f44d0d197f70a01b32bf1945043a6bbc` |
-| monky | `0240fff79120326c491a2997e9b661a50483301c` |
+| Ermine | `32f9d742a76142e1c3f99c3e3233ae4ee132959e` |
+| monky | `4a1aa2b96ce14fd1f1d3efb58b7bd2c1f3934ed1` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 272 |
+| project-owned residue | 262 |
 
 ## Product Identity
 
@@ -96,7 +96,7 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 |---|---:|---|
 | `parent-relational` | 8 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
 | `scrollbar-followup` | 9 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
-| `motion-followup` | 23 | reports/GAP-U-animation-plane.md |
+| `motion-followup` | 13 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 4 | named follow-up: opacity prominence treatment (no report filed yet) |
 | `aria-current` | 1 | R-STATE-12 follow-up: current-layer mechanics |
 | `elevation-followup` | 3 | R-SKIN-09 boundary clause |
