@@ -38,7 +38,7 @@ The relational 46, by intent:
       cover        inset:0                                      (done: R-SIZE-03 / migrated)
       center       left:50% + translateX(-50%) ; margin:0 auto
       edge-attach  top:100% / bottom:100% / left:0 / right:0
-      push         margin-left:auto
+      push         margin-left:auto                             (done: R-SIZE-04 / migrated)
       aspect/square aspect-ratio:1
       fit / hug    width:fit-content ; fit-content(140px) 1fr
       measure      max-width:672px / 8em ; width:min(600px, 100vw-2rem)

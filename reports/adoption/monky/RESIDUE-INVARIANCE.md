@@ -10,8 +10,8 @@ parts of the ledger are true local boundary and which are future grammar evidenc
 | measure | count |
 |---|---:|
 | current declarations | 516 |
-| adopted/infrastructure declarations | 224 |
-| project-owned residue declarations | 292 |
+| adopted/infrastructure declarations | 225 |
+| project-owned residue declarations | 291 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 

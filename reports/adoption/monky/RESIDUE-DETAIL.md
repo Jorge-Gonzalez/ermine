@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `f99960d45f93b4de17562dcd86f78e6e172de8c6` |
-| monky | `d11faaea9a08b0231d7a7b21a3d36e6f9033fe9e` |
+| Ermine | `0bb6e9e1181310ed2155d343ee0575db680745b9` |
+| monky | `0774e189d2781587087aca59ca863f38f3f3dc07` |
 
 ## Summary
 
 - Current declarations: 516
-- Adopted/infrastructure declarations: 224
-- Project-owned residue declarations: 292
+- Adopted/infrastructure declarations: 225
+- Project-owned residue declarations: 291
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -32,7 +32,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 13 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 59 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 58 | Project-exact dimensions, spacing, positioning, and geometry. |
 
 ## recipe-identity (37)
 
@@ -90,7 +90,6 @@ Project recipe bundles licensed by R-SKIN-10.
 | 116 | `.selectable-group > .is-selected:hover` | `background-color: var(--accent)` |
 | 117 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
 
-
 ## brand-identity (11)
 
 Monky-specific brand typography and type treatment.
@@ -135,7 +134,6 @@ Monky-specific brand typography and type treatment.
 |---:|---|---|
 | 21 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 25 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
-
 
 ## component-contract (53)
 
@@ -234,7 +232,6 @@ Component-owned mechanics, exact geometry, or product contract.
 | 61 | `.ce-style-option-short` | `width: 24px` |
 | 69 | `.ce-link-input` | `height: 28px` |
 
-
 ## state-mechanics (5)
 
 Native/JS state mechanics outside backed Ermine conditions.
@@ -254,7 +251,6 @@ Native/JS state mechanics outside backed Ermine conditions.
 |---:|---|---|
 | 121 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 
-
 ## aria-current (1)
 
 Current-state layer mechanics left local around ruled current: skin.
@@ -264,7 +260,6 @@ Current-state layer mechanics left local around ruled current: skin.
 | line | selector | declaration |
 |---:|---|---|
 | 61 | `.modal-nav-tab[aria-current="page"]` | `border-bottom-color: var(--accent)` |
-
 
 ## parent-relational (8)
 
@@ -297,7 +292,6 @@ Guarded parent/descendant state mechanics outside ruled relational words.
 | line | selector | declaration |
 |---:|---|---|
 | 65 | `.ce-style-option.is-active .ce-style-option-short` | `color: var(--accent)` |
-
 
 ## pseudo-mechanics (23)
 
@@ -341,7 +335,6 @@ Pseudo-element geometry, generated content, and fills.
 | 84 | `.content-editor-body:empty::before` | `color: var(--ink-soft)` |
 | 85 | `.content-editor-body:empty::before` | `pointer-events: none` |
 
-
 ## scrollbar-followup (9)
 
 Engine-drawn scrollbar identity outside R-SKIN-15 standard properties.
@@ -365,7 +358,6 @@ Engine-drawn scrollbar identity outside R-SKIN-15 standard properties.
 |---:|---|---|
 | 57 | `:root, :host` | `scrollbar-color: var(--tone) var(--tone-dim)` |
 
-
 ## motion-followup (23)
 
 Transition/animation timing evidence for the animation-plane follow-up.
@@ -383,7 +375,7 @@ Transition/animation timing evidence for the animation-plane follow-up.
 |---:|---|---|
 | 7 | `.editor-popout` | `transition: background-color var(--transition-fast), color var(--transition-fast)` |
 | 57 | `.command-suggestion-item` | `transition: background-color var(--transition-fast)` |
-| 71 | `.command-suggestion-action` | `transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)` |
+| 65 | `.command-suggestion-action` | `transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (3)
 
@@ -428,7 +420,6 @@ Transition/animation timing evidence for the animation-plane follow-up.
 | 76 | `@keyframes flash > 0%, 100%` | `opacity: 1` |
 | 77 | `@keyframes flash > 50%` | `opacity: 0.4` |
 
-
 ## opacity-followup (4)
 
 Opacity prominence/treatment evidence.
@@ -452,7 +443,6 @@ Opacity prominence/treatment evidence.
 | 122 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
 | 126 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
-
 ## elevation-followup (3)
 
 Identity shadows/rings outside the shared elevated treatment.
@@ -474,7 +464,6 @@ Identity shadows/rings outside the shared elevated treatment.
 | line | selector | declaration |
 |---:|---|---|
 | 38 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
-
 
 ## reset-absence (13)
 
@@ -528,7 +517,6 @@ Absence/reset/transparent mechanics, not positive style carriers.
 |---:|---|---|
 | 79 | `.content-editor-body` | `line-height: normal` |
 
-
 ## user-content (43)
 
 Rich-text defaults inside user-authored editor content.
@@ -581,8 +569,7 @@ Rich-text defaults inside user-authored editor content.
 | 187 | `.content-editor-body a` | `text-decoration: underline` |
 | 191 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-
-## identity-geometry (59)
+## identity-geometry (58)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -614,13 +601,12 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 53 | `.macro-suggestions-footer` | `justify-content: flex-end` |
 | 58 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
 
-### src/content/overlays/views/macroEditor/editorViewStyles.css (3)
+### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
 | 28 | `.editor-content .content-editor-body` | `flex: 1` |
 | 53 | `.command-suggestions` | `z-index: 10` |
-| 67 | `.command-suggestion-item > .command-suggestion-action, .command-suggestion-actions` | `margin-left: auto` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (11)
 
@@ -699,4 +685,3 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | line | selector | declaration |
 |---:|---|---|
 | 29 | `.editor-content` | `min-height: 150px` |
-

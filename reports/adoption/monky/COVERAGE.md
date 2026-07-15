@@ -20,7 +20,7 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
 - **Live style reachability:** Monky's build-backed style audit now reports **201 live
   static classes and 0 dead-candidate declarations** at `d58cac0`.
 - **Current assimilation:** the generated current ledger now reports **516 current
-  declarations**, **224 adopted/infrastructure declarations**, **292 project-owned
+  declarations**, **225 adopted/infrastructure declarations**, **291 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
@@ -87,8 +87,8 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `d11faae`: 516 declarations, 224
-adopted/infrastructure declarations, 292 project-owned residue declarations,
+The current generated ledger is at Monky `0774e18`: 516 declarations, 225
+adopted/infrastructure declarations, 291 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
 ## 4. Theme coverage (the socket plane)
@@ -123,8 +123,8 @@ Current migration status now lives in the **generated current ledger**
 reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes every current
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
-Phase D's gate holds the list at zero. The current gate at Monky `d11faae` reports 516
-current declarations, 292 project-owned residue, `assimilable = 0`, and no shadowed words;
+Phase D's gate holds the list at zero. The current gate at Monky `0774e18` reports 516
+current declarations, 291 project-owned residue, `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
 `RESIDUE-THREE-WAY.md` re-read the earlier 305-declaration residue snapshot through a lens
@@ -138,8 +138,8 @@ generated from `current-ledger.json`, and the corrected invariance layer is
 corrects it: much of the apparent gap is already a ruled word needing only migration
 (`padding`/`gap`, `z-scale`/`top-layer`, `position-fixed`, `truncate`, `pressable`,
 `elevated`), 96 rows are Monky-local molecules, and 17 wait on the filed animation-plane
-duration naming. Later passes admitted and migrated `clamp-3`, `fill`, `square`, and `cover`.
-The remaining Phase 3 grammar work is the proportional/relational plane (`center`, `push`,
+duration naming. Later passes admitted and migrated `clamp-3`, `fill`, `square`, `cover`, and
+`push`. The remaining Phase 3 grammar work is the proportional/relational plane (`center`,
 `fit/hug`, `measure`, viewport fill, and columns + intent-proportions) plus the smaller
 treatment/type follow-ups.
 
@@ -198,8 +198,8 @@ recipe boundary — consumed them in Monky, and gave the recipe rows their termi
 current ledger is v2/project-profiled, the gate fails on assimilable or review-coded rows,
 `BOUNDARY.md` declares the live ownership boundary, and `CASE-STUDY.md` publishes the
 worked example. The paragraph-format pass then reduced churn without changing the ledger
-counts at that checkpoint; later `fill`, `square`, and `cover` migrations moved the live ledger to
-516 current declarations, 292 project-owned residue, `assimilable = 0`, and `shadowed = 0`.
+counts at that checkpoint; later `fill`, `square`, `cover`, and `push` migrations moved the live
+ledger to 516 current declarations, 291 project-owned residue, `assimilable = 0`, and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted
 evidence in the boundary, Gap Reports, and invariance analysis: the proportional/relational
 plane, interaction affordance, parent-relational mechanics, engine scrollbar identity,

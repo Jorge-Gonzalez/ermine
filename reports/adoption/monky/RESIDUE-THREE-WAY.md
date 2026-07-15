@@ -26,8 +26,8 @@ reclassified.
 > `ABSORPTION-PLAN.md`.
 
 > **Superseded as live accounting by the regenerated current ledger.** Later `clamp-3`,
-> `fill`, and `square` migrations moved the live ledger to 516 current declarations and
-> 293 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
+> `fill`, `square`, `cover`, and `push` migrations moved the live ledger to 516 current
+> declarations and 291 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
 > for live counts, and `RESIDUE-INVARIANCE.md` / `docs/non-ermine.txt` for the corrected
 > two-metric analysis of the remaining residue.
 
@@ -237,7 +237,7 @@ gap to close.
 
 **`aspect` (1)** — `options:5` `.prefix-cell` (aspect-ratio:1). &nbsp; **`fit` (1)** —
 `options:14` `.mode-row, .mode-choice` (width:fit-content). &nbsp; **`push` (1)** —
-`macroEditor:71` `.command-suggestion-action` (margin-left:auto).
+`macroEditor:71` `.command-suggestion-action` (margin-left:auto; later migrated).
 
 ### Animation (17)
 
@@ -396,7 +396,8 @@ A ruled Ermine word already covers these; residue only for a bookkeeping reason.
 
 1. **Spatial word-set (3a, ~78).** Biggest, safest, most on-mission — values are already
    scale tokens, only words are missing. `pad`, `gap`, `fill`, `center`, `anchor`, `layer`,
-   `measure`, `cover`, `join-corner`, `aspect`, `fit`, `push`.
+   `measure`, `cover`, `join-corner`, `aspect`, `fit`, `push` (some now migrated; see
+   `CURRENT-LEDGER.md`).
 2. **Animation `tween` (3a, 17).** Already scoped by the R-MOTION reframe in `plane-model.md`.
 3. **Treatment atoms (3a, 24).** `prominence` (needs a ruled scale), `disabled`, `pressable`,
    `unselectable`, `link`, `active` (needs a backed condition), `nowrap`, `clamp-lines`,
