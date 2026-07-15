@@ -919,16 +919,19 @@ Tokens:
 #### truncation
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `truncate`
+- value space: `truncate` `clamp-N`
 - default: none
-- controls: `text-overflow` `white-space`
-- must never touch: `display` `gap` `flex` `overflow-x` `overflow-y` `background` `color` `font-size`
+- controls: `text-overflow` `white-space` `display` `-webkit-box-orient` `-webkit-line-clamp`
+- must never touch: `gap` `flex` `overflow-x` `overflow-y` `background` `color` `font-size`
+- parametric members: `clamp`
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<truncation>` | `/^(truncate)$/` | — | no |
+| `clamp-N` | `/^clamp-(\d+)$/` | `integer-≥1` | no |
+| `clamp-<bad>` | `/^clamp-.+$/` | `integer-≥1` | yes |
 
 #### selection-treatment
 

@@ -702,9 +702,14 @@ owning `text-overflow: ellipsis` and `white-space: nowrap`. It does not own over
 treatment takes effect composed with the `hidden` overflow word (`hidden truncate`), the same
 explicit-composition seam as `rule ruled`: two words, both facts visible in markup, ownership
 disjoint. Releasing truncation under a state is a conditioned override or project mechanics.
-The multi-line clamp (`truncate-N`) is the family member reserved pending evidence.
+The multi-line clamp is admitted as `clamp-N` (ADR-0023): `clamp-3` limits to three lines,
+then ellipsizes. It is named `clamp`, not the reserved `truncate-N`, because the number reads
+as the retained-line limit, not an amount removed. `clamp-N` and `truncate` are one axis (an
+element truncates OR clamps, never both). Its `-webkit-box` clamp requires `display: -webkit-box`,
+a whole-display legacy value that overlaps the structure/m1 display facet twin; the overlap is a
+sanctioned exclusion, not a composition — a clamped text block is never a flex/grid container.
 
-→ rationale: RAT:R-SKIN-12 · history: ADR-0013 · code: src/registry.ts#SKIN, src/emit.ts#emit
+→ rationale: RAT:R-SKIN-12 · history: ADR-0013, ADR-0023 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SKIN-13 — Focus ring treatment
 

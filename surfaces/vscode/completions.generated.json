@@ -1872,6 +1872,12 @@
           "insertText": "truncate",
           "kind": "word",
           "meaning": "<truncation>"
+        },
+        {
+          "label": "clamp-N",
+          "insertText": "clamp-${1:1}",
+          "kind": "snippet",
+          "meaning": "<truncation>"
         }
       ]
     },

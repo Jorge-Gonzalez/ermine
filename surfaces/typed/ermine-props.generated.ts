@@ -98,7 +98,7 @@ export interface ErminePlainProps {
   /** axis `focus-ring` */
   focusRing?: "ring";
   /** axis `truncation` */
-  truncation?: "truncate";
+  truncation?: "truncate" | `clamp-${number}`;
   /** axis `selection-treatment` */
   selectionTreatment?: "selection-subtle" | "selection-strong";
 }

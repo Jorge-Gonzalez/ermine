@@ -57,6 +57,11 @@ test("position-mode strips the grammar prefix", () => {
   assert.deepEqual(declOf("position-sticky"), [["position", "sticky"]]);
 });
 
+test("truncation: `truncate` is single-line ellipsis; `clamp-N` is the N-line -webkit-box clamp (R-SKIN-12)", () => {
+  assert.deepEqual(declOf("truncate"), [["text-overflow", "ellipsis"], ["white-space", "nowrap"]]);
+  assert.deepEqual(declOf("clamp-3"), [["display", "-webkit-box"], ["-webkit-box-orient", "vertical"], ["-webkit-line-clamp", "3"]]);
+});
+
 // K6 additions — the three axes completed from ruled mappings.
 
 test("m5: span carries columns, row-span carries rows, span-all is contextual (R-M5-01)", () => {

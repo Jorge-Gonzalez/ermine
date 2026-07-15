@@ -142,6 +142,9 @@
     "outline-offset"
   ],
   "truncation": [
+    "-webkit-box-orient",
+    "-webkit-line-clamp",
+    "display",
     "text-overflow",
     "white-space"
   ],

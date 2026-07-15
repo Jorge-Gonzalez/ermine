@@ -424,8 +424,20 @@ treatment composes with the newly admitted `hidden` word — `hidden truncate` �
 explicit seam as `rule ruled`, where the markup states both facts and ownership stays
 disjoint. The search view's release of truncation under `aria-selected` is evidence the
 treatment wants a conditioned form eventually; today the release stays a local override.
-`truncate-N` (the line-clamp form) has one occurrence and stays reserved — the
+`truncate-N` (the line-clamp form) had one occurrence and stayed reserved — the
 tween/choreography admission pattern. Source: ADR-0013.
+
+Amended (ADR-0023) to admit the clamp. The reserved placeholder name `truncate-N` was
+itself flawed: `truncate` is a verb of removal, so `truncate-3` reads as "remove 3 lines"
+rather than "keep 3" — an admission-test metric-1 failure the number-referent makes
+unavoidable. Admitted as `clamp-N` instead, where "clamp" means constrain-to-a-bound and the
+number is unambiguously the retained-line limit (matching the industry `line-clamp`). `clamp`
+and single-line `truncate` are one axis but distinct mechanisms — `white-space: nowrap` vs the
+`-webkit-box` trio — so they are separate words, not `truncate`/`truncate-1`. The `-webkit-box`
+display is a whole-display legacy value (no inner/outer facet), so it overlaps the structure/m1
+display twin; the overlap is sanctioned as a mutual exclusion (a clamped block is never a flex
+box), computed in `checkDimensionalPurity`. Evidence: `reports/GAP-U-truncate-clamp.md`
+(Monky's 3-line suggestion-preview clamp).
 
 ## RAT:R-SKIN-13
 The pattern screen found the focus indicator was never scattered mechanics: seven

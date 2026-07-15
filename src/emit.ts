@@ -213,12 +213,18 @@ const EMISSION: Record<string, EmitSpec> = {
         : null,
   },
 
-  // --- truncation: one-line yielding text (R-SKIN-12). Composes with the
-  // `hidden` overflow word; owns only the two unowned text properties. ---
+  // --- truncation: yielding text (R-SKIN-12). `truncate` = single-line ellipsis;
+  // `clamp-<n>` = N-line clamp via the -webkit-box idiom (ADR-0023). Both compose
+  // with the `hidden` overflow word. ---
   truncation: {
     effectKind: "css",
-    plain: (word) =>
-      word === "truncate" ? { "text-overflow": "ellipsis", "white-space": "nowrap" } : null,
+    plain: (word): Record<string, string> | null => {
+      if (word === "truncate") return { "text-overflow": "ellipsis", "white-space": "nowrap" };
+      const m = word.match(/^clamp-(\d+)$/);
+      return m
+        ? { display: "-webkit-box", "-webkit-box-orient": "vertical", "-webkit-line-clamp": m[1] }
+        : null;
+    },
   },
 
   // --- rule-presence: a line's existence (R-SKIN-11). Width from the line-weight
@@ -634,7 +640,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "font-family": ["font-mono"],
   "text-align": ["text-start", "text-center"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
-  truncation: ["truncate"],
+  truncation: ["truncate", "clamp-2", "clamp-3"],
   affordance: ["pressable"],
   concealment: ["concealed", "revealed"],
   scrollbar: ["scrollbar-subtle"],
@@ -756,6 +762,14 @@ export function checkDimensionalPurity(): PurityReport {
             sanctioned.add(pairKey(contributors[i], contributors[j], prop));
     }
   }
+
+  // R-SKIN-12 / ADR-0023: `clamp-N` (truncation) writes `display: -webkit-box`, the
+  // whole-display legacy value the -webkit line-clamp requires. It overlaps the
+  // structure/m1 display facet twin, but the words are mutually exclusive by intent — a
+  // clamped text block is never a flex/grid container — so the overlap is a *sanctioned
+  // exclusion*, not a composition (and not a facet: -webkit-box cannot split inner/outer).
+  sanctioned.add(pairKey("truncation", "structure", "display"));
+  sanctioned.add(pairKey("truncation", "m1-flow-participation", "display"));
 
   // Now the actual check: free/free and free/negotiated sharing is forbidden
   // outside a sanctioned pair. Negotiated/negotiated sharing belongs to the

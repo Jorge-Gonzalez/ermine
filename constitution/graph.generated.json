@@ -133,6 +133,12 @@
       "anchor": "ADR-0022"
     },
     {
+      "id": "ADR-0023",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0023-clamp-member.md",
+      "anchor": "ADR-0023"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

@@ -686,19 +686,27 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "box-shadow", "border-width", "border-color", "background", "color"],
   },
   {
-    // truncation: text that yields to its container on one line (R-SKIN-12).
-    // Owns text-overflow + white-space; takes effect composed with the `hidden`
-    // overflow word (`hidden truncate`) — ownership stays disjoint from the
-    // overflow axis. `truncate-N` (clamp) is the family member reserved pending
-    // evidence.
+    // truncation: text that yields to its container (R-SKIN-12). `truncate` is the
+    // single-line ellipsis (text-overflow + white-space); `clamp-<n>` limits to N
+    // lines via the `-webkit-box` clamp idiom (admitted from Monky evidence,
+    // ADR-0023 — the reserved multi-line member, named `clamp` so the number reads
+    // as the retained-line limit, not an amount removed). One axis (an element
+    // truncates OR clamps, never both); both compose with the `hidden` overflow word.
+    // `clamp-<n>` writes `display: -webkit-box`, so it is exclusive with a structure
+    // word by property collision — a clamped text block is not also a flex/grid box.
     axis: "truncation",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["truncate"],
-    tokens: [{ pattern: /^(truncate)$/, shape: "<truncation>" }],
+    valueSpace: ["truncate", "clamp-N"],
+    tokens: [
+      { pattern: /^(truncate)$/, shape: "<truncation>" },
+      { pattern: /^clamp-(\d+)$/, shape: "clamp-N", valueDomain: "integer-≥1" },
+      { pattern: /^clamp-.+$/, shape: "clamp-<bad>", valueDomain: "integer-≥1", fallback: true },
+    ],
+    parametricMembers: ["clamp"],
     default: null,
-    controls: ["text-overflow", "white-space"],
-    mustNeverTouch: ["display", "gap", "flex", "overflow-x", "overflow-y", "background", "color", "font-size"],
+    controls: ["text-overflow", "white-space", "display", "-webkit-box-orient", "-webkit-line-clamp"],
+    mustNeverTouch: ["gap", "flex", "overflow-x", "overflow-y", "background", "color", "font-size"],
   },
   {
     // conditioned-skin: the look a state drives. Makes `selectable + selection-subtle` operational.

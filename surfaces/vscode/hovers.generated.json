@@ -1356,6 +1356,12 @@
       "axis": "state.sort",
       "meaning": "sorted-<value?>",
       "reference": "src/ERMINE-SPEC.md §2.4 — state.sort"
+    },
+    {
+      "pattern": "^clamp-(\\d+)$",
+      "axis": "truncation",
+      "meaning": "clamp-N",
+      "reference": "src/ERMINE-SPEC.md §2.5 — truncation"
     }
   ]
 }
