@@ -340,6 +340,13 @@ const EMISSION: Record<string, EmitSpec> = {
     effectKind: "css",
     plain: (word) => (word === "overline" ? { "text-transform": "uppercase", "letter-spacing": "var(--overline-tracking, 0.07em)" } : null),
   },
+  // --- effect: named keyframe atoms — a closed tween with property/place baked
+  // into a substrate @keyframes block (EFFECT_KEYFRAMES), so the word emits only
+  // `animation` (R-MOTION-07). ---
+  effect: {
+    effectKind: "css",
+    plain: (word) => (word in EFFECT_ANIMATION ? { animation: EFFECT_ANIMATION[word] } : null),
+  },
 
   // --- cover: all-edge attachment to the containing block (R-SIZE-03). ---
   cover: {
@@ -668,6 +675,26 @@ function selectorFragmentFromEntails(entails: string[] | undefined): string {
 // this is a property of the REGISTRY, not of any one class string.
 // ============================================================================
 
+// Motion substrate — the baked definitions each effect atom (R-MOTION-07)
+// references. EFFECT_ANIMATION is the `animation` shorthand the word emits;
+// EFFECT_KEYFRAMES is the @keyframes block the stylesheet assembler prepends
+// when the atom is used (src/css.ts). Two faces of one closed tween: the
+// shorthand names it, the keyframes bake its property and places.
+export const EFFECT_ANIMATION: Record<string, string> = {
+  shake: "shake 0.4s cubic-bezier(.36,.07,.19,.97) both",
+};
+
+export const EFFECT_KEYFRAMES: Record<string, string> = {
+  shake: [
+    "@keyframes shake {",
+    "  10%, 90% { transform: translate3d(-1px, 0, 0); }",
+    "  20%, 80% { transform: translate3d(2px, 0, 0); }",
+    "  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }",
+    "  40%, 60% { transform: translate3d(4px, 0, 0); }",
+    "}",
+  ].join("\n"),
+};
+
 // A representative vocabulary per axis with EMISSION coverage — enough words
 // to exercise every declaration each axis can produce, not just one sample.
 // Deliberately axis-specific (not derived generically from valueSpace) for
@@ -695,6 +722,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "viewport-fill": ["fill-viewport"],
   numeric: ["tabular"],
   "type-label": ["overline"],
+  effect: ["shake"],
   cover: ["cover"],
   "positioned-centering": ["center-x", "center-y"],
   push: ["push"],

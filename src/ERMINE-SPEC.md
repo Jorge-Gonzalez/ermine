@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (54 axes)  ‹SHARED›
+## 2. The axis registry (55 axes)  ‹SHARED›
 
-layout=21 · layering=4 · motion=2 · state=9 · skin=18. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=21 · layering=4 · motion=3 · state=9 · skin=18. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -566,7 +566,7 @@ Tokens:
 |---|---|---|---|
 | `isolate` | `/^isolate$/` | — | no |
 
-### 2.3 MOTION (2 axes)
+### 2.3 MOTION (3 axes)
 
 #### motion-micro
 
@@ -598,6 +598,21 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<choreography>` | `/^(together\|sequence\|cascade)$/` | — | no |
+
+#### effect
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `shake`
+- default: none
+- controls: `animation`
+- must never touch: `transition-duration` `transition-timing-function` `transition-delay` `transition` `transform` `opacity`
+- notes: each member references a motion-substrate @keyframes block (EFFECT_KEYFRAMES); reserve flash/pulse/bounce/spin (R-MOTION-07).
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<effect>` | `/^(shake)$/` | — | no |
 
 ### 2.4 STATE (9 axes)
 

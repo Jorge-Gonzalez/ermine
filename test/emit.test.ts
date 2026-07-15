@@ -3,6 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { emit, checkDimensionalPurity } from "../src/emit.ts";
+import { buildStylesheet } from "../src/css.ts";
 import { deriveControls } from "../src/emitter-types.ts";
 
 test("P7: no unsanctioned property collisions across covered axes", () => {
@@ -12,7 +13,7 @@ test("P7: no unsanctioned property collisions across covered axes", () => {
     [],
     report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
   );
-  assert.equal(report.verifiedAxes.length, 54);
+  assert.equal(report.verifiedAxes.length, 55);
   assert.deepEqual(report.unverifiedAxes, []);
   assert.deepEqual(
     report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
@@ -92,6 +93,17 @@ test("viewport-fill: `fill-viewport` is a block-axis viewport minimum (R-SIZE-08
 test("type roles: tabular figures and the overline eyebrow (R-SKIN-18/19)", () => {
   assert.deepEqual(declOf("tabular"), [["font-variant-numeric", "tabular-nums"]]);
   assert.deepEqual(declOf("overline"), [["text-transform", "uppercase"], ["letter-spacing", "var(--overline-tracking, 0.07em)"]]);
+});
+
+test("effect atoms: `shake` is a closed tween — one `animation` referencing substrate keyframes (R-MOTION-07)", () => {
+  assert.deepEqual(declOf("shake"), [["animation", "shake 0.4s cubic-bezier(.36,.07,.19,.97) both"]]);
+});
+
+test("effect keyframes ship as a prelude only when the atom is used, deduped", () => {
+  const withAtom = buildStylesheet(["shake", "shake gap-md"]);
+  assert.match(withAtom, /@keyframes shake\s*\{/);
+  assert.equal(withAtom.match(/@keyframes shake/g)?.length, 1, "keyframes deduped across elements");
+  assert.doesNotMatch(buildStylesheet(["gap-md"]), /@keyframes/);
 });
 
 test("subgrid inherits parent tracks (R-STRUCTURE-04)", () => {

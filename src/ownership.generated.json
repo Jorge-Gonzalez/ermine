@@ -101,6 +101,9 @@
   "motion-macro": [
     "transition-delay"
   ],
+  "effect": [
+    "animation"
+  ],
   "state.focus": [],
   "state.selection": [],
   "state.availability": [],

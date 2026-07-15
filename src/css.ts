@@ -9,9 +9,20 @@
 // exists once you know the co-occurrence. So we compile the class strings
 // actually authored (exactly as emit()/lint() do), merging per element.
 
-import { emit } from "./emit.ts";
+import { emit, EFFECT_KEYFRAMES } from "./emit.ts";
 import type { FacetRule } from "./emitter-types.ts";
 import { parseWord, type LintContext } from "./lint.ts";
+
+// Effect atoms (R-MOTION-07) reference substrate @keyframes by name. Prepend the
+// block for each atom actually used — once, deduped — so the definition ships
+// with the stylesheet without leaking when no atom is present.
+function keyframesPrelude(classStrings: string[]): string {
+  const used = new Set<string>();
+  for (const cls of classStrings) for (const word of cls.trim().split(/\s+/)) {
+    if (word in EFFECT_KEYFRAMES) used.add(word);
+  }
+  return [...used].map((name) => EFFECT_KEYFRAMES[name]).join("\n\n");
+}
 
 // facet-role order for CSS's two-value `display: <outer> <inner>` syntax.
 const FACET_ORDER: Record<string, number> = { outer: 0, inner: 1 };
@@ -101,7 +112,8 @@ export function buildStylesheet(classStrings: string[], ctx: LintContext = {}): 
   const noteBlock = notes.length
     ? `\n/* not CSS — integration hints:\n${[...new Set(notes)].map((n) => `   - ${n}`).join("\n")}\n*/\n`
     : "";
-  return blocks.join("\n\n") + "\n" + noteBlock;
+  const prelude = keyframesPrelude(classStrings);
+  return (prelude ? prelude + "\n\n" : "") + blocks.join("\n\n") + "\n" + noteBlock;
 }
 
 function renderBlocks(selectors: Map<string, Map<string, string>>): string[] {

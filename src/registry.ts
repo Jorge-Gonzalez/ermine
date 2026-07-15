@@ -548,6 +548,23 @@ export const MOTION: AxisRecord[] = [
     mustNeverTouch: ["transition-duration", "transition-delay", "transform"],
     notes: "stagger magnitude is an open skin scale; composes via calc(own-delay + --stagger).",
   },
+  {
+    // A named effect is a CLOSED tween — the interpolated property and its
+    // target ("place") are baked into a substrate @keyframes block, so the word
+    // carries no socket. The library layer above `tween`; `shake`/`pulse` are
+    // the same universal idioms Animate.css standardised. The element receives
+    // only `animation`; the keyframes' transform/opacity live inside the block,
+    // never on the element, so this axis touches no other axis's properties.
+    axis: "effect",
+    sibling: "motion", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free", // closed library; new atoms enter only on an application
+    valueSpace: ["shake"], // reserved, unadmitted until applied: flash, pulse, bounce, spin
+    tokens: [{ pattern: /^(shake)$/, shape: "<effect>" }],
+    default: null,
+    controls: ["animation"],
+    mustNeverTouch: ["transition-duration", "transition-timing-function", "transition-delay", "transition", "transform", "opacity"],
+    notes: "each member references a motion-substrate @keyframes block (EFFECT_KEYFRAMES); reserve flash/pulse/bounce/spin (R-MOTION-07).",
+  },
 ];
 
 // ============================================================================

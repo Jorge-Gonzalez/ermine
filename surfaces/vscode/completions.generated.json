@@ -1300,6 +1300,18 @@
       ]
     },
     {
+      "axis": "effect",
+      "reference": "src/ERMINE-SPEC.md §2.3 — effect",
+      "items": [
+        {
+          "label": "shake",
+          "insertText": "shake",
+          "kind": "word",
+          "meaning": "each member references a motion-substrate @keyframes block (EFFECT_KEYFRAMES); reserve flash/pulse/bounce/spin (R-MOTION-07)."
+        }
+      ]
+    },
+    {
       "axis": "state.focus",
       "reference": "src/ERMINE-SPEC.md §2.4 — state.focus",
       "items": [

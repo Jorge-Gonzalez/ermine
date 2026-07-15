@@ -670,6 +670,15 @@ change. It is not a motion member.
 
 → rationale: RAT:R-MOTION-06 · history: ADR-0002
 
+## R-MOTION-07 — Effect atoms
+
+A named effect is a closed tween: the interpolated property and its target are baked into a
+motion-substrate `@keyframes` block, and the word emits only `animation`. The library is closed —
+`shake` is admitted; `flash`, `pulse`, `bounce`, `spin` are reserved and enter only when an
+application authors one. The substrate block ships with the stylesheet only when its atom is used.
+
+→ rationale: RAT:R-MOTION-07 · history: ADR-0038 · code: src/registry.ts#MOTION, src/emit.ts#EFFECT_KEYFRAMES, src/css.ts#buildStylesheet
+
 ## R-LAYER-01 — Tier-two named scale
 
 The named z-scale is closed, never accepts raw integers, and governs only the tier-two in-page

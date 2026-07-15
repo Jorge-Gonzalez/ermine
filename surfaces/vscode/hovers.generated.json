@@ -864,6 +864,11 @@
       "meaning": "stagger magnitude is an open skin scale; composes via calc(own-delay + --stagger).",
       "reference": "src/ERMINE-SPEC.md §2.3 — motion-macro"
     },
+    "shake": {
+      "axis": "effect",
+      "meaning": "each member references a motion-substrate @keyframes block (EFFECT_KEYFRAMES); reserve flash/pulse/bounce/spin (R-MOTION-07).",
+      "reference": "src/ERMINE-SPEC.md §2.3 — effect"
+    },
     "hover": {
       "axis": "state.focus",
       "meaning": "<focus-state>",

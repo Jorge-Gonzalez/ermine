@@ -61,6 +61,8 @@ export interface ErminePlainProps {
   motionMicro?: "decelerate" | "accelerate" | "standard" | "emphasized" | "symmetric" | "asymmetric";
   /** axis `motion-macro` */
   motionMacro?: "together" | "sequence" | "cascade";
+  /** axis `effect` */
+  effect?: "shake";
   /** axis `state.focus` */
   focus?: "hover" | "focus" | "focus-visible" | "active" | readonly ("hover" | "focus" | "focus-visible" | "active")[];
   /** axis `state.selection` */
@@ -223,6 +225,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "stackingContext", axis: "stacking-context", kind: "word" },
   { prop: "motionMicro", axis: "motion-micro", kind: "word" },
   { prop: "motionMacro", axis: "motion-macro", kind: "word" },
+  { prop: "effect", axis: "effect", kind: "word" },
   { prop: "focus", axis: "state.focus", kind: "group", many: true },
   { prop: "selection", axis: "state.selection", kind: "group", many: true },
   { prop: "availability", axis: "state.availability", kind: "group", many: true },

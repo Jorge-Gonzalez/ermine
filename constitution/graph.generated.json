@@ -223,6 +223,12 @@
       "anchor": "ADR-0037"
     },
     {
+      "id": "ADR-0038",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0038-effect-atoms.md",
+      "anchor": "ADR-0038"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -689,6 +695,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-MOTION-06"
+    },
+    {
+      "id": "R-MOTION-07",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MOTION-07"
     },
     {
       "id": "R-OVERFLOW-01",
@@ -1379,6 +1391,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-MOTION-06"
+    },
+    {
+      "id": "RAT:R-MOTION-07",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MOTION-07"
     },
     {
       "id": "RAT:R-OVERFLOW-01",
@@ -2340,6 +2358,11 @@
     {
       "from": "RAT:R-MOTION-06",
       "to": "R-MOTION-06",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MOTION-07",
+      "to": "R-MOTION-07",
       "type": "rationale-of"
     },
     {

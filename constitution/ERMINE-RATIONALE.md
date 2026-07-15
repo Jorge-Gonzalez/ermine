@@ -427,6 +427,17 @@ Source: pre-split `constitution/ERMINE.md` lines 1508–1524.
 ## RAT:R-MOTION-06
 Source: pre-split `constitution/ERMINE.md` lines 1525–1532.
 
+## RAT:R-MOTION-07
+Source: ADR-0038. Names the library layer above `tween`. The Flash/Director animation vocabulary
+(tween, keyframe, timeline, ease, stagger, scene) migrated to JS via GSAP and framer-motion, but
+CSS only ever received the primitives (`transition`, `@keyframes`) — never the named-effect library
+that Animate.css fills. `shake`/`pulse`/`flash` are the universal idioms of that library. Modelled
+as a *closed tween*: the property and place are baked into a substrate `@keyframes` block, so the
+word carries no socket and emits only `animation` — no collision with `tween`'s transition axes.
+Evidence: Monky's applied `.shake` (SelectableGroup's rejected-removal feedback); `flash`/`pulse`
+existed only as unapplied dead code, so they are reserved, not admitted (grammar-admission: general,
+but unproven without an application).
+
 ## RAT:R-LAYER-01
 Source: pre-split `constitution/ERMINE.md` lines 1533–1564.
 
