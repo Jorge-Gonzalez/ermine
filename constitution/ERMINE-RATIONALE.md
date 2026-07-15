@@ -192,6 +192,16 @@ writing mode. Evidence: `GAP-U-fill-sizing.md` — roughly nine Monky selectors 
 100%` to span their container. Viewport fill and fractional sizes are reserved for their own
 evidence, per the admit-one-member pattern.
 
+## RAT:R-SIZE-02
+Source: ADR-0025. The self-relatum complement to `fill` in the proportional plane
+(`docs/proportional-plane.md`): where `fill` relates the element to its container, `aspect`
+relates the element's own two dimensions by a ratio. Also a relational metric (no socket, survives
+re-resolution). Admitted as `square` (1:1) on the invariance-test analysis of the residue
+(`docs/non-ermine.txt`), where `aspect-ratio: 1` reads as relational, not identity. Named for the
+shape (`square`), not the property, per R-SKIN-01. Further ratios reserved: `wide` (16:9) is the
+obvious sibling but waits for evidence, and arbitrary ratios stay out of v0 — the admit-one-member
+pattern, and it sidesteps R-PADDING-02's separate rejection of `wide` as a spacing step.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

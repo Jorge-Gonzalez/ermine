@@ -383,6 +383,15 @@ family members reserved pending evidence.
 
 → rationale: RAT:R-SIZE-01 · history: ADR-0024 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-SIZE-02 — Aspect
+
+An element's two dimensions may be related by a fixed ratio: `square` sets a 1:1 aspect ratio.
+Like `fill` this is a **relational** metric — the value is the proportion between the element's
+own width and height (the self relatum), so it reads no theme socket. Further ratios (`wide`
+16:9, and arbitrary ratios) are the family members reserved pending evidence.
+
+→ rationale: RAT:R-SIZE-02 · history: ADR-0025 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

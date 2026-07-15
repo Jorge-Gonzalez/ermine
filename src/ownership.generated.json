@@ -65,6 +65,9 @@
     "block-size",
     "inline-size"
   ],
+  "aspect": [
+    "aspect-ratio"
+  ],
   "z-scale": [
     "z-index"
   ],

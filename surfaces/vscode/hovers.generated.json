@@ -604,6 +604,11 @@
       "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket.",
       "reference": "src/ERMINE-SPEC.md §2.1 — fill"
     },
+    "square": {
+      "axis": "aspect",
+      "meaning": "<aspect>",
+      "reference": "src/ERMINE-SPEC.md §2.1 — aspect"
+    },
     "base": {
       "axis": "z-scale",
       "meaning": "tier-2 only; only meaningful within an isolation:isolate context. tier-2 member list is a [RULING] (values), structure frozen.",

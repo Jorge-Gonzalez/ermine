@@ -375,6 +375,20 @@ export const LAYOUT: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "flex-grow", "flex-basis", "position", "margin", "padding"],
     notes: "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket.",
   },
+  {
+    // aspect: an element's own two dimensions related by a fixed ratio (R-SIZE-02). Self
+    // relatum — a proportion between the element's own width and height — so, like `fill`, a
+    // relational metric with no socket. `square` = 1:1; other ratios (`wide` 16:9, arbitrary)
+    // are reserved pending evidence.
+    axis: "aspect",
+    sibling: "layout", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["square"],
+    tokens: [{ pattern: /^(square)$/, shape: "<aspect>" }],
+    default: null,
+    controls: ["aspect-ratio"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "inline-size", "block-size", "width", "height"],
+  },
 ];
 
 // ============================================================================

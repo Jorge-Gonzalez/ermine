@@ -311,6 +311,12 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- aspect: own-dimension ratio (R-SIZE-02). Self relatum, no socket. ---
+  aspect: {
+    effectKind: "css",
+    plain: (word) => (word === "square" ? { "aspect-ratio": "1" } : null),
+  },
+
   // --- ordered-chain scale axis, sub-dials + aliasMatch (same shape as padding) ---
   margin: {
     effectKind: "css",
@@ -633,6 +639,7 @@ export const VOCABULARY: Record<string, string[]> = {
     "min-width-none", "min-height-none",
   ],
   fill: ["fill", "fill-inline", "fill-block"],
+  aspect: ["square"],
   margin: [
     ...SCALES.spacing.map((s) => `margin-${s}`),
     ...SCALES.spacing.map((s) => `margin-inline-${s}`),

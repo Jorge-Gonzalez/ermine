@@ -916,6 +916,18 @@
       ]
     },
     {
+      "axis": "aspect",
+      "reference": "src/ERMINE-SPEC.md §2.1 — aspect",
+      "items": [
+        {
+          "label": "square",
+          "insertText": "square",
+          "kind": "word",
+          "meaning": "<aspect>"
+        }
+      ]
+    },
+    {
       "axis": "z-scale",
       "reference": "src/ERMINE-SPEC.md §2.2 — z-scale",
       "items": [
