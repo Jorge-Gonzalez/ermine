@@ -189,9 +189,13 @@ nothing byte-identical remains. The reclassified rows move to identity or to Pha
 # Phase 3 — New shared-grammar Gap Reports
 
 **Goal:** the Group-C gaps, sequenced by recurrence and coherence.
-1. **Spatial arc** (`fill`, `anchor`, `center`, `cover`-inset, `push`, `fit`, `aspect`) —
-   the inset/sizing plane. One coherent ruling cycle; note `inset` is a deliberate opening
-   in `position-mode.mustNeverTouch`.
+1. **Spatial arc** — sequenced by recurrence after inspecting the *current* residue.
+   The offset residue triages mostly to **bespoke identity** (exact `bottom: 52px`,
+   `calc(100% + 4px)`, dynamic `var(--pill-left)`, molecule placement), not gaps. The general
+   primitives, by recurrence: **`fill`** (100% container sizing, ~9 sites — filed:
+   `GAP-U-fill-sizing.md`, awaiting ruling); **`cover`** (`inset: 0`, 1 site; `inset` is a
+   reserved opening); **absolute-`center`** (~4 sites, but needs a `transform` concept Ermine
+   lacks). `fill` first — clearest intent, highest recurrence.
 2. **`prominence`** — mid-scale opacity as a ruled scale (new axis; explicitly not `concealment`).
 3. **Treatments** — `link`, `disabled`-treatment, `press-feedback`, `unselectable`.
 4. **Type roles** — `overline`, `tabular`, `emphasis` (small, single-site; last).
