@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (48 axes)  ‹SHARED›
+## 2. The axis registry (49 axes)  ‹SHARED›
 
-layout=17 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=18 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -148,7 +148,7 @@ layout=17 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
 
-### 2.1 LAYOUT (17 axes)
+### 2.1 LAYOUT (18 axes)
 
 #### structure
 
@@ -440,6 +440,20 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<aspect>` | `/^(square)$/` | — | no |
+
+#### cover
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `cover`
+- default: none
+- controls: `inset`
+- must never touch: `position` `display` `gap` `flex` `inline-size` `block-size` `width` `height` `margin` `padding`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<cover>` | `/^cover$/` | — | no |
 
 ### 2.2 LAYERING (4 axes)
 

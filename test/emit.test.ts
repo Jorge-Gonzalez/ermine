@@ -12,7 +12,7 @@ test("P7: no unsanctioned property collisions across covered axes", () => {
     [],
     report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
   );
-  assert.equal(report.verifiedAxes.length, 48);
+  assert.equal(report.verifiedAxes.length, 49);
   assert.deepEqual(report.unverifiedAxes, []);
   assert.deepEqual(
     report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
@@ -70,6 +70,10 @@ test("fill: whole-axis sets both, dials write one logical size each (R-SIZE-01)"
 
 test("aspect: `square` is a 1:1 ratio (R-SIZE-02)", () => {
   assert.deepEqual(declOf("square"), [["aspect-ratio", "1"]]);
+});
+
+test("cover: attaches a positioned element to all containing-block edges (R-SIZE-03)", () => {
+  assert.deepEqual(declOf("cover"), [["inset", "0"]]);
 });
 
 // K6 additions — the three axes completed from ruled mappings.

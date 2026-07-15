@@ -609,6 +609,11 @@
       "meaning": "<aspect>",
       "reference": "src/ERMINE-SPEC.md §2.1 — aspect"
     },
+    "cover": {
+      "axis": "cover",
+      "meaning": "<cover>",
+      "reference": "src/ERMINE-SPEC.md §2.1 — cover"
+    },
     "base": {
       "axis": "z-scale",
       "meaning": "tier-2 only; only meaningful within an isolation:isolate context. tier-2 member list is a [RULING] (values), structure frozen.",

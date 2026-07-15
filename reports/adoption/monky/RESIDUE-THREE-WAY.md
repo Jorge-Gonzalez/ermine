@@ -1,9 +1,9 @@
 # Monky Residue — Three-Way Classification
 
-Re-reads the 305 project-owned residue declarations from `RESIDUE-DETAIL.md` through a
-lens the retroactive assimilation pipeline structurally lacks. Non-destructive: it changes
-no Monky output. It re-labels the same declarations to separate *genuine identity* from
-*latent grammar Ermine has not named yet*.
+Historical pass over the 305 project-owned residue declarations from the earlier
+`RESIDUE-DETAIL.md` snapshot, read through a lens the retroactive assimilation pipeline
+structurally lacked. Non-destructive: it changed no Monky output. It re-labeled those
+declarations to separate *genuine identity* from *latent grammar Ermine had not named yet*.
 
 ## Provenance
 
@@ -21,8 +21,15 @@ reclassified.
 > ~35 rows already have an Ermine word (`padding`/`margin`/`gap`, `z-scale`/`top-layer`,
 > `position-fixed`, `truncate`, `pressable`, `elevated`) and only need migrating; 96 rows
 > are Monky-local molecules; 17 are blocked on the already-filed animation-plane duration
-> naming. Only **~57 rows genuinely need a new shared-grammar ruling.** Read the category
-> shapes below for the analysis, but take the corrected counts from `ABSORPTION-PLAN.md`.
+> naming. After `square`, only **~56 rows genuinely need a new shared-grammar ruling.**
+> Read the category shapes below for the analysis, but take the corrected counts from
+> `ABSORPTION-PLAN.md`.
+
+> **Superseded as live accounting by the regenerated current ledger.** Later `clamp-3`,
+> `fill`, and `square` migrations moved the live ledger to 516 current declarations and
+> 293 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
+> for live counts, and `RESIDUE-INVARIANCE.md` / `docs/non-ermine.txt` for the corrected
+> two-metric analysis of the remaining residue.
 
 ## Why this lens exists
 

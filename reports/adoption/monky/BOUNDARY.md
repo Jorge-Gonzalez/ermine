@@ -10,6 +10,14 @@ This is the declared boundary for Monky's closed adoption. It supersedes the sca
 per-pilot "Left local" tables: those reports remain history, while this document is the
 machine-checked current contract.
 
+Important scope note: the reason codes below are current-ledger accounting buckets, not a
+final grammar-floor analysis. A row can be project-owned today because no ruled Ermine word
+exists yet and still be future grammar evidence. For Monky, the invariance-test pass in
+`docs/non-ermine.txt` shows that the `identity-geometry` and `component-contract`
+buckets contain a mix of relational values, scale-backed values, substrate/reset mechanics,
+and truly off-grid identity. Treat this manifest as the checked adoption boundary, and the
+invariance pass as the roadmap for future ruling cycles.
+
 ## Provenance
 
 | source | commit |
@@ -27,10 +35,11 @@ machine-checked current contract.
 
 ## Product Identity
 
-Monky keeps recipe bundles, exact product geometry, brand type, and identity shadows. The
-licensing rules are R-SKIN-10 for recipes, U-R2 for project intent and exact geometry, and
-R-SKIN-09's boundary clause for shadows that are signatures rather than the shared
-`elevated` treatment.
+Monky keeps recipe bundles, brand type, identity shadows, and the exact geometry that is
+still project-owned in the current ledger. Some exact-looking geometry is true product
+identity; some is relational or scale-backed evidence waiting on future words. The licensing
+rules are R-SKIN-10 for recipes, U-R2 for project intent and exact geometry, and R-SKIN-09's
+boundary clause for shadows that are signatures rather than the shared `elevated` treatment.
 
 | code | count | boundary |
 |---|---:|---|
@@ -38,6 +47,22 @@ R-SKIN-09's boundary clause for shadows that are signatures rather than the shar
 | `identity-geometry` | 59 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 11 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
+
+## Relational / Scale-Backed Follow-Up
+
+The current ledger keeps `identity-geometry` and `component-contract` separate from
+`assimilable`, because no existing Ermine word can consume those declarations today. That
+does not mean every row is final product identity. The invariance-test analysis in
+`docs/non-ermine.txt` sampled those two buckets and found:
+
+| sample | relational | scale-backed | off-grid identity | substrate/reset |
+|---|---:|---:|---:|---:|
+| `identity-geometry` + `component-contract` | 46 | 25 | 33 | 10 |
+
+Relational rows are evidence for the proportional/relational plane (`cover`, `center`,
+`push`, `fit/hug`, `measure`, viewport fill, and grid intent-proportions). Scale-backed
+rows are candidates for existing or near spacing/corner grammar, especially where per-edge
+spacing is the missing shape. Only the off-grid slice is the hard local floor.
 
 ## Mechanics
 

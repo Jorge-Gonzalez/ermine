@@ -928,6 +928,18 @@
       ]
     },
     {
+      "axis": "cover",
+      "reference": "src/ERMINE-SPEC.md §2.1 — cover",
+      "items": [
+        {
+          "label": "cover",
+          "insertText": "cover",
+          "kind": "word",
+          "meaning": "<cover>"
+        }
+      ]
+    },
+    {
       "axis": "z-scale",
       "reference": "src/ERMINE-SPEC.md §2.2 — z-scale",
       "items": [

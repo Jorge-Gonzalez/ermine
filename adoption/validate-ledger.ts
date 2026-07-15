@@ -304,6 +304,151 @@ export async function checkAdoptionLedgers(
       }
     }
   }
+  return valid && await checkCurrentLedgerReportDrift(repositoryRoot, log);
+}
+
+interface CurrentLedgerHead {
+  project: string;
+  source?: { projectCommit?: string };
+  summary?: {
+    totalDeclarations?: number;
+    residueDeclarations?: number;
+    assimilable?: number;
+    byCode?: Record<string, number>;
+  };
+}
+
+function asNumber(value: unknown): number | undefined {
+  return typeof value === "number" && Number.isFinite(value) ? value : undefined;
+}
+
+function normalizeWhitespace(value: string): string {
+  return value.replace(/\s+/g, " ").trim();
+}
+
+function requireSnippet(
+  source: string,
+  snippet: string,
+  display: string,
+  errors: string[],
+): void {
+  if (!source.includes(snippet)) errors.push(`${display}: missing current-ledger snippet: ${snippet}`);
+}
+
+function requireNormalizedSnippet(
+  source: string,
+  snippet: string,
+  display: string,
+  errors: string[],
+): void {
+  if (!normalizeWhitespace(source).includes(snippet)) {
+    errors.push(`${display}: missing current-ledger summary phrase: ${snippet}`);
+  }
+}
+
+async function readOptional(path: string): Promise<string | undefined> {
+  try {
+    await access(path, constants.R_OK);
+    return readFile(path, "utf8");
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") return undefined;
+    throw error;
+  }
+}
+
+async function findCurrentLedgerPaths(repositoryRoot: string): Promise<string[]> {
+  const adoptionRoot = resolve(repositoryRoot, "reports/adoption");
+  const entries = await readdir(adoptionRoot, { withFileTypes: true }).catch((error: NodeJS.ErrnoException) => {
+    if (error.code === "ENOENT") return [];
+    throw error;
+  });
+  const paths: string[] = [];
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const candidate = resolve(adoptionRoot, entry.name, "current-ledger.json");
+    try {
+      await access(candidate, constants.R_OK);
+      paths.push(candidate);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    }
+  }
+  return paths.sort();
+}
+
+export async function checkCurrentLedgerReportDrift(
+  repositoryRoot: string,
+  log: (message: string) => void = console.log,
+): Promise<boolean> {
+  const paths = await findCurrentLedgerPaths(repositoryRoot);
+  let valid = true;
+  for (const path of paths) {
+    const display = relative(repositoryRoot, path).replaceAll("\\", "/");
+    let ledger: CurrentLedgerHead;
+    try {
+      ledger = JSON.parse(await readFile(path, "utf8")) as CurrentLedgerHead;
+    } catch (error) {
+      valid = false;
+      log(`ERROR ${display}: invalid current-ledger JSON: ${error instanceof Error ? error.message : String(error)}`);
+      continue;
+    }
+
+    const total = asNumber(ledger.summary?.totalDeclarations);
+    const residue = asNumber(ledger.summary?.residueDeclarations);
+    const assimilable = asNumber(ledger.summary?.assimilable);
+    const byCode = ledger.summary?.byCode ?? {};
+    if (total === undefined || residue === undefined || assimilable === undefined) {
+      valid = false;
+      log(`ERROR ${display}: missing numeric summary.totalDeclarations/residueDeclarations/assimilable`);
+      continue;
+    }
+    const adopted = total - residue;
+    const reviewCoded = (byCode["skin-review"] ?? 0) + (byCode["identity-review"] ?? 0) + (byCode["state-review"] ?? 0);
+    const reportRoot = dirname(path);
+    const errors: string[] = [];
+
+    const currentReport = await readOptional(resolve(reportRoot, "CURRENT-LEDGER.md"));
+    if (currentReport !== undefined) {
+      const currentDisplay = relative(repositoryRoot, resolve(reportRoot, "CURRENT-LEDGER.md")).replaceAll("\\", "/");
+      requireSnippet(currentReport, `| current declarations | ${total} |`, currentDisplay, errors);
+      requireSnippet(currentReport, `| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | ${adopted} |`, currentDisplay, errors);
+      requireSnippet(currentReport, `| **residue — project-owned declarations** | **${residue}** |`, currentDisplay, errors);
+      requireSnippet(currentReport, `| assimilable now (work list below) | ${assimilable} |`, currentDisplay, errors);
+    }
+
+    const boundary = await readOptional(resolve(reportRoot, "BOUNDARY.md"));
+    if (boundary !== undefined) {
+      const boundaryDisplay = relative(repositoryRoot, resolve(reportRoot, "BOUNDARY.md")).replaceAll("\\", "/");
+      requireSnippet(boundary, `| assimilable declarations | ${assimilable} |`, boundaryDisplay, errors);
+      requireSnippet(boundary, `| review-coded declarations | ${reviewCoded} |`, boundaryDisplay, errors);
+      requireSnippet(boundary, `| project-owned residue | ${residue} |`, boundaryDisplay, errors);
+    }
+
+    const residueDetail = await readOptional(resolve(reportRoot, "RESIDUE-DETAIL.md"));
+    if (residueDetail?.includes("Generated from `reports/adoption/monky/current-ledger.json`")) {
+      const detailDisplay = relative(repositoryRoot, resolve(reportRoot, "RESIDUE-DETAIL.md")).replaceAll("\\", "/");
+      requireSnippet(residueDetail, `- Current declarations: ${total}`, detailDisplay, errors);
+      requireSnippet(residueDetail, `- Adopted/infrastructure declarations: ${adopted}`, detailDisplay, errors);
+      requireSnippet(residueDetail, `- Project-owned residue declarations: ${residue}`, detailDisplay, errors);
+      requireSnippet(residueDetail, `- Assimilable declarations: ${assimilable}`, detailDisplay, errors);
+    }
+
+    const coverage = await readOptional(resolve(reportRoot, "COVERAGE.md"));
+    if (coverage !== undefined) {
+      const coverageDisplay = relative(repositoryRoot, resolve(reportRoot, "COVERAGE.md")).replaceAll("\\", "/");
+      requireNormalizedSnippet(coverage, `${total} current declarations`, coverageDisplay, errors);
+      requireNormalizedSnippet(coverage, `${adopted} adopted/infrastructure`, coverageDisplay, errors);
+      requireNormalizedSnippet(coverage, `${residue} project-owned`, coverageDisplay, errors);
+      requireNormalizedSnippet(coverage, `assimilable = ${assimilable}`, coverageDisplay, errors);
+    }
+
+    if (errors.length) {
+      valid = false;
+      for (const error of errors) log(`ERROR ${display}: ${error}`);
+    } else {
+      log(`current ${display} reports agree with headline counts (${total}/${adopted}/${residue})`);
+    }
+  }
   return valid;
 }
 

@@ -41,6 +41,8 @@ export interface ErminePlainProps {
   maxHeight?: SizeStep;
   /** axis `aspect` */
   aspect?: "square";
+  /** axis `cover` */
+  cover?: "cover";
   /** axis `z-scale` */
   zScale?: "base" | "content" | "raised" | "dropdown" | "sticky" | "tooltip";
   /** axis `top-layer-mechanism` */
@@ -201,6 +203,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "fillInline", axis: "fill", kind: "word" },
   { prop: "fillBlock", axis: "fill", kind: "word" },
   { prop: "aspect", axis: "aspect", kind: "word" },
+  { prop: "cover", axis: "cover", kind: "word" },
   { prop: "zScale", axis: "z-scale", kind: "word" },
   { prop: "topLayerMechanism", axis: "top-layer-mechanism", kind: "word" },
   { prop: "positionMode", axis: "position-mode", kind: "word" },

@@ -49,6 +49,11 @@ proportion, so it needs **no socket**. Distinct from flex growth: `grow-1`/`expa
 a *flex* container's main axis; `fill` is the *explicit/block* 100% case. Viewport fill
 (`100vh` — a different relatum, the viewport) is a separate word, reserved.
 
+`cover` = attach a positioned element to all four edges of its containing block (`inset: 0`).
+It is the edge-coverage sibling of `fill`: also container-relative and socket-free, but it names
+edge attachment rather than self-size. It composes with `position-absolute` / `position-fixed`;
+it does not imply either position mode.
+
 ### 2. Self-relative — `aspect` / `square`
 Know one of the element's *own* dimensions; the other follows by ratio. The relatum is *self*,
 not the parent. `square` (1:1) is the concrete member (Monky evidence: `aspect-ratio: 1`);
@@ -108,8 +113,10 @@ Grounded against the current registry:
   patterns like sidebar/cluster are compositions of atoms, **not** words); `m2-flex` (flex
   fill/hug); `m3-self-size` (`basis-content` = hug); `m5-grid-placement` (`span-N`/`span-all`);
   `subgrid` (inherited tracks); the breakpoint scopes.
-- **Genuinely new (easy case):** `columns-N` (the grid metric), block-`fill` (distinct from
-  flex-grow), `aspect`/`square`, and the intent-proportions (`half`/`third`/…) over the grid.
+- **Already admitted from this direction:** block-`fill` (distinct from flex-grow),
+  `aspect`/`square`, and `cover` (all-edge attachment).
+- **Genuinely new (easy case):** `columns-N` (the grid metric) and the intent-proportions
+  (`half`/`third`/…) over the grid.
 
 ## The interface principle
 

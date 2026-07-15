@@ -151,6 +151,12 @@
       "anchor": "ADR-0025"
     },
     {
+      "id": "ADR-0026",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0026-cover.md",
+      "anchor": "ADR-0026"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -689,6 +695,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-SIZE-02"
+    },
+    {
+      "id": "R-SIZE-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SIZE-03"
     },
     {
       "id": "R-SKIN-01",
@@ -1309,6 +1321,12 @@
       "anchor": "RAT:R-SIZE-02"
     },
     {
+      "id": "RAT:R-SIZE-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SIZE-03"
+    },
+    {
       "id": "RAT:R-SKIN-01",
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
@@ -1674,6 +1692,21 @@
     {
       "from": "CODE:LAYOUT",
       "to": "R-PADDING-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-SIZE-01",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-SIZE-02",
+      "type": "implements"
+    },
+    {
+      "from": "CODE:LAYOUT",
+      "to": "R-SIZE-03",
       "type": "implements"
     },
     {
@@ -2169,6 +2202,11 @@
     {
       "from": "RAT:R-SIZE-02",
       "to": "R-SIZE-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SIZE-03",
+      "to": "R-SIZE-03",
       "type": "rationale-of"
     },
     {

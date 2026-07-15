@@ -317,6 +317,12 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word === "square" ? { "aspect-ratio": "1" } : null),
   },
 
+  // --- cover: all-edge attachment to the containing block (R-SIZE-03). ---
+  cover: {
+    effectKind: "css",
+    plain: (word) => (word === "cover" ? { inset: "0" } : null),
+  },
+
   // --- ordered-chain scale axis, sub-dials + aliasMatch (same shape as padding) ---
   margin: {
     effectKind: "css",
@@ -640,6 +646,7 @@ export const VOCABULARY: Record<string, string[]> = {
   ],
   fill: ["fill", "fill-inline", "fill-block"],
   aspect: ["square"],
+  cover: ["cover"],
   margin: [
     ...SCALES.spacing.map((s) => `margin-${s}`),
     ...SCALES.spacing.map((s) => `margin-inline-${s}`),

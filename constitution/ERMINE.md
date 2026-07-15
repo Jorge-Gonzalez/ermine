@@ -392,6 +392,16 @@ own width and height (the self relatum), so it reads no theme socket. Further ra
 
 → rationale: RAT:R-SIZE-02 · history: ADR-0025 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-SIZE-03 — Cover
+
+An element may attach to all four edges of its containing block: `cover` sets `inset: 0`.
+Like `fill`, this is a container-relatum relational metric with no theme socket. It is not a
+position mode and does not imply `position:absolute` or `position:fixed`; those remain authored
+with the `position-mode` axis. `cover` only names the all-edge relation once a containing block
+and positioned element already exist.
+
+→ rationale: RAT:R-SIZE-03 · history: ADR-0026 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

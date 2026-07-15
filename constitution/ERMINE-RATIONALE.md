@@ -202,6 +202,16 @@ shape (`square`), not the property, per R-SKIN-01. Further ratios reserved: `wid
 obvious sibling but waits for evidence, and arbitrary ratios stay out of v0 — the admit-one-member
 pattern, and it sidesteps R-PADDING-02's separate rejection of `wide` as a spacing step.
 
+## RAT:R-SIZE-03
+Source: ADR-0026. `cover` is the all-edge attachment member of the proportional plane: a
+container-relatum relation expressed by `inset: 0`. It is relational rather than scale-backed —
+the value is the edge relation itself, so it reads no theme socket and survives re-resolution.
+It deliberately composes with `position-absolute` / `position-fixed` instead of implying them:
+the position mode establishes the formatting context, while `cover` names the edge relation.
+Evidence comes from the Monky invariance overlay (`RESIDUE-INVARIANCE.md`) and the modal
+backdrop residue; adjacent edge-attach words (`top:100%`, `bottom:100%`, etc.) are reserved for
+their own ruling cycle.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

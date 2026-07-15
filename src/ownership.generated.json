@@ -68,6 +68,9 @@
   "aspect": [
     "aspect-ratio"
   ],
+  "cover": [
+    "inset"
+  ],
   "z-scale": [
     "z-index"
   ],

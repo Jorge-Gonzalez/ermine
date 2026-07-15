@@ -96,7 +96,7 @@ const spacingToken = (prefix: string): Token => ({
 // 4.1 LAYOUT
 // ============================================================================
 
-// implements: R-STRUCTURE-01, R-M2-02, R-M2-03, R-M3-01, R-M3-02, R-M4-01, R-M5-01, R-PADDING-01, R-ALIGN-01, R-DIVIDER-01, R-WRAP-01, R-OVERFLOW-01, R-CONSTRAINT-01
+// implements: R-STRUCTURE-01, R-M2-02, R-M2-03, R-M3-01, R-M3-02, R-M4-01, R-M5-01, R-PADDING-01, R-ALIGN-01, R-DIVIDER-01, R-WRAP-01, R-OVERFLOW-01, R-CONSTRAINT-01, R-SIZE-01, R-SIZE-02, R-SIZE-03
 export const LAYOUT: AxisRecord[] = [
   {
     axis: "structure",
@@ -388,6 +388,19 @@ export const LAYOUT: AxisRecord[] = [
     default: null,
     controls: ["aspect-ratio"],
     mustNeverTouch: ["display", "gap", "flex", "position", "inline-size", "block-size", "width", "height"],
+  },
+  {
+    // cover: an element's positioned box attaches to all four edges of its containing block
+    // (R-SIZE-03). Container-relatum edge coverage, not a position mode: it composes with
+    // `position-absolute` / `position-fixed` and writes only `inset: 0`.
+    axis: "cover",
+    sibling: "layout", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["cover"],
+    tokens: [{ pattern: /^cover$/, shape: "<cover>" }],
+    default: null,
+    controls: ["inset"],
+    mustNeverTouch: ["position", "display", "gap", "flex", "inline-size", "block-size", "width", "height", "margin", "padding"],
   },
 ];
 

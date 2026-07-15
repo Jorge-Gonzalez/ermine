@@ -1,8 +1,11 @@
 # Monky Residue — Absorption Plan
 
-The step-by-step plan for converting the 305 project-owned residue declarations
-(`RESIDUE-DETAIL.md`, re-read in `RESIDUE-THREE-WAY.md`) into Ermine words or Monky-local
-semantic classes — without changing Monky's rendered output.
+The step-by-step plan for converting Monky project-owned residue declarations into Ermine
+words or Monky-local semantic classes — without changing Monky's rendered output. The first
+version targeted the 305-declaration snapshot re-read in `RESIDUE-THREE-WAY.md`; the live
+current ledger is now 293 project-owned declarations after the `fill` and `square`
+migrations. Live counts come from `CURRENT-LEDGER.md`; the corrected invariance overlay is
+`RESIDUE-INVARIANCE.md`.
 
 ## Provenance
 
@@ -80,14 +83,14 @@ affordances are also reserved but have no Monky residue.)
 | `cover` (inset:0) | 2 | no inset axis (as `anchor`) |
 | `unselectable` (user-select:none) | 2 | no word; guarded on `affordance` |
 | `overline` (uppercase + letter-spacing) | 2 | no text-transform/letter-spacing axis |
-| `aspect` (aspect-ratio) | 1 | no axis |
+| `aspect` (aspect-ratio) | 1 | **done** — admitted as `square` (R-SIZE-02/ADR-0025) and migrated |
 | `fit` (width:fit-content) | 1 | no sizing word |
 | `push` (margin auto) | 1 | no auto-margin word |
 | `tabular` (font-variant-numeric) | 1 | no axis |
 | `press-feedback` (`:active` transform) | 1 | `pressable` owns cursor only |
 | `emphasis` (italic) | 1 | no word (may be prose-internal) |
 
-**~54 rows need new shared-grammar rulings** — and most are small, single-site atoms. The
+**~53 rows need new shared-grammar rulings after `square`** — and most are small, single-site atoms. The
 spatial cluster (`fill`/`anchor`/`center`/`cover-inset`/`push`, ~24) is the one coherent
 arc; it finishes the spatial plane Ermine started but never atomized.
 
@@ -124,10 +127,10 @@ needs a ruled duration name, which is the deferred `R-SCALE-02`/animation-plane 
 | **Monky-local molecule** | 96 | no ruling (Phase 5) |
 | **Blocked on animation-plane duration naming** | 17 | filed follow-up (Phase 4) |
 | **Reserved-member Gap Report** | 3 | anticipated ruling (Phase 2) |
-| **New shared-grammar Gap Report** | ~54 | new rulings (Phase 3) |
+| **New shared-grammar Gap Report** | ~53 | new rulings (Phase 3; `square` consumed) |
 
-The load-bearing correction: of the 215 my report called "missing," only **~57 genuinely
-need new grammar** (reserved + new), and even those are mostly small single-site atoms.
+The load-bearing correction: of the 215 my report called "missing," only **~56 genuinely
+need new grammar after `square`** (reserved + new), and even those are mostly small single-site atoms.
 **131 of the 215 need no shared-grammar ruling at all** — ~35 migrate to existing words, 96
 become Monky-local. Monky can reach a near-complete semantic state via Phases 1 + 5 alone.
 
@@ -193,10 +196,13 @@ nothing byte-identical remains. The reclassified rows move to identity or to Pha
    The offset residue triages mostly to **bespoke identity** (exact `bottom: 52px`,
    `calc(100% + 4px)`, dynamic `var(--pill-left)`, molecule placement), not gaps. The general
    primitives, by recurrence: **`fill`** (100% container sizing) — **done** (R-SIZE-01/ADR-0024,
-   the first proportional-plane member; 7 Monky sites migrated, gate green); **`cover`**
-   (`inset: 0`, 1 site; `inset` is a reserved opening); **absolute-`center`** (~4 sites, but needs
+   the first proportional-plane member; 7 Monky sites migrated, gate green); **`square`**
+   (self-ratio, `aspect-ratio: 1`) — **done** (R-SIZE-02/ADR-0025, `.prefix-cell` migrated,
+   gate green); **`cover`**
+   (`inset: 0`) — **admitted in Ermine** (R-SIZE-03/ADR-0026; Monky migration still pending);
+   **absolute-`center`** (~4 sites, but needs
    a `transform` concept Ermine lacks). The broader proportional plane — `columns-N` +
-   intent-proportions, `aspect`/`square` — is captured in `docs/proportional-plane.md`.
+   intent-proportions — is captured in `docs/proportional-plane.md`.
 2. **`prominence`** — mid-scale opacity as a ruled scale (new axis; explicitly not `concealment`).
 3. **Treatments** — `link`, `disabled`-treatment, `press-feedback`, `unselectable`.
 4. **Type roles** — `overline`, `tabular`, `emphasis` (small, single-site; last).
@@ -241,6 +247,8 @@ hand-edited.
 - [x] **Phase 2 — done.** Multi-line clamp admitted as `clamp-N` (not `truncate-N`; the
   number now reads as the retained-line limit), R-SKIN-12/ADR-0023; Monky's 3-line preview
   migrated to `clamp-3` (style-smoke identical, gate green). `GAP-U-truncate-clamp` resolved.
-- [ ] Phase 3 — new Gap Reports (spatial arc first).
+- [ ] **Phase 3 — underway.** Spatial/proportional arc has landed `fill` and `square`; `cover`
+  is admitted in Ermine and awaits Monky migration. Next clean candidates are `push`, `center`,
+  `fit/hug`, `measure`, then `columns-12` + intent-proportions. See `RESIDUE-INVARIANCE.md`.
 - [ ] Phase 4 — animation plane.
 - [ ] Phase 5 — Monky-local molecules.
