@@ -242,6 +242,17 @@ implying either, matching the `cover` precedent. It is deliberately narrow: vert
 attachment remain separate evidence/ruling cycles. Evidence comes from Monky's suggestion arrows
 and editor toast.
 
+ADR-0030 extends the same ruling to `center-y`, the block-axis counterpart
+(`top: 50%` + `translateY(-50%)`) evidenced by Monky's search-row edit control. `center-x` and
+`center-y` remain mutually exclusive because both currently write the whole `transform` property;
+composing both would need an explicit tuple transform emission rule rather than two independent
+atomic classes.
+
+ADR-0030 also admits `2xl` into the layout size scale. The evidence is Monky's retained page
+measure (`max-width: 672px`, historically `.max-w-2xl` = 42rem). This does not make size values
+grammar-owned; it adds a stable step name, while the theme remains responsible for the actual
+`--size-2xl` value under R-SCALE-01.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

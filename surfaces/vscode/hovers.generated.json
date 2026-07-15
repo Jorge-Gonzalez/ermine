@@ -89,6 +89,11 @@
       "meaning": "a specific size from the size scale",
       "reference": "src/ERMINE-SPEC.md §2.1 — m3-self-size"
     },
+    "basis-exact-2xl": {
+      "axis": "m3-self-size",
+      "meaning": "a specific size from the size scale",
+      "reference": "src/ERMINE-SPEC.md §2.1 — m3-self-size"
+    },
     "self-start": {
       "axis": "m4-self-alignment",
       "meaning": "A member overrides its own alignment: `self-start|center|end|stretch|baseline`.",
@@ -524,6 +529,11 @@
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
     },
+    "min-width-2xl": {
+      "axis": "constraints",
+      "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
+    },
     "max-width-sm": {
       "axis": "constraints",
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
@@ -540,6 +550,11 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
     },
     "max-width-xl": {
+      "axis": "constraints",
+      "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
+    },
+    "max-width-2xl": {
       "axis": "constraints",
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
@@ -564,6 +579,11 @@
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
     },
+    "min-height-2xl": {
+      "axis": "constraints",
+      "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
+    },
     "max-height-sm": {
       "axis": "constraints",
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
@@ -580,6 +600,11 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
     },
     "max-height-xl": {
+      "axis": "constraints",
+      "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
+    },
+    "max-height-2xl": {
       "axis": "constraints",
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
@@ -625,9 +650,14 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — cover"
     },
     "center-x": {
-      "axis": "center-x",
-      "meaning": "absolute horizontal centering pair: `left: 50%` plus `translateX(-50%)`. Requires a positioned element from `position-mode`; reserves vertical, flow, and transform-general centering for separate rulings.",
-      "reference": "src/ERMINE-SPEC.md §2.1 — center-x"
+      "axis": "positioned-centering",
+      "meaning": "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-centering"
+    },
+    "center-y": {
+      "axis": "positioned-centering",
+      "meaning": "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-centering"
     },
     "base": {
       "axis": "z-scale",
@@ -1308,7 +1338,7 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — m2-flex"
     },
     {
-      "pattern": "^basis-exact-(sm|md|lg|xl)$",
+      "pattern": "^basis-exact-(sm|md|lg|xl|2xl)$",
       "axis": "m3-self-size",
       "meaning": "closed-with-parametric-member: membership is closed {content, ratio, exact}; `exact` carries a token-indexed size value (arbitrary lengths OUT in v0). Same member-level mechanism as the enumerated states — NOT open at axis scope.",
       "reference": "src/ERMINE-SPEC.md §2.1 — m3-self-size"
@@ -1368,7 +1398,7 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
-      "pattern": "^(min-width|max-width|min-height|max-height)-(sm|md|lg|xl)$",
+      "pattern": "^(min-width|max-width|min-height|max-height)-(sm|md|lg|xl|2xl)$",
       "axis": "constraints",
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"

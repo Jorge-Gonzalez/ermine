@@ -175,6 +175,12 @@
       "anchor": "ADR-0029"
     },
     {
+      "id": "ADR-0030",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0030-spatial-batch-center-y-size-2xl.md",
+      "anchor": "ADR-0030"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

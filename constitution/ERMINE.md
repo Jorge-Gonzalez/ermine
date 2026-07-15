@@ -421,15 +421,16 @@ may still compose with `fill-block`.
 
 → rationale: RAT:R-SIZE-05 · history: ADR-0028 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
-## R-SIZE-06 — Center X
+## R-SIZE-06 — Positioned Centering
 
-A positioned element may align its inline center with the containing block's inline midpoint:
-`center-x` sets `left: 50%` and `transform: translateX(-50%)`. This is a relational metric with
-no theme socket: the midpoint and compensation are resolved from the element and its containing
-block. `center-x` does not imply `position:absolute` or `position:fixed`, and it does not cover
-vertical centering, flow centering, or general transform vocabulary.
+A positioned element may align one of its centers with the containing block's matching midpoint:
+`center-x` sets `left: 50%` and `transform: translateX(-50%)`; `center-y` sets `top: 50%` and
+`transform: translateY(-50%)`. These are relational metrics with no theme socket: the midpoint
+and compensation are resolved from the element and its containing block. They do not imply
+`position:absolute` or `position:fixed`. Because both members write `transform`, they are exclusive
+until a tuple transform composition rule is admitted; flow centering remains separate evidence.
 
-→ rationale: RAT:R-SIZE-06 · history: ADR-0029 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+→ rationale: RAT:R-SIZE-06 · history: ADR-0029, ADR-0030 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
 ## R-TYPE-01 — Type belongs to skin
 
@@ -835,9 +836,10 @@ still own its cursor inside its bundle (R-SKIN-10). Further affordance words (`d
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.
 The method governs spacing, radius, type, and motion magnitudes. The generator and its parameters are
-late-bound skin.
+late-bound skin. The layout size scale is a named closed token set for exact basis and constraint
+steps; current admitted members are `sm`, `md`, `lg`, `xl`, and `2xl`.
 
-→ rationale: RAT:R-SCALE-01 · history: ADR-0002 · code: src/registry.ts#SCALES
+→ rationale: RAT:R-SCALE-01 · history: ADR-0002, ADR-0030 · code: src/registry.ts#SCALES
 
 ## R-SCALE-02 — Measured generator slot
 

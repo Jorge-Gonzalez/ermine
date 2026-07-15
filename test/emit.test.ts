@@ -80,8 +80,9 @@ test("cover: attaches a positioned element to all containing-block edges (R-SIZE
   assert.deepEqual(declOf("cover"), [["inset", "0"]]);
 });
 
-test("center-x: centers a positioned element on the inline midpoint (R-SIZE-06)", () => {
+test("positioned centering: centers a positioned element on one containing-block midpoint (R-SIZE-06)", () => {
   assert.deepEqual(declOf("center-x"), [["left", "50%"], ["transform", "translateX(-50%)"]]);
+  assert.deepEqual(declOf("center-y"), [["top", "50%"], ["transform", "translateY(-50%)"]]);
 });
 
 test("push: consumes inline-start free space with auto margin (R-SIZE-04)", () => {

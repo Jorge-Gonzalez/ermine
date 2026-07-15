@@ -144,7 +144,7 @@ layout=20 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 | Scale | Ordered values |
 |---|---|
 | `spacing` | `xs` `sm` `md` `lg` `xl` `2xl` `3xl` |
-| `size` | `sm` `md` `lg` `xl` |
+| `size` | `sm` `md` `lg` `xl` `2xl` |
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
 
@@ -221,7 +221,7 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `basis-content \| basis-ratio` | `/^(basis-content\|basis-ratio)$/` | — | no |
-| `basis-exact-<size>` | `/^basis-exact-(sm\|md\|lg\|xl)$/` | `size-step` | no |
+| `basis-exact-<size>` | `/^basis-exact-(sm\|md\|lg\|xl\|2xl)$/` | `size-step` | no |
 | `basis-exact-<bad>` | `/^basis-exact-.+$/` | `size-step` | yes |
 
 #### m4-self-alignment
@@ -420,7 +420,7 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `min/max-width/height-<size>` | `/^(min-width\|max-width\|min-height\|max-height)-(sm\|md\|lg\|xl)$/` | `size-step` | no |
+| `min/max-width/height-<size>` | `/^(min-width\|max-width\|min-height\|max-height)-(sm\|md\|lg\|xl\|2xl)$/` | `size-step` | no |
 | `min-width/height-none` | `/^(min-width\|min-height)-(none)$/` | — | no |
 | `min/max-width/height-<bad>` | `/^(min-width\|max-width\|min-height\|max-height)-.+$/` | `size-step` | yes |
 
@@ -470,20 +470,20 @@ Tokens:
 |---|---|---|---|
 | `<cover>` | `/^cover$/` | — | no |
 
-#### center-x
+#### positioned-centering
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `center-x`
+- value space: `center-x` `center-y`
 - default: none
-- controls: `left` `transform`
-- must never touch: `position` `inset` `top` `right` `bottom` `margin` `inline-size` `block-size` `width` `height`
-- notes: absolute horizontal centering pair: `left: 50%` plus `translateX(-50%)`. Requires a positioned element from `position-mode`; reserves vertical, flow, and transform-general centering for separate rulings.
+- controls: `left` `top` `transform`
+- must never touch: `position` `inset` `right` `bottom` `margin` `inline-size` `block-size` `width` `height`
+- notes: positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<center-x>` | `/^center-x$/` | — | no |
+| `center-<axis>` | `/^center-(x\|y)$/` | — | no |
 
 ### 2.2 LAYERING (4 axes)
 

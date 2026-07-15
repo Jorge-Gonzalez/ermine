@@ -25,7 +25,7 @@
 // implements: R-SPACE-02, R-DENSITY-01, R-DENSITY-04, R-SCALE-01
 export const SCALES = {
   spacing: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"], // R-DENSITY-01 T-shirt spacing scale (density words retired → aliases)
-  size: ["sm", "md", "lg", "xl"], // R-SCALE-01 size scale — basis-exact-<step>, constraints
+  size: ["sm", "md", "lg", "xl", "2xl"], // R-SCALE-01 size scale — basis-exact-<step>, constraints
   breakpoint: ["sm", "md", "lg", "xl"], // R-SCALE-01-style named breakpoint scale
   zTier2: ["base", "content", "raised", "dropdown", "sticky", "tooltip"],
 } as const;
@@ -417,18 +417,18 @@ export const LAYOUT: AxisRecord[] = [
     mustNeverTouch: ["position", "display", "gap", "flex", "inline-size", "block-size", "width", "height", "margin", "padding"],
   },
   {
-    // center-x: a positioned element's inline center aligns to its containing block's inline
-    // midpoint (R-SIZE-06). It composes with `position-absolute` / `position-fixed`; it
-    // does not imply positioning, top/bottom attachment, or general transform vocabulary.
-    axis: "center-x",
+    // positioned-centering: a positioned element's center aligns to its containing block's
+    // midpoint on one axis (R-SIZE-06). The members are mutually exclusive for now because
+    // both write `transform`; admitting combined center-x+center-y would need tuple emission.
+    axis: "positioned-centering",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["center-x"],
-    tokens: [{ pattern: /^center-x$/, shape: "<center-x>" }],
+    valueSpace: ["center-x", "center-y"],
+    tokens: [{ pattern: /^center-(x|y)$/, shape: "center-<axis>" }],
     default: null,
-    controls: ["left", "transform"],
-    mustNeverTouch: ["position", "inset", "top", "right", "bottom", "margin", "inline-size", "block-size", "width", "height"],
-    notes: "absolute horizontal centering pair: `left: 50%` plus `translateX(-50%)`. Requires a positioned element from `position-mode`; reserves vertical, flow, and transform-general centering for separate rulings.",
+    controls: ["left", "top", "transform"],
+    mustNeverTouch: ["position", "inset", "right", "bottom", "margin", "inline-size", "block-size", "width", "height"],
+    notes: "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings.",
   },
 ];
 

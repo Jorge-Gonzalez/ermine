@@ -129,7 +129,7 @@ const EMISSION: Record<string, EmitSpec> = {
   // --- corner: border-radius magnitude on the radius scale (R-SKIN-06) ---
   corner: {
     effectKind: "css",
-    plain: (word) => {
+    plain: (word): Record<string, string> | null => {
       const m = word.match(new RegExp(`^corner-(${SKIN_PLANE.scales.radius.join("|")})$`));
       return m ? { "border-radius": `var(--radius-${m[1]})` } : null;
     },
@@ -324,10 +324,14 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word === "cover" ? { inset: "0" } : null),
   },
 
-  // --- center-x: positioned horizontal centering pair (R-SIZE-06). ---
-  "center-x": {
+  // --- positioned-centering: positioned centering pairs (R-SIZE-06). ---
+  "positioned-centering": {
     effectKind: "css",
-    plain: (word) => (word === "center-x" ? { left: "50%", transform: "translateX(-50%)" } : null),
+    plain: (word): Record<string, string> | null => {
+      if (word === "center-x") return { left: "50%", transform: "translateX(-50%)" };
+      if (word === "center-y") return { top: "50%", transform: "translateY(-50%)" };
+      return null;
+    },
   },
 
   // --- push: auto inline-start margin in available inline space (R-SIZE-04). ---
@@ -660,7 +664,7 @@ export const VOCABULARY: Record<string, string[]> = {
   fill: ["fill", "fill-inline", "fill-block", "hug-inline"],
   aspect: ["square"],
   cover: ["cover"],
-  "center-x": ["center-x"],
+  "positioned-centering": ["center-x", "center-y"],
   push: ["push"],
   margin: [
     ...SCALES.spacing.map((s) => `margin-${s}`),

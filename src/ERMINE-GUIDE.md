@@ -134,7 +134,7 @@ And where its size *starts from* (a separate choice — pick one):
 <!-- BEGIN GENERATED: guide-basis-choices (registry words generated; teaching prose editable) -->
 - `basis-content` — size to its content (Figma's *Hug*)
 - `basis-ratio` — take a share of the space (like `1fr`)
-- `basis-exact-sm|md|lg|xl` — a specific size from the size scale
+- `basis-exact-sm|md|lg|xl|2xl` — a specific size from the size scale
 <!-- END GENERATED: guide-basis-choices -->
 
 ```html

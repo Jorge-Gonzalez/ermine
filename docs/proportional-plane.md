@@ -64,10 +64,11 @@ space (`inline-size: fit-content`). It is the content-sized counterpart to `fill
 logical self-size dial, opposite resolution source. It does not imply flex-basis negotiation
 (`basis-content`) or the old retired flex `fit-content` member.
 
-`center-x` = align a positioned element's inline center to its containing block's inline midpoint
-(`left: 50%` + `translateX(-50%)`). It is a two-declaration relation: containing-block midpoint
-plus self-size compensation. It composes with `position-absolute` / `position-fixed`; it does not
-imply either position mode or a general transform vocabulary.
+`center-x` / `center-y` = align a positioned element's center to its containing block's matching
+midpoint (`left: 50%` + `translateX(-50%)`, or `top: 50%` + `translateY(-50%)`). Each is a
+two-declaration relation: containing-block midpoint plus self-size compensation. They compose with
+`position-absolute` / `position-fixed`; they do not imply either position mode or a general
+transform vocabulary. They remain exclusive until Ermine has a tuple transform composition rule.
 
 ### 2. Self-relative — `aspect` / `square`
 Know one of the element's *own* dimensions; the other follows by ratio. The relatum is *self*,
@@ -130,7 +131,7 @@ Grounded against the current registry:
   `subgrid` (inherited tracks); the breakpoint scopes.
 - **Already admitted from this direction:** block-`fill` (distinct from flex-grow),
   `aspect`/`square`, `cover` (all-edge attachment), `push` (auto-margin push), and
-  `hug-inline` (content-sized inline extent), and `center-x` (positioned horizontal centering).
+  `hug-inline` (content-sized inline extent), and `center-x` / `center-y` (positioned centering).
 - **Genuinely new (easy case):** `columns-N` (the grid metric) and the intent-proportions
   (`half`/`third`/…) over the grid.
 

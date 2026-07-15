@@ -2,7 +2,7 @@
 // One-word-per-axis is TYPE-enforced for single props and for the whole-vs-dial
 // exclusions below; everything else is the runtime linter's job (see ENFORCEMENT.md).
 
-export type SizeStep = "sm" | "md" | "lg" | "xl";
+export type SizeStep = "sm" | "md" | "lg" | "xl" | "2xl";
 export type SpacingStep = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
 
 type None<K extends PropertyKey> = { [P in K]?: never };
@@ -45,8 +45,8 @@ export interface ErminePlainProps {
   aspect?: "square";
   /** axis `cover` */
   cover?: "cover";
-  /** axis `center-x` */
-  centerX?: "center-x";
+  /** axis `positioned-centering` */
+  positionedCentering?: "center-x" | "center-y";
   /** axis `z-scale` */
   zScale?: "base" | "content" | "raised" | "dropdown" | "sticky" | "tooltip";
   /** axis `top-layer-mechanism` */
@@ -209,7 +209,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "fillBlock", axis: "fill", kind: "word" },
   { prop: "aspect", axis: "aspect", kind: "word" },
   { prop: "cover", axis: "cover", kind: "word" },
-  { prop: "centerX", axis: "center-x", kind: "word" },
+  { prop: "positionedCentering", axis: "positioned-centering", kind: "word" },
   { prop: "zScale", axis: "z-scale", kind: "word" },
   { prop: "topLayerMechanism", axis: "top-layer-mechanism", kind: "word" },
   { prop: "positionMode", axis: "position-mode", kind: "word" },

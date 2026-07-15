@@ -17,6 +17,7 @@
   --size-md: 20rem;
   --size-lg: 32rem;
   --size-xl: 48rem;
+  --size-2xl: 64rem;
 
   /* skin surface/ink tokens the selection sink reads (rung-3, theme-owned) */
   --harmonic: #6b8afd;

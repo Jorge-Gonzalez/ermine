@@ -134,8 +134,14 @@
           "meaning": "a specific size from the size scale"
         },
         {
+          "label": "basis-exact-2xl",
+          "insertText": "basis-exact-2xl",
+          "kind": "word",
+          "meaning": "a specific size from the size scale"
+        },
+        {
           "label": "basis-exact-<size>",
-          "insertText": "basis-exact-${1|sm,md,lg,xl|}",
+          "insertText": "basis-exact-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
           "meaning": "closed-with-parametric-member: membership is closed {content, ratio, exact}; `exact` carries a token-indexed size value (arbitrary lengths OUT in v0). Same member-level mechanism as the enumerated states — NOT open at axis scope."
         }
@@ -794,6 +800,12 @@
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
+          "label": "min-width-2xl",
+          "insertText": "min-width-2xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
           "label": "max-width-sm",
           "insertText": "max-width-sm",
           "kind": "word",
@@ -814,6 +826,12 @@
         {
           "label": "max-width-xl",
           "insertText": "max-width-xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-width-2xl",
+          "insertText": "max-width-2xl",
           "kind": "word",
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
@@ -842,6 +860,12 @@
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
+          "label": "min-height-2xl",
+          "insertText": "min-height-2xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
           "label": "max-height-sm",
           "insertText": "max-height-sm",
           "kind": "word",
@@ -866,6 +890,12 @@
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
+          "label": "max-height-2xl",
+          "insertText": "max-height-2xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
           "label": "min-width-none",
           "insertText": "min-width-none",
           "kind": "word",
@@ -879,25 +909,25 @@
         },
         {
           "label": "min-width-<size>",
-          "insertText": "min-width-${1|sm,md,lg,xl|}",
+          "insertText": "min-width-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-width-<size>",
-          "insertText": "max-width-${1|sm,md,lg,xl|}",
+          "insertText": "max-width-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-height-<size>",
-          "insertText": "min-height-${1|sm,md,lg,xl|}",
+          "insertText": "min-height-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-height-<size>",
-          "insertText": "max-height-${1|sm,md,lg,xl|}",
+          "insertText": "max-height-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         }
@@ -958,14 +988,20 @@
       ]
     },
     {
-      "axis": "center-x",
-      "reference": "src/ERMINE-SPEC.md §2.1 — center-x",
+      "axis": "positioned-centering",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-centering",
       "items": [
         {
           "label": "center-x",
           "insertText": "center-x",
           "kind": "word",
-          "meaning": "absolute horizontal centering pair: `left: 50%` plus `translateX(-50%)`. Requires a positioned element from `position-mode`; reserves vertical, flow, and transform-general centering for separate rulings."
+          "meaning": "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings."
+        },
+        {
+          "label": "center-y",
+          "insertText": "center-y",
+          "kind": "word",
+          "meaning": "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings."
         }
       ]
     },
