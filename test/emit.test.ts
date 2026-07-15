@@ -89,6 +89,16 @@ test("viewport-fill: `fill-viewport` is a block-axis viewport minimum (R-SIZE-08
   assert.deepEqual(declOf("fill-viewport"), [["min-block-size", "100vh"]]);
 });
 
+test("columns-12 grid + intent-proportions compile to spans over 12 (R-STRUCTURE-03/R-M5-02)", () => {
+  assert.deepEqual(declOf("columns-12"), [["grid-auto-flow", "row"], ["grid-template-columns", "repeat(12, 1fr)"]]);
+  assert.deepEqual(declOf("quarter"), [["grid-column", "span 3"]]);
+  assert.deepEqual(declOf("three-quarters"), [["grid-column", "span 9"]]);
+  assert.deepEqual(declOf("third"), [["grid-column", "span 4"]]);
+  assert.deepEqual(declOf("two-thirds"), [["grid-column", "span 8"]]);
+  assert.deepEqual(declOf("half"), [["grid-column", "span 6"]]);
+  assert.deepEqual(declOf("sixth"), [["grid-column", "span 2"]]);
+});
+
 test("cover: attaches a positioned element to all containing-block edges (R-SIZE-03)", () => {
   assert.deepEqual(declOf("cover"), [["inset", "0"]]);
 });

@@ -169,6 +169,17 @@ rather than composing with it.
 
 → rationale: RAT:R-STRUCTURE-02 · history: ADR-0032 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-STRUCTURE-03 — Column grid
+
+A container may declare the shared twelve-column grid: `columns-12` sets `display: grid`,
+`grid-auto-flow: row`, and `grid-template-columns: repeat(12, 1fr)`. It is a structure member,
+replacing plain `grid` rather than composing with it. Twelve is the ruled grain because the common
+relational proportions land on exact integer tracks over it (`half` = 6, `third` = 4, `quarter` = 3,
+`two-thirds` = 8, `three-quarters` = 9, `sixth` = 2). Other track counts are reserved pending
+evidence; the grid is fixed at twelve so the intent-proportions (R-M5-02) stay exact.
+
+→ rationale: RAT:R-STRUCTURE-03 · history: ADR-0034 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-M1-01 — Flow participation
 
 Flow participation is a closed member-role axis over `inline`, `boxed`, and `boxed-inline`, with
@@ -234,6 +245,17 @@ Grid placement is a closed member-role axis with parametric `span-N` and `row-sp
 contextual `span-all`. It is meaningful only under a grid parent.
 
 → rationale: RAT:R-M5-01 · history: unrecorded · code: src/registry.ts#LAYOUT
+
+## R-M5-02 — Intent proportions
+
+Over the `columns-12` grid (R-STRUCTURE-03), a child may claim a readable proportion of the row
+instead of an arithmetic span: `half`, `third`, `quarter`, `two-thirds`, `three-quarters`, `sixth`
+emit `grid-column: span 6 / 4 / 3 / 8 / 9 / 2`. They are the intent-named form of `span-N`, demoting
+raw span arithmetic to an escape. The number lands on an integer track only because twelve is the
+chosen grain (R-STRUCTURE-03); the words are meaningful only under `columns-12`, and a different
+track count would make them wrong. `whole` is not a member — full width is `span-all`.
+
+→ rationale: RAT:R-M5-02 · history: ADR-0034 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
 ## R-MEMBER-01 — Member deduplication
 

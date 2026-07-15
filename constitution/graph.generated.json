@@ -199,6 +199,12 @@
       "anchor": "ADR-0033"
     },
     {
+      "id": "ADR-0034",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0034-columns-intent-proportions.md",
+      "anchor": "ADR-0034"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -601,6 +607,12 @@
       "anchor": "R-M5-01"
     },
     {
+      "id": "R-M5-02",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-M5-02"
+    },
+    {
       "id": "R-MEMBER-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -985,6 +997,12 @@
       "anchor": "R-STRUCTURE-02"
     },
     {
+      "id": "R-STRUCTURE-03",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-STRUCTURE-03"
+    },
+    {
       "id": "R-TEST-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1259,6 +1277,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-M5-01"
+    },
+    {
+      "id": "RAT:R-M5-02",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-M5-02"
     },
     {
       "id": "RAT:R-MEMBER-01",
@@ -1643,6 +1667,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-STRUCTURE-02"
+    },
+    {
+      "id": "RAT:R-STRUCTURE-03",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-STRUCTURE-03"
     },
     {
       "id": "RAT:R-TEST-01",
@@ -2204,6 +2234,11 @@
       "type": "rationale-of"
     },
     {
+      "from": "RAT:R-M5-02",
+      "to": "R-M5-02",
+      "type": "rationale-of"
+    },
+    {
       "from": "RAT:R-MEMBER-01",
       "to": "R-MEMBER-01",
       "type": "rationale-of"
@@ -2521,6 +2556,11 @@
     {
       "from": "RAT:R-STRUCTURE-02",
       "to": "R-STRUCTURE-02",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-STRUCTURE-03",
+      "to": "R-STRUCTURE-03",
       "type": "rationale-of"
     },
     {

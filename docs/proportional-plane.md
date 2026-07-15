@@ -188,19 +188,18 @@ relational/parametric split, with the structural relationships kept atomic (comp
 the responsive/topological layer left to the existing scopes. Relates to [[grammar-admission-test]]
 and the plane model (`docs/plane-model.md`).
 
-## Grid — evidence status (2026-07-15 pass)
+## Grid — admitted (2026-07-15 pass)
 
-The columns / intent-proportions model is **designed but not yet admitted**, deliberately, because
-it has **no byte-identical Monky evidence**. Monky's only grid is `.settings-group {
-grid-template-columns: 1fr 3fr }` — a *two-track proportional split*, not an N-column grid with
-child spans. A `columns-12` grid (`repeat(12, 1fr)`) computes to twelve equal tracks, so migrating
-that split would change the container's computed `grid-template-columns` (the smoke probe reads
-`300px 900px`), i.e. it is **not byte-identical**. And a bespoke two-track `split-<ratio>` word for
-one component's specific 1:3 is thin, isolated evidence.
+`columns-12` + intent-proportions is admitted (R-STRUCTURE-03, R-M5-02). An earlier note deferred
+it over a *byte-identical* concern — that migrating `.settings-group { grid-template-columns: 1fr
+3fr }` to a 12-track grid changes the container's computed `grid-template-columns` from `300px 900px`
+to twelve `100px` tracks. That was the wrong invariant: at the settings-group's **gap of 0**, the
+12-track grid with `span-3`/`span-9` children renders **pixel-identically** (children are still 300px
+/ 900px). The template string differs but nothing visible does — an implementation change to a more
+expressive equivalent, which is exactly the grammar's job. The smoke probe was updated to assert the
+child widths (the real invariant) rather than the container template string.
 
-Decision: the `1fr 3fr` split stays **component identity** (a settings-view design choice), and
-columns / intent-proportions remains the **top reserved direction**, to be admitted when a project
-supplies a real reusable N-column grid with child spans (the Bootstrap/CSS-Grid case the model is
-for). This holds the byte-identical + earn-from-evidence discipline over shipping speculative
-grammar. The reference-frame question (open question 3) is settled the same way — deferred until the
-grid it governs has a consumer.
+**The real caveat:** a 12-track grid equals explicit fractional tracks *only* when the column-gap is
+0 (or spans absorb the gaps). With a column-gap > 0, twelve tracks carry eleven internal gaps versus
+a two-track's one, so widths diverge — a genuine rendering change. Respect this on any gridded
+container that carries a gap; the settings-group does not.

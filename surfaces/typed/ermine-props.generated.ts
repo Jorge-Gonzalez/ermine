@@ -10,7 +10,7 @@ type None<K extends PropertyKey> = { [P in K]?: never };
 // props with no cross-prop exclusion (single prop = single word: P1 by construction)
 export interface ErminePlainProps {
   /** axis `structure` */
-  structure?: "horizontal" | "vertical" | "grid" | `grid-fit-${SizeStep}`;
+  structure?: "horizontal" | "vertical" | "grid" | `grid-fit-${SizeStep}` | "columns-12";
   /** axis `m1-flow-participation` */
   flowParticipation?: "inline" | "boxed" | "boxed-inline";
   /** axis `m3-self-size` */
@@ -18,7 +18,7 @@ export interface ErminePlainProps {
   /** axis `m4-self-alignment` */
   selfAlignment?: "self-start" | "self-center" | "self-end" | "self-stretch" | "self-baseline";
   /** axis `m5-grid-placement` */
-  gridPlacement?: `span-${number}` | `row-span-${number}` | "span-all";
+  gridPlacement?: `span-${number}` | `row-span-${number}` | "span-all" | "half" | "third" | "quarter" | "two-thirds" | "three-quarters" | "sixth";
   /** axis `density` */
   gap?: SpacingStep;
   /** axis `flow-spacing` */

@@ -153,7 +153,7 @@ layout=21 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 #### structure
 
 - role: `container` · signature: `container-operation` · vocabulary: `closed` · regime: `free`
-- value space: `horizontal` `vertical` `grid` `grid-fit-<size>`
+- value space: `horizontal` `vertical` `grid` `grid-fit-<size>` `columns-12`
 - default: `flow`
 - controls: `display.inner` `flex-direction` `grid-template-columns` `grid-auto-flow`
 - must never touch: `gap` `padding` `margin` `align-self` `flex` `flex-wrap` `background` `border` `display.outer`
@@ -165,6 +165,7 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<structure>` | `/^(horizontal\|vertical\|grid)$/` | — | no |
+| `columns-12` | `/^columns-12$/` | — | no |
 | `grid-fit-<size>` | `/^grid-fit-(sm\|md\|lg\|xl\|2xl)$/` | `size-step` | no |
 | `grid-fit-<bad>` | `/^grid-fit-.+$/` | `size-step` | yes |
 
@@ -245,12 +246,12 @@ Tokens:
 #### m5-grid-placement
 
 - role: `member` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `span-N` `row-span-N` `span-all`
+- value space: `span-N` `row-span-N` `span-all` `half` `third` `quarter` `two-thirds` `three-quarters` `sixth`
 - default: `auto-place`
 - controls: `grid-column` `grid-row`
 - must never touch: `align-self` `flex` `gap`
 - parametric members: `span` `row-span`
-- notes: closed-with-parametric-member: membership closed {span, row-span, span-all}; span/row-span carry integers, span-all is contextual (spans every column). Same member-level mechanism as m3 / enumerated states — NOT open at axis scope. Only meaningful under a grid parent.
+- notes: closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.
 
 Tokens:
 
@@ -258,6 +259,7 @@ Tokens:
 |---|---|---|---|
 | `span-N \| row-span-N` | `/^(span\|row-span)-(\d+)$/` | `integer-≥0` | no |
 | `span-all (contextual)` | `/^span-all$/` | — | no |
+| `<intent-proportion>` | `/^(half\|third\|quarter\|two-thirds\|three-quarters\|sixth)$/` | — | no |
 | `span-<bad> \| row-span-<bad>` | `/^(span\|row-span)-.+$/` | `integer-≥0` | yes |
 
 #### density

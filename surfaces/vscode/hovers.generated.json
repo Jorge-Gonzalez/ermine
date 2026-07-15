@@ -24,6 +24,11 @@
       "meaning": "a grid",
       "reference": "src/ERMINE-SPEC.md §2.1 — structure"
     },
+    "columns-12": {
+      "axis": "structure",
+      "meaning": "the shared twelve-column grid (children take intent proportions: `third`, `two-thirds`, …)",
+      "reference": "src/ERMINE-SPEC.md §2.1 — structure"
+    },
     "grid-fit-sm": {
       "axis": "structure",
       "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
@@ -146,7 +151,37 @@
     },
     "span-all": {
       "axis": "m5-grid-placement",
-      "meaning": "closed-with-parametric-member: membership closed {span, row-span, span-all}; span/row-span carry integers, span-all is contextual (spans every column). Same member-level mechanism as m3 / enumerated states — NOT open at axis scope. Only meaningful under a grid parent.",
+      "meaning": "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
+    },
+    "half": {
+      "axis": "m5-grid-placement",
+      "meaning": "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
+    },
+    "third": {
+      "axis": "m5-grid-placement",
+      "meaning": "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
+    },
+    "quarter": {
+      "axis": "m5-grid-placement",
+      "meaning": "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
+    },
+    "two-thirds": {
+      "axis": "m5-grid-placement",
+      "meaning": "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
+    },
+    "three-quarters": {
+      "axis": "m5-grid-placement",
+      "meaning": "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
+    },
+    "sixth": {
+      "axis": "m5-grid-placement",
+      "meaning": "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
       "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
     },
     "gap-xs": {
@@ -1392,7 +1427,7 @@
     {
       "pattern": "^(span|row-span)-(\\d+)$",
       "axis": "m5-grid-placement",
-      "meaning": "closed-with-parametric-member: membership closed {span, row-span, span-all}; span/row-span carry integers, span-all is contextual (spans every column). Same member-level mechanism as m3 / enumerated states — NOT open at axis scope. Only meaningful under a grid parent.",
+      "meaning": "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
       "reference": "src/ERMINE-SPEC.md §2.1 — m5-grid-placement"
     },
     {

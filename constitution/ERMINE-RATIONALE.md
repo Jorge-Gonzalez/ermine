@@ -81,6 +81,13 @@ writes `grid-template-columns`, already owned by structure. It replaces plain `g
 composing with it. This keeps P7 property ownership clean and keeps `subgrid` / `1fr 3fr` /
 intent-proportion grids as separate future questions.
 
+## RAT:R-STRUCTURE-03
+Source: ADR-0034. The container half of the grid model in `docs/proportional-plane.md`: one word
+that IS the layout's parametric metric — twelve equal fr tracks, the discrete grain chosen so the
+common relational proportions (R-M5-02) land on integer tracks. A structure member (like grid-fit),
+replacing plain `grid`. Fixed at twelve, not a per-container count, so the intent-proportions stay
+exact; other counts reserved.
+
 ## RAT:R-M1-01
 Source: pre-split `constitution/ERMINE.md` lines 769–788.
 
@@ -107,6 +114,13 @@ Source: pre-split `constitution/ERMINE.md` lines 928–931.
 
 ## RAT:R-M5-01
 Source: pre-split `constitution/ERMINE.md` lines 932–937.
+
+## RAT:R-M5-02
+Source: ADR-0034. The child half of the grid model: intent-proportions (`third`, `quarter`, …) as
+the readable form of a column span over `columns-12`, demoting raw `span-N` arithmetic to an escape
+— the what-not-how the survey of grid frameworks reached for but could not name without the
+relational/parametric split. Evidence: Monky's settings-group `1fr 3fr` (label `quarter`, content
+`three-quarters`), rendering-identical at gap 0. Coupled to `columns-12` by construction.
 
 ## RAT:R-MEMBER-01
 Source: pre-split `constitution/ERMINE.md` lines 938–941.

@@ -106,9 +106,10 @@ export const LAYOUT: AxisRecord[] = [
     // and it smuggled flex-wrap — which the `wrapping` axis owns — into an axis whose
     // mandate is inner-display-type (+ direction) only. The collision was latent (P7
     // missed it only because `wrapping` had no emission entry yet).
-    valueSpace: ["horizontal", "vertical", "grid", "grid-fit-<size>"],
+    valueSpace: ["horizontal", "vertical", "grid", "grid-fit-<size>", "columns-12"],
     tokens: [
       { pattern: /^(horizontal|vertical|grid)$/, shape: "<structure>" },
+      { pattern: /^columns-12$/, shape: "columns-12" },
       { pattern: new RegExp(`^grid-fit-(${SCALES.size.join("|")})$`), shape: "grid-fit-<size>", valueDomain: "size-step" },
       { pattern: /^grid-fit-.+$/, shape: "grid-fit-<bad>", valueDomain: "size-step", fallback: true },
     ],
@@ -205,17 +206,18 @@ export const LAYOUT: AxisRecord[] = [
     // closed membership {span, row-span, span-all}; span/row-span are PARAMETRIC
     // members (carry an integer); span-all is a CONTEXTUAL member (resolves to the
     // grid's column count, like grid-column: 1 / -1) — not a value of span-N.
-    valueSpace: ["span-N", "row-span-N", "span-all"],
+    valueSpace: ["span-N", "row-span-N", "span-all", "half", "third", "quarter", "two-thirds", "three-quarters", "sixth"],
     tokens: [
       { pattern: /^(span|row-span)-(\d+)$/, shape: "span-N | row-span-N", valueDomain: "integer-≥0" },
       { pattern: /^span-all$/, shape: "span-all (contextual)" },
+      { pattern: /^(half|third|quarter|two-thirds|three-quarters|sixth)$/, shape: "<intent-proportion>" },
       { pattern: /^(span|row-span)-.+$/, shape: "span-<bad> | row-span-<bad>", valueDomain: "integer-≥0", fallback: true },
     ],
     parametricMembers: ["span", "row-span"],
     default: "auto-place",
     controls: ["grid-column", "grid-row"],
     mustNeverTouch: ["align-self", "flex", "gap"],
-    notes: "closed-with-parametric-member: membership closed {span, row-span, span-all}; span/row-span carry integers, span-all is contextual (spans every column). Same member-level mechanism as m3 / enumerated states — NOT open at axis scope. Only meaningful under a grid parent.",
+    notes: "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
   },
   {
     axis: "density",
