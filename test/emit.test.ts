@@ -68,6 +68,10 @@ test("fill: whole-axis sets both, dials write one logical size each (R-SIZE-01)"
   assert.deepEqual(declOf("fill-block"), [["block-size", "100%"]]);
 });
 
+test("hug-inline: inline size follows content without a spacing socket (R-SIZE-05)", () => {
+  assert.deepEqual(declOf("hug-inline"), [["inline-size", "fit-content"]]);
+});
+
 test("aspect: `square` is a 1:1 ratio (R-SIZE-02)", () => {
   assert.deepEqual(declOf("square"), [["aspect-ratio", "1"]]);
 });

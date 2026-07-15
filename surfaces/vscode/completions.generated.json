@@ -911,19 +911,25 @@
           "label": "fill",
           "insertText": "fill",
           "kind": "word",
-          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket."
+          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket."
         },
         {
           "label": "fill-inline",
           "insertText": "fill-inline",
           "kind": "word",
-          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket."
+          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket."
         },
         {
           "label": "fill-block",
           "insertText": "fill-block",
           "kind": "word",
-          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket."
+          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket."
+        },
+        {
+          "label": "hug-inline",
+          "insertText": "hug-inline",
+          "kind": "word",
+          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket."
         }
       ]
     },

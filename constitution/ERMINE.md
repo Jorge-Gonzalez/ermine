@@ -411,6 +411,16 @@ does not imply flex, grid, flow, or container alignment; those remain authored b
 
 → rationale: RAT:R-SIZE-04 · history: ADR-0027 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-SIZE-05 — Hug Inline
+
+An element may size its inline axis from its contents: `hug-inline` sets
+`inline-size: fit-content`. This is a relational metric with no theme socket; the used value is
+resolved from intrinsic content size and the available inline space, not from the spacing or size
+scale. It shares the explicit self-size dial with `fill-inline`, so the two conflict; `hug-inline`
+may still compose with `fill-block`.
+
+→ rationale: RAT:R-SIZE-05 · history: ADR-0028 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

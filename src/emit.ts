@@ -307,6 +307,7 @@ const EMISSION: Record<string, EmitSpec> = {
       if (word === "fill") return { "inline-size": "100%", "block-size": "100%" };
       if (word === "fill-inline") return { "inline-size": "100%" };
       if (word === "fill-block") return { "block-size": "100%" };
+      if (word === "hug-inline") return { "inline-size": "fit-content" };
       return null;
     },
   },
@@ -650,7 +651,7 @@ export const VOCABULARY: Record<string, string[]> = {
     ...["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
     "min-width-none", "min-height-none",
   ],
-  fill: ["fill", "fill-inline", "fill-block"],
+  fill: ["fill", "fill-inline", "fill-block", "hug-inline"],
   aspect: ["square"],
   cover: ["cover"],
   push: ["push"],

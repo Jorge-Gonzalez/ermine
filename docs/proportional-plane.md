@@ -59,6 +59,11 @@ it does not imply either position mode.
 remaining inline space, not a spacing token. It composes with whichever flow/flex/grid context
 created that free space; it does not imply the context.
 
+`hug-inline` = size the inline axis from intrinsic content while clamping against available inline
+space (`inline-size: fit-content`). It is the content-sized counterpart to `fill-inline`: same
+logical self-size dial, opposite resolution source. It does not imply flex-basis negotiation
+(`basis-content`) or the old retired flex `fit-content` member.
+
 ### 2. Self-relative — `aspect` / `square`
 Know one of the element's *own* dimensions; the other follows by ratio. The relatum is *self*,
 not the parent. `square` (1:1) is the concrete member (Monky evidence: `aspect-ratio: 1`);
@@ -119,7 +124,8 @@ Grounded against the current registry:
   fill/hug); `m3-self-size` (`basis-content` = hug); `m5-grid-placement` (`span-N`/`span-all`);
   `subgrid` (inherited tracks); the breakpoint scopes.
 - **Already admitted from this direction:** block-`fill` (distinct from flex-grow),
-  `aspect`/`square`, `cover` (all-edge attachment), and `push` (auto-margin push).
+  `aspect`/`square`, `cover` (all-edge attachment), `push` (auto-margin push), and
+  `hug-inline` (content-sized inline extent).
 - **Genuinely new (easy case):** `columns-N` (the grid metric) and the intent-proportions
   (`half`/`third`/…) over the grid.
 

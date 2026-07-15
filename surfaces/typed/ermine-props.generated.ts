@@ -132,7 +132,7 @@ export type OverflowExclusive =
 // axis `fill`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type FillExclusive =
   | ({ fill?: "fill"; } & None<"fillInline" | "fillBlock">)
-  | ({ fillInline?: "fill-inline"; fillBlock?: "fill-block"; } & None<"fill">);
+  | ({ fillInline?: "fill-inline" | "hug-inline"; fillBlock?: "fill-block"; } & None<"fill">);
 
 // base surface: everything except environment scopes
 export type ErmineBaseProps = ErminePlainProps & FlexExclusive & PaddingExclusive & MarginExclusive & OverflowExclusive & FillExclusive;

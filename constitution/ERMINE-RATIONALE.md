@@ -222,6 +222,16 @@ delete/confirmation controls are members pushed to the row's inline end. The wor
 effect, not the property (`margin-left-auto`), and it does not imply flex/grid/flow or container
 alignment.
 
+## RAT:R-SIZE-05
+Source: ADR-0028. `hug-inline` is the content-sized complement to `fill-inline`: it sets the
+explicit inline size to `fit-content`, allowing the element to hug its contents while still clamping
+against available inline space. It stays on the same registry axis as `fill` because both write the
+same logical self-size dial (`inline-size`); `fill-inline hug-inline` is a conflict, while
+`hug-inline fill-block` composes. This does not reopen the retired flex-era `fit-content` member:
+that old word duplicated `rigid`/flex-basis behavior, whereas `hug-inline` is explicit logical
+self-size outside flex negotiation. Evidence comes from Monky's replacement-mode options row and
+choice labels.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

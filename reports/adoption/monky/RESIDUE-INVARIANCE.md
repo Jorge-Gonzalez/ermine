@@ -49,13 +49,14 @@ Already admitted and migrated:
 | `square` | R-SIZE-02 / ADR-0025 | `aspect-ratio: 1` |
 | `cover` | R-SIZE-03 / ADR-0026 | `inset: 0` |
 | `push` | R-SIZE-04 / ADR-0027 | `margin-inline-start: auto` |
+| `hug-inline` | R-SIZE-05 / ADR-0028 | `inline-size: fit-content` |
 
 Next candidates by cleanliness:
 
 | candidate | evidence shape | note |
 |---|---|---|
 | `center` | `left: 50%` + translate, `margin: 0 auto` | Valuable, but needs transform/position framing. |
-| `fit` / `hug` | `width: fit-content`, `fit-content(...) 1fr` | Related to existing flex/content sizing words. |
+| grid fit | `fit-content(...) 1fr` | Related to columns/track sizing; keep separate from `hug-inline`. |
 | `measure` | readable/clamped widths | Needs a ruled relation to size scale or viewport. |
 | `columns-12` + intent proportions | `1fr 3fr`, `fit-content(...) 1fr` | Highest leverage; should be a deliberate ruling cycle. |
 
