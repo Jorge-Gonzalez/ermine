@@ -153,7 +153,7 @@ layout=21 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 #### structure
 
 - role: `container` · signature: `container-operation` · vocabulary: `closed` · regime: `free`
-- value space: `horizontal` `vertical` `grid` `grid-fit-<size>` `columns-12`
+- value space: `horizontal` `vertical` `grid` `grid-fit-<size>` `columns-12` `subgrid`
 - default: `flow`
 - controls: `display.inner` `flex-direction` `grid-template-columns` `grid-auto-flow`
 - must never touch: `gap` `padding` `margin` `align-self` `flex` `flex-wrap` `background` `border` `display.outer`
@@ -164,7 +164,7 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<structure>` | `/^(horizontal\|vertical\|grid)$/` | — | no |
+| `<structure>` | `/^(horizontal\|vertical\|grid\|subgrid)$/` | — | no |
 | `columns-12` | `/^columns-12$/` | — | no |
 | `grid-fit-<size>` | `/^grid-fit-(sm\|md\|lg\|xl\|2xl)$/` | `size-step` | no |
 | `grid-fit-<bad>` | `/^grid-fit-.+$/` | `size-step` | yes |

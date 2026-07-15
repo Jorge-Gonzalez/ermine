@@ -180,6 +180,16 @@ evidence; the grid is fixed at twelve so the intent-proportions (R-M5-02) stay e
 
 → rationale: RAT:R-STRUCTURE-03 · history: ADR-0034 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-STRUCTURE-04 — Subgrid
+
+A nested grid may adopt its parent's tracks: `subgrid` sets `display: grid`, `grid-auto-flow: row`,
+and `grid-template-columns: subgrid`. A structure member, replacing plain `grid`. It resolves the
+design-system tension between component encapsulation and page-level alignment — a subgridded child
+aligns its own content to the outer grid's tracks. Meaningful only inside a grid parent; the
+inherited-row form (`grid-template-rows: subgrid`) is reserved pending evidence.
+
+→ rationale: RAT:R-STRUCTURE-04 · history: ADR-0035 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-M1-01 — Flow participation
 
 Flow participation is a closed member-role axis over `inline`, `boxed`, and `boxed-inline`, with

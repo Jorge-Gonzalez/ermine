@@ -32,6 +32,12 @@
           "meaning": "the shared twelve-column grid (children take intent proportions: `third`, `two-thirds`, …)"
         },
         {
+          "label": "subgrid",
+          "insertText": "subgrid",
+          "kind": "word",
+          "meaning": "a grid whose tracks are inherited from its parent grid (aligns nested content to the outer grid)"
+        },
+        {
           "label": "grid-fit-sm",
           "insertText": "grid-fit-sm",
           "kind": "word",

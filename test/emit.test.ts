@@ -89,6 +89,10 @@ test("viewport-fill: `fill-viewport` is a block-axis viewport minimum (R-SIZE-08
   assert.deepEqual(declOf("fill-viewport"), [["min-block-size", "100vh"]]);
 });
 
+test("subgrid inherits parent tracks (R-STRUCTURE-04)", () => {
+  assert.deepEqual(declOf("subgrid"), [["grid-auto-flow", "row"], ["grid-template-columns", "subgrid"]]);
+});
+
 test("columns-12 grid + intent-proportions compile to spans over 12 (R-STRUCTURE-03/R-M5-02)", () => {
   assert.deepEqual(declOf("columns-12"), [["grid-auto-flow", "row"], ["grid-template-columns", "repeat(12, 1fr)"]]);
   assert.deepEqual(declOf("quarter"), [["grid-column", "span 3"]]);

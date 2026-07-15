@@ -106,9 +106,9 @@ export const LAYOUT: AxisRecord[] = [
     // and it smuggled flex-wrap — which the `wrapping` axis owns — into an axis whose
     // mandate is inner-display-type (+ direction) only. The collision was latent (P7
     // missed it only because `wrapping` had no emission entry yet).
-    valueSpace: ["horizontal", "vertical", "grid", "grid-fit-<size>", "columns-12"],
+    valueSpace: ["horizontal", "vertical", "grid", "grid-fit-<size>", "columns-12", "subgrid"],
     tokens: [
-      { pattern: /^(horizontal|vertical|grid)$/, shape: "<structure>" },
+      { pattern: /^(horizontal|vertical|grid|subgrid)$/, shape: "<structure>" },
       { pattern: /^columns-12$/, shape: "columns-12" },
       { pattern: new RegExp(`^grid-fit-(${SCALES.size.join("|")})$`), shape: "grid-fit-<size>", valueDomain: "size-step" },
       { pattern: /^grid-fit-.+$/, shape: "grid-fit-<bad>", valueDomain: "size-step", fallback: true },

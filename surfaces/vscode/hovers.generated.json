@@ -29,6 +29,11 @@
       "meaning": "the shared twelve-column grid (children take intent proportions: `third`, `two-thirds`, …)",
       "reference": "src/ERMINE-SPEC.md §2.1 — structure"
     },
+    "subgrid": {
+      "axis": "structure",
+      "meaning": "a grid whose tracks are inherited from its parent grid (aligns nested content to the outer grid)",
+      "reference": "src/ERMINE-SPEC.md §2.1 — structure"
+    },
     "grid-fit-sm": {
       "axis": "structure",
       "meaning": "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",

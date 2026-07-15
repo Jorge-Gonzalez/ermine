@@ -97,6 +97,7 @@ const EMISSION: Record<string, EmitSpec> = {
         case "vertical": return { "flex-direction": "column" };
         case "grid": return { "grid-auto-flow": "row" };
         case "columns-12": return { "grid-auto-flow": "row", "grid-template-columns": "repeat(12, 1fr)" };
+        case "subgrid": return { "grid-auto-flow": "row", "grid-template-columns": "subgrid" };
         default: {
           const m = word.match(new RegExp(`^grid-fit-(${SCALES.size.join("|")})$`));
           return m ? { "grid-auto-flow": "row", "grid-template-columns": `fit-content(var(--size-${m[1]})) 1fr` } : null;
@@ -495,7 +496,7 @@ const EMISSION: Record<string, EmitSpec> = {
 // separate from EMISSION because a FacetRule isn't a complete declaration.
 const FACET_EMISSION: Record<string, (word: string) => { property: string; facet: string; value: string } | null> = {
   structure: (word) => {
-    const inner: Record<string, string> = { horizontal: "flex", vertical: "flex", grid: "grid", "columns-12": "grid" };
+    const inner: Record<string, string> = { horizontal: "flex", vertical: "flex", grid: "grid", "columns-12": "grid", subgrid: "grid" };
     const value = inner[word] ?? (new RegExp(`^grid-fit-(${SCALES.size.join("|")})$`).test(word) ? "grid" : null);
     return value ? { property: "display", facet: "inner", value } : null;
   },
@@ -661,7 +662,7 @@ function selectorFragmentFromEntails(entails: string[] | undefined): string {
 // the same reason EMISSION itself is axis-specific: word shape isn't uniform
 // across the registry (see the flow-spacing bug above).
 export const VOCABULARY: Record<string, string[]> = {
-  structure: ["horizontal", "vertical", "grid", "columns-12", "grid-fit-sm", "grid-fit-md", "grid-fit-lg", "grid-fit-xl", "grid-fit-2xl"],
+  structure: ["horizontal", "vertical", "grid", "columns-12", "subgrid", "grid-fit-sm", "grid-fit-md", "grid-fit-lg", "grid-fit-xl", "grid-fit-2xl"],
   wrapping: ["wrap-allowed", "wrap-prevent", "wrap-reverse"],
   "m1-flow-participation": ["inline", "boxed", "boxed-inline"],
   density: SCALES.spacing.map((s) => `gap-${s}`),

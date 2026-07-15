@@ -88,6 +88,13 @@ common relational proportions (R-M5-02) land on integer tracks. A structure memb
 replacing plain `grid`. Fixed at twelve, not a per-container count, so the intent-proportions stay
 exact; other counts reserved.
 
+## RAT:R-STRUCTURE-04
+Source: ADR-0035. `subgrid` is native CSS's answer to the encapsulation-vs-alignment tension in
+design systems (survey proposition 7): a component keeps its own grid but borrows the parent's
+tracks so its content lines up with the page. A structure member, replacing plain `grid`. Evidence:
+Monky's `.macro-search-item { grid-template-columns: subgrid }`, spanning its parent's grid-fit
+tracks. Row subgrid reserved.
+
 ## RAT:R-M1-01
 Source: pre-split `constitution/ERMINE.md` lines 769–788.
 
