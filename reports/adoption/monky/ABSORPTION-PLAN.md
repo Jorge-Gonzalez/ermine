@@ -233,7 +233,9 @@ hand-edited.
   gate `assimilable=0`); `padding-2xl` assimilation unlocked. Remaining Group-A candidates
   reclassified — none byte-identical (recipe-owned cursor, bare nowrap ≠ truncate,
   `!important` position, off-scale layer/elevation/measure). See Phase 1 §Result.
-- [ ] Phase 2 — `truncate-N` Gap Report.
+- [x] **Phase 2 — done.** Multi-line clamp admitted as `clamp-N` (not `truncate-N`; the
+  number now reads as the retained-line limit), R-SKIN-12/ADR-0023; Monky's 3-line preview
+  migrated to `clamp-3` (style-smoke identical, gate green). `GAP-U-truncate-clamp` resolved.
 - [ ] Phase 3 — new Gap Reports (spatial arc first).
 - [ ] Phase 4 — animation plane.
 - [ ] Phase 5 — Monky-local molecules.

@@ -1,5 +1,12 @@
 # Gap Report — multi-line clamp (`truncate-N`)
 
+> **Resolved.** Admitted as **`clamp-N`** (R-SKIN-12 amended, ADR-0023) — named `clamp`, not
+> the reserved `truncate-N`, because `truncate` is a removal verb so `truncate-3` misreads as
+> "remove 3 lines"; `clamp-3` reads as "clamped to 3 lines" (the retained-line limit). Its
+> `display: -webkit-box` overlap with the structure/m1 facet twin is sanctioned as a mutual
+> exclusion in `checkDimensionalPurity`. Consumed in Monky at `1472c87`
+> (`.macro-suggestions-text-preview` → `clamp-3`).
+
 ## What I was doing
 Adopting Monky's suggestions overlay (residue Phase 1). `.macro-suggestions-text-preview`
 clamps its preview to three lines with `display: -webkit-box; -webkit-line-clamp: 3;
