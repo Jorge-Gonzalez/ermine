@@ -824,6 +824,14 @@ export function checkDimensionalPurity(): PurityReport {
   sanctioned.add(pairKey("truncation", "structure", "display"));
   sanctioned.add(pairKey("truncation", "m1-flow-participation", "display"));
 
+  // KNOWN LIMITATION — this compares EXACT property names, so it does not relate a CSS
+  // shorthand to its longhands. Two axes owning a shorthand and one of its longhands are
+  // not flagged: `margin` owns `margin-inline` while `push` owns `margin-inline-start`;
+  // `cover` owns `inset` while `positioned-centering` owns `left`/`top`. Those pairs do
+  // overlap at the rendered-property level, but composing them is nonsensical (push a
+  // centered element; center a full-cover element) and no adopted composition authors them,
+  // so the gap is latent. Modelling shorthand containment would be the fix if it ever bites.
+  //
   // Now the actual check: free/free and free/negotiated sharing is forbidden
   // outside a sanctioned pair. Negotiated/negotiated sharing belongs to the
   // solver. Any pair involving a declared-control fallback is warned instead.
