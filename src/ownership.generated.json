@@ -61,6 +61,10 @@
     "min-height",
     "min-width"
   ],
+  "fill": [
+    "block-size",
+    "inline-size"
+  ],
   "z-scale": [
     "z-index"
   ],

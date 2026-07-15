@@ -180,6 +180,18 @@ decision that read as an unexplained `0` in component sheets. `none` names the i
 minimum at all) rather than the number, and the endpoint-word-over-scale-step shape is
 R-SKIN-06's square/pill pattern. Max endpoints wait for their own evidence.
 
+## RAT:R-SIZE-01
+Source: ADR-0024. `fill` is the first member of the proportional layout plane
+(`docs/proportional-plane.md`): a value that is a *relation* (100% of the container) rather than a
+metric, so it carries its own value and needs no theme socket — the invariance test's clean case
+(it survives any re-resolution). It is separated from flex growth on purpose: `grow-1` fills a flex
+main axis by distributing free space, whereas `fill` sets an explicit self-size on either logical
+axis and works outside flex. Emitted as `inline-size`/`block-size` (logical, matching the
+inline/block dial names) rather than `width`/`height`; identical computed size in horizontal
+writing mode. Evidence: `GAP-U-fill-sizing.md` — roughly nine Monky selectors set `width`/`height:
+100%` to span their container. Viewport fill and fractional sizes are reserved for their own
+evidence, per the admit-one-member pattern.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

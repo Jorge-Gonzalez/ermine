@@ -371,6 +371,18 @@ reserved pending evidence.
 
 → rationale: RAT:R-CONSTRAINT-01 · history: ADR-0004, ADR-0015 · code: src/registry.ts#LAYOUT
 
+## R-SIZE-01 — Fill
+
+An element may span 100% of its container along an axis: `fill` sets both, `fill-inline` the
+inline axis, `fill-block` the block axis (whole-axis form conflicts with a per-axis dial; the two
+dials compose). This is a **relational** metric — the value is the proportion 100%, so it reads no
+theme socket. It is distinct from flex growth (`grow-1`/`expandable`), which fills a flex
+container's main axis by distribution; `fill` is the explicit self-size case, and its relatum is
+the container. Viewport-relative fill (`100vh`) and fractional sizes (`half`, `third`) are the
+family members reserved pending evidence.
+
+→ rationale: RAT:R-SIZE-01 · history: ADR-0024 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

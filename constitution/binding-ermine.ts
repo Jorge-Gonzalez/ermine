@@ -22,6 +22,7 @@ export const ERMINE_AREAS = [
   "WRAP",
   "OVERFLOW",
   "CONSTRAINT",
+  "SIZE",
   "TYPE",
   "STATE",
   "MOTION",

@@ -300,6 +300,17 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- fill: 100% container sizing (R-SIZE-01). Pure proportion, no socket. ---
+  fill: {
+    effectKind: "css",
+    plain: (word): Record<string, string> | null => {
+      if (word === "fill") return { "inline-size": "100%", "block-size": "100%" };
+      if (word === "fill-inline") return { "inline-size": "100%" };
+      if (word === "fill-block") return { "block-size": "100%" };
+      return null;
+    },
+  },
+
   // --- ordered-chain scale axis, sub-dials + aliasMatch (same shape as padding) ---
   margin: {
     effectKind: "css",
@@ -621,6 +632,7 @@ export const VOCABULARY: Record<string, string[]> = {
     ...["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
     "min-width-none", "min-height-none",
   ],
+  fill: ["fill", "fill-inline", "fill-block"],
   margin: [
     ...SCALES.spacing.map((s) => `margin-${s}`),
     ...SCALES.spacing.map((s) => `margin-inline-${s}`),

@@ -892,6 +892,30 @@
       ]
     },
     {
+      "axis": "fill",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill",
+      "items": [
+        {
+          "label": "fill",
+          "insertText": "fill",
+          "kind": "word",
+          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket."
+        },
+        {
+          "label": "fill-inline",
+          "insertText": "fill-inline",
+          "kind": "word",
+          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket."
+        },
+        {
+          "label": "fill-block",
+          "insertText": "fill-block",
+          "kind": "word",
+          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket."
+        }
+      ]
+    },
+    {
       "axis": "z-scale",
       "reference": "src/ERMINE-SPEC.md §2.2 — z-scale",
       "items": [

@@ -355,6 +355,26 @@ export const LAYOUT: AxisRecord[] = [
     mustNeverTouch: ["flex-grow", "flex-shrink", "flex-basis", "width"],
     notes: "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
   },
+  {
+    // fill: an element spans 100% of its container along an axis (R-SIZE-01). Pure
+    // proportion — the value IS 100%, so no theme socket. `fill` sets both axes;
+    // `fill-inline` → inline-size, `fill-block` → block-size (the overflow/padding dial
+    // shape). Distinct from flex growth (`grow-1`/`expandable`, m2), which fills a flex
+    // container's MAIN axis; `fill` is the explicit block/self case. Container-relatum;
+    // viewport fill (100vh) is a separate reserved word.
+    axis: "fill",
+    sibling: "layout", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["fill", "fill-inline", "fill-block"],
+    tokens: [{ pattern: /^fill(?:-(inline|block))?$/, shape: "fill[-<axis>]" }],
+    subDials: ["inline", "block"],
+    dialOf: (word: string) => word === "fill-inline" ? "inline" : word === "fill-block" ? "block" : null,
+    aliasMatch: (word: string) => word === "fill",
+    default: null,
+    controls: ["inline-size", "block-size"],
+    mustNeverTouch: ["display", "gap", "flex", "flex-grow", "flex-basis", "position", "margin", "padding"],
+    notes: "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket.",
+  },
 ];
 
 // ============================================================================

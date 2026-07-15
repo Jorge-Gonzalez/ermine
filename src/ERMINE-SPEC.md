@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (46 axes)  ‹SHARED›
+## 2. The axis registry (47 axes)  ‹SHARED›
 
-layout=15 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=16 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -148,7 +148,7 @@ layout=15 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
 
-### 2.1 LAYOUT (15 axes)
+### 2.1 LAYOUT (16 axes)
 
 #### structure
 
@@ -408,6 +408,24 @@ Tokens:
 | `min/max-width/height-<size>` | `/^(min-width\|max-width\|min-height\|max-height)-(sm\|md\|lg\|xl)$/` | `size-step` | no |
 | `min-width/height-none` | `/^(min-width\|min-height)-(none)$/` | — | no |
 | `min/max-width/height-<bad>` | `/^(min-width\|max-width\|min-height\|max-height)-.+$/` | `size-step` | yes |
+
+#### fill
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `fill` `fill-inline` `fill-block`
+- default: none
+- controls: `inline-size` `block-size`
+- must never touch: `display` `gap` `flex` `flex-grow` `flex-basis` `position` `margin` `padding`
+- sub-dials: `inline` `block`
+- dial resolver: declared in `registry.ts`
+- whole-axis pattern matcher: declared in `registry.ts`
+- notes: whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` composes. Pure proportion (100%), no theme socket.
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `fill[-<axis>]` | `/^fill(?:-(inline\|block))?$/` | — | no |
 
 ### 2.2 LAYERING (4 axes)
 

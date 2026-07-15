@@ -123,8 +123,13 @@ export type OverflowExclusive =
   | ({ overflow?: "scroll-auto" | "clip" | "hidden"; } & None<"overflowX" | "overflowY">)
   | ({ overflowX?: "scroll-x"; overflowY?: "scroll-y"; } & None<"overflow">);
 
+// axis `fill`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
+export type FillExclusive =
+  | ({ fill?: "fill"; } & None<"fillInline" | "fillBlock">)
+  | ({ fillInline?: "fill-inline"; fillBlock?: "fill-block"; } & None<"fill">);
+
 // base surface: everything except environment scopes
-export type ErmineBaseProps = ErminePlainProps & FlexExclusive & PaddingExclusive & MarginExclusive & OverflowExclusive;
+export type ErmineBaseProps = ErminePlainProps & FlexExclusive & PaddingExclusive & MarginExclusive & OverflowExclusive & FillExclusive;
 
 // environment scopes hold BASE props only — a scoped word cannot itself be scoped
 export interface ErmineScopeProps {
@@ -190,6 +195,9 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "maxWidth", axis: "constraints", kind: "step-prefix", prefix: "max-width" },
   { prop: "minHeight", axis: "constraints", kind: "step-prefix", prefix: "min-height" },
   { prop: "maxHeight", axis: "constraints", kind: "step-prefix", prefix: "max-height" },
+  { prop: "fill", axis: "fill", kind: "word" },
+  { prop: "fillInline", axis: "fill", kind: "word" },
+  { prop: "fillBlock", axis: "fill", kind: "word" },
   { prop: "zScale", axis: "z-scale", kind: "word" },
   { prop: "topLayerMechanism", axis: "top-layer-mechanism", kind: "word" },
   { prop: "positionMode", axis: "position-mode", kind: "word" },
@@ -240,4 +248,4 @@ export const SCOPE_DESCRIPTORS: readonly { prop: string; prefix: string }[] = [
   { prop: "prefersReducedTransparency", prefix: "prefers-reduced-transparency" },
 ];
 
-export const XOR_PROPS: ReadonlySet<string> = new Set(["flex","grow","shrink","padding","paddingInline","paddingBlock","margin","marginInline","marginBlock","overflow","overflowX","overflowY"]);
+export const XOR_PROPS: ReadonlySet<string> = new Set(["flex","grow","shrink","padding","paddingInline","paddingBlock","margin","marginInline","marginBlock","overflow","overflowX","overflowY","fill","fillInline","fillBlock"]);

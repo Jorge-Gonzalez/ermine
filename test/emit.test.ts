@@ -12,7 +12,7 @@ test("P7: no unsanctioned property collisions across covered axes", () => {
     [],
     report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
   );
-  assert.equal(report.verifiedAxes.length, 46);
+  assert.equal(report.verifiedAxes.length, 47);
   assert.deepEqual(report.unverifiedAxes, []);
   assert.deepEqual(
     report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
@@ -60,6 +60,12 @@ test("position-mode strips the grammar prefix", () => {
 test("truncation: `truncate` is single-line ellipsis; `clamp-N` is the N-line -webkit-box clamp (R-SKIN-12)", () => {
   assert.deepEqual(declOf("truncate"), [["text-overflow", "ellipsis"], ["white-space", "nowrap"]]);
   assert.deepEqual(declOf("clamp-3"), [["display", "-webkit-box"], ["-webkit-box-orient", "vertical"], ["-webkit-line-clamp", "3"]]);
+});
+
+test("fill: whole-axis sets both, dials write one logical size each (R-SIZE-01)", () => {
+  assert.deepEqual(declOf("fill"), [["inline-size", "100%"], ["block-size", "100%"]]);
+  assert.deepEqual(declOf("fill-inline"), [["inline-size", "100%"]]);
+  assert.deepEqual(declOf("fill-block"), [["block-size", "100%"]]);
 });
 
 // K6 additions — the three axes completed from ruled mappings.
