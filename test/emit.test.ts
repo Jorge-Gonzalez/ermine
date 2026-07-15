@@ -12,7 +12,7 @@ test("P7: no unsanctioned property collisions across covered axes", () => {
     [],
     report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
   );
-  assert.equal(report.verifiedAxes.length, 50);
+  assert.equal(report.verifiedAxes.length, 51);
   assert.deepEqual(report.unverifiedAxes, []);
   assert.deepEqual(
     report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
@@ -78,6 +78,10 @@ test("aspect: `square` is a 1:1 ratio (R-SIZE-02)", () => {
 
 test("cover: attaches a positioned element to all containing-block edges (R-SIZE-03)", () => {
   assert.deepEqual(declOf("cover"), [["inset", "0"]]);
+});
+
+test("center-x: centers a positioned element on the inline midpoint (R-SIZE-06)", () => {
+  assert.deepEqual(declOf("center-x"), [["left", "50%"], ["transform", "translateX(-50%)"]]);
 });
 
 test("push: consumes inline-start free space with auto margin (R-SIZE-04)", () => {

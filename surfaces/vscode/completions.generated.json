@@ -958,6 +958,18 @@
       ]
     },
     {
+      "axis": "center-x",
+      "reference": "src/ERMINE-SPEC.md §2.1 — center-x",
+      "items": [
+        {
+          "label": "center-x",
+          "insertText": "center-x",
+          "kind": "word",
+          "meaning": "absolute horizontal centering pair: `left: 50%` plus `translateX(-50%)`. Requires a positioned element from `position-mode`; reserves vertical, flow, and transform-general centering for separate rulings."
+        }
+      ]
+    },
+    {
       "axis": "z-scale",
       "reference": "src/ERMINE-SPEC.md §2.2 — z-scale",
       "items": [

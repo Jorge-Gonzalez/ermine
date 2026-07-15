@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (50 axes)  ‹SHARED›
+## 2. The axis registry (51 axes)  ‹SHARED›
 
-layout=19 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=20 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -148,7 +148,7 @@ layout=19 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
 
-### 2.1 LAYOUT (19 axes)
+### 2.1 LAYOUT (20 axes)
 
 #### structure
 
@@ -469,6 +469,21 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<cover>` | `/^cover$/` | — | no |
+
+#### center-x
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `center-x`
+- default: none
+- controls: `left` `transform`
+- must never touch: `position` `inset` `top` `right` `bottom` `margin` `inline-size` `block-size` `width` `height`
+- notes: absolute horizontal centering pair: `left: 50%` plus `translateX(-50%)`. Requires a positioned element from `position-mode`; reserves vertical, flow, and transform-general centering for separate rulings.
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<center-x>` | `/^center-x$/` | — | no |
 
 ### 2.2 LAYERING (4 axes)
 

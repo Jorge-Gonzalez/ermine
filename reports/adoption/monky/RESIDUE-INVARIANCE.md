@@ -50,12 +50,13 @@ Already admitted and migrated:
 | `cover` | R-SIZE-03 / ADR-0026 | `inset: 0` |
 | `push` | R-SIZE-04 / ADR-0027 | `margin-inline-start: auto` |
 | `hug-inline` | R-SIZE-05 / ADR-0028 | `inline-size: fit-content` |
+| `center-x` | R-SIZE-06 / ADR-0029 | `left: 50%` + `transform: translateX(-50%)` |
 
 Next candidates by cleanliness:
 
 | candidate | evidence shape | note |
 |---|---|---|
-| `center` | `left: 50%` + translate, `margin: 0 auto` | Valuable, but needs transform/position framing. |
+| `center-y` / flow-center | `translateY(-50%)`, `margin: 0 auto` | Valuable, but separate from positioned horizontal centering. |
 | grid fit | `fit-content(...) 1fr` | Related to columns/track sizing; keep separate from `hug-inline`. |
 | `measure` | readable/clamped widths | Needs a ruled relation to size scale or viewport. |
 | `columns-12` + intent proportions | `1fr 3fr`, `fit-content(...) 1fr` | Highest leverage; should be a deliberate ruling cycle. |

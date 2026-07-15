@@ -324,6 +324,12 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word === "cover" ? { inset: "0" } : null),
   },
 
+  // --- center-x: positioned horizontal centering pair (R-SIZE-06). ---
+  "center-x": {
+    effectKind: "css",
+    plain: (word) => (word === "center-x" ? { left: "50%", transform: "translateX(-50%)" } : null),
+  },
+
   // --- push: auto inline-start margin in available inline space (R-SIZE-04). ---
   push: {
     effectKind: "css",
@@ -654,6 +660,7 @@ export const VOCABULARY: Record<string, string[]> = {
   fill: ["fill", "fill-inline", "fill-block", "hug-inline"],
   aspect: ["square"],
   cover: ["cover"],
+  "center-x": ["center-x"],
   push: ["push"],
   margin: [
     ...SCALES.spacing.map((s) => `margin-${s}`),

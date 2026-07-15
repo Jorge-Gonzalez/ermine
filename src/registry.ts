@@ -416,6 +416,20 @@ export const LAYOUT: AxisRecord[] = [
     controls: ["inset"],
     mustNeverTouch: ["position", "display", "gap", "flex", "inline-size", "block-size", "width", "height", "margin", "padding"],
   },
+  {
+    // center-x: a positioned element's inline center aligns to its containing block's inline
+    // midpoint (R-SIZE-06). It composes with `position-absolute` / `position-fixed`; it
+    // does not imply positioning, top/bottom attachment, or general transform vocabulary.
+    axis: "center-x",
+    sibling: "layout", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["center-x"],
+    tokens: [{ pattern: /^center-x$/, shape: "<center-x>" }],
+    default: null,
+    controls: ["left", "transform"],
+    mustNeverTouch: ["position", "inset", "top", "right", "bottom", "margin", "inline-size", "block-size", "width", "height"],
+    notes: "absolute horizontal centering pair: `left: 50%` plus `translateX(-50%)`. Requires a positioned element from `position-mode`; reserves vertical, flow, and transform-general centering for separate rulings.",
+  },
 ];
 
 // ============================================================================

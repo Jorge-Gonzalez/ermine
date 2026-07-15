@@ -624,6 +624,11 @@
       "meaning": "<cover>",
       "reference": "src/ERMINE-SPEC.md §2.1 — cover"
     },
+    "center-x": {
+      "axis": "center-x",
+      "meaning": "absolute horizontal centering pair: `left: 50%` plus `translateX(-50%)`. Requires a positioned element from `position-mode`; reserves vertical, flow, and transform-general centering for separate rulings.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — center-x"
+    },
     "base": {
       "axis": "z-scale",
       "meaning": "tier-2 only; only meaningful within an isolation:isolate context. tier-2 member list is a [RULING] (values), structure frozen.",

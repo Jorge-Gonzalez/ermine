@@ -421,6 +421,16 @@ may still compose with `fill-block`.
 
 → rationale: RAT:R-SIZE-05 · history: ADR-0028 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-SIZE-06 — Center X
+
+A positioned element may align its inline center with the containing block's inline midpoint:
+`center-x` sets `left: 50%` and `transform: translateX(-50%)`. This is a relational metric with
+no theme socket: the midpoint and compensation are resolved from the element and its containing
+block. `center-x` does not imply `position:absolute` or `position:fixed`, and it does not cover
+vertical centering, flow centering, or general transform vocabulary.
+
+→ rationale: RAT:R-SIZE-06 · history: ADR-0029 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

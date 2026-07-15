@@ -232,6 +232,16 @@ that old word duplicated `rigid`/flex-basis behavior, whereas `hug-inline` is ex
 self-size outside flex negotiation. Evidence comes from Monky's replacement-mode options row and
 choice labels.
 
+## RAT:R-SIZE-06
+Source: ADR-0029. `center-x` admits the positioned horizontal-centering pair
+`left: 50%` + `transform: translateX(-50%)`. The two declarations form one relational invariant:
+the anchor is the containing block's inline midpoint, and the transform compensates by half the
+element's own inline size. It composes with `position-absolute` / `position-fixed` instead of
+implying either, matching the `cover` precedent. It is deliberately narrow: vertical centering
+(`translateY(-50%)`), flow centering (`margin-inline:auto`), transform animation, and edge
+attachment remain separate evidence/ruling cycles. Evidence comes from Monky's suggestion arrows
+and editor toast.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

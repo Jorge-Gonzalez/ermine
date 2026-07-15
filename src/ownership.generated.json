@@ -74,6 +74,10 @@
   "cover": [
     "inset"
   ],
+  "center-x": [
+    "left",
+    "transform"
+  ],
   "z-scale": [
     "z-index"
   ],

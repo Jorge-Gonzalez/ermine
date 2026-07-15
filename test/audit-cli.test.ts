@@ -14,11 +14,10 @@ test("C1 fixture reproduces exact property coverage and top-k value statistics",
   assert.equal(measurements.scope.total, 14);
   assert.equal(measurements.scope.custom, 1);
   assert.equal(measurements.scope.real, 13);
-  assert.equal(measurements.scope.covered, 9);
+  assert.equal(measurements.scope.covered, 10);
   assert.deepEqual([...measurements.scope.uncovered], [
     ["width", 2],
     ["height", 1],
-    ["transform", 1],
   ]);
 
   const spacing = measurements.values.spacing;
@@ -41,7 +40,7 @@ test("C1 fixture reproduces exact property coverage and top-k value statistics",
   const report = renderAudit("known", sources, measurements);
   assert.match(report, /computed styles not observed/);
   assert.match(report, /rem→16px assumed; !important stripped/);
-  assert.match(report, /\| known \| 69\.2% \| 7\.1% \|/);
+  assert.match(report, /\| known \| 76\.9% \| 7\.1% \|/);
   assert.match(report, /\| known \| 6 \| 4 \| 100\.0% \| 100\.0% \| 100\.0% \| 14\.3% \|/);
   assert.match(report, /\| known \| 4 \| 3 \| 100\.0% \|/);
 });
