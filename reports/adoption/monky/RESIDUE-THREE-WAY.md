@@ -28,8 +28,9 @@ reclassified.
 
 > **Superseded as live accounting by the regenerated current ledger.** Later `clamp-3`,
 > `fill`, `square`, `cover`, `push`, `hug-inline`, `center-x`, `center-y`, and size `2xl`
-> plus `centered`/`flush-block` migrations moved the live ledger to 514 current declarations
-> and 280 project-owned residue declarations. Read `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
+> plus `centered`/`flush-block`, `grid-fit-sm`, and `min-width-sm` migrations moved the live
+> ledger to 516 current declarations and 278 project-owned residue declarations. Read
+> `CURRENT-LEDGER.md` and `RESIDUE-DETAIL.md`
 > for live counts, and `RESIDUE-INVARIANCE.md` / `docs/non-ermine.txt` for the corrected
 > two-metric analysis of the remaining residue.
 

@@ -44,10 +44,10 @@ The relational 46, by intent:
       push         margin-left:auto                             (done: R-SIZE-04 / migrated)
       aspect/square aspect-ratio:1
       hug-inline   width:fit-content                            (done: R-SIZE-05 / migrated)
-      grid-fit     fit-content(140px) 1fr
+      grid-fit     fit-content(140px) 1fr                       (done: R-STRUCTURE-02 / migrated)
       measure      max-width:672px (done via max-width-2xl) / 8em ; width:min(600px, 100vw-2rem)
       fill-viewport min-height:100vh
-      intent-proportions over a grid   grid-template-columns:1fr 3fr / fit-content 1fr
+      intent-proportions over a grid   grid-template-columns:1fr 3fr
                     (= third/three-quarters, hug+fill — the columns model, exactly)
   - text-wrap family: white-space:nowrap (bare, not truncate) ; pre-wrap
 
@@ -77,11 +77,14 @@ The named-follow-up residue (motion 23, opacity 4, scrollbar 9, elevation 3 = 39
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
 ========================================================================
 
-Note: the fill/clamp/center-x/center-y/max-width-2xl/centered+flush-block migrations removed the CSS rules for macro-editor-view,
-macro-search-view, settings-view (now markup-only), macro-suggestions-text-preview's
-clamp block, local positioned-centering declarations for suggestion arrows/editor
-toast/search edit actions, and the page-container `max-width: 672px` plus `margin: 0 auto`
-rules. The token names below otherwise persist.
+Note: the fill/clamp/center-x/center-y/max-width-2xl/centered+flush-block/grid-fit-sm
+migrations removed the CSS rules for macro-editor-view, macro-search-view, settings-view
+(now markup-only), macro-suggestions-text-preview's clamp block, local positioned-centering
+declarations for suggestion arrows/editor toast/search edit actions, the page-container
+`max-width: 672px` plus `margin: 0 auto` rules, and the search-result
+`grid-template-columns: fit-content(140px) 1fr` rule. Adding Monky's `--size-sm` binding
+also made the content-editor dropdown width migrate to `min-width-sm`. The token names below
+otherwise persist.
 
 CSS-backed local class selectors by source file:
 

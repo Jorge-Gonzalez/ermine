@@ -3,16 +3,17 @@
 The step-by-step plan for converting Monky project-owned residue declarations into Ermine
 words or Monky-local semantic classes — without changing Monky's rendered output. The first
 version targeted the 305-declaration snapshot re-read in `RESIDUE-THREE-WAY.md`; the live
-current ledger is now 280 project-owned declarations after the `fill`, `square`, `cover`, `push`,
-`hug-inline`, `center-x`, `center-y`, `max-width-2xl`, and `centered flush-block` migrations. Live counts come from
+current ledger is now 278 project-owned declarations after the `fill`, `square`, `cover`, `push`,
+`hug-inline`, `center-x`, `center-y`, `max-width-2xl`, `centered flush-block`, `grid-fit-sm`,
+and `min-width-sm` migrations. Live counts come from
 `CURRENT-LEDGER.md`; the corrected invariance overlay is `RESIDUE-INVARIANCE.md`.
 
 ## Provenance
 
 | source | commit |
 |---|---|
-| Ermine | `4f73b2f2aa6ed254c7ccc7e6c9609e66c51dd30d` |
-| monky | `cefa8a6489398d6af82689b442987aba144bde5c` |
+| Ermine | `c33cce42c033004aa8750c0a9c8d00c035d96699` |
+| monky | `5ff992bd9ad27944d570149aadb9ca219478db73` |
 
 Registry state read from `src/registry.ts` at the Ermine commit above.
 
@@ -91,8 +92,10 @@ affordances are also reserved but have no Monky residue.)
 | `emphasis` (italic) | 1 | no word (may be prose-internal) |
 
 **~51 rows needed new shared-grammar rulings after `hug-inline`; `center-x`, `center-y`,
-size `2xl`, and `centered flush-block` have since consumed the positioned-centering, page-measure,
-and flow-centering slices.** Most remaining rows are small, single-site atoms. The
+size `2xl`, `centered flush-block`, and `grid-fit-sm` have since consumed the
+positioned-centering, page-measure, flow-centering, and search grid-fit slices.** The
+`--size-sm` binding also unlocked and migrated the content-editor dropdown as `min-width-sm`.
+Most remaining rows are small, single-site atoms. The
 spatial cluster (`fill`/`anchor`/`cover-inset`/`push`/`hug-inline`/`center-x`/`center-y`/flow-center) is the one coherent
 arc; it finishes the spatial plane Ermine started but never atomized.
 
@@ -212,7 +215,9 @@ nothing byte-identical remains. The reclassified rows move to identity or to Pha
    green); and size **`2xl`** — **done** (R-SCALE-01/ADR-0030; page `max-width-2xl`
    migrated, gate green); **`centered flush-block`** — **done** (R-SIZE-07/ADR-0031;
    page `margin: 0 auto` decomposed into `margin-inline:auto` + `margin-block:0`, gate
-   green). The broader proportional plane — `columns-N` +
+   green); **`grid-fit-sm`** — **done** (R-STRUCTURE-02/ADR-0032; search results migrated,
+   gate green, with `min-width-sm` folded in after the new `--size-sm` binding exposed it).
+   The broader proportional plane — `columns-N` +
    intent-proportions — is captured in `docs/proportional-plane.md`.
 2. **`prominence`** — mid-scale opacity as a ruled scale (new axis; explicitly not `concealment`).
 3. **Treatments** — `link`, `disabled`-treatment, `press-feedback`, `unselectable`.
@@ -260,7 +265,8 @@ hand-edited.
   migrated to `clamp-3` (style-smoke identical, gate green). `GAP-U-truncate-clamp` resolved.
 - [ ] **Phase 3 — underway.** Spatial/proportional arc has landed `fill`, `square`,
   `cover`, `push`, `hug-inline`, `center-x`, `center-y`, size `2xl`/`max-width-2xl`, and
-  `centered flush-block`. Next clean candidates are grid fit, remaining measure, then `columns-12` +
-  intent-proportions. See `RESIDUE-INVARIANCE.md`.
+  `centered flush-block`, `grid-fit-sm`, and the unlocked `min-width-sm` cleanup. Next clean
+  candidates are remaining measure, then `columns-12` + intent-proportions. See
+  `RESIDUE-INVARIANCE.md`.
 - [ ] Phase 4 — animation plane.
 - [ ] Phase 5 — Monky-local molecules.
