@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `ebcf85bbd8bef32bcea47f0ecf33c2aea2baab96` |
-| monky | `386c4fb504ba6d6196fdc923382bd06eab49f9a1` |
+| Ermine | `a71f906cabd16e2aeb8138d4e05e55fccd0f48a8` |
+| monky | `9ba5521a46c846e1e0633147c9a46176b0c517c6` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -25,8 +25,8 @@ re-validated on every run.
 | measure | count |
 |---|---:|
 | current declarations | 516 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 222 |
-| **residue — project-owned declarations** | **294** |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 223 |
+| **residue — project-owned declarations** | **293** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,13 +34,13 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 135 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 136 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 33 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 37 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 11 | project brand typography and type treatment |
-| `component-contract` | 55 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 54 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
 | `parent-relational` | 8 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
@@ -67,7 +67,7 @@ re-validated on every run.
 | `src/content/overlays/modal/modalStyles.css` | 14 |
 | `src/styles/theme/metrics.css` | 9 |
 | `src/styles/entries/pages.css` | 7 |
-| `src/options/options.css` | 5 |
+| `src/options/options.css` | 4 |
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.
