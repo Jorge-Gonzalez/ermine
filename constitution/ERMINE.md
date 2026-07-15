@@ -897,6 +897,22 @@ still own its cursor inside its bundle (R-SKIN-10). Further affordance words (`d
 
 → rationale: RAT:R-SKIN-17 · history: ADR-0019 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
+## R-SKIN-18 — Tabular figures
+
+Numbers may use fixed-width figures so digits align in columns: `tabular` sets
+`font-variant-numeric: tabular-nums`. A type facet like size and weight (R-SKIN-07's family),
+disjoint from them so it composes.
+
+→ rationale: RAT:R-SKIN-18 · history: ADR-0036 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
+## R-SKIN-19 — Overline label
+
+The small-uppercase eyebrow treatment: `overline` sets `text-transform: uppercase` and tracks the
+label via a treatment socket (`letter-spacing: var(--overline-tracking, 0.07em)`). It is the
+label/eyebrow type role — a treatment, not a size or weight — and reads its tracking from the theme.
+
+→ rationale: RAT:R-SKIN-19 · history: ADR-0037 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
 ## R-SCALE-01 — Generator-defined scales
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.

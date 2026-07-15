@@ -12,7 +12,7 @@ test("P7: no unsanctioned property collisions across covered axes", () => {
     [],
     report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
   );
-  assert.equal(report.verifiedAxes.length, 52);
+  assert.equal(report.verifiedAxes.length, 54);
   assert.deepEqual(report.unverifiedAxes, []);
   assert.deepEqual(
     report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
@@ -87,6 +87,11 @@ test("aspect: `square` is a 1:1 ratio (R-SIZE-02)", () => {
 
 test("viewport-fill: `fill-viewport` is a block-axis viewport minimum (R-SIZE-08)", () => {
   assert.deepEqual(declOf("fill-viewport"), [["min-block-size", "100vh"]]);
+});
+
+test("type roles: tabular figures and the overline eyebrow (R-SKIN-18/19)", () => {
+  assert.deepEqual(declOf("tabular"), [["font-variant-numeric", "tabular-nums"]]);
+  assert.deepEqual(declOf("overline"), [["text-transform", "uppercase"], ["letter-spacing", "var(--overline-tracking, 0.07em)"]]);
 });
 
 test("subgrid inherits parent tracks (R-STRUCTURE-04)", () => {

@@ -761,6 +761,30 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "visibility", "pointer-events", "background", "color"],
   },
   {
+    // numeric: tabular figures — fixed-width digits so numbers align in columns (R-SKIN-18).
+    // font-variant-numeric only; a type facet like font-size/weight.
+    axis: "numeric",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["tabular"],
+    tokens: [{ pattern: /^(tabular)$/, shape: "<numeric>" }],
+    default: null,
+    controls: ["font-variant-numeric"],
+    mustNeverTouch: ["display", "gap", "flex", "font-size", "font-weight", "font-family"],
+  },
+  {
+    // type-label: the small-uppercase eyebrow/overline treatment (R-SKIN-19). Uppercases and
+    // tracks the label; the tracking reads a treatment socket (default 0.07em).
+    axis: "type-label",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["overline"],
+    tokens: [{ pattern: /^(overline)$/, shape: "<type-label>" }],
+    default: null,
+    controls: ["text-transform", "letter-spacing"],
+    mustNeverTouch: ["display", "gap", "flex", "font-size", "font-family"],
+  },
+  {
     // scrollbar: prominence on the platform's standard properties (R-SKIN-15).
     // `scrollbar-subtle` = thin, thumb/track from like-named sockets (default: the
     // rule carrier over a transparent track). `scrollbar-hidden` reserved.

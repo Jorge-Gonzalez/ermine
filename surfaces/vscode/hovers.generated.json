@@ -1384,6 +1384,16 @@
       "meaning": "<concealment>",
       "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
     },
+    "tabular": {
+      "axis": "numeric",
+      "meaning": "<numeric>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — numeric"
+    },
+    "overline": {
+      "axis": "type-label",
+      "meaning": "<type-label>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — type-label"
+    },
     "scrollbar-subtle": {
       "axis": "scrollbar",
       "meaning": "scrollbar-<prominence>",

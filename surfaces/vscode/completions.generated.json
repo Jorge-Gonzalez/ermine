@@ -2062,6 +2062,30 @@
       ]
     },
     {
+      "axis": "numeric",
+      "reference": "src/ERMINE-SPEC.md §2.5 — numeric",
+      "items": [
+        {
+          "label": "tabular",
+          "insertText": "tabular",
+          "kind": "word",
+          "meaning": "<numeric>"
+        }
+      ]
+    },
+    {
+      "axis": "type-label",
+      "reference": "src/ERMINE-SPEC.md §2.5 — type-label",
+      "items": [
+        {
+          "label": "overline",
+          "insertText": "overline",
+          "kind": "word",
+          "meaning": "<type-label>"
+        }
+      ]
+    },
+    {
       "axis": "scrollbar",
       "reference": "src/ERMINE-SPEC.md §2.5 — scrollbar",
       "items": [

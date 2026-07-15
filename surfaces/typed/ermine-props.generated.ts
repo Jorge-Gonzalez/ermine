@@ -103,6 +103,10 @@ export interface ErminePlainProps {
   affordance?: "pressable";
   /** axis `concealment` */
   concealment?: "concealed" | "revealed";
+  /** axis `numeric` */
+  numeric?: "tabular";
+  /** axis `type-label` */
+  typeLabel?: "overline";
   /** axis `scrollbar` */
   scrollbar?: "scrollbar-subtle";
   /** axis `focus-ring` */
@@ -240,6 +244,8 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "elevation", axis: "elevation", kind: "word" },
   { prop: "affordance", axis: "affordance", kind: "word" },
   { prop: "concealment", axis: "concealment", kind: "word" },
+  { prop: "numeric", axis: "numeric", kind: "word" },
+  { prop: "typeLabel", axis: "type-label", kind: "word" },
   { prop: "scrollbar", axis: "scrollbar", kind: "word" },
   { prop: "focusRing", axis: "focus-ring", kind: "word" },
   { prop: "truncation", axis: "truncation", kind: "word" },

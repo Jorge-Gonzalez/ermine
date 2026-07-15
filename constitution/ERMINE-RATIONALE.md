@@ -655,6 +655,16 @@ elements that are not recipes. `user-select` stays out (its evidence is recipe-o
 `draggable`/`editable`/`expandable` wait for occurrences that exist outside speculation.
 Source: ADR-0019.
 
+## RAT:R-SKIN-18
+Source: ADR-0036. Tabular figures are a genuine type facet (fixed-width digits for aligned columns),
+disjoint from size/weight so it composes. Evidence: Monky's search-count. `font-variant-numeric`.
+
+## RAT:R-SKIN-19
+Source: ADR-0037. The uppercase-eyebrow label is a recurring type role (section headers, overlines).
+Bundled as one treatment (text-transform + tracking) rather than two raw declarations, with the
+tracking as a theme socket. Evidence: Monky's settings-section-label. Named for the role, not the
+mechanism (R-SKIN-01).
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 

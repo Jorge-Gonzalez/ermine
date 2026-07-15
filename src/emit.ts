@@ -329,6 +329,18 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word === "fill-viewport" ? { "min-block-size": "100vh" } : null),
   },
 
+  // --- numeric: tabular figures (R-SKIN-18). ---
+  numeric: {
+    effectKind: "css",
+    plain: (word) => (word === "tabular" ? { "font-variant-numeric": "tabular-nums" } : null),
+  },
+
+  // --- type-label: small-uppercase eyebrow/overline (R-SKIN-19). ---
+  "type-label": {
+    effectKind: "css",
+    plain: (word) => (word === "overline" ? { "text-transform": "uppercase", "letter-spacing": "var(--overline-tracking, 0.07em)" } : null),
+  },
+
   // --- cover: all-edge attachment to the containing block (R-SIZE-03). ---
   cover: {
     effectKind: "css",
@@ -681,6 +693,8 @@ export const VOCABULARY: Record<string, string[]> = {
   fill: ["fill", "fill-inline", "fill-block", "hug-inline"],
   aspect: ["square"],
   "viewport-fill": ["fill-viewport"],
+  numeric: ["tabular"],
+  "type-label": ["overline"],
   cover: ["cover"],
   "positioned-centering": ["center-x", "center-y"],
   push: ["push"],

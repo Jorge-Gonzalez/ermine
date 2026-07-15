@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (52 axes)  ‹SHARED›
+## 2. The axis registry (54 axes)  ‹SHARED›
 
-layout=21 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=21 · layering=4 · motion=2 · state=9 · skin=18. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -815,7 +815,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (16 axes)
+### 2.5 SKIN (18 axes)
 
 #### skin-ground
 
@@ -984,6 +984,34 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<concealment>` | `/^(concealed\|revealed)$/` | — | no |
+
+#### numeric
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `tabular`
+- default: none
+- controls: `font-variant-numeric`
+- must never touch: `display` `gap` `flex` `font-size` `font-weight` `font-family`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<numeric>` | `/^(tabular)$/` | — | no |
+
+#### type-label
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `overline`
+- default: none
+- controls: `text-transform` `letter-spacing`
+- must never touch: `display` `gap` `flex` `font-size` `font-family`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<type-label>` | `/^(overline)$/` | — | no |
 
 #### scrollbar
 
