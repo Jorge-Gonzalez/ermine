@@ -64,7 +64,7 @@ Next candidates by cleanliness:
 
 | candidate | evidence shape | note |
 |---|---|---|
-| remaining measure | `max-width: 8em`, `width: min(...)`, viewport clamps | The page-container `672px` case migrated via size `2xl`; remaining evidence needs a ruled relation to type scale or viewport. |
+| remaining measure | `max-width: 8em`, `width: min(...)`, viewport clamps | Filed as `reports/GAP-U-measure-viewport.md`; the page-container `672px` case already migrated via size `2xl`. |
 | `columns-12` + intent proportions | `1fr 3fr` | Highest leverage; should be a deliberate ruling cycle. |
 
 ## Consequence

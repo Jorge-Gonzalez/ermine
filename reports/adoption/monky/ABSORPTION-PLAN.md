@@ -56,7 +56,7 @@ or blocked on the already-filed animation-plane duration naming.
 | `pressable` (cursor) | 2 | `affordance: pressable` (owns `cursor`) | press-feedback transform is *not* covered |
 | `cover` (position) | 1 | `position-fixed` | the `inset:0` half is missing (below) |
 | `elevation` | 3 | `elevation: elevated` | migrate only if the shared shadow is acceptable; else identity |
-| `measure` | 4 | `constraints` (`max-width-<size>`) | page `672px` migrated as `max-width-2xl`; remaining values need type/viewport rulings |
+| `measure` | 4 | `constraints` (`max-width-<size>`) | page `672px` migrated as `max-width-2xl`; remaining type/viewport cases filed in `reports/GAP-U-measure-viewport.md` |
 
 **~35 rows migrate with no ruling.** This is the bulk of Phase 1.
 
@@ -182,7 +182,8 @@ migration:**
   gap (`nowrap`), not a migration.
 - `position:fixed` → `position-fixed`: the only case is `:host { position: fixed !important }`
   on the injected overlay; the `!important` is load-bearing and the word emits without it. Stays local.
-- `layer`/z-index, `elevated`/box-shadow, remaining `measure` values: off-scale or bespoke
+- `layer`/z-index, `elevated`/box-shadow, remaining `measure` values: off-scale, viewport-relative,
+  or bespoke
   values → not byte-identical. Stay identity (or later Gap Reports). The page-container
   `672px` case was later admitted by adding size `2xl` and migrated as `max-width-2xl`.
 
@@ -266,7 +267,7 @@ hand-edited.
 - [ ] **Phase 3 — underway.** Spatial/proportional arc has landed `fill`, `square`,
   `cover`, `push`, `hug-inline`, `center-x`, `center-y`, size `2xl`/`max-width-2xl`, and
   `centered flush-block`, `grid-fit-sm`, and the unlocked `min-width-sm` cleanup. Next clean
-  candidates are remaining measure, then `columns-12` + intent-proportions. See
-  `RESIDUE-INVARIANCE.md`.
+  candidates are the filed measure/viewport ruling (`reports/GAP-U-measure-viewport.md`), then
+  `columns-12` + intent-proportions. See `RESIDUE-INVARIANCE.md`.
 - [ ] Phase 4 — animation plane.
 - [ ] Phase 5 — Monky-local molecules.

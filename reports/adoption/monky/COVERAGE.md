@@ -142,7 +142,8 @@ duration naming. Later passes admitted and migrated `clamp-3`, `fill`, `square`,
 `hug-inline`, `center-x`, `center-y`, size `2xl`/`max-width-2xl`, `centered flush-block`,
 `grid-fit-sm`, and the unlocked `min-width-sm` cleanup.
 The remaining Phase 3 grammar work is the proportional/relational plane
-(remaining measure, viewport fill, and columns + intent-proportions) plus the smaller
+(remaining measure/viewport extents, filed in `reports/GAP-U-measure-viewport.md`, and
+columns + intent-proportions) plus the smaller
 treatment/type follow-ups.
 
 ### 5.2 Open design questions (filed Gap Reports)
