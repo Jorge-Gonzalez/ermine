@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `75e41c37ec8d7b743aab68d10c13edfd7e650807` |
-| monky | `68dd302cc8fd433886e861f4b48c1fedde4bea18` |
+| Ermine | `a33e7da7ce406f96d6d5bc1cec21edb71eac6a91` |
+| monky | `3bac52ad36503ccf6e84819c4cea69dc4e6e3f06` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 276 |
+| project-owned residue | 275 |
 
 ## Product Identity
 
@@ -44,7 +44,7 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 | code | count | boundary |
 |---|---:|---|
 | `recipe-identity` | 37 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `identity-geometry` | 57 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 56 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 11 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
