@@ -3,7 +3,7 @@
 The step-by-step plan for converting Monky project-owned residue declarations into Ermine
 words or Monky-local semantic classes — without changing Monky's rendered output. The first
 version targeted the 305-declaration snapshot re-read in `RESIDUE-THREE-WAY.md`; the live
-current ledger is now 293 project-owned declarations after the `fill` and `square`
+current ledger is now 292 project-owned declarations after the `fill`, `square`, and `cover`
 migrations. Live counts come from `CURRENT-LEDGER.md`; the corrected invariance overlay is
 `RESIDUE-INVARIANCE.md`.
 
@@ -199,7 +199,7 @@ nothing byte-identical remains. The reclassified rows move to identity or to Pha
    the first proportional-plane member; 7 Monky sites migrated, gate green); **`square`**
    (self-ratio, `aspect-ratio: 1`) — **done** (R-SIZE-02/ADR-0025, `.prefix-cell` migrated,
    gate green); **`cover`**
-   (`inset: 0`) — **admitted in Ermine** (R-SIZE-03/ADR-0026; Monky migration still pending);
+   (`inset: 0`) — **done** (R-SIZE-03/ADR-0026; Monky modal backdrop migrated, gate green);
    **absolute-`center`** (~4 sites, but needs
    a `transform` concept Ermine lacks). The broader proportional plane — `columns-N` +
    intent-proportions — is captured in `docs/proportional-plane.md`.
@@ -247,8 +247,8 @@ hand-edited.
 - [x] **Phase 2 — done.** Multi-line clamp admitted as `clamp-N` (not `truncate-N`; the
   number now reads as the retained-line limit), R-SKIN-12/ADR-0023; Monky's 3-line preview
   migrated to `clamp-3` (style-smoke identical, gate green). `GAP-U-truncate-clamp` resolved.
-- [ ] **Phase 3 — underway.** Spatial/proportional arc has landed `fill` and `square`; `cover`
-  is admitted in Ermine and awaits Monky migration. Next clean candidates are `push`, `center`,
-  `fit/hug`, `measure`, then `columns-12` + intent-proportions. See `RESIDUE-INVARIANCE.md`.
+- [ ] **Phase 3 — underway.** Spatial/proportional arc has landed `fill`, `square`, and
+  `cover`. Next clean candidates are `push`, `center`, `fit/hug`, `measure`, then
+  `columns-12` + intent-proportions. See `RESIDUE-INVARIANCE.md`.
 - [ ] Phase 4 — animation plane.
 - [ ] Phase 5 — Monky-local molecules.

@@ -35,7 +35,7 @@ The relational 46, by intent:
   - done: width/height:100% (fill). (migrated this session)
   - the proportional/relational plane (new words, docs/proportional-plane.md):
       layer        z-index:10000 / 2147483646 / 10 / 0        (stacking ORDER, not size)
-      cover        inset:0
+      cover        inset:0                                      (done: R-SIZE-03 / migrated)
       center       left:50% + translateX(-50%) ; margin:0 auto
       edge-attach  top:100% / bottom:100% / left:0 / right:0
       push         margin-left:auto

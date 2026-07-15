@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `a71f906cabd16e2aeb8138d4e05e55fccd0f48a8` |
-| monky | `9ba5521a46c846e1e0633147c9a46176b0c517c6` |
+| Ermine | `f99960d45f93b4de17562dcd86f78e6e172de8c6` |
+| monky | `d11faaea9a08b0231d7a7b21a3d36e6f9033fe9e` |
 
 ## Summary
 
 - Current declarations: 516
-- Adopted/infrastructure declarations: 223
-- Project-owned residue declarations: 293
+- Adopted/infrastructure declarations: 224
+- Project-owned residue declarations: 292
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -21,7 +21,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 |---|---:|---|
 | `recipe-identity` | 37 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 11 | Monky-specific brand typography and type treatment. |
-| `component-contract` | 54 | Component-owned mechanics, exact geometry, or product contract. |
+| `component-contract` | 53 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
 | `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
 | `parent-relational` | 8 | Guarded parent/descendant state mechanics outside ruled relational words. |
@@ -99,7 +99,7 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 70 | `.modal-nav-label` | `font-size: var(--text-base)` |
+| 69 | `.modal-nav-label` | `font-size: var(--text-base)` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
 
@@ -137,20 +137,19 @@ Monky-specific brand typography and type treatment.
 | 25 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
 
-## component-contract (54)
+## component-contract (53)
 
 Component-owned mechanics, exact geometry, or product contract.
 
-### src/content/overlays/modal/modalStyles.css (6)
+### src/content/overlays/modal/modalStyles.css (5)
 
 | line | selector | declaration |
 |---:|---|---|
-| 19 | `.modal-backdrop` | `inset: 0` |
-| 20 | `.modal-backdrop` | `background-color: var(--shadow-color)` |
-| 29 | `.modal-dialog` | `mix-blend-mode: multiply` |
-| 30 | `.modal-dialog` | `width: min(600px, calc(100vw - 2rem))` |
-| 31 | `.modal-dialog` | `height: min(560px, 85vh)` |
-| 66 | `.modal-nav-icon` | `height: 18px` |
+| 19 | `.modal-backdrop` | `background-color: var(--shadow-color)` |
+| 28 | `.modal-dialog` | `mix-blend-mode: multiply` |
+| 29 | `.modal-dialog` | `width: min(600px, calc(100vw - 2rem))` |
+| 30 | `.modal-dialog` | `height: min(560px, 85vh)` |
+| 65 | `.modal-nav-icon` | `height: 18px` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (11)
 
@@ -264,7 +263,7 @@ Current-state layer mechanics left local around ruled current: skin.
 
 | line | selector | declaration |
 |---:|---|---|
-| 62 | `.modal-nav-tab[aria-current="page"]` | `border-bottom-color: var(--accent)` |
+| 61 | `.modal-nav-tab[aria-current="page"]` | `border-bottom-color: var(--accent)` |
 
 
 ## parent-relational (8)
@@ -462,7 +461,7 @@ Identity shadows/rings outside the shared elevated treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 28 | `.modal-dialog` | `box-shadow: rgba(31, 32, 34, 0.3) 0px 1px 2px 0px, rgba(31, 32, 34, 0.15) 0px 2px 6px 2px` |
+| 27 | `.modal-dialog` | `box-shadow: rgba(31, 32, 34, 0.3) 0px 1px 2px 0px, rgba(31, 32, 34, 0.15) 0px 2px 6px 2px` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (1)
 
@@ -491,7 +490,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 55 | `.modal-nav-tab` | `border-bottom: 2px solid transparent` |
+| 54 | `.modal-nav-tab` | `border-bottom: 2px solid transparent` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
 
@@ -597,10 +596,10 @@ Project-exact dimensions, spacing, positioning, and geometry.
 
 | line | selector | declaration |
 |---:|---|---|
-| 21 | `.modal-backdrop` | `z-index: 10000` |
-| 36 | `.modal-nav-container` | `min-height: 48px` |
-| 40 | `.modal-nav-branding` | `margin-right: 1rem` |
-| 54 | `.modal-nav-tab` | `padding: var(--spacing-md) var(--spacing-2xl)` |
+| 20 | `.modal-backdrop` | `z-index: 10000` |
+| 35 | `.modal-nav-container` | `min-height: 48px` |
+| 39 | `.modal-nav-branding` | `margin-right: 1rem` |
+| 53 | `.modal-nav-tab` | `padding: var(--spacing-md) var(--spacing-2xl)` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (8)
 

@@ -10,8 +10,8 @@ parts of the ledger are true local boundary and which are future grammar evidenc
 | measure | count |
 |---|---:|
 | current declarations | 516 |
-| adopted/infrastructure declarations | 223 |
-| project-owned residue declarations | 293 |
+| adopted/infrastructure declarations | 224 |
+| project-owned residue declarations | 292 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 
@@ -47,11 +47,6 @@ Already admitted and migrated:
 |---|---|---|
 | `fill` / `fill-inline` / `fill-block` | R-SIZE-01 / ADR-0024 | `inline-size` / `block-size: 100%` |
 | `square` | R-SIZE-02 / ADR-0025 | `aspect-ratio: 1` |
-
-Admitted in Ermine; Monky migration still pending:
-
-| word | ruling | effect |
-|---|---|---|
 | `cover` | R-SIZE-03 / ADR-0026 | `inset: 0` |
 
 Next candidates by cleanliness:
