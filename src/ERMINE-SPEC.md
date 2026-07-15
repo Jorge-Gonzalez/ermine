@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (51 axes)  ‹SHARED›
+## 2. The axis registry (52 axes)  ‹SHARED›
 
-layout=20 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=21 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -148,7 +148,7 @@ layout=20 · layering=4 · motion=2 · state=9 · skin=16. Every fact below is r
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
 
-### 2.1 LAYOUT (20 axes)
+### 2.1 LAYOUT (21 axes)
 
 #### structure
 
@@ -489,6 +489,20 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `center-<axis>` | `/^center-(x\|y)$/` | — | no |
+
+#### viewport-fill
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `fill-viewport`
+- default: none
+- controls: `min-block-size`
+- must never touch: `display` `gap` `flex` `position` `inline-size` `block-size` `height` `min-height`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<viewport-fill>` | `/^(fill-viewport)$/` | — | no |
 
 ### 2.2 LAYERING (4 axes)
 

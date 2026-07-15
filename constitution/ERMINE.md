@@ -454,6 +454,17 @@ flex, grid, width constraints, text alignment, or positioned centering.
 
 → rationale: RAT:R-SIZE-07 · history: ADR-0031 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-SIZE-08 — Viewport fill
+
+A full-height page shell may be at least a viewport tall while still growing with its content:
+`fill-viewport` sets a block-axis minimum of one viewport (`min-block-size: 100vh`). Its relatum
+is the viewport, distinct from container `fill` (100% of the parent) and self `hug`; it is a
+relational metric and reads no socket. It is a *minimum*, not a `fill` dial, so content taller
+than the viewport still scrolls rather than clipping. The dynamic-viewport variant (`dvh`) and an
+inline viewport extent are reserved pending evidence.
+
+→ rationale: RAT:R-SIZE-08 · history: ADR-0033 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

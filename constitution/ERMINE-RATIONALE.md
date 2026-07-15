@@ -279,6 +279,14 @@ Together they reproduce the evidence after logical expansion, while keeping each
 narrow. The words do not imply a width constraint; in Monky the centering effect is made useful by
 the separate `max-width-2xl` constraint.
 
+## RAT:R-SIZE-08
+Source: ADR-0033. The viewport relatum of the proportional plane, completing the fill trio
+(container `fill`, self `hug`, viewport `fill-viewport`). Reserved in R-SIZE-01's rationale and
+`docs/proportional-plane.md`, now admitted on the page-shell evidence (`min-height: 100vh`). Ruled
+as a block-axis MINIMUM, not an exact fill, because the full-height-page pattern must let content
+overflow and scroll; `fill-block` (block-size:100%) would clip. Emitted logical (`min-block-size`)
+per the plane's convention; `dvh` and an inline extent wait for their own evidence.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

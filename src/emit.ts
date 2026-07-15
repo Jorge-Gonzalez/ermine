@@ -321,6 +321,12 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word === "square" ? { "aspect-ratio": "1" } : null),
   },
 
+  // --- viewport-fill: at-least-a-viewport-tall page shell (R-SIZE-08). Viewport relatum. ---
+  "viewport-fill": {
+    effectKind: "css",
+    plain: (word) => (word === "fill-viewport" ? { "min-block-size": "100vh" } : null),
+  },
+
   // --- cover: all-edge attachment to the containing block (R-SIZE-03). ---
   cover: {
     effectKind: "css",
@@ -669,6 +675,7 @@ export const VOCABULARY: Record<string, string[]> = {
   ],
   fill: ["fill", "fill-inline", "fill-block", "hug-inline"],
   aspect: ["square"],
+  "viewport-fill": ["fill-viewport"],
   cover: ["cover"],
   "positioned-centering": ["center-x", "center-y"],
   push: ["push"],

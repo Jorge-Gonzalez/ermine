@@ -694,6 +694,11 @@
       "meaning": "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-centering"
     },
+    "fill-viewport": {
+      "axis": "viewport-fill",
+      "meaning": "<viewport-fill>",
+      "reference": "src/ERMINE-SPEC.md §2.1 — viewport-fill"
+    },
     "base": {
       "axis": "z-scale",
       "meaning": "tier-2 only; only meaningful within an isolation:isolate context. tier-2 member list is a [RULING] (values), structure frozen.",

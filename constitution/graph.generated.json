@@ -193,6 +193,12 @@
       "anchor": "ADR-0032"
     },
     {
+      "id": "ADR-0033",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0033-viewport-fill.md",
+      "anchor": "ADR-0033"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -761,6 +767,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-SIZE-07"
+    },
+    {
+      "id": "R-SIZE-08",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SIZE-08"
     },
     {
       "id": "R-SKIN-01",
@@ -1415,6 +1427,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SIZE-07"
+    },
+    {
+      "id": "RAT:R-SIZE-08",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SIZE-08"
     },
     {
       "id": "RAT:R-SKIN-01",
@@ -2323,6 +2341,11 @@
     {
       "from": "RAT:R-SIZE-07",
       "to": "R-SIZE-07",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SIZE-08",
+      "to": "R-SIZE-08",
       "type": "rationale-of"
     },
     {

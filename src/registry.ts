@@ -441,6 +441,21 @@ export const LAYOUT: AxisRecord[] = [
     mustNeverTouch: ["position", "inset", "right", "bottom", "margin", "inline-size", "block-size", "width", "height"],
     notes: "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings.",
   },
+  {
+    // viewport-fill: the full-height page shell — at least a viewport tall, growing with content
+    // (R-SIZE-08). Viewport relatum (vs container `fill`, self `hug`); a relational metric, no
+    // socket. Emits a block-axis MINIMUM so content taller than the viewport still scrolls — this
+    // is why it is not a `fill` dial (`fill-block` caps at 100%). A `dvh` dynamic variant is
+    // reserved pending evidence.
+    axis: "viewport-fill",
+    sibling: "layout", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["fill-viewport"],
+    tokens: [{ pattern: /^(fill-viewport)$/, shape: "<viewport-fill>" }],
+    default: null,
+    controls: ["min-block-size"],
+    mustNeverTouch: ["display", "gap", "flex", "position", "inline-size", "block-size", "height", "min-height"],
+  },
 ];
 
 // ============================================================================

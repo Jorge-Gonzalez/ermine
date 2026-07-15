@@ -1054,6 +1054,18 @@
       ]
     },
     {
+      "axis": "viewport-fill",
+      "reference": "src/ERMINE-SPEC.md §2.1 — viewport-fill",
+      "items": [
+        {
+          "label": "fill-viewport",
+          "insertText": "fill-viewport",
+          "kind": "word",
+          "meaning": "<viewport-fill>"
+        }
+      ]
+    },
+    {
       "axis": "z-scale",
       "reference": "src/ERMINE-SPEC.md §2.2 — z-scale",
       "items": [

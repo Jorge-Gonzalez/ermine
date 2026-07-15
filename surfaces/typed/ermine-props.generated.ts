@@ -47,6 +47,8 @@ export interface ErminePlainProps {
   cover?: "cover";
   /** axis `positioned-centering` */
   positionedCentering?: "center-x" | "center-y";
+  /** axis `viewport-fill` */
+  viewportFill?: "fill-viewport";
   /** axis `z-scale` */
   zScale?: "base" | "content" | "raised" | "dropdown" | "sticky" | "tooltip";
   /** axis `top-layer-mechanism` */
@@ -210,6 +212,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "aspect", axis: "aspect", kind: "word" },
   { prop: "cover", axis: "cover", kind: "word" },
   { prop: "positionedCentering", axis: "positioned-centering", kind: "word" },
+  { prop: "viewportFill", axis: "viewport-fill", kind: "word" },
   { prop: "zScale", axis: "z-scale", kind: "word" },
   { prop: "topLayerMechanism", axis: "top-layer-mechanism", kind: "word" },
   { prop: "positionMode", axis: "position-mode", kind: "word" },

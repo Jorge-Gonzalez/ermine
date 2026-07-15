@@ -80,6 +80,9 @@
     "top",
     "transform"
   ],
+  "viewport-fill": [
+    "min-block-size"
+  ],
   "z-scale": [
     "z-index"
   ],
