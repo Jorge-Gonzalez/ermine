@@ -2,7 +2,8 @@ Non-Ermine in current Monky — inventory + generalizability analysis.
 
 Two parts: (A) the invariance-test analysis pass over the residue declarations, and
 (B) the class-token inventory. Part A supersedes the earlier "mostly genuine identity"
-reading of the residue.
+reading of the residue. The current rule-shaped residue reading lives in
+reports/adoption/monky/RULE-RESIDUE-ANALYSIS.md.
 
 ========================================================================
 PART A — ANALYSIS PASS: how much of the "identity" residue is actually non-Ermine?

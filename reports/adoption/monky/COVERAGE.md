@@ -152,6 +152,9 @@ the engine-specific boundary.
 The alpha opacity pass then admitted bounded `alpha-*` values and migrated the search
 placeholder braces, popup hover softening, and editor style caret, leaving no
 latent-generalizable rows in the rule-action review.
+`RULE-RESIDUE-ANALYSIS.md` re-reads the 135 current project-owned declarations at rule
+granularity: they collapse to 66 authored CSS rules, mostly editor-content molecules,
+private pseudo drawing, control-state recipes, and a small local identity floor.
 The remaining Phase 3 grammar work is the proportional/relational plane
 (remaining measure/viewport extents, filed in `reports/GAP-U-measure-viewport.md`, and
 columns + intent-proportions) plus the smaller
