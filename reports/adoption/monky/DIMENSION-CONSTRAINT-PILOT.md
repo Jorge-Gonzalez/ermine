@@ -8,10 +8,10 @@ scales, proportional relationships, or measure/control-size roles.
 
 | metric | count |
 | --- | --- |
-| dimension/constraint declarations | 31 |
+| dimension/constraint declarations | 30 |
 | latent scale | 17 |
 | latent word | 7 |
-| latent facet | 4 |
+| latent facet | 3 |
 | recipe | 3 |
 | local identity | 0 |
 
@@ -25,8 +25,8 @@ scales, proportional relationships, or measure/control-size roles.
 | dimension constraint | 3 |
 | bounded dialog/container measure | 2 |
 | min-content escape | 2 |
-| flex negotiation | 2 |
 | scrollable result cap | 2 |
+| flex negotiation | 1 |
 | block-size measure | 1 |
 
 ## Candidate Vocabulary Pressure
@@ -64,7 +64,6 @@ scales, proportional relationships, or measure/control-size roles.
 | src/content/overlays/views/settings/settingsViewStyles.css:26 | height | 2rem | icon/control square | latent-word | 2 * spacing-lg | square/icon/control-size scale member |
 | src/options/options.css:5 | width | 3rem | icon/control square | latent-word | 2 * spacing-2xl | square/icon/control-size scale member |
 | src/options/options.css:6 | height | 3rem | icon/control square | latent-word | 2 * spacing-2xl | square/icon/control-size scale member |
-| src/options/options.css:7 | flex | 0 0 auto | flex negotiation | latent-facet |  | flex-negotiation facet or shorthand decomposition |
 | src/popup/popup.css:6 | width | 320px | inline measure/popover width | latent-scale | 8 * spacing-3xl | measure/popover size role |
 | src/popup/popup.css:51 | max-height | 256px | scrollable result cap | latent-scale | 16 * spacing-lg | max-block/scroll-cap scale |
 | src/styles/components/content-editor.css:10 | width | 1px | dimension constraint | latent-scale | off current named scale | size/measure scale role |

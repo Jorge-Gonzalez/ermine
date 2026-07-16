@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `b2946ce0be25213fccba25c00098b842775304a4` |
-| monky | `2967e8d20916ae997de14f98c9417f08d8fc9a04` |
+| monky | `f54460965310ad74c358c19b09df3936cdabd617` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 513 |
+| current declarations | 512 |
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 260 |
-| **residue — project-owned declarations** | **253** |
+| **residue — project-owned declarations** | **252** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -51,7 +51,7 @@ re-validated on every run.
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 12 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 56 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 55 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -66,7 +66,7 @@ re-validated on every run.
 | `src/popup/popup.css` | 17 |
 | `src/content/overlays/modal/modalStyles.css` | 13 |
 | `src/styles/entries/pages.css` | 4 |
-| `src/options/options.css` | 3 |
+| `src/options/options.css` | 2 |
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 1 |
 | `src/styles/theme/metrics.css` | 1 |
 

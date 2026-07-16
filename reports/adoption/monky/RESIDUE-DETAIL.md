@@ -7,13 +7,13 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | source | commit |
 |---|---|
 | Ermine | `b2946ce0be25` |
-| monky | `2967e8d20916` |
+| monky | `f54460965310` |
 
 ## Summary
 
-- Current declarations: 513
+- Current declarations: 512
 - Adopted/infrastructure declarations: 260
-- Project-owned residue declarations: 253
+- Project-owned residue declarations: 252
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -32,7 +32,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 12 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 56 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 55 | Project-exact dimensions, spacing, positioning, and geometry. |
 
 ## recipe-identity (29)
 
@@ -518,7 +518,7 @@ Rich-text defaults inside user-authored editor content.
 | 186 | `.content-editor-body a` | `text-decoration: underline` |
 | 190 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (56)
+## identity-geometry (55)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -583,12 +583,6 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 21 | `.settings-divider` | `margin: var(--spacing-sm) var(--spacing-xl)` |
 | 27 | `.settings-prefix-btn` | `padding: 0` |
 | 31 | `.settings-import-status` | `padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm)` |
-
-### src/options/options.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 7 | `.prefix-cell` | `flex: 0 0 auto` |
 
 ### src/popup/popup.css (8)
 

@@ -3,20 +3,20 @@
   "project": "monky",
   "source": {
     "ermineCommit": "b2946ce0be25213fccba25c00098b842775304a4",
-    "projectCommit": "2967e8d20916ae997de14f98c9417f08d8fc9a04"
+    "projectCommit": "f54460965310ad74c358c19b09df3936cdabd617"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 253,
+    "reviewedDeclarations": 252,
     "assimilableNow": 0,
-    "latentGeneralizable": 148,
+    "latentGeneralizable": 147,
     "likelyRecipe": 102,
     "likelyLocal": 3,
     "byRuleAction": {
       "already-admitted": 0,
-      "dimension-constraint": 31,
+      "dimension-constraint": 30,
       "attachment-edge-layer": 10,
       "spacing-rhythm": 41,
       "surface-line-elevation-cutout": 37,
@@ -29,7 +29,7 @@
     "byLatentOutcome": {
       "admitted": 0,
       "latent-word": 39,
-      "latent-facet": 82,
+      "latent-facet": 81,
       "latent-scale": 27,
       "recipe": 102,
       "local-identity": 3
@@ -57,7 +57,7 @@
       "elevation-followup": 3,
       "reset-absence": 12,
       "user-content": 43,
-      "identity-geometry": 56,
+      "identity-geometry": 55,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -1767,20 +1767,6 @@
       "erminePressure": "admit a new Ermine word only if it survives the invariance test",
       "scaleMapping": "2 * spacing-2xl",
       "proposedForm": "square/icon/control-size scale member"
-    },
-    {
-      "id": "src/options/options.css::.prefix-cell::flex::1",
-      "file": "src/options/options.css",
-      "line": 7,
-      "selector": ".prefix-cell",
-      "property": "flex",
-      "value": "0 0 auto",
-      "currentCode": "identity-geometry",
-      "ruleAction": "dimension-constraint",
-      "latentOutcome": "latent-facet",
-      "function": "sets physical envelope, measure, control size, or constraint",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "flex-negotiation facet or shorthand decomposition"
     },
     {
       "id": "src/popup/popup.css::.popup-container::width::1",
@@ -3665,10 +3651,10 @@
   ],
   "dimensionPilot": {
     "summary": {
-      "declarations": 31,
+      "declarations": 30,
       "latentScale": 17,
       "latentWord": 7,
-      "latentFacet": 4,
+      "latentFacet": 3,
       "recipe": 3,
       "localIdentity": 0
     },
@@ -3956,21 +3942,6 @@
         "scaleMapping": "2 * spacing-2xl",
         "proposedForm": "square/icon/control-size scale member",
         "dimensionIntent": "icon/control square"
-      },
-      {
-        "id": "src/options/options.css::.prefix-cell::flex::1",
-        "file": "src/options/options.css",
-        "line": 7,
-        "selector": ".prefix-cell",
-        "property": "flex",
-        "value": "0 0 auto",
-        "currentCode": "identity-geometry",
-        "ruleAction": "dimension-constraint",
-        "latentOutcome": "latent-facet",
-        "function": "sets physical envelope, measure, control size, or constraint",
-        "erminePressure": "add a missing facet on an existing Ermine concept",
-        "proposedForm": "flex-negotiation facet or shorthand decomposition",
-        "dimensionIntent": "flex negotiation"
       },
       {
         "id": "src/popup/popup.css::.popup-container::width::1",

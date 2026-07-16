@@ -3,11 +3,11 @@
   "project": "monky",
   "source": {
     "ermineCommit": "b2946ce0be25213fccba25c00098b842775304a4",
-    "projectCommit": "2967e8d20916ae997de14f98c9417f08d8fc9a04"
+    "projectCommit": "f54460965310ad74c358c19b09df3936cdabd617"
   },
   "summary": {
-    "totalDeclarations": 513,
-    "residueDeclarations": 253,
+    "totalDeclarations": 512,
+    "residueDeclarations": 252,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 169,
@@ -32,7 +32,7 @@
       "elevation-followup": 3,
       "reset-absence": 12,
       "user-content": 43,
-      "identity-geometry": 56,
+      "identity-geometry": 55,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -1121,15 +1121,6 @@
       "property": "height",
       "value": "3rem",
       "code": "component-contract"
-    },
-    {
-      "id": "src/options/options.css::.prefix-cell::flex::1",
-      "file": "src/options/options.css",
-      "line": 7,
-      "selector": ".prefix-cell",
-      "property": "flex",
-      "value": "0 0 auto",
-      "code": "identity-geometry"
     },
     {
       "id": "src/popup/popup.css::.popup-container::width::1",

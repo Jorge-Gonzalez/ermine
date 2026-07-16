@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 253 |
+| reviewed residue declarations | 252 |
 | assimilable now | 0 |
-| latent generalizable | 148 |
+| latent generalizable | 147 |
 | likely recipe/molecule | 102 |
 | likely local identity | 3 |
 
@@ -18,7 +18,7 @@ generalization, recipe, and local-identity pressure.
 
 | rule action | declarations |
 | --- | --- |
-| dimension-constraint | 31 |
+| dimension-constraint | 30 |
 | attachment-edge-layer | 10 |
 | spacing-rhythm | 41 |
 | surface-line-elevation-cutout | 37 |
@@ -33,7 +33,7 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | latent-word | 39 |
-| latent-facet | 82 |
+| latent-facet | 81 |
 | latent-scale | 27 |
 | recipe | 102 |
 | local-identity | 3 |
@@ -55,7 +55,7 @@ generalization, recipe, and local-identity pressure.
 | elevation-followup | 3 |
 | reset-absence | 12 |
 | user-content | 43 |
-| identity-geometry | 56 |
+| identity-geometry | 55 |
 
 ## Highest-Pressure Families
 
@@ -76,7 +76,7 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | latent-word | 7 | admit a new Ermine word only if it survives the invariance test |
 | attachment-edge-layer | latent-word | 6 | admit relational attachment/layer word |
 | attachment-edge-layer | latent-facet | 4 | add a missing facet on an existing Ermine concept |
-| dimension-constraint | latent-facet | 4 | add a missing facet on an existing Ermine concept |
+| dimension-constraint | latent-facet | 3 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | recipe | 3 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 3 | promote as molecule/recipe only if reused |
 | typography-content | local-identity | 3 | keep local after invariance/scale tests |
