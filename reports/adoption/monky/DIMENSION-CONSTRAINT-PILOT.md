@@ -53,26 +53,26 @@ scales, proportional relationships, or measure/control-size roles.
 | src/content/overlays/modal/modalStyles.css:63 | height | 18px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:21 | min-width | 200px | inline measure/popover width | latent-scale | 5 * spacing-3xl | measure/popover size role |
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:22 | max-width | 360px | inline measure/popover width | latent-scale | 9 * spacing-3xl | measure/popover size role |
-| src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:48 | max-width | 8em | inline measure/popover width | latent-word | content-relative measure | measure/popover size role |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:11 | width | 280px | inline measure/popover width | latent-scale | 7 * spacing-3xl | measure/popover size role |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:24 | min-height | 0 | min-content escape | latent-facet |  | min-height-none escape, possibly layer/specificity fix |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:28 | flex | 1 | flex negotiation | recipe |  | prose/editor-content molecule |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:29 | min-height | 0 | min-content escape | recipe |  | prose/editor-content molecule |
-| src/content/overlays/views/search/searchViewStyles.css:14 | max-height | 400px | scrollable result cap | latent-scale | 10 * spacing-3xl | max-block/scroll-cap scale |
+| src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:46 | max-width | 8em | inline measure/popover width | latent-word | content-relative measure | measure/popover size role |
+| src/content/overlays/views/macroEditor/editorViewStyles.css:7 | width | 280px | inline measure/popover width | latent-scale | 7 * spacing-3xl | measure/popover size role |
+| src/content/overlays/views/macroEditor/editorViewStyles.css:20 | min-height | 0 | min-content escape | latent-facet |  | min-height-none escape, possibly layer/specificity fix |
+| src/content/overlays/views/macroEditor/editorViewStyles.css:24 | flex | 1 | flex negotiation | recipe |  | prose/editor-content molecule |
+| src/content/overlays/views/macroEditor/editorViewStyles.css:25 | min-height | 0 | min-content escape | recipe |  | prose/editor-content molecule |
+| src/content/overlays/views/search/searchViewStyles.css:9 | max-height | 400px | scrollable result cap | latent-scale | 10 * spacing-3xl | max-block/scroll-cap scale |
 | src/content/overlays/views/settings/settingsViewStyles.css:20 | height | 0 | block-size measure | latent-facet |  | constraint reset/escape facet |
 | src/content/overlays/views/settings/settingsViewStyles.css:24 | width | 2rem | icon/control square | latent-word | 2 * spacing-lg | square/icon/control-size scale member |
 | src/content/overlays/views/settings/settingsViewStyles.css:25 | height | 2rem | icon/control square | latent-word | 2 * spacing-lg | square/icon/control-size scale member |
 | src/options/options.css:5 | width | 3rem | icon/control square | latent-word | 2 * spacing-2xl | square/icon/control-size scale member |
 | src/options/options.css:6 | height | 3rem | icon/control square | latent-word | 2 * spacing-2xl | square/icon/control-size scale member |
 | src/popup/popup.css:6 | width | 320px | inline measure/popover width | latent-scale | 8 * spacing-3xl | measure/popover size role |
-| src/popup/popup.css:39 | max-height | 256px | scrollable result cap | latent-scale | 16 * spacing-lg | max-block/scroll-cap scale |
+| src/popup/popup.css:37 | max-height | 256px | scrollable result cap | latent-scale | 16 * spacing-lg | max-block/scroll-cap scale |
 | src/styles/components/content-editor.css:10 | width | 1px | dimension constraint | latent-scale | off current named scale | size/measure scale role |
 | src/styles/components/content-editor.css:11 | height | 16px | icon/control square | latent-scale | spacing-lg | square/icon/control-size scale member |
 | src/styles/components/content-editor.css:17 | width | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
 | src/styles/components/content-editor.css:18 | height | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
-| src/styles/components/content-editor.css:34 | width | auto | dimension constraint | latent-facet |  | constraint reset/escape facet |
-| src/styles/components/content-editor.css:35 | min-width | 36px | dimension constraint | latent-scale | off current named scale | size/measure scale role |
-| src/styles/components/content-editor.css:59 | width | 24px | icon/control square | latent-scale | spacing-2xl | square/icon/control-size scale member |
-| src/styles/components/content-editor.css:67 | height | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
-| src/styles/components/content-editor.css:73 | min-height | 150px | interaction/content floor | recipe | off current named scale | prose/editor-content molecule |
-| src/styles/skin/controls.css:18 | min-height | 150px | interaction/content floor | latent-scale | off current named scale | control-min-block or editor-min-block |
+| src/styles/components/content-editor.css:33 | width | auto | dimension constraint | latent-facet |  | constraint reset/escape facet |
+| src/styles/components/content-editor.css:34 | min-width | 36px | dimension constraint | latent-scale | off current named scale | size/measure scale role |
+| src/styles/components/content-editor.css:54 | width | 24px | icon/control square | latent-scale | spacing-2xl | square/icon/control-size scale member |
+| src/styles/components/content-editor.css:62 | height | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
+| src/styles/components/content-editor.css:68 | min-height | 150px | interaction/content floor | recipe | off current named scale | prose/editor-content molecule |
+| src/styles/skin/controls.css:14 | min-height | 150px | interaction/content floor | latent-scale | off current named scale | control-min-block or editor-min-block |

@@ -19,18 +19,18 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the per-edge spacing migration is Ermine
-5b639a7 / Monky 283cd49:
+were migrated). Current live ledger after the targeted tween migration is Ermine
+6a3694f / Monky db7a55d:
 
   current declarations:                 516
-  adopted/infrastructure declarations:  282
-  project-owned residue declarations:   234
+  adopted/infrastructure declarations:  296
+  project-owned residue declarations:   220
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 27, brand-identity 8, component-contract 37, state-mechanics 5,
+  recipe-identity 25, brand-identity 8, component-contract 37, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
-  motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 12,
+  motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 12,
   user-content 43, identity-geometry 41.
 
 Historical invariance sample:
@@ -85,12 +85,16 @@ most of this "identity" into grammar. The bucket names (identity-geometry, compo
 encode the metric trap: they read exact-looking CSS as bespoke, when order/proportion/edge/
 alignment are the most general things there are.
 
-The named-follow-up residue has narrowed: motion is now 13, opacity 4, scrollbar 9, and
-elevation 3 (= 29). `shake` moved into the effect-atom layer, and the universal
-`transition: all var(--transition-fast)` rows moved to the open `tween-quick` word. The
-remaining motion rows are property-targeted transitions, the local `.shake { transition: none
-!important }` suppression, and bespoke segmented-control/overlay timing. user-content
-(43 = the `prose` molecule) and recipe-identity (27 by the live ledger, R-SKIN-10) remain the
+The named-follow-up residue has narrowed: motion is now 1, opacity 4, scrollbar 9, and
+elevation 3 (= 17). `shake` moved into the effect-atom layer, the universal
+`transition: all var(--transition-fast)` rows moved to the open `tween-quick` word, and
+the repeated property-targeted transition rows moved to targeted tween envelopes
+(`tween-rule-quick`, `tween-ground-quick`, `tween-ink-quick`, `tween-ground-ink-quick`,
+`tween-opacity-ground-quick`, `tween-opacity-ground-ink-quick`,
+`tween-opacity-transform-quick`). The remaining motion row is the local `.shake {
+transition: none !important }` suppression; bespoke segmented-control pill timing is
+classified as pseudo/component recipe rather than `motion-followup`. user-content
+(43 = the `prose` molecule) and recipe-identity (25 by the live ledger, R-SKIN-10) remain the
 genuinely-licensed-local bundles. The first dimension endpoint pass admitted
 `max-width-none`, and the delete-confirm `max-width: none` row migrated to that word. The
 next dimension pass admitted `control-size-<spacing>` and migrated the 16px radio/checkbox
@@ -107,9 +111,10 @@ extension/top-layer and pseudo-negative layer values for later ruling; the live 
 work list remains zero. The block/inline spacing pass then moved the modal tab padding and
 settings divider margin shorthands to existing `padding-block`/`padding-inline` and
 `margin-block`/`margin-inline` words. The per-edge spacing pass admitted physical padding
-and margin edge facets, migrated the search cells/shortcuts plus popup/settings edge rows,
-and reduced the live residue to 234. Zero-reset, shorthand-asymmetry, and raw micro-padding
-rows remain as the next spacing questions.
+and margin edge facets, migrating the search cells/shortcuts plus popup/settings edge rows.
+The targeted tween pass then admitted repeated
+transition-property target sets and reduced the live residue to 220. Zero-reset,
+shorthand-asymmetry, and raw micro-padding rows remain as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -136,7 +141,9 @@ universal `.btn`, `.panel-button`, and `.selectable-group > *` transition declar
 The later control-size, input-fill, and prefix-cell rigid migrations removed the local
 radio/checkbox width/height rules, the `.input { width: 100%; }` rule, and the
 `.prefix-cell { flex: 0 0 auto; }` and `.macro-suggestions-footer { justify-content:
-flex-end; }` rules. The token names below otherwise persist.
+flex-end; }` rules. The targeted tween pass removed the local property-targeted
+transition declarations from inputs, search rows, popup buttons, content-editor controls,
+suggestion rows, and segmented options. The token names below otherwise persist.
 
 CSS-backed local class selectors by source file:
 
@@ -150,10 +157,10 @@ src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:
 bottom, macro-suggestions-arrow, macro-suggestions-command-item, macro-suggestions-container, macro-suggestions-footer, macro-suggestions-kbd, top
 
 src/content/overlays/views/macroEditor/editorViewStyles.css:
-command-suggestion-action, command-suggestion-command, command-suggestion-item, command-suggestions, content-editor, content-editor-body, editor-command, editor-command-error, editor-content, editor-popout, editor-toast, input-dropdown-open
+command-suggestions, content-editor, content-editor-body, editor-command, editor-command-error, editor-content, editor-toast, input-dropdown-open
 
 src/content/overlays/views/search/searchViewStyles.css:
-macro-search-input, macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-kbd, macro-search-results, macro-search-shortcut, modal-command-description, modal-command-item
+macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-kbd, macro-search-results, macro-search-shortcut, modal-command-description, modal-command-item
 
 src/content/overlays/views/settings/settingsViewStyles.css:
 is-sliding, seg-control, seg-option, seg-snap, settings-body, settings-divider, settings-import-status, settings-prefix-btn, settings-section-label
@@ -171,7 +178,7 @@ src/styles/entries/pages.css:
 page-title
 
 src/styles/skin/controls.css:
-btn, btn-link, btn-link-danger, btn-success, checkbox, editor-content, input, input-error, is-selected, min-selected-1, radio, radio-label, selectable-group, shake
+btn, btn-link, btn-link-danger, btn-success, checkbox, editor-content, input-error, is-selected, min-selected-1, radio, radio-label, selectable-group, shake
 
 Markup-only local class tokens (runtime class strings with no current local CSS rule here;
 Ermine grammar words filtered out):
@@ -338,23 +345,19 @@ Likely Ermine pressure:
 Function: define which properties animate, at what tempo, and when animation is suppressed.
 
 Representative declarations:
-  transition: border-color var(--transition-fast);
-  transition: background/background-color/color/opacity/transform var(--transition-fast);
-  transition: opacity 0.15s ease, transform 0.15s ease;
   transition: left 0.1s ease, width 0.1s ease;
-  transition: all 0.15s ease; transition: none !important.
+  transition: none !important.
 
 Reading:
-  - `tween-quick` handled universal transition rows, but property-targeted transitions
-    remain. This is not identity; it is an animation plane gap.
+  - `tween-quick` handled universal transition rows, and R-MOTION-09 targeted tween
+    envelopes handled the repeated border/ground/ink/opacity/transform target sets.
   - segmented-control pill movement is a bespoke mechanism because it animates CSS custom
     coordinate variables and snaps before sliding.
   - `transition:none !important` on `shake` is an effect-composition override: suppress
     local tweens so the generated shake effect can own the frame.
 
 Likely Ermine pressure:
-  property-targeted tween words; tween-none/suppress-tween for effect composition;
-  recipe-local segmented pill timing.
+  tween-none/suppress-tween for effect composition; recipe-local segmented pill timing.
 
 8. Reset, inheritance, and neutralization rules.
 Function: remove browser/component defaults or force inheritance so Ermine words can take
@@ -395,8 +398,8 @@ Likely Ermine pressure:
   kbd/keycap recipe; arrow/callout recipe; segmented-control recipe; placeholder recipe.
 
 Summary shape for the next assimilation pass:
-  - Most likely words: per-edge spacing, edge attachment, layer tiers, property-targeted
-    tweens, side-specific rule/radius resets, measured size scale.
+  - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
+    measured size scale.
   - Most likely molecules/recipes: prose/editor content, keycap, callout arrow, segmented
     control pill, modal/dialog measure, search highlight.
   - Most likely to stay local: one-off offsets, modal blend/shadow identity, raw micro
@@ -473,12 +476,12 @@ declaring it local. Possible outputs:
 4. Admit missing facets before inventing large concepts.
 
 Several rule families look like current Ermine concepts with one missing axis:
-  - per-edge spacing: padding-before/after/start/end, margin-before/after/start/end.
   - side-specific rules: rule-bottom, rule-right-none, rule-transparent.
   - side-specific radius: corner-bottom-md, corner-top-md, corner-bottom-none.
   - edge attachment: attach-below, attach-above, stretch-inline, edge-end-sm.
   - layer tiers: layer-modal, layer-popover, layer-local.
-  - property-targeted tweens: tween-border, tween-color, tween-opacity, tween-transform.
+  - targeted tweens: done for repeated Monky target sets; only suppression/stagger
+    questions remain.
   - state skin: selected/current/checked/disabled/focus-error facets.
 
 These should be evaluated before adding broad new planes.
@@ -499,13 +502,12 @@ Recipes should expose sockets for scale, skin, state, and motion where the patte
 
 Recommended queue:
   1. dimension/measure scale pilot.
-  2. per-edge spacing facets.
-  3. edge attachment and layer tiers.
-  4. side-specific rule/radius/reset facets.
-  5. property-targeted tween words.
-  6. selected/current/checked/disabled state skin.
-  7. prose/editor-content molecule.
-  8. keycap/callout/segmented recipes.
+  2. edge attachment and layer tiers.
+  3. side-specific rule/radius/reset facets.
+  4. tween suppression/stagger follow-up.
+  5. selected/current/checked/disabled state skin.
+  6. prose/editor-content molecule.
+  7. keycap/callout/segmented recipes.
 
 The order is chosen to reduce residue while strengthening Ermine's grammar, not merely to
 chase Monky selectors.

@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `5b639a79578499cb1e686fef912c5173bb1d061a` |
-| monky | `283cd4900f2c69e1dfd521f9ba2921244e33f27a` |
+| Ermine | `6a3694f7d1860458ea2187457811fd3e616cf8c2` |
+| monky | `db7a55d175c94c46f06a5d3fc30eb62051027307` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 234 |
+| project-owned residue | 220 |
 
 ## Product Identity
 
@@ -43,7 +43,7 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 
 | code | count | boundary |
 |---|---:|---|
-| `recipe-identity` | 27 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 25 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `identity-geometry` | 41 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 8 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
@@ -96,7 +96,7 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 |---|---:|---|
 | `parent-relational` | 8 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
 | `scrollbar-followup` | 9 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
-| `motion-followup` | 13 | reports/GAP-U-animation-plane.md |
+| `motion-followup` | 1 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 4 | named follow-up: opacity prominence treatment (no report filed yet) |
 | `aria-current` | 1 | R-STATE-12 follow-up: current-layer mechanics |
 | `elevation-followup` | 3 | R-SKIN-09 boundary clause |

@@ -20,7 +20,7 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
 - **Live style reachability:** Monky's build-backed style audit now reports **201 live
   static classes and 0 dead-candidate declarations** at `d58cac0`.
 - **Current assimilation:** the generated current ledger now reports **516 current
-  declarations**, **282 adopted/infrastructure declarations**, **234 project-owned
+  declarations**, **296 adopted/infrastructure declarations**, **220 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
@@ -87,8 +87,8 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `283cd49`: 516 declarations, 282
-adopted/infrastructure declarations, 234 project-owned residue declarations,
+The current generated ledger is at Monky `db7a55d`: 516 declarations, 296
+adopted/infrastructure declarations, 220 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
 ## 4. Theme coverage (the socket plane)
@@ -124,8 +124,8 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate held the list at zero before the first post-adoption dimension endpoint
-pass. The current ledger at Monky `283cd49` reports 516
-current declarations, 282 adopted/infrastructure declarations, 234 project-owned residue,
+pass. The current ledger at Monky `db7a55d` reports 516
+current declarations, 296 adopted/infrastructure declarations, 220 project-owned residue,
 `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
@@ -141,8 +141,9 @@ corrects it: much of the apparent gap is already a ruled word needing only migra
 (`padding`/`gap`, `z-scale`/`top-layer`, `position-fixed`, `truncate`, `pressable`,
 `elevated`), 96 rows are Monky-local molecules. Later passes admitted and migrated `clamp-3`, `fill`, `square`, `cover`, `push`,
 `hug-inline`, `center-x`, `center-y`, size `2xl`/`max-width-2xl`, `centered flush-block`,
-`grid-fit-sm`, the unlocked `min-width-sm` cleanup, `shake`, and the first open `tween-quick`
-duration pass for universal transitions.
+`grid-fit-sm`, the unlocked `min-width-sm` cleanup, `shake`, the first open `tween-quick`
+duration pass for universal transitions, and targeted tween envelopes for repeated
+border/ground/ink/opacity/transform transition targets.
 The remaining Phase 3 grammar work is the proportional/relational plane
 (remaining measure/viewport extents, filed in `reports/GAP-U-measure-viewport.md`, and
 columns + intent-proportions) plus the smaller
@@ -154,7 +155,7 @@ treatment/type follow-ups.
 |---|---|
 | `GAP-U-dataviz-palette` | a second, versatile colour plane for graphs/dashboards |
 | `GAP-U-density-2xl` | a 24px density step (between `loose` and `separated`) |
-| `GAP-U-animation-plane` | remaining animation-plane reframe (`motion → animation`, tween/choreography; state as membrane) and property-targeted tween follow-up; duration naming is resolved by R-MOTION-08 |
+| `GAP-U-animation-plane` | remaining animation-plane reframe (`motion → animation`, tween/choreography; state as membrane); duration naming is resolved by R-MOTION-08 and repeated targeted tween envelopes by R-MOTION-09 |
 | `GAP-U-interaction-affordance` | remaining affordance family members (`draggable`/`editable`/`expandable`) — the pressable half is ruled (R-SKIN-17) |
 Resolved by the post-closure conversion cycles: `GAP-U-overflow-hidden` (R-OVERFLOW-01
 amended: `hidden`), `GAP-U-truncation` (R-SKIN-12 `truncate`), `GAP-K6-skin-surface`
@@ -173,9 +174,10 @@ R-SKIN-16 `concealed`/`revealed`; guarded tinting and JS-state mechanics stay bo
 
 - ~~Ratify the elevation treatment~~ — **done** (Phase C): R-SKIN-09 `elevated`
   (`recessed` reserved; the working name `raised` collided with the z-scale tier).
-- **Property-targeted tween and stagger step names** — duration steps are now ruled
-  (`quick`/`settled`, R-MOTION-08), while targeted transition-property sets and stagger
-  magnitudes remain attached to `GAP-U-animation-plane`.
+- **Tween suppression and stagger step names** — duration steps are now ruled
+  (`quick`/`settled`, R-MOTION-08), and repeated targeted transition-property sets are
+  ruled (R-MOTION-09); suppression and stagger magnitudes remain attached to
+  `GAP-U-animation-plane`.
 - ~~U9~~ — **done** (Phase D): the current-ledger tooling is project-profiled, the
   boundary is generated, and `CASE-STUDY.md` publishes the worked example.
 
@@ -207,8 +209,8 @@ counts at that checkpoint; later `fill`, `square`, `cover`, `push`, `hug-inline`
 `center-y`, size `2xl`/`max-width-2xl`, `centered flush-block`, `grid-fit-sm`, and
 `min-width-sm`, `control-size-lg`, input `fill-inline`, prefix-cell `rigid`, footer
 `justify-end`, text wrapping (`text-nowrap`/`text-pre-wrap`), ordinary z-scale
-(`content`/`dropdown`), block/inline spacing, and per-edge spacing migrations moved the
-live ledger to 516 current declarations, 234 project-owned residue,
+(`content`/`dropdown`), block/inline spacing, per-edge spacing, and targeted tween
+migrations moved the live ledger to 516 current declarations, 220 project-owned residue,
 `assimilable = 0`,
 and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted
