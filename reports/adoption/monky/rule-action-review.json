@@ -2,7 +2,7 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "edb43916eea8116840a1e8fe6db441315ed628ea",
+    "ermineCommit": "0bd2cc007060708bcd680c16678af65c91af81b1",
     "projectCommit": "6b7ac3eb506d52c0cd2f631f2294bcce11051ee4"
   },
   "inputs": {
@@ -10,13 +10,13 @@
   },
   "summary": {
     "reviewedDeclarations": 259,
-    "assimilableNow": 0,
-    "latentGeneralizable": 154,
+    "assimilableNow": 1,
+    "latentGeneralizable": 153,
     "likelyRecipe": 102,
     "likelyLocal": 3,
     "byRuleAction": {
-      "already-admitted": 0,
-      "dimension-constraint": 37,
+      "already-admitted": 1,
+      "dimension-constraint": 36,
       "attachment-edge-layer": 10,
       "spacing-rhythm": 41,
       "surface-line-elevation-cutout": 37,
@@ -27,9 +27,9 @@
       "component-private-drawing": 44
     },
     "byLatentOutcome": {
-      "admitted": 0,
+      "admitted": 1,
       "latent-word": 40,
-      "latent-facet": 83,
+      "latent-facet": 82,
       "latent-scale": 31,
       "recipe": 102,
       "local-identity": 3
@@ -39,7 +39,7 @@
       "substrate": 0,
       "theme-metric": 0,
       "config-departure": 0,
-      "assimilable": 0,
+      "assimilable": 1,
       "recipe-identity": 34,
       "rule-mechanics": 0,
       "brand-identity": 8,
@@ -55,7 +55,7 @@
       "motion-followup": 13,
       "opacity-followup": 4,
       "elevation-followup": 3,
-      "reset-absence": 13,
+      "reset-absence": 12,
       "user-content": 43,
       "identity-geometry": 56,
       "skin-review": 0,
@@ -85,12 +85,11 @@
       "selector": ".macro-suggestions-command-item.delete-confirm-option",
       "property": "max-width",
       "value": "none",
-      "currentCode": "reset-absence",
-      "ruleAction": "dimension-constraint",
-      "latentOutcome": "latent-facet",
-      "function": "sets physical envelope, measure, control size, or constraint",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "constraint reset/escape facet"
+      "currentCode": "assimilable",
+      "ruleAction": "already-admitted",
+      "latentOutcome": "admitted",
+      "function": "matches an existing Ermine word",
+      "erminePressure": "migrate to existing words"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::background-color::1",
@@ -3754,10 +3753,10 @@
   ],
   "dimensionPilot": {
     "summary": {
-      "declarations": 37,
+      "declarations": 36,
       "latentScale": 21,
       "latentWord": 8,
-      "latentFacet": 5,
+      "latentFacet": 4,
       "recipe": 3,
       "localIdentity": 0
     },
@@ -3777,21 +3776,6 @@
         "scaleMapping": "6 * spacing-3xl",
         "proposedForm": "measure/popover size role",
         "dimensionIntent": "inline measure/popover width"
-      },
-      {
-        "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.css::.macro-suggestions-command-item.delete-confirm-option::max-width::1",
-        "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.css",
-        "line": 8,
-        "selector": ".macro-suggestions-command-item.delete-confirm-option",
-        "property": "max-width",
-        "value": "none",
-        "currentCode": "reset-absence",
-        "ruleAction": "dimension-constraint",
-        "latentOutcome": "latent-facet",
-        "function": "sets physical envelope, measure, control size, or constraint",
-        "erminePressure": "add a missing facet on an existing Ermine concept",
-        "proposedForm": "constraint reset/escape facet",
-        "dimensionIntent": "dimension constraint"
       },
       {
         "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::width::1",

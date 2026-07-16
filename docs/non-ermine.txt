@@ -19,18 +19,18 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the open-tween pass is Ermine edb4391 / Monky
-6b7ac3e:
+were migrated). Current live ledger after the first dimension endpoint pass is Ermine
+0bd2cc0 / Monky 6b7ac3e:
 
   current declarations:                 516
   adopted/infrastructure declarations:  257
   project-owned residue declarations:   259
-  assimilable now:                        0
+  assimilable now:                        1
 
 Current residue by reason code:
   recipe-identity 34, brand-identity 8, component-contract 39, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
-  motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 13,
+  motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 12,
   user-content 43, identity-geometry 56.
 
 Historical invariance sample:
@@ -89,7 +89,8 @@ elevation 3 (= 29). `shake` moved into the effect-atom layer, and the universal
 remaining motion rows are property-targeted transitions, the local `.shake { transition: none
 !important }` suppression, and bespoke segmented-control/overlay timing. user-content
 (43 = the `prose` molecule) and recipe-identity (34, R-SKIN-10) remain the
-genuinely-licensed-local bundles.
+genuinely-licensed-local bundles. The first dimension endpoint pass admitted
+`max-width-none`, making the delete-confirm `max-width: none` row assimilable.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)

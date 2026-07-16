@@ -566,8 +566,9 @@ ${table(["intent", "declarations"], [...byIntent.entries()].sort((a, b) => b[1] 
   formulas.
 - block caps/floors: test \`max-block-*\`, \`scroll-cap-*\`, \`control-min-block\`,
   and \`editor-min-block\` against result caps and minimum interaction/content floors.
-- escapes: keep \`min-height:0\`, \`max-width:none\`, and related values as facets or
-  layer/specificity repairs, not positive size words.
+- escapes: keep the remaining \`min-height:0\`, \`width:auto\`, \`height:0\`, and related
+  values as facets or layer/specificity repairs, not positive size words. The observed
+  \`max-width:none\` endpoint is now admitted as \`max-width-none\`.
 
 ## Declarations
 

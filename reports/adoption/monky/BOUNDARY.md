@@ -22,14 +22,14 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `edb43916eea8116840a1e8fe6db441315ed628ea` |
+| Ermine | `0bd2cc007060708bcd680c16678af65c91af81b1` |
 | monky | `6b7ac3eb506d52c0cd2f631f2294bcce11051ee4` |
 
 ## Closure Gate
 
 | measure | count |
 |---|---:|
-| assimilable declarations | 0 |
+| assimilable declarations | 1 |
 | review-coded declarations | 0 |
 | project-owned residue | 259 |
 
@@ -77,7 +77,7 @@ shadowed-words gate holds every paragraph true or silent about every property.
 | `component-contract` | 39 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
-| `reset-absence` | 13 | absence/reset mechanics, not a positive carrier |
+| `reset-absence` | 12 | absence/reset mechanics, not a positive carrier |
 
 ## User Content
 

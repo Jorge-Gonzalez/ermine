@@ -21,7 +21,7 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
   static classes and 0 dead-candidate declarations** at `d58cac0`.
 - **Current assimilation:** the generated current ledger now reports **516 current
   declarations**, **257 adopted/infrastructure declarations**, **259 project-owned
-  residue**, **0 assimilable declarations**, and **0 shadowed words**.
+  residue**, **1 assimilable declaration**, and **0 shadowed words**.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
 
@@ -123,9 +123,10 @@ Current migration status now lives in the **generated current ledger**
 reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes every current
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
-Phase D's gate holds the list at zero. The current gate at Monky `6b7ac3e` reports 516
+Phase D's gate held the list at zero before the first post-adoption dimension endpoint
+pass. The current ledger at Monky `6b7ac3e` reports 516
 current declarations, 257 adopted/infrastructure declarations, 259 project-owned residue,
-`assimilable = 0`, and no shadowed words;
+`assimilable = 1`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
 `RESIDUE-THREE-WAY.md` re-read the earlier 305-declaration residue snapshot through a lens

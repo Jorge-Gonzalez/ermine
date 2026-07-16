@@ -14,7 +14,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 - Current declarations: 516
 - Adopted/infrastructure declarations: 257
 - Project-owned residue declarations: 259
-- Assimilable declarations: 0
+- Assimilable declarations: 1
 - Shadowed words: 0
 
 | code | declarations | meaning |
@@ -30,7 +30,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `motion-followup` | 13 | Transition/animation timing evidence for the animation-plane follow-up. |
 | `opacity-followup` | 4 | Opacity prominence/treatment evidence. |
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
-| `reset-absence` | 13 | Absence/reset/transparent mechanics, not positive style carriers. |
+| `reset-absence` | 12 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
 | `identity-geometry` | 56 | Project-exact dimensions, spacing, positioning, and geometry. |
 
@@ -425,15 +425,9 @@ Identity shadows/rings outside the shared elevated treatment.
 |---:|---|---|
 | 36 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
 
-## reset-absence (13)
+## reset-absence (12)
 
 Absence/reset/transparent mechanics, not positive style carriers.
-
-### src/content/overlays/deleteConfirm/deleteConfirmStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 8 | `.macro-suggestions-command-item.delete-confirm-option` | `max-width: none` |
 
 ### src/content/overlays/modal/modalStyles.css (1)
 

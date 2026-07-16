@@ -8,10 +8,10 @@ scales, proportional relationships, or measure/control-size roles.
 
 | metric | count |
 | --- | --- |
-| dimension/constraint declarations | 37 |
+| dimension/constraint declarations | 36 |
 | latent scale | 21 |
 | latent word | 8 |
-| latent facet | 5 |
+| latent facet | 4 |
 | recipe | 3 |
 | local identity | 0 |
 
@@ -21,7 +21,7 @@ scales, proportional relationships, or measure/control-size roles.
 | --- | --- |
 | icon/control square | 14 |
 | inline measure/popover width | 6 |
-| dimension constraint | 5 |
+| dimension constraint | 4 |
 | interaction/content floor | 3 |
 | bounded dialog/container measure | 2 |
 | min-content escape | 2 |
@@ -38,15 +38,15 @@ scales, proportional relationships, or measure/control-size roles.
   formulas.
 - block caps/floors: test `max-block-*`, `scroll-cap-*`, `control-min-block`,
   and `editor-min-block` against result caps and minimum interaction/content floors.
-- escapes: keep `min-height:0`, `max-width:none`, and related values as facets or
-  layer/specificity repairs, not positive size words.
+- escapes: keep the remaining `min-height:0`, `width:auto`, `height:0`, and related
+  values as facets or layer/specificity repairs, not positive size words. The observed
+  `max-width:none` endpoint is now admitted as `max-width-none`.
 
 ## Declarations
 
 | source | property | value | intent | latent outcome | scale/proportion mapping | proposed form |
 | --- | --- | --- | --- | --- | --- | --- |
 | src/content/overlays/deleteConfirm/deleteConfirmStyles.css:2 | min-width | 240px | inline measure/popover width | latent-scale | 6 * spacing-3xl | measure/popover size role |
-| src/content/overlays/deleteConfirm/deleteConfirmStyles.css:8 | max-width | none | dimension constraint | latent-facet |  | constraint reset/escape facet |
 | src/content/overlays/modal/modalStyles.css:29 | width | min(600px, calc(100vw - 2rem)) | bounded dialog/container measure | latent-word | proportional/viewport relation | dialog-measure recipe with viewport bound |
 | src/content/overlays/modal/modalStyles.css:30 | height | min(560px, 85vh) | bounded dialog/container measure | latent-word | proportional/viewport relation | dialog-measure recipe with viewport bound |
 | src/content/overlays/modal/modalStyles.css:35 | min-height | 48px | interaction/content floor | latent-scale | 2 * spacing-2xl | control-min-block or editor-min-block |

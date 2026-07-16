@@ -10,7 +10,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `edb43916eea8116840a1e8fe6db441315ed628ea` |
+| Ermine | `0bd2cc007060708bcd680c16678af65c91af81b1` |
 | monky | `6b7ac3eb506d52c0cd2f631f2294bcce11051ee4` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
@@ -27,7 +27,7 @@ re-validated on every run.
 | current declarations | 516 |
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 257 |
 | **residue — project-owned declarations** | **259** |
-| assimilable now (work list below) | 0 |
+| assimilable now (work list below) | 1 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
 ## Residue by reason code
@@ -38,6 +38,7 @@ re-validated on every run.
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 37 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
+| `assimilable` | 1 | an existing Ermine word expresses this now — next assimilation pass |
 | `recipe-identity` | 34 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 8 | project brand typography and type treatment |
 | `component-contract` | 39 | component-owned mechanics, exact geometry, or product contract |
@@ -49,7 +50,7 @@ re-validated on every run.
 | `motion-followup` | 13 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 4 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
-| `reset-absence` | 13 | absence/reset mechanics, not a positive carrier |
+| `reset-absence` | 12 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
 | `identity-geometry` | 56 | project-exact geometry on a grammar-family property |
 
@@ -70,7 +71,13 @@ re-validated on every run.
 | `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 2 |
 | `src/styles/theme/metrics.css` | 1 |
 
-No assimilable declarations remain — the residue is declared boundary and follow-up questions.
+## Assimilable work list
+
+Declarations an existing Ermine word can express today.
+
+| file | selector | property | word(s) |
+|---|---|---|---|
+| `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | `.macro-suggestions-command-item.delete-confirm-option` | `max-width` | `max-width-none` |
 
 No shadowed words — every paragraph is true or silent about every property (R-IMPL-02).
 

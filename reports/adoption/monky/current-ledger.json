@@ -2,19 +2,19 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "edb43916eea8116840a1e8fe6db441315ed628ea",
+    "ermineCommit": "0bd2cc007060708bcd680c16678af65c91af81b1",
     "projectCommit": "6b7ac3eb506d52c0cd2f631f2294bcce11051ee4"
   },
   "summary": {
     "totalDeclarations": 516,
     "residueDeclarations": 259,
-    "assimilable": 0,
+    "assimilable": 1,
     "byCode": {
       "ermine-emitted": 166,
       "substrate": 53,
       "theme-metric": 37,
       "config-departure": 1,
-      "assimilable": 0,
+      "assimilable": 1,
       "recipe-identity": 34,
       "rule-mechanics": 0,
       "brand-identity": 8,
@@ -30,7 +30,7 @@
       "motion-followup": 13,
       "opacity-followup": 4,
       "elevation-followup": 3,
-      "reset-absence": 13,
+      "reset-absence": 12,
       "user-content": 43,
       "identity-geometry": 56,
       "skin-review": 0,
@@ -54,7 +54,10 @@
       "selector": ".macro-suggestions-command-item.delete-confirm-option",
       "property": "max-width",
       "value": "none",
-      "code": "reset-absence"
+      "code": "assimilable",
+      "words": [
+        "max-width-none"
+      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::background-color::1",
