@@ -936,6 +936,10 @@ Tokens:
 - default: none
 - controls: `border-width` `border-style` `border-top-width` `border-top-style` `border-bottom-width` `border-bottom-style` `border-left-width` `border-left-style` `border-right-width` `border-right-style`
 - must never touch: `display` `gap` `flex` `position` `background` `color` `border-color` `border-radius` `box-shadow`
+- sub-dials: `top` `right` `bottom` `left`
+- dial resolver: declared in `registry.ts`
+- whole-axis pattern matcher: declared in `registry.ts`
+- notes: `ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression.
 
 Tokens:
 

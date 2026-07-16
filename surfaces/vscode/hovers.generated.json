@@ -2051,27 +2051,27 @@
     },
     "ruled": {
       "axis": "rule-presence",
-      "meaning": "ruled[-<side>]",
+      "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression.",
       "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
     },
     "ruled-top": {
       "axis": "rule-presence",
-      "meaning": "ruled[-<side>]",
+      "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression.",
       "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
     },
     "ruled-bottom": {
       "axis": "rule-presence",
-      "meaning": "ruled[-<side>]",
+      "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression.",
       "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
     },
     "ruled-left": {
       "axis": "rule-presence",
-      "meaning": "ruled[-<side>]",
+      "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression.",
       "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
     },
     "ruled-right": {
       "axis": "rule-presence",
-      "meaning": "ruled[-<side>]",
+      "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression.",
       "reference": "src/ERMINE-SPEC.md §2.5 — rule-presence"
     },
     "font-xs": {

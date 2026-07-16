@@ -192,6 +192,14 @@ test("a per-side ruled word emits only that side's width and style (R-SKIN-11)",
   assert.doesNotMatch(css, /border-top|border-left|border-right/, "other sides stay untouched");
 });
 
+test("rule-presence side dials compose without suppressing another edge (R-SKIN-11)", () => {
+  const css = toCss("ruled-left ruled-right ruled-bottom");
+  assert.match(css, /\.ruled-left \{[^}]*border-left-width: var\(--rule-weight, 1px\);[^}]*border-left-style: solid;/s);
+  assert.match(css, /\.ruled-right \{[^}]*border-right-width: var\(--rule-weight, 1px\);[^}]*border-right-style: solid;/s);
+  assert.match(css, /\.ruled-bottom \{[^}]*border-bottom-width: var\(--rule-weight, 1px\);[^}]*border-bottom-style: solid;/s);
+  assert.doesNotMatch(css, /border-top-width|border-top-style/, "top edge stays untouched");
+});
+
 test("font-mono reads its typeface socket with the platform generic as default (R-SKIN-07)", () => {
   const css = toCss("font-mono");
   assert.match(css, /\.font-mono \{[^}]*font-family: var\(--font-mono, monospace\);/s);

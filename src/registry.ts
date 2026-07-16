@@ -823,6 +823,12 @@ export const SKIN: AxisRecord[] = [
     vocabulary: "closed", regime: "free",
     valueSpace: ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
     tokens: [{ pattern: /^ruled(?:-(top|bottom|left|right))?$/, shape: "ruled[-<side>]" }],
+    subDials: ["top", "right", "bottom", "left"],
+    dialOf: (word: string) => {
+      const side = word.match(/^ruled-(top|right|bottom|left)$/);
+      return side ? side[1] : null;
+    },
+    aliasMatch: (word: string) => word === "ruled",
     default: null,
     controls: [
       "border-width", "border-style",
@@ -830,6 +836,7 @@ export const SKIN: AxisRecord[] = [
       "border-left-width", "border-left-style", "border-right-width", "border-right-style",
     ],
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "box-shadow"],
+    notes: "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression.",
   },
   {
     // font-size: typographic scale (R-SKIN-07 size facet), a disjoint-property facet

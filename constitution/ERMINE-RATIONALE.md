@@ -598,7 +598,10 @@ exists. Weight is a socket with an Ermine default, not a scale: the evidence sho
 step (1px everywhere; the one 2px is a selection-indicator underline, which is identity, not a
 rule line), and R-SCALE discipline does not invent steps without measured need. With both the
 shadow (R-SKIN-09) and line halves ruled, the sampled skin-surface gap axis is fully resolved
-and retires. Source: ADR-0012.
+and retires. ADR-0048 amends the composition law for side forms only: per-side rule presence is
+a set of physical edge dials, so disjoint edges compose (`ruled-left ruled-right ruled-bottom`)
+while the whole-box `ruled` alias conflicts with every side dial. This replaces local
+suppression patterns without admitting negative line words. Source: ADR-0012, ADR-0048.
 
 ## RAT:R-SKIN-12
 Five selectors across four surfaces carry the identical trio — `overflow: hidden;

@@ -283,6 +283,12 @@
       "anchor": "ADR-0047"
     },
     {
+      "id": "ADR-0048",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0048-rule-presence-edge-dials.md",
+      "anchor": "ADR-0048"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

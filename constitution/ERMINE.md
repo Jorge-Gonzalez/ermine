@@ -896,13 +896,14 @@ A rule line's presence is a skin word, separate from its colour: `ruled` (all ed
 per-side forms (`ruled-top`, `ruled-bottom`, `ruled-left`, `ruled-right`) own
 `border-width`/`border-style`, emitting a solid line at the theme's line weight
 (`--rule-weight` socket, default `1px`), while the `rule` carrier (R-SKIN-03) keeps owning the
-colour. This makes normative the split the assimilation pilots practiced by hand — colour to the
+colour. Per-side forms are edge dials: disjoint physical edges compose, while `ruled` remains the
+whole-box alias and conflicts with every side dial. This makes normative the split the assimilation pilots practiced by hand — colour to the
 carrier, mechanics local — and resolves the border half of the skin-surface question (the shadow
 half fell to R-SKIN-09). Absence sentinels (`transparent`, `none`), overlap suppression,
 selection-indicator underlines, and pseudo-element line drawing are not line presence and stay
 project-owned.
 
-→ rationale: RAT:R-SKIN-11 · history: ADR-0012 · code: src/registry.ts#SKIN, src/emit.ts#emit
+→ rationale: RAT:R-SKIN-11 · history: ADR-0012, ADR-0048 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SKIN-12 — Truncation treatment
 

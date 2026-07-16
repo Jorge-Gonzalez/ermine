@@ -2837,31 +2837,31 @@
           "label": "ruled",
           "insertText": "ruled",
           "kind": "word",
-          "meaning": "ruled[-<side>]"
+          "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression."
         },
         {
           "label": "ruled-top",
           "insertText": "ruled-top",
           "kind": "word",
-          "meaning": "ruled[-<side>]"
+          "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression."
         },
         {
           "label": "ruled-bottom",
           "insertText": "ruled-bottom",
           "kind": "word",
-          "meaning": "ruled[-<side>]"
+          "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression."
         },
         {
           "label": "ruled-left",
           "insertText": "ruled-left",
           "kind": "word",
-          "meaning": "ruled[-<side>]"
+          "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression."
         },
         {
           "label": "ruled-right",
           "insertText": "ruled-right",
           "kind": "word",
-          "meaning": "ruled[-<side>]"
+          "meaning": "`ruled` is the whole-box line presence alias and conflicts with side facets. `ruled-top`, `ruled-right`, `ruled-bottom`, and `ruled-left` are edge dials that compose when disjoint, letting an element truthfully draw any subset of physical rule edges without local suppression."
         }
       ]
     },
