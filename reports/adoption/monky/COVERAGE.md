@@ -19,8 +19,8 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
   enforces colour-literal drift with Stylelint.
 - **Live style reachability:** Monky's build-backed style audit now reports **201 live
   static classes and 0 dead-candidate declarations** at `d58cac0`.
-- **Current assimilation:** the generated current ledger now reports **515 current
-  declarations**, **253 adopted/infrastructure declarations**, **262 project-owned
+- **Current assimilation:** the generated current ledger now reports **516 current
+  declarations**, **257 adopted/infrastructure declarations**, **259 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
@@ -123,8 +123,9 @@ Current migration status now lives in the **generated current ledger**
 reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes every current
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
-Phase D's gate holds the list at zero. The current gate at Monky `5ff992b` reports 516
-current declarations, 272 project-owned residue, `assimilable = 0`, and no shadowed words;
+Phase D's gate holds the list at zero. The current gate at Monky `6b7ac3e` reports 516
+current declarations, 257 adopted/infrastructure declarations, 259 project-owned residue,
+`assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
 `RESIDUE-THREE-WAY.md` re-read the earlier 305-declaration residue snapshot through a lens
@@ -137,10 +138,10 @@ generated from `current-ledger.json`, and the corrected invariance layer is
 `ABSORPTION-PLAN.md` then triages that re-reading against `src/registry.ts` (Phase 0) and
 corrects it: much of the apparent gap is already a ruled word needing only migration
 (`padding`/`gap`, `z-scale`/`top-layer`, `position-fixed`, `truncate`, `pressable`,
-`elevated`), 96 rows are Monky-local molecules, and 17 wait on the filed animation-plane
-duration naming. Later passes admitted and migrated `clamp-3`, `fill`, `square`, `cover`, `push`,
+`elevated`), 96 rows are Monky-local molecules. Later passes admitted and migrated `clamp-3`, `fill`, `square`, `cover`, `push`,
 `hug-inline`, `center-x`, `center-y`, size `2xl`/`max-width-2xl`, `centered flush-block`,
-`grid-fit-sm`, and the unlocked `min-width-sm` cleanup.
+`grid-fit-sm`, the unlocked `min-width-sm` cleanup, `shake`, and the first open `tween-quick`
+duration pass for universal transitions.
 The remaining Phase 3 grammar work is the proportional/relational plane
 (remaining measure/viewport extents, filed in `reports/GAP-U-measure-viewport.md`, and
 columns + intent-proportions) plus the smaller
@@ -152,7 +153,7 @@ treatment/type follow-ups.
 |---|---|
 | `GAP-U-dataviz-palette` | a second, versatile colour plane for graphs/dashboards |
 | `GAP-U-density-2xl` | a 24px density step (between `loose` and `separated`) |
-| `GAP-U-animation-plane` | `motion → animation` reframe (tween/choreography; state as membrane) — holds 9 ledger `gap` records and the duration-step naming (Phase C defer) |
+| `GAP-U-animation-plane` | remaining animation-plane reframe (`motion → animation`, tween/choreography; state as membrane) and property-targeted tween follow-up; duration naming is resolved by R-MOTION-08 |
 | `GAP-U-interaction-affordance` | remaining affordance family members (`draggable`/`editable`/`expandable`) — the pressable half is ruled (R-SKIN-17) |
 Resolved by the post-closure conversion cycles: `GAP-U-overflow-hidden` (R-OVERFLOW-01
 amended: `hidden`), `GAP-U-truncation` (R-SKIN-12 `truncate`), `GAP-K6-skin-surface`
@@ -171,9 +172,9 @@ R-SKIN-16 `concealed`/`revealed`; guarded tinting and JS-state mechanics stay bo
 
 - ~~Ratify the elevation treatment~~ — **done** (Phase C): R-SKIN-09 `elevated`
   (`recessed` reserved; the working name `raised` collided with the z-scale tier).
-- **Duration/stagger step names** — scale-bound per R-SCALE-03 but unnamed (R-SCALE-02);
-  Phase C deferred the christening to the animation-plane reframe (evidence attached to
-  `GAP-U-animation-plane`).
+- **Property-targeted tween and stagger step names** — duration steps are now ruled
+  (`quick`/`settled`, R-MOTION-08), while targeted transition-property sets and stagger
+  magnitudes remain attached to `GAP-U-animation-plane`.
 - ~~U9~~ — **done** (Phase D): the current-ledger tooling is project-profiled, the
   boundary is generated, and `CASE-STUDY.md` publishes the worked example.
 

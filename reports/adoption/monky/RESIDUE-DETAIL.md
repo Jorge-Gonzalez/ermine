@@ -6,35 +6,35 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `c33cce42c033` |
-| monky | `5ff992bd9ad2` |
+| Ermine | `edb43916eea8` |
+| monky | `6b7ac3eb506d` |
 
 ## Summary
 
-- Current declarations: 515
-- Adopted/infrastructure declarations: 253
-- Project-owned residue declarations: 262
+- Current declarations: 516
+- Adopted/infrastructure declarations: 257
+- Project-owned residue declarations: 259
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 37 | Project recipe bundles licensed by R-SKIN-10. |
-| `brand-identity` | 11 | Monky-specific brand typography and type treatment. |
+| `recipe-identity` | 34 | Project recipe bundles licensed by R-SKIN-10. |
+| `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
 | `component-contract` | 39 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
 | `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
 | `parent-relational` | 8 | Guarded parent/descendant state mechanics outside ruled relational words. |
 | `pseudo-mechanics` | 23 | Pseudo-element geometry, generated content, and fills. |
 | `scrollbar-followup` | 9 | Engine-drawn scrollbar identity outside R-SKIN-15 standard properties. |
-| `motion-followup` | 23 | Transition/animation timing evidence for the animation-plane follow-up. |
+| `motion-followup` | 13 | Transition/animation timing evidence for the animation-plane follow-up. |
 | `opacity-followup` | 4 | Opacity prominence/treatment evidence. |
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 13 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 59 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 56 | Project-exact dimensions, spacing, positioning, and geometry. |
 
-## recipe-identity (37)
+## recipe-identity (34)
 
 Project recipe bundles licensed by R-SKIN-10.
 
@@ -49,14 +49,14 @@ Project recipe bundles licensed by R-SKIN-10.
 
 | line | selector | declaration |
 |---:|---|---|
-| 65 | `.seg-option` | `white-space: nowrap` |
-| 66 | `.seg-option` | `z-index: 1` |
-| 67 | `.seg-option` | `transition: color var(--transition-fast)` |
-| 73 | `.seg-option svg` | `vertical-align: middle` |
-| 78 | `.seg-option:last-child` | `border-right: none` |
-| 82 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
+| 61 | `.seg-option` | `white-space: nowrap` |
+| 62 | `.seg-option` | `z-index: 1` |
+| 63 | `.seg-option` | `transition: color var(--transition-fast)` |
+| 69 | `.seg-option svg` | `vertical-align: middle` |
+| 74 | `.seg-option:last-child` | `border-right: none` |
+| 78 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
 
-### src/styles/skin/controls.css (29)
+### src/styles/skin/controls.css (26)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -69,28 +69,25 @@ Project recipe bundles licensed by R-SKIN-10.
 | 19 | `.radio-label` | `user-select: none` |
 | 23 | `.checkbox` | `width: 16px` |
 | 24 | `.checkbox` | `height: 16px` |
-| 35 | `.btn` | `transition: all var(--transition-fast)` |
-| 39 | `.btn-success:hover` | `background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))` |
-| 43 | `.btn-link` | `text-decoration: none` |
-| 47 | `.btn-link:hover` | `text-decoration: underline` |
-| 51 | `.btn-link-danger` | `text-decoration: none` |
-| 55 | `.btn-link-danger:hover` | `text-decoration: underline` |
-| 59 | `.btn:disabled` | `cursor: not-allowed` |
-| 60 | `.btn:disabled` | `opacity: 0.6` |
-| 64 | `.btn:disabled:hover` | `background-color: var(--tone-dim)` |
-| 65 | `.btn:disabled:hover` | `opacity: 0.6` |
-| 73 | `.panel-button` | `transition: all var(--transition-fast)` |
-| 100 | `.selectable-group > *` | `cursor: pointer` |
-| 101 | `.selectable-group > *` | `transition: all var(--transition-fast)` |
-| 102 | `.selectable-group > *` | `user-select: none` |
-| 106 | `.selectable-group > *:active` | `transform: scale(0.98)` |
-| 110 | `.selectable-group > .is-selected` | `background-color: var(--accent)` |
-| 111 | `.selectable-group > .is-selected` | `color: var(--ink-alt)` |
-| 112 | `.selectable-group > .is-selected` | `border-color: var(--accent)` |
-| 116 | `.selectable-group > .is-selected:hover` | `background-color: var(--accent)` |
-| 117 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
+| 35 | `.btn-success:hover` | `background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))` |
+| 39 | `.btn-link` | `text-decoration: none` |
+| 43 | `.btn-link:hover` | `text-decoration: underline` |
+| 47 | `.btn-link-danger` | `text-decoration: none` |
+| 51 | `.btn-link-danger:hover` | `text-decoration: underline` |
+| 55 | `.btn:disabled` | `cursor: not-allowed` |
+| 56 | `.btn:disabled` | `opacity: 0.6` |
+| 60 | `.btn:disabled:hover` | `background-color: var(--tone-dim)` |
+| 61 | `.btn:disabled:hover` | `opacity: 0.6` |
+| 93 | `.selectable-group > *` | `cursor: pointer` |
+| 94 | `.selectable-group > *` | `user-select: none` |
+| 98 | `.selectable-group > *:active` | `transform: scale(0.98)` |
+| 102 | `.selectable-group > .is-selected` | `background-color: var(--accent)` |
+| 103 | `.selectable-group > .is-selected` | `color: var(--ink-alt)` |
+| 104 | `.selectable-group > .is-selected` | `border-color: var(--accent)` |
+| 108 | `.selectable-group > .is-selected:hover` | `background-color: var(--accent)` |
+| 109 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
 
-## brand-identity (11)
+## brand-identity (8)
 
 Monky-specific brand typography and type treatment.
 
@@ -107,20 +104,12 @@ Monky-specific brand typography and type treatment.
 | 3 | `:host, #macro-suggestions` | `font-family: 'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif` |
 | 4 | `:host, #macro-suggestions` | `line-height: 1.5` |
 
-### src/content/overlays/views/search/searchViewStyles.css (3)
+### src/content/overlays/views/search/searchViewStyles.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
-| 73 | `.macro-search-count` | `font-variant-numeric: tabular-nums` |
-| 79 | `.modal-command-item .modal-command-description` | `font-style: italic` |
-| 100 | `.macro-search-kbd` | `line-height: 1` |
-
-### src/content/overlays/views/settings/settingsViewStyles.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 17 | `.settings-section-label` | `letter-spacing: 0.07em` |
-| 18 | `.settings-section-label` | `text-transform: uppercase` |
+| 72 | `.modal-command-item .modal-command-description` | `font-style: italic` |
+| 93 | `.macro-search-kbd` | `line-height: 1` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -132,8 +121,8 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 19 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
-| 23 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
+| 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
+| 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
 ## component-contract (39)
 
@@ -180,16 +169,16 @@ Component-owned mechanics, exact geometry, or product contract.
 | line | selector | declaration |
 |---:|---|---|
 | 15 | `.macro-search-results` | `align-content: start` |
-| 58 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
-| 103 | `.macro-search-kbd` | `border-radius: 4px` |
+| 54 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
+| 96 | `.macro-search-kbd` | `border-radius: 4px` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (3)
 
 | line | selector | declaration |
 |---:|---|---|
-| 24 | `.settings-divider` | `height: 0` |
-| 29 | `.settings-prefix-btn` | `width: 2rem` |
-| 30 | `.settings-prefix-btn` | `height: 2rem` |
+| 20 | `.settings-divider` | `height: 0` |
+| 25 | `.settings-prefix-btn` | `width: 2rem` |
+| 26 | `.settings-prefix-btn` | `height: 2rem` |
 
 ### src/options/options.css (2)
 
@@ -235,7 +224,7 @@ Native/JS state mechanics outside backed Ermine conditions.
 
 | line | selector | declaration |
 |---:|---|---|
-| 121 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
+| 113 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 
 ## aria-current (1)
 
@@ -255,17 +244,17 @@ Guarded parent/descendant state mechanics outside ruled relational words.
 
 | line | selector | declaration |
 |---:|---|---|
-| 37 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `white-space: normal` |
-| 38 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `overflow: visible` |
-| 39 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `text-overflow: clip` |
-| 44 | `.macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-text` | `background-color: var(--tone-dim)` |
-| 49 | `.macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-text` | `background-color: var(--tone)` |
+| 33 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `white-space: normal` |
+| 34 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `overflow: visible` |
+| 35 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `text-overflow: clip` |
+| 40 | `.macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-text` | `background-color: var(--tone-dim)` |
+| 45 | `.macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-text` | `background-color: var(--tone)` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 88 | `.seg-control.is-sliding .seg-option[aria-checked="true"]` | `background: transparent` |
+| 84 | `.seg-control.is-sliding .seg-option[aria-checked="true"]` | `background: transparent` |
 
 ### src/popup/popup.css (1)
 
@@ -287,31 +276,31 @@ Pseudo-element geometry, generated content, and fills.
 
 | line | selector | declaration |
 |---:|---|---|
-| 108 | `.macro-search-kbd::after` | `content: ''` |
-| 109 | `.macro-search-kbd::after` | `position: absolute` |
-| 110 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
-| 111 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
-| 112 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
-| 113 | `.macro-search-kbd::after` | `border-radius: 2px` |
-| 114 | `.macro-search-kbd::after` | `pointer-events: none` |
-| 115 | `.macro-search-kbd::after` | `z-index: -1` |
+| 101 | `.macro-search-kbd::after` | `content: ''` |
+| 102 | `.macro-search-kbd::after` | `position: absolute` |
+| 103 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
+| 104 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
+| 105 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
+| 106 | `.macro-search-kbd::after` | `border-radius: 2px` |
+| 107 | `.macro-search-kbd::after` | `pointer-events: none` |
+| 108 | `.macro-search-kbd::after` | `z-index: -1` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (12)
 
 | line | selector | declaration |
 |---:|---|---|
-| 45 | `.seg-control::before` | `content: ''` |
-| 46 | `.seg-control::before` | `position: absolute` |
-| 47 | `.seg-control::before` | `top: 0` |
-| 48 | `.seg-control::before` | `bottom: 0` |
-| 49 | `.seg-control::before` | `left: var(--pill-left, 0)` |
-| 50 | `.seg-control::before` | `width: var(--pill-width, 0)` |
-| 51 | `.seg-control::before` | `background: var(--accent)` |
-| 52 | `.seg-control::before` | `opacity: 0` |
-| 53 | `.seg-control::before` | `transition: left 0.1s ease, width 0.1s ease` |
-| 54 | `.seg-control::before` | `pointer-events: none` |
-| 57 | `.seg-control.is-sliding::before` | `opacity: 1` |
-| 60 | `.seg-control.seg-snap::before` | `transition: none` |
+| 41 | `.seg-control::before` | `content: ''` |
+| 42 | `.seg-control::before` | `position: absolute` |
+| 43 | `.seg-control::before` | `top: 0` |
+| 44 | `.seg-control::before` | `bottom: 0` |
+| 45 | `.seg-control::before` | `left: var(--pill-left, 0)` |
+| 46 | `.seg-control::before` | `width: var(--pill-width, 0)` |
+| 47 | `.seg-control::before` | `background: var(--accent)` |
+| 48 | `.seg-control::before` | `opacity: 0` |
+| 49 | `.seg-control::before` | `transition: left 0.1s ease, width 0.1s ease` |
+| 50 | `.seg-control::before` | `pointer-events: none` |
+| 53 | `.seg-control.is-sliding::before` | `opacity: 1` |
+| 56 | `.seg-control.seg-snap::before` | `transition: none` |
 
 ### src/styles/components/content-editor.css (3)
 
@@ -329,22 +318,22 @@ Engine-drawn scrollbar identity outside R-SKIN-15 standard properties.
 
 | line | selector | declaration |
 |---:|---|---|
-| 77 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
-| 78 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
-| 82 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
-| 83 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
-| 87 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
-| 88 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
-| 89 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
-| 93 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
+| 70 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
+| 71 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
+| 75 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
+| 76 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
+| 80 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
+| 81 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
+| 82 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
+| 86 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
 
 ### src/styles/theme/metrics.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 61 | `:root, :host` | `scrollbar-color: var(--tone) var(--tone-dim)` |
+| 63 | `:root, :host` | `scrollbar-color: var(--tone) var(--tone-dim)` |
 
-## motion-followup (23)
+## motion-followup (13)
 
 Transition/animation timing evidence for the animation-plane follow-up.
 
@@ -368,8 +357,8 @@ Transition/animation timing evidence for the animation-plane follow-up.
 | line | selector | declaration |
 |---:|---|---|
 | 9 | `.macro-search-input` | `transition: border-color var(--transition-fast)` |
-| 25 | `.macro-search-item-command, .macro-search-item-text` | `transition: background-color var(--transition-fast)` |
-| 59 | `.macro-search-item-edit` | `transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)` |
+| 21 | `.macro-search-item-command, .macro-search-item-text` | `transition: background-color var(--transition-fast)` |
+| 55 | `.macro-search-item-edit` | `transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)` |
 
 ### src/popup/popup.css (2)
 
@@ -385,26 +374,11 @@ Transition/animation timing evidence for the animation-plane follow-up.
 | 20 | `.ce-toolbar-btn` | `transition: background var(--transition-fast), color var(--transition-fast)` |
 | 51 | `.ce-style-option` | `transition: background var(--transition-fast)` |
 
-### src/styles/skin/controls.css (3)
+### src/styles/skin/controls.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 132 | `.shake` | `animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both` |
-| 133 | `.shake` | `transition: none !important` |
-| 137 | `.flash` | `animation: flash 0.3s ease` |
-
-### src/styles/theme/metrics.css (8)
-
-| line | selector | declaration |
-|---:|---|---|
-| 68 | `@keyframes shake > 10%, 90%` | `transform: translate3d(-1px, 0, 0)` |
-| 69 | `@keyframes shake > 20%, 80%` | `transform: translate3d(2px, 0, 0)` |
-| 70 | `@keyframes shake > 30%, 50%, 70%` | `transform: translate3d(-4px, 0, 0)` |
-| 71 | `@keyframes shake > 40%, 60%` | `transform: translate3d(4px, 0, 0)` |
-| 75 | `@keyframes pulse > 0%, 100%` | `transform: scale(1)` |
-| 76 | `@keyframes pulse > 50%` | `transform: scale(1.05)` |
-| 80 | `@keyframes flash > 0%, 100%` | `opacity: 1` |
-| 81 | `@keyframes flash > 50%` | `opacity: 0.4` |
+| 124 | `.shake` | `transition: none !important` |
 
 ## opacity-followup (4)
 
@@ -414,7 +388,7 @@ Opacity prominence/treatment evidence.
 
 | line | selector | declaration |
 |---:|---|---|
-| 69 | `.macro-search-item-text mark span` | `opacity: 0.35` |
+| 65 | `.macro-search-item-text mark span` | `opacity: 0.35` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -426,8 +400,8 @@ Opacity prominence/treatment evidence.
 
 | line | selector | declaration |
 |---:|---|---|
-| 122 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
-| 126 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
+| 114 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
+| 118 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
 ## elevation-followup (3)
 
@@ -484,9 +458,9 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 63 | `.macro-search-item-text mark` | `background: transparent` |
-| 64 | `.macro-search-item-text mark` | `color: inherit` |
-| 65 | `.macro-search-item-text mark` | `font-style: normal` |
+| 59 | `.macro-search-item-text mark` | `background: transparent` |
+| 60 | `.macro-search-item-text mark` | `color: inherit` |
+| 61 | `.macro-search-item-text mark` | `font-style: normal` |
 
 ### src/popup/popup.css (4)
 
@@ -555,7 +529,7 @@ Rich-text defaults inside user-authored editor content.
 | 186 | `.content-editor-body a` | `text-decoration: underline` |
 | 190 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (59)
+## identity-geometry (56)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -597,31 +571,29 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 48 | `.command-suggestions` | `top: 100%` |
 | 51 | `.command-suggestions` | `z-index: 10` |
 
-### src/content/overlays/views/search/searchViewStyles.css (10)
+### src/content/overlays/views/search/searchViewStyles.css (9)
 
 | line | selector | declaration |
 |---:|---|---|
 | 14 | `.macro-search-results` | `max-height: 400px` |
-| 20 | `.macro-search-item` | `grid-template-columns: subgrid` |
-| 29 | `.macro-search-item-command` | `padding-right: var(--spacing-xs)` |
-| 33 | `.macro-search-item-text` | `padding-left: var(--spacing-xs)` |
-| 54 | `.macro-search-item-confirm` | `padding-left: var(--spacing-xs)` |
-| 95 | `.macro-search-shortcut` | `margin-right: var(--spacing-xl)` |
-| 101 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
-| 102 | `.macro-search-kbd` | `min-width: 26px` |
-| 104 | `.macro-search-kbd` | `z-index: 0` |
-| 119 | `.macro-search-kbd:first-child` | `margin-left: 0` |
+| 25 | `.macro-search-item-command` | `padding-right: var(--spacing-xs)` |
+| 29 | `.macro-search-item-text` | `padding-left: var(--spacing-xs)` |
+| 50 | `.macro-search-item-confirm` | `padding-left: var(--spacing-xs)` |
+| 88 | `.macro-search-shortcut` | `margin-right: var(--spacing-xl)` |
+| 94 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
+| 95 | `.macro-search-kbd` | `min-width: 26px` |
+| 97 | `.macro-search-kbd` | `z-index: 0` |
+| 112 | `.macro-search-kbd:first-child` | `margin-left: 0` |
 
-### src/content/overlays/views/settings/settingsViewStyles.css (6)
+### src/content/overlays/views/settings/settingsViewStyles.css (5)
 
 | line | selector | declaration |
 |---:|---|---|
 | 9 | `.settings-body` | `padding: var(--spacing-2xl) 0 var(--spacing-xl)` |
-| 13 | `.settings-group` | `grid-template-columns: 1fr 3fr` |
-| 19 | `.settings-section-label` | `padding: var(--spacing-md) var(--spacing-sm) 0 0` |
-| 25 | `.settings-divider` | `margin: var(--spacing-sm) var(--spacing-xl)` |
-| 31 | `.settings-prefix-btn` | `padding: 0` |
-| 35 | `.settings-import-status` | `padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm)` |
+| 15 | `.settings-section-label` | `padding: var(--spacing-md) var(--spacing-sm) 0 0` |
+| 21 | `.settings-divider` | `margin: var(--spacing-sm) var(--spacing-xl)` |
+| 27 | `.settings-prefix-btn` | `padding: 0` |
+| 31 | `.settings-import-status` | `padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm)` |
 
 ### src/options/options.css (1)
 
@@ -659,13 +631,12 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 69 | `.ce-link-input` | `padding: 0 var(--spacing-sm)` |
 | 74 | `.content-editor-body` | `min-height: 150px` |
 
-### src/styles/entries/pages.css (3)
+### src/styles/entries/pages.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
-| 12 | `.page-container` | `min-height: 100vh` |
-| 24 | `body` | `margin: 0` |
-| 25 | `body` | `padding: 0` |
+| 17 | `body` | `margin: 0` |
+| 18 | `body` | `padding: 0` |
 
 ### src/styles/skin/controls.css (1)
 
