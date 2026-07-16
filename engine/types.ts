@@ -92,6 +92,20 @@ export interface ParentInertness {
   msg: (word: string) => string;
 }
 
+// Declared parent-context requirement: words of THIS axis are only meaningful
+// when the parent carries one of the required words on the required axis. Skipped
+// when parent context is absent, so isolated linting remains usable.
+export interface ParentRequirement {
+  parentAxis: string;
+  parentWords: readonly string[];
+  // Authored raw words and/or resolved member names. This lets parametric members
+  // such as `span-3` match via member `span`.
+  words: readonly string[];
+  level: "warn" | "error";
+  rule: string;
+  msg: (word: string, parentWords: readonly string[]) => string;
+}
+
 export interface AxisRecord {
   axis: string; // unique id; state groups use `state.<group>`
   sibling: string; // the client's plane taxonomy (layout/state/… for Ermine)
@@ -143,6 +157,7 @@ export interface AxisRecord {
   // declared cross-axis data the predicates consume (see the types above)
   compositionHazards?: CompositionHazard[];
   parentInertness?: ParentInertness;
+  parentRequirements?: ParentRequirement[];
 
   // environmental scope-prefix axis only
   scopePrefix?: boolean;

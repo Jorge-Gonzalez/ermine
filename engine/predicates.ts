@@ -17,6 +17,7 @@ export interface Predicates {
   p8b: (parsed: Parsed[], ctx: LintContext) => Issue[];
   p10: (parsed: Parsed[]) => Issue[];
   p11: (parsed: Parsed[], ctx: LintContext) => Issue[];
+  p12: (parsed: Parsed[], ctx: LintContext) => Issue[];
   pBacked: (parsed: Parsed[]) => Issue[];
   pParentBacked: (parsed: Parsed[], ctx: LintContext) => Issue[];
 }
@@ -244,6 +245,36 @@ export function makePredicates(
     return out;
   };
 
+  // --- P12: declared parent-context requirements ---
+  // Words whose meaning depends on a parent grammar context. Skipped when the
+  // parent is unknown, like P11/P8b, so standalone authoring remains exploratory.
+  const requirementBearers = records.filter((ax) => ax.parentRequirements?.length);
+  const p12 = (parsed: Parsed[], ctx: LintContext): Issue[] => {
+    if (ctx.parentClasses === undefined || requirementBearers.length === 0) return [];
+    const parent = ctx.parentClasses.trim().split(/\s+/).filter(Boolean).map(parseWord);
+    const out: Issue[] = [];
+    for (const ax of requirementBearers) {
+      for (const requirement of ax.parentRequirements!) {
+        const hasParent = parent.some((p) =>
+          p.axis === requirement.parentAxis &&
+          requirement.parentWords.includes(p.raw),
+        );
+        if (hasParent) continue;
+        out.push(...parsed
+          .filter((p) => p.axis === ax.axis && (
+            requirement.words.includes(p.raw) ||
+            (p.member !== null && requirement.words.includes(p.member))
+          ))
+          .map((p) => ({
+            level: requirement.level,
+            rule: requirement.rule,
+            msg: requirement.msg(p.raw, requirement.parentWords),
+          })));
+      }
+    }
+    return out;
+  };
+
   // --- R-STATE-11: a word under a BACKED scope requires its capability word present ---
   const pBacked = (parsed: Parsed[]): Issue[] => {
     if (backedScopes.size === 0) return [];
@@ -289,5 +320,5 @@ export function makePredicates(
     return out;
   };
 
-  return { p1, p2, p3, p4, p6, p8, p8b, p10, p11, pBacked, pParentBacked };
+  return { p1, p2, p3, p4, p6, p8, p8b, p10, p11, p12, pBacked, pParentBacked };
 }

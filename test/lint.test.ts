@@ -39,6 +39,14 @@ const cases: Case[] = [
   { s: "grid-fit-sm span-2", expect: "ok", why: "grid-fit is a grid structure variant over a size token" },
   { s: "grid grid-fit-sm", expect: "fail", why: "two structure members" },
   { s: "grid-fit-huge", expect: "fail", why: "P3: shape recognized (grid-fit-), value not a sanctioned size step" },
+  // parent-context requirements — skipped when parent is unknown, enforced when supplied
+  { s: "span-3", ctx: { parentClasses: "vertical" }, expect: "fail", why: "grid placement needs a grid parent when parent context is known" },
+  { s: "span-3", ctx: { parentClasses: "grid-fit-sm" }, expect: "ok", why: "grid-fit is a grid parent" },
+  { s: "subgrid", ctx: { parentClasses: "vertical" }, expect: "fail", why: "subgrid needs a grid parent when parent context is known" },
+  { s: "subgrid", ctx: { parentClasses: "grid-fit-sm" }, expect: "ok", why: "subgrid under grid-fit parent" },
+  { s: "quarter", expect: "ok", why: "no parent context supplied → requirement skipped" },
+  { s: "quarter", ctx: { parentClasses: "grid-fit-sm" }, expect: "fail", why: "intent proportions require columns-12 specifically" },
+  { s: "quarter", ctx: { parentClasses: "columns-12" }, expect: "ok", why: "intent proportion under columns-12" },
   // state
   { s: "selected", expect: "fail", why: "P8 no backing" },
   { s: "selected", backing: ["aria-pressed"], expect: "ok", why: "P8 Law-6b disjunction" },

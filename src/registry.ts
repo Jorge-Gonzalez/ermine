@@ -92,6 +92,10 @@ const spacingToken = (prefix: string): Token => ({
   valueDomain: "spacing-step",
 });
 
+const GRID_PARENT_WORDS = ["grid", "columns-12", "subgrid", ...SCALES.size.map((size) => `grid-fit-${size}`)] as const;
+const INTENT_PROPORTION_WORDS = ["half", "third", "quarter", "two-thirds", "three-quarters", "sixth"] as const;
+const GRID_PLACEMENT_WORDS = ["span", "row-span", "span-all", ...INTENT_PROPORTION_WORDS] as const;
+
 // ============================================================================
 // 4.1 LAYOUT
 // ============================================================================
@@ -117,6 +121,14 @@ export const LAYOUT: AxisRecord[] = [
     default: "flow", // unmarked inner display; `flow` reserved for default, never a member
     controls: ["display.inner", "flex-direction", "grid-template-columns", "grid-auto-flow"],
     mustNeverTouch: ["gap", "padding", "margin", "align-self", "flex", "flex-wrap", "background", "border", "display.outer"],
+    parentRequirements: [{
+      parentAxis: "structure",
+      parentWords: GRID_PARENT_WORDS,
+      words: ["subgrid"],
+      level: "error",
+      rule: "parent-grid-context",
+      msg: (word, parents) => `'${word}' requires a grid parent carrying one of {${parents.join(", ")}}.`,
+    }],
     notes: "`grid-fit-<size>` is a grid structure variant: first track fit-content(var(--size-<size>)), second track 1fr. It replaces, not composes with, plain `grid` because both choose the inner display/grid-template shape.",
   },
   {
@@ -217,6 +229,24 @@ export const LAYOUT: AxisRecord[] = [
     default: "auto-place",
     controls: ["grid-column", "grid-row"],
     mustNeverTouch: ["align-self", "flex", "gap"],
+    parentRequirements: [
+      {
+        parentAxis: "structure",
+        parentWords: GRID_PARENT_WORDS,
+        words: GRID_PLACEMENT_WORDS,
+        level: "error",
+        rule: "parent-grid-context",
+        msg: (word, parents) => `'${word}' requires a grid parent carrying one of {${parents.join(", ")}}.`,
+      },
+      {
+        parentAxis: "structure",
+        parentWords: ["columns-12"],
+        words: INTENT_PROPORTION_WORDS,
+        level: "error",
+        rule: "parent-columns-12-context",
+        msg: (word) => `'${word}' is an intent proportion over the ruled columns-12 grid; the parent must carry 'columns-12'.`,
+      },
+    ],
     notes: "closed-with-parametric-member: membership {span, row-span, span-all} plus the intent-proportions (half/third/quarter/two-thirds/three-quarters/sixth). span/row-span carry integers; span-all is contextual. The intent-proportions are the readable form of a column span over the ruled `columns-12` grid (R-M5-02): `third` = span 4, `quarter` = span 3, etc. — the number lands on an integer track only because 12 is the chosen grain. They emit `grid-column: span N` and are meaningful only under `columns-12`.",
   },
   {
