@@ -123,6 +123,11 @@ test("type roles: tabular figures and the overline eyebrow (R-SKIN-18/19)", () =
   assert.deepEqual(declOf("overline"), [["text-transform", "uppercase"], ["letter-spacing", "var(--overline-tracking, 0.07em)"]]);
 });
 
+test("rule edge colour facets emit physical edge color longhands (R-SKIN-11)", () => {
+  assert.deepEqual(declOf("rule-bottom-accent"), [["border-bottom-color", "var(--accent)"]]);
+  assert.deepEqual(declOf("rule-bottom-transparent"), [["border-bottom-color", "transparent"]]);
+});
+
 test("tween: open state-change envelope uses duration sockets and composes with easing (R-MOTION-08)", () => {
   assert.deepEqual(declOf("tween-quick"), [
     ["transition-property", "all"],

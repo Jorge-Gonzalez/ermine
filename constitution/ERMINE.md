@@ -897,15 +897,17 @@ interaction affordance stays open: what makes an element button-*like* is a capa
 A rule line's presence is a skin word, separate from its colour: `ruled` (all edges) and the
 per-side forms (`ruled-top`, `ruled-bottom`, `ruled-left`, `ruled-right`) own
 `border-width`/`border-style`, emitting a solid line at the theme's line weight
-(`--rule-weight` socket, default `1px`), while the `rule` carrier (R-SKIN-03) keeps owning the
-colour. Per-side forms are edge dials: disjoint physical edges compose, while `ruled` remains the
-whole-box alias and conflicts with every side dial. This makes normative the split the assimilation pilots practiced by hand — colour to the
-carrier, mechanics local — and resolves the border half of the skin-surface question (the shadow
-half fell to R-SKIN-09). Absence sentinels (`transparent`, `none`), overlap suppression,
-selection-indicator underlines, and pseudo-element line drawing are not line presence and stay
-project-owned.
+(`--rule-weight` socket, default `1px`). The `rule` carrier (R-SKIN-03) owns colour:
+whole-box words (`rule`, `rule-accent`, etc.) own `border-color`, while physical edge colour
+facets (`rule-top`, `rule-right`, `rule-bottom`, `rule-left`, with the same hue suffixes) own
+one `border-*-color` longhand. Whole-box presence/colour aliases conflict with their edge
+facets; disjoint edge facets compose. The only absence endpoint admitted here is edge-local
+`rule-<edge>-transparent`, for reserved-line sentinels whose presence is positive and whose
+visible colour is supplied by a state, for example
+`ruled-bottom rule-bottom-transparent current:rule-bottom-accent`. No whole-box
+`rule-transparent`, no negative presence word, and no pseudo-element line drawing is admitted.
 
-→ rationale: RAT:R-SKIN-11 · history: ADR-0012, ADR-0048 · code: src/registry.ts#SKIN, src/emit.ts#emit
+→ rationale: RAT:R-SKIN-11 · history: ADR-0012, ADR-0048, ADR-0050 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SKIN-12 — Truncation treatment
 

@@ -206,6 +206,12 @@ test("rule-presence side dials compose without suppressing another edge (R-SKIN-
   assert.doesNotMatch(css, /border-top-width|border-top-style/, "top edge stays untouched");
 });
 
+test("rule colour edge dials compose with rule presence and state scopes (R-SKIN-11)", () => {
+  const css = toCss("ruled-bottom rule-bottom-transparent current:rule-bottom-accent");
+  assert.match(css, /\.rule-bottom-transparent \{[^}]*border-bottom-color: transparent;/s);
+  assert.match(css, /\.current\\:rule-bottom-accent\[aria-current\]:not\(\[aria-current="false"\]\) \{[^}]*border-bottom-color: var\(--accent\);/s);
+});
+
 test("font-mono reads its typeface socket with the platform generic as default (R-SKIN-07)", () => {
   const css = toCss("font-mono");
   assert.match(css, /\.font-mono \{[^}]*font-family: var\(--font-mono, monospace\);/s);

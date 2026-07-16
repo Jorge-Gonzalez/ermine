@@ -442,6 +442,12 @@ distributed container state exists to entail, and inventing one to satisfy the R
 puts ceremony ahead of truth. Surfaced by the aria-current rows held back across three
 assimilation pilots. Source: ADR-0009.
 
+Amended (ADR-0050): the remaining bottom-rule colour is now expressible as an edge rule-colour
+facet under the same `current:` condition. The tab underline keeps positive line presence
+(`ruled-bottom`), reserves the edge with `rule-bottom-transparent`, and reveals the current
+state with `current:rule-bottom-accent`; no selection conflation or component-layer override is
+needed.
+
 ## RAT:R-MOTION-01
 Source: pre-split `constitution/ERMINE.md` lines 1458–1468.
 

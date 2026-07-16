@@ -70,11 +70,19 @@ const spacingEdgeDial = (wordPrefix: "padding" | "margin") => (word: string): Re
 // riding the carrier reads the un-prefixed role socket (R-SKIN-05). The token has
 // already validated the word, so the role branch is the safe default.
 const CARRIER_STEPS: Record<string, readonly string[]> = SKIN_PLANE.colors.carriers;
+const carrierValue = (carrier: string, suffix: string): string => {
+  if (suffix === "transparent") return "transparent";
+  const socket = CARRIER_STEPS[carrier]?.includes(suffix) ? `${carrier}-${suffix}` : suffix;
+  return `var(--${socket})`;
+};
 const carrierEmission = (carrier: string, property: string) => (word: string): Record<string, string> => {
   if (word === carrier) return { [property]: `var(--${carrier})` };
+  if (carrier === "rule") {
+    const edge = word.match(/^rule-(top|right|bottom|left)(?:-(.+))?$/);
+    if (edge) return { [`border-${edge[1]}-color`]: edge[2] ? carrierValue(carrier, edge[2]) : `var(--${carrier})` };
+  }
   const suffix = word.slice(carrier.length + 1);
-  const socket = CARRIER_STEPS[carrier]?.includes(suffix) ? `${carrier}-${suffix}` : suffix;
-  return { [property]: `var(--${socket})` };
+  return { [property]: carrierValue(carrier, suffix) };
 };
 
 // The full closed word list a carrier emits — its steps plus every role and
@@ -839,7 +847,14 @@ export const VOCABULARY: Record<string, string[]> = {
   "stacking-context": ["isolate"],
   "skin-ground": carrierWords("ground"),
   "skin-ink": carrierWords("ink"),
-  "skin-rule": carrierWords("rule"),
+  "skin-rule": [
+    ...carrierWords("rule"),
+    ...["top", "right", "bottom", "left"].flatMap((edge) => [
+      `rule-${edge}`,
+      ...carrierWords("rule").filter((word) => word !== "rule").map((word) => `rule-${edge}-${word.slice("rule-".length)}`),
+      `rule-${edge}-transparent`,
+    ]),
+  ],
   corner: [
     ...SKIN_PLANE.scales.radius.map((s) => `corner-${s}`),
     ...SKIN_PLANE.scales.radius.flatMap((s) => [`corner-top-${s}`, `corner-bottom-${s}`]),

@@ -728,6 +728,12 @@ const carrierToken = (carrier: Carrier): Token => ({
   pattern: new RegExp(`^${carrier}(-(${carrierSuffixes(carrier).join("|")}))?$`),
   shape: `${carrier}[-<role|step>[-<intensity>]]`,
 });
+const carrierWordPattern = (carrier: Carrier): RegExp =>
+  new RegExp(`^${carrier}(-(${carrierSuffixes(carrier).join("|")}))?$`);
+const ruleEdgeToken = (): Token => ({
+  pattern: new RegExp(`^rule-(top|right|bottom|left)(-(${[...carrierSuffixes("rule"), "transparent"].join("|")}))?$`),
+  shape: "rule-<edge>[-<role|step|transparent>]",
+});
 
 // R-SKIN-06/07 scale-bound families, single-sourced into the SKIN_PLANE scale
 // contract below and the axis tokens. R-SKIN-07: all typography lives under `font-*`,
@@ -772,16 +778,31 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "border-color", "border-radius", "font-size"],
   },
   {
-    // skin-rule: the border carrier (R-SKIN-03). Owns `border-color`; carries the
-    // same steps + role hues as the other carriers (`rule-fail` = a fail-coloured edge).
+    // skin-rule: the border carrier (R-SKIN-03). Whole-box words own `border-color`;
+    // edge facets own one physical `border-*-color` longhand.
     axis: "skin-rule",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["rule", ...carrierSuffixes("rule").map((s) => `rule-${s}`)],
-    tokens: [carrierToken("rule")],
+    valueSpace: [
+      "rule",
+      ...carrierSuffixes("rule").map((s) => `rule-${s}`),
+      ...["top", "right", "bottom", "left"].flatMap((edge) => [
+        `rule-${edge}`,
+        ...carrierSuffixes("rule").map((s) => `rule-${edge}-${s}`),
+        `rule-${edge}-transparent`,
+      ]),
+    ],
+    tokens: [carrierToken("rule"), ruleEdgeToken()],
+    subDials: ["top", "right", "bottom", "left"],
+    dialOf: (word: string) => {
+      const side = word.match(/^rule-(top|right|bottom|left)(?:-|$)/);
+      return side ? side[1] : null;
+    },
+    aliasMatch: (word: string) => carrierWordPattern("rule").test(word),
     default: null,
-    controls: ["border-color"],
+    controls: ["border-color", "border-top-color", "border-right-color", "border-bottom-color", "border-left-color"],
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-radius", "font-size"],
+    notes: "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
   },
   {
     // corner: border-radius magnitude on an ordered radius scale (R-SKIN-06). Side facets

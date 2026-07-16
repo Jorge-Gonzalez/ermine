@@ -898,16 +898,21 @@ Tokens:
 #### skin-rule
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `rule` `rule-soft` `rule-accent` `rule-accent-soft` `rule-accent-faint` `rule-pass` `rule-pass-faint` `rule-warn` `rule-warn-faint` `rule-fail` `rule-fail-faint` `rule-note` `rule-note-faint`
+- value space: `rule` `rule-soft` `rule-accent` `rule-accent-soft` `rule-accent-faint` `rule-pass` `rule-pass-faint` `rule-warn` `rule-warn-faint` `rule-fail` `rule-fail-faint` `rule-note` `rule-note-faint` `rule-top` `rule-top-soft` `rule-top-accent` `rule-top-accent-soft` `rule-top-accent-faint` `rule-top-pass` `rule-top-pass-faint` `rule-top-warn` `rule-top-warn-faint` `rule-top-fail` `rule-top-fail-faint` `rule-top-note` `rule-top-note-faint` `rule-top-transparent` `rule-right` `rule-right-soft` `rule-right-accent` `rule-right-accent-soft` `rule-right-accent-faint` `rule-right-pass` `rule-right-pass-faint` `rule-right-warn` `rule-right-warn-faint` `rule-right-fail` `rule-right-fail-faint` `rule-right-note` `rule-right-note-faint` `rule-right-transparent` `rule-bottom` `rule-bottom-soft` `rule-bottom-accent` `rule-bottom-accent-soft` `rule-bottom-accent-faint` `rule-bottom-pass` `rule-bottom-pass-faint` `rule-bottom-warn` `rule-bottom-warn-faint` `rule-bottom-fail` `rule-bottom-fail-faint` `rule-bottom-note` `rule-bottom-note-faint` `rule-bottom-transparent` `rule-left` `rule-left-soft` `rule-left-accent` `rule-left-accent-soft` `rule-left-accent-faint` `rule-left-pass` `rule-left-pass-faint` `rule-left-warn` `rule-left-warn-faint` `rule-left-fail` `rule-left-fail-faint` `rule-left-note` `rule-left-note-faint` `rule-left-transparent`
 - default: none
-- controls: `border-color`
+- controls: `border-color` `border-top-color` `border-right-color` `border-bottom-color` `border-left-color`
 - must never touch: `display` `gap` `flex` `position` `background` `color` `border-radius` `font-size`
+- sub-dials: `top` `right` `bottom` `left`
+- dial resolver: declared in `registry.ts`
+- whole-axis pattern matcher: declared in `registry.ts`
+- notes: `rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `rule[-<role\|step>[-<intensity>]]` | `/^rule(-(soft\|accent\|accent-soft\|accent-faint\|pass\|pass-faint\|warn\|warn-faint\|fail\|fail-faint\|note\|note-faint))?$/` | — | no |
+| `rule-<edge>[-<role\|step\|transparent>]` | `/^rule-(top\|right\|bottom\|left)(-(soft\|accent\|accent-soft\|accent-faint\|pass\|pass-faint\|warn\|warn-faint\|fail\|fail-faint\|note\|note-faint\|transparent))?$/` | — | no |
 
 #### corner
 

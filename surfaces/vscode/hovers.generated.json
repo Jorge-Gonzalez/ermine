@@ -1891,67 +1891,347 @@
     },
     "rule": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-soft": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-accent": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-accent-soft": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-accent-faint": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-pass": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-pass-faint": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-warn": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-warn-faint": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-fail": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-fail-faint": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-note": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "rule-note-faint": {
       "axis": "skin-rule",
-      "meaning": "rule[-<role|step>[-<intensity>]]",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-soft": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-accent": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-accent-soft": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-accent-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-pass": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-pass-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-warn": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-warn-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-fail": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-fail-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-note": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-note-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-top-transparent": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-soft": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-accent": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-accent-soft": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-accent-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-pass": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-pass-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-warn": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-warn-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-fail": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-fail-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-note": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-note-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-right-transparent": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-soft": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-accent": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-accent-soft": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-accent-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-pass": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-pass-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-warn": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-warn-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-fail": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-fail-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-note": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-note-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-bottom-transparent": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-soft": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-accent": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-accent-soft": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-accent-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-pass": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-pass-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-warn": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-warn-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-fail": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-fail-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-note": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-note-faint": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
+    },
+    "rule-left-transparent": {
+      "axis": "skin-rule",
+      "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines.",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-rule"
     },
     "corner-sm": {

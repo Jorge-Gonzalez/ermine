@@ -98,6 +98,9 @@ const cases: Case[] = [
   { s: "corner-top-sm corner-bottom-md", expect: "ok", why: "disjoint corner side dials compose" },
   { s: "corner-md corner-bottom-none", expect: "fail", why: "whole-box corner owns every corner slot" },
   { s: "corner-bottom-sm corner-bottom-none", expect: "fail", why: "two values on the bottom corner dial" },
+  { s: "rule-left-accent rule-right-soft", expect: "ok", why: "disjoint rule colour edge dials compose" },
+  { s: "rule rule-bottom-accent", expect: "fail", why: "whole-box rule colour owns every edge" },
+  { s: "rule-bottom-accent rule-bottom-transparent", expect: "fail", why: "two rule colours on the same edge" },
   { s: "ruled-left ruled-right ruled-bottom", expect: "ok", why: "disjoint rule-presence edge dials compose" },
   { s: "ruled ruled-bottom", expect: "fail", why: "whole-box ruled owns every rule edge" },
   // animation plane — open tween envelope over named duration scale

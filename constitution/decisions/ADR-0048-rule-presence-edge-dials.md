@@ -21,7 +21,8 @@ Per-side rule-presence words are edge dials. `ruled-top`, `ruled-right`, `ruled-
 whole-box alias and conflicts with every side dial.
 
 This is a composition amendment, not new vocabulary. No negative words such as `rule-top-none`
-or transparent-rule carriers are admitted.
+are admitted here. Transparent rule-colour carriers were deferred here and later narrowed by
+ADR-0050 to edge-only `rule-<edge>-transparent` colour endpoints.
 
 ## Consequences
 
@@ -30,6 +31,7 @@ Elements can truthfully state partial rule presence as markup, for example
 continues to be the concise form for all edges, and colour remains owned separately by `rule*`.
 
 Monky's remaining transparent/none rows are still recipe or reset evidence unless they can be
-removed by choosing the right positive edge facts in markup.
+removed by choosing the right positive edge facts in markup. ADR-0050 applies that standard to
+reserved underline colour: the rule edge is present, and only its colour is transparent at rest.
 
 Amends R-SKIN-11.

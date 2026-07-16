@@ -2633,79 +2633,415 @@
           "label": "rule",
           "insertText": "rule",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-soft",
           "insertText": "rule-soft",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-accent",
           "insertText": "rule-accent",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-accent-soft",
           "insertText": "rule-accent-soft",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-accent-faint",
           "insertText": "rule-accent-faint",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-pass",
           "insertText": "rule-pass",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-pass-faint",
           "insertText": "rule-pass-faint",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-warn",
           "insertText": "rule-warn",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-warn-faint",
           "insertText": "rule-warn-faint",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-fail",
           "insertText": "rule-fail",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-fail-faint",
           "insertText": "rule-fail-faint",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-note",
           "insertText": "rule-note",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         },
         {
           "label": "rule-note-faint",
           "insertText": "rule-note-faint",
           "kind": "word",
-          "meaning": "rule[-<role|step>[-<intensity>]]"
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top",
+          "insertText": "rule-top",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-soft",
+          "insertText": "rule-top-soft",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-accent",
+          "insertText": "rule-top-accent",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-accent-soft",
+          "insertText": "rule-top-accent-soft",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-accent-faint",
+          "insertText": "rule-top-accent-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-pass",
+          "insertText": "rule-top-pass",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-pass-faint",
+          "insertText": "rule-top-pass-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-warn",
+          "insertText": "rule-top-warn",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-warn-faint",
+          "insertText": "rule-top-warn-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-fail",
+          "insertText": "rule-top-fail",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-fail-faint",
+          "insertText": "rule-top-fail-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-note",
+          "insertText": "rule-top-note",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-note-faint",
+          "insertText": "rule-top-note-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-top-transparent",
+          "insertText": "rule-top-transparent",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right",
+          "insertText": "rule-right",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-soft",
+          "insertText": "rule-right-soft",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-accent",
+          "insertText": "rule-right-accent",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-accent-soft",
+          "insertText": "rule-right-accent-soft",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-accent-faint",
+          "insertText": "rule-right-accent-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-pass",
+          "insertText": "rule-right-pass",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-pass-faint",
+          "insertText": "rule-right-pass-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-warn",
+          "insertText": "rule-right-warn",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-warn-faint",
+          "insertText": "rule-right-warn-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-fail",
+          "insertText": "rule-right-fail",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-fail-faint",
+          "insertText": "rule-right-fail-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-note",
+          "insertText": "rule-right-note",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-note-faint",
+          "insertText": "rule-right-note-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-right-transparent",
+          "insertText": "rule-right-transparent",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom",
+          "insertText": "rule-bottom",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-soft",
+          "insertText": "rule-bottom-soft",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-accent",
+          "insertText": "rule-bottom-accent",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-accent-soft",
+          "insertText": "rule-bottom-accent-soft",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-accent-faint",
+          "insertText": "rule-bottom-accent-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-pass",
+          "insertText": "rule-bottom-pass",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-pass-faint",
+          "insertText": "rule-bottom-pass-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-warn",
+          "insertText": "rule-bottom-warn",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-warn-faint",
+          "insertText": "rule-bottom-warn-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-fail",
+          "insertText": "rule-bottom-fail",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-fail-faint",
+          "insertText": "rule-bottom-fail-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-note",
+          "insertText": "rule-bottom-note",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-note-faint",
+          "insertText": "rule-bottom-note-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-bottom-transparent",
+          "insertText": "rule-bottom-transparent",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left",
+          "insertText": "rule-left",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-soft",
+          "insertText": "rule-left-soft",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-accent",
+          "insertText": "rule-left-accent",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-accent-soft",
+          "insertText": "rule-left-accent-soft",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-accent-faint",
+          "insertText": "rule-left-accent-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-pass",
+          "insertText": "rule-left-pass",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-pass-faint",
+          "insertText": "rule-left-pass-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-warn",
+          "insertText": "rule-left-warn",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-warn-faint",
+          "insertText": "rule-left-warn-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-fail",
+          "insertText": "rule-left-fail",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-fail-faint",
+          "insertText": "rule-left-fail-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-note",
+          "insertText": "rule-left-note",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-note-faint",
+          "insertText": "rule-left-note-faint",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
+        },
+        {
+          "label": "rule-left-transparent",
+          "insertText": "rule-left-transparent",
+          "kind": "word",
+          "meaning": "`rule` and `rule-<hue>` are whole-box colour aliases and conflict with edge colour facets. `rule-top/right/bottom/left[-<hue>]` colour only one physical edge; `rule-<edge>-transparent` is the reserved-line endpoint for invisible sentinels such as current-tab underlines."
         }
       ]
     },

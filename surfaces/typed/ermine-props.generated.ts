@@ -95,8 +95,6 @@ export interface ErminePlainProps {
   skinGround?: "ground" | "ground-subtle" | "ground-defined" | "ground-hover" | "ground-active" | "ground-selected" | "ground-accent" | "ground-accent-soft" | "ground-accent-faint" | "ground-pass" | "ground-pass-faint" | "ground-warn" | "ground-warn-faint" | "ground-fail" | "ground-fail-faint" | "ground-note" | "ground-note-faint";
   /** axis `skin-ink` */
   skinInk?: "ink" | "ink-soft" | "ink-muted" | "ink-faint" | "ink-inverse" | "ink-selected" | "ink-accent" | "ink-accent-soft" | "ink-accent-faint" | "ink-pass" | "ink-pass-faint" | "ink-warn" | "ink-warn-faint" | "ink-fail" | "ink-fail-faint" | "ink-note" | "ink-note-faint";
-  /** axis `skin-rule` */
-  skinRule?: "rule" | "rule-soft" | "rule-accent" | "rule-accent-soft" | "rule-accent-faint" | "rule-pass" | "rule-pass-faint" | "rule-warn" | "rule-warn-faint" | "rule-fail" | "rule-fail-faint" | "rule-note" | "rule-note-faint";
   /** axis `font-size` */
   fontSize?: "font-xs" | "font-sm" | "font-md" | "font-lg" | "font-xl" | "font-2xl" | "font-3xl";
   /** axis `font-weight` */
@@ -150,6 +148,11 @@ export type FillExclusive =
   | ({ fill?: "fill" | "dialog-measure"; controlSize?: SpacingStep; } & None<"fillInline" | "fillBlock">)
   | ({ fillInline?: "fill-inline" | "hug-inline" | "width-auto"; fillBlock?: "fill-block" | "height-none"; } & None<"fill" | "controlSize">);
 
+// axis `skin-rule`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
+export type SkinRuleExclusive =
+  | ({ skinRule?: "rule" | "rule-soft" | "rule-accent" | "rule-accent-soft" | "rule-accent-faint" | "rule-pass" | "rule-pass-faint" | "rule-warn" | "rule-warn-faint" | "rule-fail" | "rule-fail-faint" | "rule-note" | "rule-note-faint"; } & None<"skinRuleTop" | "skinRuleRight" | "skinRuleBottom" | "skinRuleLeft">)
+  | ({ skinRuleTop?: "rule-top" | "rule-top-soft" | "rule-top-accent" | "rule-top-accent-soft" | "rule-top-accent-faint" | "rule-top-pass" | "rule-top-pass-faint" | "rule-top-warn" | "rule-top-warn-faint" | "rule-top-fail" | "rule-top-fail-faint" | "rule-top-note" | "rule-top-note-faint" | "rule-top-transparent"; skinRuleRight?: "rule-right" | "rule-right-soft" | "rule-right-accent" | "rule-right-accent-soft" | "rule-right-accent-faint" | "rule-right-pass" | "rule-right-pass-faint" | "rule-right-warn" | "rule-right-warn-faint" | "rule-right-fail" | "rule-right-fail-faint" | "rule-right-note" | "rule-right-note-faint" | "rule-right-transparent"; skinRuleBottom?: "rule-bottom" | "rule-bottom-soft" | "rule-bottom-accent" | "rule-bottom-accent-soft" | "rule-bottom-accent-faint" | "rule-bottom-pass" | "rule-bottom-pass-faint" | "rule-bottom-warn" | "rule-bottom-warn-faint" | "rule-bottom-fail" | "rule-bottom-fail-faint" | "rule-bottom-note" | "rule-bottom-note-faint" | "rule-bottom-transparent"; skinRuleLeft?: "rule-left" | "rule-left-soft" | "rule-left-accent" | "rule-left-accent-soft" | "rule-left-accent-faint" | "rule-left-pass" | "rule-left-pass-faint" | "rule-left-warn" | "rule-left-warn-faint" | "rule-left-fail" | "rule-left-fail-faint" | "rule-left-note" | "rule-left-note-faint" | "rule-left-transparent"; } & None<"skinRule">);
+
 // axis `corner`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type CornerExclusive =
   | ({ corner?: "corner-sm" | "corner-md" | "corner-lg" | "corner-xl" | "corner-2xl" | "corner-3xl"; } & None<"cornerTop" | "cornerBottom">)
@@ -161,7 +164,7 @@ export type RulePresenceExclusive =
   | ({ rulePresenceTop?: "ruled-top"; rulePresenceRight?: "ruled-right"; rulePresenceBottom?: "ruled-bottom"; rulePresenceLeft?: "ruled-left"; } & None<"rulePresence">);
 
 // base surface: everything except environment scopes
-export type ErmineBaseProps = ErminePlainProps & FlexExclusive & PaddingExclusive & MarginExclusive & OverflowExclusive & FillExclusive & CornerExclusive & RulePresenceExclusive;
+export type ErmineBaseProps = ErminePlainProps & FlexExclusive & PaddingExclusive & MarginExclusive & OverflowExclusive & FillExclusive & SkinRuleExclusive & CornerExclusive & RulePresenceExclusive;
 
 // environment scopes hold BASE props only — a scoped word cannot itself be scoped
 export interface ErmineScopeProps {
@@ -268,6 +271,10 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "skinGround", axis: "skin-ground", kind: "word" },
   { prop: "skinInk", axis: "skin-ink", kind: "word" },
   { prop: "skinRule", axis: "skin-rule", kind: "word" },
+  { prop: "skinRuleTop", axis: "skin-rule", kind: "word" },
+  { prop: "skinRuleRight", axis: "skin-rule", kind: "word" },
+  { prop: "skinRuleBottom", axis: "skin-rule", kind: "word" },
+  { prop: "skinRuleLeft", axis: "skin-rule", kind: "word" },
   { prop: "corner", axis: "corner", kind: "word" },
   { prop: "cornerTop", axis: "corner", kind: "word" },
   { prop: "cornerBottom", axis: "corner", kind: "word" },
@@ -308,4 +315,4 @@ export const SCOPE_DESCRIPTORS: readonly { prop: string; prefix: string }[] = [
   { prop: "prefersReducedTransparency", prefix: "prefers-reduced-transparency" },
 ];
 
-export const XOR_PROPS: ReadonlySet<string> = new Set(["flex","grow","shrink","padding","paddingInline","paddingBlock","paddingTop","paddingRight","paddingBottom","paddingLeft","margin","marginInline","marginBlock","marginTop","marginRight","marginBottom","marginLeft","overflow","overflowX","overflowY","fill","controlSize","fillInline","fillBlock","corner","cornerTop","cornerBottom","rulePresence","rulePresenceTop","rulePresenceRight","rulePresenceBottom","rulePresenceLeft"]);
+export const XOR_PROPS: ReadonlySet<string> = new Set(["flex","grow","shrink","padding","paddingInline","paddingBlock","paddingTop","paddingRight","paddingBottom","paddingLeft","margin","marginInline","marginBlock","marginTop","marginRight","marginBottom","marginLeft","overflow","overflowX","overflowY","fill","controlSize","fillInline","fillBlock","skinRule","skinRuleTop","skinRuleRight","skinRuleBottom","skinRuleLeft","corner","cornerTop","cornerBottom","rulePresence","rulePresenceTop","rulePresenceRight","rulePresenceBottom","rulePresenceLeft"]);
