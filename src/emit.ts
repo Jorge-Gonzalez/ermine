@@ -340,6 +340,17 @@ const EMISSION: Record<string, EmitSpec> = {
     effectKind: "css",
     plain: (word) => (word === "overline" ? { "text-transform": "uppercase", "letter-spacing": "var(--overline-tracking, 0.07em)" } : null),
   },
+  // --- tween: open transition envelope. The state/conditioned rule supplies
+  // the target value; tween supplies "animate the change over this duration".
+  // Longhands are deliberate: the `transition` shorthand would reset easing
+  // depending on authored word order.
+  tween: {
+    effectKind: "css",
+    plain: (word): Record<string, string> | null => {
+      const m = word.match(new RegExp(`^tween-(${SCALES.duration.join("|")})$`));
+      return m ? { "transition-property": "all", "transition-duration": `var(--duration-${m[1]})` } : null;
+    },
+  },
   // --- effect: named keyframe atoms — a closed tween with property/place baked
   // into a substrate @keyframes block (EFFECT_KEYFRAMES), so the word emits only
   // `animation` (R-MOTION-07). ---
@@ -722,6 +733,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "viewport-fill": ["fill-viewport"],
   numeric: ["tabular"],
   "type-label": ["overline"],
+  tween: SCALES.duration.map((s) => `tween-${s}`),
   effect: ["shake"],
   cover: ["cover"],
   "positioned-centering": ["center-x", "center-y"],

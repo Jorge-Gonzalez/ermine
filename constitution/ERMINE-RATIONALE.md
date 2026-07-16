@@ -438,6 +438,14 @@ Evidence: Monky's applied `.shake` (SelectableGroup's rejected-removal feedback)
 existed only as unapplied dead code, so they are reserved, not admitted (grammar-admission: general,
 but unproven without an application).
 
+## RAT:R-MOTION-08
+Source: ADR-0039. Monky's transition residue shows a two-step temporal scale: 0.15s for ordinary
+interactive feedback and 0.3s for slower feedback. `quick`/`settled` name those perceptual steps
+without freezing their numeric values. The open tween is deliberately smaller than a property
+targeting system: it first admits the universal "envelope this state change" form over `all`, while
+leaving narrow property sets for the next measured fork. Emitting longhands prevents the CSS
+`transition` shorthand from erasing separately authored easing words by source order.
+
 ## RAT:R-LAYER-01
 Source: pre-split `constitution/ERMINE.md` lines 1533–1564.
 

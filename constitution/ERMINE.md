@@ -679,6 +679,17 @@ application authors one. The substrate block ships with the stylesheet only when
 
 → rationale: RAT:R-MOTION-07 · history: ADR-0038 · code: src/registry.ts#MOTION, src/emit.ts#EFFECT_KEYFRAMES, src/css.ts#buildStylesheet
 
+## R-MOTION-08 — Open tween envelope
+
+An open tween envelopes a state-driven change; the state supplies the target value and the tween
+supplies the temporal envelope. Duration is a named theme-bound scale with admitted steps `quick`
+and `settled`, read as `--duration-quick` and `--duration-settled`. The open tween emits transition
+longhands (`transition-property`, `transition-duration`) rather than the `transition` shorthand, so
+closed easing words compose without source-order resets. The first admitted property target is
+`all`; narrower property-targeting remains a later animation-plane ruling.
+
+→ rationale: RAT:R-MOTION-08 · history: ADR-0039 · code: src/registry.ts#MOTION, src/emit.ts#emit, src/registry.ts#SKIN_PLANE
+
 ## R-LAYER-01 — Tier-two named scale
 
 The named z-scale is closed, never accepts raw integers, and governs only the tier-two in-page

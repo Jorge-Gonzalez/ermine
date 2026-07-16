@@ -1234,6 +1234,24 @@
       ]
     },
     {
+      "axis": "tween",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween",
+      "items": [
+        {
+          "label": "tween-quick",
+          "insertText": "tween-quick",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork."
+        },
+        {
+          "label": "tween-settled",
+          "insertText": "tween-settled",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork."
+        }
+      ]
+    },
+    {
       "axis": "motion-micro",
       "reference": "src/ERMINE-SPEC.md §2.3 — motion-micro",
       "items": [
@@ -1241,37 +1259,37 @@
           "label": "decelerate",
           "insertText": "decelerate",
           "kind": "word",
-          "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members."
+          "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08)."
         },
         {
           "label": "accelerate",
           "insertText": "accelerate",
           "kind": "word",
-          "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members."
+          "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08)."
         },
         {
           "label": "standard",
           "insertText": "standard",
           "kind": "word",
-          "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members."
+          "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08)."
         },
         {
           "label": "emphasized",
           "insertText": "emphasized",
           "kind": "word",
-          "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members."
+          "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08)."
         },
         {
           "label": "symmetric",
           "insertText": "symmetric",
           "kind": "word",
-          "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members."
+          "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08)."
         },
         {
           "label": "asymmetric",
           "insertText": "asymmetric",
           "kind": "word",
-          "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members."
+          "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08)."
         }
       ]
     },

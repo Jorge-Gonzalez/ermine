@@ -14,6 +14,7 @@ interface Derived {
   radius: string[];
   type: string[];
   weight: string[];
+  duration: string[];
   treatments: Record<string, string[]>;
   required: string[];
 }
@@ -35,6 +36,7 @@ function derive(): Derived {
   const radius = scale("radius");
   const type = scale("type");
   const weight = scale("weight");
+  const duration = scale("duration");
   // Treatment sockets (R-SKIN-09 elevation, R-SKIN-07 typeface): composite or stack
   // values with emitter defaults; optional per theme.
   const treatments = Object.fromEntries(
@@ -45,7 +47,7 @@ function derive(): Derived {
   // treatment sockets are optional: mode-invariant scales may come through the plane or a
   // project metric layer.
   const required = carriers.map(([anchor]) => anchor);
-  return { color, radius, type, weight, treatments, required };
+  return { color, radius, type, weight, duration, treatments, required };
 }
 
 function list(name: string, values: string[]): string[] {
@@ -53,8 +55,8 @@ function list(name: string, values: string[]): string[] {
 }
 
 function render(): string {
-  const { color, radius, type, weight, treatments, required } = derive();
-  const all = [...color, ...radius, ...type, ...weight, ...Object.values(treatments).flat()];
+  const { color, radius, type, weight, duration, treatments, required } = derive();
+  const all = [...color, ...radius, ...type, ...weight, ...duration, ...Object.values(treatments).flat()];
   return [
     "// GENERATED from src/registry.ts SKIN_PLANE by src/generate-theme.ts — do not edit.",
     "// The socket list is the theme plane's identity (R-SKIN-08).",
@@ -71,6 +73,7 @@ function render(): string {
     `  radius: [${radius.map((s) => `"${s}"`).join(", ")}],`,
     `  type: [${type.map((s) => `"${s}"`).join(", ")}],`,
     `  weight: [${weight.map((s) => `"${s}"`).join(", ")}],`,
+    `  duration: [${duration.map((s) => `"${s}"`).join(", ")}],`,
     ...Object.entries(treatments).map(([family, sockets]) =>
       `  ${family}: [${sockets.map((s) => `"${s}"`).join(", ")}],`),
     "} as const satisfies Record<string, readonly SkinSocket[]>;",

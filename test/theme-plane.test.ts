@@ -95,3 +95,9 @@ test("SkinSocket type covers the color carriers and role hues", () => {
   const roles: SkinSocket[] = ["accent", "pass", "warn", "fail", "note"];
   for (const socket of [...carriers, ...roles]) assert.ok(SKIN_SOCKETS.includes(socket));
 });
+
+test("SkinSocket type covers animation duration sockets (R-MOTION-08)", () => {
+  const durations: SkinSocket[] = ["duration-quick", "duration-settled"];
+  assert.deepEqual(SOCKET_FAMILIES.duration, durations);
+  for (const socket of durations) assert.ok(SKIN_SOCKETS.includes(socket));
+});

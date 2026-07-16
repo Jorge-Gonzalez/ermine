@@ -73,6 +73,11 @@ const cases: Case[] = [
   { s: "scroll-x scroll-auto", expect: "fail", why: "per-axis dial + whole-axis clip/auto" },
   { s: "centered flush-block", expect: "ok", why: "flow centering and block flush are different logical margin dials" },
   { s: "centered centered", expect: "fail", why: "two values on the same flow-centering dial" },
+  // animation plane — open tween envelope over named duration scale
+  { s: "tween-quick", expect: "ok", why: "quick duration step" },
+  { s: "tween-settled emphasized", expect: "ok", why: "duration envelope composes with easing" },
+  { s: "tween-quick tween-settled", expect: "fail", why: "one duration envelope per element/scope" },
+  { s: "tween-fast", expect: "fail", why: "duration step names are ruled, not inherited from Monky tokens" },
   // constraints — min/max compose as a band
   { s: "min-width-sm max-width-lg", expect: "ok", why: "width band: min + max compose" },
   { s: "min-width-sm min-width-lg", expect: "fail", why: "two values on the same min-width dial" },

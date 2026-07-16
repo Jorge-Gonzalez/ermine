@@ -199,7 +199,10 @@ function classify(records: readonly AxisRecord[]): { descriptors: Descriptor[]; 
 
     const stepToken = record.tokens.find((t) => t.valueDomain?.endsWith("-step") && !t.fallback);
     const plainPrefix = stepPrefixOf(record);
-    if (stepToken && plainPrefix && record.valueSpace.every((w) => !w.includes("<"))) {
+    const singleStepPlaceholder = !!plainPrefix &&
+      record.valueSpace.length === 1 &&
+      record.valueSpace[0].startsWith(`${plainPrefix}-<`);
+    if (stepToken && plainPrefix && (record.valueSpace.every((w) => !w.includes("<")) || singleStepPlaceholder)) {
       // ordered-chain scale axis authored as prefix-step words (gap-<density>)
       descriptors.push({
         prop: camel(plainPrefix), axis: record.axis, kind: "step-prefix",

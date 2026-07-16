@@ -819,34 +819,44 @@
       "meaning": "isolate",
       "reference": "src/ERMINE-SPEC.md §2.2 — stacking-context"
     },
+    "tween-quick": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
+    "tween-settled": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
     "decelerate": {
       "axis": "motion-micro",
-      "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.",
+      "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08).",
       "reference": "src/ERMINE-SPEC.md §2.3 — motion-micro"
     },
     "accelerate": {
       "axis": "motion-micro",
-      "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.",
+      "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08).",
       "reference": "src/ERMINE-SPEC.md §2.3 — motion-micro"
     },
     "standard": {
       "axis": "motion-micro",
-      "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.",
+      "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08).",
       "reference": "src/ERMINE-SPEC.md §2.3 — motion-micro"
     },
     "emphasized": {
       "axis": "motion-micro",
-      "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.",
+      "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08).",
       "reference": "src/ERMINE-SPEC.md §2.3 — motion-micro"
     },
     "symmetric": {
       "axis": "motion-micro",
-      "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.",
+      "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08).",
       "reference": "src/ERMINE-SPEC.md §2.3 — motion-micro"
     },
     "asymmetric": {
       "axis": "motion-micro",
-      "meaning": "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.",
+      "meaning": "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08).",
       "reference": "src/ERMINE-SPEC.md §2.3 — motion-micro"
     },
     "together": {
@@ -1503,6 +1513,12 @@
       "axis": "constraints",
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
+    },
+    {
+      "pattern": "^tween-(quick|settled)$",
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
     },
     {
       "pattern": "^(current)-(page|step|location|date|time|true)$",

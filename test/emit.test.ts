@@ -13,7 +13,7 @@ test("P7: no unsanctioned property collisions across covered axes", () => {
     [],
     report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
   );
-  assert.equal(report.verifiedAxes.length, 55);
+  assert.equal(report.verifiedAxes.length, 56);
   assert.deepEqual(report.unverifiedAxes, []);
   assert.deepEqual(
     report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
@@ -93,6 +93,18 @@ test("viewport-fill: `fill-viewport` is a block-axis viewport minimum (R-SIZE-08
 test("type roles: tabular figures and the overline eyebrow (R-SKIN-18/19)", () => {
   assert.deepEqual(declOf("tabular"), [["font-variant-numeric", "tabular-nums"]]);
   assert.deepEqual(declOf("overline"), [["text-transform", "uppercase"], ["letter-spacing", "var(--overline-tracking, 0.07em)"]]);
+});
+
+test("tween: open state-change envelope uses duration sockets and composes with easing (R-MOTION-08)", () => {
+  assert.deepEqual(declOf("tween-quick"), [
+    ["transition-property", "all"],
+    ["transition-duration", "var(--duration-quick)"],
+  ]);
+  assert.deepEqual(declOf("tween-settled emphasized"), [
+    ["transition-property", "all"],
+    ["transition-duration", "var(--duration-settled)"],
+    ["transition-timing-function", "cubic-bezier(.2,0,0,1)"],
+  ]);
 });
 
 test("effect atoms: `shake` is a closed tween — one `animation` referencing substrate keyframes (R-MOTION-07)", () => {

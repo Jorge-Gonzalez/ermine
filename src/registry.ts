@@ -28,6 +28,7 @@ export const SCALES = {
   size: ["sm", "md", "lg", "xl", "2xl"], // R-SCALE-01 size scale — basis-exact-<step>, constraints
   breakpoint: ["sm", "md", "lg", "xl"], // R-SCALE-01-style named breakpoint scale
   zTier2: ["base", "content", "raised", "dropdown", "sticky", "tooltip"],
+  duration: ["quick", "settled"], // R-MOTION-08 named temporal scale — values remain theme-bound
 } as const;
 
 // ============================================================================
@@ -551,8 +552,25 @@ export const LAYERING: AxisRecord[] = [
 // 4.3 MOTION
 // ============================================================================
 
-// implements: R-MOTION-01, R-MOTION-02, R-MOTION-04
+// implements: R-MOTION-01, R-MOTION-02, R-MOTION-04, R-MOTION-08
 export const MOTION: AxisRecord[] = [
+  {
+    // The open tween: state supplies the "to" value; this word supplies the
+    // temporal envelope. It emits longhands so easing words can compose without
+    // the `transition` shorthand resetting them by source order.
+    axis: "tween",
+    sibling: "motion", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["tween-<duration>"],
+    tokens: [
+      { pattern: new RegExp(`^tween-(${SCALES.duration.join("|")})$`), shape: "tween-<duration>", valueDomain: "duration-step" },
+      { pattern: /^tween-.+$/, shape: "tween-<bad>", valueDomain: "duration-step", fallback: true },
+    ],
+    default: null,
+    controls: ["transition-property", "transition-duration"],
+    mustNeverTouch: ["animation", "transform", "background", "color", "opacity", "transition-timing-function", "transition-delay", "transition"],
+    notes: "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.",
+  },
   {
     axis: "motion-micro",
     sibling: "motion", role: "member", signature: "set-with-exclusivity",
@@ -563,9 +581,9 @@ export const MOTION: AxisRecord[] = [
       { pattern: /^(symmetric|asymmetric)$/, shape: "<direction>" },
     ],
     default: null,
-    controls: ["transition-duration", "transition-timing-function", "transition-delay"],
+    controls: ["transition-timing-function", "--motion-direction"],
     mustNeverTouch: ["animation", "transform", "background"],
-    notes: "duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.",
+    notes: "easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08).",
   },
   {
     axis: "motion-macro",
@@ -903,8 +921,7 @@ export const SKIN: AxisRecord[] = [
 // is the identity of the plane, so a project may not invent unregistered sockets.
 // Intensity (soft/muted/faint, R-SKIN-04) is realized by the theme/emitter from the
 // base carrier/role colors, not enumerated here. Motion duration/stagger are named
-// scale-bound (R-SCALE-03) but their step names remain open (R-SCALE-02), so they
-// are intentionally absent until ruled.
+// scale-bound (R-SCALE-03); duration step names are now ruled by R-MOTION-08.
 // ============================================================================
 
 // Each carrier/role names its anchor (the bare socket) plus the steps it varies through
@@ -946,6 +963,7 @@ export const SKIN_PLANE = {
     radius: RADIUS_STEPS, // R-SKIN-06 corner magnitude
     type: TYPE_STEPS, // R-SKIN-07 size
     weight: WEIGHT_STEPS, // R-SKIN-07 weight
+    duration: SCALES.duration, // R-MOTION-08 temporal magnitude
   },
 } as const;
 

@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (55 axes)  ‹SHARED›
+## 2. The axis registry (56 axes)  ‹SHARED›
 
-layout=21 · layering=4 · motion=3 · state=9 · skin=18. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=21 · layering=4 · motion=4 · state=9 · skin=18. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -147,6 +147,7 @@ layout=21 · layering=4 · motion=3 · state=9 · skin=18. Every fact below is r
 | `size` | `sm` `md` `lg` `xl` `2xl` |
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
+| `duration` | `quick` `settled` |
 
 ### 2.1 LAYOUT (21 axes)
 
@@ -566,16 +567,32 @@ Tokens:
 |---|---|---|---|
 | `isolate` | `/^isolate$/` | — | no |
 
-### 2.3 MOTION (3 axes)
+### 2.3 MOTION (4 axes)
+
+#### tween
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `tween-<duration>`
+- default: none
+- controls: `transition-property` `transition-duration`
+- must never touch: `animation` `transform` `background` `color` `opacity` `transition-timing-function` `transition-delay` `transition`
+- notes: open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `tween-<duration>` | `/^tween-(quick\|settled)$/` | `duration-step` | no |
+| `tween-<bad>` | `/^tween-.+$/` | `duration-step` | yes |
 
 #### motion-micro
 
 - role: `member` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
 - value space: `decelerate` `accelerate` `standard` `emphasized` `symmetric` `asymmetric`
 - default: none
-- controls: `transition-duration` `transition-timing-function` `transition-delay`
+- controls: `transition-timing-function` `--motion-direction`
 - must never touch: `animation` `transform` `background`
-- notes: duration/delay magnitudes are open skin scales (R-MOTION-01), not grammar members.
+- notes: easing/direction only; duration is consumed by the open `tween-<duration>` envelope (R-MOTION-08).
 
 Tokens:
 

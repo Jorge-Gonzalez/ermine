@@ -32,38 +32,35 @@ the vocabulary unconsumed.
 | Frozen ledger | the 9 `gap` rows (shake/pulse/flash keyframes + the `.shake` animation) reclassify — see below |
 | Current ledger | `motion-followup` (~20 transition rows) waits on the duration scale, not the rename |
 
-## The duration question (the Phase C defer)
+## The duration question (resolved first increment)
 
 Evidence: Monky's live transition rows are a two-step scale — `--transition-fast` (0.15s,
 ~18 rows) and `--transition-medium` (0.3s, 1 row) — consumed as
-`transition: <properties> var(--transition-fast)`. Under the reframe:
+`transition: <properties> var(--transition-fast)`.
 
-- Duration stays an open external scale (R-MOTION-01's decision survives the rename), with
-  step names finally christened. Two evidenced steps suggest two names; following the
-  density scale's semantic-not-metric style, candidates: `brisk`/`deliberate` or
-  `quick`/`settled`. Sockets: `--duration-<step>`, theme-bound, Monky binds 0.15s/0.3s.
-- The consumption question is *what word carries the transition*: a `tween` word (the atom
-  the reframe names) emitting `transition-property`/`transition-duration` reading the step
-  socket is the natural shape — but which properties transition is per-element intent
-  (color vs opacity vs border-color), so the emission design needs the same care
-  `truncate`'s ownership split got. That design belongs to the reframe cycle, not before it.
+ADR-0039 / R-MOTION-08 resolves the first increment: duration is a theme-bound scale with
+`quick` and `settled` steps (`--duration-quick`, `--duration-settled`), consumed by the open
+`tween-quick` / `tween-settled` words. The first tween target is deliberately universal
+(`transition-property: all`) and emits longhands so closed easing words compose without the
+`transition` shorthand resetting them. Narrow property-targeted tween words remain the next
+measured fork.
 
 ## The 9 frozen keyframe rows
 
-`shake`, `pulse`, `flash` are feedback signatures (error shake, confirmation flash) — under
-the reframe's own vocabulary they are project *scenes*, the named outside exception, not
-tween/choreography grammar. Disposition on execution: `identity-local` with evidence citing
-the reframe's scene boundary. The `motion-followup` reason code then narrows to the
-transition rows awaiting the duration scale.
+This section is superseded by ADR-0038 / R-MOTION-07. `shake` is admitted as a named effect atom:
+a closed tween whose property/places live inside a substrate `@keyframes` block. `flash` and
+`pulse` remain reserved because Monky's definitions were unapplied dead code, not active adoption
+evidence. The `motion-followup` reason code therefore narrows to transition policy and any local
+suppression such as `.shake { transition: none !important }`.
 
 ## Execution plan (one cycle, Ermine-only until the last step)
 
 1. ADR + retitled rulings (`R-ANIMATION-01…05`), rename rationale entries; decide
    renumber-vs-retitle with the doc system's stale-graph tooling.
 2. Registry/emitter renames; regenerate all surfaces; test assertions follow.
-3. Name the duration steps (two, evidence-bound) as theme-plane scale sockets.
-4. Design and rule the `tween` consumption word (the transition-property ownership
-   question) — this is the only genuinely new design work in the cycle.
+3. Done in ADR-0039: name the duration steps (two, evidence-bound) as theme-plane scale sockets.
+4. Partially done in ADR-0039: admit the universal open `tween-*`; property-targeted tween words
+   remain the next design fork.
 5. Monky: bind the duration sockets, convert the ~19 uniform transition rows, reclassify
    the 9 frozen rows as scene identity.
 

@@ -93,6 +93,10 @@
   "stacking-context": [
     "isolation"
   ],
+  "tween": [
+    "transition-duration",
+    "transition-property"
+  ],
   "motion-micro": [
     "--motion-direction",
     "transition-delay",
