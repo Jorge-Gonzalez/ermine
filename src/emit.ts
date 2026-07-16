@@ -393,12 +393,15 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word === "cover" ? { inset: "0" } : null),
   },
 
-  // --- positioned-centering: positioned centering pairs (R-SIZE-06). ---
-  "positioned-centering": {
+  // --- positioned-relation: centering and edge-attachment relations (R-SIZE-06/R-SIZE-10). ---
+  "positioned-relation": {
     effectKind: "css",
     plain: (word): Record<string, string> | null => {
       if (word === "center-x") return { left: "50%", transform: "translateX(-50%)" };
       if (word === "center-y") return { top: "50%", transform: "translateY(-50%)" };
+      if (word === "attach-below") return { top: "100%" };
+      if (word === "attach-above") return { bottom: "100%" };
+      if (word === "stretch-inline") return { left: "0", right: "0" };
       return null;
     },
   },
@@ -776,7 +779,7 @@ export const VOCABULARY: Record<string, string[]> = {
   ],
   effect: ["shake"],
   cover: ["cover"],
-  "positioned-centering": ["center-x", "center-y"],
+  "positioned-relation": ["center-x", "center-y", "attach-below", "attach-above", "stretch-inline"],
   push: ["push"],
   margin: [
     "centered",
@@ -934,7 +937,7 @@ export function checkDimensionalPurity(): PurityReport {
   // KNOWN LIMITATION — this compares EXACT property names, so it does not relate a CSS
   // shorthand to its longhands. Two axes owning a shorthand and one of its longhands are
   // not flagged: `margin` owns `margin-inline` while `push` owns `margin-inline-start`;
-  // `cover` owns `inset` while `positioned-centering` owns `left`/`top`. Those pairs do
+  // `cover` owns `inset` while `positioned-relation` owns edge longhands. Those pairs do
   // overlap at the rendered-property level, but composing them is nonsensical (push a
   // centered element; center a full-cover element) and no adopted composition authors them,
   // so the gap is latent. Modelling shorthand containment would be the fix if it ever bites.

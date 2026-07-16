@@ -1474,20 +1474,38 @@
       ]
     },
     {
-      "axis": "positioned-centering",
-      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-centering",
+      "axis": "positioned-relation",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation",
       "items": [
         {
           "label": "center-x",
           "insertText": "center-x",
           "kind": "word",
-          "meaning": "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings."
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
         },
         {
           "label": "center-y",
           "insertText": "center-y",
           "kind": "word",
-          "meaning": "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings."
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-below",
+          "insertText": "attach-below",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-above",
+          "insertText": "attach-above",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "stretch-inline",
+          "insertText": "stretch-inline",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
         }
       ]
     },

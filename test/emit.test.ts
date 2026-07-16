@@ -148,9 +148,13 @@ test("cover: attaches a positioned element to all containing-block edges (R-SIZE
   assert.deepEqual(declOf("cover"), [["inset", "0"]]);
 });
 
-test("positioned centering: centers a positioned element on one containing-block midpoint (R-SIZE-06)", () => {
+test("positioned relations: center and edge attachment compile to physical offsets", () => {
   assert.deepEqual(declOf("center-x"), [["left", "50%"], ["transform", "translateX(-50%)"]]);
   assert.deepEqual(declOf("center-y"), [["top", "50%"], ["transform", "translateY(-50%)"]]);
+  assert.deepEqual(declOf("attach-below"), [["top", "100%"]]);
+  assert.deepEqual(declOf("attach-above"), [["bottom", "100%"]]);
+  assert.deepEqual(declOf("stretch-inline"), [["left", "0"], ["right", "0"]]);
+  assert.deepEqual(declOf("attach-below stretch-inline"), [["top", "100%"], ["left", "0"], ["right", "0"]]);
 });
 
 test("flow centering: decomposes margin:0 auto into centering and block flush (R-SIZE-07)", () => {

@@ -495,18 +495,35 @@ export const LAYOUT: AxisRecord[] = [
     mustNeverTouch: ["position", "display", "gap", "flex", "inline-size", "block-size", "width", "height", "margin", "padding"],
   },
   {
-    // positioned-centering: a positioned element's center aligns to its containing block's
-    // midpoint on one axis (R-SIZE-06). The members are mutually exclusive for now because
-    // both write `transform`; admitting combined center-x+center-y would need tuple emission.
-    axis: "positioned-centering",
+    // positioned-relation: a positioned element relates one or more physical edges/centers to
+    // its containing block or anchor (R-SIZE-06/R-SIZE-10). Footprints keep centered transforms
+    // exclusive while allowing disjoint edge attachments such as `attach-below stretch-inline`.
+    axis: "positioned-relation",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["center-x", "center-y"],
-    tokens: [{ pattern: /^center-(x|y)$/, shape: "center-<axis>" }],
+    valueSpace: ["center-x", "center-y", "attach-below", "attach-above", "stretch-inline"],
+    tokens: [{ pattern: /^(center-(x|y)|attach-(below|above)|stretch-inline)$/, shape: "<positioned-relation>" }],
+    subDials: ["inline-center", "block-center", "block-after-edge", "block-before-edge", "inline-edges"],
+    dialOf: (word: string) => {
+      if (word === "center-x") return "inline-center";
+      if (word === "center-y") return "block-center";
+      if (word === "attach-below") return "block-after-edge";
+      if (word === "attach-above") return "block-before-edge";
+      if (word === "stretch-inline") return "inline-edges";
+      return null;
+    },
+    dialFootprint: (dial: string) => {
+      if (dial === "inline-center") return ["left", "transform"];
+      if (dial === "block-center") return ["top", "transform"];
+      if (dial === "block-after-edge") return ["top"];
+      if (dial === "block-before-edge") return ["bottom"];
+      if (dial === "inline-edges") return ["left", "right"];
+      return [dial];
+    },
     default: null,
-    controls: ["left", "top", "transform"],
-    mustNeverTouch: ["position", "inset", "right", "bottom", "margin", "inline-size", "block-size", "width", "height"],
-    notes: "positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings.",
+    controls: ["left", "right", "top", "bottom", "transform"],
+    mustNeverTouch: ["position", "inset", "margin", "inline-size", "block-size", "width", "height"],
+    notes: "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
   },
   {
     // viewport-fill: the full-height page shell — at least a viewport tall, growing with content

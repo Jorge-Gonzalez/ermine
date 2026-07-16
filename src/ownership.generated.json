@@ -83,8 +83,10 @@
   "cover": [
     "inset"
   ],
-  "positioned-centering": [
+  "positioned-relation": [
+    "bottom",
     "left",
+    "right",
     "top",
     "transform"
   ],

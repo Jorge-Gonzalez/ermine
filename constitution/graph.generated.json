@@ -265,6 +265,12 @@
       "anchor": "ADR-0044"
     },
     {
+      "id": "ADR-0045",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0045-positioned-edge-attachment.md",
+      "anchor": "ADR-0045"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -869,6 +875,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-SIZE-09"
+    },
+    {
+      "id": "R-SIZE-10",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SIZE-10"
     },
     {
       "id": "R-SKIN-01",
@@ -1583,6 +1595,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SIZE-09"
+    },
+    {
+      "id": "RAT:R-SIZE-10",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SIZE-10"
     },
     {
       "id": "RAT:R-SKIN-01",
@@ -2555,6 +2573,11 @@
     {
       "from": "RAT:R-SIZE-09",
       "to": "R-SIZE-09",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SIZE-10",
+      "to": "R-SIZE-10",
       "type": "rationale-of"
     },
     {

@@ -482,20 +482,22 @@ Tokens:
 |---|---|---|---|
 | `<cover>` | `/^cover$/` | — | no |
 
-#### positioned-centering
+#### positioned-relation
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `center-x` `center-y`
+- value space: `center-x` `center-y` `attach-below` `attach-above` `stretch-inline`
 - default: none
-- controls: `left` `top` `transform`
-- must never touch: `position` `inset` `right` `bottom` `margin` `inline-size` `block-size` `width` `height`
-- notes: positioned centering pairs: `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`. Requires a positioned element from `position-mode`; flow centering and transform-general composition remain separate rulings.
+- controls: `left` `right` `top` `bottom` `transform`
+- must never touch: `position` `inset` `margin` `inline-size` `block-size` `width` `height`
+- sub-dials: `inline-center` `block-center` `block-after-edge` `block-before-edge` `inline-edges`
+- dial resolver: declared in `registry.ts`
+- notes: positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `center-<axis>` | `/^center-(x\|y)$/` | — | no |
+| `<positioned-relation>` | `/^(center-(x\|y)\|attach-(below\|above)\|stretch-inline)$/` | — | no |
 
 #### viewport-fill
 

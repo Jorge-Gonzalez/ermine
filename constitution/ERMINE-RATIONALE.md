@@ -326,6 +326,17 @@ as a block-axis MINIMUM, not an exact fill, because the full-height-page pattern
 overflow and scroll; `fill-block` (block-size:100%) would clip. Emitted logical (`min-block-size`)
 per the plane's convention; `dvh` and an inline extent wait for their own evidence.
 
+## RAT:R-SIZE-10
+Source: ADR-0045. The same proportional-plane analysis that admitted `cover` left directional edge
+attachment for a later ruling. Monky now supplies the narrow repeated case: a positioned command
+dropdown anchored directly below its trigger and stretched to the anchor's inline edges
+(`top: 100%; left: 0; right: 0`). These values are relational, socket-free facts rather than
+project measurements. The registry keeps them on the same positioned-relation axis as `center-x`
+and `center-y` because all of these words write physical offsets and must be checked by footprint:
+`attach-below stretch-inline` composes, while `center-y attach-below` and
+`center-x stretch-inline` overlap. Offset variants, component arrows, and raw z/top-layer policy
+remain separate evidence.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

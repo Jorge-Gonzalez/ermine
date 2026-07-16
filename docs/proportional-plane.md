@@ -70,6 +70,12 @@ two-declaration relation: containing-block midpoint plus self-size compensation.
 `position-absolute` / `position-fixed`; they do not imply either position mode or a general
 transform vocabulary. They remain exclusive until Ermine has a tuple transform composition rule.
 
+`attach-below` / `attach-above` / `stretch-inline` = attach a positioned element to an anchor's
+edge without a scale socket. `attach-below` sets `top: 100%`; `attach-above` sets `bottom: 100%`;
+`stretch-inline` sets `left: 0; right: 0`. These share the positioned-relation footprint model
+with centering: disjoint edge slots compose (`attach-below stretch-inline`), while centering and
+an edge pin on the same physical slot conflict.
+
 `centered` / `flush-block` = the decomposed normal-flow centering idiom. `centered` sets
 `margin-inline: auto`; `flush-block` sets `margin-block: 0`. Together they reproduce
 `margin: 0 auto`, but keeping them separate prevents inline centering from erasing block-axis

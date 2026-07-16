@@ -59,6 +59,10 @@ const cases: Case[] = [
   { s: "position-sticky", expect: "ok", why: "position-mode, unambiguous after prefixing" },
   { s: "sticky", expect: "ok", why: "resolves to z-scale only now" },
   { s: "position-sticky sticky", expect: "ok", why: "different axes (position-mode vs z-scale), compose freely" },
+  { s: "attach-below stretch-inline", expect: "ok", why: "disjoint positioned edge-relation footprints compose" },
+  { s: "center-x stretch-inline", expect: "fail", why: "both own the left positioned-relation slot" },
+  { s: "center-y attach-below", expect: "fail", why: "both own the top positioned-relation slot" },
+  { s: "center-x center-y", expect: "fail", why: "both own the transform positioned-relation slot" },
   { s: "grid padding-md selectable selection-subtle", backing: [], expect: "ok" },
   // P10 — divider/wrap interaction
   { s: "divided wrap-allowed", expect: "warn", why: "P10: between-children line + wrapping is a real hazard, not an error" },

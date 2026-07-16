@@ -45,8 +45,16 @@ export interface ErminePlainProps {
   aspect?: "square";
   /** axis `cover` */
   cover?: "cover";
-  /** axis `positioned-centering` */
-  positionedCentering?: "center-x" | "center-y";
+  /** axis `positioned-relation` */
+  inlineCenter?: "center-x";
+  /** axis `positioned-relation` */
+  blockCenter?: "center-y";
+  /** axis `positioned-relation` */
+  blockAfterEdge?: "attach-below";
+  /** axis `positioned-relation` */
+  blockBeforeEdge?: "attach-above";
+  /** axis `positioned-relation` */
+  inlineEdges?: "stretch-inline";
   /** axis `viewport-fill` */
   viewportFill?: "fill-viewport";
   /** axis `z-scale` */
@@ -228,7 +236,11 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "fillBlock", axis: "fill", kind: "word" },
   { prop: "aspect", axis: "aspect", kind: "word" },
   { prop: "cover", axis: "cover", kind: "word" },
-  { prop: "positionedCentering", axis: "positioned-centering", kind: "word" },
+  { prop: "inlineCenter", axis: "positioned-relation", kind: "word" },
+  { prop: "blockCenter", axis: "positioned-relation", kind: "word" },
+  { prop: "blockAfterEdge", axis: "positioned-relation", kind: "word" },
+  { prop: "blockBeforeEdge", axis: "positioned-relation", kind: "word" },
+  { prop: "inlineEdges", axis: "positioned-relation", kind: "word" },
   { prop: "viewportFill", axis: "viewport-fill", kind: "word" },
   { prop: "zScale", axis: "z-scale", kind: "word" },
   { prop: "topLayerMechanism", axis: "top-layer-mechanism", kind: "word" },
