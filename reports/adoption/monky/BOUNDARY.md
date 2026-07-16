@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `32f9d742a76142e1c3f99c3e3233ae4ee132959e` |
-| monky | `4a1aa2b96ce14fd1f1d3efb58b7bd2c1f3934ed1` |
+| Ermine | `376624f4cd770e201da5e0aec8a536ba12949579` |
+| monky | `88f97833b74b7160ac2f5a9f30fa31a45f829de6` |
 
 ## Closure Gate
 
