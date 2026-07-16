@@ -11,9 +11,9 @@
   "summary": {
     "reviewedDeclarations": 141,
     "assimilableNow": 0,
-    "latentGeneralizable": 41,
-    "likelyRecipe": 97,
-    "likelyLocal": 3,
+    "latentGeneralizable": 19,
+    "likelyRecipe": 116,
+    "likelyLocal": 6,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 1,
@@ -28,11 +28,11 @@
     },
     "byLatentOutcome": {
       "admitted": 0,
-      "latent-word": 8,
-      "latent-facet": 28,
-      "latent-scale": 5,
-      "recipe": 97,
-      "local-identity": 3
+      "latent-word": 5,
+      "latent-facet": 11,
+      "latent-scale": 3,
+      "recipe": 116,
+      "local-identity": 6
     },
     "byCurrentCode": {
       "ermine-emitted": 0,
@@ -380,10 +380,10 @@
       "value": "transparent",
       "currentCode": "reset-absence",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::color::1",
@@ -394,10 +394,10 @@
       "value": "inherit",
       "currentCode": "reset-absence",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::font-style::1",
@@ -408,10 +408,10 @@
       "value": "normal",
       "currentCode": "reset-absence",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark span::opacity::1",
@@ -882,10 +882,10 @@
       "value": "middle",
       "currentCode": "recipe-identity",
       "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "condition-backed state skin/affordance facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.is-sliding .seg-option[aria-checked=\"true\"]::background::1",
@@ -1875,10 +1875,10 @@
       "value": "0",
       "currentCode": "identity-geometry",
       "ruleAction": "spacing-rhythm",
-      "latentOutcome": "latent-scale",
+      "latentOutcome": "local-identity",
       "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "map to an existing/proportional scale or admit a named scale role",
-      "proposedForm": "per-edge spacing facet or smaller density step",
+      "erminePressure": "keep local after invariance/scale tests",
+      "proposedForm": "keep local",
       "playbookRecipes": [
         "root-and-structural-reset-boundary"
       ]
@@ -1892,10 +1892,10 @@
       "value": "0",
       "currentCode": "identity-geometry",
       "ruleAction": "spacing-rhythm",
-      "latentOutcome": "latent-scale",
+      "latentOutcome": "local-identity",
       "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "map to an existing/proportional scale or admit a named scale role",
-      "proposedForm": "per-edge spacing facet or smaller density step",
+      "erminePressure": "keep local after invariance/scale tests",
+      "proposedForm": "keep local",
       "playbookRecipes": [
         "root-and-structural-reset-boundary"
       ]
@@ -1923,10 +1923,10 @@
       "value": "pointer",
       "currentCode": "recipe-identity",
       "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "condition-backed state skin/affordance facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.radio-label::user-select::1",
@@ -1937,10 +1937,10 @@
       "value": "none",
       "currentCode": "recipe-identity",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn-success:hover::background-color::1",
@@ -1951,11 +1951,11 @@
       "value": "color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))",
       "currentCode": "recipe-identity",
       "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
+      "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "proportional/viewport relation",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn-link::text-decoration::1",
@@ -1966,10 +1966,10 @@
       "value": "none",
       "currentCode": "recipe-identity",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn-link:hover::text-decoration::1",
@@ -1980,10 +1980,10 @@
       "value": "underline",
       "currentCode": "recipe-identity",
       "ruleAction": "typography-content",
-      "latentOutcome": "latent-word",
+      "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "proposedForm": "wrap/list/code/prose word or molecule"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn-link-danger::text-decoration::1",
@@ -1994,10 +1994,10 @@
       "value": "none",
       "currentCode": "recipe-identity",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn-link-danger:hover::text-decoration::1",
@@ -2008,10 +2008,10 @@
       "value": "underline",
       "currentCode": "recipe-identity",
       "ruleAction": "typography-content",
-      "latentOutcome": "latent-word",
+      "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "proposedForm": "wrap/list/code/prose word or molecule"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn:disabled::cursor::1",
@@ -2022,10 +2022,10 @@
       "value": "not-allowed",
       "currentCode": "recipe-identity",
       "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "condition-backed state skin/affordance facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn:disabled::opacity::1",
@@ -2036,10 +2036,10 @@
       "value": "0.6",
       "currentCode": "recipe-identity",
       "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "condition-backed state skin/affordance facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn:disabled:hover::background-color::1",
@@ -2050,10 +2050,10 @@
       "value": "var(--tone-dim)",
       "currentCode": "recipe-identity",
       "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.btn:disabled:hover::opacity::1",
@@ -2064,10 +2064,10 @@
       "value": "0.6",
       "currentCode": "recipe-identity",
       "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "condition-backed state skin/affordance facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar::width::1",
@@ -2214,10 +2214,10 @@
       "value": "pointer",
       "currentCode": "recipe-identity",
       "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "condition-backed state skin/affordance facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::user-select::1",
@@ -2228,10 +2228,10 @@
       "value": "none",
       "currentCode": "recipe-identity",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *:active::transform::1",
@@ -2242,10 +2242,10 @@
       "value": "scale(0.98)",
       "currentCode": "recipe-identity",
       "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "condition-backed state skin/affordance facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::opacity::1",
@@ -2256,10 +2256,10 @@
       "value": "0.9",
       "currentCode": "recipe-identity",
       "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "condition-backed state skin/affordance facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
@@ -2312,10 +2312,10 @@
       "value": "none !important",
       "currentCode": "motion-followup",
       "ruleAction": "motion-transition",
-      "latentOutcome": "latent-word",
+      "latentOutcome": "local-identity",
       "function": "defines animated properties, timing, or tween suppression",
-      "erminePressure": "admit property-targeted tween word",
-      "proposedForm": "property-targeted tween or tween suppression word"
+      "erminePressure": "keep local after invariance/scale tests",
+      "proposedForm": "keep local"
     },
     {
       "id": "src/styles/theme/metrics.css:::root, :host::scrollbar-color::1",

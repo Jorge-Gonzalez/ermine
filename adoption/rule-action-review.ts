@@ -155,6 +155,14 @@ function hasStateSelector(record: CurrentRecord): boolean {
   return /:(hover|active|focus|focus-within|focus-visible|disabled)\b|\[aria-(selected|checked|current|disabled)[^\]]*\]|\[data-state[^\]]*\]|\.is-(active|selected|sliding)\b|:only-of-type\b/.test(record.selector);
 }
 
+function isRootSelector(selector: string): boolean {
+  return /^(html|body|:host)\b/.test(selector);
+}
+
+function hasStructuralPseudo(selector: string): boolean {
+  return /:(first-child|last-child|first-of-type|last-of-type|nth-child|nth-last-child|nth-of-type|nth-last-of-type|only-child|only-of-type)\b/.test(selector);
+}
+
 function isPseudoDrawing(record: CurrentRecord): boolean {
   return /::(before|after|placeholder|marker)|::-webkit-/.test(record.selector) || record.property === "content";
 }
@@ -226,8 +234,12 @@ function classifyRuleAction(record: CurrentRecord): RuleAction {
 
 function classifyLatentOutcome(record: CurrentRecord, action: RuleAction): LatentOutcome {
   if (record.code === "assimilable") return "admitted";
+  if (record.code === "recipe-identity") return "recipe";
   if (record.code === "user-content") return "recipe";
   if (action === "component-private-drawing") return "recipe";
+  if (isSpacingResetBoundary(record)) return "local-identity";
+  if (isSearchHighlightReset(record)) return "recipe";
+  if (isShakeTransitionSuppression(record)) return "local-identity";
   if (/content-editor-body/.test(record.selector)) return "recipe";
   if (record.code === "brand-identity") {
     return record.property === "font-family" ? "local-identity" : "latent-word";
@@ -255,6 +267,23 @@ function classifyLatentOutcome(record: CurrentRecord, action: RuleAction): Laten
   }
   if (action === "reset-inheritance-neutralization") return "latent-facet";
   return record.code === "component-contract" ? "recipe" : "local-identity";
+}
+
+function isSpacingResetBoundary(record: CurrentRecord): boolean {
+  return isSpacingProperty(record.property)
+    && record.value === "0"
+    && (isRootSelector(record.selector) || hasStructuralPseudo(record.selector));
+}
+
+function isSearchHighlightReset(record: CurrentRecord): boolean {
+  return record.code === "reset-absence" && / mark\b/.test(record.selector);
+}
+
+function isShakeTransitionSuppression(record: CurrentRecord): boolean {
+  return record.code === "motion-followup"
+    && /\.shake\b/.test(record.selector)
+    && record.property === "transition"
+    && /^none\b/.test(record.value);
 }
 
 function functionSummary(action: RuleAction): string {
