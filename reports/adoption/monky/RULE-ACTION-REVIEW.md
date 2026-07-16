@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 143 |
+| reviewed residue declarations | 141 |
 | assimilable now | 0 |
-| latent generalizable | 43 |
+| latent generalizable | 41 |
 | likely recipe/molecule | 97 |
 | likely local identity | 3 |
 
@@ -20,9 +20,9 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | dimension-constraint | 1 |
 | attachment-edge-layer | 6 |
-| spacing-rhythm | 20 |
+| spacing-rhythm | 19 |
 | surface-line-elevation-cutout | 19 |
-| typography-content | 29 |
+| typography-content | 28 |
 | interaction-affordance-state | 14 |
 | motion-transition | 3 |
 | reset-inheritance-neutralization | 10 |
@@ -32,9 +32,9 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| latent-word | 9 |
+| latent-word | 8 |
 | latent-facet | 28 |
-| latent-scale | 6 |
+| latent-scale | 5 |
 | recipe | 97 |
 | local-identity | 3 |
 
@@ -43,7 +43,7 @@ generalization, recipe, and local-identity pressure.
 | current code | declarations |
 | --- | --- |
 | recipe-identity | 17 |
-| brand-identity | 8 |
+| brand-identity | 7 |
 | component-contract | 8 |
 | state-mechanics | 1 |
 | parent-relational | 2 |
@@ -54,7 +54,7 @@ generalization, recipe, and local-identity pressure.
 | elevation-followup | 3 |
 | reset-absence | 5 |
 | user-content | 43 |
-| identity-geometry | 19 |
+| identity-geometry | 18 |
 
 ## Matched Playbook Recipes
 
@@ -65,6 +65,7 @@ generalization, recipe, and local-identity pressure.
 | root-and-structural-reset-boundary | boundary | mechanical | 5 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
 | edge-attachment | conversion | review | 3 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |
+| existing-scale-word | conversion | review | 2 | Confirm the project token or numeric value is bound to the Ermine scale, then replace the local declaration with the matching existing word. |
 | rule-edge-facets | conversion | review | 2 | Replace side-specific border presence/colour declarations with the matching rule edge word. |
 | spacing-edge-decomposition | conversion | mechanical | 1 | Expand two-, three-, and four-value padding/margin shorthands into the exact top/right/bottom/left words when any edge differs. |
 | state-backed-prefix | conversion | mechanical | 1 | Use `checked:`, `selected:`, `pressed:`, `expanded:`, or `current:` only with their required backing/capability. |
@@ -79,9 +80,9 @@ generalization, recipe, and local-identity pressure.
 | surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | latent-facet | 11 | add a missing facet on an existing Ermine concept |
 | reset-inheritance-neutralization | latent-facet | 8 | add a missing facet on an existing Ermine concept |
-| spacing-rhythm | latent-scale | 6 | map to an existing/proportional scale or admit a named scale role |
 | surface-line-elevation-cutout | latent-facet | 6 | add a missing facet on an existing Ermine concept |
-| typography-content | latent-word | 5 | admit a new Ermine word only if it survives the invariance test |
+| spacing-rhythm | latent-scale | 5 | map to an existing/proportional scale or admit a named scale role |
+| typography-content | latent-word | 4 | admit a new Ermine word only if it survives the invariance test |
 | attachment-edge-layer | latent-word | 3 | admit relational attachment/layer word |
 | attachment-edge-layer | latent-facet | 3 | add a missing facet on an existing Ermine concept |
 | interaction-affordance-state | recipe | 3 | promote as molecule/recipe only if reused |

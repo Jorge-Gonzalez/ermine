@@ -2,25 +2,25 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "e22bcf304bd0a792c03137d6e52cc5200d6275fc",
-    "projectCommit": "ab1864e2ccc9e9a95b81aad5ce34008f54fb2958"
+    "ermineCommit": "5f5fb67af7a89b25d19cab682db37f08ebdf88ba",
+    "projectCommit": "e8aace8c69a8d2cc456ba55edcca6bf5f1e6bb62"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 143,
+    "reviewedDeclarations": 141,
     "assimilableNow": 0,
-    "latentGeneralizable": 43,
+    "latentGeneralizable": 41,
     "likelyRecipe": 97,
     "likelyLocal": 3,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 1,
       "attachment-edge-layer": 6,
-      "spacing-rhythm": 20,
+      "spacing-rhythm": 19,
       "surface-line-elevation-cutout": 19,
-      "typography-content": 29,
+      "typography-content": 28,
       "interaction-affordance-state": 14,
       "motion-transition": 3,
       "reset-inheritance-neutralization": 10,
@@ -28,9 +28,9 @@
     },
     "byLatentOutcome": {
       "admitted": 0,
-      "latent-word": 9,
+      "latent-word": 8,
       "latent-facet": 28,
-      "latent-scale": 6,
+      "latent-scale": 5,
       "recipe": 97,
       "local-identity": 3
     },
@@ -42,7 +42,7 @@
       "assimilable": 0,
       "recipe-identity": 17,
       "rule-mechanics": 0,
-      "brand-identity": 8,
+      "brand-identity": 7,
       "affordance-mechanics": 0,
       "component-contract": 8,
       "state-mechanics": 1,
@@ -57,11 +57,12 @@
       "elevation-followup": 3,
       "reset-absence": 5,
       "user-content": 43,
-      "identity-geometry": 19,
+      "identity-geometry": 18,
       "skin-review": 0,
       "identity-review": 0
     },
     "byPlaybookRecipe": {
+      "existing-scale-word": 2,
       "spacing-none-endpoints": 0,
       "spacing-edge-decomposition": 1,
       "spacing-logical-axis": 0,
@@ -132,35 +133,6 @@
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-branding::margin-right::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 32,
-      "selector": ".modal-nav-branding",
-      "property": "margin-right",
-      "value": "1rem",
-      "currentCode": "identity-geometry",
-      "ruleAction": "spacing-rhythm",
-      "latentOutcome": "latent-scale",
-      "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "map to an existing/proportional scale or admit a named scale role",
-      "scaleMapping": "spacing-lg",
-      "proposedForm": "per-edge spacing facet or smaller density step"
-    },
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-label::font-size::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 44,
-      "selector": ".modal-nav-label",
-      "property": "font-size",
-      "value": "var(--text-base)",
-      "currentCode": "brand-identity",
-      "ruleAction": "typography-content",
-      "latentOutcome": "latent-word",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "proposedForm": "wrap/list/code/prose word or molecule"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::font-family::1",
@@ -1570,6 +1542,7 @@
       "scaleMapping": "spacing-md",
       "proposedForm": "prose/editor-content molecule",
       "playbookRecipes": [
+        "existing-scale-word",
         "user-content-molecule-boundary"
       ]
     },
@@ -1656,6 +1629,7 @@
       "scaleMapping": "spacing-md",
       "proposedForm": "prose/editor-content molecule",
       "playbookRecipes": [
+        "existing-scale-word",
         "spacing-edge-decomposition",
         "user-content-molecule-boundary"
       ]

@@ -2,40 +2,46 @@
 
 Generated from `reports/adoption/monky/current-ledger.json`. This lists every current Monky declaration counted as project-owned residue, excluding adopted/infrastructure and zero review buckets.
 
+Regenerate with:
+
+```sh
+node --import tsx adoption/residue-detail.ts --name monky --write
+```
+
 ## Provenance
 
 | source | commit |
 |---|---|
-| Ermine | `e22bcf304bd0` |
-| monky | `ab1864e2ccc9` |
+| Ermine | `5f5fb67af7a89b25d19cab682db37f08ebdf88ba` |
+| monky | `e8aace8c69a8d2cc456ba55edcca6bf5f1e6bb62` |
 
 ## Summary
 
-- Current declarations: 524
-- Adopted/infrastructure declarations: 381
-- Project-owned residue declarations: 143
+- Current declarations: 523
+- Adopted/infrastructure declarations: 382
+- Project-owned residue declarations: 141
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 17 | Project recipe bundles licensed by R-SKIN-10. |
-| `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
-| `component-contract` | 8 | Component-owned mechanics, exact geometry, or product contract. |
-| `state-mechanics` | 1 | Native/JS state mechanics outside backed Ermine conditions. |
-| `parent-relational` | 2 | Guarded parent/descendant state mechanics outside ruled relational words. |
-| `pseudo-mechanics` | 23 | Pseudo-element geometry, generated content, and fills. |
-| `scrollbar-followup` | 9 | Engine-drawn scrollbar identity outside R-SKIN-15 standard properties. |
-| `motion-followup` | 1 | Transition/animation timing evidence for the animation-plane follow-up. |
-| `opacity-followup` | 4 | Opacity prominence/treatment evidence. |
-| `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
-| `reset-absence` | 5 | Absence/reset/transparent mechanics, not positive style carriers. |
-| `user-content` | 43 | Rich-text defaults inside user-authored content. |
-| `identity-geometry` | 19 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `recipe-identity` | 17 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `brand-identity` | 7 | project brand typography and type treatment |
+| `component-contract` | 8 | component-owned mechanics, exact geometry, or product contract |
+| `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
+| `parent-relational` | 2 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
+| `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
+| `scrollbar-followup` | 9 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
+| `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
+| `opacity-followup` | 4 | opacity state treatment (named follow-up question) |
+| `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
+| `reset-absence` | 5 | absence/reset mechanics, not a positive carrier |
+| `user-content` | 43 | rich-text defaults inside user-authored content |
+| `identity-geometry` | 18 | project-exact geometry on a grammar-family property |
 
 ## recipe-identity (17)
 
-Project recipe bundles licensed by R-SKIN-10.
+a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (1)
 
@@ -64,15 +70,9 @@ Project recipe bundles licensed by R-SKIN-10.
 | 78 | `.selectable-group > *:active` | `transform: scale(0.98)` |
 | 82 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
 
-## brand-identity (8)
+## brand-identity (7)
 
-Monky-specific brand typography and type treatment.
-
-### src/content/overlays/modal/modalStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 44 | `.modal-nav-label` | `font-size: var(--text-base)` |
+project brand typography and type treatment
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
 
@@ -103,7 +103,7 @@ Monky-specific brand typography and type treatment.
 
 ## component-contract (8)
 
-Component-owned mechanics, exact geometry, or product contract.
+component-owned mechanics, exact geometry, or product contract
 
 ### src/content/overlays/modal/modalStyles.css (2)
 
@@ -135,7 +135,7 @@ Component-owned mechanics, exact geometry, or product contract.
 
 ## state-mechanics (1)
 
-Native/JS state mechanics outside backed Ermine conditions.
+JS/native state mechanics outside backed Ermine conditions
 
 ### src/styles/skin/controls.css (1)
 
@@ -145,7 +145,7 @@ Native/JS state mechanics outside backed Ermine conditions.
 
 ## parent-relational (2)
 
-Guarded parent/descendant state mechanics outside ruled relational words.
+guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13)
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (1)
 
@@ -161,7 +161,7 @@ Guarded parent/descendant state mechanics outside ruled relational words.
 
 ## pseudo-mechanics (23)
 
-Pseudo-element geometry, generated content, and fills.
+pseudo-element geometry, fills, and content
 
 ### src/content/overlays/views/search/searchViewStyles.css (8)
 
@@ -203,7 +203,7 @@ Pseudo-element geometry, generated content, and fills.
 
 ## scrollbar-followup (9)
 
-Engine-drawn scrollbar identity outside R-SKIN-15 standard properties.
+engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15)
 
 ### src/styles/skin/controls.css (8)
 
@@ -226,7 +226,7 @@ Engine-drawn scrollbar identity outside R-SKIN-15 standard properties.
 
 ## motion-followup (1)
 
-Transition/animation timing evidence for the animation-plane follow-up.
+transition/animation timing (deferred to GAP-U-animation-plane)
 
 ### src/styles/skin/controls.css (1)
 
@@ -236,7 +236,7 @@ Transition/animation timing evidence for the animation-plane follow-up.
 
 ## opacity-followup (4)
 
-Opacity prominence/treatment evidence.
+opacity state treatment (named follow-up question)
 
 ### src/content/overlays/views/search/searchViewStyles.css (1)
 
@@ -259,7 +259,7 @@ Opacity prominence/treatment evidence.
 
 ## elevation-followup (3)
 
-Identity shadows/rings outside the shared elevated treatment.
+box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09)
 
 ### src/content/overlays/modal/modalStyles.css (1)
 
@@ -281,7 +281,7 @@ Identity shadows/rings outside the shared elevated treatment.
 
 ## reset-absence (5)
 
-Absence/reset/transparent mechanics, not positive style carriers.
+absence/reset mechanics, not a positive carrier
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (1)
 
@@ -305,7 +305,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 ## user-content (43)
 
-Rich-text defaults inside user-authored content.
+rich-text defaults inside user-authored content
 
 ### src/styles/components/content-editor.css (43)
 
@@ -355,16 +355,15 @@ Rich-text defaults inside user-authored content.
 | 140 | `.content-editor-body a` | `text-decoration: underline` |
 | 144 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (19)
+## identity-geometry (18)
 
-Project-exact dimensions, spacing, positioning, and geometry.
+project-exact geometry on a grammar-family property
 
-### src/content/overlays/modal/modalStyles.css (2)
+### src/content/overlays/modal/modalStyles.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
 | 20 | `.modal-backdrop` | `z-index: 10000` |
-| 32 | `.modal-nav-branding` | `margin-right: 1rem` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (5)
 
@@ -407,4 +406,3 @@ Project-exact dimensions, spacing, positioning, and geometry.
 |---:|---|---|
 | 17 | `body` | `margin: 0` |
 | 18 | `body` | `padding: 0` |
-
