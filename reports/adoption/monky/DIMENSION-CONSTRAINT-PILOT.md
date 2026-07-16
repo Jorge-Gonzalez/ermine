@@ -8,9 +8,9 @@ scales, proportional relationships, or measure/control-size roles.
 
 | metric | count |
 | --- | --- |
-| dimension/constraint declarations | 32 |
+| dimension/constraint declarations | 31 |
 | latent scale | 17 |
-| latent word | 8 |
+| latent word | 7 |
 | latent facet | 4 |
 | recipe | 3 |
 | local identity | 0 |
@@ -21,8 +21,8 @@ scales, proportional relationships, or measure/control-size roles.
 | --- | --- |
 | icon/control square | 10 |
 | inline measure/popover width | 6 |
-| dimension constraint | 4 |
 | interaction/content floor | 3 |
+| dimension constraint | 3 |
 | bounded dialog/container measure | 2 |
 | min-content escape | 2 |
 | flex negotiation | 2 |
@@ -76,5 +76,4 @@ scales, proportional relationships, or measure/control-size roles.
 | src/styles/components/content-editor.css:60 | width | 24px | icon/control square | latent-scale | spacing-2xl | square/icon/control-size scale member |
 | src/styles/components/content-editor.css:68 | height | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
 | src/styles/components/content-editor.css:74 | min-height | 150px | interaction/content floor | recipe | off current named scale | prose/editor-content molecule |
-| src/styles/skin/controls.css:4 | width | 100% | dimension constraint | latent-word | proportional/viewport relation | size/measure scale role |
-| src/styles/skin/controls.css:19 | min-height | 150px | interaction/content floor | latent-scale | off current named scale | control-min-block or editor-min-block |
+| src/styles/skin/controls.css:18 | min-height | 150px | interaction/content floor | latent-scale | off current named scale | control-min-block or editor-min-block |

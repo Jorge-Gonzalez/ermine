@@ -7,19 +7,19 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | source | commit |
 |---|---|
 | Ermine | `b2946ce0be25` |
-| monky | `caabf9136551` |
+| monky | `2967e8d20916` |
 
 ## Summary
 
-- Current declarations: 514
+- Current declarations: 513
 - Adopted/infrastructure declarations: 260
-- Project-owned residue declarations: 254
+- Project-owned residue declarations: 253
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 30 | Project recipe bundles licensed by R-SKIN-10. |
+| `recipe-identity` | 29 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
 | `component-contract` | 39 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
@@ -34,7 +34,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
 | `identity-geometry` | 56 | Project-exact dimensions, spacing, positioning, and geometry. |
 
-## recipe-identity (30)
+## recipe-identity (29)
 
 Project recipe bundles licensed by R-SKIN-10.
 
@@ -56,13 +56,12 @@ Project recipe bundles licensed by R-SKIN-10.
 | 74 | `.seg-option:last-child` | `border-right: none` |
 | 78 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
 
-### src/styles/skin/controls.css (22)
+### src/styles/skin/controls.css (21)
 
 | line | selector | declaration |
 |---:|---|---|
-| 4 | `.input` | `width: 100%` |
-| 5 | `.input` | `transition: border-color var(--transition-fast)` |
-| 9 | `.input-error:focus` | `box-shadow: inset 0 0 0 2px var(--status-error-wash)` |
+| 4 | `.input` | `transition: border-color var(--transition-fast)` |
+| 8 | `.input-error:focus` | `box-shadow: inset 0 0 0 2px var(--status-error-wash)` |
 | 12 | `.radio-label` | `cursor: pointer` |
 | 13 | `.radio-label` | `user-select: none` |
 | 24 | `.btn-success:hover` | `background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))` |

@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 254 |
+| reviewed residue declarations | 253 |
 | assimilable now | 0 |
-| latent generalizable | 149 |
+| latent generalizable | 148 |
 | likely recipe/molecule | 102 |
 | likely local identity | 3 |
 
@@ -18,7 +18,7 @@ generalization, recipe, and local-identity pressure.
 
 | rule action | declarations |
 | --- | --- |
-| dimension-constraint | 32 |
+| dimension-constraint | 31 |
 | attachment-edge-layer | 10 |
 | spacing-rhythm | 41 |
 | surface-line-elevation-cutout | 37 |
@@ -32,7 +32,7 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| latent-word | 40 |
+| latent-word | 39 |
 | latent-facet | 82 |
 | latent-scale | 27 |
 | recipe | 102 |
@@ -42,7 +42,7 @@ generalization, recipe, and local-identity pressure.
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 30 |
+| recipe-identity | 29 |
 | brand-identity | 8 |
 | component-contract | 39 |
 | state-mechanics | 5 |
@@ -73,7 +73,7 @@ generalization, recipe, and local-identity pressure.
 | interaction-affordance-state | latent-facet | 11 | add a missing facet on an existing Ermine concept |
 | typography-content | latent-word | 11 | admit a new Ermine word only if it survives the invariance test |
 | spacing-rhythm | latent-scale | 10 | map to an existing/proportional scale or admit a named scale role |
-| dimension-constraint | latent-word | 8 | admit a new Ermine word only if it survives the invariance test |
+| dimension-constraint | latent-word | 7 | admit a new Ermine word only if it survives the invariance test |
 | attachment-edge-layer | latent-word | 6 | admit relational attachment/layer word |
 | attachment-edge-layer | latent-facet | 4 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | latent-facet | 4 | add a missing facet on an existing Ermine concept |

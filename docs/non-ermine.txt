@@ -19,16 +19,16 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the first control-size migration is Ermine
-b2946ce / Monky caabf91:
+were migrated). Current live ledger after the input `fill-inline` migration is Ermine
+b2946ce / Monky 2967e8d:
 
-  current declarations:                 514
+  current declarations:                 513
   adopted/infrastructure declarations:  260
-  project-owned residue declarations:   254
+  project-owned residue declarations:   253
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 30, brand-identity 8, component-contract 39, state-mechanics 5,
+  recipe-identity 29, brand-identity 8, component-contract 39, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 12,
   user-content 43, identity-geometry 56.
@@ -88,11 +88,13 @@ elevation 3 (= 29). `shake` moved into the effect-atom layer, and the universal
 `transition: all var(--transition-fast)` rows moved to the open `tween-quick` word. The
 remaining motion rows are property-targeted transitions, the local `.shake { transition: none
 !important }` suppression, and bespoke segmented-control/overlay timing. user-content
-(43 = the `prose` molecule) and recipe-identity (34, R-SKIN-10) remain the
+(43 = the `prose` molecule) and recipe-identity (29 by the live ledger, R-SKIN-10) remain the
 genuinely-licensed-local bundles. The first dimension endpoint pass admitted
 `max-width-none`, and the delete-confirm `max-width: none` row migrated to that word. The
 next dimension pass admitted `control-size-<spacing>` and migrated the 16px radio/checkbox
-control boxes to `control-size-lg`; the live assimilable work list remains zero.
+control boxes to `control-size-lg`. The next existing-word pass moved the shared
+`.input { width: 100%; }` rule into `fill-inline`; the live assimilable work list remains
+zero.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -116,7 +118,9 @@ also made the content-editor dropdown width migrate to `min-width-sm`. The effec
 moved `.shake` animation/keyframes to generated Ermine CSS. The open-tween pass moved the
 universal `.btn`, `.panel-button`, and `.selectable-group > *` transition declarations to
 `tween-quick`, with Monky binding `--duration-quick` / `--duration-settled` in metrics.
-The token names below otherwise persist.
+The later control-size and input-fill migrations removed the local radio/checkbox
+width/height rules and the `.input { width: 100%; }` rule. The token names below otherwise
+persist.
 
 CSS-backed local class selectors by source file:
 

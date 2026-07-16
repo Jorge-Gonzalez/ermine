@@ -3,20 +3,20 @@
   "project": "monky",
   "source": {
     "ermineCommit": "b2946ce0be25213fccba25c00098b842775304a4",
-    "projectCommit": "caabf9136551152789a7ce97dfefcfa684cb303a"
+    "projectCommit": "2967e8d20916ae997de14f98c9417f08d8fc9a04"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 254,
+    "reviewedDeclarations": 253,
     "assimilableNow": 0,
-    "latentGeneralizable": 149,
+    "latentGeneralizable": 148,
     "likelyRecipe": 102,
     "likelyLocal": 3,
     "byRuleAction": {
       "already-admitted": 0,
-      "dimension-constraint": 32,
+      "dimension-constraint": 31,
       "attachment-edge-layer": 10,
       "spacing-rhythm": 41,
       "surface-line-elevation-cutout": 37,
@@ -28,7 +28,7 @@
     },
     "byLatentOutcome": {
       "admitted": 0,
-      "latent-word": 40,
+      "latent-word": 39,
       "latent-facet": 82,
       "latent-scale": 27,
       "recipe": 102,
@@ -40,7 +40,7 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 30,
+      "recipe-identity": 29,
       "rule-mechanics": 0,
       "brand-identity": 8,
       "affordance-mechanics": 0,
@@ -3171,24 +3171,9 @@
       "proposedForm": "per-edge spacing facet or smaller density step"
     },
     {
-      "id": "src/styles/skin/controls.css::.input::width::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 4,
-      "selector": ".input",
-      "property": "width",
-      "value": "100%",
-      "currentCode": "recipe-identity",
-      "ruleAction": "dimension-constraint",
-      "latentOutcome": "latent-word",
-      "function": "sets physical envelope, measure, control size, or constraint",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "scaleMapping": "proportional/viewport relation",
-      "proposedForm": "size/measure scale role"
-    },
-    {
       "id": "src/styles/skin/controls.css::.input::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 5,
+      "line": 4,
       "selector": ".input",
       "property": "transition",
       "value": "border-color var(--transition-fast)",
@@ -3202,7 +3187,7 @@
     {
       "id": "src/styles/skin/controls.css::.input-error:focus::box-shadow::1",
       "file": "src/styles/skin/controls.css",
-      "line": 9,
+      "line": 8,
       "selector": ".input-error:focus",
       "property": "box-shadow",
       "value": "inset 0 0 0 2px var(--status-error-wash)",
@@ -3216,7 +3201,7 @@
     {
       "id": "src/styles/skin/controls.css::.radio-label::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 13,
+      "line": 12,
       "selector": ".radio-label",
       "property": "cursor",
       "value": "pointer",
@@ -3230,7 +3215,7 @@
     {
       "id": "src/styles/skin/controls.css::.radio-label::user-select::1",
       "file": "src/styles/skin/controls.css",
-      "line": 14,
+      "line": 13,
       "selector": ".radio-label",
       "property": "user-select",
       "value": "none",
@@ -3244,7 +3229,7 @@
     {
       "id": "src/styles/skin/controls.css::.editor-content::min-height::1",
       "file": "src/styles/skin/controls.css",
-      "line": 19,
+      "line": 18,
       "selector": ".editor-content",
       "property": "min-height",
       "value": "150px",
@@ -3259,7 +3244,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn-success:hover::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 25,
+      "line": 24,
       "selector": ".btn-success:hover",
       "property": "background-color",
       "value": "color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))",
@@ -3274,7 +3259,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn-link::text-decoration::1",
       "file": "src/styles/skin/controls.css",
-      "line": 29,
+      "line": 28,
       "selector": ".btn-link",
       "property": "text-decoration",
       "value": "none",
@@ -3288,7 +3273,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn-link:hover::text-decoration::1",
       "file": "src/styles/skin/controls.css",
-      "line": 33,
+      "line": 32,
       "selector": ".btn-link:hover",
       "property": "text-decoration",
       "value": "underline",
@@ -3302,7 +3287,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn-link-danger::text-decoration::1",
       "file": "src/styles/skin/controls.css",
-      "line": 37,
+      "line": 36,
       "selector": ".btn-link-danger",
       "property": "text-decoration",
       "value": "none",
@@ -3316,7 +3301,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn-link-danger:hover::text-decoration::1",
       "file": "src/styles/skin/controls.css",
-      "line": 41,
+      "line": 40,
       "selector": ".btn-link-danger:hover",
       "property": "text-decoration",
       "value": "underline",
@@ -3330,7 +3315,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn:disabled::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 45,
+      "line": 44,
       "selector": ".btn:disabled",
       "property": "cursor",
       "value": "not-allowed",
@@ -3344,7 +3329,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn:disabled::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 46,
+      "line": 45,
       "selector": ".btn:disabled",
       "property": "opacity",
       "value": "0.6",
@@ -3358,7 +3343,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn:disabled:hover::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 50,
+      "line": 49,
       "selector": ".btn:disabled:hover",
       "property": "background-color",
       "value": "var(--tone-dim)",
@@ -3372,7 +3357,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn:disabled:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 51,
+      "line": 50,
       "selector": ".btn:disabled:hover",
       "property": "opacity",
       "value": "0.6",
@@ -3386,7 +3371,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar::width::1",
       "file": "src/styles/skin/controls.css",
-      "line": 60,
+      "line": 59,
       "selector": "::-webkit-scrollbar",
       "property": "width",
       "value": "var(--spacing-md) !important",
@@ -3400,7 +3385,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar::height::1",
       "file": "src/styles/skin/controls.css",
-      "line": 61,
+      "line": 60,
       "selector": "::-webkit-scrollbar",
       "property": "height",
       "value": "var(--spacing-md) !important",
@@ -3414,7 +3399,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-track::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 65,
+      "line": 64,
       "selector": "::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--tone-dim) !important",
@@ -3428,7 +3413,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-track::border-radius::1",
       "file": "src/styles/skin/controls.css",
-      "line": 66,
+      "line": 65,
       "selector": "::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -3442,7 +3427,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 70,
+      "line": 69,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--tone) !important",
@@ -3456,7 +3441,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::border-radius::1",
       "file": "src/styles/skin/controls.css",
-      "line": 71,
+      "line": 70,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -3470,7 +3455,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::border::1",
       "file": "src/styles/skin/controls.css",
-      "line": 72,
+      "line": 71,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--tone-dim) !important",
@@ -3484,7 +3469,7 @@
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb:hover::background::1",
       "file": "src/styles/skin/controls.css",
-      "line": 76,
+      "line": 75,
       "selector": "::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--accent-dim) !important",
@@ -3498,7 +3483,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 83,
+      "line": 82,
       "selector": ".selectable-group > *",
       "property": "cursor",
       "value": "pointer",
@@ -3512,7 +3497,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::user-select::1",
       "file": "src/styles/skin/controls.css",
-      "line": 84,
+      "line": 83,
       "selector": ".selectable-group > *",
       "property": "user-select",
       "value": "none",
@@ -3526,7 +3511,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *:active::transform::1",
       "file": "src/styles/skin/controls.css",
-      "line": 88,
+      "line": 87,
       "selector": ".selectable-group > *:active",
       "property": "transform",
       "value": "scale(0.98)",
@@ -3540,7 +3525,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 92,
+      "line": 91,
       "selector": ".selectable-group > .is-selected",
       "property": "background-color",
       "value": "var(--accent)",
@@ -3554,7 +3539,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 93,
+      "line": 92,
       "selector": ".selectable-group > .is-selected",
       "property": "color",
       "value": "var(--ink-alt)",
@@ -3568,7 +3553,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::border-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 94,
+      "line": 93,
       "selector": ".selectable-group > .is-selected",
       "property": "border-color",
       "value": "var(--accent)",
@@ -3582,7 +3567,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::background-color::1",
       "file": "src/styles/skin/controls.css",
-      "line": 98,
+      "line": 97,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "background-color",
       "value": "var(--accent)",
@@ -3596,7 +3581,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 99,
+      "line": 98,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "opacity",
       "value": "0.9",
@@ -3610,7 +3595,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 103,
+      "line": 102,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "cursor",
       "value": "not-allowed",
@@ -3624,7 +3609,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 104,
+      "line": 103,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "opacity",
       "value": "0.95",
@@ -3638,7 +3623,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 108,
+      "line": 107,
       "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
       "property": "opacity",
       "value": "0.95",
@@ -3652,7 +3637,7 @@
     {
       "id": "src/styles/skin/controls.css::.shake::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 114,
+      "line": 113,
       "selector": ".shake",
       "property": "transition",
       "value": "none !important",
@@ -3680,9 +3665,9 @@
   ],
   "dimensionPilot": {
     "summary": {
-      "declarations": 32,
+      "declarations": 31,
       "latentScale": 17,
-      "latentWord": 8,
+      "latentWord": 7,
       "latentFacet": 4,
       "recipe": 3,
       "localIdentity": 0
@@ -4163,25 +4148,9 @@
         "dimensionIntent": "interaction/content floor"
       },
       {
-        "id": "src/styles/skin/controls.css::.input::width::1",
-        "file": "src/styles/skin/controls.css",
-        "line": 4,
-        "selector": ".input",
-        "property": "width",
-        "value": "100%",
-        "currentCode": "recipe-identity",
-        "ruleAction": "dimension-constraint",
-        "latentOutcome": "latent-word",
-        "function": "sets physical envelope, measure, control size, or constraint",
-        "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-        "scaleMapping": "proportional/viewport relation",
-        "proposedForm": "size/measure scale role",
-        "dimensionIntent": "dimension constraint"
-      },
-      {
         "id": "src/styles/skin/controls.css::.editor-content::min-height::1",
         "file": "src/styles/skin/controls.css",
-        "line": 19,
+        "line": 18,
         "selector": ".editor-content",
         "property": "min-height",
         "value": "150px",
