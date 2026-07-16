@@ -368,6 +368,14 @@ function classNames(compound: string): string[] {
   return [...compound.matchAll(/\.([_a-zA-Z][\w-]*)/g)].map((match) => match[1]);
 }
 
+function notClassNames(compound: string): string[] {
+  return [...compound.matchAll(/:not\(([^()]*)\)/g)].flatMap((match) => classNames(match[1] ?? ""));
+}
+
+function positiveClassNames(compound: string): string[] {
+  return classNames(compound.replace(/:not\([^()]*\)/g, ""));
+}
+
 function recipeTokenMatches(className: string, token: string): boolean {
   const normalized = token.startsWith(".") ? token.slice(1) : token;
   if (!normalized) return false;
@@ -535,7 +543,7 @@ export async function findShadowedWords(
     !fileMatches(declaration.file, profile.substrate) &&
     !fileMatches(declaration.file, profile.theme) &&
     !fileMatches(declaration.file, profile.configFiles));
-  const byIdentity = new Map<string, Array<{ property: string; selector: string; file: string; conditioned: boolean; condition: string }>>();
+  const byIdentity = new Map<string, Array<{ property: string; selector: string; file: string; conditioned: boolean; condition: string; excludedClasses: string[] }>>();
   for (const declaration of laterLayer) {
     for (const selector of displaySelector(declaration).split(",").map((part) => part.trim())) {
       const parts = compounds(selector);
@@ -544,13 +552,15 @@ export async function findShadowedWords(
       // A state condition on an ANCESTOR compound narrows the rule below the word's
       // firing set — refinement layering, never a defeat.
       const ancestorConditioned = parts.slice(0, -1).some((part) => STATE_MARK.test(part));
-      for (const className of classNames(subject)) {
+      const excludedClasses = notClassNames(subject);
+      for (const className of positiveClassNames(subject)) {
         (byIdentity.get(className) ?? byIdentity.set(className, []).get(className)!).push({
           property: declaration.property,
           selector,
           file: declaration.file,
           conditioned: ancestorConditioned || STATE_MARK.test(subject) || selectorCondition(subject) !== "",
           condition: ancestorConditioned ? " narrowed" : selectorCondition(subject),
+          excludedClasses,
         });
       }
     }
@@ -574,6 +584,7 @@ export async function findShadowedWords(
         for (const painted of wordProperties(word, cache)) {
           for (const identity of identities) {
             for (const local of byIdentity.get(identity) ?? []) {
+              if (local.excludedClasses.some((className) => tokens.includes(className))) continue;
               if (local.property !== painted.property) continue;
               // Unconditioned local CSS defeats the word everywhere; same-condition
               // local CSS defeats it exactly where it fires. A *conditioned* local

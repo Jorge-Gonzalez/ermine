@@ -4,6 +4,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { test } from "node:test";
 
+import { parseCssDeclarations } from "../adoption/css-parser.ts";
+import { DEFAULT_PROJECT_PROFILE, findShadowedWords } from "../adoption/current-ledger.ts";
 import { checkAdoptionLedgers, validateLedger } from "../adoption/validate-ledger.ts";
 
 const validFixture = JSON.parse(await readFile(
@@ -122,4 +124,37 @@ test("repository check requires a referenced Gap Report to exist", async () => {
   const validMessages: string[] = [];
   assert.equal(await checkAdoptionLedgers(root, (message) => validMessages.push(message)), true);
   assert.deepEqual(validMessages, ["valid reports/adoption/fixture/ledger.json (8 records)"]);
+});
+
+test("shadowed word check respects class exclusions inside :not()", async () => {
+  const root = await mkdtemp(join(tmpdir(), "ermine-adoption-shadow-not-"));
+  await mkdir(join(root, "src"), { recursive: true });
+  await writeFile(join(root, "src/app.jsx"), `
+    export function App() {
+      return (
+        <>
+          <div className="item wide max-width-none" />
+          <div className="item max-width-none" />
+        </>
+      );
+    }
+  `);
+
+  const declarations = parseCssDeclarations(
+    ".item:not(.wide) { max-width: 8em; }",
+    "src/styles.css",
+  );
+  const shadows = await findShadowedWords(root, DEFAULT_PROJECT_PROFILE, declarations);
+
+  assert.deepEqual(shadows.map((shadow) => ({
+    identity: shadow.identity,
+    word: shadow.word,
+    selector: shadow.selector,
+  })), [
+    {
+      identity: "item",
+      word: "max-width-none",
+      selector: ".item:not(.wide)",
+    },
+  ]);
 });
