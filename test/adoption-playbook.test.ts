@@ -61,3 +61,16 @@ test("playbook recognizes pseudo drawing and user-content molecule boundaries", 
     code: "user-content",
   })).some((recipe) => recipe.id === "user-content-molecule-boundary"));
 });
+
+test("playbook keeps user-content scale tokens out of flat migration recipes", () => {
+  const matches = matchPlaybookRecipes(record({
+    selector: ".content-editor-body blockquote",
+    property: "padding-left",
+    value: "var(--spacing-md)",
+    code: "user-content",
+  })).map((recipe) => recipe.id);
+
+  assert.equal(matches.includes("existing-scale-word"), false);
+  assert.equal(matches.includes("spacing-edge-decomposition"), false);
+  assert.ok(matches.includes("user-content-molecule-boundary"));
+});

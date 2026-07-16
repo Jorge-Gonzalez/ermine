@@ -65,9 +65,7 @@ generalization, recipe, and local-identity pressure.
 | root-and-structural-reset-boundary | boundary | mechanical | 5 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
 | edge-attachment | conversion | review | 3 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |
-| existing-scale-word | conversion | review | 2 | Confirm the project token or numeric value is bound to the Ermine scale, then replace the local declaration with the matching existing word. |
 | rule-edge-facets | conversion | review | 2 | Replace side-specific border presence/colour declarations with the matching rule edge word. |
-| spacing-edge-decomposition | conversion | mechanical | 1 | Expand two-, three-, and four-value padding/margin shorthands into the exact top/right/bottom/left words when any edge differs. |
 | state-backed-prefix | conversion | mechanical | 1 | Use `checked:`, `selected:`, `pressed:`, `expanded:`, or `current:` only with their required backing/capability. |
 
 ## Highest-Pressure Families

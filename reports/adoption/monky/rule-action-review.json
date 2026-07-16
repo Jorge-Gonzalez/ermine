@@ -62,9 +62,9 @@
       "identity-review": 0
     },
     "byPlaybookRecipe": {
-      "existing-scale-word": 2,
+      "existing-scale-word": 0,
       "spacing-none-endpoints": 0,
-      "spacing-edge-decomposition": 1,
+      "spacing-edge-decomposition": 0,
       "spacing-logical-axis": 0,
       "dimension-role-measure": 2,
       "edge-attachment": 3,
@@ -1542,7 +1542,6 @@
       "scaleMapping": "spacing-md",
       "proposedForm": "prose/editor-content molecule",
       "playbookRecipes": [
-        "existing-scale-word",
         "user-content-molecule-boundary"
       ]
     },
@@ -1629,8 +1628,6 @@
       "scaleMapping": "spacing-md",
       "proposedForm": "prose/editor-content molecule",
       "playbookRecipes": [
-        "existing-scale-word",
-        "spacing-edge-decomposition",
         "user-content-molecule-boundary"
       ]
     },

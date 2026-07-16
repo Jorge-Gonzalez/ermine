@@ -35,6 +35,12 @@ function isElementOwnedSelector(selector: string): boolean {
   return !isRootSelector(selector) && !hasStructuralPseudo(selector) && !hasPseudoDrawing(selector);
 }
 
+function isFlatMigrationSurface(record: CurrentRecord): boolean {
+  return isElementOwnedSelector(record.selector)
+    && record.code !== "user-content"
+    && !/content-editor-body/.test(record.selector);
+}
+
 function isSpacingProperty(property: string): boolean {
   return /^(padding|padding-inline|padding-block|padding-top|padding-right|padding-bottom|padding-left|margin|margin-inline|margin-block|margin-top|margin-right|margin-bottom|margin-left|gap|row-gap|column-gap)$/.test(property);
 }
@@ -113,7 +119,7 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     conversion: "Confirm the project token or numeric value is bound to the Ermine scale, then replace the local declaration with the matching existing word.",
     boundary: "Do not use this for off-scale micro-values, project-specific departures, or token aliases that are not intentionally bridged to Ermine.",
     evidence: ["Monky modal nav scale-token migration", "docs/ADOPTION-PLAYBOOK.md"],
-    match: (record) => isElementOwnedSelector(record.selector)
+    match: (record) => isFlatMigrationSurface(record)
       && ((isSpacingProperty(record.property) && (isSpacingVar(record.value) || isNamedSpacingScale(record.value)))
         || isProjectTypeScaleToken(record)),
   },
@@ -128,7 +134,7 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     conversion: "Use whole, logical, or physical padding/margin `none` words. For asymmetric shorthands, decompose to physical edges rather than composing a shorthand plus override.",
     boundary: "Do not apply this to document roots, substrate resets, or structural selectors such as `:first-child`; those are selector/root mechanics.",
     evidence: ["ADR-0053-spacing-none-endpoints", "Monky ab1864e", "Ermine e22bcf3"],
-    match: (record) => isSpacingReset(record) && isElementOwnedSelector(record.selector),
+    match: (record) => isSpacingReset(record) && isFlatMigrationSurface(record),
   },
   {
     id: "spacing-edge-decomposition",
@@ -141,7 +147,7 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     conversion: "Expand two-, three-, and four-value padding/margin shorthands into the exact top/right/bottom/left words when any edge differs.",
     boundary: "Keep raw micro-padding and user-content rhythm local until the density or prose molecule has a ruling.",
     evidence: ["ADR-0043-per-edge-spacing-facets", "ADR-0053-spacing-none-endpoints", "Monky per-edge and spacing-none migrations"],
-    match: (record) => isElementOwnedSelector(record.selector)
+    match: (record) => isFlatMigrationSurface(record)
       && (isSpacingShorthandWithZero(record) || (isPhysicalSpacingEdge(record.property) && (isSpacingVar(record.value) || record.value === "0"))),
   },
   {
@@ -155,7 +161,7 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     conversion: "Use `padding-block-*`, `padding-inline-*`, `margin-block-*`, or `margin-inline-*` when both edges on the axis share a value.",
     boundary: "If the two edges on an axis differ, decompose to physical edges.",
     evidence: ["ADR-0022-spacing-tshirt", "ADR-0043-per-edge-spacing-facets", "ADR-0053-spacing-none-endpoints"],
-    match: (record) => isElementOwnedSelector(record.selector) && isLogicalSpacingAxis(record.property) && (isSpacingVar(record.value) || record.value === "0"),
+    match: (record) => isFlatMigrationSurface(record) && isLogicalSpacingAxis(record.property) && (isSpacingVar(record.value) || record.value === "0"),
   },
   {
     id: "dimension-role-measure",
