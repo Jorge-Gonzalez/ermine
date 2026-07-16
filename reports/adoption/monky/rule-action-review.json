@@ -11,15 +11,16 @@
   "summary": {
     "reviewedDeclarations": 141,
     "assimilableNow": 0,
-    "latentGeneralizable": 19,
-    "likelyRecipe": 116,
-    "likelyLocal": 6,
+    "latentGeneralizable": 6,
+    "likelyRecipe": 124,
+    "likelyLocal": 11,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 1,
       "attachment-edge-layer": 6,
       "spacing-rhythm": 19,
-      "surface-line-elevation-cutout": 19,
+      "alignment-layout": 1,
+      "surface-line-elevation-cutout": 18,
       "typography-content": 28,
       "interaction-affordance-state": 14,
       "motion-transition": 3,
@@ -28,11 +29,11 @@
     },
     "byLatentOutcome": {
       "admitted": 0,
-      "latent-word": 5,
-      "latent-facet": 11,
-      "latent-scale": 3,
-      "recipe": 116,
-      "local-identity": 6
+      "latent-word": 1,
+      "latent-facet": 5,
+      "latent-scale": 0,
+      "recipe": 124,
+      "local-identity": 11
     },
     "byCurrentCode": {
       "ermine-emitted": 0,
@@ -87,10 +88,10 @@
       "value": "var(--shadow-color)",
       "currentCode": "component-contract",
       "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::z-index::1",
@@ -101,10 +102,10 @@
       "value": "10000",
       "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "latent-word",
+      "latentOutcome": "local-identity",
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "admit relational attachment/layer word",
-      "proposedForm": "layer tier"
+      "erminePressure": "keep local after invariance/scale tests",
+      "proposedForm": "keep local"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::box-shadow::1",
@@ -157,10 +158,10 @@
       "value": "1.5",
       "currentCode": "brand-identity",
       "ruleAction": "typography-content",
-      "latentOutcome": "latent-word",
+      "latentOutcome": "local-identity",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "proposedForm": "wrap/list/code/prose word or molecule"
+      "erminePressure": "keep local after invariance/scale tests",
+      "proposedForm": "keep local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::position::1",
@@ -171,10 +172,10 @@
       "value": "fixed !important",
       "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "latent-word",
+      "latentOutcome": "local-identity",
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "admit relational attachment/layer word",
-      "proposedForm": "position/layer mechanism"
+      "erminePressure": "keep local after invariance/scale tests",
+      "proposedForm": "keep local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::z-index::1",
@@ -185,10 +186,10 @@
       "value": "2147483646 !important",
       "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "latent-word",
+      "latentOutcome": "local-identity",
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "admit relational attachment/layer word",
-      "proposedForm": "layer tier"
+      "erminePressure": "keep local after invariance/scale tests",
+      "proposedForm": "keep local"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::box-shadow::1",
@@ -278,10 +279,10 @@
       "value": "3px 6px",
       "currentCode": "identity-geometry",
       "ruleAction": "spacing-rhythm",
-      "latentOutcome": "latent-scale",
+      "latentOutcome": "recipe",
       "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "map to an existing/proportional scale or admit a named scale role",
-      "proposedForm": "per-edge spacing facet or smaller density step"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
@@ -323,10 +324,10 @@
       "value": "52px",
       "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "edge attachment facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::box-shadow::1",
@@ -351,11 +352,11 @@
       "property": "align-content",
       "value": "start",
       "currentCode": "component-contract",
-      "ruleAction": "surface-line-elevation-cutout",
+      "ruleAction": "alignment-layout",
       "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
+      "function": "aligns content or children inside a layout container",
       "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
+      "proposedForm": "content-alignment facet"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::right::1",
@@ -366,10 +367,10 @@
       "value": "var(--spacing-sm)",
       "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "edge attachment facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::background::1",
@@ -927,10 +928,10 @@
       "value": "var(--harmonic)",
       "currentCode": "component-contract",
       "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/components/content-editor.css::.ce-style-trigger::gap::1",
@@ -941,11 +942,11 @@
       "value": "2px",
       "currentCode": "identity-geometry",
       "ruleAction": "spacing-rhythm",
-      "latentOutcome": "latent-scale",
+      "latentOutcome": "recipe",
       "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "map to an existing/proportional scale or admit a named scale role",
+      "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "off current named scale",
-      "proposedForm": "per-edge spacing facet or smaller density step"
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/components/content-editor.css::.ce-style-caret::opacity::1",
@@ -970,10 +971,10 @@
       "value": "calc(100% + 4px)",
       "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "edge attachment facet"
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/components/content-editor.css::.ce-style-dropdown::left::1",
@@ -984,10 +985,10 @@
       "value": "0",
       "currentCode": "component-contract",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
+      "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
         "edge-attachment"
       ]
@@ -1001,11 +1002,11 @@
       "value": "2px",
       "currentCode": "identity-geometry",
       "ruleAction": "spacing-rhythm",
-      "latentOutcome": "latent-scale",
+      "latentOutcome": "recipe",
       "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "map to an existing/proportional scale or admit a named scale role",
+      "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "off current named scale",
-      "proposedForm": "per-edge spacing facet or smaller density step"
+      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/styles/components/content-editor.css::.content-editor-body::font-family::1",
@@ -1033,10 +1034,10 @@
       "value": "normal",
       "currentCode": "reset-absence",
       "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "recipe",
+      "latentOutcome": "local-identity",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "erminePressure": "keep local after invariance/scale tests",
+      "proposedForm": "keep local",
       "playbookRecipes": [
         "user-content-molecule-boundary"
       ]

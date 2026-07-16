@@ -10,9 +10,9 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | reviewed residue declarations | 141 |
 | assimilable now | 0 |
-| latent generalizable | 19 |
-| likely recipe/molecule | 116 |
-| likely local identity | 6 |
+| latent generalizable | 6 |
+| likely recipe/molecule | 124 |
+| likely local identity | 11 |
 
 ## By Rule Action
 
@@ -21,7 +21,8 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | 1 |
 | attachment-edge-layer | 6 |
 | spacing-rhythm | 19 |
-| surface-line-elevation-cutout | 19 |
+| alignment-layout | 1 |
+| surface-line-elevation-cutout | 18 |
 | typography-content | 28 |
 | interaction-affordance-state | 14 |
 | motion-transition | 3 |
@@ -32,11 +33,10 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| latent-word | 5 |
-| latent-facet | 11 |
-| latent-scale | 3 |
-| recipe | 116 |
-| local-identity | 6 |
+| latent-word | 1 |
+| latent-facet | 5 |
+| recipe | 124 |
+| local-identity | 11 |
 
 ## By Current Ledger Code
 
@@ -74,22 +74,22 @@ generalization, recipe, and local-identity pressure.
 | --- | --- | --- | --- |
 | component-private-drawing | recipe | 41 | promote as molecule/recipe only if reused |
 | typography-content | recipe | 23 | promote as molecule/recipe only if reused |
-| surface-line-elevation-cutout | recipe | 15 | promote as molecule/recipe only if reused |
-| spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
+| spacing-rhythm | recipe | 17 | promote as molecule/recipe only if reused |
+| surface-line-elevation-cutout | recipe | 17 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 11 | promote as molecule/recipe only if reused |
 | reset-inheritance-neutralization | recipe | 9 | promote as molecule/recipe only if reused |
-| surface-line-elevation-cutout | latent-facet | 4 | add a missing facet on an existing Ermine concept |
-| attachment-edge-layer | latent-word | 3 | admit relational attachment/layer word |
-| attachment-edge-layer | latent-facet | 3 | add a missing facet on an existing Ermine concept |
+| typography-content | local-identity | 4 | keep local after invariance/scale tests |
+| attachment-edge-layer | local-identity | 3 | keep local after invariance/scale tests |
+| attachment-edge-layer | recipe | 3 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | latent-facet | 3 | add a missing facet on an existing Ermine concept |
-| spacing-rhythm | latent-scale | 3 | map to an existing/proportional scale or admit a named scale role |
-| typography-content | local-identity | 3 | keep local after invariance/scale tests |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
-| typography-content | latent-word | 2 | admit a new Ermine word only if it survives the invariance test |
+| alignment-layout | latent-facet | 1 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | recipe | 1 | promote as molecule/recipe only if reused |
 | motion-transition | local-identity | 1 | keep local after invariance/scale tests |
-| reset-inheritance-neutralization | latent-facet | 1 | add a missing facet on an existing Ermine concept |
+| reset-inheritance-neutralization | local-identity | 1 | keep local after invariance/scale tests |
+| surface-line-elevation-cutout | latent-facet | 1 | add a missing facet on an existing Ermine concept |
+| typography-content | latent-word | 1 | admit a new Ermine word only if it survives the invariance test |
 
 ## Reading
 

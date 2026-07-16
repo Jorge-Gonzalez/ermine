@@ -28,6 +28,7 @@ const RULE_ACTIONS = [
   "dimension-constraint",
   "attachment-edge-layer",
   "spacing-rhythm",
+  "alignment-layout",
   "surface-line-elevation-cutout",
   "typography-content",
   "interaction-affordance-state",
@@ -175,6 +176,32 @@ function isComponentDrawing(record: CurrentRecord): boolean {
     || /\.macro-suggestions-kbd\b/.test(record.selector);
 }
 
+function isTopLayerOrExtensionPolicy(record: CurrentRecord): boolean {
+  return (record.property === "z-index" && /^(10000|2147483646\b)/.test(record.value))
+    || (record.property === "position" && record.value === "fixed !important" && /:host|#macro-suggestions/.test(record.selector));
+}
+
+function isSubstrateLeading(record: CurrentRecord): boolean {
+  return record.property === "line-height" && /:host|body/.test(record.selector);
+}
+
+function isMicroDensityRecipe(record: CurrentRecord): boolean {
+  if (/macro-suggestions-command-item/.test(record.selector) && record.property === "padding" && record.value === "3px 6px") return true;
+  return /ce-style-(trigger|dropdown)/.test(record.selector) && record.property === "gap" && record.value === "2px";
+}
+
+function isLocalAttachmentOffset(record: CurrentRecord): boolean {
+  if (/editor-toast/.test(record.selector) && record.property === "bottom" && record.value === "52px") return true;
+  if (/macro-search-item-edit/.test(record.selector) && record.property === "right") return true;
+  if (/ce-style-dropdown/.test(record.selector) && /^(top|left)$/.test(record.property)) return true;
+  return false;
+}
+
+function isLocalChromeTreatment(record: CurrentRecord): boolean {
+  return (/modal-backdrop/.test(record.selector) && record.property === "background-color" && record.value === "var(--shadow-color)")
+    || (/ce-toolbar-sep/.test(record.selector) && record.property === "background-color");
+}
+
 function isDimensionProperty(property: string): boolean {
   return /^(width|height|min-width|max-width|min-height|max-height|inline-size|block-size|min-inline-size|max-inline-size|min-block-size|max-block-size|flex|flex-basis|flex-grow|flex-shrink)$/.test(property);
 }
@@ -185,6 +212,10 @@ function isAttachmentProperty(property: string): boolean {
 
 function isSpacingProperty(property: string): boolean {
   return /^(padding|padding-inline|padding-block|padding-top|padding-right|padding-bottom|padding-left|margin|margin-inline|margin-block|margin-top|margin-right|margin-bottom|margin-left|gap|row-gap|column-gap)$/.test(property);
+}
+
+function isAlignmentProperty(property: string): boolean {
+  return /^(align-content|justify-content|place-content)$/.test(property);
 }
 
 function isSurfaceProperty(property: string): boolean {
@@ -224,6 +255,7 @@ function classifyRuleAction(record: CurrentRecord): RuleAction {
   if (isDimensionProperty(record.property)) return "dimension-constraint";
   if (isAttachmentProperty(record.property)) return "attachment-edge-layer";
   if (isSpacingProperty(record.property)) return "spacing-rhythm";
+  if (isAlignmentProperty(record.property)) return "alignment-layout";
   if (isSurfaceProperty(record.property)) return "surface-line-elevation-cutout";
   if (isTypographyProperty(record.property) || record.code === "user-content" || record.code === "brand-identity") {
     return "typography-content";
@@ -237,6 +269,11 @@ function classifyLatentOutcome(record: CurrentRecord, action: RuleAction): Laten
   if (record.code === "recipe-identity") return "recipe";
   if (record.code === "user-content") return "recipe";
   if (action === "component-private-drawing") return "recipe";
+  if (isTopLayerOrExtensionPolicy(record)) return "local-identity";
+  if (isSubstrateLeading(record)) return "local-identity";
+  if (isMicroDensityRecipe(record)) return "recipe";
+  if (isLocalAttachmentOffset(record)) return "recipe";
+  if (isLocalChromeTreatment(record)) return "recipe";
   if (isSpacingResetBoundary(record)) return "local-identity";
   if (isSearchHighlightReset(record)) return "recipe";
   if (isShakeTransitionSuppression(record)) return "local-identity";
@@ -254,6 +291,7 @@ function classifyLatentOutcome(record: CurrentRecord, action: RuleAction): Laten
     return "latent-scale";
   }
   if (action === "spacing-rhythm") return /var\(--spacing-/.test(record.value) ? "latent-facet" : "latent-scale";
+  if (action === "alignment-layout") return "latent-facet";
   if (action === "attachment-edge-layer") return /^(z-index|position)$/.test(record.property) ? "latent-word" : "latent-facet";
   if (action === "surface-line-elevation-cutout") {
     if (record.property === "box-shadow" || record.property === "mix-blend-mode") return "recipe";
@@ -292,6 +330,7 @@ function functionSummary(action: RuleAction): string {
     case "dimension-constraint": return "sets physical envelope, measure, control size, or constraint";
     case "attachment-edge-layer": return "attaches to an edge, offsets a local affordance, or asserts stack order";
     case "spacing-rhythm": return "distributes padding, margin, or cluster rhythm";
+    case "alignment-layout": return "aligns content or children inside a layout container";
     case "surface-line-elevation-cutout": return "paints/removes surface, line, radius, shadow, or cutout state";
     case "typography-content": return "sets typeface, emphasis, wrapping, rich content, or text semantics";
     case "interaction-affordance-state": return "expresses hover, active, selected, disabled, focus, or affordance state";
@@ -368,6 +407,7 @@ function proposedForm(record: CurrentRecord, action: RuleAction, outcome: Latent
     if (record.property === "position") return "position/layer mechanism";
     return "edge attachment facet";
   }
+  if (action === "alignment-layout") return "content-alignment facet";
   if (action === "surface-line-elevation-cutout") return "side-specific rule/radius/state-skin facet";
   if (action === "motion-transition") return "property-targeted tween or tween suppression word";
   if (action === "reset-inheritance-neutralization") return "negative/escape facet";
