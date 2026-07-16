@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 140 |
+| reviewed residue declarations | 138 |
 | assimilable now | 0 |
-| latent generalizable | 5 |
+| latent generalizable | 3 |
 | likely recipe/molecule | 124 |
 | likely local identity | 11 |
 
@@ -21,8 +21,7 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | 1 |
 | attachment-edge-layer | 6 |
 | spacing-rhythm | 19 |
-| alignment-layout | 1 |
-| surface-line-elevation-cutout | 18 |
+| surface-line-elevation-cutout | 17 |
 | typography-content | 27 |
 | interaction-affordance-state | 14 |
 | motion-transition | 3 |
@@ -33,7 +32,7 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| latent-facet | 5 |
+| latent-facet | 3 |
 | recipe | 124 |
 | local-identity | 11 |
 
@@ -43,11 +42,11 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | recipe-identity | 17 |
 | brand-identity | 6 |
-| component-contract | 8 |
+| component-contract | 7 |
 | state-mechanics | 1 |
 | parent-relational | 2 |
 | pseudo-mechanics | 23 |
-| scrollbar-followup | 9 |
+| scrollbar-followup | 8 |
 | motion-followup | 1 |
 | opacity-followup | 4 |
 | elevation-followup | 3 |
@@ -83,11 +82,9 @@ generalization, recipe, and local-identity pressure.
 | interaction-affordance-state | latent-facet | 3 | add a missing facet on an existing Ermine concept |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
-| alignment-layout | latent-facet | 1 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | recipe | 1 | promote as molecule/recipe only if reused |
 | motion-transition | local-identity | 1 | keep local after invariance/scale tests |
 | reset-inheritance-neutralization | local-identity | 1 | keep local after invariance/scale tests |
-| surface-line-elevation-cutout | latent-facet | 1 | add a missing facet on an existing Ermine concept |
 
 ## Reading
 

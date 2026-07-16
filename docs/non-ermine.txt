@@ -19,17 +19,17 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the command-description semantic emphasis migration is
-Ermine 5f5fb67 / Monky d5d43c7:
+were migrated). Current live ledger after the content-alignment and scrollbar socket migration is
+Ermine b032809 / Monky 0c63ad3:
 
-  current declarations:                 522
-  adopted/infrastructure declarations:  382
-  project-owned residue declarations:   140
+  current declarations:                 523
+  adopted/infrastructure declarations:  385
+  project-owned residue declarations:   138
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 17, brand-identity 6, component-contract 8, state-mechanics 1,
-  parent-relational 2, pseudo-mechanics 23, scrollbar-followup 9,
+  recipe-identity 17, brand-identity 6, component-contract 7, state-mechanics 1,
+  parent-relational 2, pseudo-mechanics 23, scrollbar-followup 8,
   motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 5,
   user-content 43, identity-geometry 18.
 
@@ -45,7 +45,7 @@ So of 114 declarations called "the floor," only 33 are genuinely off-grid identi
 
 The relational 46, by intent:
   - already grammar (migrate, no ruling): flex:1 / flex:0 0 auto (grow-1/rigid),
-    justify-content:flex-end / align-content:start (justify-end/align-start), subgrid,
+    justify-content:flex-end / align-content:start (justify-end/content-align-start), subgrid,
     min-height:0 (min-height-none), position:fixed (position-fixed). ~12
   - done: width/height:100% (fill). (migrated this session)
   - the proportional/relational plane (new words, docs/proportional-plane.md):
@@ -85,8 +85,8 @@ most of this "identity" into grammar. The bucket names (identity-geometry, compo
 encode the metric trap: they read exact-looking CSS as bespoke, when order/proportion/edge/
 alignment are the most general things there are.
 
-The named-follow-up residue has narrowed: motion is now 1, opacity 4, scrollbar 9, and
-elevation 3 (= 17). `shake` moved into the effect-atom layer, the universal
+The named-follow-up residue has narrowed: motion is now 1, opacity 4, scrollbar 8, and
+elevation 3 (= 16). `shake` moved into the effect-atom layer, the universal
 `transition: all var(--transition-fast)` rows moved to the open `tween-quick` word, and
 the repeated property-targeted transition rows moved to targeted tween envelopes
 (`tween-rule-quick`, `tween-ground-quick`, `tween-ink-quick`, `tween-ground-ink-quick`,
@@ -137,7 +137,10 @@ button and style trigger active skin. The spacing-none endpoint pass then admitt
 resets, and kept document-root plus structural selector resets local. The existing-scale playbook
 pass then moved the modal nav branding margin and label type to existing `margin-right-lg` and
 `font-md` words. The semantic-emphasis pass then moved the command description's italic treatment
-from CSS into an `<em>` element; the live residue is now 140.
+from CSS into an `<em>` element. The content-alignment and scrollbar socket pass then admitted
+`content-align-*`, moved the search results' `align-content: start` to `content-align-start`,
+and mapped Monky scrollbar colours through `--scrollbar-thumb` / `--scrollbar-track`; the live
+residue is now 138.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================

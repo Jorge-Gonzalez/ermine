@@ -12,14 +12,14 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | source | commit |
 |---|---|
-| Ermine | `5f5fb67af7a89b25d19cab682db37f08ebdf88ba` |
-| monky | `d5d43c7fd6b3cbda75a66c2880d966ce4db273b5` |
+| Ermine | `b0328099e55c143bb72aacb1503f1fb132780401` |
+| monky | `0c63ad36f536d11125fb7f0922d87fe6707b9203` |
 
 ## Summary
 
-- Current declarations: 522
-- Adopted/infrastructure declarations: 382
-- Project-owned residue declarations: 140
+- Current declarations: 523
+- Adopted/infrastructure declarations: 385
+- Project-owned residue declarations: 138
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -27,11 +27,11 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 |---|---:|---|
 | `recipe-identity` | 17 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 6 | project brand typography and type treatment |
-| `component-contract` | 8 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 7 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 2 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
-| `scrollbar-followup` | 9 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
+| `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 4 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
@@ -85,7 +85,7 @@ project brand typography and type treatment
 
 | line | selector | declaration |
 |---:|---|---|
-| 42 | `.macro-search-kbd` | `line-height: 1` |
+| 37 | `.macro-search-kbd` | `line-height: 1` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -100,7 +100,7 @@ project brand typography and type treatment
 | 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (8)
+## component-contract (7)
 
 component-owned mechanics, exact geometry, or product contract
 
@@ -118,12 +118,11 @@ component-owned mechanics, exact geometry, or product contract
 | 19 | `.macro-suggestions-arrow.top` | `border-top-color: var(--base-tone)` |
 | 23 | `.macro-suggestions-arrow.bottom` | `border-bottom-color: var(--base-tone)` |
 
-### src/content/overlays/views/search/searchViewStyles.css (2)
+### src/content/overlays/views/search/searchViewStyles.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 9 | `.macro-search-results` | `align-content: start` |
-| 45 | `.macro-search-kbd` | `border-radius: 4px` |
+| 40 | `.macro-search-kbd` | `border-radius: 4px` |
 
 ### src/styles/components/content-editor.css (2)
 
@@ -166,14 +165,14 @@ pseudo-element geometry, fills, and content
 
 | line | selector | declaration |
 |---:|---|---|
-| 50 | `.macro-search-kbd::after` | `content: ''` |
-| 51 | `.macro-search-kbd::after` | `position: absolute` |
-| 52 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
-| 53 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
-| 54 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
-| 55 | `.macro-search-kbd::after` | `border-radius: 2px` |
-| 56 | `.macro-search-kbd::after` | `pointer-events: none` |
-| 57 | `.macro-search-kbd::after` | `z-index: -1` |
+| 45 | `.macro-search-kbd::after` | `content: ''` |
+| 46 | `.macro-search-kbd::after` | `position: absolute` |
+| 47 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
+| 48 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
+| 49 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
+| 50 | `.macro-search-kbd::after` | `border-radius: 2px` |
+| 51 | `.macro-search-kbd::after` | `pointer-events: none` |
+| 52 | `.macro-search-kbd::after` | `z-index: -1` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (12)
 
@@ -200,7 +199,7 @@ pseudo-element geometry, fills, and content
 | 37 | `.content-editor-body:empty::before` | `color: var(--ink-soft)` |
 | 38 | `.content-editor-body:empty::before` | `pointer-events: none` |
 
-## scrollbar-followup (9)
+## scrollbar-followup (8)
 
 engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15)
 
@@ -216,12 +215,6 @@ engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15)
 | 61 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
 | 62 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
 | 66 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
-
-### src/styles/theme/metrics.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 89 | `:root, :host` | `scrollbar-color: var(--tone) var(--tone-dim)` |
 
 ## motion-followup (1)
 
@@ -241,7 +234,7 @@ opacity state treatment (named follow-up question)
 
 | line | selector | declaration |
 |---:|---|---|
-| 24 | `.macro-search-item-text mark span` | `opacity: 0.35` |
+| 19 | `.macro-search-item-text mark span` | `opacity: 0.35` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -292,9 +285,9 @@ absence/reset mechanics, not a positive carrier
 
 | line | selector | declaration |
 |---:|---|---|
-| 18 | `.macro-search-item-text mark` | `background: transparent` |
-| 19 | `.macro-search-item-text mark` | `color: inherit` |
-| 20 | `.macro-search-item-text mark` | `font-style: normal` |
+| 13 | `.macro-search-item-text mark` | `background: transparent` |
+| 14 | `.macro-search-item-text mark` | `color: inherit` |
+| 15 | `.macro-search-item-text mark` | `font-style: normal` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -385,11 +378,11 @@ project-exact geometry on a grammar-family property
 
 | line | selector | declaration |
 |---:|---|---|
-| 14 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
-| 43 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
-| 44 | `.macro-search-kbd` | `min-width: 26px` |
-| 46 | `.macro-search-kbd` | `z-index: 0` |
-| 61 | `.macro-search-kbd:first-child` | `margin-left: 0` |
+| 9 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
+| 38 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
+| 39 | `.macro-search-kbd` | `min-width: 26px` |
+| 41 | `.macro-search-kbd` | `z-index: 0` |
+| 56 | `.macro-search-kbd:first-child` | `margin-left: 0` |
 
 ### src/styles/components/content-editor.css (3)
 

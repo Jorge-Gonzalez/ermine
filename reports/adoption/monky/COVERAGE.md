@@ -19,8 +19,8 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
   enforces colour-literal drift with Stylelint.
 - **Live style reachability:** Monky's build-backed style audit now reports **201 live
   static classes and 0 dead-candidate declarations** at `d58cac0`.
-- **Current assimilation:** the generated current ledger now reports **522 current
-  declarations**, **382 adopted/infrastructure declarations**, **140 project-owned
+- **Current assimilation:** the generated current ledger now reports **523 current
+  declarations**, **385 adopted/infrastructure declarations**, **138 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
@@ -87,8 +87,8 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `d5d43c7`: 522 declarations, 382
-adopted/infrastructure declarations, 140 project-owned residue declarations,
+The current generated ledger is at Monky `0c63ad3`: 523 declarations, 385
+adopted/infrastructure declarations, 138 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
 ## 4. Theme coverage (the socket plane)
@@ -124,8 +124,8 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate held the list at zero before the first post-adoption dimension endpoint
-pass. The current ledger at Monky `d5d43c7` reports 522
-current declarations, 382 adopted/infrastructure declarations, 140 project-owned residue,
+pass. The current ledger at Monky `0c63ad3` reports 523
+current declarations, 385 adopted/infrastructure declarations, 138 project-owned residue,
 `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
@@ -145,6 +145,10 @@ corrects it: much of the apparent gap is already a ruled word needing only migra
 duration pass for universal transitions, targeted tween envelopes for repeated
 border/ground/ink/opacity/transform transition targets, and positioned edge attachment for
 anchored dropdown/arrow placement.
+The content-alignment and scrollbar socket pass then added `content-align-*`, moved the
+search results' content packing into Ermine grammar, and mapped Monky scrollbar colours
+through `--scrollbar-thumb` / `--scrollbar-track` while leaving WebKit pseudo styling in
+the engine-specific boundary.
 The remaining Phase 3 grammar work is the proportional/relational plane
 (remaining measure/viewport extents, filed in `reports/GAP-U-measure-viewport.md`, and
 columns + intent-proportions) plus the smaller
@@ -214,10 +218,10 @@ counts at that checkpoint; later `fill`, `square`, `cover`, `push`, `hug-inline`
 edge-attachment, side-corner, role-measured dimension, and rule-presence edge-facet
 plus text-flow release (`text-wrap`/`overflow-visible`), rule edge-colour, checked group
 skin, editor style-option state, pressed/expanded state-prefix, spacing-none endpoint,
-existing-scale modal-nav, and semantic-emphasis migrations moved the live
+existing-scale modal-nav, semantic-emphasis, content-alignment, and scrollbar socket migrations moved the live
 ledger to
-522 current declarations,
-140 project-owned residue,
+523 current declarations,
+138 project-owned residue,
 `assimilable = 0`,
 and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted
