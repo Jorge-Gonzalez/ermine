@@ -19,19 +19,19 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the footer `justify-end` migration is Ermine
-3795e74 / Monky 0b4aa41:
+were migrated). Current live ledger after the text wrapping migration is Ermine
+e9640d2 / Monky e4fa9d2:
 
-  current declarations:                 512
-  adopted/infrastructure declarations:  261
-  project-owned residue declarations:   251
+  current declarations:                 510
+  adopted/infrastructure declarations:  263
+  project-owned residue declarations:   247
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 29, brand-identity 8, component-contract 39, state-mechanics 5,
+  recipe-identity 28, brand-identity 8, component-contract 37, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 12,
-  user-content 43, identity-geometry 54.
+  user-content 43, identity-geometry 53.
 
 Historical invariance sample:
 
@@ -64,6 +64,7 @@ The relational 46, by intent:
       intent-proportions over a grid   grid-template-columns:1fr 3fr
                     (= third/three-quarters, hug+fill — the columns model, exactly)
   - text-wrap family: white-space:nowrap (bare, not truncate) ; pre-wrap
+                    (done: R-SKIN-12 text-nowrap/text-pre-wrap)
 
 The scale-backed 25 are var(--spacing-*) paddings/margins and var(--radius-*) corners:
 expressible today via the padding/margin dials and corner scale, except where the value is
@@ -88,15 +89,18 @@ elevation 3 (= 29). `shake` moved into the effect-atom layer, and the universal
 `transition: all var(--transition-fast)` rows moved to the open `tween-quick` word. The
 remaining motion rows are property-targeted transitions, the local `.shake { transition: none
 !important }` suppression, and bespoke segmented-control/overlay timing. user-content
-(43 = the `prose` molecule) and recipe-identity (29 by the live ledger, R-SKIN-10) remain the
+(43 = the `prose` molecule) and recipe-identity (28 by the live ledger, R-SKIN-10) remain the
 genuinely-licensed-local bundles. The first dimension endpoint pass admitted
 `max-width-none`, and the delete-confirm `max-width: none` row migrated to that word. The
 next dimension pass admitted `control-size-<spacing>` and migrated the 16px radio/checkbox
 control boxes to `control-size-lg`. The next existing-word pass moved the shared
 `.input { width: 100%; }` rule into `fill-inline`, and the prefix-cell flex negotiation
 into `rigid`. The footer alignment pass fixed Ermine's flex endpoint emission and moved
-the shared suggestions/delete footer alignment to `justify-end`; the live assimilable work
-list remains zero.
+the shared suggestions/delete footer alignment to `justify-end`. The text wrapping pass
+admitted `text-nowrap` and `text-pre-wrap`, migrated the editor toast, command suggestion,
+segmented option, and popup macro text rows, and left only the search selection reset
+(`white-space: normal` / `overflow: visible` / `text-overflow: clip`) as reset/release
+evidence; the live assimilable work list remains zero.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -280,7 +284,7 @@ semantics, placeholder content, and matching/highlight behavior.
 Representative declarations:
   font-family: app face, system UI, IBM Plex Mono; font-size: 0.88em / 1.75em / 1.4em /
     1.15em / var(--text-base); font-weight: 700; font-style: italic / normal;
-  line-height: 1.5 / 1 / normal; white-space: nowrap / normal / pre-wrap;
+  line-height: 1.5 / 1 / normal; white-space: normal;
   overflow: visible / auto; text-overflow: clip; text-decoration: none / underline /
     line-through; list-style: none / disc / decimal; display: list-item;
   content: attr(data-placeholder) / ''; opacity: 0.35 / 0.6 / 0.8;
@@ -289,7 +293,8 @@ Representative declarations:
 Reading:
   - Rich-text descendant styling is not a normal utility plane; it is a `prose` or
     editor-content molecule because selectors target user-authored descendants.
-  - nowrap/pre-wrap and list reset/list restore are reusable text/content words.
+  - nowrap/pre-wrap are now ruled text-flow words; list reset/list restore remain reusable
+    content-word pressure.
   - The mark/highlight treatment (`mark span { opacity: .35 }`) is search-result recipe.
   - App font vs neutral editor font is a substrate/content boundary, not component skin.
 

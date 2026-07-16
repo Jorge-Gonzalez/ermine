@@ -65,7 +65,7 @@ scales, proportional relationships, or measure/control-size roles.
 | src/options/options.css:5 | width | 3rem | icon/control square | latent-word | 2 * spacing-2xl | square/icon/control-size scale member |
 | src/options/options.css:6 | height | 3rem | icon/control square | latent-word | 2 * spacing-2xl | square/icon/control-size scale member |
 | src/popup/popup.css:6 | width | 320px | inline measure/popover width | latent-scale | 8 * spacing-3xl | measure/popover size role |
-| src/popup/popup.css:51 | max-height | 256px | scrollable result cap | latent-scale | 16 * spacing-lg | max-block/scroll-cap scale |
+| src/popup/popup.css:50 | max-height | 256px | scrollable result cap | latent-scale | 16 * spacing-lg | max-block/scroll-cap scale |
 | src/styles/components/content-editor.css:10 | width | 1px | dimension constraint | latent-scale | off current named scale | size/measure scale role |
 | src/styles/components/content-editor.css:11 | height | 16px | icon/control square | latent-scale | spacing-lg | square/icon/control-size scale member |
 | src/styles/components/content-editor.css:17 | width | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |

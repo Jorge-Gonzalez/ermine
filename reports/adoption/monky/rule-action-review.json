@@ -2,16 +2,16 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "3795e7409714871218bd961efb36cf6ac7dddffa",
-    "projectCommit": "0b4aa41a6097cbcb13b5d173c81b72cdbb4e73ba"
+    "ermineCommit": "e9640d2a453835bed5bb11923c2fa821bfec5bd7",
+    "projectCommit": "e4fa9d21ca37577dc14fc61c09535490d0b02289"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 251,
+    "reviewedDeclarations": 247,
     "assimilableNow": 0,
-    "latentGeneralizable": 146,
+    "latentGeneralizable": 142,
     "likelyRecipe": 102,
     "likelyLocal": 3,
     "byRuleAction": {
@@ -20,7 +20,7 @@
       "attachment-edge-layer": 10,
       "spacing-rhythm": 41,
       "surface-line-elevation-cutout": 36,
-      "typography-content": 35,
+      "typography-content": 31,
       "interaction-affordance-state": 14,
       "motion-transition": 17,
       "reset-inheritance-neutralization": 24,
@@ -28,7 +28,7 @@
     },
     "byLatentOutcome": {
       "admitted": 0,
-      "latent-word": 39,
+      "latent-word": 35,
       "latent-facet": 80,
       "latent-scale": 27,
       "recipe": 102,
@@ -40,11 +40,11 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 29,
+      "recipe-identity": 28,
       "rule-mechanics": 0,
       "brand-identity": 8,
       "affordance-mechanics": 0,
-      "component-contract": 39,
+      "component-contract": 37,
       "state-mechanics": 5,
       "state-review": 0,
       "focus-state": 0,
@@ -57,7 +57,7 @@
       "elevation-followup": 3,
       "reset-absence": 12,
       "user-content": 43,
-      "identity-geometry": 54,
+      "identity-geometry": 53,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -677,23 +677,9 @@
       "proposedForm": "edge attachment facet"
     },
     {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::white-space::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 35,
-      "selector": ".editor-toast",
-      "property": "white-space",
-      "value": "nowrap",
-      "currentCode": "component-contract",
-      "ruleAction": "typography-content",
-      "latentOutcome": "latent-word",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "proposedForm": "wrap/list/code/prose word or molecule"
-    },
-    {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::box-shadow::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 36,
+      "line": 35,
       "selector": ".editor-toast",
       "property": "box-shadow",
       "value": "0 6px 16px -4px rgb(0 0 0 / 25%)",
@@ -708,7 +694,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.input-dropdown-open::border-bottom-left-radius::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 40,
+      "line": 39,
       "selector": ".input-dropdown-open",
       "property": "border-bottom-left-radius",
       "value": "0",
@@ -722,7 +708,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.input-dropdown-open::border-bottom-right-radius::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 41,
+      "line": 40,
       "selector": ".input-dropdown-open",
       "property": "border-bottom-right-radius",
       "value": "0",
@@ -736,7 +722,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::left::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 46,
+      "line": 45,
       "selector": ".command-suggestions",
       "property": "left",
       "value": "0",
@@ -750,7 +736,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::right::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 47,
+      "line": 46,
       "selector": ".command-suggestions",
       "property": "right",
       "value": "0",
@@ -764,7 +750,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::top::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 48,
+      "line": 47,
       "selector": ".command-suggestions",
       "property": "top",
       "value": "100%",
@@ -778,7 +764,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-top::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 49,
+      "line": 48,
       "selector": ".command-suggestions",
       "property": "border-top",
       "value": "none",
@@ -792,7 +778,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-radius::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 50,
+      "line": 49,
       "selector": ".command-suggestions",
       "property": "border-radius",
       "value": "0 0 var(--radius-md) var(--radius-md)",
@@ -806,7 +792,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::z-index::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 51,
+      "line": 50,
       "selector": ".command-suggestions",
       "property": "z-index",
       "value": "10",
@@ -820,7 +806,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-item::transition::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 55,
+      "line": 54,
       "selector": ".command-suggestion-item",
       "property": "transition",
       "value": "background-color var(--transition-fast)",
@@ -832,23 +818,9 @@
       "proposedForm": "property-targeted tween or tween suppression word"
     },
     {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-command::white-space::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 59,
-      "selector": ".command-suggestion-command",
-      "property": "white-space",
-      "value": "nowrap",
-      "currentCode": "component-contract",
-      "ruleAction": "typography-content",
-      "latentOutcome": "latent-word",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "proposedForm": "wrap/list/code/prose word or molecule"
-    },
-    {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-action::transition::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 63,
+      "line": 58,
       "selector": ".command-suggestion-action",
       "property": "transition",
       "value": "opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)",
@@ -1627,23 +1599,9 @@
       "proposedForm": "segmented-control recipe"
     },
     {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option::white-space::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 61,
-      "selector": ".seg-option",
-      "property": "white-space",
-      "value": "nowrap",
-      "currentCode": "recipe-identity",
-      "ruleAction": "typography-content",
-      "latentOutcome": "latent-word",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "proposedForm": "wrap/list/code/prose word or molecule"
-    },
-    {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option::z-index::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 62,
+      "line": 61,
       "selector": ".seg-option",
       "property": "z-index",
       "value": "1",
@@ -1657,7 +1615,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option::transition::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 63,
+      "line": 62,
       "selector": ".seg-option",
       "property": "transition",
       "value": "color var(--transition-fast)",
@@ -1671,7 +1629,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option svg::vertical-align::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 69,
+      "line": 68,
       "selector": ".seg-option svg",
       "property": "vertical-align",
       "value": "middle",
@@ -1685,7 +1643,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option:last-child::border-right::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 74,
+      "line": 73,
       "selector": ".seg-option:last-child",
       "property": "border-right",
       "value": "none",
@@ -1699,7 +1657,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option[aria-checked=\"true\"]::border-right-color::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 78,
+      "line": 77,
       "selector": ".seg-option[aria-checked=\"true\"]",
       "property": "border-right-color",
       "value": "transparent",
@@ -1713,7 +1671,7 @@
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.is-sliding .seg-option[aria-checked=\"true\"]::background::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 84,
+      "line": 83,
       "selector": ".seg-control.is-sliding .seg-option[aria-checked=\"true\"]",
       "property": "background",
       "value": "transparent",
@@ -1898,23 +1856,9 @@
       "proposedForm": "per-edge spacing facet or smaller density step"
     },
     {
-      "id": "src/popup/popup.css::.popup-macro-text::white-space::1",
-      "file": "src/popup/popup.css",
-      "line": 38,
-      "selector": ".popup-macro-text",
-      "property": "white-space",
-      "value": "pre-wrap",
-      "currentCode": "identity-geometry",
-      "ruleAction": "typography-content",
-      "latentOutcome": "latent-word",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "proposedForm": "wrap/list/code/prose word or molecule"
-    },
-    {
       "id": "src/popup/popup.css::.popup-macro-text::margin::1",
       "file": "src/popup/popup.css",
-      "line": 39,
+      "line": 38,
       "selector": ".popup-macro-text",
       "property": "margin",
       "value": "0",
@@ -1928,7 +1872,7 @@
     {
       "id": "src/popup/popup.css::.popup-toggle-label::margin-left::1",
       "file": "src/popup/popup.css",
-      "line": 44,
+      "line": 43,
       "selector": ".popup-toggle-label",
       "property": "margin-left",
       "value": "var(--spacing-sm)",
@@ -1943,7 +1887,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::max-height::1",
       "file": "src/popup/popup.css",
-      "line": 51,
+      "line": 50,
       "selector": ".popup-results",
       "property": "max-height",
       "value": "256px",
@@ -1958,7 +1902,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::padding::1",
       "file": "src/popup/popup.css",
-      "line": 52,
+      "line": 51,
       "selector": ".popup-results",
       "property": "padding",
       "value": "var(--spacing-sm) 0",
@@ -1973,7 +1917,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::margin::1",
       "file": "src/popup/popup.css",
-      "line": 53,
+      "line": 52,
       "selector": ".popup-results",
       "property": "margin",
       "value": "0",
@@ -1987,7 +1931,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::list-style::1",
       "file": "src/popup/popup.css",
-      "line": 54,
+      "line": 53,
       "selector": ".popup-results",
       "property": "list-style",
       "value": "none",
@@ -3948,7 +3892,7 @@
       {
         "id": "src/popup/popup.css::.popup-results::max-height::1",
         "file": "src/popup/popup.css",
-        "line": 51,
+        "line": 50,
         "selector": ".popup-results",
         "property": "max-height",
         "value": "256px",

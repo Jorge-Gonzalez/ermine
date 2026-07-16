@@ -1,15 +1,5 @@
 [
   {
-    "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::white-space::1",
-    "code": "component-contract",
-    "note": "nowrap without ellipsis: the toast refuses to wrap so it never reflows the action bar — geometry, not truncation (R-SKIN-12 does not apply without hidden+ellipsis intent)."
-  },
-  {
-    "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestion-command::white-space::1",
-    "code": "component-contract",
-    "note": "nowrap without ellipsis: the rigid command chip must not wrap; the text cell beside it truncates instead."
-  },
-  {
     "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::min-height::1",
     "code": "component-contract",
     "note": "Context-scoped floor escape: the body keeps min-height 150px everywhere except inside the modal editor. A min-height-none word on the body would lose to that components-layer base — the Phase C layer finding — so the contextual zero stays local."
