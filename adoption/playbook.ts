@@ -48,6 +48,23 @@ function isSpacingVar(value: string): boolean {
   return /^var\(--spacing-[^)]+\)$/.test(value);
 }
 
+function numericPx(value: string): number | undefined {
+  const px = value.match(/^(-?\d+(?:\.\d+)?)px$/);
+  if (px) return Number(px[1]);
+  const rem = value.match(/^(-?\d+(?:\.\d+)?)rem$/);
+  if (rem) return Number(rem[1]) * 16;
+  return undefined;
+}
+
+function isNamedSpacingScale(value: string): boolean {
+  const px = numericPx(value);
+  return px !== undefined && [4, 8, 12, 16, 20, 24, 40].includes(px);
+}
+
+function isProjectTypeScaleToken(record: CurrentRecord): boolean {
+  return record.property === "font-size" && /^var\(--(?:type|text)-[a-z0-9-]+\)$/.test(record.value);
+}
+
 function isSpacingShorthandWithZero(record: CurrentRecord): boolean {
   if (!/^(padding|margin)$/.test(record.property)) return false;
   return /\b0\b/.test(record.value) && /var\(--spacing-/.test(record.value);
@@ -85,6 +102,21 @@ function isMeasureOrControlSize(record: CurrentRecord): boolean {
 }
 
 export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
+  {
+    id: "existing-scale-word",
+    title: "Existing scale word",
+    kind: "conversion",
+    confidence: "review",
+    decision: "When a residue declaration already maps to an admitted spacing or type scale, migrate the class paragraph before considering new grammar.",
+    before: "margin-right: 1rem; font-size: var(--text-base);",
+    after: "margin-right-lg font-md",
+    conversion: "Confirm the project token or numeric value is bound to the Ermine scale, then replace the local declaration with the matching existing word.",
+    boundary: "Do not use this for off-scale micro-values, project-specific departures, or token aliases that are not intentionally bridged to Ermine.",
+    evidence: ["Monky modal nav scale-token migration", "docs/ADOPTION-PLAYBOOK.md"],
+    match: (record) => isElementOwnedSelector(record.selector)
+      && ((isSpacingProperty(record.property) && (isSpacingVar(record.value) || isNamedSpacingScale(record.value)))
+        || isProjectTypeScaleToken(record)),
+  },
   {
     id: "spacing-none-endpoints",
     title: "Spacing zero endpoints",

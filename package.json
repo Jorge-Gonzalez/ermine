@@ -53,6 +53,8 @@
     "ownership:check": "node --import tsx src/derive-ownership.ts --check",
     "adoption:check": "node --import tsx adoption/validate-ledger.ts",
     "adoption:current": "node --import tsx adoption/current-ledger.ts",
+    "adoption:detail": "node --import tsx adoption/residue-detail.ts",
+    "adoption:detail:check": "node --import tsx adoption/residue-detail.ts --check",
     "adoption:review": "node --import tsx adoption/rule-action-review.ts",
     "adoption:review:check": "node --import tsx adoption/rule-action-review.ts --check",
     "registry": "tsx src/registry.ts",

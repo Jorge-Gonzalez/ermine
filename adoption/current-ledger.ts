@@ -713,7 +713,7 @@ export async function generateCurrentLedger(options: GenerateOptions): Promise<C
 // report rendering
 // ---------------------------------------------------------------------------
 
-const CODE_MEANING: Record<ReasonCode, string> = {
+export const CODE_MEANING: Record<ReasonCode, string> = {
   "ermine-emitted": "the generated Ermine grammar surface (adopted, not residue)",
   "substrate": "reset, base typography, and font delivery below grammar authoring",
   "theme-metric": "project scale values and Ermine scale bindings (deliberate non-coverage)",

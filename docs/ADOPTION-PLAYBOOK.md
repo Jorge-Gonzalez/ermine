@@ -40,6 +40,7 @@ grammar design.
 
 | recipe | kind | confidence | migration memory |
 |---|---|---|---|
+| `existing-scale-word` | conversion | review | Existing spacing/type scale values become their already-admitted Ermine words before new grammar is considered. |
 | `spacing-none-endpoints` | conversion | mechanical | Element-owned padding/margin zero becomes a matching `none` footprint word. |
 | `spacing-edge-decomposition` | conversion | mechanical | Asymmetric spacing shorthands expand to physical edge words. |
 | `spacing-logical-axis` | conversion | mechanical | Homogeneous inline/block spacing uses logical axis words. |
@@ -57,8 +58,8 @@ grammar design.
 
 For the next project, start with recipes that have low semantic risk and high repeatability:
 
-1. Existing-word and mechanical endpoint conversions: spacing `none`, logical spacing,
-   physical spacing edges, backed state prefixes.
+1. Existing-word and mechanical endpoint conversions: scale words, spacing `none`,
+   logical spacing, physical spacing edges, backed state prefixes.
 2. Role/measure conversions once project metrics are bound: control sizes, popover widths,
    result caps, dialog measures.
 3. Relational layout conversions: edge attachment, fill/cover/push/centering if present.
