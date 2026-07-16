@@ -19,19 +19,19 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the block/inline spacing migration is Ermine
-e9640d2 / Monky 2713af3:
+were migrated). Current live ledger after the per-edge spacing migration is Ermine
+5b639a7 / Monky 283cd49:
 
-  current declarations:                 512
-  adopted/infrastructure declarations:  270
-  project-owned residue declarations:   242
+  current declarations:                 516
+  adopted/infrastructure declarations:  282
+  project-owned residue declarations:   234
   assimilable now:                        0
 
 Current residue by reason code:
   recipe-identity 27, brand-identity 8, component-contract 37, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 12,
-  user-content 43, identity-geometry 49.
+  user-content 43, identity-geometry 41.
 
 Historical invariance sample:
 
@@ -68,9 +68,9 @@ The relational 46, by intent:
                     (done: R-SKIN-12 text-nowrap/text-pre-wrap)
 
 The scale-backed 25 are var(--spacing-*) paddings/margins and var(--radius-*) corners:
-expressible today via the padding/margin dials and corner scale, except where the value is
-per-EDGE asymmetric (e.g. padding: 2xl 0 xl) which Ermine's block/inline dials cannot yet
-split — a real, narrow gap (per-edge spacing).
+mostly expressible today via the padding/margin edge dials and corner scale. The remaining
+spacing pressure is no longer the clean one-edge case; it is shorthand asymmetry, zero/reset
+absence, and raw micro-padding (for example `3px 6px 6px`) that need separate rulings.
 
 The genuine off-grid floor (33) is the raw constants: 240px/200px/280px/320px widths, 48px
 min-heights, 18px/24px/28px icon sizes, 2rem/3rem squares, 1px hairlines, 3px/6px paddings,
@@ -106,8 +106,10 @@ segmented-option layering plus the command/style dropdown `z-index: 10` rows, an
 extension/top-layer and pseudo-negative layer values for later ruling; the live assimilable
 work list remains zero. The block/inline spacing pass then moved the modal tab padding and
 settings divider margin shorthands to existing `padding-block`/`padding-inline` and
-`margin-block`/`margin-inline` words; per-edge spacing and zero-reset rows remain as the
-next spacing ruling question.
+`margin-block`/`margin-inline` words. The per-edge spacing pass admitted physical padding
+and margin edge facets, migrated the search cells/shortcuts plus popup/settings edge rows,
+and reduced the live residue to 234. Zero-reset, shorthand-asymmetry, and raw micro-padding
+rows remain as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -232,14 +234,12 @@ Likely Ermine pressure:
 
 3. Spacing and rhythm rules.
 Function: distribute internal padding and external rhythm, especially where current
-block/inline dials cannot express one edge independently.
+spacing words still need a reset, shorthand-asymmetry, or raw micro-geometry ruling.
 
 Representative declarations:
   padding: var(--spacing-2xl) 0 var(--spacing-xl);
   padding: var(--spacing-md) var(--spacing-sm) 0 0;
-  padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm);
   padding: 3px 6px 6px; padding: 1px 4px; padding: 0;
-  padding-left/right: var(--spacing-xs); padding-top: var(--spacing-sm);
   margin: 0; margin-top: var(--spacing-sm); margin-right: 1rem / var(--spacing-xl);
   margin-left: var(--spacing-sm);
   gap: 2px.

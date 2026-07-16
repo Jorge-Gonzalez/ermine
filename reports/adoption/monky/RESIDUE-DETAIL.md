@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `e9640d2a453` |
-| monky | `2713af3ed63` |
+| Ermine | `5b639a79578` |
+| monky | `283cd4900f2` |
 
 ## Summary
 
-- Current declarations: 512
-- Adopted/infrastructure declarations: 270
-- Project-owned residue declarations: 242
+- Current declarations: 516
+- Adopted/infrastructure declarations: 282
+- Project-owned residue declarations: 234
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -32,7 +32,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 12 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 49 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 41 | Project-exact dimensions, spacing, positioning, and geometry. |
 
 ## recipe-identity (27)
 
@@ -49,10 +49,10 @@ Project recipe bundles licensed by R-SKIN-10.
 
 | line | selector | declaration |
 |---:|---|---|
-| 60 | `.seg-option` | `transition: color var(--transition-fast)` |
-| 66 | `.seg-option svg` | `vertical-align: middle` |
-| 71 | `.seg-option:last-child` | `border-right: none` |
-| 75 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
+| 56 | `.seg-option` | `transition: color var(--transition-fast)` |
+| 62 | `.seg-option svg` | `vertical-align: middle` |
+| 67 | `.seg-option:last-child` | `border-right: none` |
+| 71 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
 
 ### src/styles/skin/controls.css (21)
 
@@ -101,8 +101,8 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 72 | `.modal-command-item .modal-command-description` | `font-style: italic` |
-| 93 | `.macro-search-kbd` | `line-height: 1` |
+| 60 | `.modal-command-item .modal-command-description` | `font-style: italic` |
+| 77 | `.macro-search-kbd` | `line-height: 1` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -160,8 +160,8 @@ Component-owned mechanics, exact geometry, or product contract.
 | line | selector | declaration |
 |---:|---|---|
 | 15 | `.macro-search-results` | `align-content: start` |
-| 54 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
-| 96 | `.macro-search-kbd` | `border-radius: 4px` |
+| 42 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
+| 80 | `.macro-search-kbd` | `border-radius: 4px` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (3)
 
@@ -235,17 +235,17 @@ Guarded parent/descendant state mechanics outside ruled relational words.
 
 | line | selector | declaration |
 |---:|---|---|
-| 33 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `white-space: normal` |
-| 34 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `overflow: visible` |
-| 35 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `text-overflow: clip` |
-| 40 | `.macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-text` | `background-color: var(--tone-dim)` |
-| 45 | `.macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-text` | `background-color: var(--tone)` |
+| 25 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `white-space: normal` |
+| 26 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `overflow: visible` |
+| 27 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `text-overflow: clip` |
+| 32 | `.macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-text` | `background-color: var(--tone-dim)` |
+| 37 | `.macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-text` | `background-color: var(--tone)` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 81 | `.seg-control.is-sliding .seg-option[aria-checked="true"]` | `background: transparent` |
+| 77 | `.seg-control.is-sliding .seg-option[aria-checked="true"]` | `background: transparent` |
 
 ### src/popup/popup.css (1)
 
@@ -267,31 +267,31 @@ Pseudo-element geometry, generated content, and fills.
 
 | line | selector | declaration |
 |---:|---|---|
-| 101 | `.macro-search-kbd::after` | `content: ''` |
-| 102 | `.macro-search-kbd::after` | `position: absolute` |
-| 103 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
-| 104 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
-| 105 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
-| 106 | `.macro-search-kbd::after` | `border-radius: 2px` |
-| 107 | `.macro-search-kbd::after` | `pointer-events: none` |
-| 108 | `.macro-search-kbd::after` | `z-index: -1` |
+| 85 | `.macro-search-kbd::after` | `content: ''` |
+| 86 | `.macro-search-kbd::after` | `position: absolute` |
+| 87 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
+| 88 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
+| 89 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
+| 90 | `.macro-search-kbd::after` | `border-radius: 2px` |
+| 91 | `.macro-search-kbd::after` | `pointer-events: none` |
+| 92 | `.macro-search-kbd::after` | `z-index: -1` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (12)
 
 | line | selector | declaration |
 |---:|---|---|
-| 40 | `.seg-control::before` | `content: ''` |
-| 41 | `.seg-control::before` | `position: absolute` |
-| 42 | `.seg-control::before` | `top: 0` |
-| 43 | `.seg-control::before` | `bottom: 0` |
-| 44 | `.seg-control::before` | `left: var(--pill-left, 0)` |
-| 45 | `.seg-control::before` | `width: var(--pill-width, 0)` |
-| 46 | `.seg-control::before` | `background: var(--accent)` |
-| 47 | `.seg-control::before` | `opacity: 0` |
-| 48 | `.seg-control::before` | `transition: left 0.1s ease, width 0.1s ease` |
-| 49 | `.seg-control::before` | `pointer-events: none` |
-| 52 | `.seg-control.is-sliding::before` | `opacity: 1` |
-| 55 | `.seg-control.seg-snap::before` | `transition: none` |
+| 36 | `.seg-control::before` | `content: ''` |
+| 37 | `.seg-control::before` | `position: absolute` |
+| 38 | `.seg-control::before` | `top: 0` |
+| 39 | `.seg-control::before` | `bottom: 0` |
+| 40 | `.seg-control::before` | `left: var(--pill-left, 0)` |
+| 41 | `.seg-control::before` | `width: var(--pill-width, 0)` |
+| 42 | `.seg-control::before` | `background: var(--accent)` |
+| 43 | `.seg-control::before` | `opacity: 0` |
+| 44 | `.seg-control::before` | `transition: left 0.1s ease, width 0.1s ease` |
+| 45 | `.seg-control::before` | `pointer-events: none` |
+| 48 | `.seg-control.is-sliding::before` | `opacity: 1` |
+| 51 | `.seg-control.seg-snap::before` | `transition: none` |
 
 ### src/styles/components/content-editor.css (3)
 
@@ -349,7 +349,7 @@ Transition/animation timing evidence for the animation-plane follow-up.
 |---:|---|---|
 | 9 | `.macro-search-input` | `transition: border-color var(--transition-fast)` |
 | 21 | `.macro-search-item-command, .macro-search-item-text` | `transition: background-color var(--transition-fast)` |
-| 55 | `.macro-search-item-edit` | `transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)` |
+| 43 | `.macro-search-item-edit` | `transition: opacity var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast)` |
 
 ### src/popup/popup.css (2)
 
@@ -379,7 +379,7 @@ Opacity prominence/treatment evidence.
 
 | line | selector | declaration |
 |---:|---|---|
-| 65 | `.macro-search-item-text mark span` | `opacity: 0.35` |
+| 53 | `.macro-search-item-text mark span` | `opacity: 0.35` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -443,9 +443,9 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 59 | `.macro-search-item-text mark` | `background: transparent` |
-| 60 | `.macro-search-item-text mark` | `color: inherit` |
-| 61 | `.macro-search-item-text mark` | `font-style: normal` |
+| 47 | `.macro-search-item-text mark` | `background: transparent` |
+| 48 | `.macro-search-item-text mark` | `color: inherit` |
+| 49 | `.macro-search-item-text mark` | `font-style: normal` |
 
 ### src/popup/popup.css (4)
 
@@ -454,7 +454,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 | 11 | `.popup-button, .popup-icon-button` | `border: none` |
 | 27 | `.popup-item-toggle` | `border: none` |
 | 28 | `.popup-item-toggle` | `background: transparent` |
-| 53 | `.popup-results` | `list-style: none` |
+| 42 | `.popup-results` | `list-style: none` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -514,7 +514,7 @@ Rich-text defaults inside user-authored editor content.
 | 185 | `.content-editor-body a` | `text-decoration: underline` |
 | 189 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (49)
+## identity-geometry (41)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -553,40 +553,32 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 45 | `.command-suggestions` | `left: 0` |
 | 47 | `.command-suggestions` | `top: 100%` |
 
-### src/content/overlays/views/search/searchViewStyles.css (9)
+### src/content/overlays/views/search/searchViewStyles.css (5)
 
 | line | selector | declaration |
 |---:|---|---|
 | 14 | `.macro-search-results` | `max-height: 400px` |
-| 25 | `.macro-search-item-command` | `padding-right: var(--spacing-xs)` |
-| 29 | `.macro-search-item-text` | `padding-left: var(--spacing-xs)` |
-| 50 | `.macro-search-item-confirm` | `padding-left: var(--spacing-xs)` |
-| 88 | `.macro-search-shortcut` | `margin-right: var(--spacing-xl)` |
-| 94 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
-| 95 | `.macro-search-kbd` | `min-width: 26px` |
-| 97 | `.macro-search-kbd` | `z-index: 0` |
-| 112 | `.macro-search-kbd:first-child` | `margin-left: 0` |
+| 78 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
+| 79 | `.macro-search-kbd` | `min-width: 26px` |
+| 81 | `.macro-search-kbd` | `z-index: 0` |
+| 96 | `.macro-search-kbd:first-child` | `margin-left: 0` |
 
-### src/content/overlays/views/settings/settingsViewStyles.css (4)
+### src/content/overlays/views/settings/settingsViewStyles.css (3)
 
 | line | selector | declaration |
 |---:|---|---|
 | 9 | `.settings-body` | `padding: var(--spacing-2xl) 0 var(--spacing-xl)` |
 | 15 | `.settings-section-label` | `padding: var(--spacing-md) var(--spacing-sm) 0 0` |
 | 26 | `.settings-prefix-btn` | `padding: 0` |
-| 30 | `.settings-import-status` | `padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm)` |
 
-### src/popup/popup.css (7)
+### src/popup/popup.css (4)
 
 | line | selector | declaration |
 |---:|---|---|
-| 33 | `.popup-item-detail` | `margin-top: var(--spacing-sm)` |
-| 34 | `.popup-item-detail` | `padding-top: var(--spacing-sm)` |
-| 38 | `.popup-macro-text` | `margin: 0` |
-| 43 | `.popup-toggle-label` | `margin-left: var(--spacing-sm)` |
-| 50 | `.popup-results` | `max-height: 256px` |
-| 51 | `.popup-results` | `padding: var(--spacing-sm) 0` |
-| 52 | `.popup-results` | `margin: 0` |
+| 32 | `.popup-macro-text` | `margin: 0` |
+| 39 | `.popup-results` | `max-height: 256px` |
+| 40 | `.popup-results` | `padding: var(--spacing-sm) 0` |
+| 41 | `.popup-results` | `margin: 0` |
 
 ### src/styles/components/content-editor.css (11)
 

@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 242 |
+| reviewed residue declarations | 234 |
 | assimilable now | 0 |
-| latent generalizable | 137 |
+| latent generalizable | 129 |
 | likely recipe/molecule | 102 |
 | likely local identity | 3 |
 
@@ -20,7 +20,7 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | dimension-constraint | 30 |
 | attachment-edge-layer | 7 |
-| spacing-rhythm | 39 |
+| spacing-rhythm | 31 |
 | surface-line-elevation-cutout | 36 |
 | typography-content | 31 |
 | interaction-affordance-state | 14 |
@@ -33,7 +33,7 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | latent-word | 32 |
-| latent-facet | 78 |
+| latent-facet | 70 |
 | latent-scale | 27 |
 | recipe | 102 |
 | local-identity | 3 |
@@ -55,7 +55,7 @@ generalization, recipe, and local-identity pressure.
 | elevation-followup | 3 |
 | reset-absence | 12 |
 | user-content | 43 |
-| identity-geometry | 49 |
+| identity-geometry | 41 |
 
 ## Highest-Pressure Families
 
@@ -67,12 +67,12 @@ generalization, recipe, and local-identity pressure.
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
 | dimension-constraint | latent-scale | 17 | map to an existing/proportional scale or admit a named scale role |
 | motion-transition | latent-word | 15 | admit property-targeted tween word |
-| spacing-rhythm | latent-facet | 15 | add a missing facet on an existing Ermine concept |
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | latent-facet | 11 | add a missing facet on an existing Ermine concept |
 | spacing-rhythm | latent-scale | 10 | map to an existing/proportional scale or admit a named scale role |
 | dimension-constraint | latent-word | 7 | admit a new Ermine word only if it survives the invariance test |
+| spacing-rhythm | latent-facet | 7 | add a missing facet on an existing Ermine concept |
 | typography-content | latent-word | 7 | admit a new Ermine word only if it survives the invariance test |
 | attachment-edge-layer | latent-facet | 4 | add a missing facet on an existing Ermine concept |
 | attachment-edge-layer | latent-word | 3 | admit relational attachment/layer word |
