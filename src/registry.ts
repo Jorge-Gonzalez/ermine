@@ -31,6 +31,12 @@ export const SCALES = {
   duration: ["quick", "settled"], // R-MOTION-08 named temporal scale — values remain theme-bound
 } as const;
 
+const TWEEN_TARGETS = ["ground", "ink", "rule", "ground-ink", "opacity-ground", "opacity-ground-ink", "opacity-transform"] as const;
+const TWEEN_WORDS = [
+  ...SCALES.duration.map((duration) => `tween-${duration}`),
+  ...TWEEN_TARGETS.flatMap((target) => SCALES.duration.map((duration) => `tween-${target}-${duration}`)),
+] as const;
+
 // ============================================================================
 // TYPES — the schema definitions moved to the vocabulary-independent engine
 // (B1, engine/types.ts). The aliases below keep this file the doc system's
@@ -580,7 +586,7 @@ export const LAYERING: AxisRecord[] = [
 // 4.3 MOTION
 // ============================================================================
 
-// implements: R-MOTION-01, R-MOTION-02, R-MOTION-04, R-MOTION-08
+// implements: R-MOTION-01, R-MOTION-02, R-MOTION-04, R-MOTION-08, R-MOTION-09
 export const MOTION: AxisRecord[] = [
   {
     // The open tween: state supplies the "to" value; this word supplies the
@@ -589,15 +595,16 @@ export const MOTION: AxisRecord[] = [
     axis: "tween",
     sibling: "motion", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["tween-<duration>"],
+    valueSpace: TWEEN_WORDS,
     tokens: [
-      { pattern: new RegExp(`^tween-(${SCALES.duration.join("|")})$`), shape: "tween-<duration>", valueDomain: "duration-step" },
+      { pattern: new RegExp(`^tween-(${SCALES.duration.join("|")})$`), shape: "tween-<duration>" },
+      { pattern: new RegExp(`^tween-(${TWEEN_TARGETS.join("|")})-(${SCALES.duration.join("|")})$`), shape: "tween-<target>-<duration>" },
       { pattern: /^tween-.+$/, shape: "tween-<bad>", valueDomain: "duration-step", fallback: true },
     ],
     default: null,
     controls: ["transition-property", "transition-duration"],
     mustNeverTouch: ["animation", "transform", "background", "color", "opacity", "transition-timing-function", "transition-delay", "transition"],
-    notes: "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.",
+    notes: "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
   },
   {
     axis: "motion-micro",

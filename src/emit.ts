@@ -362,8 +362,21 @@ const EMISSION: Record<string, EmitSpec> = {
   tween: {
     effectKind: "css",
     plain: (word): Record<string, string> | null => {
-      const m = word.match(new RegExp(`^tween-(${SCALES.duration.join("|")})$`));
-      return m ? { "transition-property": "all", "transition-duration": `var(--duration-${m[1]})` } : null;
+      const targetProperties: Record<string, string> = {
+        ground: "background-color",
+        ink: "color",
+        rule: "border-color",
+        "ground-ink": "background-color, color",
+        "opacity-ground": "opacity, background-color",
+        "opacity-ground-ink": "opacity, background-color, color",
+        "opacity-transform": "opacity, transform",
+      };
+      const all = word.match(new RegExp(`^tween-(${SCALES.duration.join("|")})$`));
+      if (all) return { "transition-property": "all", "transition-duration": `var(--duration-${all[1]})` };
+      const targeted = word.match(new RegExp(`^tween-(${Object.keys(targetProperties).join("|")})-(${SCALES.duration.join("|")})$`));
+      return targeted
+        ? { "transition-property": targetProperties[targeted[1]], "transition-duration": `var(--duration-${targeted[2]})` }
+        : null;
     },
   },
   // --- effect: named keyframe atoms — a closed tween with property/place baked
@@ -751,7 +764,16 @@ export const VOCABULARY: Record<string, string[]> = {
   "viewport-fill": ["fill-viewport"],
   numeric: ["tabular"],
   "type-label": ["overline"],
-  tween: SCALES.duration.map((s) => `tween-${s}`),
+  tween: [
+    ...SCALES.duration.map((s) => `tween-${s}`),
+    "tween-ground-quick",
+    "tween-ink-quick",
+    "tween-rule-quick",
+    "tween-ground-ink-quick",
+    "tween-opacity-ground-quick",
+    "tween-opacity-ground-ink-quick",
+    "tween-opacity-transform-quick",
+  ],
   effect: ["shake"],
   cover: ["cover"],
   "positioned-centering": ["center-x", "center-y"],

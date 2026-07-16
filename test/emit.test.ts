@@ -104,6 +104,14 @@ test("tween: open state-change envelope uses duration sockets and composes with 
     ["transition-property", "all"],
     ["transition-duration", "var(--duration-quick)"],
   ]);
+  assert.deepEqual(declOf("tween-rule-quick"), [
+    ["transition-property", "border-color"],
+    ["transition-duration", "var(--duration-quick)"],
+  ]);
+  assert.deepEqual(declOf("tween-opacity-ground-ink-quick"), [
+    ["transition-property", "opacity, background-color, color"],
+    ["transition-duration", "var(--duration-quick)"],
+  ]);
   assert.deepEqual(declOf("tween-settled emphasized"), [
     ["transition-property", "all"],
     ["transition-duration", "var(--duration-settled)"],

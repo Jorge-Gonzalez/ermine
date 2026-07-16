@@ -259,6 +259,12 @@
       "anchor": "ADR-0043"
     },
     {
+      "id": "ADR-0044",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0044-targeted-tween-envelopes.md",
+      "anchor": "ADR-0044"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -737,6 +743,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-MOTION-08"
+    },
+    {
+      "id": "R-MOTION-09",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-MOTION-09"
     },
     {
       "id": "R-OVERFLOW-01",
@@ -1447,6 +1459,12 @@
       "anchor": "RAT:R-MOTION-08"
     },
     {
+      "id": "RAT:R-MOTION-09",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-MOTION-09"
+    },
+    {
       "id": "RAT:R-OVERFLOW-01",
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
@@ -2010,6 +2028,11 @@
       "type": "implements"
     },
     {
+      "from": "CODE:MOTION",
+      "to": "R-MOTION-09",
+      "type": "implements"
+    },
+    {
       "from": "CODE:p1_oneWordPerAxisPerScope",
       "to": "LAW-2",
       "type": "implements"
@@ -2427,6 +2450,11 @@
     {
       "from": "RAT:R-MOTION-08",
       "to": "R-MOTION-08",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-MOTION-09",
+      "to": "R-MOTION-09",
       "type": "rationale-of"
     },
     {

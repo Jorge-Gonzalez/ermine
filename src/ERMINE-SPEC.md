@@ -576,17 +576,18 @@ Tokens:
 #### tween
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `tween-<duration>`
+- value space: `tween-quick` `tween-settled` `tween-ground-quick` `tween-ground-settled` `tween-ink-quick` `tween-ink-settled` `tween-rule-quick` `tween-rule-settled` `tween-ground-ink-quick` `tween-ground-ink-settled` `tween-opacity-ground-quick` `tween-opacity-ground-settled` `tween-opacity-ground-ink-quick` `tween-opacity-ground-ink-settled` `tween-opacity-transform-quick` `tween-opacity-transform-settled`
 - default: none
 - controls: `transition-property` `transition-duration`
 - must never touch: `animation` `transform` `background` `color` `opacity` `transition-timing-function` `transition-delay` `transition`
-- notes: open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.
+- notes: open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `tween-<duration>` | `/^tween-(quick\|settled)$/` | `duration-step` | no |
+| `tween-<duration>` | `/^tween-(quick\|settled)$/` | — | no |
+| `tween-<target>-<duration>` | `/^tween-(ground\|ink\|rule\|ground-ink\|opacity-ground\|opacity-ground-ink\|opacity-transform)-(quick\|settled)$/` | — | no |
 | `tween-<bad>` | `/^tween-.+$/` | `duration-step` | yes |
 
 #### motion-micro

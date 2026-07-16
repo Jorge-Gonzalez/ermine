@@ -1141,12 +1141,47 @@
     },
     "tween-quick": {
       "axis": "tween",
-      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
       "reference": "src/ERMINE-SPEC.md §2.3 — tween"
     },
     "tween-settled": {
       "axis": "tween",
-      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
+    "tween-ground-quick": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
+    "tween-ink-quick": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
+    "tween-rule-quick": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
+    "tween-ground-ink-quick": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
+    "tween-opacity-ground-quick": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
+    "tween-opacity-ground-ink-quick": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
+      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
+    },
+    "tween-opacity-transform-quick": {
+      "axis": "tween",
+      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets.",
       "reference": "src/ERMINE-SPEC.md §2.3 — tween"
     },
     "decelerate": {
@@ -1861,12 +1896,6 @@
       "axis": "fill",
       "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
       "reference": "src/ERMINE-SPEC.md §2.1 — fill"
-    },
-    {
-      "pattern": "^tween-(quick|settled)$",
-      "axis": "tween",
-      "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork.",
-      "reference": "src/ERMINE-SPEC.md §2.3 — tween"
     },
     {
       "pattern": "^(current)-(page|step|location|date|time|true)$",

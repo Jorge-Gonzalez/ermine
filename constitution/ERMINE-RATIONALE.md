@@ -464,6 +464,14 @@ targeting system: it first admits the universal "envelope this state change" for
 leaving narrow property sets for the next measured fork. Emitting longhands prevents the CSS
 `transition` shorthand from erasing separately authored easing words by source order.
 
+## RAT:R-MOTION-09
+Source: ADR-0044. After the universal tween pass, Monky's remaining transition residue clustered
+around repeated property targets rather than new timing magnitudes: border color on inputs, ground
+and ink changes on interactive chrome, opacity plus paint for revealable actions, and opacity plus
+transform for floating suggestion surfaces. Those are ordinary state-change envelopes, not closed
+effects, so they extend `tween` by target set while keeping the same duration scale and longhand
+emission discipline.
+
 ## RAT:R-LAYER-01
 Source: pre-split `constitution/ERMINE.md` lines 1533–1564.
 

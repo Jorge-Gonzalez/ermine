@@ -4,7 +4,6 @@
 
 export type SizeStep = "sm" | "md" | "lg" | "xl" | "2xl";
 export type SpacingStep = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
-export type DurationStep = "quick" | "settled";
 
 type None<K extends PropertyKey> = { [P in K]?: never };
 
@@ -59,7 +58,7 @@ export interface ErminePlainProps {
   /** axis `stacking-context` */
   stackingContext?: "isolate";
   /** axis `tween` */
-  tween?: DurationStep;
+  tween?: "tween-quick" | "tween-settled" | "tween-ground-quick" | "tween-ground-settled" | "tween-ink-quick" | "tween-ink-settled" | "tween-rule-quick" | "tween-rule-settled" | "tween-ground-ink-quick" | "tween-ground-ink-settled" | "tween-opacity-ground-quick" | "tween-opacity-ground-settled" | "tween-opacity-ground-ink-quick" | "tween-opacity-ground-ink-settled" | "tween-opacity-transform-quick" | "tween-opacity-transform-settled";
   /** axis `motion-micro` */
   motionMicro?: "decelerate" | "accelerate" | "standard" | "emphasized" | "symmetric" | "asymmetric";
   /** axis `motion-macro` */
@@ -235,7 +234,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "topLayerMechanism", axis: "top-layer-mechanism", kind: "word" },
   { prop: "positionMode", axis: "position-mode", kind: "word" },
   { prop: "stackingContext", axis: "stacking-context", kind: "word" },
-  { prop: "tween", axis: "tween", kind: "step-prefix", prefix: "tween" },
+  { prop: "tween", axis: "tween", kind: "word" },
   { prop: "motionMicro", axis: "motion-micro", kind: "word" },
   { prop: "motionMacro", axis: "motion-macro", kind: "word" },
   { prop: "effect", axis: "effect", kind: "word" },

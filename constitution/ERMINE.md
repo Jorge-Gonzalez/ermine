@@ -702,9 +702,21 @@ supplies the temporal envelope. Duration is a named theme-bound scale with admit
 and `settled`, read as `--duration-quick` and `--duration-settled`. The open tween emits transition
 longhands (`transition-property`, `transition-duration`) rather than the `transition` shorthand, so
 closed easing words compose without source-order resets. The first admitted property target is
-`all`; narrower property-targeting remains a later animation-plane ruling.
+`all`.
 
 → rationale: RAT:R-MOTION-08 · history: ADR-0039 · code: src/registry.ts#MOTION, src/emit.ts#emit, src/registry.ts#SKIN_PLANE
+
+## R-MOTION-09 — Targeted tween envelopes
+
+Repeated UI feedback may narrow the open tween's `transition-property` target while keeping the
+same duration scale. Bare `tween-<duration>` remains the universal `all` target. Targeted forms
+name the carrier/presence properties that actually animate: `tween-ground-*`, `tween-ink-*`,
+`tween-rule-*`, `tween-ground-ink-*`, `tween-opacity-ground-*`,
+`tween-opacity-ground-ink-*`, and `tween-opacity-transform-*`. A targeted tween is still one tween
+envelope, not a second composable dial, so it conflicts with any other `tween-*` word on the same
+element and scope.
+
+→ rationale: RAT:R-MOTION-09 · history: ADR-0044 · code: src/registry.ts#MOTION, src/emit.ts#emit
 
 ## R-LAYER-01 — Tier-two named scale
 

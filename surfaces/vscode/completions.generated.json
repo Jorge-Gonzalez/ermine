@@ -1631,13 +1631,55 @@
           "label": "tween-quick",
           "insertText": "tween-quick",
           "kind": "word",
-          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork."
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
         },
         {
           "label": "tween-settled",
           "insertText": "tween-settled",
           "kind": "word",
-          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Property targeting remains the next animation-plane fork."
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
+        },
+        {
+          "label": "tween-ground-quick",
+          "insertText": "tween-ground-quick",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
+        },
+        {
+          "label": "tween-ink-quick",
+          "insertText": "tween-ink-quick",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
+        },
+        {
+          "label": "tween-rule-quick",
+          "insertText": "tween-rule-quick",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
+        },
+        {
+          "label": "tween-ground-ink-quick",
+          "insertText": "tween-ground-ink-quick",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
+        },
+        {
+          "label": "tween-opacity-ground-quick",
+          "insertText": "tween-opacity-ground-quick",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
+        },
+        {
+          "label": "tween-opacity-ground-ink-quick",
+          "insertText": "tween-opacity-ground-ink-quick",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
+        },
+        {
+          "label": "tween-opacity-transform-quick",
+          "insertText": "tween-opacity-transform-quick",
+          "kind": "word",
+          "meaning": "open transition envelope: state supplies the target value; duration reads --duration-<step>. Bare `tween-<duration>` targets all changed properties; targeted forms narrow transition-property to repeated UI paint/presence sets."
         }
       ]
     },

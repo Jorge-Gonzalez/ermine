@@ -91,6 +91,9 @@ const cases: Case[] = [
   { s: "flush-block margin-top-sm", expect: "fail", why: "flush-block owns the block margin footprint" },
   // animation plane — open tween envelope over named duration scale
   { s: "tween-quick", expect: "ok", why: "quick duration step" },
+  { s: "tween-rule-quick", expect: "ok", why: "quick transition narrowed to border-color" },
+  { s: "tween-opacity-ground-ink-quick", expect: "ok", why: "compound target set over the quick duration" },
+  { s: "tween-rule-quick tween-ground-quick", expect: "fail", why: "one tween target/duration envelope per element/scope" },
   { s: "tween-settled emphasized", expect: "ok", why: "duration envelope composes with easing" },
   { s: "tween-quick tween-settled", expect: "fail", why: "one duration envelope per element/scope" },
   { s: "tween-fast", expect: "fail", why: "duration step names are ruled, not inherited from Monky tokens" },

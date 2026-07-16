@@ -25,5 +25,5 @@ Emission uses `transition-property: all` plus `transition-duration: var(--durati
 previously authored easing word.
 
 This is intentionally the universal first form. Property-targeted tween words (`color`, `opacity`,
-`border-color`, compound sets) remain deferred until the animation-plane pass measures them as their
-own fork. Introduces R-MOTION-08.
+`border-color`, compound sets) were deferred here and later admitted by ADR-0044 as targeted tween
+envelopes. Introduces R-MOTION-08.
