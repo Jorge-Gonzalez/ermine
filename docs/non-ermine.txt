@@ -19,19 +19,19 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the pressed/expanded state-prefix migration is
-Ermine e0a2802 / Monky 38ba893:
+were migrated). Current live ledger after the spacing-none endpoint migration is
+Ermine e22bcf3 / Monky ab1864e:
 
-  current declarations:                 522
-  adopted/infrastructure declarations:  368
-  project-owned residue declarations:   154
+  current declarations:                 524
+  adopted/infrastructure declarations:  381
+  project-owned residue declarations:   143
   assimilable now:                        0
 
 Current residue by reason code:
   recipe-identity 17, brand-identity 8, component-contract 8, state-mechanics 1,
   parent-relational 2, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 5,
-  user-content 43, identity-geometry 30.
+  user-content 43, identity-geometry 19.
 
 Historical invariance sample:
 
@@ -132,8 +132,10 @@ SelectableGroup selected skin to existing `checked:` carrier words, leaving only
 and lockout mechanics. The editor style-option state pass then moved the listbox option active
 skin to existing `selected:` and `parent-selected:` carrier words. The pressed/expanded
 state-prefix pass then admitted `pressed:` and `expanded:`, migrating the content-editor toolbar
-button and style trigger active skin; the live residue is now 154. Shorthand-asymmetry and raw
-micro-padding rows remain as the next spacing questions.
+button and style trigger active skin. The spacing-none endpoint pass then admitted padding/margin
+`none` on whole, logical, and physical footprints, migrated the remaining component zero-spacing
+resets, and kept document-root plus structural selector resets local; the live residue is now 143.
+Raw micro-padding rows remain a spacing question.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)

@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 154 |
+| reviewed residue declarations | 143 |
 | assimilable now | 0 |
-| latent generalizable | 54 |
+| latent generalizable | 43 |
 | likely recipe/molecule | 97 |
 | likely local identity | 3 |
 
@@ -20,7 +20,7 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | dimension-constraint | 1 |
 | attachment-edge-layer | 6 |
-| spacing-rhythm | 31 |
+| spacing-rhythm | 20 |
 | surface-line-elevation-cutout | 19 |
 | typography-content | 29 |
 | interaction-affordance-state | 14 |
@@ -33,8 +33,8 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | latent-word | 9 |
-| latent-facet | 35 |
-| latent-scale | 10 |
+| latent-facet | 28 |
+| latent-scale | 6 |
 | recipe | 97 |
 | local-identity | 3 |
 
@@ -54,7 +54,7 @@ generalization, recipe, and local-identity pressure.
 | elevation-followup | 3 |
 | reset-absence | 5 |
 | user-content | 43 |
-| identity-geometry | 30 |
+| identity-geometry | 19 |
 
 ## Highest-Pressure Families
 
@@ -65,9 +65,8 @@ generalization, recipe, and local-identity pressure.
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | latent-facet | 11 | add a missing facet on an existing Ermine concept |
-| spacing-rhythm | latent-scale | 10 | map to an existing/proportional scale or admit a named scale role |
 | reset-inheritance-neutralization | latent-facet | 8 | add a missing facet on an existing Ermine concept |
-| spacing-rhythm | latent-facet | 7 | add a missing facet on an existing Ermine concept |
+| spacing-rhythm | latent-scale | 6 | map to an existing/proportional scale or admit a named scale role |
 | surface-line-elevation-cutout | latent-facet | 6 | add a missing facet on an existing Ermine concept |
 | typography-content | latent-word | 5 | admit a new Ermine word only if it survives the invariance test |
 | attachment-edge-layer | latent-word | 3 | admit relational attachment/layer word |
