@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 138 |
+| reviewed residue declarations | 135 |
 | assimilable now | 0 |
-| latent generalizable | 3 |
+| latent generalizable | 0 |
 | likely recipe/molecule | 124 |
 | likely local identity | 11 |
 
@@ -23,7 +23,7 @@ generalization, recipe, and local-identity pressure.
 | spacing-rhythm | 19 |
 | surface-line-elevation-cutout | 17 |
 | typography-content | 27 |
-| interaction-affordance-state | 14 |
+| interaction-affordance-state | 11 |
 | motion-transition | 3 |
 | reset-inheritance-neutralization | 10 |
 | component-private-drawing | 41 |
@@ -32,7 +32,6 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| latent-facet | 3 |
 | recipe | 124 |
 | local-identity | 11 |
 
@@ -44,11 +43,11 @@ generalization, recipe, and local-identity pressure.
 | brand-identity | 6 |
 | component-contract | 7 |
 | state-mechanics | 1 |
-| parent-relational | 2 |
+| parent-relational | 1 |
 | pseudo-mechanics | 23 |
 | scrollbar-followup | 8 |
 | motion-followup | 1 |
-| opacity-followup | 4 |
+| opacity-followup | 2 |
 | elevation-followup | 3 |
 | reset-absence | 5 |
 | user-content | 43 |
@@ -79,7 +78,6 @@ generalization, recipe, and local-identity pressure.
 | typography-content | local-identity | 4 | keep local after invariance/scale tests |
 | attachment-edge-layer | local-identity | 3 | keep local after invariance/scale tests |
 | attachment-edge-layer | recipe | 3 | promote as molecule/recipe only if reused |
-| interaction-affordance-state | latent-facet | 3 | add a missing facet on an existing Ermine concept |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
 | dimension-constraint | recipe | 1 | promote as molecule/recipe only if reused |

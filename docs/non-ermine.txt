@@ -19,18 +19,18 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the content-alignment and scrollbar socket migration is
-Ermine b032809 / Monky 0c63ad3:
+were migrated). Current live ledger after the alpha opacity migration is
+Ermine 9bb1d71 / Monky bec19d4:
 
   current declarations:                 523
-  adopted/infrastructure declarations:  385
-  project-owned residue declarations:   138
+  adopted/infrastructure declarations:  388
+  project-owned residue declarations:   135
   assimilable now:                        0
 
 Current residue by reason code:
   recipe-identity 17, brand-identity 6, component-contract 7, state-mechanics 1,
-  parent-relational 2, pseudo-mechanics 23, scrollbar-followup 8,
-  motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 5,
+  parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
+  motion-followup 1, opacity-followup 2, elevation-followup 3, reset-absence 5,
   user-content 43, identity-geometry 18.
 
 Historical invariance sample:
@@ -85,8 +85,8 @@ most of this "identity" into grammar. The bucket names (identity-geometry, compo
 encode the metric trap: they read exact-looking CSS as bespoke, when order/proportion/edge/
 alignment are the most general things there are.
 
-The named-follow-up residue has narrowed: motion is now 1, opacity 4, scrollbar 8, and
-elevation 3 (= 16). `shake` moved into the effect-atom layer, the universal
+The named-follow-up residue has narrowed: motion is now 1, opacity 2, scrollbar 8, and
+elevation 3 (= 14). `shake` moved into the effect-atom layer, the universal
 `transition: all var(--transition-fast)` rows moved to the open `tween-quick` word, and
 the repeated property-targeted transition rows moved to targeted tween envelopes
 (`tween-rule-quick`, `tween-ground-quick`, `tween-ink-quick`, `tween-ground-ink-quick`,
@@ -140,7 +140,9 @@ pass then moved the modal nav branding margin and label type to existing `margin
 from CSS into an `<em>` element. The content-alignment and scrollbar socket pass then admitted
 `content-align-*`, moved the search results' `align-content: start` to `content-align-start`,
 and mapped Monky scrollbar colours through `--scrollbar-thumb` / `--scrollbar-track`; the live
-residue is now 138.
+residue fell to 138. The alpha opacity pass then admitted bounded `alpha-*` values at 5 percent
+increments and migrated the search placeholder braces, popup hover softening, and editor style
+caret; the live residue is now 135 with zero latent-generalizable rows.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
