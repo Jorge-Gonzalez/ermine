@@ -235,6 +235,12 @@
       "anchor": "ADR-0039"
     },
     {
+      "id": "ADR-0040",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0040-max-width-none-endpoint.md",
+      "anchor": "ADR-0040"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

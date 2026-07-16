@@ -1004,6 +1004,12 @@
           "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
+          "label": "max-width-none",
+          "insertText": "max-width-none",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
           "label": "min-width-<size>",
           "insertText": "min-width-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",

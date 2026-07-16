@@ -141,9 +141,10 @@ test("focus:ring restyles the platform outline under the focus condition (R-SKIN
 });
 
 test("the min dials' none endpoint escapes the min-content floor (R-CONSTRAINT-01)", () => {
-  const css = toCss("min-height-none min-width-none");
+  const css = toCss("min-height-none min-width-none max-width-none");
   assert.match(css, /\.min-height-none \{[^}]*min-height: 0;/s);
   assert.match(css, /\.min-width-none \{[^}]*min-width: 0;/s);
+  assert.match(css, /\.max-width-none \{[^}]*max-width: none;/s);
 });
 
 test("hidden emits both overflow axes; clip stays distinct (R-OVERFLOW-01)", () => {

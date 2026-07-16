@@ -298,8 +298,8 @@ const EMISSION: Record<string, EmitSpec> = {
   constraints: {
     effectKind: "css",
     plain: (word) => {
-      const none = word.match(/^(min-width|min-height)-none$/);
-      if (none) return { [none[1]]: "0" };
+      const none = word.match(/^(min-width|min-height|max-width)-none$/);
+      if (none) return { [none[1]]: none[1] === "max-width" ? "none" : "0" };
       const m = word.match(new RegExp(`^(min-width|max-width|min-height|max-height)-(${SCALES.size.join("|")})$`));
       return m ? { [m[1]]: `var(--size-${m[2]})` } : null;
     },
@@ -726,7 +726,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "m3-self-size": ["basis-content", "basis-ratio", ...SCALES.size.map((s) => `basis-exact-${s}`)],
   constraints: [
     ...["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
-    "min-width-none", "min-height-none",
+    "min-width-none", "min-height-none", "max-width-none",
   ],
   fill: ["fill", "fill-inline", "fill-block", "hug-inline"],
   aspect: ["square"],

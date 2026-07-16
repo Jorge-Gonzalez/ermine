@@ -416,7 +416,7 @@ Tokens:
 #### constraints
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
-- value space: `min-width-<size>` `max-width-<size>` `min-height-<size>` `max-height-<size>`
+- value space: `min-width-<size>` `max-width-<size>` `min-height-<size>` `max-height-<size>` `max-width-none`
 - default: none
 - controls: `min-width` `max-width` `min-height` `max-height`
 - must never touch: `flex-grow` `flex-shrink` `flex-basis` `width`
@@ -429,7 +429,7 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `min/max-width/height-<size>` | `/^(min-width\|max-width\|min-height\|max-height)-(sm\|md\|lg\|xl\|2xl)$/` | `size-step` | no |
-| `min-width/height-none` | `/^(min-width\|min-height)-(none)$/` | — | no |
+| `min-width/height-none \| max-width-none` | `/^(min-width\|min-height\|max-width)-(none)$/` | — | no |
 | `min/max-width/height-<bad>` | `/^(min-width\|max-width\|min-height\|max-height)-.+$/` | `size-step` | yes |
 
 #### fill

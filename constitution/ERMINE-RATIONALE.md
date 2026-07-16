@@ -211,7 +211,12 @@ min-content floor: six Monky selectors set `min-width: 0` or `min-height: 0` so 
 truncating region inside a flex track cannot force its container open — a load-bearing layout
 decision that read as an unexplained `0` in component sheets. `none` names the intent (no
 minimum at all) rather than the number, and the endpoint-word-over-scale-step shape is
-R-SKIN-06's square/pill pattern. Max endpoints wait for their own evidence.
+R-SKIN-06's square/pill pattern.
+
+Amended (ADR-0040): the max-width dial gains `max-width-none`. The evidence is inherited-cap
+neutralization in the Monky dimension/constraint pilot: removing a prior inline measure is not a
+new measured value, but the absence endpoint of the max-width dial. Other max endpoints wait for
+their own evidence.
 
 ## RAT:R-SIZE-01
 Source: ADR-0024. `fill` is the first member of the proportional layout plane

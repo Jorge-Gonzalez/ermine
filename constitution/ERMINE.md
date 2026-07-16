@@ -408,11 +408,12 @@ scrolling entirely. Both are whole-axis words.
 Minimum and maximum width and height are four independent parametric sub-dials. A min and max on
 the same dimension form a composable band; two values on one dial conflict. The min dials carry a
 fixed `none` endpoint (`min-width-none`, `min-height-none`): no minimum at all, escaping the
-automatic min-content floor a flex or grid item otherwise keeps — the interior of the dial stays
-scale-bound, the endpoint is a word (the R-SKIN-06 endpoint pattern). Max-dial endpoints are
-reserved pending evidence.
+automatic min-content floor a flex or grid item otherwise keeps. The max-width dial also carries
+the fixed endpoint `max-width-none`: no cap at all, escaping an inherited or recipe-imposed inline
+measure. The interior of each dial stays scale-bound; endpoints are words (the R-SKIN-06 endpoint
+pattern). Other max-dial endpoints are reserved pending evidence.
 
-→ rationale: RAT:R-CONSTRAINT-01 · history: ADR-0004, ADR-0015 · code: src/registry.ts#LAYOUT
+→ rationale: RAT:R-CONSTRAINT-01 · history: ADR-0004, ADR-0015, ADR-0040 · code: src/registry.ts#LAYOUT
 
 ## R-SIZE-01 — Fill
 

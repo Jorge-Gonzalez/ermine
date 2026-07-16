@@ -392,11 +392,12 @@ export const LAYOUT: AxisRecord[] = [
     axis: "constraints",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
-    valueSpace: ["min-width-<size>", "max-width-<size>", "min-height-<size>", "max-height-<size>"],
+    valueSpace: ["min-width-<size>", "max-width-<size>", "min-height-<size>", "max-height-<size>", "max-width-none"],
     tokens: [
       { pattern: new RegExp(`^(min-width|max-width|min-height|max-height)-(${SCALES.size.join("|")})$`), shape: "min/max-width/height-<size>", valueDomain: "size-step" },
-      // R-CONSTRAINT-01 endpoint: no minimum at all — escapes the flex min-content floor.
-      { pattern: /^(min-width|min-height)-(none)$/, shape: "min-width/height-none" },
+      // R-CONSTRAINT-01 endpoints: no minimum at all (flex min-content escape);
+      // no max-width cap at all (inherited measure escape, ADR-0040).
+      { pattern: /^(min-width|min-height|max-width)-(none)$/, shape: "min-width/height-none | max-width-none" },
       { pattern: /^(min-width|max-width|min-height|max-height)-.+$/, shape: "min/max-width/height-<bad>", valueDomain: "size-step", fallback: true },
     ],
     // four independent dials — min/max-width form a band, min/max-height form a separate band.

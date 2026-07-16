@@ -430,11 +430,6 @@ function classify(
   if (/^(transition|animation)/.test(property)) return { code: "motion-followup" };
   if (property === "opacity") return { code: "opacity-followup" };
   if (property === "box-shadow") return { code: "elevation-followup" };
-  if (ABSENCE_VALUES.has(value)) return { code: "reset-absence" };
-  if (PAINT_PROPERTY.test(property) && /(^|\s)(none|transparent)(\s|$)/.test(value)) {
-    return { code: "reset-absence" };
-  }
-
   // A state the grammar cannot condition on yet (.is-active, :active, :checked…)
   // must not receive a plain-word suggestion; the declaration is state-driven.
   if (!condition && STATE_MARK.test(subject)) return { code: "state-mechanics" };
@@ -444,6 +439,11 @@ function classify(
       return { code: "assimilable", words: [...new Set(matches.map((match) => match.word))].sort() };
     }
   }
+  if (ABSENCE_VALUES.has(value)) return { code: "reset-absence" };
+  if (PAINT_PROPERTY.test(property) && /(^|\s)(none|transparent)(\s|$)/.test(value)) {
+    return { code: "reset-absence" };
+  }
+
   if (condition) return { code: "state-mechanics" };
   if (property === "cursor" || property === "user-select") return { code: "affordance-mechanics" };
   if (RULE_MECHANICS_PROPERTY.test(property)) return { code: "rule-mechanics" };
