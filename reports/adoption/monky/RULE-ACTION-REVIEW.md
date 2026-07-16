@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 247 |
+| reviewed residue declarations | 244 |
 | assimilable now | 0 |
-| latent generalizable | 142 |
+| latent generalizable | 139 |
 | likely recipe/molecule | 102 |
 | likely local identity | 3 |
 
@@ -19,7 +19,7 @@ generalization, recipe, and local-identity pressure.
 | rule action | declarations |
 | --- | --- |
 | dimension-constraint | 30 |
-| attachment-edge-layer | 10 |
+| attachment-edge-layer | 7 |
 | spacing-rhythm | 41 |
 | surface-line-elevation-cutout | 36 |
 | typography-content | 31 |
@@ -32,7 +32,7 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| latent-word | 35 |
+| latent-word | 32 |
 | latent-facet | 80 |
 | latent-scale | 27 |
 | recipe | 102 |
@@ -42,7 +42,7 @@ generalization, recipe, and local-identity pressure.
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 28 |
+| recipe-identity | 27 |
 | brand-identity | 8 |
 | component-contract | 37 |
 | state-mechanics | 5 |
@@ -55,7 +55,7 @@ generalization, recipe, and local-identity pressure.
 | elevation-followup | 3 |
 | reset-absence | 12 |
 | user-content | 43 |
-| identity-geometry | 53 |
+| identity-geometry | 51 |
 
 ## Highest-Pressure Families
 
@@ -74,8 +74,8 @@ generalization, recipe, and local-identity pressure.
 | spacing-rhythm | latent-scale | 10 | map to an existing/proportional scale or admit a named scale role |
 | dimension-constraint | latent-word | 7 | admit a new Ermine word only if it survives the invariance test |
 | typography-content | latent-word | 7 | admit a new Ermine word only if it survives the invariance test |
-| attachment-edge-layer | latent-word | 6 | admit relational attachment/layer word |
 | attachment-edge-layer | latent-facet | 4 | add a missing facet on an existing Ermine concept |
+| attachment-edge-layer | latent-word | 3 | admit relational attachment/layer word |
 | dimension-constraint | latent-facet | 3 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | recipe | 3 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 3 | promote as molecule/recipe only if reused |

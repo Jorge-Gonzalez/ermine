@@ -19,19 +19,19 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the text wrapping migration is Ermine
-e9640d2 / Monky e4fa9d2:
+were migrated). Current live ledger after the ordinary z-scale migration is Ermine
+e9640d2 / Monky f61cefd:
 
-  current declarations:                 510
-  adopted/infrastructure declarations:  263
-  project-owned residue declarations:   247
+  current declarations:                 511
+  adopted/infrastructure declarations:  267
+  project-owned residue declarations:   244
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 28, brand-identity 8, component-contract 37, state-mechanics 5,
+  recipe-identity 27, brand-identity 8, component-contract 37, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 12,
-  user-content 43, identity-geometry 53.
+  user-content 43, identity-geometry 51.
 
 Historical invariance sample:
 
@@ -49,7 +49,8 @@ The relational 46, by intent:
     min-height:0 (min-height-none), position:fixed (position-fixed). ~12
   - done: width/height:100% (fill). (migrated this session)
   - the proportional/relational plane (new words, docs/proportional-plane.md):
-      layer        z-index:10000 / 2147483646 / 10 / 0        (stacking ORDER, not size)
+      layer        z-index:10 (done via dropdown) / 10000 / 2147483646 / 0
+                                                                  (stacking ORDER, not size)
       cover        inset:0                                      (done: R-SIZE-03 / migrated)
       center-x     left:50% + translateX(-50%)              (done: R-SIZE-06 / migrated)
       center-y     top:50% + translateY(-50%)                (done: R-SIZE-06 / migrated)
@@ -89,7 +90,7 @@ elevation 3 (= 29). `shake` moved into the effect-atom layer, and the universal
 `transition: all var(--transition-fast)` rows moved to the open `tween-quick` word. The
 remaining motion rows are property-targeted transitions, the local `.shake { transition: none
 !important }` suppression, and bespoke segmented-control/overlay timing. user-content
-(43 = the `prose` molecule) and recipe-identity (28 by the live ledger, R-SKIN-10) remain the
+(43 = the `prose` molecule) and recipe-identity (27 by the live ledger, R-SKIN-10) remain the
 genuinely-licensed-local bundles. The first dimension endpoint pass admitted
 `max-width-none`, and the delete-confirm `max-width: none` row migrated to that word. The
 next dimension pass admitted `control-size-<spacing>` and migrated the 16px radio/checkbox
@@ -100,7 +101,10 @@ the shared suggestions/delete footer alignment to `justify-end`. The text wrappi
 admitted `text-nowrap` and `text-pre-wrap`, migrated the editor toast, command suggestion,
 segmented option, and popup macro text rows, and left only the search selection reset
 (`white-space: normal` / `overflow: visible` / `text-overflow: clip`) as reset/release
-evidence; the live assimilable work list remains zero.
+evidence. The ordinary z-scale pass bound `--z-content` and `--z-dropdown`, migrated
+segmented-option layering plus the command/style dropdown `z-index: 10` rows, and left the
+extension/top-layer and pseudo-negative layer values for later ruling; the live assimilable
+work list remains zero.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -208,14 +212,14 @@ Function: attach a child to an edge, place a floating affordance, or assert stac
 Representative declarations:
   left: 0; right: 0; top: 100%; top: calc(100% + 4px);
   bottom: 52px; right: var(--spacing-sm); top: 0; bottom: 0;
-  z-index: 10 / 10000 / 2147483646; position: fixed !important;
+  z-index: 0 / -1 / 10000 / 2147483646; position: fixed !important;
   inset: 0 2px 4px; pointer-events: none.
 
 Reading:
   - `left:0/right:0/top:100%` is dropdown attachment, not component identity.
   - arrow top/bottom placement and edit-button right offset are edge-attachment variants.
-  - z-index values are layer order. They are not visual identity; they want named stack
-    tiers or project-bound layer sockets.
+  - Ordinary in-page dropdown/content z-index values are now z-scale words. Remaining
+    values are extension/top-layer ordering or pseudo negative drawing.
   - `bottom:52px` is a local toast avoidance offset and probably recipe-local unless a
     general "float above bar" pattern repeats.
 

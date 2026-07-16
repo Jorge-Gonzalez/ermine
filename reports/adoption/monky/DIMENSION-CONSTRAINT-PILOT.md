@@ -72,7 +72,7 @@ scales, proportional relationships, or measure/control-size roles.
 | src/styles/components/content-editor.css:18 | height | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
 | src/styles/components/content-editor.css:34 | width | auto | dimension constraint | latent-facet |  | constraint reset/escape facet |
 | src/styles/components/content-editor.css:35 | min-width | 36px | dimension constraint | latent-scale | off current named scale | size/measure scale role |
-| src/styles/components/content-editor.css:60 | width | 24px | icon/control square | latent-scale | spacing-2xl | square/icon/control-size scale member |
-| src/styles/components/content-editor.css:68 | height | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
-| src/styles/components/content-editor.css:74 | min-height | 150px | interaction/content floor | recipe | off current named scale | prose/editor-content molecule |
+| src/styles/components/content-editor.css:59 | width | 24px | icon/control square | latent-scale | spacing-2xl | square/icon/control-size scale member |
+| src/styles/components/content-editor.css:67 | height | 28px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
+| src/styles/components/content-editor.css:73 | min-height | 150px | interaction/content floor | recipe | off current named scale | prose/editor-content molecule |
 | src/styles/skin/controls.css:18 | min-height | 150px | interaction/content floor | latent-scale | off current named scale | control-min-block or editor-min-block |
