@@ -435,20 +435,22 @@ Tokens:
 #### fill
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `fill` `fill-inline` `fill-block` `hug-inline`
+- value space: `fill` `fill-inline` `fill-block` `hug-inline` `control-size-<spacing>`
 - default: none
 - controls: `inline-size` `block-size`
-- must never touch: `display` `gap` `flex` `flex-grow` `flex-basis` `position` `margin` `padding`
+- must never touch: `display` `gap` `flex` `flex-grow` `flex-basis` `position` `margin` `padding` `border-radius` `font-size` `aspect-ratio`
 - sub-dials: `inline` `block`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket.
+- notes: explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `fill[-<axis>] \| hug-inline` | `/^(?:fill(?:-(inline\|block))?\|hug-inline)$/` | — | no |
+| `control-size-<spacing>` | `/^control-size-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `control-size-<bad>` | `/^control-size-.+$/` | `spacing-step` | yes |
 
 #### aspect
 

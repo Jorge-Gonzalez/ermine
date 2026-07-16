@@ -144,8 +144,8 @@ export type OverflowExclusive =
 
 // axis `fill`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type FillExclusive =
-  | ({ fill?: "fill"; } & None<"fillInline" | "fillBlock">)
-  | ({ fillInline?: "fill-inline" | "hug-inline"; fillBlock?: "fill-block"; } & None<"fill">);
+  | ({ fill?: "fill"; controlSize?: SpacingStep; } & None<"fillInline" | "fillBlock">)
+  | ({ fillInline?: "fill-inline" | "hug-inline"; fillBlock?: "fill-block"; } & None<"fill" | "controlSize">);
 
 // base surface: everything except environment scopes
 export type ErmineBaseProps = ErminePlainProps & FlexExclusive & PaddingExclusive & MarginExclusive & OverflowExclusive & FillExclusive;
@@ -216,6 +216,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "minHeight", axis: "constraints", kind: "step-prefix", prefix: "min-height" },
   { prop: "maxHeight", axis: "constraints", kind: "step-prefix", prefix: "max-height" },
   { prop: "fill", axis: "fill", kind: "word" },
+  { prop: "controlSize", axis: "fill", kind: "step-prefix", prefix: "control-size" },
   { prop: "fillInline", axis: "fill", kind: "word" },
   { prop: "fillBlock", axis: "fill", kind: "word" },
   { prop: "aspect", axis: "aspect", kind: "word" },
@@ -276,4 +277,4 @@ export const SCOPE_DESCRIPTORS: readonly { prop: string; prefix: string }[] = [
   { prop: "prefersReducedTransparency", prefix: "prefers-reduced-transparency" },
 ];
 
-export const XOR_PROPS: ReadonlySet<string> = new Set(["flex","grow","shrink","padding","paddingInline","paddingBlock","margin","marginInline","marginBlock","overflow","overflowX","overflowY","fill","fillInline","fillBlock"]);
+export const XOR_PROPS: ReadonlySet<string> = new Set(["flex","grow","shrink","padding","paddingInline","paddingBlock","margin","marginInline","marginBlock","overflow","overflowX","overflowY","fill","controlSize","fillInline","fillBlock"]);

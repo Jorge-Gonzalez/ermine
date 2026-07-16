@@ -415,8 +415,10 @@ export const LAYOUT: AxisRecord[] = [
     notes: "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
   },
   {
-    // fill/hug: explicit self extent along logical axes. `fill` spans the container
-    // (R-SIZE-01); `hug-inline` sizes the inline axis from content (R-SIZE-05).
+    // fill/hug/control-size: explicit self extent along logical axes. `fill` spans the
+    // container (R-SIZE-01); `hug-inline` sizes the inline axis from content (R-SIZE-05);
+    // `control-size-*` sets both axes from the spacing scale for interactive/icon boxes
+    // (R-SIZE-09).
     // Both are socket-free relational sizes and share the same inline-size dial, so
     // `fill-inline hug-inline` conflicts while `hug-inline fill-block` composes.
     // Distinct from flex growth (`grow-1`/`expandable`, m2) and flex-basis source
@@ -424,15 +426,19 @@ export const LAYOUT: AxisRecord[] = [
     axis: "fill",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["fill", "fill-inline", "fill-block", "hug-inline"],
-    tokens: [{ pattern: /^(?:fill(?:-(inline|block))?|hug-inline)$/, shape: "fill[-<axis>] | hug-inline" }],
+    valueSpace: ["fill", "fill-inline", "fill-block", "hug-inline", "control-size-<spacing>"],
+    tokens: [
+      { pattern: /^(?:fill(?:-(inline|block))?|hug-inline)$/, shape: "fill[-<axis>] | hug-inline" },
+      { pattern: new RegExp(`^control-size-(${SCALES.spacing.join("|")})$`), shape: "control-size-<spacing>", valueDomain: "spacing-step" },
+      { pattern: /^control-size-.+$/, shape: "control-size-<bad>", valueDomain: "spacing-step", fallback: true },
+    ],
     subDials: ["inline", "block"],
     dialOf: (word: string) => word === "fill-inline" || word === "hug-inline" ? "inline" : word === "fill-block" ? "block" : null,
-    aliasMatch: (word: string) => word === "fill",
+    aliasMatch: (word: string) => word === "fill" || word.startsWith("control-size-"),
     default: null,
     controls: ["inline-size", "block-size"],
-    mustNeverTouch: ["display", "gap", "flex", "flex-grow", "flex-basis", "position", "margin", "padding"],
-    notes: "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket.",
+    mustNeverTouch: ["display", "gap", "flex", "flex-grow", "flex-basis", "position", "margin", "padding", "border-radius", "font-size", "aspect-ratio"],
+    notes: "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
   },
   {
     // aspect: an element's own two dimensions related by a fixed ratio (R-SIZE-02). Self

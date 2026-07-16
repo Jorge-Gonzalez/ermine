@@ -701,22 +701,57 @@
     },
     "fill": {
       "axis": "fill",
-      "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket.",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
       "reference": "src/ERMINE-SPEC.md §2.1 — fill"
     },
     "fill-inline": {
       "axis": "fill",
-      "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket.",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
       "reference": "src/ERMINE-SPEC.md §2.1 — fill"
     },
     "fill-block": {
       "axis": "fill",
-      "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket.",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
       "reference": "src/ERMINE-SPEC.md §2.1 — fill"
     },
     "hug-inline": {
       "axis": "fill",
-      "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket.",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill"
+    },
+    "control-size-xs": {
+      "axis": "fill",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill"
+    },
+    "control-size-sm": {
+      "axis": "fill",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill"
+    },
+    "control-size-md": {
+      "axis": "fill",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill"
+    },
+    "control-size-lg": {
+      "axis": "fill",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill"
+    },
+    "control-size-xl": {
+      "axis": "fill",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill"
+    },
+    "control-size-2xl": {
+      "axis": "fill",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill"
+    },
+    "control-size-3xl": {
+      "axis": "fill",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
       "reference": "src/ERMINE-SPEC.md §2.1 — fill"
     },
     "square": {
@@ -1518,6 +1553,12 @@
       "axis": "constraints",
       "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
       "reference": "src/ERMINE-SPEC.md §2.1 — constraints"
+    },
+    {
+      "pattern": "^control-size-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "axis": "fill",
+      "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — fill"
     },
     {
       "pattern": "^tween-(quick|settled)$",

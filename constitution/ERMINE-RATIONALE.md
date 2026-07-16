@@ -700,6 +700,12 @@ Extends R-SCALE-01's named-scale treatment to radius, type size, and motion magn
 the two-tier suffix rule (a generator-produced magnitude takes scale-bound steps). The
 generator and its parameters remain open under R-SCALE-02.
 
+## RAT:R-SIZE-09
+Source: ADR-0041. `control-size-<spacing>` is a scale-bound physical control box: both axes
+read the shared spacing socket so the grammar owns the role and step name while the theme owns
+the number. This differs from `square`, which is only the self-ratio relation (`aspect-ratio: 1`),
+and from layout constraints, which read the layout size scale.
+
 ## RAT:R-COMPILE-01
 Source: pre-split `constitution/ERMINE.md` lines 1715–1752.
 

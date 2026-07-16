@@ -1043,25 +1043,73 @@
           "label": "fill",
           "insertText": "fill",
           "kind": "word",
-          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket."
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
         },
         {
           "label": "fill-inline",
           "insertText": "fill-inline",
           "kind": "word",
-          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket."
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
         },
         {
           "label": "fill-block",
           "insertText": "fill-block",
           "kind": "word",
-          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket."
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
         },
         {
           "label": "hug-inline",
           "insertText": "hug-inline",
           "kind": "word",
-          "meaning": "whole-axis `fill` sets both inline-size and block-size, so it conflicts with a per-axis dial; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`) and conflicts with other inline-size words. Pure relational extent, no theme socket."
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+        },
+        {
+          "label": "control-size-xs",
+          "insertText": "control-size-xs",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+        },
+        {
+          "label": "control-size-sm",
+          "insertText": "control-size-sm",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+        },
+        {
+          "label": "control-size-md",
+          "insertText": "control-size-md",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+        },
+        {
+          "label": "control-size-lg",
+          "insertText": "control-size-lg",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+        },
+        {
+          "label": "control-size-xl",
+          "insertText": "control-size-xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+        },
+        {
+          "label": "control-size-2xl",
+          "insertText": "control-size-2xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+        },
+        {
+          "label": "control-size-3xl",
+          "insertText": "control-size-3xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+        },
+        {
+          "label": "control-size-<spacing>",
+          "insertText": "control-size-${1|xs,sm,md,lg,xl,2xl,3xl|}",
+          "kind": "snippet",
+          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
         }
       ]
     },

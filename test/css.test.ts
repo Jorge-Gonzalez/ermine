@@ -147,6 +147,12 @@ test("the min dials' none endpoint escapes the min-content floor (R-CONSTRAINT-0
   assert.match(css, /\.max-width-none \{[^}]*max-width: none;/s);
 });
 
+test("control-size emits a physical control box from the spacing scale (R-SIZE-09)", () => {
+  const css = toCss("control-size-lg");
+  assert.match(css, /\.control-size-lg \{[^}]*inline-size: var\(--spacing-lg\);[^}]*block-size: var\(--spacing-lg\);/s);
+  assert.doesNotMatch(css, /aspect-ratio|display|padding/, "control-size is physical box size only");
+});
+
 test("hidden emits both overflow axes; clip stays distinct (R-OVERFLOW-01)", () => {
   const css = toCss("hidden");
   assert.match(css, /\.hidden \{[^}]*overflow-x: hidden;[^}]*overflow-y: hidden;/s);

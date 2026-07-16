@@ -498,6 +498,17 @@ inline viewport extent are reserved pending evidence.
 
 → rationale: RAT:R-SIZE-08 · history: ADR-0033 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-SIZE-09 — Control size
+
+An interactive control or icon box may take a physical square from the shared spacing scale:
+`control-size-<spacing>` sets both `inline-size` and `block-size` to
+`var(--spacing-<spacing>)`. This is not the relational `square` aspect word; it is a
+scale-bound control affordance size. It does not imply display, alignment, padding, icon glyph
+size, or border radius, and it remains separate from the layout size scale used by constraints
+and exact flex basis.
+
+→ rationale: RAT:R-SIZE-09 · history: ADR-0041 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

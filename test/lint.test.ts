@@ -31,6 +31,8 @@ const cases: Case[] = [
   { s: "span-abc", expect: "fail", why: "P3: shape recognized (span-), value not a sanctioned integer" },
   { s: "min-width-sm", expect: "ok", why: "valid parameter" },
   { s: "min-width-huge", expect: "fail", why: "P3: shape recognized (min-width-), value not a sanctioned size step" },
+  { s: "control-size-lg", expect: "ok", why: "valid spacing-scale control size" },
+  { s: "control-size-huge", expect: "fail", why: "P3: shape recognized (control-size-), value not a sanctioned spacing step" },
   { s: "basis-content", expect: "ok", why: "closed member" },
   { s: "basis-content basis-exact-md", expect: "fail", why: "two members of one closed axis" },
   { s: "grid span-all", expect: "ok", why: "contextual member under grid" },

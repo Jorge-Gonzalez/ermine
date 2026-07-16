@@ -91,6 +91,14 @@ function dialPrefix(record: AxisRecord, dial: string, sampleStep: string): strin
   throw new Error(`axis '${record.axis}': cannot resolve authored prefix for dial '${dial}'`);
 }
 
+function dialStepPrefix(record: AxisRecord, dial: string, sampleStep: string): string | null {
+  try {
+    return dialPrefix(record, dial, sampleStep);
+  } catch {
+    return null;
+  }
+}
+
 function literalWords(record: AxisRecord): string[] {
   return record.valueSpace.filter((word) => !word.includes("<") && !/-N$/.test(word));
 }
@@ -158,9 +166,15 @@ function classify(records: readonly AxisRecord[]): { descriptors: Descriptor[]; 
           family.dials.push({ prop, axis: record.axis, kind: "number-prefix", prefix: dial, valueType: "number" });
         } else if (stepToken) {
           const scaleName = stepToken.valueDomain!.replace(/-step$/, "");
+          const prefix = dialStepPrefix(record, dial, (SCALES as Scales)[scaleName][0]);
+          if (!prefix) {
+            const words = literalWords(record).filter((word) => record.dialOf?.(word) === dial);
+            family.dials.push({ prop, axis: record.axis, kind: "word", valueType: words.map(quote).join(" | ") });
+            continue;
+          }
           family.dials.push({
             prop, axis: record.axis, kind: "step-prefix",
-            prefix: dialPrefix(record, dial, (SCALES as Scales)[scaleName][0]),
+            prefix,
             valueType: stepType(stepToken.valueDomain!, SCALES),
           });
         } else {
@@ -178,14 +192,15 @@ function classify(records: readonly AxisRecord[]): { descriptors: Descriptor[]; 
       } else if (record.aliasMatch) {
         const wholeWords = literalWords(record).filter((word) => record.aliasMatch!(word) && !record.dialOf?.(word));
         const wholePrefix = stepPrefixOf(record);
-        if (stepToken && !wholeWords.length && wholePrefix) {
+        if (wholeWords.length) {
+          family.whole.push({ prop: axisProp, axis: record.axis, kind: "word", valueType: wholeWords.map(quote).join(" | ") });
+        }
+        if (stepToken && wholePrefix) {
           family.whole.push({
-            prop: axisProp, axis: record.axis, kind: "step-prefix",
+            prop: camel(wholePrefix), axis: record.axis, kind: "step-prefix",
             prefix: wholePrefix,
             valueType: stepType(stepToken.valueDomain!, SCALES),
           });
-        } else if (wholeWords.length) {
-          family.whole.push({ prop: axisProp, axis: record.axis, kind: "word", valueType: wholeWords.map(quote).join(" | ") });
         }
       }
 

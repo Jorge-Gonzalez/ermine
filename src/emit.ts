@@ -313,6 +313,8 @@ const EMISSION: Record<string, EmitSpec> = {
       if (word === "fill-inline") return { "inline-size": "100%" };
       if (word === "fill-block") return { "block-size": "100%" };
       if (word === "hug-inline") return { "inline-size": "fit-content" };
+      const controlSize = word.match(new RegExp(`^control-size-(${SCALES.spacing.join("|")})$`));
+      if (controlSize) return { "inline-size": `var(--spacing-${controlSize[1]})`, "block-size": `var(--spacing-${controlSize[1]})` };
       return null;
     },
   },
@@ -728,7 +730,7 @@ export const VOCABULARY: Record<string, string[]> = {
     ...["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
     "min-width-none", "min-height-none", "max-width-none",
   ],
-  fill: ["fill", "fill-inline", "fill-block", "hug-inline"],
+  fill: ["fill", "fill-inline", "fill-block", "hug-inline", ...SCALES.spacing.map((s) => `control-size-${s}`)],
   aspect: ["square"],
   "viewport-fill": ["fill-viewport"],
   numeric: ["tabular"],
