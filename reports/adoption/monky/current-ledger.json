@@ -3,19 +3,19 @@
   "project": "monky",
   "source": {
     "ermineCommit": "8c7b5b7fe0a01490fb87f3345b06278641e01cb2",
-    "projectCommit": "9accf9b68b913154d90fa37e4177638ed807371d"
+    "projectCommit": "a94e7c815491dc2ce05386cd4d3c0aa7ff7814da"
   },
   "summary": {
-    "totalDeclarations": 525,
-    "residueDeclarations": 163,
+    "totalDeclarations": 522,
+    "residueDeclarations": 159,
     "assimilable": 0,
     "byCode": {
-      "ermine-emitted": 249,
+      "ermine-emitted": 250,
       "substrate": 53,
       "theme-metric": 59,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 21,
+      "recipe-identity": 17,
       "rule-mechanics": 0,
       "brand-identity": 8,
       "affordance-mechanics": 0,
@@ -2749,351 +2749,9 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.columns-12::display::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 592,
-      "selector": ".columns-12",
-      "property": "display",
-      "value": "grid",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.columns-12::grid-auto-flow::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 593,
-      "selector": ".columns-12",
-      "property": "grid-auto-flow",
-      "value": "row",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.columns-12::grid-template-columns::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 594,
-      "selector": ".columns-12",
-      "property": "grid-template-columns",
-      "value": "repeat(12, 1fr)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.padding-block-xl::padding-block::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 598,
-      "selector": ".padding-block-xl",
-      "property": "padding-block",
-      "value": "var(--spacing-xl)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.padding-inline-3xl::padding-inline::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 602,
-      "selector": ".padding-inline-3xl",
-      "property": "padding-inline",
-      "value": "var(--spacing-3xl)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.center-x::left::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 606,
-      "selector": ".center-x",
-      "property": "left",
-      "value": "50%",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.center-x::transform::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 607,
-      "selector": ".center-x",
-      "property": "transform",
-      "value": "translateX(-50%)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.attach-above::bottom::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 611,
-      "selector": ".attach-above",
-      "property": "bottom",
-      "value": "100%",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.attach-below::top::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 615,
-      "selector": ".attach-below",
-      "property": "top",
-      "value": "100%",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.stretch-inline::left::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 619,
-      "selector": ".stretch-inline",
-      "property": "left",
-      "value": "0",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.stretch-inline::right::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 620,
-      "selector": ".stretch-inline",
-      "property": "right",
-      "value": "0",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.dropdown::z-index::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 624,
-      "selector": ".dropdown",
-      "property": "z-index",
-      "value": "var(--z-dropdown)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-bottom-md::border-bottom-right-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 628,
-      "selector": ".corner-bottom-md",
-      "property": "border-bottom-right-radius",
-      "value": "var(--radius-md)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-bottom-md::border-bottom-left-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 629,
-      "selector": ".corner-bottom-md",
-      "property": "border-bottom-left-radius",
-      "value": "var(--radius-md)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled-left::border-left-width::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 633,
-      "selector": ".ruled-left",
-      "property": "border-left-width",
-      "value": "var(--rule-weight, 1px)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled-left::border-left-style::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 634,
-      "selector": ".ruled-left",
-      "property": "border-left-style",
-      "value": "solid",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled-right::border-right-width::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 638,
-      "selector": ".ruled-right",
-      "property": "border-right-width",
-      "value": "var(--rule-weight, 1px)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.ruled-right::border-right-style::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 639,
-      "selector": ".ruled-right",
-      "property": "border-right-style",
-      "value": "solid",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.elevated::box-shadow::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 643,
-      "selector": ".elevated",
-      "property": "box-shadow",
-      "value": "var(--shadow-elevated, 0 4px 12px var(--shadow))",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-top-3xl::border-top-left-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 647,
-      "selector": ".corner-top-3xl",
-      "property": "border-top-left-radius",
-      "value": "var(--radius-3xl)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-top-3xl::border-top-right-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 648,
-      "selector": ".corner-top-3xl",
-      "property": "border-top-right-radius",
-      "value": "var(--radius-3xl)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-bottom-none::border-bottom-right-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 652,
-      "selector": ".corner-bottom-none",
-      "property": "border-bottom-right-radius",
-      "value": "0",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.corner-bottom-none::border-bottom-left-radius::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 653,
-      "selector": ".corner-bottom-none",
-      "property": "border-bottom-left-radius",
-      "value": "0",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.push::margin-inline-start::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 657,
-      "selector": ".push",
-      "property": "margin-inline-start",
-      "value": "auto",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.text-nowrap::white-space::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 661,
-      "selector": ".text-nowrap",
-      "property": "white-space",
-      "value": "nowrap",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail:hover::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 665,
-      "selector": ".hover\\:ground-fail:hover",
-      "property": "background",
-      "value": "var(--fail)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-inverse:hover::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 669,
-      "selector": ".hover\\:ink-inverse:hover",
-      "property": "color",
-      "value": "var(--ink-inverse)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail-faint:hover::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 673,
-      "selector": ".hover\\:ground-fail-faint:hover",
-      "property": "background",
-      "value": "var(--fail-faint)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-fail:hover::color::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 677,
-      "selector": ".hover\\:ink-fail:hover",
-      "property": "color",
-      "value": "var(--fail)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground:hover::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 681,
-      "selector": ".hover\\:ground:hover",
-      "property": "background",
-      "value": "var(--ground)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-defined[aria-selected=\"true\"]::background::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 685,
-      "selector": ".selected\\:ground-defined[aria-selected=\"true\"]",
-      "property": "background",
-      "value": "var(--ground-defined)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.wrap-allowed::flex-wrap::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 689,
-      "selector": ".wrap-allowed",
-      "property": "flex-wrap",
-      "value": "wrap",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.width-popover-lg::width::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 693,
-      "selector": ".width-popover-lg",
-      "property": "width",
-      "value": "var(--measure-popover-lg)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.fill-block::block-size::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 697,
-      "selector": ".fill-block",
-      "property": "block-size",
-      "value": "100%",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.padding-xl::padding::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 701,
-      "selector": ".padding-xl",
-      "property": "padding",
-      "value": "var(--spacing-xl)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.content::z-index::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 705,
-      "selector": ".content",
-      "property": "z-index",
-      "value": "var(--z-content)",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.tween-ink-quick::transition-property::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 709,
-      "selector": ".tween-ink-quick",
-      "property": "transition-property",
-      "value": "color",
-      "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/grammar/ermine.generated.css::.tween-ink-quick::transition-duration::1",
-      "file": "src/styles/grammar/ermine.generated.css",
-      "line": 710,
-      "selector": ".tween-ink-quick",
-      "property": "transition-duration",
-      "value": "var(--duration-quick)",
-      "code": "ermine-emitted"
-    },
-    {
       "id": "src/styles/grammar/ermine.generated.css::.checked\\:ground-accent[aria-checked=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 714,
+      "line": 592,
       "selector": ".checked\\:ground-accent[aria-checked=\"true\"]",
       "property": "background",
       "value": "var(--accent)",
@@ -3102,16 +2760,367 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.checked\\:ink-inverse[aria-checked=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 718,
+      "line": 596,
       "selector": ".checked\\:ink-inverse[aria-checked=\"true\"]",
       "property": "color",
       "value": "var(--ink-inverse)",
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.height-none::height::1",
+      "id": "src/styles/grammar/ermine.generated.css::.checked\\:rule-accent[aria-checked=\"true\"]::border-color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 600,
+      "selector": ".checked\\:rule-accent[aria-checked=\"true\"]",
+      "property": "border-color",
+      "value": "var(--accent)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.columns-12::display::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 604,
+      "selector": ".columns-12",
+      "property": "display",
+      "value": "grid",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.columns-12::grid-auto-flow::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 605,
+      "selector": ".columns-12",
+      "property": "grid-auto-flow",
+      "value": "row",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.columns-12::grid-template-columns::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 606,
+      "selector": ".columns-12",
+      "property": "grid-template-columns",
+      "value": "repeat(12, 1fr)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.padding-block-xl::padding-block::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 610,
+      "selector": ".padding-block-xl",
+      "property": "padding-block",
+      "value": "var(--spacing-xl)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.padding-inline-3xl::padding-inline::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 614,
+      "selector": ".padding-inline-3xl",
+      "property": "padding-inline",
+      "value": "var(--spacing-3xl)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.center-x::left::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 618,
+      "selector": ".center-x",
+      "property": "left",
+      "value": "50%",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.center-x::transform::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 619,
+      "selector": ".center-x",
+      "property": "transform",
+      "value": "translateX(-50%)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.attach-above::bottom::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 623,
+      "selector": ".attach-above",
+      "property": "bottom",
+      "value": "100%",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.attach-below::top::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 627,
+      "selector": ".attach-below",
+      "property": "top",
+      "value": "100%",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.stretch-inline::left::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 631,
+      "selector": ".stretch-inline",
+      "property": "left",
+      "value": "0",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.stretch-inline::right::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 632,
+      "selector": ".stretch-inline",
+      "property": "right",
+      "value": "0",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.dropdown::z-index::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 636,
+      "selector": ".dropdown",
+      "property": "z-index",
+      "value": "var(--z-dropdown)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-bottom-md::border-bottom-right-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 640,
+      "selector": ".corner-bottom-md",
+      "property": "border-bottom-right-radius",
+      "value": "var(--radius-md)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-bottom-md::border-bottom-left-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 641,
+      "selector": ".corner-bottom-md",
+      "property": "border-bottom-left-radius",
+      "value": "var(--radius-md)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled-left::border-left-width::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 645,
+      "selector": ".ruled-left",
+      "property": "border-left-width",
+      "value": "var(--rule-weight, 1px)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled-left::border-left-style::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 646,
+      "selector": ".ruled-left",
+      "property": "border-left-style",
+      "value": "solid",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled-right::border-right-width::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 650,
+      "selector": ".ruled-right",
+      "property": "border-right-width",
+      "value": "var(--rule-weight, 1px)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.ruled-right::border-right-style::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 651,
+      "selector": ".ruled-right",
+      "property": "border-right-style",
+      "value": "solid",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.elevated::box-shadow::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 655,
+      "selector": ".elevated",
+      "property": "box-shadow",
+      "value": "var(--shadow-elevated, 0 4px 12px var(--shadow))",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-top-3xl::border-top-left-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 659,
+      "selector": ".corner-top-3xl",
+      "property": "border-top-left-radius",
+      "value": "var(--radius-3xl)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-top-3xl::border-top-right-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 660,
+      "selector": ".corner-top-3xl",
+      "property": "border-top-right-radius",
+      "value": "var(--radius-3xl)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-bottom-none::border-bottom-right-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 664,
+      "selector": ".corner-bottom-none",
+      "property": "border-bottom-right-radius",
+      "value": "0",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.corner-bottom-none::border-bottom-left-radius::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 665,
+      "selector": ".corner-bottom-none",
+      "property": "border-bottom-left-radius",
+      "value": "0",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.push::margin-inline-start::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 669,
+      "selector": ".push",
+      "property": "margin-inline-start",
+      "value": "auto",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.text-nowrap::white-space::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 673,
+      "selector": ".text-nowrap",
+      "property": "white-space",
+      "value": "nowrap",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail:hover::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 677,
+      "selector": ".hover\\:ground-fail:hover",
+      "property": "background",
+      "value": "var(--fail)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-inverse:hover::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 681,
+      "selector": ".hover\\:ink-inverse:hover",
+      "property": "color",
+      "value": "var(--ink-inverse)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground-fail-faint:hover::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 685,
+      "selector": ".hover\\:ground-fail-faint:hover",
+      "property": "background",
+      "value": "var(--fail-faint)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ink-fail:hover::color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 689,
+      "selector": ".hover\\:ink-fail:hover",
+      "property": "color",
+      "value": "var(--fail)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:ground:hover::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 693,
+      "selector": ".hover\\:ground:hover",
+      "property": "background",
+      "value": "var(--ground)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-defined[aria-selected=\"true\"]::background::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 697,
+      "selector": ".selected\\:ground-defined[aria-selected=\"true\"]",
+      "property": "background",
+      "value": "var(--ground-defined)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.wrap-allowed::flex-wrap::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 701,
+      "selector": ".wrap-allowed",
+      "property": "flex-wrap",
+      "value": "wrap",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.width-popover-lg::width::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 705,
+      "selector": ".width-popover-lg",
+      "property": "width",
+      "value": "var(--measure-popover-lg)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.fill-block::block-size::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 709,
+      "selector": ".fill-block",
+      "property": "block-size",
+      "value": "100%",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.padding-xl::padding::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 713,
+      "selector": ".padding-xl",
+      "property": "padding",
+      "value": "var(--spacing-xl)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.content::z-index::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 717,
+      "selector": ".content",
+      "property": "z-index",
+      "value": "var(--z-content)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.tween-ink-quick::transition-property::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 721,
+      "selector": ".tween-ink-quick",
+      "property": "transition-property",
+      "value": "color",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.tween-ink-quick::transition-duration::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 722,
+      "selector": ".tween-ink-quick",
+      "property": "transition-duration",
+      "value": "var(--duration-quick)",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.height-none::height::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 726,
       "selector": ".height-none",
       "property": "height",
       "value": "0",
@@ -3120,7 +3129,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.margin-block-sm::margin-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 726,
+      "line": 730,
       "selector": ".margin-block-sm",
       "property": "margin-block",
       "value": "var(--spacing-sm)",
@@ -3129,7 +3138,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.margin-inline-xl::margin-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 730,
+      "line": 734,
       "selector": ".margin-inline-xl",
       "property": "margin-inline",
       "value": "var(--spacing-xl)",
@@ -3138,7 +3147,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-top-xs::padding-top::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 734,
+      "line": 738,
       "selector": ".padding-top-xs",
       "property": "padding-top",
       "value": "var(--spacing-xs)",
@@ -3147,7 +3156,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-inline-xl::padding-inline::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 738,
+      "line": 742,
       "selector": ".padding-inline-xl",
       "property": "padding-inline",
       "value": "var(--spacing-xl)",
@@ -3156,7 +3165,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.padding-bottom-sm::padding-bottom::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 742,
+      "line": 746,
       "selector": ".padding-bottom-sm",
       "property": "padding-bottom",
       "value": "var(--spacing-sm)",
@@ -3165,7 +3174,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.control-box-xl::width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 746,
+      "line": 750,
       "selector": ".control-box-xl",
       "property": "width",
       "value": "var(--control-size-xl)",
@@ -3174,7 +3183,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.control-box-xl::height::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 747,
+      "line": 751,
       "selector": ".control-box-xl",
       "property": "height",
       "value": "var(--control-size-xl)",
@@ -3183,7 +3192,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.quarter::grid-column::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 751,
+      "line": 755,
       "selector": ".quarter",
       "property": "grid-column",
       "value": "span 3",
@@ -3192,7 +3201,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.overline::text-transform::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 755,
+      "line": 759,
       "selector": ".overline",
       "property": "text-transform",
       "value": "uppercase",
@@ -3201,7 +3210,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.overline::letter-spacing::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 756,
+      "line": 760,
       "selector": ".overline",
       "property": "letter-spacing",
       "value": "var(--overline-tracking, 0.07em)",
@@ -3210,7 +3219,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.ink-accent-soft::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 760,
+      "line": 764,
       "selector": ".ink-accent-soft",
       "property": "color",
       "value": "var(--accent-soft)",
@@ -3219,7 +3228,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.min-width-popover-md::min-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 764,
+      "line": 768,
       "selector": ".min-width-popover-md",
       "property": "min-width",
       "value": "var(--measure-popover-md)",
@@ -3228,7 +3237,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.max-width-popover-2xl::max-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 768,
+      "line": 772,
       "selector": ".max-width-popover-2xl",
       "property": "max-width",
       "value": "var(--measure-popover-2xl)",
@@ -3237,7 +3246,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.tween-opacity-transform-quick::transition-property::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 772,
+      "line": 776,
       "selector": ".tween-opacity-transform-quick",
       "property": "transition-property",
       "value": "opacity, transform",
@@ -3246,7 +3255,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.tween-opacity-transform-quick::transition-duration::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 773,
+      "line": 777,
       "selector": ".tween-opacity-transform-quick",
       "property": "transition-duration",
       "value": "var(--duration-quick)",
@@ -3255,7 +3264,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.max-width-none::max-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 777,
+      "line": 781,
       "selector": ".max-width-none",
       "property": "max-width",
       "value": "none",
@@ -3264,7 +3273,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule-fail:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 781,
+      "line": 785,
       "selector": ".hover\\:rule-fail:hover",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3273,7 +3282,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-fail-faint[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 785,
+      "line": 789,
       "selector": ".selected\\:ground-fail-faint[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3282,7 +3291,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-fail[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 789,
+      "line": 793,
       "selector": ".selected\\:ink-fail[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--fail)",
@@ -3291,7 +3300,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-fail[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 793,
+      "line": 797,
       "selector": ".selected\\:rule-fail[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3300,7 +3309,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.justify-end::justify-content::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 797,
+      "line": 801,
       "selector": ".justify-end",
       "property": "justify-content",
       "value": "flex-end",
@@ -3309,7 +3318,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 801,
+      "line": 805,
       "selector": ".hover\\:rule:hover",
       "property": "border-color",
       "value": "var(--rule)",
@@ -3318,7 +3327,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-accent[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 805,
+      "line": 809,
       "selector": ".selected\\:ink-accent[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--accent)",
@@ -3327,7 +3336,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-accent[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 809,
+      "line": 813,
       "selector": ".selected\\:rule-accent[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--accent)",
@@ -3336,7 +3345,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 813,
+      "line": 817,
       "selector": ".compressible",
       "property": "flex-grow",
       "value": "0",
@@ -3345,7 +3354,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-shrink::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 814,
+      "line": 818,
       "selector": ".compressible",
       "property": "flex-shrink",
       "value": "1",
@@ -3354,7 +3363,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.max-width-command::max-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 818,
+      "line": 822,
       "selector": ".max-width-command",
       "property": "max-width",
       "value": "var(--measure-command-inline)",
@@ -3363,7 +3372,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.min-width-popover-sm::min-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 822,
+      "line": 826,
       "selector": ".min-width-popover-sm",
       "property": "min-width",
       "value": "var(--measure-popover-sm)",
@@ -3372,7 +3381,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 826,
+      "line": 830,
       "selector": ".clamp-3",
       "property": "display",
       "value": "-webkit-box",
@@ -3381,7 +3390,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::-webkit-box-orient::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 827,
+      "line": 831,
       "selector": ".clamp-3",
       "property": "-webkit-box-orient",
       "value": "vertical",
@@ -3390,7 +3399,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::-webkit-line-clamp::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 828,
+      "line": 832,
       "selector": ".clamp-3",
       "property": "-webkit-line-clamp",
       "value": "3",
@@ -3399,7 +3408,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hug-inline::inline-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 832,
+      "line": 836,
       "selector": ".hug-inline",
       "property": "inline-size",
       "value": "fit-content",
@@ -3408,7 +3417,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-xl::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 836,
+      "line": 840,
       "selector": ".gap-xl",
       "property": "gap",
       "value": "var(--spacing-xl)",
@@ -3417,7 +3426,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.width-popover-xl::width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 840,
+      "line": 844,
       "selector": ".width-popover-xl",
       "property": "width",
       "value": "var(--measure-popover-xl)",
@@ -3426,7 +3435,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grow-1::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 844,
+      "line": 848,
       "selector": ".grow-1",
       "property": "flex-grow",
       "value": "1",
@@ -3435,7 +3444,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.control-box-3xl::width::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 848,
+      "line": 852,
       "selector": ".control-box-3xl",
       "property": "width",
       "value": "var(--control-size-3xl)",
@@ -3444,7 +3453,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.control-box-3xl::height::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 849,
+      "line": 853,
       "selector": ".control-box-3xl",
       "property": "height",
       "value": "var(--control-size-3xl)",
@@ -3658,45 +3667,9 @@
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 82,
-      "selector": ".selectable-group > .is-selected",
-      "property": "background-color",
-      "value": "var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 83,
-      "selector": ".selectable-group > .is-selected",
-      "property": "color",
-      "value": "var(--ink-alt)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::border-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 84,
-      "selector": ".selectable-group > .is-selected",
-      "property": "border-color",
-      "value": "var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 88,
-      "selector": ".selectable-group > .is-selected:hover",
-      "property": "background-color",
-      "value": "var(--accent)",
-      "code": "recipe-identity"
-    },
-    {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 89,
+      "line": 82,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "opacity",
       "value": "0.9",
@@ -3705,7 +3678,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 93,
+      "line": 86,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "cursor",
       "value": "not-allowed",
@@ -3714,7 +3687,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 94,
+      "line": 87,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "opacity",
       "value": "0.95",
@@ -3723,7 +3696,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 98,
+      "line": 91,
       "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
       "property": "opacity",
       "value": "0.95",
@@ -3732,7 +3705,7 @@
     {
       "id": "src/styles/skin/controls.css::.shake::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 104,
+      "line": 97,
       "selector": ".shake",
       "property": "transition",
       "value": "none !important",

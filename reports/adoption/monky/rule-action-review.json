@@ -3,15 +3,15 @@
   "project": "monky",
   "source": {
     "ermineCommit": "8c7b5b7fe0a01490fb87f3345b06278641e01cb2",
-    "projectCommit": "9accf9b68b913154d90fa37e4177638ed807371d"
+    "projectCommit": "a94e7c815491dc2ce05386cd4d3c0aa7ff7814da"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 163,
+    "reviewedDeclarations": 159,
     "assimilableNow": 0,
-    "latentGeneralizable": 63,
+    "latentGeneralizable": 59,
     "likelyRecipe": 97,
     "likelyLocal": 3,
     "byRuleAction": {
@@ -19,7 +19,7 @@
       "dimension-constraint": 1,
       "attachment-edge-layer": 6,
       "spacing-rhythm": 31,
-      "surface-line-elevation-cutout": 28,
+      "surface-line-elevation-cutout": 24,
       "typography-content": 29,
       "interaction-affordance-state": 14,
       "motion-transition": 3,
@@ -29,7 +29,7 @@
     "byLatentOutcome": {
       "admitted": 0,
       "latent-word": 9,
-      "latent-facet": 44,
+      "latent-facet": 40,
       "latent-scale": 10,
       "recipe": 97,
       "local-identity": 3
@@ -40,7 +40,7 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 21,
+      "recipe-identity": 17,
       "rule-mechanics": 0,
       "brand-identity": 8,
       "affordance-mechanics": 0,
@@ -2228,65 +2228,9 @@
       "proposedForm": "condition-backed state skin/affordance facet"
     },
     {
-      "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 82,
-      "selector": ".selectable-group > .is-selected",
-      "property": "background-color",
-      "value": "var(--accent)",
-      "currentCode": "recipe-identity",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 83,
-      "selector": ".selectable-group > .is-selected",
-      "property": "color",
-      "value": "var(--ink-alt)",
-      "currentCode": "recipe-identity",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.selectable-group > .is-selected::border-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 84,
-      "selector": ".selectable-group > .is-selected",
-      "property": "border-color",
-      "value": "var(--accent)",
-      "currentCode": "recipe-identity",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::background-color::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 88,
-      "selector": ".selectable-group > .is-selected:hover",
-      "property": "background-color",
-      "value": "var(--accent)",
-      "currentCode": "recipe-identity",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 89,
+      "line": 82,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "opacity",
       "value": "0.9",
@@ -2300,7 +2244,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 93,
+      "line": 86,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "cursor",
       "value": "not-allowed",
@@ -2314,7 +2258,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 94,
+      "line": 87,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "opacity",
       "value": "0.95",
@@ -2328,7 +2272,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 98,
+      "line": 91,
       "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
       "property": "opacity",
       "value": "0.95",
@@ -2342,7 +2286,7 @@
     {
       "id": "src/styles/skin/controls.css::.shake::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 104,
+      "line": 97,
       "selector": ".shake",
       "property": "transition",
       "value": "none !important",

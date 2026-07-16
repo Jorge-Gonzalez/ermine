@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 163 |
+| reviewed residue declarations | 159 |
 | assimilable now | 0 |
-| latent generalizable | 63 |
+| latent generalizable | 59 |
 | likely recipe/molecule | 97 |
 | likely local identity | 3 |
 
@@ -21,7 +21,7 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | 1 |
 | attachment-edge-layer | 6 |
 | spacing-rhythm | 31 |
-| surface-line-elevation-cutout | 28 |
+| surface-line-elevation-cutout | 24 |
 | typography-content | 29 |
 | interaction-affordance-state | 14 |
 | motion-transition | 3 |
@@ -33,7 +33,7 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | latent-word | 9 |
-| latent-facet | 44 |
+| latent-facet | 40 |
 | latent-scale | 10 |
 | recipe | 97 |
 | local-identity | 3 |
@@ -42,7 +42,7 @@ generalization, recipe, and local-identity pressure.
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 21 |
+| recipe-identity | 17 |
 | brand-identity | 8 |
 | component-contract | 8 |
 | state-mechanics | 5 |
@@ -62,10 +62,10 @@ generalization, recipe, and local-identity pressure.
 | --- | --- | --- | --- |
 | component-private-drawing | recipe | 41 | promote as molecule/recipe only if reused |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
-| surface-line-elevation-cutout | latent-facet | 15 | add a missing facet on an existing Ermine concept |
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | latent-facet | 11 | add a missing facet on an existing Ermine concept |
+| surface-line-elevation-cutout | latent-facet | 11 | add a missing facet on an existing Ermine concept |
 | spacing-rhythm | latent-scale | 10 | map to an existing/proportional scale or admit a named scale role |
 | reset-inheritance-neutralization | latent-facet | 8 | add a missing facet on an existing Ermine concept |
 | spacing-rhythm | latent-facet | 7 | add a missing facet on an existing Ermine concept |

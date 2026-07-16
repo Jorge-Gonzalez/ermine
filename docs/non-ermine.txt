@@ -19,12 +19,12 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the rule edge-colour migration is Ermine
-8c7b5b7 / Monky 9accf9b:
+were migrated). Current live ledger after the checked group skin migration is Ermine
+8c7b5b7 / Monky a94e7c8:
 
-  current declarations:                 525
-  adopted/infrastructure declarations:  362
-  project-owned residue declarations:   163
+  current declarations:                 522
+  adopted/infrastructure declarations:  363
+  project-owned residue declarations:   159
   assimilable now:                        0
 
 Current residue by reason code:
@@ -127,8 +127,10 @@ Monky's substrate. The text-flow release pass then admitted `text-wrap` plus
 `overflow-visible` as state-scoped release endpoints and migrated the selected search result
 reset. The rule edge-colour pass then admitted physical rule colour dials plus the edge-only
 transparent endpoint, migrated the current-tab underline, and moved search row hover/selected
-backgrounds to existing relational state skin; the live residue is now 163.
-Shorthand-asymmetry and raw micro-padding rows remain as the next spacing questions.
+backgrounds to existing relational state skin. The checked group skin pass then moved
+SelectableGroup selected skin to existing `checked:` carrier words, leaving only local opacity
+and lockout mechanics; the live residue is now 159. Shorthand-asymmetry and raw micro-padding
+rows remain as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)

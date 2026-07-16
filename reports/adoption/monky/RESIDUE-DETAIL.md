@@ -7,19 +7,19 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | source | commit |
 |---|---|
 | Ermine | `8c7b5b7fe0a0` |
-| monky | `9accf9b68b91` |
+| monky | `a94e7c815491` |
 
 ## Summary
 
-- Current declarations: 525
-- Adopted/infrastructure declarations: 362
-- Project-owned residue declarations: 163
+- Current declarations: 522
+- Adopted/infrastructure declarations: 363
+- Project-owned residue declarations: 159
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 21 | Project recipe bundles licensed by R-SKIN-10. |
+| `recipe-identity` | 17 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
 | `component-contract` | 8 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
@@ -30,10 +30,10 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `opacity-followup` | 4 | Opacity prominence/treatment evidence. |
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 5 | Absence/reset/transparent mechanics, not positive style carriers. |
-| `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
+| `user-content` | 43 | Rich-text defaults inside user-authored content. |
 | `identity-geometry` | 30 | Project-exact dimensions, spacing, positioning, and geometry. |
 
-## recipe-identity (21)
+## recipe-identity (17)
 
 Project recipe bundles licensed by R-SKIN-10.
 
@@ -43,7 +43,7 @@ Project recipe bundles licensed by R-SKIN-10.
 |---:|---|---|
 | 50 | `.seg-option svg` | `vertical-align: middle` |
 
-### src/styles/skin/controls.css (20)
+### src/styles/skin/controls.css (16)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -62,11 +62,7 @@ Project recipe bundles licensed by R-SKIN-10.
 | 73 | `.selectable-group > *` | `cursor: pointer` |
 | 74 | `.selectable-group > *` | `user-select: none` |
 | 78 | `.selectable-group > *:active` | `transform: scale(0.98)` |
-| 82 | `.selectable-group > .is-selected` | `background-color: var(--accent)` |
-| 83 | `.selectable-group > .is-selected` | `color: var(--ink-alt)` |
-| 84 | `.selectable-group > .is-selected` | `border-color: var(--accent)` |
-| 88 | `.selectable-group > .is-selected:hover` | `background-color: var(--accent)` |
-| 89 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
+| 82 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
 
 ## brand-identity (8)
 
@@ -154,7 +150,7 @@ Native/JS state mechanics outside backed Ermine conditions.
 
 | line | selector | declaration |
 |---:|---|---|
-| 93 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
+| 86 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 
 ## parent-relational (3)
 
@@ -251,7 +247,7 @@ Transition/animation timing evidence for the animation-plane follow-up.
 
 | line | selector | declaration |
 |---:|---|---|
-| 104 | `.shake` | `transition: none !important` |
+| 97 | `.shake` | `transition: none !important` |
 
 ## opacity-followup (4)
 
@@ -273,8 +269,8 @@ Opacity prominence/treatment evidence.
 
 | line | selector | declaration |
 |---:|---|---|
-| 94 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
-| 98 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
+| 87 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
+| 91 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
 ## elevation-followup (3)
 
@@ -324,7 +320,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 ## user-content (43)
 
-Rich-text defaults inside user-authored editor content.
+Rich-text defaults inside user-authored content.
 
 ### src/styles/components/content-editor.css (43)
 
