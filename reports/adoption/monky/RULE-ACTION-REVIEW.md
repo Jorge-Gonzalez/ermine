@@ -8,8 +8,8 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 259 |
-| assimilable now | 1 |
+| reviewed residue declarations | 258 |
+| assimilable now | 0 |
 | latent generalizable | 153 |
 | likely recipe/molecule | 102 |
 | likely local identity | 3 |
@@ -18,7 +18,6 @@ generalization, recipe, and local-identity pressure.
 
 | rule action | declarations |
 | --- | --- |
-| already-admitted | 1 |
 | dimension-constraint | 36 |
 | attachment-edge-layer | 10 |
 | spacing-rhythm | 41 |
@@ -33,7 +32,6 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| admitted | 1 |
 | latent-word | 40 |
 | latent-facet | 82 |
 | latent-scale | 31 |
@@ -44,7 +42,6 @@ generalization, recipe, and local-identity pressure.
 
 | current code | declarations |
 | --- | --- |
-| assimilable | 1 |
 | recipe-identity | 34 |
 | brand-identity | 8 |
 | component-contract | 39 |
@@ -85,7 +82,6 @@ generalization, recipe, and local-identity pressure.
 | typography-content | local-identity | 3 | keep local after invariance/scale tests |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | reset-inheritance-neutralization | recipe | 2 | promote as molecule/recipe only if reused |
-| already-admitted | admitted | 1 | migrate to existing words |
 
 ## Reading
 

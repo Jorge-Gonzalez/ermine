@@ -22,16 +22,16 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `0bd2cc007060708bcd680c16678af65c91af81b1` |
-| monky | `6b7ac3eb506d52c0cd2f631f2294bcce11051ee4` |
+| Ermine | `15727e7b7115a537d2e09fc5d544c8586825f309` |
+| monky | `4f71305190e1e796c3def9f958ae874094e3556d` |
 
 ## Closure Gate
 
 | measure | count |
 |---|---:|
-| assimilable declarations | 1 |
+| assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 259 |
+| project-owned residue | 258 |
 
 ## Product Identity
 

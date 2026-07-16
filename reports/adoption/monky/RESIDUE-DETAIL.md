@@ -6,15 +6,15 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `edb43916eea8` |
-| monky | `6b7ac3eb506d` |
+| Ermine | `15727e7b7115` |
+| monky | `4f71305190e1` |
 
 ## Summary
 
 - Current declarations: 516
-- Adopted/infrastructure declarations: 257
-- Project-owned residue declarations: 259
-- Assimilable declarations: 1
+- Adopted/infrastructure declarations: 258
+- Project-owned residue declarations: 258
+- Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |

@@ -53,7 +53,7 @@ scales, proportional relationships, or measure/control-size roles.
 | src/content/overlays/modal/modalStyles.css:65 | height | 18px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:21 | min-width | 200px | inline measure/popover width | latent-scale | 5 * spacing-3xl | measure/popover size role |
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:22 | max-width | 360px | inline measure/popover width | latent-scale | 9 * spacing-3xl | measure/popover size role |
-| src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:43 | max-width | 8em | inline measure/popover width | latent-word | content-relative measure | measure/popover size role |
+| src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:48 | max-width | 8em | inline measure/popover width | latent-word | content-relative measure | measure/popover size role |
 | src/content/overlays/views/macroEditor/editorViewStyles.css:11 | width | 280px | inline measure/popover width | latent-scale | 7 * spacing-3xl | measure/popover size role |
 | src/content/overlays/views/macroEditor/editorViewStyles.css:24 | min-height | 0 | min-content escape | latent-facet |  | min-height-none escape, possibly layer/specificity fix |
 | src/content/overlays/views/macroEditor/editorViewStyles.css:28 | flex | 1 | flex negotiation | recipe |  | prose/editor-content molecule |

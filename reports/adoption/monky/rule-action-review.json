@@ -2,20 +2,20 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "0bd2cc007060708bcd680c16678af65c91af81b1",
-    "projectCommit": "6b7ac3eb506d52c0cd2f631f2294bcce11051ee4"
+    "ermineCommit": "15727e7b7115a537d2e09fc5d544c8586825f309",
+    "projectCommit": "4f71305190e1e796c3def9f958ae874094e3556d"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 259,
-    "assimilableNow": 1,
+    "reviewedDeclarations": 258,
+    "assimilableNow": 0,
     "latentGeneralizable": 153,
     "likelyRecipe": 102,
     "likelyLocal": 3,
     "byRuleAction": {
-      "already-admitted": 1,
+      "already-admitted": 0,
       "dimension-constraint": 36,
       "attachment-edge-layer": 10,
       "spacing-rhythm": 41,
@@ -27,7 +27,7 @@
       "component-private-drawing": 44
     },
     "byLatentOutcome": {
-      "admitted": 1,
+      "admitted": 0,
       "latent-word": 40,
       "latent-facet": 82,
       "latent-scale": 31,
@@ -39,7 +39,7 @@
       "substrate": 0,
       "theme-metric": 0,
       "config-departure": 0,
-      "assimilable": 1,
+      "assimilable": 0,
       "recipe-identity": 34,
       "rule-mechanics": 0,
       "brand-identity": 8,
@@ -77,19 +77,6 @@
       "erminePressure": "map to an existing/proportional scale or admit a named scale role",
       "scaleMapping": "6 * spacing-3xl",
       "proposedForm": "measure/popover size role"
-    },
-    {
-      "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.css::.macro-suggestions-command-item.delete-confirm-option::max-width::1",
-      "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.css",
-      "line": 8,
-      "selector": ".macro-suggestions-command-item.delete-confirm-option",
-      "property": "max-width",
-      "value": "none",
-      "currentCode": "assimilable",
-      "ruleAction": "already-admitted",
-      "latentOutcome": "admitted",
-      "function": "matches an existing Ermine word",
-      "erminePressure": "migrate to existing words"
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::background-color::1",
@@ -520,24 +507,9 @@
       "proposedForm": "callout-arrow recipe"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::max-width::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 43,
-      "selector": ".macro-suggestions-command-item",
-      "property": "max-width",
-      "value": "8em",
-      "currentCode": "identity-geometry",
-      "ruleAction": "dimension-constraint",
-      "latentOutcome": "latent-word",
-      "function": "sets physical envelope, measure, control size, or constraint",
-      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
-      "scaleMapping": "content-relative measure",
-      "proposedForm": "measure/popover size role"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 44,
+      "line": 43,
       "selector": ".macro-suggestions-command-item",
       "property": "padding",
       "value": "3px 6px",
@@ -551,7 +523,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::transition::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 45,
+      "line": 44,
       "selector": ".macro-suggestions-command-item",
       "property": "transition",
       "value": "all 0.15s ease",
@@ -563,9 +535,24 @@
       "proposedForm": "property-targeted tween or tween suppression word"
     },
     {
+      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item:not(.delete-confirm-option)::max-width::1",
+      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+      "line": 48,
+      "selector": ".macro-suggestions-command-item:not(.delete-confirm-option)",
+      "property": "max-width",
+      "value": "8em",
+      "currentCode": "identity-geometry",
+      "ruleAction": "dimension-constraint",
+      "latentOutcome": "latent-word",
+      "function": "sets physical envelope, measure, control size, or constraint",
+      "erminePressure": "admit a new Ermine word only if it survives the invariance test",
+      "scaleMapping": "content-relative measure",
+      "proposedForm": "measure/popover size role"
+    },
+    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::justify-content::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 49,
+      "line": 52,
       "selector": ".macro-suggestions-footer",
       "property": "justify-content",
       "value": "flex-end",
@@ -579,7 +566,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 54,
+      "line": 57,
       "selector": ".macro-suggestions-kbd",
       "property": "padding",
       "value": "1px 4px",
@@ -3874,10 +3861,10 @@
         "dimensionIntent": "inline measure/popover width"
       },
       {
-        "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::max-width::1",
+        "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item:not(.delete-confirm-option)::max-width::1",
         "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-        "line": 43,
-        "selector": ".macro-suggestions-command-item",
+        "line": 48,
+        "selector": ".macro-suggestions-command-item:not(.delete-confirm-option)",
         "property": "max-width",
         "value": "8em",
         "currentCode": "identity-geometry",

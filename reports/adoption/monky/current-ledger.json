@@ -2,19 +2,19 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "0bd2cc007060708bcd680c16678af65c91af81b1",
-    "projectCommit": "6b7ac3eb506d52c0cd2f631f2294bcce11051ee4"
+    "ermineCommit": "15727e7b7115a537d2e09fc5d544c8586825f309",
+    "projectCommit": "4f71305190e1e796c3def9f958ae874094e3556d"
   },
   "summary": {
     "totalDeclarations": 516,
-    "residueDeclarations": 259,
-    "assimilable": 1,
+    "residueDeclarations": 258,
+    "assimilable": 0,
     "byCode": {
-      "ermine-emitted": 166,
+      "ermine-emitted": 167,
       "substrate": 53,
       "theme-metric": 37,
       "config-departure": 1,
-      "assimilable": 1,
+      "assimilable": 0,
       "recipe-identity": 34,
       "rule-mechanics": 0,
       "brand-identity": 8,
@@ -46,18 +46,6 @@
       "property": "min-width",
       "value": "240px",
       "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/deleteConfirm/deleteConfirmStyles.css::.macro-suggestions-command-item.delete-confirm-option::max-width::1",
-      "file": "src/content/overlays/deleteConfirm/deleteConfirmStyles.css",
-      "line": 8,
-      "selector": ".macro-suggestions-command-item.delete-confirm-option",
-      "property": "max-width",
-      "value": "none",
-      "code": "assimilable",
-      "words": [
-        "max-width-none"
-      ]
     },
     {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::background-color::1",
@@ -330,18 +318,9 @@
       "code": "component-contract"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::max-width::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 43,
-      "selector": ".macro-suggestions-command-item",
-      "property": "max-width",
-      "value": "8em",
-      "code": "identity-geometry"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 44,
+      "line": 43,
       "selector": ".macro-suggestions-command-item",
       "property": "padding",
       "value": "3px 6px",
@@ -350,16 +329,25 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::transition::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 45,
+      "line": 44,
       "selector": ".macro-suggestions-command-item",
       "property": "transition",
       "value": "all 0.15s ease",
       "code": "motion-followup"
     },
     {
+      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item:not(.delete-confirm-option)::max-width::1",
+      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
+      "line": 48,
+      "selector": ".macro-suggestions-command-item:not(.delete-confirm-option)",
+      "property": "max-width",
+      "value": "8em",
+      "code": "identity-geometry"
+    },
+    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::justify-content::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 49,
+      "line": 52,
       "selector": ".macro-suggestions-footer",
       "property": "justify-content",
       "value": "flex-end",
@@ -368,7 +356,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 54,
+      "line": 57,
       "selector": ".macro-suggestions-kbd",
       "property": "padding",
       "value": "1px 4px",
@@ -3367,9 +3355,18 @@
       "code": "ermine-emitted"
     },
     {
-      "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule-fail:hover::border-color::1",
+      "id": "src/styles/grammar/ermine.generated.css::.max-width-none::max-width::1",
       "file": "src/styles/grammar/ermine.generated.css",
       "line": 526,
+      "selector": ".max-width-none",
+      "property": "max-width",
+      "value": "none",
+      "code": "ermine-emitted"
+    },
+    {
+      "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule-fail:hover::border-color::1",
+      "file": "src/styles/grammar/ermine.generated.css",
+      "line": 530,
       "selector": ".hover\\:rule-fail:hover",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3378,7 +3375,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ground-fail-faint[aria-selected=\"true\"]::background::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 530,
+      "line": 534,
       "selector": ".selected\\:ground-fail-faint[aria-selected=\"true\"]",
       "property": "background",
       "value": "var(--fail-faint)",
@@ -3387,7 +3384,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-fail[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 534,
+      "line": 538,
       "selector": ".selected\\:ink-fail[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--fail)",
@@ -3396,7 +3393,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-fail[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 538,
+      "line": 542,
       "selector": ".selected\\:rule-fail[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--fail)",
@@ -3405,7 +3402,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hover\\:rule:hover::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 542,
+      "line": 546,
       "selector": ".hover\\:rule:hover",
       "property": "border-color",
       "value": "var(--rule)",
@@ -3414,7 +3411,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:ink-accent[aria-selected=\"true\"]::color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 546,
+      "line": 550,
       "selector": ".selected\\:ink-accent[aria-selected=\"true\"]",
       "property": "color",
       "value": "var(--accent)",
@@ -3423,7 +3420,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.selected\\:rule-accent[aria-selected=\"true\"]::border-color::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 550,
+      "line": 554,
       "selector": ".selected\\:rule-accent[aria-selected=\"true\"]",
       "property": "border-color",
       "value": "var(--accent)",
@@ -3432,7 +3429,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 554,
+      "line": 558,
       "selector": ".compressible",
       "property": "flex-grow",
       "value": "0",
@@ -3441,7 +3438,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.compressible::flex-shrink::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 555,
+      "line": 559,
       "selector": ".compressible",
       "property": "flex-shrink",
       "value": "1",
@@ -3450,7 +3447,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::display::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 559,
+      "line": 563,
       "selector": ".clamp-3",
       "property": "display",
       "value": "-webkit-box",
@@ -3459,7 +3456,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::-webkit-box-orient::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 560,
+      "line": 564,
       "selector": ".clamp-3",
       "property": "-webkit-box-orient",
       "value": "vertical",
@@ -3468,7 +3465,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.clamp-3::-webkit-line-clamp::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 561,
+      "line": 565,
       "selector": ".clamp-3",
       "property": "-webkit-line-clamp",
       "value": "3",
@@ -3477,7 +3474,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.hug-inline::inline-size::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 565,
+      "line": 569,
       "selector": ".hug-inline",
       "property": "inline-size",
       "value": "fit-content",
@@ -3486,7 +3483,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.gap-xl::gap::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 569,
+      "line": 573,
       "selector": ".gap-xl",
       "property": "gap",
       "value": "var(--spacing-xl)",
@@ -3495,7 +3492,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.grow-1::flex-grow::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 573,
+      "line": 577,
       "selector": ".grow-1",
       "property": "flex-grow",
       "value": "1",
@@ -3504,7 +3501,7 @@
     {
       "id": "src/styles/grammar/ermine.generated.css::.margin-block-sm::margin-block::1",
       "file": "src/styles/grammar/ermine.generated.css",
-      "line": 577,
+      "line": 581,
       "selector": ".margin-block-sm",
       "property": "margin-block",
       "value": "var(--spacing-sm)",
