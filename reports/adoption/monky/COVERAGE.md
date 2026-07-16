@@ -20,7 +20,7 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
 - **Live style reachability:** Monky's build-backed style audit now reports **201 live
   static classes and 0 dead-candidate declarations** at `d58cac0`.
 - **Current assimilation:** the generated current ledger now reports **525 current
-  declarations**, **358 adopted/infrastructure declarations**, **167 project-owned
+  declarations**, **362 adopted/infrastructure declarations**, **163 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
@@ -87,8 +87,8 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `25971e4`: 525 declarations, 358
-adopted/infrastructure declarations, 167 project-owned residue declarations,
+The current generated ledger is at Monky `9accf9b`: 525 declarations, 362
+adopted/infrastructure declarations, 163 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
 ## 4. Theme coverage (the socket plane)
@@ -124,8 +124,8 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate held the list at zero before the first post-adoption dimension endpoint
-pass. The current ledger at Monky `25971e4` reports 525
-current declarations, 358 adopted/infrastructure declarations, 167 project-owned residue,
+pass. The current ledger at Monky `9accf9b` reports 525
+current declarations, 362 adopted/infrastructure declarations, 163 project-owned residue,
 `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
@@ -212,9 +212,10 @@ counts at that checkpoint; later `fill`, `square`, `cover`, `push`, `hug-inline`
 `justify-end`, text wrapping (`text-nowrap`/`text-pre-wrap`), ordinary z-scale
 (`content`/`dropdown`), block/inline spacing, per-edge spacing, targeted tween, positioned
 edge-attachment, side-corner, role-measured dimension, and rule-presence edge-facet
-plus text-flow release (`text-wrap`/`overflow-visible`) migrations moved the live ledger to
+plus text-flow release (`text-wrap`/`overflow-visible`) and rule edge-colour migrations moved
+the live ledger to
 525 current declarations,
-167 project-owned residue,
+163 project-owned residue,
 `assimilable = 0`,
 and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted

@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `36be67136071` |
-| monky | `25971e46a429` |
+| Ermine | `8c7b5b7fe0a0` |
+| monky | `9accf9b68b91` |
 
 ## Summary
 
 - Current declarations: 525
-- Adopted/infrastructure declarations: 358
-- Project-owned residue declarations: 167
+- Adopted/infrastructure declarations: 362
+- Project-owned residue declarations: 163
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -23,14 +23,13 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
 | `component-contract` | 8 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
-| `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
-| `parent-relational` | 5 | Guarded parent/descendant state mechanics outside ruled relational words. |
+| `parent-relational` | 3 | Guarded parent/descendant state mechanics outside ruled relational words. |
 | `pseudo-mechanics` | 23 | Pseudo-element geometry, generated content, and fills. |
 | `scrollbar-followup` | 9 | Engine-drawn scrollbar identity outside R-SKIN-15 standard properties. |
 | `motion-followup` | 1 | Transition/animation timing evidence for the animation-plane follow-up. |
 | `opacity-followup` | 4 | Opacity prominence/treatment evidence. |
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
-| `reset-absence` | 6 | Absence/reset/transparent mechanics, not positive style carriers. |
+| `reset-absence` | 5 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
 | `identity-geometry` | 30 | Project-exact dimensions, spacing, positioning, and geometry. |
 
@@ -77,7 +76,7 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 56 | `.modal-nav-label` | `font-size: var(--text-base)` |
+| 44 | `.modal-nav-label` | `font-size: var(--text-base)` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
 
@@ -90,8 +89,8 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 41 | `.modal-command-item .modal-command-description` | `font-style: italic` |
-| 58 | `.macro-search-kbd` | `line-height: 1` |
+| 31 | `.modal-command-item .modal-command-description` | `font-style: italic` |
+| 48 | `.macro-search-kbd` | `line-height: 1` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -129,7 +128,7 @@ Component-owned mechanics, exact geometry, or product contract.
 | line | selector | declaration |
 |---:|---|---|
 | 9 | `.macro-search-results` | `align-content: start` |
-| 61 | `.macro-search-kbd` | `border-radius: 4px` |
+| 51 | `.macro-search-kbd` | `border-radius: 4px` |
 
 ### src/styles/components/content-editor.css (2)
 
@@ -157,26 +156,9 @@ Native/JS state mechanics outside backed Ermine conditions.
 |---:|---|---|
 | 93 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 
-## aria-current (1)
-
-Current-state layer mechanics left local around ruled current: skin.
-
-### src/content/overlays/modal/modalStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 52 | `.modal-nav-tab[aria-current="page"]` | `border-bottom-color: var(--accent)` |
-
-## parent-relational (5)
+## parent-relational (3)
 
 Guarded parent/descendant state mechanics outside ruled relational words.
-
-### src/content/overlays/views/search/searchViewStyles.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 14 | `.macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-text` | `background-color: var(--tone-dim)` |
-| 19 | `.macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-text` | `background-color: var(--tone)` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (1)
 
@@ -204,14 +186,14 @@ Pseudo-element geometry, generated content, and fills.
 
 | line | selector | declaration |
 |---:|---|---|
-| 66 | `.macro-search-kbd::after` | `content: ''` |
-| 67 | `.macro-search-kbd::after` | `position: absolute` |
-| 68 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
-| 69 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
-| 70 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
-| 71 | `.macro-search-kbd::after` | `border-radius: 2px` |
-| 72 | `.macro-search-kbd::after` | `pointer-events: none` |
-| 73 | `.macro-search-kbd::after` | `z-index: -1` |
+| 56 | `.macro-search-kbd::after` | `content: ''` |
+| 57 | `.macro-search-kbd::after` | `position: absolute` |
+| 58 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
+| 59 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
+| 60 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
+| 61 | `.macro-search-kbd::after` | `border-radius: 2px` |
+| 62 | `.macro-search-kbd::after` | `pointer-events: none` |
+| 63 | `.macro-search-kbd::after` | `z-index: -1` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (12)
 
@@ -279,7 +261,7 @@ Opacity prominence/treatment evidence.
 
 | line | selector | declaration |
 |---:|---|---|
-| 34 | `.macro-search-item-text mark span` | `opacity: 0.35` |
+| 24 | `.macro-search-item-text mark span` | `opacity: 0.35` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -316,15 +298,9 @@ Identity shadows/rings outside the shared elevated treatment.
 |---:|---|---|
 | 13 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
 
-## reset-absence (6)
+## reset-absence (5)
 
 Absence/reset/transparent mechanics, not positive style carriers.
-
-### src/content/overlays/modal/modalStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 45 | `.modal-nav-tab` | `border-bottom: 2px solid transparent` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (1)
 
@@ -336,9 +312,9 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 28 | `.macro-search-item-text mark` | `background: transparent` |
-| 29 | `.macro-search-item-text mark` | `color: inherit` |
-| 30 | `.macro-search-item-text mark` | `font-style: normal` |
+| 18 | `.macro-search-item-text mark` | `background: transparent` |
+| 19 | `.macro-search-item-text mark` | `color: inherit` |
+| 20 | `.macro-search-item-text mark` | `font-style: normal` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -430,11 +406,11 @@ Project-exact dimensions, spacing, positioning, and geometry.
 
 | line | selector | declaration |
 |---:|---|---|
-| 24 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
-| 59 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
-| 60 | `.macro-search-kbd` | `min-width: 26px` |
-| 62 | `.macro-search-kbd` | `z-index: 0` |
-| 77 | `.macro-search-kbd:first-child` | `margin-left: 0` |
+| 14 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
+| 49 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
+| 50 | `.macro-search-kbd` | `min-width: 26px` |
+| 52 | `.macro-search-kbd` | `z-index: 0` |
+| 67 | `.macro-search-kbd:first-child` | `margin-left: 0` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (3)
 

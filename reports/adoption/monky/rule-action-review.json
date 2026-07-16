@@ -2,16 +2,16 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "36be671360715989a265972612f5d392b9503a19",
-    "projectCommit": "25971e46a4297983bd51c83c7e58baea565fac6a"
+    "ermineCommit": "8c7b5b7fe0a01490fb87f3345b06278641e01cb2",
+    "projectCommit": "9accf9b68b913154d90fa37e4177638ed807371d"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 167,
+    "reviewedDeclarations": 163,
     "assimilableNow": 0,
-    "latentGeneralizable": 67,
+    "latentGeneralizable": 63,
     "likelyRecipe": 97,
     "likelyLocal": 3,
     "byRuleAction": {
@@ -19,17 +19,17 @@
       "dimension-constraint": 1,
       "attachment-edge-layer": 6,
       "spacing-rhythm": 31,
-      "surface-line-elevation-cutout": 31,
+      "surface-line-elevation-cutout": 28,
       "typography-content": 29,
       "interaction-affordance-state": 14,
       "motion-transition": 3,
-      "reset-inheritance-neutralization": 11,
+      "reset-inheritance-neutralization": 10,
       "component-private-drawing": 41
     },
     "byLatentOutcome": {
       "admitted": 0,
       "latent-word": 9,
-      "latent-facet": 48,
+      "latent-facet": 44,
       "latent-scale": 10,
       "recipe": 97,
       "local-identity": 3
@@ -48,14 +48,14 @@
       "state-mechanics": 5,
       "state-review": 0,
       "focus-state": 0,
-      "aria-current": 1,
-      "parent-relational": 5,
+      "aria-current": 0,
+      "parent-relational": 3,
       "pseudo-mechanics": 23,
       "scrollbar-followup": 9,
       "motion-followup": 1,
       "opacity-followup": 4,
       "elevation-followup": 3,
-      "reset-absence": 6,
+      "reset-absence": 5,
       "user-content": 43,
       "identity-geometry": 30,
       "skin-review": 0,
@@ -135,37 +135,9 @@
       "proposedForm": "per-edge spacing facet or smaller density step"
     },
     {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab::border-bottom::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 45,
-      "selector": ".modal-nav-tab",
-      "property": "border-bottom",
-      "value": "2px solid transparent",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-tab[aria-current=\"page\"]::border-bottom-color::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 52,
-      "selector": ".modal-nav-tab[aria-current=\"page\"]",
-      "property": "border-bottom-color",
-      "value": "var(--accent)",
-      "currentCode": "aria-current",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-nav-label::font-size::1",
       "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 56,
+      "line": 44,
       "selector": ".modal-nav-label",
       "property": "font-size",
       "value": "var(--text-base)",
@@ -388,37 +360,9 @@
       "proposedForm": "side-specific rule/radius/state-skin facet"
     },
     {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item:not([data-state=\"confirming-delete\"]):hover .macro-search-item-command, .macro-search-item:not([data-state=\"confirming-delete\"]):hover .macro-search-item-text::background-color::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 14,
-      "selector": ".macro-search-item:not([data-state=\"confirming-delete\"]):hover .macro-search-item-command, .macro-search-item:not([data-state=\"confirming-delete\"]):hover .macro-search-item-text",
-      "property": "background-color",
-      "value": "var(--tone-dim)",
-      "currentCode": "parent-relational",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item:not([data-state=\"confirming-delete\"])[aria-selected=\"true\"] .macro-search-item-command, .macro-search-item:not([data-state=\"confirming-delete\"])[aria-selected=\"true\"] .macro-search-item-text::background-color::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 19,
-      "selector": ".macro-search-item:not([data-state=\"confirming-delete\"])[aria-selected=\"true\"] .macro-search-item-command, .macro-search-item:not([data-state=\"confirming-delete\"])[aria-selected=\"true\"] .macro-search-item-text",
-      "property": "background-color",
-      "value": "var(--tone)",
-      "currentCode": "parent-relational",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::right::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 24,
+      "line": 14,
       "selector": ".macro-search-item-edit",
       "property": "right",
       "value": "var(--spacing-sm)",
@@ -432,7 +376,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::background::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 28,
+      "line": 18,
       "selector": ".macro-search-item-text mark",
       "property": "background",
       "value": "transparent",
@@ -446,7 +390,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::color::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 29,
+      "line": 19,
       "selector": ".macro-search-item-text mark",
       "property": "color",
       "value": "inherit",
@@ -460,7 +404,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::font-style::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 30,
+      "line": 20,
       "selector": ".macro-search-item-text mark",
       "property": "font-style",
       "value": "normal",
@@ -474,7 +418,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark span::opacity::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 34,
+      "line": 24,
       "selector": ".macro-search-item-text mark span",
       "property": "opacity",
       "value": "0.35",
@@ -488,7 +432,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.modal-command-item .modal-command-description::font-style::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 41,
+      "line": 31,
       "selector": ".modal-command-item .modal-command-description",
       "property": "font-style",
       "value": "italic",
@@ -502,7 +446,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::line-height::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 58,
+      "line": 48,
       "selector": ".macro-search-kbd",
       "property": "line-height",
       "value": "1",
@@ -516,7 +460,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::padding::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 59,
+      "line": 49,
       "selector": ".macro-search-kbd",
       "property": "padding",
       "value": "3px 6px 6px",
@@ -530,7 +474,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::min-width::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 60,
+      "line": 50,
       "selector": ".macro-search-kbd",
       "property": "min-width",
       "value": "26px",
@@ -544,7 +488,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::border-radius::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 61,
+      "line": 51,
       "selector": ".macro-search-kbd",
       "property": "border-radius",
       "value": "4px",
@@ -558,7 +502,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::z-index::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 62,
+      "line": 52,
       "selector": ".macro-search-kbd",
       "property": "z-index",
       "value": "0",
@@ -572,7 +516,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::content::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 66,
+      "line": 56,
       "selector": ".macro-search-kbd::after",
       "property": "content",
       "value": "''",
@@ -586,7 +530,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::position::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 67,
+      "line": 57,
       "selector": ".macro-search-kbd::after",
       "property": "position",
       "value": "absolute",
@@ -600,7 +544,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::background::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 68,
+      "line": 58,
       "selector": ".macro-search-kbd::after",
       "property": "background",
       "value": "var(--tone-dim)",
@@ -614,7 +558,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::inset::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 69,
+      "line": 59,
       "selector": ".macro-search-kbd::after",
       "property": "inset",
       "value": "0 2px 4px",
@@ -628,7 +572,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 70,
+      "line": 60,
       "selector": ".macro-search-kbd::after",
       "property": "border",
       "value": "1px solid var(--harmonic-minor)",
@@ -642,7 +586,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border-radius::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 71,
+      "line": 61,
       "selector": ".macro-search-kbd::after",
       "property": "border-radius",
       "value": "2px",
@@ -656,7 +600,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::pointer-events::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 72,
+      "line": 62,
       "selector": ".macro-search-kbd::after",
       "property": "pointer-events",
       "value": "none",
@@ -670,7 +614,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::z-index::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 73,
+      "line": 63,
       "selector": ".macro-search-kbd::after",
       "property": "z-index",
       "value": "-1",
@@ -684,7 +628,7 @@
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd:first-child::margin-left::1",
       "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 77,
+      "line": 67,
       "selector": ".macro-search-kbd:first-child",
       "property": "margin-left",
       "value": "0",

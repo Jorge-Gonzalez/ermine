@@ -19,18 +19,18 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the text-flow release migration is Ermine
-36be671 / Monky 25971e4:
+were migrated). Current live ledger after the rule edge-colour migration is Ermine
+8c7b5b7 / Monky 9accf9b:
 
   current declarations:                 525
-  adopted/infrastructure declarations:  358
-  project-owned residue declarations:   167
+  adopted/infrastructure declarations:  362
+  project-owned residue declarations:   163
   assimilable now:                        0
 
 Current residue by reason code:
   recipe-identity 21, brand-identity 8, component-contract 8, state-mechanics 5,
-  aria-current 1, parent-relational 5, pseudo-mechanics 23, scrollbar-followup 9,
-  motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 6,
+  parent-relational 3, pseudo-mechanics 23, scrollbar-followup 9,
+  motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 5,
   user-content 43, identity-geometry 30.
 
 Historical invariance sample:
@@ -125,8 +125,10 @@ migrated the command dropdown from local top-border suppression to positive
 `ruled-left ruled-right ruled-bottom`, and removed redundant reset echoes already owned by
 Monky's substrate. The text-flow release pass then admitted `text-wrap` plus
 `overflow-visible` as state-scoped release endpoints and migrated the selected search result
-reset; the live residue is now 167. Shorthand-asymmetry and raw micro-padding rows remain
-as the next spacing questions.
+reset. The rule edge-colour pass then admitted physical rule colour dials plus the edge-only
+transparent endpoint, migrated the current-tab underline, and moved search row hover/selected
+backgrounds to existing relational state skin; the live residue is now 163.
+Shorthand-asymmetry and raw micro-padding rows remain as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -542,9 +544,8 @@ Implementation artifacts:
     dimension/constraint declaration to a scale/proportion reading and proposed form.
   - `npm run adoption:check` now checks that these generated reports are current.
 
-Immediate next action: work the selected/current/checked/disabled state-skin residue and
-the remaining reset endpoints now that text-flow release is settled. Keep transparent
-selection underlines and sliding-pill mechanics local unless they can be replaced with
-positive facts or promoted as recipes; promote the remaining editor/content, keycap,
-callout, and segmented-control shapes as recipes only when reuse proves they deserve
-sockets.
+Immediate next action: work the remaining selected/checked/disabled state-skin residue and
+reset endpoints now that current-tab rule colour is settled. Keep sliding-pill mechanics
+local unless they can be replaced with positive facts or promoted as recipes; promote the
+remaining editor/content, keycap, callout, and segmented-control shapes as recipes only when
+reuse proves they deserve sockets.
