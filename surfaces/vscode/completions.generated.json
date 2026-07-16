@@ -3474,6 +3474,120 @@
           "insertText": "revealed",
           "kind": "word",
           "meaning": "<concealment>"
+        },
+        {
+          "label": "alpha-5",
+          "insertText": "alpha-5",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-10",
+          "insertText": "alpha-10",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-15",
+          "insertText": "alpha-15",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-20",
+          "insertText": "alpha-20",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-25",
+          "insertText": "alpha-25",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-30",
+          "insertText": "alpha-30",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-35",
+          "insertText": "alpha-35",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-40",
+          "insertText": "alpha-40",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-45",
+          "insertText": "alpha-45",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-50",
+          "insertText": "alpha-50",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-55",
+          "insertText": "alpha-55",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-60",
+          "insertText": "alpha-60",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-65",
+          "insertText": "alpha-65",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-70",
+          "insertText": "alpha-70",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-75",
+          "insertText": "alpha-75",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-80",
+          "insertText": "alpha-80",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-85",
+          "insertText": "alpha-85",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-90",
+          "insertText": "alpha-90",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
+        },
+        {
+          "label": "alpha-95",
+          "insertText": "alpha-95",
+          "kind": "word",
+          "meaning": "alpha-<percent>"
         }
       ]
     },

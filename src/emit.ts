@@ -204,10 +204,12 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word === "pressable" ? { cursor: "pointer" } : null),
   },
 
-  // --- concealment: presence at the opacity endpoints (R-SKIN-16). ---
+  // --- concealment/alpha: opacity treatment (R-SKIN-16, ADR-0055). ---
   concealment: {
     effectKind: "css",
     plain: (word) => {
+      const alpha = word.match(/^alpha-(\d+)$/);
+      if (alpha) return { opacity: String(Number(alpha[1]) / 100) };
       switch (word) {
         case "concealed": return { opacity: "0" };
         case "revealed": return { opacity: "1" };
@@ -880,7 +882,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   truncation: ["truncate", "clamp-2", "clamp-3", "text-nowrap", "text-pre-wrap", "text-wrap"],
   affordance: ["pressable"],
-  concealment: ["concealed", "revealed"],
+  concealment: ["concealed", "revealed", ...Array.from({ length: 19 }, (_, index) => `alpha-${(index + 1) * 5}`)],
   scrollbar: ["scrollbar-subtle"],
   "focus-ring": ["ring"],
   elevation: ["elevated"],

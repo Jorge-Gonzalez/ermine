@@ -110,7 +110,7 @@ export interface ErminePlainProps {
   /** axis `affordance` */
   affordance?: "pressable";
   /** axis `concealment` */
-  concealment?: "concealed" | "revealed";
+  concealment?: "concealed" | "revealed" | "alpha-5" | "alpha-10" | "alpha-15" | "alpha-20" | "alpha-25" | "alpha-30" | "alpha-35" | "alpha-40" | "alpha-45" | "alpha-50" | "alpha-55" | "alpha-60" | "alpha-65" | "alpha-70" | "alpha-75" | "alpha-80" | "alpha-85" | "alpha-90" | "alpha-95";
   /** axis `numeric` */
   numeric?: "tabular";
   /** axis `type-label` */

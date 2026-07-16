@@ -117,6 +117,14 @@ const cases: Case[] = [
   { s: "tween-settled emphasized", expect: "ok", why: "duration envelope composes with easing" },
   { s: "tween-quick tween-settled", expect: "fail", why: "one duration envelope per element/scope" },
   { s: "tween-fast", expect: "fail", why: "duration step names are ruled, not inherited from Monky tokens" },
+  // opacity treatment — parametric but bounded to 5% increments; endpoints stay semantic
+  { s: "alpha-35", expect: "ok", why: "bounded mid-opacity treatment" },
+  { s: "hover:alpha-90", expect: "ok", why: "scoped alpha treatment" },
+  { s: "alpha-37", expect: "fail", why: "alpha is restricted to 5% increments" },
+  { s: "alpha-0", expect: "fail", why: "use concealed for the semantic endpoint" },
+  { s: "alpha-100", expect: "fail", why: "use revealed for the semantic endpoint" },
+  { s: "alpha-35 alpha-60", expect: "fail", why: "one opacity treatment per scope" },
+  { s: "concealed alpha-35", expect: "fail", why: "alpha and concealment share opacity axis" },
   // constraints — min/max compose as a band
   { s: "min-width-sm max-width-lg", expect: "ok", why: "width band: min + max compose" },
   { s: "min-width-sm min-width-lg", expect: "fail", why: "two values on the same min-width dial" },

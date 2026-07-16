@@ -68,6 +68,12 @@ test("alignment-container maps between/around to space-*", () => {
   assert.deepEqual(declOf("align-start"), [["align-items", "flex-start"]]);
 });
 
+test("alpha treatment emits bounded percent opacity and shares the concealment axis", () => {
+  assert.deepEqual(declOf("alpha-35"), [["opacity", "0.35"]]);
+  assert.deepEqual(declOf("alpha-5"), [["opacity", "0.05"]]);
+  assert.deepEqual(declOf("alpha-90"), [["opacity", "0.9"]]);
+});
+
 test("position-mode strips the grammar prefix", () => {
   assert.deepEqual(declOf("position-sticky"), [["position", "sticky"]]);
 });

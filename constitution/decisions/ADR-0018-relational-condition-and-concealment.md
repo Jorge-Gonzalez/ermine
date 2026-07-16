@@ -26,9 +26,10 @@ Options weighed for the mechanism:
   available, safe without it because unmarked ancestors never match. Chosen.
 
 For the words: `concealed` (opacity 0) / `revealed` (opacity 1) as a treatment owning the
-endpoints only. Mid-scale opacity stays unruled (three occurrences, three different emphasis
-intents — the R-SKIN-14 leading argument). Pointer-events stays out of `concealed`: the
-evidence keeps hidden controls clickable; interactivity does not belong in a visibility word.
+semantic endpoints. Mid-scale opacity stayed unruled here (three occurrences, three different
+emphasis intents — the R-SKIN-14 leading argument) and was later admitted as bounded `alpha-*`
+by ADR-0055. Pointer-events stays out of `concealed`: the evidence keeps hidden controls
+clickable; interactivity does not belong in a visibility word.
 
 Left local by choice: the `:not([data-state="confirming-delete"])` guarded tinting rows
 (guards are component mechanics), and the `[data-state]`-driven action reveal (JS state, not

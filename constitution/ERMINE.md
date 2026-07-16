@@ -974,16 +974,15 @@ scrollbar signature keeps it as identity.
 
 → rationale: RAT:R-SKIN-15 · history: ADR-0017 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
-## R-SKIN-16 — Concealment treatment
+## R-SKIN-16 — Concealment, reveal, and alpha treatment
 
-Concealment is a skin treatment owning `opacity` at its endpoints only: `concealed` (opacity 0 —
-present for layout and measurement, invisible) and `revealed` (opacity 1). Its purpose is
-conditioned visibility: the reveal-on-parent-state affordance is written
-`concealed parent-hover:revealed parent-selected:revealed` (R-STATE-13). Mid-scale opacity —
-prominence dimming, wash effects — is not concealment and remains unruled; a treatment that
-names presence must not blur into one that names emphasis.
+Concealment is a skin treatment owning `opacity`. `concealed` (opacity 0 — present for layout and
+measurement, invisible) and `revealed` (opacity 1) remain the semantic endpoints used for
+conditioned visibility: `concealed parent-hover:revealed parent-selected:revealed` (R-STATE-13).
+Mid-scale opacity is expressed as bounded alpha words: `alpha-5` through `alpha-95`, in 5 percent
+increments. The endpoints are not duplicated as `alpha-0` or `alpha-100`.
 
-→ rationale: RAT:R-SKIN-16 · history: ADR-0018 · code: src/registry.ts#SKIN, src/emit.ts#emit
+→ rationale: RAT:R-SKIN-16 · history: ADR-0018, ADR-0055 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SKIN-17 — Press affordance
 

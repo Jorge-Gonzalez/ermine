@@ -743,11 +743,11 @@ The relational prefixes alone could not consume their own evidence: the revealed
 opacity, which had no word to scope. The endpoints earn words — `concealed`/`revealed` name
 presence (a thing that occupies space but does not show), which is a real platform distinction
 (opacity 0 keeps layout, hit-testing, and measurement; `display: none` and `visibility` do
-not). The mid-scale does not: 0.35 marks, 0.6 carets, and 0.95 disabled washes each name a
-different emphasis intent, one occurrence apiece — admitting a scale there would repeat the
-line-height mistake R-SKIN-14 refused. Pointer-events is deliberately left out of `concealed`:
+not). Later Monky evidence narrowed the mid-scale question to literal paint alpha values whose
+contexts did not prove one semantic scale; ADR-0055 therefore admits bounded `alpha-*` words
+instead of names like muted/soft/faint. Pointer-events is deliberately left out of `concealed`:
 the evidence keeps concealed controls clickable, and folding interactivity into a visibility
-word would smuggle behaviour into skin. Source: ADR-0018.
+word would smuggle behaviour into skin. Source: ADR-0018, ADR-0055.
 
 ## RAT:R-SKIN-17
 The pattern screen's largest single recurrence: `cursor: pointer`, twenty-one rows, twelve of

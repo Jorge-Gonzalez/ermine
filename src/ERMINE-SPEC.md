@@ -1041,7 +1041,7 @@ Tokens:
 #### concealment
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `concealed` `revealed`
+- value space: `concealed` `revealed` `alpha-5` `alpha-10` `alpha-15` `alpha-20` `alpha-25` `alpha-30` `alpha-35` `alpha-40` `alpha-45` `alpha-50` `alpha-55` `alpha-60` `alpha-65` `alpha-70` `alpha-75` `alpha-80` `alpha-85` `alpha-90` `alpha-95`
 - default: none
 - controls: `opacity`
 - must never touch: `display` `visibility` `pointer-events` `background` `color`
@@ -1051,6 +1051,8 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `<concealment>` | `/^(concealed\|revealed)$/` | — | no |
+| `alpha-<percent>` | `/^(alpha)-(5\|10\|15\|20\|25\|30\|35\|40\|45\|50\|55\|60\|65\|70\|75\|80\|85\|90\|95)$/` | `percent-5` | no |
+| `alpha-<bad>` | `/^alpha-.+$/` | `percent-5` | yes |
 
 #### numeric
 

@@ -39,6 +39,7 @@ const TWEEN_WORDS = [
   ...SCALES.duration.map((duration) => `tween-${duration}`),
   ...TWEEN_TARGETS.flatMap((target) => SCALES.duration.map((duration) => `tween-${target}-${duration}`)),
 ] as const;
+const ALPHA_STEPS = Array.from({ length: 19 }, (_, index) => String((index + 1) * 5));
 
 // ============================================================================
 // TYPES — the schema definitions moved to the vocabulary-independent engine
@@ -947,15 +948,18 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "background", "color", "pointer-events", "user-select"],
   },
   {
-    // concealment: presence at the opacity endpoints (R-SKIN-16). `concealed` keeps
-    // layout and measurement while invisible; `revealed` restores. Meant for the
-    // reveal-on-parent-state affordance (`concealed parent-hover:revealed`).
-    // Mid-scale opacity (emphasis dimming) is deliberately not this axis.
+    // concealment/alpha: opacity treatment (R-SKIN-16, ADR-0055). `concealed` keeps
+    // layout and measurement while invisible; `revealed` restores. `alpha-<percent>`
+    // covers mid-opacity paint as a bounded 5% increment, leaving endpoints semantic.
     axis: "concealment",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["concealed", "revealed"],
-    tokens: [{ pattern: /^(concealed|revealed)$/, shape: "<concealment>" }],
+    valueSpace: ["concealed", "revealed", ...ALPHA_STEPS.map((step) => `alpha-${step}`)],
+    tokens: [
+      { pattern: /^(concealed|revealed)$/, shape: "<concealment>" },
+      { pattern: new RegExp(`^(alpha)-(${ALPHA_STEPS.join("|")})$`), shape: "alpha-<percent>", valueDomain: "percent-5" },
+      { pattern: /^alpha-.+$/, shape: "alpha-<bad>", valueDomain: "percent-5", fallback: true },
+    ],
     default: null,
     controls: ["opacity"],
     mustNeverTouch: ["display", "visibility", "pointer-events", "background", "color"],

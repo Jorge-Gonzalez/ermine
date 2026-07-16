@@ -2549,6 +2549,101 @@
       "meaning": "<concealment>",
       "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
     },
+    "alpha-5": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-10": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-15": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-20": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-25": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-30": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-35": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-40": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-45": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-50": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-55": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-60": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-65": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-70": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-75": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-80": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-85": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-90": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
+    "alpha-95": {
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
+    },
     "tabular": {
       "axis": "numeric",
       "meaning": "<numeric>",
@@ -2720,6 +2815,12 @@
       "axis": "state.sort",
       "meaning": "sorted-<value?>",
       "reference": "src/ERMINE-SPEC.md §2.4 — state.sort"
+    },
+    {
+      "pattern": "^(alpha)-(5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95)$",
+      "axis": "concealment",
+      "meaning": "alpha-<percent>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — concealment"
     },
     {
       "pattern": "^clamp-(\\d+)$",

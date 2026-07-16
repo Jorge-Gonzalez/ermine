@@ -325,6 +325,12 @@
       "anchor": "ADR-0054"
     },
     {
+      "id": "ADR-0055",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0055-alpha-opacity-treatment.md",
+      "anchor": "ADR-0055"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
