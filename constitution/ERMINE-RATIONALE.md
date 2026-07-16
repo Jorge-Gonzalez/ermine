@@ -454,6 +454,12 @@ facet under the same `current:` condition. The tab underline keeps positive line
 state with `current:rule-bottom-accent`; no selection conflation or component-layer override is
 needed.
 
+Amended (ADR-0052): `expanded:` joins `current:` as an attribute-backed condition prefix. Monky's
+style-menu trigger exposes open/closed truth with `aria-expanded`, and the active trigger skin is
+ordinary carrier composition under that state, not component identity. The selector is
+`[aria-expanded="true"]`; no capability word is invented because the element's attribute is the
+contract.
+
 ## RAT:R-MOTION-01
 Source: pre-split `constitution/ERMINE.md` lines 1458–1468.
 

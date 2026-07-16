@@ -1156,6 +1156,7 @@ These prefixes are closed condition scopes, not registry-axis members. The guard
 | `selected` | `selected:` | `/^selected$/` | `none` | backed conditioned skin while the element is asserted selected |
 | `checked` | `checked:` | `/^checked$/` | `none` | backed conditioned skin while the element is asserted checked |
 | `pressed` | `pressed:` | `/^pressed$/` | `none` | backed conditioned skin while the element is asserted pressed (aria-pressed) |
+| `expanded` | `expanded:` | `/^expanded$/` | `none` | attribute-backed conditioned skin while the element is asserted expanded (aria-expanded) |
 | `current` | `current:` | `/^current$/` | `none` | attribute-backed conditioned skin while the element is asserted current (aria-current) |
 | `parent-hover` | `parent-hover:` | `/^parent-hover$/` | `none` | conditioned skin while the selectable ancestor is hovered |
 | `parent-selected` | `parent-selected:` | `/^parent-selected$/` | `none` | conditioned skin while the selectable ancestor is asserted selected |

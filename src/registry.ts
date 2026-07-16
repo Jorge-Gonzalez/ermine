@@ -1235,6 +1235,7 @@ export const STATE_SCOPES: ScopePrefix[] = [
   { id: "selected", pattern: /^selected$/, shape: "selected:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted selected" },
   { id: "checked", pattern: /^checked$/, shape: "checked:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted checked" },
   { id: "pressed", pattern: /^pressed$/, shape: "pressed:", role: "none", backedBy: "pressable", note: "backed conditioned skin while the element is asserted pressed (aria-pressed)" },
+  { id: "expanded", pattern: /^expanded$/, shape: "expanded:", role: "none", note: "attribute-backed conditioned skin while the element is asserted expanded (aria-expanded)" },
   { id: "current", pattern: /^current$/, shape: "current:", role: "none", note: "attribute-backed conditioned skin while the element is asserted current (aria-current)" },
 ];
 

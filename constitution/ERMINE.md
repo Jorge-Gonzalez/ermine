@@ -653,16 +653,17 @@ or component CSS that could express neither a project's own state hue nor a bord
 
 ## R-STATE-12 — Attribute-backed condition prefix
 
-An application-asserted state whose backing lives on the element itself — `current`, backed by
-`aria-current` — scopes a conditioned-skin override as a variant prefix (`current:ink-accent`),
-the R-STATE-10/11 shape. It differs from R-STATE-11 in how backing is verified: there is no
-capability word, because the assertion contract is the attribute the element carries, not a
-container's distributed state. The linter cannot see markup attributes, and does not need to —
-the override serializes to the backing attribute selector
-(`[aria-current]:not([aria-current="false"])`), so an element the application never marked
-current can never match. The set is closed and validated; `current` is admitted on evidence.
+An application-asserted state whose backing lives on the element itself — currently `current`,
+backed by `aria-current`, and `expanded`, backed by `aria-expanded` — scopes a conditioned-skin
+override as a variant prefix (`current:ink-accent`, `expanded:ground-defined`), the
+R-STATE-10/11 shape. It differs from R-STATE-11 in how backing is verified: there is no capability
+word, because the assertion contract is the attribute the element carries, not a container's
+distributed state. The linter cannot see markup attributes, and does not need to — the override
+serializes to the backing attribute selector (`[aria-current]:not([aria-current="false"])` or
+`[aria-expanded="true"]`), so an element the application never marked with the state can never
+match. The set is closed and validated; `current` and `expanded` are admitted on evidence.
 
-→ rationale: RAT:R-STATE-12 · history: ADR-0009 · code: src/registry.ts#STATE_SCOPES, src/css.ts#buildStylesheet
+→ rationale: RAT:R-STATE-12 · history: ADR-0009, ADR-0052 · code: src/registry.ts#STATE_SCOPES, src/css.ts#buildStylesheet
 
 ## R-STATE-13 — Relational condition prefix
 

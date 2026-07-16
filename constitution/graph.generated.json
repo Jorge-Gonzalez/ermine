@@ -307,6 +307,12 @@
       "anchor": "ADR-0051"
     },
     {
+      "id": "ADR-0052",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0052-expanded-condition-prefix.md",
+      "anchor": "ADR-0052"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

@@ -166,6 +166,7 @@ function scopeAttribute(scope: string): string | undefined {
     selected: '[aria-selected="true"]',
     checked: '[aria-checked="true"]',
     pressed: '[aria-pressed="true"]',
+    expanded: '[aria-expanded="true"]',
     current: '[aria-current]:not([aria-current="false"])',
   };
   return exact[scope];

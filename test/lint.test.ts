@@ -171,6 +171,7 @@ const cases: Case[] = [
   { s: "hover:ground-subtle", expect: "ok", why: "hover: is unbacked — no capability required" },
   // R-STATE-12 — attribute-backed: the aria-current selector is the backing, no capability word
   { s: "current:ink-accent current:ground-subtle", expect: "ok", why: "R-STATE-12: attribute-backed, no capability required" },
+  { s: "expanded:ground-defined expanded:ink-accent", expect: "ok", why: "R-STATE-12: attribute-backed, no capability required" },
   // R-STATE-13 — relational: the ancestor must carry selectable when parent context is given
   { s: "concealed parent-hover:revealed", ctx: { parentClasses: "horizontal gap-sm" }, expect: "fail", why: "R-STATE-13: relational scope without selectable ancestor" },
   { s: "concealed parent-hover:revealed parent-selected:revealed", ctx: { parentClasses: "selectable grid" }, expect: "ok", why: "ancestor carries selectable" },
