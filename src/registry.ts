@@ -96,13 +96,13 @@ export type Alias = EngineAlias;
 export type AxisRecord = EngineAxisRecord;
 
 // helper: build a spacing-token regex for a property prefix
-const spacingToken = (prefix: string): Token => ({
-  pattern: new RegExp(`^${prefix}-(${SCALES.spacing.join("|")})$`),
+const spacingToken = (prefix: string, extras: readonly string[] = []): Token => ({
+  pattern: new RegExp(`^${prefix}-(${[...SCALES.spacing, ...extras].join("|")})$`),
   shape: `${prefix}-<spacing>`,
   valueDomain: "spacing-step",
 });
-const spacingEdgeToken = (prefix: string): Token => ({
-  pattern: new RegExp(`^${prefix}-(top|right|bottom|left)-(${SCALES.spacing.join("|")})$`),
+const spacingEdgeToken = (prefix: string, extras: readonly string[] = []): Token => ({
+  pattern: new RegExp(`^${prefix}-(top|right|bottom|left)-(${[...SCALES.spacing, ...extras].join("|")})$`),
   shape: `${prefix}-<edge>-<spacing>`,
   valueDomain: "spacing-step",
 });
@@ -294,8 +294,8 @@ export const LAYOUT: AxisRecord[] = [
     axis: "padding",
     sibling: "layout", role: "self", signature: "ordered-chain",
     vocabulary: "closed", regime: "free",
-    valueSpace: SCALES.spacing,
-    tokens: [spacingToken("padding"), spacingToken("padding-inline"), spacingToken("padding-block"), spacingEdgeToken("padding")],
+    valueSpace: [...SCALES.spacing, "none"],
+    tokens: [spacingToken("padding", ["none"]), spacingToken("padding-inline", ["none"]), spacingToken("padding-block", ["none"]), spacingEdgeToken("padding", ["none"])],
     subDials: ["inline", "block", "top", "right", "bottom", "left"],
     dialOf: (word: string) => {
       const edge = word.match(/^padding-(top|right|bottom|left)-/);
@@ -303,25 +303,25 @@ export const LAYOUT: AxisRecord[] = [
       return word.startsWith("padding-inline-") ? "inline" : word.startsWith("padding-block-") ? "block" : null;
     },
     dialFootprint: spacingDialFootprint,
-    aliasMatch: (word: string) => new RegExp(`^padding-(${SCALES.spacing.join("|")})$`).test(word),
+    aliasMatch: (word: string) => new RegExp(`^padding-(${[...SCALES.spacing, "none"].join("|")})$`).test(word),
     default: null,
     // longhands, not the shorthand: the whole-axis form emits `padding` (all sides), the
     // dials emit `padding-inline` / `padding-block` / physical edge longhands. Listed
     // so the hand `controls` face matches the emitter's real footprint.
     controls: ["padding", "padding-inline", "padding-block", "padding-top", "padding-right", "padding-bottom", "padding-left"],
     mustNeverTouch: ["margin", "gap", "display"],
-    notes: "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form.",
+    notes: "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form. The `none` endpoint emits zero on the chosen footprint without joining the shared spacing scale.",
   },
   {
     axis: "margin",
     sibling: "layout", role: "member", signature: "ordered-chain",
     vocabulary: "closed", regime: "free",
-    valueSpace: [...SCALES.spacing, "centered", "flush-block"],
+    valueSpace: [...SCALES.spacing, "none", "centered", "flush-block"],
     tokens: [
-      spacingToken("margin"),
-      spacingToken("margin-inline"),
-      spacingToken("margin-block"),
-      spacingEdgeToken("margin"),
+      spacingToken("margin", ["none"]),
+      spacingToken("margin-inline", ["none"]),
+      spacingToken("margin-block", ["none"]),
+      spacingEdgeToken("margin", ["none"]),
       { pattern: /^(centered|flush-block)$/, shape: "centered | flush-block" },
     ],
     subDials: ["inline", "block", "top", "right", "bottom", "left"],
@@ -331,11 +331,11 @@ export const LAYOUT: AxisRecord[] = [
       return word.startsWith("margin-inline-") || word === "centered" ? "inline" : word.startsWith("margin-block-") || word === "flush-block" ? "block" : null;
     },
     dialFootprint: spacingDialFootprint,
-    aliasMatch: (word: string) => new RegExp(`^margin-(${SCALES.spacing.join("|")})$`).test(word),
+    aliasMatch: (word: string) => new RegExp(`^margin-(${[...SCALES.spacing, "none"].join("|")})$`).test(word),
     default: null,
     controls: ["margin", "margin-inline", "margin-block", "margin-top", "margin-right", "margin-bottom", "margin-left"],
     mustNeverTouch: ["margin-inline-start", "margin-inline-end", "padding", "gap", "display"],
-    notes: "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
+    notes: "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. The `none` endpoint emits zero on the chosen footprint. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
   },
   {
     // push: an element consumes available inline-start margin and moves toward inline end

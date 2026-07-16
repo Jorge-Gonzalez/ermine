@@ -313,6 +313,12 @@
       "anchor": "ADR-0052"
     },
     {
+      "id": "ADR-0053",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0053-spacing-none-endpoints.md",
+      "anchor": "ADR-0053"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

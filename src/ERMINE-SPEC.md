@@ -298,44 +298,44 @@ Tokens:
 #### padding
 
 - role: `self` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
-- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl`
+- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl` `none`
 - default: none
 - controls: `padding` `padding-inline` `padding-block` `padding-top` `padding-right` `padding-bottom` `padding-left`
 - must never touch: `margin` `gap` `display`
 - sub-dials: `inline` `block` `top` `right` `bottom` `left`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form.
+- notes: spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form. The `none` endpoint emits zero on the chosen footprint without joining the shared spacing scale.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `padding-<spacing>` | `/^padding-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
-| `padding-inline-<spacing>` | `/^padding-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
-| `padding-block-<spacing>` | `/^padding-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
-| `padding-<edge>-<spacing>` | `/^padding-(top\|right\|bottom\|left)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `padding-<spacing>` | `/^padding-(xs\|sm\|md\|lg\|xl\|2xl\|3xl\|none)$/` | `spacing-step` | no |
+| `padding-inline-<spacing>` | `/^padding-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl\|none)$/` | `spacing-step` | no |
+| `padding-block-<spacing>` | `/^padding-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl\|none)$/` | `spacing-step` | no |
+| `padding-<edge>-<spacing>` | `/^padding-(top\|right\|bottom\|left)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl\|none)$/` | `spacing-step` | no |
 
 #### margin
 
 - role: `member` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
-- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl` `centered` `flush-block`
+- value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl` `none` `centered` `flush-block`
 - default: none
 - controls: `margin` `margin-inline` `margin-block` `margin-top` `margin-right` `margin-bottom` `margin-left`
 - must never touch: `margin-inline-start` `margin-inline-end` `padding` `gap` `display`
 - sub-dials: `inline` `block` `top` `right` `bottom` `left`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.
+- notes: spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. The `none` endpoint emits zero on the chosen footprint. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `margin-<spacing>` | `/^margin-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
-| `margin-inline-<spacing>` | `/^margin-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
-| `margin-block-<spacing>` | `/^margin-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
-| `margin-<edge>-<spacing>` | `/^margin-(top\|right\|bottom\|left)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `margin-<spacing>` | `/^margin-(xs\|sm\|md\|lg\|xl\|2xl\|3xl\|none)$/` | `spacing-step` | no |
+| `margin-inline-<spacing>` | `/^margin-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl\|none)$/` | `spacing-step` | no |
+| `margin-block-<spacing>` | `/^margin-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl\|none)$/` | `spacing-step` | no |
+| `margin-<edge>-<spacing>` | `/^margin-(top\|right\|bottom\|left)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl\|none)$/` | `spacing-step` | no |
 | `centered \| flush-block` | `/^(centered\|flush-block)$/` | — | no |
 
 #### push

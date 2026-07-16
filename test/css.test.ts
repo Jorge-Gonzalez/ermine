@@ -161,6 +161,14 @@ test("the min dials' none endpoint escapes the min-content floor (R-CONSTRAINT-0
   assert.match(css, /\.max-width-none \{[^}]*max-width: none;/s);
 });
 
+test("spacing none endpoints emit zero on their chosen footprints", () => {
+  const css = toCss("padding-none padding-left-none margin-inline-none margin-bottom-none");
+  assert.match(css, /\.padding-none \{[^}]*padding: 0;/s);
+  assert.match(css, /\.padding-left-none \{[^}]*padding-left: 0;/s);
+  assert.match(css, /\.margin-inline-none \{[^}]*margin-inline: 0;/s);
+  assert.match(css, /\.margin-bottom-none \{[^}]*margin-bottom: 0;/s);
+});
+
 test("control-size emits a physical control box from the spacing scale (R-SIZE-09)", () => {
   const css = toCss("control-size-lg");
   assert.match(css, /\.control-size-lg \{[^}]*inline-size: var\(--spacing-lg\);[^}]*block-size: var\(--spacing-lg\);/s);

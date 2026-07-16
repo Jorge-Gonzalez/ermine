@@ -56,13 +56,14 @@ interface EmitSpec {
 // by checking the real token pattern in registry.ts before trusting the
 // emission entry — conflating the two would have silently produced nothing
 // for every real flow-* word despite the axis resolving correctly.
-const spacingDial = (wordPrefix: string, property = wordPrefix) => (word: string): Record<string, string> | null => {
-  const m = word.match(new RegExp(`^${wordPrefix}-(${SCALES.spacing.join("|")})$`));
-  return m ? { [property]: `var(--spacing-${m[1]})` } : null;
+const spacingValue = (step: string): string => step === "none" ? "0" : `var(--spacing-${step})`;
+const spacingDial = (wordPrefix: string, property = wordPrefix, extras: readonly string[] = []) => (word: string): Record<string, string> | null => {
+  const m = word.match(new RegExp(`^${wordPrefix}-(${[...SCALES.spacing, ...extras].join("|")})$`));
+  return m ? { [property]: spacingValue(m[1]) } : null;
 };
-const spacingEdgeDial = (wordPrefix: "padding" | "margin") => (word: string): Record<string, string> | null => {
-  const m = word.match(new RegExp(`^${wordPrefix}-(top|right|bottom|left)-(${SCALES.spacing.join("|")})$`));
-  return m ? { [`${wordPrefix}-${m[1]}`]: `var(--spacing-${m[2]})` } : null;
+const spacingEdgeDial = (wordPrefix: "padding" | "margin", extras: readonly string[] = []) => (word: string): Record<string, string> | null => {
+  const m = word.match(new RegExp(`^${wordPrefix}-(top|right|bottom|left)-(${[...SCALES.spacing, ...extras].join("|")})$`));
+  return m ? { [`${wordPrefix}-${m[1]}`]: spacingValue(m[2]) } : null;
 };
 
 // A colour carrier (ground/ink/rule) reads exactly one socket into its property.
@@ -285,13 +286,13 @@ const EMISSION: Record<string, EmitSpec> = {
   padding: {
     effectKind: "css",
     plain: (word) => {
-      if (new RegExp(`^padding-(${SCALES.spacing.join("|")})$`).test(word))
-        return spacingDial("padding")(word);
-      const inline = spacingDial("padding-inline")(word);
+      if (new RegExp(`^padding-(${[...SCALES.spacing, "none"].join("|")})$`).test(word))
+        return spacingDial("padding", "padding", ["none"])(word);
+      const inline = spacingDial("padding-inline", "padding-inline", ["none"])(word);
       if (inline) return inline;
-      const block = spacingDial("padding-block")(word);
+      const block = spacingDial("padding-block", "padding-block", ["none"])(word);
       if (block) return block;
-      return spacingEdgeDial("padding")(word);
+      return spacingEdgeDial("padding", ["none"])(word);
     },
   },
 
@@ -459,13 +460,13 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word): Record<string, string> | null => {
       if (word === "centered") return { "margin-inline": "auto" };
       if (word === "flush-block") return { "margin-block": "0" };
-      if (new RegExp(`^margin-(${SCALES.spacing.join("|")})$`).test(word))
-        return spacingDial("margin")(word);
-      const inline = spacingDial("margin-inline")(word);
+      if (new RegExp(`^margin-(${[...SCALES.spacing, "none"].join("|")})$`).test(word))
+        return spacingDial("margin", "margin", ["none"])(word);
+      const inline = spacingDial("margin-inline", "margin-inline", ["none"])(word);
       if (inline) return inline;
-      const block = spacingDial("margin-block")(word);
+      const block = spacingDial("margin-block", "margin-block", ["none"])(word);
       if (block) return block;
-      return spacingEdgeDial("margin")(word);
+      return spacingEdgeDial("margin", ["none"])(word);
     },
   },
 
@@ -794,9 +795,13 @@ export const VOCABULARY: Record<string, string[]> = {
   "flow-spacing": SCALES.spacing.map((s) => `flow-${s}`),
   padding: [
     ...SCALES.spacing.map((s) => `padding-${s}`),
+    "padding-none",
     ...SCALES.spacing.map((s) => `padding-inline-${s}`),
+    "padding-inline-none",
     ...SCALES.spacing.map((s) => `padding-block-${s}`),
+    "padding-block-none",
     ...["top", "right", "bottom", "left"].flatMap((edge) => SCALES.spacing.map((s) => `padding-${edge}-${s}`)),
+    ...["top", "right", "bottom", "left"].map((edge) => `padding-${edge}-none`),
   ],
   "m2-flex": ["rigid", "compressible", "expandable", "elastic", "grow-1", "grow-2", "shrink-1"],
   "m3-self-size": ["basis-content", "basis-ratio", ...SCALES.size.map((s) => `basis-exact-${s}`)],
@@ -836,9 +841,13 @@ export const VOCABULARY: Record<string, string[]> = {
     "centered",
     "flush-block",
     ...SCALES.spacing.map((s) => `margin-${s}`),
+    "margin-none",
     ...SCALES.spacing.map((s) => `margin-inline-${s}`),
+    "margin-inline-none",
     ...SCALES.spacing.map((s) => `margin-block-${s}`),
+    "margin-block-none",
     ...["top", "right", "bottom", "left"].flatMap((edge) => SCALES.spacing.map((s) => `margin-${edge}-${s}`)),
+    ...["top", "right", "bottom", "left"].map((edge) => `margin-${edge}-none`),
   ],
   "m4-self-alignment": ["self-start", "self-center", "self-end", "self-stretch", "self-baseline"],
   "alignment-container": ["align-start", "align-center", "align-end", "align-stretch", "align-baseline", "justify-start", "justify-center", "justify-end", "justify-between", "justify-around"],

@@ -294,6 +294,11 @@
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
+    "padding-none": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
     "padding-inline-xs": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
@@ -329,6 +334,11 @@
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
+    "padding-inline-none": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
     "padding-block-xs": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
@@ -360,6 +370,11 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
     "padding-block-3xl": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
+    "padding-block-none": {
       "axis": "padding",
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
@@ -504,14 +519,34 @@
       "meaning": "space **inside** an element. `padding-snug`",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
+    "padding-top-none": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
+    "padding-right-none": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
+    "padding-bottom-none": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
+    "padding-left-none": {
+      "axis": "padding",
+      "meaning": "space **inside** an element. `padding-snug`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — padding"
+    },
     "centered": {
       "axis": "margin",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. The `none` endpoint emits zero on the chosen footprint. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     "flush-block": {
       "axis": "margin",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. The `none` endpoint emits zero on the chosen footprint. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     "margin-xs": {
@@ -545,6 +580,11 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     "margin-3xl": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-none": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
@@ -584,6 +624,11 @@
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
+    "margin-inline-none": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
     "margin-block-xs": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
@@ -615,6 +660,11 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     "margin-block-3xl": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-block-none": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
@@ -755,6 +805,26 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     "margin-left-3xl": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-top-none": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-right-none": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-bottom-none": {
+      "axis": "margin",
+      "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
+      "reference": "src/ERMINE-SPEC.md §2.1 — margin"
+    },
+    "margin-left-none": {
       "axis": "margin",
       "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
@@ -2538,51 +2608,51 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — flow-spacing"
     },
     {
-      "pattern": "^padding-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "pattern": "^padding-(xs|sm|md|lg|xl|2xl|3xl|none)$",
       "axis": "padding",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form. The `none` endpoint emits zero on the chosen footprint without joining the shared spacing scale.",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
     {
-      "pattern": "^padding-inline-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "pattern": "^padding-inline-(xs|sm|md|lg|xl|2xl|3xl|none)$",
       "axis": "padding",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form. The `none` endpoint emits zero on the chosen footprint without joining the shared spacing scale.",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
     {
-      "pattern": "^padding-block-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "pattern": "^padding-block-(xs|sm|md|lg|xl|2xl|3xl|none)$",
       "axis": "padding",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form. The `none` endpoint emits zero on the chosen footprint without joining the shared spacing scale.",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
     {
-      "pattern": "^padding-(top|right|bottom|left)-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "pattern": "^padding-(top|right|bottom|left)-(xs|sm|md|lg|xl|2xl|3xl|none)$",
       "axis": "padding",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form. The `none` endpoint emits zero on the chosen footprint without joining the shared spacing scale.",
       "reference": "src/ERMINE-SPEC.md §2.1 — padding"
     },
     {
-      "pattern": "^margin-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "pattern": "^margin-(xs|sm|md|lg|xl|2xl|3xl|none)$",
       "axis": "margin",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. The `none` endpoint emits zero on the chosen footprint. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
-      "pattern": "^margin-inline-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "pattern": "^margin-inline-(xs|sm|md|lg|xl|2xl|3xl|none)$",
       "axis": "margin",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. The `none` endpoint emits zero on the chosen footprint. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
-      "pattern": "^margin-block-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "pattern": "^margin-block-(xs|sm|md|lg|xl|2xl|3xl|none)$",
       "axis": "margin",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. The `none` endpoint emits zero on the chosen footprint. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {
-      "pattern": "^margin-(top|right|bottom|left)-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "pattern": "^margin-(top|right|bottom|left)-(xs|sm|md|lg|xl|2xl|3xl|none)$",
       "axis": "margin",
-      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
+      "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. The `none` endpoint emits zero on the chosen footprint. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.",
       "reference": "src/ERMINE-SPEC.md §2.1 — margin"
     },
     {

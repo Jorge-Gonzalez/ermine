@@ -350,11 +350,12 @@ classes. The runtime value channel is retired.
 ## R-PADDING-01 — Padding family
 
 Padding is an independent per-property ordered-chain family over the shared spacing scale, including
-whole-axis, inline, block, and physical edge variants. A compound dial owns its physical footprint:
-`padding-inline-*` owns left and right, `padding-block-*` owns top and bottom, and a physical edge
-owns only itself. Overlapping footprints conflict; disjoint physical edges compose.
+whole-axis, inline, block, and physical edge variants. The same footprints admit a `none` endpoint
+that emits zero without joining the shared spacing scale. A compound dial owns its physical
+footprint: `padding-inline-*` owns left and right, `padding-block-*` owns top and bottom, and a
+physical edge owns only itself. Overlapping footprints conflict; disjoint physical edges compose.
 
-→ rationale: RAT:R-PADDING-01 · history: ADR-0002, ADR-0043 · code: src/registry.ts#LAYOUT
+→ rationale: RAT:R-PADDING-01 · history: ADR-0002, ADR-0043, ADR-0053 · code: src/registry.ts#LAYOUT
 
 ## R-PADDING-02 — Wide is not a padding step
 

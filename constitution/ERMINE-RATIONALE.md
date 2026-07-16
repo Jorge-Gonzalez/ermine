@@ -154,6 +154,10 @@ owns left and right, `margin-block-*` owns top and bottom, `centered` owns the i
 `flush-block` owns the block footprint. One-edge facts such as `margin-right-xl` compose only with
 non-overlapping facts.
 
+Amended by ADR-0053: margin now admits `none` endpoints on the same whole/logical/physical
+footprints. `margin-none`, `margin-inline-none`, and `margin-left-none` emit zero for absence;
+they are endpoints, not spacing scale rungs, and keep the footprint conflict rules.
+
 ## RAT:R-SPACE-03
 Source: pre-split `constitution/ERMINE.md` lines 982–990.
 
@@ -187,6 +191,10 @@ one-edge, scale-backed spacing. The family now admits physical edge facets (`pad
 `padding-right-*`, `padding-bottom-*`, `padding-left-*`) while retaining the shared spacing scale.
 The admissible composition is footprint-based: `padding-left-xs padding-right-sm` is meaningful,
 but `padding-inline-xs padding-left-sm` double-writes the left slot and is rejected.
+
+Amended by ADR-0053: padding now admits `none` endpoints on the same whole/logical/physical
+footprints. `padding-none`, `padding-inline-none`, and `padding-left-none` emit zero for absence;
+they are endpoints, not spacing scale rungs, and keep the footprint conflict rules.
 
 ## RAT:R-PADDING-02
 Source: pre-split `constitution/ERMINE.md` lines 1022–1025.
