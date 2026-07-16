@@ -137,7 +137,11 @@
     "border-color"
   ],
   "corner": [
-    "border-radius"
+    "border-bottom-left-radius",
+    "border-bottom-right-radius",
+    "border-radius",
+    "border-top-left-radius",
+    "border-top-right-radius"
   ],
   "rule-presence": [
     "border-bottom-style",

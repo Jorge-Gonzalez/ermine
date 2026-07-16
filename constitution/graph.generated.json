@@ -271,6 +271,12 @@
       "anchor": "ADR-0045"
     },
     {
+      "id": "ADR-0046",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0046-side-corner-facets.md",
+      "anchor": "ADR-0046"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

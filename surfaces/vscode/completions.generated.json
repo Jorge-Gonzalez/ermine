@@ -2327,37 +2327,121 @@
           "label": "corner-sm",
           "insertText": "corner-sm",
           "kind": "word",
-          "meaning": "corner-<step>"
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
         },
         {
           "label": "corner-md",
           "insertText": "corner-md",
           "kind": "word",
-          "meaning": "corner-<step>"
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
         },
         {
           "label": "corner-lg",
           "insertText": "corner-lg",
           "kind": "word",
-          "meaning": "corner-<step>"
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
         },
         {
           "label": "corner-xl",
           "insertText": "corner-xl",
           "kind": "word",
-          "meaning": "corner-<step>"
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
         },
         {
           "label": "corner-2xl",
           "insertText": "corner-2xl",
           "kind": "word",
-          "meaning": "corner-<step>"
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
         },
         {
           "label": "corner-3xl",
           "insertText": "corner-3xl",
           "kind": "word",
-          "meaning": "corner-<step>"
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-top-sm",
+          "insertText": "corner-top-sm",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-bottom-sm",
+          "insertText": "corner-bottom-sm",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-top-md",
+          "insertText": "corner-top-md",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-bottom-md",
+          "insertText": "corner-bottom-md",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-top-lg",
+          "insertText": "corner-top-lg",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-bottom-lg",
+          "insertText": "corner-bottom-lg",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-top-xl",
+          "insertText": "corner-top-xl",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-bottom-xl",
+          "insertText": "corner-bottom-xl",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-top-2xl",
+          "insertText": "corner-top-2xl",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-bottom-2xl",
+          "insertText": "corner-bottom-2xl",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-top-3xl",
+          "insertText": "corner-top-3xl",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-bottom-3xl",
+          "insertText": "corner-bottom-3xl",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-top-none",
+          "insertText": "corner-top-none",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
+        },
+        {
+          "label": "corner-bottom-none",
+          "insertText": "corner-bottom-none",
+          "kind": "word",
+          "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted."
         }
       ]
     },

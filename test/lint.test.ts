@@ -93,6 +93,9 @@ const cases: Case[] = [
   { s: "margin-inline-sm margin-left-md", expect: "fail", why: "inline margin overlaps left edge" },
   { s: "centered margin-left-sm", expect: "fail", why: "centered owns the inline margin footprint" },
   { s: "flush-block margin-top-sm", expect: "fail", why: "flush-block owns the block margin footprint" },
+  { s: "corner-top-sm corner-bottom-md", expect: "ok", why: "disjoint corner side dials compose" },
+  { s: "corner-md corner-bottom-none", expect: "fail", why: "whole-box corner owns every corner slot" },
+  { s: "corner-bottom-sm corner-bottom-none", expect: "fail", why: "two values on the bottom corner dial" },
   // animation plane — open tween envelope over named duration scale
   { s: "tween-quick", expect: "ok", why: "quick duration step" },
   { s: "tween-rule-quick", expect: "ok", why: "quick transition narrowed to border-color" },

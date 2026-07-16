@@ -711,6 +711,10 @@ const scaleToken = (prefix: string, steps: readonly string[]): Token => ({
   pattern: new RegExp(`^${prefix}-(${steps.join("|")})$`),
   shape: `${prefix}-<step>`,
 });
+const radiusSideToken = (side: "top" | "bottom"): Token => ({
+  pattern: new RegExp(`^corner-${side}-(none|${RADIUS_STEPS.join("|")})$`),
+  shape: `corner-${side}-<none|step>`,
+});
 
 // implements: R-TYPE-01, R-SKIN-01
 export const SKIN: AxisRecord[] = [
@@ -752,16 +756,33 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-radius", "font-size"],
   },
   {
-    // corner: border-radius magnitude on an ordered radius scale (R-SKIN-06). Shape
-    // (round/bevel/…) is deferred until corner-shape has broad support.
+    // corner: border-radius magnitude on an ordered radius scale (R-SKIN-06). Side facets
+    // let joined surfaces flatten or round only their shared top/bottom seam.
     axis: "corner",
     sibling: "skin", role: "self", signature: "ordered-chain",
     vocabulary: "closed", regime: "free",
-    valueSpace: RADIUS_STEPS.map((s) => `corner-${s}`),
-    tokens: [scaleToken("corner", RADIUS_STEPS)],
+    valueSpace: [
+      ...RADIUS_STEPS.map((s) => `corner-${s}`),
+      ...RADIUS_STEPS.flatMap((s) => [`corner-top-${s}`, `corner-bottom-${s}`]),
+      "corner-top-none",
+      "corner-bottom-none",
+    ],
+    tokens: [scaleToken("corner", RADIUS_STEPS), radiusSideToken("top"), radiusSideToken("bottom")],
+    subDials: ["top", "bottom"],
+    dialOf: (word: string) => {
+      const side = word.match(/^corner-(top|bottom)-/);
+      return side ? side[1] : null;
+    },
+    dialFootprint: (dial: string) => {
+      if (dial === "top") return ["top-left", "top-right"];
+      if (dial === "bottom") return ["bottom-left", "bottom-right"];
+      return [dial];
+    },
+    aliasMatch: (word: string) => new RegExp(`^corner-(${RADIUS_STEPS.join("|")})$`).test(word),
     default: null,
-    controls: ["border-radius"],
+    controls: ["border-radius", "border-top-left-radius", "border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius"],
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "font-size"],
+    notes: "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
   },
   {
     // rule-presence: a line's existence, separate from its colour (R-SKIN-11).

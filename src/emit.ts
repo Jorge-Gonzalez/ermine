@@ -144,7 +144,13 @@ const EMISSION: Record<string, EmitSpec> = {
     effectKind: "css",
     plain: (word): Record<string, string> | null => {
       const m = word.match(new RegExp(`^corner-(${SKIN_PLANE.scales.radius.join("|")})$`));
-      return m ? { "border-radius": `var(--radius-${m[1]})` } : null;
+      if (m) return { "border-radius": `var(--radius-${m[1]})` };
+      const side = word.match(new RegExp(`^corner-(top|bottom)-(none|${SKIN_PLANE.scales.radius.join("|")})$`));
+      if (!side) return null;
+      const value = side[2] === "none" ? "0" : `var(--radius-${side[2]})`;
+      return side[1] === "top"
+        ? { "border-top-left-radius": value, "border-top-right-radius": value }
+        : { "border-bottom-right-radius": value, "border-bottom-left-radius": value };
     },
   },
 
@@ -797,7 +803,12 @@ export const VOCABULARY: Record<string, string[]> = {
   "skin-ground": carrierWords("ground"),
   "skin-ink": carrierWords("ink"),
   "skin-rule": carrierWords("rule"),
-  corner: SKIN_PLANE.scales.radius.map((s) => `corner-${s}`),
+  corner: [
+    ...SKIN_PLANE.scales.radius.map((s) => `corner-${s}`),
+    ...SKIN_PLANE.scales.radius.flatMap((s) => [`corner-top-${s}`, `corner-bottom-${s}`]),
+    "corner-top-none",
+    "corner-bottom-none",
+  ],
   "font-size": SKIN_PLANE.scales.type.map((s) => `font-${s}`),
   "font-weight": SKIN_PLANE.scales.weight.map((s) => `font-${s}`),
   "font-family": ["font-mono"],

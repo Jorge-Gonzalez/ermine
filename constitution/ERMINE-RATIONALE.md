@@ -536,9 +536,13 @@ versus the versatile data plane resolves the restrict-vs-forgive tension by desi
 regularity: target the regular case, push the exception (dashboards/graphs) to a separate plane.
 
 ## RAT:R-SKIN-06
-Corner kind from SVG `stroke-linejoin` (miter/round/bevel); magnitude scale-bound with fixed
-endpoints `square` and `pill` (pill = `calc(infinity * 1px)`, clamped by the spec to half the
-shorter side).
+Source: ADR-0005 and ADR-0046. The current corner axis is radius magnitude, not a shape-kind
+taxonomy. Whole-box `corner-<step>` reads the theme radius scale. Monky's joined input/dropdown
+evidence shows the same radius scale applied only to a block side, plus a meaningful side-local
+zero endpoint: flatten the shared seam while leaving the rest of the control rounded. That admits
+`corner-top-<step>`, `corner-bottom-<step>`, `corner-top-none`, and `corner-bottom-none`. It does
+not admit broad `corner-none`, individual physical-corner words, or bevel/round kind vocabulary;
+those remain separate evidence questions.
 
 ## RAT:R-SKIN-07
 `font` is the delimiter-pattern kind (a multi-property responsibility area), not the ink-pattern

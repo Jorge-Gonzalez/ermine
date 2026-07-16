@@ -901,16 +901,22 @@ Tokens:
 #### corner
 
 - role: `self` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
-- value space: `corner-sm` `corner-md` `corner-lg` `corner-xl` `corner-2xl` `corner-3xl`
+- value space: `corner-sm` `corner-md` `corner-lg` `corner-xl` `corner-2xl` `corner-3xl` `corner-top-sm` `corner-bottom-sm` `corner-top-md` `corner-bottom-md` `corner-top-lg` `corner-bottom-lg` `corner-top-xl` `corner-bottom-xl` `corner-top-2xl` `corner-bottom-2xl` `corner-top-3xl` `corner-bottom-3xl` `corner-top-none` `corner-bottom-none`
 - default: none
-- controls: `border-radius`
+- controls: `border-radius` `border-top-left-radius` `border-top-right-radius` `border-bottom-right-radius` `border-bottom-left-radius`
 - must never touch: `display` `gap` `flex` `position` `background` `color` `border-color` `font-size`
+- sub-dials: `top` `bottom`
+- dial resolver: declared in `registry.ts`
+- whole-axis pattern matcher: declared in `registry.ts`
+- notes: `corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `corner-<step>` | `/^corner-(sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
+| `corner-top-<none\|step>` | `/^corner-top-(none\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
+| `corner-bottom-<none\|step>` | `/^corner-bottom-(none\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
 
 #### rule-presence
 

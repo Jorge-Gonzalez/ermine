@@ -1631,32 +1631,102 @@
     },
     "corner-sm": {
       "axis": "corner",
-      "meaning": "corner-<step>",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
       "reference": "src/ERMINE-SPEC.md §2.5 — corner"
     },
     "corner-md": {
       "axis": "corner",
-      "meaning": "corner-<step>",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
       "reference": "src/ERMINE-SPEC.md §2.5 — corner"
     },
     "corner-lg": {
       "axis": "corner",
-      "meaning": "corner-<step>",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
       "reference": "src/ERMINE-SPEC.md §2.5 — corner"
     },
     "corner-xl": {
       "axis": "corner",
-      "meaning": "corner-<step>",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
       "reference": "src/ERMINE-SPEC.md §2.5 — corner"
     },
     "corner-2xl": {
       "axis": "corner",
-      "meaning": "corner-<step>",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
       "reference": "src/ERMINE-SPEC.md §2.5 — corner"
     },
     "corner-3xl": {
       "axis": "corner",
-      "meaning": "corner-<step>",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-top-sm": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-bottom-sm": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-top-md": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-bottom-md": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-top-lg": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-bottom-lg": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-top-xl": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-bottom-xl": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-top-2xl": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-bottom-2xl": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-top-3xl": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-bottom-3xl": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-top-none": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
+      "reference": "src/ERMINE-SPEC.md §2.5 — corner"
+    },
+    "corner-bottom-none": {
+      "axis": "corner",
+      "meaning": "`corner-<step>` is the whole-box radius and conflicts with side facets. `corner-top-<step>` and `corner-bottom-<step>` set paired physical corner longhands. The side-only `none` endpoint is for joined seams; no broad `corner-none` or individual physical-corner vocabulary is admitted.",
       "reference": "src/ERMINE-SPEC.md §2.5 — corner"
     },
     "ruled": {

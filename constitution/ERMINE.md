@@ -813,11 +813,15 @@ concern and is out of scope for skin.
 
 ## R-SKIN-06 — Corner
 
-Corner is kind × magnitude. Kind is `miter | round | bevel` (fixed words). Magnitude runs
-`square` (zero) through the radius scale (`sm md lg`) to `pill` (the half-shorter-side
-saturation). Endpoints are fixed words; the interior is scale-bound.
+Corner is a radius magnitude over the theme radius scale. `corner-<step>` sets the whole box.
+Side facets may set paired physical corners on the block edges: `corner-top-<step>` and
+`corner-bottom-<step>` round only that side. Side facets also admit the `none` endpoint
+(`corner-top-none`, `corner-bottom-none`) for joined seams where rounding must be removed on one
+edge. A whole-box corner conflicts with any side facet; top and bottom side facets compose.
+Broad `corner-none`, individual physical-corner words, and shape kinds beyond radius magnitude are
+reserved pending evidence.
 
-→ rationale: RAT:R-SKIN-06 · history: ADR-0005
+→ rationale: RAT:R-SKIN-06 · history: ADR-0005, ADR-0046 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SKIN-07 — Typography namespace
 

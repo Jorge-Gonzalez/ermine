@@ -170,6 +170,17 @@ test("per-edge spacing facets emit physical longhands", () => {
   assert.deepEqual(declOf("margin-right-xl"), [["margin-right", "var(--spacing-xl)"]]);
 });
 
+test("side corner facets emit paired physical corner longhands", () => {
+  assert.deepEqual(declOf("corner-bottom-md"), [
+    ["border-bottom-right-radius", "var(--radius-md)"],
+    ["border-bottom-left-radius", "var(--radius-md)"],
+  ]);
+  assert.deepEqual(declOf("corner-top-none"), [
+    ["border-top-left-radius", "0"],
+    ["border-top-right-radius", "0"],
+  ]);
+});
+
 test("push: consumes inline-start free space with auto margin (R-SIZE-04)", () => {
   assert.deepEqual(declOf("push"), [["margin-inline-start", "auto"]]);
 });
