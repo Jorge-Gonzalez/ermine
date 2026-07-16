@@ -56,6 +56,19 @@ generalization, recipe, and local-identity pressure.
 | user-content | 43 |
 | identity-geometry | 19 |
 
+## Matched Playbook Recipes
+
+| recipe | kind | confidence | matches | conversion memory |
+| --- | --- | --- | --- | --- |
+| user-content-molecule-boundary | boundary | human | 49 | Group descendant typography and rhythm as prose/editor-content evidence. |
+| pseudo-drawing-boundary | boundary | mechanical | 31 | Do not flatten pseudo drawing into ordinary element words. |
+| root-and-structural-reset-boundary | boundary | mechanical | 5 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
+| edge-attachment | conversion | review | 3 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
+| dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |
+| rule-edge-facets | conversion | review | 2 | Replace side-specific border presence/colour declarations with the matching rule edge word. |
+| spacing-edge-decomposition | conversion | mechanical | 1 | Expand two-, three-, and four-value padding/margin shorthands into the exact top/right/bottom/left words when any edge differs. |
+| state-backed-prefix | conversion | mechanical | 1 | Use `checked:`, `selected:`, `pressed:`, `expanded:`, or `current:` only with their required backing/capability. |
+
 ## Highest-Pressure Families
 
 | family | latent outcome | declarations | primary pressure |

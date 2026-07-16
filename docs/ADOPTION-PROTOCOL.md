@@ -236,13 +236,16 @@ later integration step, the serializer emits an explicit integration hint and no
 For a second project, follow the full arc rather than copying Monky-specific judgments:
 
 1. Run the baseline analyzer (`adoption/analyze.ts`) to freeze the starting ledger and inventory.
-2. Run bounded pilot loops: classify, map only existing words, rewrite, regenerate emitted CSS, and
+2. Run `npm run adoption:review` and read the playbook matches before opening individual files.
+   `docs/ADOPTION-PLAYBOOK.md` records the reusable conversion and boundary recipes extracted
+   from Monky; `adoption/playbook.ts` applies those recipes to current-ledger rows.
+3. Run bounded pilot loops: classify, map only existing words, rewrite, regenerate emitted CSS, and
    preserve behavior.
-3. Introduce a project profile at `reports/adoption/<project>/project.json` for recipe classes,
+4. Introduce a project profile at `reports/adoption/<project>/project.json` for recipe classes,
    user-content roots, bridge files, scan roots, and file strata that are project-specific.
-4. Use the current-ledger loop to consume existing vocabulary until `assimilable = 0`.
-5. Empty review buckets through project-profile rules or explicit overrides, not by inventing words.
-6. Publish `BOUNDARY.md`, wire the project's local reconcile command to `--check --gate`, and leave
+5. Use the current-ledger loop to consume existing vocabulary until `assimilable = 0`.
+6. Empty review buckets through project-profile rules or explicit overrides, not by inventing words.
+7. Publish `BOUNDARY.md`, wire the project's local reconcile command to `--check --gate`, and leave
    remaining work only in Gap Reports.
 
 Monky's reports under `reports/adoption/monky/` are the worked example, not hidden defaults.

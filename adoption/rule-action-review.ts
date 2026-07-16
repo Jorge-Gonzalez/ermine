@@ -12,6 +12,7 @@ import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { REASON_CODES, type CurrentRecord, type ReasonCode } from "./current-ledger.ts";
+import { PLAYBOOK_RECIPES, matchPlaybookRecipes, playbookRecipeById } from "./playbook.ts";
 
 const REPOSITORY_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -75,6 +76,7 @@ interface ReviewedDeclaration {
   erminePressure: string;
   scaleMapping?: string;
   proposedForm?: string;
+  playbookRecipes?: string[];
 }
 
 interface DimensionPilotEntry extends ReviewedDeclaration {
@@ -95,6 +97,7 @@ interface RuleActionReview {
     byRuleAction: Record<RuleAction, number>;
     byLatentOutcome: Record<LatentOutcome, number>;
     byCurrentCode: Record<ReasonCode, number>;
+    byPlaybookRecipe: Record<string, number>;
   };
   declarations: ReviewedDeclaration[];
   dimensionPilot: {
@@ -374,6 +377,7 @@ function dimensionProposal(record: CurrentRecord): string {
 function reviewRecord(record: CurrentRecord): ReviewedDeclaration {
   const ruleAction = classifyRuleAction(record);
   const latentOutcome = classifyLatentOutcome(record, ruleAction);
+  const playbookRecipes = matchPlaybookRecipes(record).map((recipe) => recipe.id);
   return {
     id: record.id,
     file: record.file,
@@ -388,6 +392,7 @@ function reviewRecord(record: CurrentRecord): ReviewedDeclaration {
     erminePressure: pressureSummary(latentOutcome, ruleAction),
     ...(scaleMapping(record, ruleAction) ? { scaleMapping: scaleMapping(record, ruleAction) } : {}),
     ...(proposedForm(record, ruleAction, latentOutcome) ? { proposedForm: proposedForm(record, ruleAction, latentOutcome) } : {}),
+    ...(playbookRecipes.length ? { playbookRecipes } : {}),
   };
 }
 
@@ -398,10 +403,12 @@ function buildReview(ledger: CurrentLedgerInput, inputPath: string, repositoryRo
   const byRuleAction = countRecord(RULE_ACTIONS);
   const byLatentOutcome = countRecord(LATENT_OUTCOMES);
   const byCurrentCode = countRecord(REASON_CODES);
+  const byPlaybookRecipe = countRecord(PLAYBOOK_RECIPES.map((recipe) => recipe.id));
   for (const declaration of declarations) {
     byRuleAction[declaration.ruleAction] += 1;
     byLatentOutcome[declaration.latentOutcome] += 1;
     byCurrentCode[declaration.currentCode] += 1;
+    for (const recipe of declaration.playbookRecipes ?? []) byPlaybookRecipe[recipe] += 1;
   }
   const dimensionEntries = declarations
     .filter((declaration) => declaration.ruleAction === "dimension-constraint")
@@ -423,6 +430,7 @@ function buildReview(ledger: CurrentLedgerInput, inputPath: string, repositoryRo
       byRuleAction,
       byLatentOutcome,
       byCurrentCode,
+      byPlaybookRecipe,
     },
     declarations,
     dimensionPilot: {
@@ -462,6 +470,19 @@ function renderReviewMarkdown(review: RuleActionReview): string {
   const codeRows = REASON_CODES
     .filter((code) => summary.byCurrentCode[code] > 0)
     .map((code) => [code, String(summary.byCurrentCode[code])]);
+  const playbookRows = Object.entries(summary.byPlaybookRecipe)
+    .filter(([, count]) => count > 0)
+    .map(([id, count]) => {
+      const recipe = playbookRecipeById(id);
+      return [
+        id,
+        recipe?.kind ?? "",
+        recipe?.confidence ?? "",
+        String(count),
+        mdEscape(recipe?.conversion),
+      ];
+    })
+    .sort((left, right) => Number(right[3]) - Number(left[3]) || left[0].localeCompare(right[0]));
   const pressureRows = declarationsByPressure(review);
   return `# Monky Rule-Action Review
 
@@ -490,6 +511,12 @@ ${table(["latent outcome", "declarations"], outcomeRows)}
 ## By Current Ledger Code
 
 ${table(["current code", "declarations"], codeRows)}
+
+## Matched Playbook Recipes
+
+${playbookRows.length
+    ? table(["recipe", "kind", "confidence", "matches", "conversion memory"], playbookRows)
+    : "No playbook recipe matched this residue.\n"}
 
 ## Highest-Pressure Families
 

@@ -60,6 +60,7 @@ The projects meet through a small set of explicit contracts:
 | Machine authoring context | [`src/LLM-AUTHORING.md`](../src/LLM-AUTHORING.md), shared spec §§1–2, and lint spec §6 | A loop and MCP tools |
 | CSS semantics | [`src/emit.ts`](../src/emit.ts) and [`src/css.ts`](../src/css.ts) | A4, C4, D2, D3 |
 | Derived property ownership | [`src/ownership.generated.json`](../src/ownership.generated.json) | P7 purity verification |
+| Adoption conversion memory | [`docs/ADOPTION-PLAYBOOK.md`](ADOPTION-PLAYBOOK.md) and [`adoption/playbook.ts`](../adoption/playbook.ts) | Adoption reports, second-project onboarding |
 | Design-change intake | [`reports/`](../reports/) | Constitution author and K governance |
 
 Generated artifacts are guarded by no-diff checks. The root `npm run check`
