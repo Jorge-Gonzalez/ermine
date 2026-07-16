@@ -1,7 +1,13 @@
 # Monky Rule Residue Analysis
 
-Computed from `reports/adoption/monky/rule-action-review.json` and
+Generated from `reports/adoption/monky/rule-action-review.json` and
 `reports/adoption/monky/current-ledger.json`.
+
+Regenerate with:
+
+```sh
+npm run adoption:rules -- --write
+```
 
 This report changes the unit of analysis from classes/declarations to authored CSS rules.
 A rule here is `file + selector`, with only project-owned residue declarations counted.
@@ -11,7 +17,7 @@ included.
 ## Snapshot
 
 | metric | count |
-| --- | ---: |
+| --- | --- |
 | current declarations | 523 |
 | adopted/infrastructure declarations | 388 |
 | project-owned residue declarations | 135 |
@@ -23,8 +29,8 @@ included.
 ## Rule Shape
 
 | rule shape | rules | declarations | reading |
-| --- | ---: | ---: | --- |
-| rich-text/editor-content molecule | 21 | 48 | Descendant prose defaults inside user-authored content. This is one authored content recipe, not 21 Ermine utility gaps. |
+| --- | --- | --- | --- |
+| rich-text/editor-content molecule | 21 | 48 | Descendant prose defaults inside user-authored content. This is one authored content recipe, not a set of Ermine utility gaps. |
 | private drawing / engine pseudo | 13 | 38 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
 | control-state recipes | 15 | 20 | Local control recipes such as disabled buttons, link buttons, selectable groups, and minimum-selection guards. |
 | exact attachment / geometry | 8 | 12 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
@@ -34,7 +40,7 @@ included.
 ## By Source File
 
 | file | residue rules |
-| --- | ---: |
+| --- | --- |
 | `src/styles/components/content-editor.css` | 24 |
 | `src/styles/skin/controls.css` | 19 |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 7 |
@@ -50,7 +56,7 @@ Primary action is the first action attached to the rule's remaining declarations
 rules are listed later because a single selector can combine several kinds of residue.
 
 | primary rule action | rules |
-| --- | ---: |
+| --- | --- |
 | typography-content | 19 |
 | component-private-drawing | 15 |
 | surface-line-elevation-cutout | 9 |
@@ -64,51 +70,52 @@ rules are listed later because a single selector can combine several kinds of re
 ## Rule Density
 
 | declarations per residue rule | rules |
-| --- | ---: |
+| --- | --- |
 | 1 declaration | 36 |
 | 2 declarations | 15 |
 | 3 declarations | 8 |
 | 4+ declarations | 7 |
 
-This matters because most remaining rules are narrow and intentional. The seven dense
-rules are recognizable authored shapes: segmented slider drawing, keyboard cap drawing,
-code/pre blocks, blockquotes, and host identity.
+This matters because most remaining rules are narrow and intentional. The seven
+dense rules are recognizable authored shapes: segmented slider drawing, keyboard cap
+drawing, code/pre blocks, blockquotes, and host identity.
 
 ## Main Findings
 
 1. The residue is now rule-shaped, not utility-shaped.
 
-   At declaration level the largest buckets are `component-private-drawing`,
-   `typography-content`, and `spacing-rhythm`. At rule level these collapse into a few
-   authored systems: editor content, private pseudo drawing, and control recipes. That is
-   healthier than a scattered tail of missing utilities.
+   At declaration level the largest buckets can look like scattered pressure. At rule
+   level they collapse into authored systems: editor content, private pseudo drawing,
+   control recipes, exact geometry, and local identity. That is healthier than a tail of
+   missing utilities.
 
-2. The content-editor residue is a molecule boundary.
+2. Content-editor residue is a molecule boundary.
 
    `src/styles/components/content-editor.css` has 24 residue rules. Twenty-one are scoped
    under `.content-editor-body` or `.content-editor .content-editor-body`, meaning they
    describe rendered user content: headings, paragraphs, lists, inline code, pre blocks,
    blockquotes, links, emphasis, decorations, and placeholder text. These rules document a
    prose/editor-content contract. Flattening them into individual words would make Ermine
-   noisier without making the adoption clearer.
+   noisier without making adoption clearer.
 
 3. Pseudo and engine drawing remains correctly project-owned.
 
-   The keyboard cap, suggestion arrow, segmented control slider, empty-content placeholder,
-   and WebKit scrollbar parts are all drawing recipes. Some declarations use values Ermine
-   can name in isolation, but the authored rule is a miniature drawing program. The useful
+   Keyboard caps, suggestion arrows, segmented-control sliders, empty-content placeholders,
+   and WebKit scrollbar parts are drawing recipes. Some declarations use values Ermine can
+   name in isolation, but the authored rule is a miniature drawing program. The useful
    future extraction is a recipe/molecule with sockets, not more flat class words.
 
 4. Local identity is small and explicit.
 
-   Only six residue rules contain `local-identity` outcomes. They are host/page typography,
-   overlay layer identity, root spacing resets, and the `shake` transition suppression.
-   Two of those rules are mixed with recipe declarations, which is expected for real CSS
-   selectors.
+   6 residue rules contain `local-identity` outcomes. They are host/page
+   typography, overlay layer identity, root spacing resets, or local transition
+   suppression. 2 of those rules are mixed with recipe declarations,
+   which is expected for real CSS selectors.
 
 5. There is no immediate grammar pressure.
 
-   The rule-action review reports `0` assimilable declarations and `0` latent-generalizable
+   The rule-action review reports `0` assimilable
+   declarations and `0` latent-generalizable
    declarations. The next useful work is not to admit another isolated word from this
    residue. It is to decide whether one of the remaining authored systems deserves a named
    recipe surface.
@@ -121,7 +128,7 @@ These rules form a content rendering molecule. Their selectors are descendants o
 `.content-editor-body`, not standalone visual utilities.
 
 | selector family | rules | role |
-| --- | ---: | --- |
+| --- | --- | --- |
 | headings | 4 | `h1`, `h2`, `h3`, and first-child rhythm reset |
 | paragraphs and lists | 6 | `p`, `p:last-child`, `ul`, `ol`, shared list rhythm, `li` |
 | inline semantics | 6 | `a`, `a:hover`, `strong/b`, `em/i`, `u`, `s` |
@@ -130,28 +137,28 @@ These rules form a content rendering molecule. Their selectors are descendants o
 | editor body root | 1 | content font family and line-height normalization |
 
 Reading: these are becoming clearer, not noisier. The selectors document browser-rendered
-content semantics that class strings cannot attach to directly unless Monky rewrites
+content semantics that class strings cannot attach to directly unless the project rewrites
 authored HTML. Ermine should remember the conversion as a prose/editor molecule boundary.
 
 ### Private Drawing / Engine Pseudo
 
 | rule | residue declarations | reading |
-| --- | ---: | --- |
+| --- | --- | --- |
 | `.seg-control::before` | 10 | Segmented-control active pill driven by CSS variables and state. |
 | `.macro-search-kbd::after` | 8 | Keyboard cap underside/shadow drawing. |
 | `::-webkit-scrollbar*` | 8 | Browser-specific scrollbar parts after standard socket integration. |
 | `.macro-suggestions-arrow*` | 4 | CSS triangle arrow drawing and orientation. |
 | `.content-editor-body:empty::before` | 3 | Placeholder drawing tied to generated content. |
-| `.macro-search-kbd` and variants | 6 | Exact keyboard cap geometry. |
+| `.macro-search-kbd and variants` | 6 | Exact keyboard cap geometry. |
 
-Reading: the remaining browser-specific scrollbar rules are not a failure of Ermine's
-skin integration. Ermine owns the standard socket handoff; Monky owns the engine-specific
+Reading: the remaining browser-specific scrollbar rules are not a failure of Ermine's skin
+integration. Ermine owns the standard socket handoff; the project owns the engine-specific
 pseudo selectors or delegates them to a future post-processing/recipe layer.
 
 ### Control-State Recipes
 
-These are not plain state variants. They encode project decisions about what controls
-are allowed to do under disabled, selected, active, link-like, or constrained states.
+These are not plain state variants. They encode project decisions about what controls are
+allowed to do under disabled, selected, active, link-like, or constrained states.
 
 | rule cluster | examples | reading |
 | --- | --- | --- |
@@ -167,7 +174,7 @@ Ermine words because the semantics depend on component state contracts.
 ## Complete Rule Inventory
 
 | file | selector | declarations | rule actions | outcome | residue declarations |
-| --- | --- | ---: | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | `src/content/overlays/modal/modalStyles.css` | `.modal-backdrop` | 2 | surface-line-elevation-cutout, attachment-edge-layer | recipe, local-identity | background-color: var(--shadow-color)<br>z-index: 10000 |
 | `src/content/overlays/modal/modalStyles.css` | `.modal-dialog` | 2 | surface-line-elevation-cutout | recipe | box-shadow: rgba(31, 32, 34, 0.3) 0px 1px 2px 0px, rgba(31, 32, 34, 0.15) 0px 2px 6px 2px<br>mix-blend-mode: multiply |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `:host, #macro-suggestions` | 4 | typography-content, attachment-edge-layer | local-identity | font-family: 'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif<br>line-height: 1.5<br>position: fixed !important<br>z-index: 2147483646 !important |

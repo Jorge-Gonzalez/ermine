@@ -1,0 +1,515 @@
+// rule-residue-analysis.ts — rule-level residue report derived from rule-action review.
+
+import { access, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { constants } from "node:fs";
+import { dirname, relative, resolve } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+
+const REPOSITORY_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+
+interface CurrentLedgerSummary {
+  totalDeclarations: number;
+  residueDeclarations: number;
+  assimilable: number;
+}
+
+interface CurrentLedgerInput {
+  project: string;
+  summary: CurrentLedgerSummary;
+  shadowedWords?: string[];
+}
+
+interface ReviewedDeclaration {
+  id: string;
+  file: string;
+  line: number;
+  selector: string;
+  property: string;
+  value: string;
+  currentCode: string;
+  ruleAction: string;
+  latentOutcome: string;
+}
+
+interface RuleActionReviewInput {
+  project: string;
+  inputs: { currentLedger: string };
+  summary: {
+    reviewedDeclarations: number;
+    assimilableNow: number;
+    latentGeneralizable: number;
+  };
+  declarations: ReviewedDeclaration[];
+}
+
+interface RuleGroup {
+  file: string;
+  selector: string;
+  declarations: ReviewedDeclaration[];
+  actions: Set<string>;
+  outcomes: Set<string>;
+  codes: Set<string>;
+}
+
+interface RuleFamily {
+  id: string;
+  label: string;
+  reading: string;
+  rules: RuleGroup[];
+}
+
+function slash(path: string): string {
+  return path.replaceAll("\\", "/");
+}
+
+function title(text: string): string {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function mdEscape(value: string | number | undefined): string {
+  return String(value ?? "").replaceAll("|", "\\|").replace(/\s+/g, " ").trim();
+}
+
+function table(headers: string[], rows: string[][]): string {
+  return [
+    `| ${headers.join(" | ")} |`,
+    `| ${headers.map(() => "---").join(" | ")} |`,
+    ...rows.map((row) => `| ${row.join(" | ")} |`),
+  ].join("\n");
+}
+
+async function readOptional(path: string): Promise<string | undefined> {
+  try {
+    await access(path, constants.R_OK);
+    return readFile(path, "utf8");
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") return undefined;
+    throw error;
+  }
+}
+
+async function findReviewPaths(repositoryRoot: string): Promise<string[]> {
+  const adoptionRoot = resolve(repositoryRoot, "reports/adoption");
+  const entries = await readdir(adoptionRoot, { withFileTypes: true }).catch((error: NodeJS.ErrnoException) => {
+    if (error.code === "ENOENT") return [];
+    throw error;
+  });
+  const paths: string[] = [];
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const candidate = resolve(adoptionRoot, entry.name, "rule-action-review.json");
+    try {
+      await access(candidate, constants.R_OK);
+      paths.push(candidate);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    }
+  }
+  return paths.sort();
+}
+
+function groupRules(declarations: ReviewedDeclaration[]): RuleGroup[] {
+  const groups = new Map<string, RuleGroup>();
+  for (const declaration of declarations) {
+    const key = `${declaration.file}\u0000${declaration.selector}`;
+    let group = groups.get(key);
+    if (!group) {
+      group = {
+        file: declaration.file,
+        selector: declaration.selector,
+        declarations: [],
+        actions: new Set(),
+        outcomes: new Set(),
+        codes: new Set(),
+      };
+      groups.set(key, group);
+    }
+    group.declarations.push(declaration);
+    group.actions.add(declaration.ruleAction);
+    group.outcomes.add(declaration.latentOutcome);
+    group.codes.add(declaration.currentCode);
+  }
+  return [...groups.values()].sort((left, right) =>
+    left.file.localeCompare(right.file) || left.selector.localeCompare(right.selector)
+  );
+}
+
+function isContentEditorRule(group: RuleGroup): boolean {
+  return group.file.endsWith("content-editor.css")
+    && /(?:^|\s|,)\.content-editor(?:\s+\.)?|\bcontent-editor-body\b/.test(group.selector);
+}
+
+function isPrivateDrawingRule(group: RuleGroup): boolean {
+  if (/\.seg-control\.is-sliding \.seg-option/.test(group.selector)) {
+    return false;
+  }
+  return group.selector.includes("::")
+    || group.selector.startsWith("::-webkit-scrollbar")
+    || /\.macro-suggestions-arrow\b/.test(group.selector)
+    || /\.macro-search-kbd\b/.test(group.selector);
+}
+
+function smallNumberWord(value: number): string {
+  const words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+  return words[value] ?? String(value);
+}
+
+function isControlRecipe(group: RuleGroup): boolean {
+  return group.file.endsWith("controls.css");
+}
+
+function isRootIdentity(group: RuleGroup): boolean {
+  return group.selector.includes(":host") || group.file.endsWith("pages.css");
+}
+
+function isExactGeometry(group: RuleGroup): boolean {
+  return group.actions.has("attachment-edge-layer")
+    || group.codes.has("identity-geometry")
+    || group.actions.has("dimension-constraint");
+}
+
+function familyId(group: RuleGroup): string {
+  if (isContentEditorRule(group)) return "rich-text/editor-content molecule";
+  if (isPrivateDrawingRule(group)) return "private drawing / engine pseudo";
+  if (isControlRecipe(group)) return "control-state recipes";
+  if (isRootIdentity(group)) return "root/page/host identity";
+  if (isExactGeometry(group)) return "exact attachment / geometry";
+  return "component-local surface/type fragments";
+}
+
+function familyReading(id: string): string {
+  switch (id) {
+    case "rich-text/editor-content molecule":
+      return "Descendant prose defaults inside user-authored content. This is one authored content recipe, not a set of Ermine utility gaps.";
+    case "private drawing / engine pseudo":
+      return "Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts.";
+    case "control-state recipes":
+      return "Local control recipes such as disabled buttons, link buttons, selectable groups, and minimum-selection guards.";
+    case "exact attachment / geometry":
+      return "Exact offsets, overlay layer numbers, dropdown placement, and component geometry values.";
+    case "component-local surface/type fragments":
+      return "Small socket-consuming component signatures that do not yet justify a molecule admission.";
+    case "root/page/host identity":
+      return "Host/page reset and brand type identity.";
+    default:
+      return "";
+  }
+}
+
+const FAMILY_ORDER = [
+  "rich-text/editor-content molecule",
+  "private drawing / engine pseudo",
+  "control-state recipes",
+  "exact attachment / geometry",
+  "component-local surface/type fragments",
+  "root/page/host identity",
+];
+
+function families(groups: RuleGroup[]): RuleFamily[] {
+  const map = new Map<string, RuleGroup[]>();
+  for (const group of groups) {
+    const id = familyId(group);
+    (map.get(id) ?? map.set(id, []).get(id)!).push(group);
+  }
+  return FAMILY_ORDER
+    .filter((id) => map.has(id))
+    .map((id) => ({
+      id,
+      label: id,
+      reading: familyReading(id),
+      rules: map.get(id)!,
+    }));
+}
+
+function countBy<T extends string>(items: RuleGroup[], keys: readonly T[], keyFor: (item: RuleGroup) => T): Record<T, number> {
+  const counts = Object.fromEntries(keys.map((key) => [key, 0])) as Record<T, number>;
+  for (const item of items) counts[keyFor(item)] += 1;
+  return counts;
+}
+
+function firstAction(group: RuleGroup): string {
+  return group.declarations[0]?.ruleAction ?? "";
+}
+
+function countRows(groups: RuleGroup[], keyFor: (group: RuleGroup) => string): string[][] {
+  const counts = new Map<string, number>();
+  for (const group of groups) counts.set(keyFor(group), (counts.get(keyFor(group)) ?? 0) + 1);
+  return [...counts.entries()]
+    .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
+    .map(([key, count]) => [mdEscape(key), String(count)]);
+}
+
+function declarationText(declaration: ReviewedDeclaration): string {
+  return `${declaration.property}: ${declaration.value}`;
+}
+
+function inventoryRows(groups: RuleGroup[]): string[][] {
+  return groups.map((group) => [
+    `\`${mdEscape(group.file)}\``,
+    `\`${mdEscape(group.selector)}\``,
+    String(group.declarations.length),
+    mdEscape([...group.actions].join(", ")),
+    mdEscape([...group.outcomes].join(", ")),
+    group.declarations.map((declaration) => mdEscape(declarationText(declaration))).join("<br>"),
+  ]);
+}
+
+function ruleShapeRows(ruleFamilies: RuleFamily[]): string[][] {
+  return ruleFamilies.map((family) => [
+    family.label,
+    String(family.rules.length),
+    String(family.rules.reduce((sum, rule) => sum + rule.declarations.length, 0)),
+    mdEscape(family.reading),
+  ]);
+}
+
+function densityKey(group: RuleGroup): "1 declaration" | "2 declarations" | "3 declarations" | "4+ declarations" {
+  if (group.declarations.length === 1) return "1 declaration";
+  if (group.declarations.length === 2) return "2 declarations";
+  if (group.declarations.length === 3) return "3 declarations";
+  return "4+ declarations";
+}
+
+function renderContentEditorSection(groups: RuleGroup[]): string {
+  if (!groups.some(isContentEditorRule)) return "";
+  return `### Rich Text / Editor Content
+
+These rules form a content rendering molecule. Their selectors are descendants of
+\`.content-editor-body\`, not standalone visual utilities.
+
+${table(["selector family", "rules", "role"], [
+    ["headings", "4", "`h1`, `h2`, `h3`, and first-child rhythm reset"],
+    ["paragraphs and lists", "6", "`p`, `p:last-child`, `ul`, `ol`, shared list rhythm, `li`"],
+    ["inline semantics", "6", "`a`, `a:hover`, `strong/b`, `em/i`, `u`, `s`"],
+    ["code blocks", "2", "inline `code` and block `pre` treatment"],
+    ["quoted/placeholder content", "2", "`blockquote` and empty placeholder"],
+    ["editor body root", "1", "content font family and line-height normalization"],
+  ])}
+
+Reading: these are becoming clearer, not noisier. The selectors document browser-rendered
+content semantics that class strings cannot attach to directly unless the project rewrites
+authored HTML. Ermine should remember the conversion as a prose/editor molecule boundary.`;
+}
+
+function renderPrivateDrawingSection(groups: RuleGroup[]): string {
+  if (!groups.some(isPrivateDrawingRule)) return "";
+  const examples = [
+    [".seg-control::before", "Segmented-control active pill driven by CSS variables and state."],
+    [".macro-search-kbd::after", "Keyboard cap underside/shadow drawing."],
+    ["::-webkit-scrollbar*", "Browser-specific scrollbar parts after standard socket integration."],
+    [".macro-suggestions-arrow*", "CSS triangle arrow drawing and orientation."],
+    [".content-editor-body:empty::before", "Placeholder drawing tied to generated content."],
+    [".macro-search-kbd and variants", "Exact keyboard cap geometry."],
+  ].map(([pattern, reading]) => {
+    const count = groups
+      .filter((group) => {
+        if (pattern === "::-webkit-scrollbar*") return group.selector.startsWith("::-webkit-scrollbar");
+        if (pattern === ".macro-suggestions-arrow*") return group.selector.includes(".macro-suggestions-arrow");
+        if (pattern === ".macro-search-kbd and variants") return group.selector.includes(".macro-search-kbd") && !group.selector.includes("::after");
+        return group.selector === pattern;
+      })
+      .reduce((sum, group) => sum + group.declarations.length, 0);
+    return count > 0 ? [`\`${pattern}\``, String(count), reading] : undefined;
+  }).filter((row): row is string[] => row !== undefined);
+  return `### Private Drawing / Engine Pseudo
+
+${table(["rule", "residue declarations", "reading"], examples)}
+
+Reading: the remaining browser-specific scrollbar rules are not a failure of Ermine's skin
+integration. Ermine owns the standard socket handoff; the project owns the engine-specific
+pseudo selectors or delegates them to a future post-processing/recipe layer.`;
+}
+
+function renderControlStateSection(groups: RuleGroup[]): string {
+  if (!groups.some(isControlRecipe)) return "";
+  return `### Control-State Recipes
+
+These are not plain state variants. They encode project decisions about what controls are
+allowed to do under disabled, selected, active, link-like, or constrained states.
+
+${table(["rule cluster", "examples", "reading"], [
+    ["disabled buttons", "`.btn:disabled`, `.btn:disabled:hover`", "Local disabled recipe: cursor, opacity, and hover neutralization."],
+    ["link buttons", "`.btn-link*`, `.btn-link-danger*`", "Project link-button text-decoration policy."],
+    ["selectable groups", "`.selectable-group > *`, `.selectable-group > .is-selected:hover`, `.selectable-group > *:active`", "Parent/child interaction recipe."],
+    ["minimum-selection guard", "`.min-selected-1 > .is-selected:only-of-type*`", "JS/state invariant expressed through selectors."],
+    ["radio labels", "`.radio-label`", "Local clickable label recipe."],
+  ])}
+
+Reading: these are good candidates for recipe documentation, but poor candidates for flat
+Ermine words because the semantics depend on component state contracts.`;
+}
+
+function renderRuleResidueMarkdown(review: RuleActionReviewInput, ledger: CurrentLedgerInput): string {
+  const project = title(review.project);
+  const groups = groupRules(review.declarations);
+  const ruleFamilies = families(groups);
+  const adopted = ledger.summary.totalDeclarations - ledger.summary.residueDeclarations;
+  const actionRows = countRows(groups, firstAction);
+  const sourceRows = countRows(groups, (group) => group.file);
+  const densityCounts = countBy(groups, ["1 declaration", "2 declarations", "3 declarations", "4+ declarations"], densityKey);
+  const denseRules = groups.filter((group) => group.declarations.length >= 4).length;
+  const localRules = groups.filter((group) => group.outcomes.has("local-identity")).length;
+  const mixedLocalRules = groups.filter((group) => group.outcomes.has("local-identity") && group.outcomes.size > 1).length;
+
+  return `# ${project} Rule Residue Analysis
+
+Generated from \`reports/adoption/${review.project}/rule-action-review.json\` and
+\`${review.inputs.currentLedger}\`.
+
+Regenerate with:
+
+\`\`\`sh
+npm run adoption:rules -- --write
+\`\`\`
+
+This report changes the unit of analysis from classes/declarations to authored CSS rules.
+A rule here is \`file + selector\`, with only project-owned residue declarations counted.
+Adopted Ermine declarations, substrate, theme metrics, and emitted infrastructure are not
+included.
+
+## Snapshot
+
+${table(["metric", "count"], [
+    ["current declarations", String(ledger.summary.totalDeclarations)],
+    ["adopted/infrastructure declarations", String(adopted)],
+    ["project-owned residue declarations", String(ledger.summary.residueDeclarations)],
+    ["project-owned residue rules", String(groups.length)],
+    ["assimilable declarations", String(review.summary.assimilableNow)],
+    ["shadowed words", String(ledger.shadowedWords?.length ?? 0)],
+    ["latent-generalizable declarations", String(review.summary.latentGeneralizable)],
+  ])}
+
+## Rule Shape
+
+${table(["rule shape", "rules", "declarations", "reading"], ruleShapeRows(ruleFamilies))}
+
+## By Source File
+
+${table(["file", "residue rules"], sourceRows.map(([file, count]) => [`\`${file}\``, count]))}
+
+## By Primary Rule Action
+
+Primary action is the first action attached to the rule's remaining declarations. Mixed
+rules are listed later because a single selector can combine several kinds of residue.
+
+${table(["primary rule action", "rules"], actionRows)}
+
+## Rule Density
+
+${table(["declarations per residue rule", "rules"], [
+    ["1 declaration", String(densityCounts["1 declaration"])],
+    ["2 declarations", String(densityCounts["2 declarations"])],
+    ["3 declarations", String(densityCounts["3 declarations"])],
+    ["4+ declarations", String(densityCounts["4+ declarations"])],
+  ])}
+
+This matters because most remaining rules are narrow and intentional. The ${smallNumberWord(denseRules)}
+dense rules are recognizable authored shapes: segmented slider drawing, keyboard cap
+drawing, code/pre blocks, blockquotes, and host identity.
+
+## Main Findings
+
+1. The residue is now rule-shaped, not utility-shaped.
+
+   At declaration level the largest buckets can look like scattered pressure. At rule
+   level they collapse into authored systems: editor content, private pseudo drawing,
+   control recipes, exact geometry, and local identity. That is healthier than a tail of
+   missing utilities.
+
+2. Content-editor residue is a molecule boundary.
+
+   \`src/styles/components/content-editor.css\` has 24 residue rules. Twenty-one are scoped
+   under \`.content-editor-body\` or \`.content-editor .content-editor-body\`, meaning they
+   describe rendered user content: headings, paragraphs, lists, inline code, pre blocks,
+   blockquotes, links, emphasis, decorations, and placeholder text. These rules document a
+   prose/editor-content contract. Flattening them into individual words would make Ermine
+   noisier without making adoption clearer.
+
+3. Pseudo and engine drawing remains correctly project-owned.
+
+   Keyboard caps, suggestion arrows, segmented-control sliders, empty-content placeholders,
+   and WebKit scrollbar parts are drawing recipes. Some declarations use values Ermine can
+   name in isolation, but the authored rule is a miniature drawing program. The useful
+   future extraction is a recipe/molecule with sockets, not more flat class words.
+
+4. Local identity is small and explicit.
+
+   ${localRules} residue rules contain \`local-identity\` outcomes. They are host/page
+   typography, overlay layer identity, root spacing resets, or local transition
+   suppression. ${mixedLocalRules} of those rules are mixed with recipe declarations,
+   which is expected for real CSS selectors.
+
+5. There is no immediate grammar pressure.
+
+   The rule-action review reports \`${review.summary.assimilableNow}\` assimilable
+   declarations and \`${review.summary.latentGeneralizable}\` latent-generalizable
+   declarations. The next useful work is not to admit another isolated word from this
+   residue. It is to decide whether one of the remaining authored systems deserves a named
+   recipe surface.
+
+## High-Signal Rule Families
+
+${[
+    renderContentEditorSection(groups),
+    renderPrivateDrawingSection(groups),
+    renderControlStateSection(groups),
+  ].filter(Boolean).join("\n\n")}
+
+## Complete Rule Inventory
+
+${table(["file", "selector", "declarations", "rule actions", "outcome", "residue declarations"], inventoryRows(groups))}
+
+## Reading
+
+- Rule analysis is stricter than class analysis for the remaining residue. It shows where
+  authored CSS still has meaning after Ermine removes the general structural pressure.
+- A declaration may look admissible in isolation, but if it participates in a pseudo
+  drawing, browser engine selector, content molecule, or state contract, the rule remains
+  project-owned.
+- Future adoptions should run this report shape once \`assimilable = 0\`. It is the handoff
+  point from "which words are missing?" to "which authored systems remain outside flat
+  grammar?"
+`;
+}
+
+async function writeIfChanged(path: string, source: string, check: boolean): Promise<boolean> {
+  const current = await readOptional(path);
+  if (current === source) return true;
+  if (check) return false;
+  await mkdir(dirname(path), { recursive: true });
+  await writeFile(path, source);
+  return true;
+}
+
+async function processReview(path: string, repositoryRoot: string, check: boolean): Promise<boolean> {
+  const review = JSON.parse(await readFile(path, "utf8")) as RuleActionReviewInput;
+  const currentLedgerPath = resolve(repositoryRoot, review.inputs.currentLedger);
+  const ledger = JSON.parse(await readFile(currentLedgerPath, "utf8")) as CurrentLedgerInput;
+  const reportRoot = dirname(path);
+  const outputPath = resolve(reportRoot, "RULE-RESIDUE-ANALYSIS.md");
+  const groups = groupRules(review.declarations);
+  const markdown = renderRuleResidueMarkdown(review, ledger);
+  if (await writeIfChanged(outputPath, markdown, check)) {
+    console.log(`${check ? "current" : "wrote"} ${slash(relative(repositoryRoot, outputPath))} (${groups.length} rules, ${review.declarations.length} declarations)`);
+    return true;
+  }
+  console.log(`ERROR ${slash(relative(repositoryRoot, outputPath))}: rule residue analysis is stale; run npm run adoption:rules`);
+  return false;
+}
+
+export async function runRuleResidueAnalysis(repositoryRoot = REPOSITORY_ROOT, check = false): Promise<boolean> {
+  const paths = await findReviewPaths(repositoryRoot);
+  let valid = true;
+  for (const path of paths) valid = await processReview(path, repositoryRoot, check) && valid;
+  return valid;
+}
+
+async function main(): Promise<void> {
+  const check = process.argv.includes("--check");
+  const write = process.argv.includes("--write");
+  if (check === write) throw new Error("usage: rule-residue-analysis.ts (--write|--check)");
+  if (!await runRuleResidueAnalysis(REPOSITORY_ROOT, check)) process.exitCode = 1;
+}
+
+const invokedPath = process.argv[1] ? pathToFileURL(resolve(process.argv[1])).href : "";
+if (import.meta.url === invokedPath) await main();

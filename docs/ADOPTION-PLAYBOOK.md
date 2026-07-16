@@ -6,6 +6,8 @@ those words without rediscovering every pattern.
 
 The machine-readable recipes live in `adoption/playbook.ts`. `adoption/rule-action-review.ts`
 uses them to annotate each current-ledger residue row with matching `playbookRecipes`.
+`adoption/rule-residue-analysis.ts` then groups those reviewed declarations by authored CSS rule
+so recipe and boundary decisions can be carried forward at the selector/system level.
 
 ## Recipe Shape
 
@@ -27,11 +29,13 @@ Each recipe records:
 1. Run the baseline and current-ledger pipeline from `docs/ADOPTION-PROTOCOL.md`.
 2. Run `npm run adoption:review`.
 3. Read `RULE-ACTION-REVIEW.md` by playbook recipe first, not by file first.
-4. Apply recipes in confidence order:
+4. Once `assimilable = 0`, run `npm run adoption:rules -- --write` and read
+   `RULE-RESIDUE-ANALYSIS.md` before proposing new vocabulary.
+5. Apply recipes in confidence order:
    - `mechanical` conversions and boundaries;
    - `review` conversions with visual/style tests;
    - `human` recipes only after a project-specific ruling.
-5. Commit each completed batch in the project, then refresh Ermine reports.
+6. Commit each completed batch in the project, then refresh Ermine reports.
 
 This turns adoption into a queue of known transformations before it becomes exploratory
 grammar design.
@@ -78,7 +82,8 @@ When a batch settles a repeatable adoption decision:
 1. Add or refine a recipe in `adoption/playbook.ts`.
 2. Cite the ADR, commit, test, or report that made the decision stable.
 3. Add a small test if the recipe prevents a known false positive.
-4. Regenerate `RULE-ACTION-REVIEW.md` so future projects inherit the memory.
+4. Regenerate `RULE-ACTION-REVIEW.md` and `RULE-RESIDUE-ANALYSIS.md` so future projects inherit
+   both declaration-level and rule-level memory.
 5. Update this document only when the workflow or recipe catalog changes.
 
 Recipes are allowed to be conservative. A missed suggestion is slower; a wrong mechanical

@@ -96,6 +96,18 @@ npm run adoption:current -- --project ../<project> --name <project> --check --ga
 non-empty. When the gate is closed, the generator emits `BOUNDARY.md` beside
 `CURRENT-LEDGER.md`.
 
+After the declaration work list is empty, switch units from declarations/classes to authored CSS
+rules:
+
+```sh
+npm run adoption:rules -- --write
+npm run adoption:rules -- --check
+```
+
+This derives `RULE-RESIDUE-ANALYSIS.md` from `rule-action-review.json`. It groups residue by
+`file + selector` so the next question is "which authored systems remain?" rather than "which
+tokens are still local?" The normal `adoption:check` gate verifies this report when present.
+
 ## 4. Provenance and cross-repository commits
 
 Every ledger pins full 40-character lowercase hexadecimal Ermine and project commits. Record the
@@ -244,8 +256,10 @@ For a second project, follow the full arc rather than copying Monky-specific jud
 4. Introduce a project profile at `reports/adoption/<project>/project.json` for recipe classes,
    user-content roots, bridge files, scan roots, and file strata that are project-specific.
 5. Use the current-ledger loop to consume existing vocabulary until `assimilable = 0`.
-6. Empty review buckets through project-profile rules or explicit overrides, not by inventing words.
-7. Publish `BOUNDARY.md`, wire the project's local reconcile command to `--check --gate`, and leave
+6. Run `npm run adoption:rules -- --write` to read the residue as authored CSS rules before
+   proposing more vocabulary.
+7. Empty review buckets through project-profile rules or explicit overrides, not by inventing words.
+8. Publish `BOUNDARY.md`, wire the project's local reconcile command to `--check --gate`, and leave
    remaining work only in Gap Reports.
 
 Monky's reports under `reports/adoption/monky/` are the worked example, not hidden defaults.
