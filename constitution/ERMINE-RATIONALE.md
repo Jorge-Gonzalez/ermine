@@ -147,6 +147,13 @@ Source: pre-split `constitution/ERMINE.md` lines 955–965.
 ## RAT:R-SPACE-02
 Source: pre-split `constitution/ERMINE.md` lines 966–981.
 
+Amended by ADR-0043: scale-backed margin may be expressed at the whole-axis, logical inline/block,
+or physical edge level. This is not a return to arbitrary local margin styling; every admitted word
+still reads the shared spacing scale and the linter rejects overlapping ownership. `margin-inline-*`
+owns left and right, `margin-block-*` owns top and bottom, `centered` owns the inline footprint, and
+`flush-block` owns the block footprint. One-edge facts such as `margin-right-xl` compose only with
+non-overlapping facts.
+
 ## RAT:R-SPACE-03
 Source: pre-split `constitution/ERMINE.md` lines 982–990.
 
@@ -174,6 +181,12 @@ Source: pre-split `constitution/ERMINE.md` lines 1009–1014.
 
 ## RAT:R-PADDING-01
 Source: pre-split `constitution/ERMINE.md` lines 1015–1021.
+
+Amended by ADR-0043: repeated Monky rows showed that inline/block padding was too coarse for
+one-edge, scale-backed spacing. The family now admits physical edge facets (`padding-top-*`,
+`padding-right-*`, `padding-bottom-*`, `padding-left-*`) while retaining the shared spacing scale.
+The admissible composition is footprint-based: `padding-left-xs padding-right-sm` is meaningful,
+but `padding-inline-xs padding-left-sm` double-writes the left slot and is rejected.
 
 ## RAT:R-PADDING-02
 Source: pre-split `constitution/ERMINE.md` lines 1022–1025.

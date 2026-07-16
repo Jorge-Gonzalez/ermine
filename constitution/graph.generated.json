@@ -253,6 +253,12 @@
       "anchor": "ADR-0042"
     },
     {
+      "id": "ADR-0043",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0043-per-edge-spacing-facets.md",
+      "anchor": "ADR-0043"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

@@ -305,9 +305,11 @@ toward the outside. Sibling rhythm belongs to `gap` or `flow`, not per-child mar
 ## R-SPACE-02 — Four spacing families
 
 `gap-*`, `flow-*`, `padding-*`, and directional `margin-*` families are independent per-property
-classes over one shared scale. Use the full property name followed by the T-shirt step.
+classes over one shared scale. Use the full property name followed by the T-shirt step. Margin
+supports whole-axis, inline, block, and physical edge facets; overlapping footprints conflict
+while disjoint edges compose.
 
-→ rationale: RAT:R-SPACE-02 · history: ADR-0001 · code: src/registry.ts#SCALES
+→ rationale: RAT:R-SPACE-02 · history: ADR-0001, ADR-0043 · code: src/registry.ts#SCALES
 
 ## R-SPACE-03 — Flow and stack dissolution
 
@@ -348,9 +350,11 @@ classes. The runtime value channel is retired.
 ## R-PADDING-01 — Padding family
 
 Padding is an independent per-property ordered-chain family over the shared spacing scale, including
-inline and block variants.
+whole-axis, inline, block, and physical edge variants. A compound dial owns its physical footprint:
+`padding-inline-*` owns left and right, `padding-block-*` owns top and bottom, and a physical edge
+owns only itself. Overlapping footprints conflict; disjoint physical edges compose.
 
-→ rationale: RAT:R-PADDING-01 · history: ADR-0002 · code: src/registry.ts#LAYOUT
+→ rationale: RAT:R-PADDING-01 · history: ADR-0002, ADR-0043 · code: src/registry.ts#LAYOUT
 
 ## R-PADDING-02 — Wide is not a padding step
 

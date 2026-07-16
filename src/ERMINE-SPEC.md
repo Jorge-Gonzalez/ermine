@@ -297,12 +297,12 @@ Tokens:
 - role: `self` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
 - value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl`
 - default: none
-- controls: `padding` `padding-inline` `padding-block`
+- controls: `padding` `padding-inline` `padding-block` `padding-top` `padding-right` `padding-bottom` `padding-left`
 - must never touch: `margin` `gap` `display`
-- sub-dials: `inline` `block`
+- sub-dials: `inline` `block` `top` `right` `bottom` `left`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: two sub-dials: inline (padding-inline-*) and block (padding-block-*). `padding-<spacing>` is the WHOLE-AXIS form (sets both sides), so it conflicts with a per-side dial; `padding-inline-lg padding-block-sm` composes.
+- notes: spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict (`padding-inline-sm padding-left-xs`); disjoint edges compose (`padding-left-xs padding-right-sm`). `padding-<spacing>` is the WHOLE-AXIS form.
 
 Tokens:
 
@@ -311,18 +311,19 @@ Tokens:
 | `padding-<spacing>` | `/^padding-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `padding-inline-<spacing>` | `/^padding-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `padding-block-<spacing>` | `/^padding-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `padding-<edge>-<spacing>` | `/^padding-(top\|right\|bottom\|left)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 
 #### margin
 
 - role: `member` · signature: `ordered-chain` · vocabulary: `closed` · regime: `free`
 - value space: `xs` `sm` `md` `lg` `xl` `2xl` `3xl` `centered` `flush-block`
 - default: none
-- controls: `margin` `margin-inline` `margin-block`
+- controls: `margin` `margin-inline` `margin-block` `margin-top` `margin-right` `margin-bottom` `margin-left`
 - must never touch: `margin-inline-start` `margin-inline-end` `padding` `gap` `display`
-- sub-dials: `inline` `block`
+- sub-dials: `inline` `block` `top` `right` `bottom` `left`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm.
+- notes: spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins.
 
 Tokens:
 
@@ -331,6 +332,7 @@ Tokens:
 | `margin-<spacing>` | `/^margin-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `margin-inline-<spacing>` | `/^margin-inline-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `margin-block-<spacing>` | `/^margin-block-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `margin-<edge>-<spacing>` | `/^margin-(top\|right\|bottom\|left)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `centered \| flush-block` | `/^(centered\|flush-block)$/` | — | no |
 
 #### push

@@ -151,6 +151,13 @@ test("flow centering: decomposes margin:0 auto into centering and block flush (R
   assert.deepEqual(declOf("centered flush-block"), [["margin-inline", "auto"], ["margin-block", "0"]]);
 });
 
+test("per-edge spacing facets emit physical longhands", () => {
+  assert.deepEqual(declOf("padding-left-xs"), [["padding-left", "var(--spacing-xs)"]]);
+  assert.deepEqual(declOf("padding-bottom-xl"), [["padding-bottom", "var(--spacing-xl)"]]);
+  assert.deepEqual(declOf("margin-left-sm"), [["margin-left", "var(--spacing-sm)"]]);
+  assert.deepEqual(declOf("margin-right-xl"), [["margin-right", "var(--spacing-xl)"]]);
+});
+
 test("push: consumes inline-start free space with auto margin (R-SIZE-04)", () => {
   assert.deepEqual(declOf("push"), [["margin-inline-start", "auto"]]);
 });

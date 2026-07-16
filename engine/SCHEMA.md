@@ -111,6 +111,7 @@ One axis of the vocabulary.
 | `mustNeverTouch` | `string[]` | yes | Properties the axis is forbidden to emit; `["*"]` means "controls nothing". | `["gap"]` |
 | `subDials` | `string[]` | no | Independent sub-dials of an open axis; parametric tokens on DIFFERENT dials compose, two on the SAME dial conflict (P1). | `["grow", "shrink"]` |
 | `dialOf` | `(word) => string \| null` | no | Maps a full authored word to its dial name. | `w => w.startsWith("grow-") ? "grow" : null` |
+| `dialFootprint` | `(dial) => readonly string[]` | no | Expands a dial into lower-level slots for overlap checks. Use when compound dials and physical dials share ownership, e.g. `inline` = `left` + `right`; omitted means the dial owns only itself. | `d => d === "inline" ? ["left", "right"] : [d]` |
 | `aliases` | `Alias[]` | no | Whole-axis aliases — see `Alias` and the exclusivity contract below. | see `Alias` |
 | `aliasMatch` | `(word) => boolean` | no | Tags PATTERN-shaped whole-axis forms an `aliases` list can't enumerate (e.g. `padding-<step>` as the both-sides form beside per-side dials). | `w => /^padding-\w+$/.test(w)` |
 | `parametricMembers` | `string[]` | no | Closed-axis members that carry an open value (documentation/codegen; the linter treats them as ordinary members). | `["basis-exact"]` |

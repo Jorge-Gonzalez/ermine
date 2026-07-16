@@ -57,14 +57,28 @@ export function makePredicates(
             msg: `'${aliases[0].raw}' is a whole-axis value (it fixes every dial of '${words[0].axis}') — it cannot combine with '${others.join("', '")}'. Use either the alias OR the numbered dials.` });
           continue;
         }
-        // no alias: numbered dials — one value per dial.
+        // no alias: numbered dials — one value per dial. Some axes also declare
+        // a lower-level footprint for each dial, so a compound dial (`inline`)
+        // conflicts with an overlapping edge dial (`left`) while disjoint edges
+        // still compose.
         const seenDial = new Map<string, string>();
+        const seenSlot = new Map<string, string>();
         for (const p of nonAliases) {
           const d = p.dial ?? "(value)";
-          if (seenDial.has(d))
+          if (seenDial.has(d)) {
             out.push({ level: "error", rule: "one-word-per-axis",
               msg: `'${p.raw}' and '${seenDial.get(d)}' both set the '${d}' dial of '${p.axis}'.` });
-          else seenDial.set(d, p.raw);
+            continue;
+          }
+          const slots = ax?.dialFootprint?.(d) ?? [d];
+          const overlap = slots.find((slot) => seenSlot.has(slot));
+          if (overlap) {
+            out.push({ level: "error", rule: "one-word-per-axis",
+              msg: `'${p.raw}' overlaps '${seenSlot.get(overlap)}' on the '${overlap}' slot of '${p.axis}'.` });
+            continue;
+          }
+          seenDial.set(d, p.raw);
+          for (const slot of slots) seenSlot.set(slot, p.raw);
         }
         continue;
       }

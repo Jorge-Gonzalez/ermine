@@ -60,6 +60,10 @@ const spacingDial = (wordPrefix: string, property = wordPrefix) => (word: string
   const m = word.match(new RegExp(`^${wordPrefix}-(${SCALES.spacing.join("|")})$`));
   return m ? { [property]: `var(--spacing-${m[1]})` } : null;
 };
+const spacingEdgeDial = (wordPrefix: "padding" | "margin") => (word: string): Record<string, string> | null => {
+  const m = word.match(new RegExp(`^${wordPrefix}-(top|right|bottom|left)-(${SCALES.spacing.join("|")})$`));
+  return m ? { [`${wordPrefix}-${m[1]}`]: `var(--spacing-${m[2]})` } : null;
+};
 
 // A colour carrier (ground/ink/rule) reads exactly one socket into its property.
 // The bare carrier and its own steps read the carrier-prefixed socket; a role hue
@@ -270,7 +274,9 @@ const EMISSION: Record<string, EmitSpec> = {
         return spacingDial("padding")(word);
       const inline = spacingDial("padding-inline")(word);
       if (inline) return inline;
-      return spacingDial("padding-block")(word);
+      const block = spacingDial("padding-block")(word);
+      if (block) return block;
+      return spacingEdgeDial("padding")(word);
     },
   },
 
@@ -400,7 +406,9 @@ const EMISSION: Record<string, EmitSpec> = {
         return spacingDial("margin")(word);
       const inline = spacingDial("margin-inline")(word);
       if (inline) return inline;
-      return spacingDial("margin-block")(word);
+      const block = spacingDial("margin-block")(word);
+      if (block) return block;
+      return spacingEdgeDial("margin")(word);
     },
   },
 
@@ -730,6 +738,7 @@ export const VOCABULARY: Record<string, string[]> = {
     ...SCALES.spacing.map((s) => `padding-${s}`),
     ...SCALES.spacing.map((s) => `padding-inline-${s}`),
     ...SCALES.spacing.map((s) => `padding-block-${s}`),
+    ...["top", "right", "bottom", "left"].flatMap((edge) => SCALES.spacing.map((s) => `padding-${edge}-${s}`)),
   ],
   "m2-flex": ["rigid", "compressible", "expandable", "elastic", "grow-1", "grow-2", "shrink-1"],
   "m3-self-size": ["basis-content", "basis-ratio", ...SCALES.size.map((s) => `basis-exact-${s}`)],
@@ -753,6 +762,7 @@ export const VOCABULARY: Record<string, string[]> = {
     ...SCALES.spacing.map((s) => `margin-${s}`),
     ...SCALES.spacing.map((s) => `margin-inline-${s}`),
     ...SCALES.spacing.map((s) => `margin-block-${s}`),
+    ...["top", "right", "bottom", "left"].flatMap((edge) => SCALES.spacing.map((s) => `margin-${edge}-${s}`)),
   ],
   "m4-self-alignment": ["self-start", "self-center", "self-end", "self-stretch", "self-baseline"],
   "alignment-container": ["align-start", "align-center", "align-end", "align-stretch", "align-baseline", "justify-start", "justify-center", "justify-end", "justify-between", "justify-around"],

@@ -130,9 +130,12 @@ export interface AxisRecord {
 
   // OPEN axes with independent sub-dials (grow/shrink shape). Parametric tokens
   // write DIFFERENT dials and compose one-per-dial; two values for the SAME dial
-  // conflict. `dialOf` maps a parsed token to its dial name.
+  // conflict. `dialOf` maps a parsed token to its dial name. `dialFootprint`
+  // optionally expands a dial to the lower-level slots it owns, allowing overlap
+  // checks such as inline = left+right vs left = left.
   subDials?: string[];
   dialOf?: (member: string) => string | null;
+  dialFootprint?: (dial: string) => readonly string[];
 
   // OPEN axes may carry whole-axis aliases. `aliasMatch` tags pattern-shaped
   // whole-axis forms (e.g. a `padding-<step>` that sets both sides).

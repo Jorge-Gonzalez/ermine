@@ -530,6 +530,174 @@
           "meaning": "space **inside** an element. `padding-snug`"
         },
         {
+          "label": "padding-top-xs",
+          "insertText": "padding-top-xs",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-top-sm",
+          "insertText": "padding-top-sm",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-top-md",
+          "insertText": "padding-top-md",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-top-lg",
+          "insertText": "padding-top-lg",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-top-xl",
+          "insertText": "padding-top-xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-top-2xl",
+          "insertText": "padding-top-2xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-top-3xl",
+          "insertText": "padding-top-3xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-right-xs",
+          "insertText": "padding-right-xs",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-right-sm",
+          "insertText": "padding-right-sm",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-right-md",
+          "insertText": "padding-right-md",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-right-lg",
+          "insertText": "padding-right-lg",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-right-xl",
+          "insertText": "padding-right-xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-right-2xl",
+          "insertText": "padding-right-2xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-right-3xl",
+          "insertText": "padding-right-3xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-bottom-xs",
+          "insertText": "padding-bottom-xs",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-bottom-sm",
+          "insertText": "padding-bottom-sm",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-bottom-md",
+          "insertText": "padding-bottom-md",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-bottom-lg",
+          "insertText": "padding-bottom-lg",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-bottom-xl",
+          "insertText": "padding-bottom-xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-bottom-2xl",
+          "insertText": "padding-bottom-2xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-bottom-3xl",
+          "insertText": "padding-bottom-3xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-left-xs",
+          "insertText": "padding-left-xs",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-left-sm",
+          "insertText": "padding-left-sm",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-left-md",
+          "insertText": "padding-left-md",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-left-lg",
+          "insertText": "padding-left-lg",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-left-xl",
+          "insertText": "padding-left-xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-left-2xl",
+          "insertText": "padding-left-2xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
+          "label": "padding-left-3xl",
+          "insertText": "padding-left-3xl",
+          "kind": "word",
+          "meaning": "space **inside** an element. `padding-snug`"
+        },
+        {
           "label": "padding-<spacing>",
           "insertText": "padding-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
@@ -557,13 +725,13 @@
           "label": "centered",
           "insertText": "centered",
           "kind": "word",
-          "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm."
+          "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins."
         },
         {
           "label": "flush-block",
           "insertText": "flush-block",
           "kind": "word",
-          "meaning": "two sub-dials inline/block; `margin-<spacing>` is the whole-axis (both-sides) form. `centered` sets margin-inline:auto for normal-flow inline centering; `flush-block` sets margin-block:0. Together they reproduce `margin: 0 auto` without making either word smuggle the other's behavior. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins. marked-by-preference: reach for scale-backed margins only outside container rhythm."
+          "meaning": "spacing sub-dials: inline (left+right), block (top+bottom), plus physical edges. Overlapping footprints conflict; disjoint edges compose. `centered` owns the inline footprint and `flush-block` owns the block footprint. `push` owns auto inline-start margin separately because auto is relational to one side, not both inline margins."
         },
         {
           "label": "margin-xs",
@@ -688,6 +856,174 @@
         {
           "label": "margin-block-3xl",
           "insertText": "margin-block-3xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-top-xs",
+          "insertText": "margin-top-xs",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-top-sm",
+          "insertText": "margin-top-sm",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-top-md",
+          "insertText": "margin-top-md",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-top-lg",
+          "insertText": "margin-top-lg",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-top-xl",
+          "insertText": "margin-top-xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-top-2xl",
+          "insertText": "margin-top-2xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-top-3xl",
+          "insertText": "margin-top-3xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-right-xs",
+          "insertText": "margin-right-xs",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-right-sm",
+          "insertText": "margin-right-sm",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-right-md",
+          "insertText": "margin-right-md",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-right-lg",
+          "insertText": "margin-right-lg",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-right-xl",
+          "insertText": "margin-right-xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-right-2xl",
+          "insertText": "margin-right-2xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-right-3xl",
+          "insertText": "margin-right-3xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-bottom-xs",
+          "insertText": "margin-bottom-xs",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-bottom-sm",
+          "insertText": "margin-bottom-sm",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-bottom-md",
+          "insertText": "margin-bottom-md",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-bottom-lg",
+          "insertText": "margin-bottom-lg",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-bottom-xl",
+          "insertText": "margin-bottom-xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-bottom-2xl",
+          "insertText": "margin-bottom-2xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-bottom-3xl",
+          "insertText": "margin-bottom-3xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-left-xs",
+          "insertText": "margin-left-xs",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-left-sm",
+          "insertText": "margin-left-sm",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-left-md",
+          "insertText": "margin-left-md",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-left-lg",
+          "insertText": "margin-left-lg",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-left-xl",
+          "insertText": "margin-left-xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-left-2xl",
+          "insertText": "margin-left-2xl",
+          "kind": "word",
+          "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
+        },
+        {
+          "label": "margin-left-3xl",
+          "insertText": "margin-left-3xl",
           "kind": "word",
           "meaning": "an element's **own outward** space. Reach for this only when something needs space independent of its container's rhythm. `margin-loose`"
         },

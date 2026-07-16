@@ -34,12 +34,20 @@
   "padding": [
     "padding",
     "padding-block",
-    "padding-inline"
+    "padding-bottom",
+    "padding-inline",
+    "padding-left",
+    "padding-right",
+    "padding-top"
   ],
   "margin": [
     "margin",
     "margin-block",
-    "margin-inline"
+    "margin-bottom",
+    "margin-inline",
+    "margin-left",
+    "margin-right",
+    "margin-top"
   ],
   "push": [
     "margin-inline-start"

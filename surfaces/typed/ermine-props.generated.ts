@@ -129,13 +129,13 @@ export type FlexExclusive =
 
 // axis `padding`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type PaddingExclusive =
-  | ({ padding?: SpacingStep; } & None<"paddingInline" | "paddingBlock">)
-  | ({ paddingInline?: SpacingStep; paddingBlock?: SpacingStep; } & None<"padding">);
+  | ({ padding?: SpacingStep; } & None<"paddingInline" | "paddingBlock" | "paddingTop" | "paddingRight" | "paddingBottom" | "paddingLeft">)
+  | ({ paddingInline?: SpacingStep; paddingBlock?: SpacingStep; paddingTop?: SpacingStep; paddingRight?: SpacingStep; paddingBottom?: SpacingStep; paddingLeft?: SpacingStep; } & None<"padding">);
 
 // axis `margin`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type MarginExclusive =
-  | ({ margin?: SpacingStep; } & None<"marginInline" | "marginBlock">)
-  | ({ marginInline?: SpacingStep; marginBlock?: SpacingStep; } & None<"margin">);
+  | ({ margin?: SpacingStep; } & None<"marginInline" | "marginBlock" | "marginTop" | "marginRight" | "marginBottom" | "marginLeft">)
+  | ({ marginInline?: SpacingStep; marginBlock?: SpacingStep; marginTop?: SpacingStep; marginRight?: SpacingStep; marginBottom?: SpacingStep; marginLeft?: SpacingStep; } & None<"margin">);
 
 // axis `overflow`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type OverflowExclusive =
@@ -200,9 +200,17 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "padding", axis: "padding", kind: "step-prefix", prefix: "padding" },
   { prop: "paddingInline", axis: "padding", kind: "step-prefix", prefix: "padding-inline" },
   { prop: "paddingBlock", axis: "padding", kind: "step-prefix", prefix: "padding-block" },
+  { prop: "paddingTop", axis: "padding", kind: "step-prefix", prefix: "padding-top" },
+  { prop: "paddingRight", axis: "padding", kind: "step-prefix", prefix: "padding-right" },
+  { prop: "paddingBottom", axis: "padding", kind: "step-prefix", prefix: "padding-bottom" },
+  { prop: "paddingLeft", axis: "padding", kind: "step-prefix", prefix: "padding-left" },
   { prop: "margin", axis: "margin", kind: "step-prefix", prefix: "margin" },
   { prop: "marginInline", axis: "margin", kind: "step-prefix", prefix: "margin-inline" },
   { prop: "marginBlock", axis: "margin", kind: "step-prefix", prefix: "margin-block" },
+  { prop: "marginTop", axis: "margin", kind: "step-prefix", prefix: "margin-top" },
+  { prop: "marginRight", axis: "margin", kind: "step-prefix", prefix: "margin-right" },
+  { prop: "marginBottom", axis: "margin", kind: "step-prefix", prefix: "margin-bottom" },
+  { prop: "marginLeft", axis: "margin", kind: "step-prefix", prefix: "margin-left" },
   { prop: "push", axis: "push", kind: "word" },
   { prop: "align", axis: "alignment-container", kind: "word" },
   { prop: "justify", axis: "alignment-container", kind: "word" },
@@ -277,4 +285,4 @@ export const SCOPE_DESCRIPTORS: readonly { prop: string; prefix: string }[] = [
   { prop: "prefersReducedTransparency", prefix: "prefers-reduced-transparency" },
 ];
 
-export const XOR_PROPS: ReadonlySet<string> = new Set(["flex","grow","shrink","padding","paddingInline","paddingBlock","margin","marginInline","marginBlock","overflow","overflowX","overflowY","fill","controlSize","fillInline","fillBlock"]);
+export const XOR_PROPS: ReadonlySet<string> = new Set(["flex","grow","shrink","padding","paddingInline","paddingBlock","paddingTop","paddingRight","paddingBottom","paddingLeft","margin","marginInline","marginBlock","marginTop","marginRight","marginBottom","marginLeft","overflow","overflowX","overflowY","fill","controlSize","fillInline","fillBlock"]);
