@@ -8,5 +8,10 @@
     "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content.content-editor::min-height::1",
     "code": "component-contract",
     "note": "Context-scoped floor escape: the editor-content recipe base keeps min-height 150px; inside the modal editor the wrapper must collapse. A min-height-none word loses to the skin-layer base (the Phase C layer finding), so the contextual zero stays local."
+  },
+  {
+    "id": "src/styles/components/content-editor.css::.ce-style-dropdown::left::1",
+    "code": "component-contract",
+    "note": "Left-only positioned menu pin. The nearest admitted word is stretch-inline, but that would also emit right: 0 and change the dropdown from left-pinned/hugging to stretched, so this one-sided component placement stays local until a one-edge pin word is ruled."
   }
 ]

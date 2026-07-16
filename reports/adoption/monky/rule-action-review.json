@@ -2,36 +2,36 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "6a3694f7d1860458ea2187457811fd3e616cf8c2",
-    "projectCommit": "db7a55d175c94c46f06a5d3fc30eb62051027307"
+    "ermineCommit": "23bf0cf91f87b17df2ee9933304545fb38092cd0",
+    "projectCommit": "d9749ca3367ddd4e44fdd2cdfad078863f65bd45"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 220,
+    "reviewedDeclarations": 215,
     "assimilableNow": 0,
-    "latentGeneralizable": 115,
-    "likelyRecipe": 102,
+    "latentGeneralizable": 112,
+    "likelyRecipe": 100,
     "likelyLocal": 3,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 30,
-      "attachment-edge-layer": 7,
+      "attachment-edge-layer": 6,
       "spacing-rhythm": 31,
       "surface-line-elevation-cutout": 36,
       "typography-content": 31,
       "interaction-affordance-state": 14,
       "motion-transition": 3,
-      "reset-inheritance-neutralization": 24,
-      "component-private-drawing": 44
+      "reset-inheritance-neutralization": 22,
+      "component-private-drawing": 42
     },
     "byLatentOutcome": {
       "admitted": 0,
       "latent-word": 18,
-      "latent-facet": 70,
+      "latent-facet": 67,
       "latent-scale": 27,
-      "recipe": 102,
+      "recipe": 100,
       "local-identity": 3
     },
     "byCurrentCode": {
@@ -44,7 +44,7 @@
       "rule-mechanics": 0,
       "brand-identity": 8,
       "affordance-mechanics": 0,
-      "component-contract": 37,
+      "component-contract": 34,
       "state-mechanics": 5,
       "state-review": 0,
       "focus-state": 0,
@@ -57,7 +57,7 @@
       "elevation-followup": 3,
       "reset-absence": 12,
       "user-content": 43,
-      "identity-geometry": 41,
+      "identity-geometry": 39,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -422,23 +422,9 @@
       "proposedForm": "callout-arrow recipe"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::top::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 32,
-      "selector": ".macro-suggestions-arrow.top",
-      "property": "top",
-      "value": "100%",
-      "currentCode": "identity-geometry",
-      "ruleAction": "component-private-drawing",
-      "latentOutcome": "recipe",
-      "function": "draws a specific object from CSS primitives",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "callout-arrow recipe"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::border-top-color::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 33,
+      "line": 32,
       "selector": ".macro-suggestions-arrow.top",
       "property": "border-top-color",
       "value": "var(--base-tone)",
@@ -450,23 +436,9 @@
       "proposedForm": "callout-arrow recipe"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::bottom::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 37,
-      "selector": ".macro-suggestions-arrow.bottom",
-      "property": "bottom",
-      "value": "100%",
-      "currentCode": "component-contract",
-      "ruleAction": "component-private-drawing",
-      "latentOutcome": "recipe",
-      "function": "draws a specific object from CSS primitives",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "callout-arrow recipe"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::border-bottom-color::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 38,
+      "line": 36,
       "selector": ".macro-suggestions-arrow.bottom",
       "property": "border-bottom-color",
       "value": "var(--base-tone)",
@@ -480,7 +452,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 42,
+      "line": 40,
       "selector": ".macro-suggestions-command-item",
       "property": "padding",
       "value": "3px 6px",
@@ -494,7 +466,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item:not(.delete-confirm-option)::max-width::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 46,
+      "line": 44,
       "selector": ".macro-suggestions-command-item:not(.delete-confirm-option)",
       "property": "max-width",
       "value": "8em",
@@ -509,7 +481,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 51,
+      "line": 49,
       "selector": ".macro-suggestions-kbd",
       "property": "padding",
       "value": "1px 4px",
@@ -612,7 +584,7 @@
       "selector": ".editor-toast",
       "property": "bottom",
       "value": "52px",
-      "currentCode": "component-contract",
+      "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
       "latentOutcome": "latent-facet",
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
@@ -663,51 +635,9 @@
       "proposedForm": "negative/escape facet"
     },
     {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::left::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 41,
-      "selector": ".command-suggestions",
-      "property": "left",
-      "value": "0",
-      "currentCode": "identity-geometry",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::right::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 42,
-      "selector": ".command-suggestions",
-      "property": "right",
-      "value": "0",
-      "currentCode": "component-contract",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::top::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 43,
-      "selector": ".command-suggestions",
-      "property": "top",
-      "value": "100%",
-      "currentCode": "identity-geometry",
-      "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "latent-facet",
-      "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "edge attachment facet"
-    },
-    {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-top::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 44,
+      "line": 41,
       "selector": ".command-suggestions",
       "property": "border-top",
       "value": "none",
@@ -721,7 +651,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-radius::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 45,
+      "line": 42,
       "selector": ".command-suggestions",
       "property": "border-radius",
       "value": "0 0 var(--radius-md) var(--radius-md)",
@@ -838,7 +768,7 @@
       "selector": ".macro-search-item-edit",
       "property": "right",
       "value": "var(--spacing-sm)",
-      "currentCode": "component-contract",
+      "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
       "latentOutcome": "latent-facet",
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
@@ -1850,7 +1780,7 @@
       "selector": ".ce-style-dropdown",
       "property": "left",
       "value": "0",
-      "currentCode": "identity-geometry",
+      "currentCode": "component-contract",
       "ruleAction": "reset-inheritance-neutralization",
       "latentOutcome": "latent-facet",
       "function": "removes defaults or forces inheritance so authored words can take over",
@@ -3316,7 +3246,7 @@
       {
         "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item:not(.delete-confirm-option)::max-width::1",
         "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-        "line": 46,
+        "line": 44,
         "selector": ".macro-suggestions-command-item:not(.delete-confirm-option)",
         "property": "max-width",
         "value": "8em",

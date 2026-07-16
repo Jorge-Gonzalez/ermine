@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `6a3694f7d1860458ea2187457811fd3e616cf8c2` |
-| monky | `db7a55d175c94c46f06a5d3fc30eb62051027307` |
+| Ermine | `23bf0cf91f87b17df2ee9933304545fb38092cd0` |
+| monky | `d9749ca3367ddd4e44fdd2cdfad078863f65bd45` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 516 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 296 |
-| **residue — project-owned declarations** | **220** |
+| current declarations | 515 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 300 |
+| **residue — project-owned declarations** | **215** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,13 +34,13 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 203 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 207 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 25 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 8 | project brand typography and type treatment |
-| `component-contract` | 37 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 34 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
 | `parent-relational` | 8 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
@@ -51,7 +51,7 @@ re-validated on every run.
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 12 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 41 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 39 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -61,9 +61,9 @@ re-validated on every run.
 | `src/styles/skin/controls.css` | 33 |
 | `src/content/overlays/views/search/searchViewStyles.css` | 27 |
 | `src/content/overlays/views/settings/settingsViewStyles.css` | 22 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 19 |
-| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 15 |
+| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 17 |
 | `src/content/overlays/modal/modalStyles.css` | 12 |
+| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 12 |
 | `src/popup/popup.css` | 11 |
 | `src/styles/entries/pages.css` | 4 |
 | `src/options/options.css` | 2 |

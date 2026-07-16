@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 220 |
+| reviewed residue declarations | 215 |
 | assimilable now | 0 |
-| latent generalizable | 115 |
-| likely recipe/molecule | 102 |
+| latent generalizable | 112 |
+| likely recipe/molecule | 100 |
 | likely local identity | 3 |
 
 ## By Rule Action
@@ -19,23 +19,23 @@ generalization, recipe, and local-identity pressure.
 | rule action | declarations |
 | --- | --- |
 | dimension-constraint | 30 |
-| attachment-edge-layer | 7 |
+| attachment-edge-layer | 6 |
 | spacing-rhythm | 31 |
 | surface-line-elevation-cutout | 36 |
 | typography-content | 31 |
 | interaction-affordance-state | 14 |
 | motion-transition | 3 |
-| reset-inheritance-neutralization | 24 |
-| component-private-drawing | 44 |
+| reset-inheritance-neutralization | 22 |
+| component-private-drawing | 42 |
 
 ## By Latent Outcome
 
 | latent outcome | declarations |
 | --- | --- |
 | latent-word | 18 |
-| latent-facet | 70 |
+| latent-facet | 67 |
 | latent-scale | 27 |
-| recipe | 102 |
+| recipe | 100 |
 | local-identity | 3 |
 
 ## By Current Ledger Code
@@ -44,7 +44,7 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | recipe-identity | 25 |
 | brand-identity | 8 |
-| component-contract | 37 |
+| component-contract | 34 |
 | state-mechanics | 5 |
 | aria-current | 1 |
 | parent-relational | 8 |
@@ -55,16 +55,16 @@ generalization, recipe, and local-identity pressure.
 | elevation-followup | 3 |
 | reset-absence | 12 |
 | user-content | 43 |
-| identity-geometry | 41 |
+| identity-geometry | 39 |
 
 ## Highest-Pressure Families
 
 | family | latent outcome | declarations | primary pressure |
 | --- | --- | --- | --- |
-| component-private-drawing | recipe | 44 | promote as molecule/recipe only if reused |
+| component-private-drawing | recipe | 42 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | latent-facet | 23 | add a missing facet on an existing Ermine concept |
-| reset-inheritance-neutralization | latent-facet | 22 | add a missing facet on an existing Ermine concept |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
+| reset-inheritance-neutralization | latent-facet | 20 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | latent-scale | 17 | map to an existing/proportional scale or admit a named scale role |
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
@@ -73,8 +73,8 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | latent-word | 7 | admit a new Ermine word only if it survives the invariance test |
 | spacing-rhythm | latent-facet | 7 | add a missing facet on an existing Ermine concept |
 | typography-content | latent-word | 7 | admit a new Ermine word only if it survives the invariance test |
-| attachment-edge-layer | latent-facet | 4 | add a missing facet on an existing Ermine concept |
 | attachment-edge-layer | latent-word | 3 | admit relational attachment/layer word |
+| attachment-edge-layer | latent-facet | 3 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | latent-facet | 3 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | recipe | 3 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 3 | promote as molecule/recipe only if reused |

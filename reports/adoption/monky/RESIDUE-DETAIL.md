@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `6a3694f7d18` |
-| monky | `db7a55d175c` |
+| Ermine | `23bf0cf91f8` |
+| monky | `d9749ca3367` |
 
 ## Summary
 
-- Current declarations: 516
-- Adopted/infrastructure declarations: 296
-- Project-owned residue declarations: 220
+- Current declarations: 515
+- Adopted/infrastructure declarations: 300
+- Project-owned residue declarations: 215
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -21,7 +21,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 |---|---:|---|
 | `recipe-identity` | 25 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
-| `component-contract` | 37 | Component-owned mechanics, exact geometry, or product contract. |
+| `component-contract` | 34 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
 | `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
 | `parent-relational` | 8 | Guarded parent/descendant state mechanics outside ruled relational words. |
@@ -32,7 +32,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 12 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 41 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 39 | Project-exact dimensions, spacing, positioning, and geometry. |
 
 ## recipe-identity (25)
 
@@ -115,7 +115,7 @@ Monky-specific brand typography and type treatment.
 | 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (37)
+## component-contract (34)
 
 Component-owned mechanics, exact geometry, or product contract.
 
@@ -129,18 +129,17 @@ Component-owned mechanics, exact geometry, or product contract.
 | 30 | `.modal-dialog` | `height: min(560px, 85vh)` |
 | 63 | `.modal-nav-icon` | `height: 18px` |
 
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (6)
+### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (5)
 
 | line | selector | declaration |
 |---:|---|---|
 | 10 | `#macro-suggestions *` | `box-sizing: border-box` |
 | 26 | `.macro-suggestions-arrow` | `width: 0` |
 | 27 | `.macro-suggestions-arrow` | `height: 0` |
-| 33 | `.macro-suggestions-arrow.top` | `border-top-color: var(--base-tone)` |
-| 37 | `.macro-suggestions-arrow.bottom` | `bottom: 100%` |
-| 38 | `.macro-suggestions-arrow.bottom` | `border-bottom-color: var(--base-tone)` |
+| 32 | `.macro-suggestions-arrow.top` | `border-top-color: var(--base-tone)` |
+| 36 | `.macro-suggestions-arrow.bottom` | `border-bottom-color: var(--base-tone)` |
 
-### src/content/overlays/views/macroEditor/editorViewStyles.css (8)
+### src/content/overlays/views/macroEditor/editorViewStyles.css (6)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -149,16 +148,13 @@ Component-owned mechanics, exact geometry, or product contract.
 | 13 | `.editor-command-error` | `border-bottom-right-radius: var(--radius-md)` |
 | 20 | `.editor-content.content-editor` | `min-height: 0` |
 | 25 | `.editor-content .content-editor-body` | `min-height: 0` |
-| 30 | `.editor-toast` | `bottom: 52px` |
-| 42 | `.command-suggestions` | `right: 0` |
-| 45 | `.command-suggestions` | `border-radius: 0 0 var(--radius-md) var(--radius-md)` |
+| 42 | `.command-suggestions` | `border-radius: 0 0 var(--radius-md) var(--radius-md)` |
 
-### src/content/overlays/views/search/searchViewStyles.css (3)
+### src/content/overlays/views/search/searchViewStyles.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
 | 10 | `.macro-search-results` | `align-content: start` |
-| 32 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
 | 69 | `.macro-search-kbd` | `border-radius: 4px` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (3)
@@ -183,7 +179,7 @@ Component-owned mechanics, exact geometry, or product contract.
 | 6 | `.popup-container` | `width: 320px` |
 | 20 | `.popup-search-input` | `box-sizing: border-box` |
 
-### src/styles/components/content-editor.css (8)
+### src/styles/components/content-editor.css (9)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -193,6 +189,7 @@ Component-owned mechanics, exact geometry, or product contract.
 | 17 | `.ce-toolbar-btn` | `width: 28px` |
 | 18 | `.ce-toolbar-btn` | `height: 28px` |
 | 33 | `.ce-style-trigger` | `width: auto` |
+| 44 | `.ce-style-dropdown` | `left: 0` |
 | 54 | `.ce-style-option-short` | `width: 24px` |
 | 62 | `.ce-link-input` | `height: 28px` |
 
@@ -398,7 +395,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 44 | `.command-suggestions` | `border-top: none` |
+| 41 | `.command-suggestions` | `border-top: none` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (3)
 
@@ -475,7 +472,7 @@ Rich-text defaults inside user-authored editor content.
 | 180 | `.content-editor-body a` | `text-decoration: underline` |
 | 184 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (41)
+## identity-geometry (39)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -493,7 +490,7 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 35 | `.modal-nav-container` | `min-height: 48px` |
 | 39 | `.modal-nav-branding` | `margin-right: 1rem` |
 
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (8)
+### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (7)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -501,24 +498,23 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 6 | `:host, #macro-suggestions` | `z-index: 2147483646 !important` |
 | 21 | `.macro-suggestions-container` | `min-width: 200px` |
 | 22 | `.macro-suggestions-container` | `max-width: 360px` |
-| 32 | `.macro-suggestions-arrow.top` | `top: 100%` |
-| 42 | `.macro-suggestions-command-item` | `padding: 3px 6px` |
-| 46 | `.macro-suggestions-command-item:not(.delete-confirm-option)` | `max-width: 8em` |
-| 51 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
+| 40 | `.macro-suggestions-command-item` | `padding: 3px 6px` |
+| 44 | `.macro-suggestions-command-item:not(.delete-confirm-option)` | `max-width: 8em` |
+| 49 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
 
-### src/content/overlays/views/macroEditor/editorViewStyles.css (3)
+### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
 | 24 | `.editor-content .content-editor-body` | `flex: 1` |
-| 41 | `.command-suggestions` | `left: 0` |
-| 43 | `.command-suggestions` | `top: 100%` |
+| 30 | `.editor-toast` | `bottom: 52px` |
 
-### src/content/overlays/views/search/searchViewStyles.css (5)
+### src/content/overlays/views/search/searchViewStyles.css (6)
 
 | line | selector | declaration |
 |---:|---|---|
 | 9 | `.macro-search-results` | `max-height: 400px` |
+| 32 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
 | 67 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
 | 68 | `.macro-search-kbd` | `min-width: 26px` |
 | 70 | `.macro-search-kbd` | `z-index: 0` |
@@ -541,7 +537,7 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 38 | `.popup-results` | `padding: var(--spacing-sm) 0` |
 | 39 | `.popup-results` | `margin: 0` |
 
-### src/styles/components/content-editor.css (11)
+### src/styles/components/content-editor.css (10)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -552,7 +548,6 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 35 | `.ce-style-trigger` | `padding: 0 var(--spacing-xs)` |
 | 36 | `.ce-style-trigger` | `gap: 2px` |
 | 43 | `.ce-style-dropdown` | `top: calc(100% + 4px)` |
-| 44 | `.ce-style-dropdown` | `left: 0` |
 | 45 | `.ce-style-dropdown` | `gap: 2px` |
 | 63 | `.ce-link-input` | `padding: 0 var(--spacing-sm)` |
 | 68 | `.content-editor-body` | `min-height: 150px` |
