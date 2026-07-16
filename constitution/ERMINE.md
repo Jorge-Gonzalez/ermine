@@ -629,7 +629,7 @@ A conditioned-skin override triggered by a platform interaction condition — ho
 disabled — is written as a variant prefix on the skin word (`hover:ground-subtle`), the same syntax
 as an environmental scope (R-STATE-07) and licensed as an override by R-STATE-09. These prefixes form
 a closed validated set. The platform supplies the condition, so no backing is required — the seam
-with application-asserted states (selected, checked), which keep the backed `selectable` path
+with application-asserted states (selected, checked, pressed), which keep a backed capability path
 (R-STATE-08). This refines R-STATE-07: an interaction state stays bare as a predicate, but takes
 the prefix form when it scopes conditioned skin. `disabled` is platform-backed form state; its prefix
 serializes to `:disabled`.
@@ -638,16 +638,18 @@ serializes to `:disabled`.
 
 ## R-STATE-11 — Backed condition prefix
 
-An application-asserted state — selected, checked — scopes a conditioned-skin override as a
+An application-asserted state — selected, checked, pressed — scopes a conditioned-skin override as a
 variant prefix (`selected:ground-defined`), the same shape as the platform-condition prefix
 (R-STATE-10) and licensed as an override by R-STATE-09. Unlike a platform condition it must be
-backed: the element carries the `selectable` capability and the container asserts the state
-(R-STATE-08), which the linter verifies — an unbacked prefix is an error. It serializes to the
-backing attribute selector (`[aria-selected="true"]`), not a pseudo-class. Composing carrier words
-under the state supersedes the fixed selection-treatment levels, which could express neither a
-project's own selection hue nor a border it drew with `border-color` rather than `outline`.
+backed: the element carries the capability for that state (`selectable` for selected/checked,
+`pressable` for pressed) and the application asserts the state (R-STATE-08), which the linter
+verifies — an unbacked prefix is an error. It serializes to the backing attribute selector
+(`[aria-selected="true"]`, `[aria-checked="true"]`, or `[aria-pressed="true"]`), not a
+pseudo-class. Composing carrier words under the state supersedes fixed selection-treatment levels
+or component CSS that could express neither a project's own state hue nor a border it drew with
+`border-color` rather than `outline`.
 
-→ rationale: RAT:R-STATE-11 · history: ADR-0008 · code: src/registry.ts#STATE_SCOPES, src/lint.ts#parseWord
+→ rationale: RAT:R-STATE-11 · history: ADR-0008, ADR-0051 · code: src/registry.ts#STATE_SCOPES, src/lint.ts#parseWord
 
 ## R-STATE-12 — Attribute-backed condition prefix
 

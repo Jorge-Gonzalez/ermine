@@ -301,6 +301,12 @@
       "anchor": "ADR-0050"
     },
     {
+      "id": "ADR-0051",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0051-pressed-condition-prefix.md",
+      "anchor": "ADR-0051"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

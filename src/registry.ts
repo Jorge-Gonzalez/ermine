@@ -1151,14 +1151,15 @@ export const STATE: AxisRecord[] = [
     { word: "hover", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":hover"] },
     { word: "focus", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":focus"] },
     { word: "focus-visible", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":focus-visible"] },
-    { word: "active", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":active"], note: "the transient press; toggle `pressed` was folded into `selected` (Law 6b)" },
+    { word: "active", arity: "binary", driver: "interaction", stateCategory: "instance", entails: [":active"], note: "the transient press; toggle state is `pressed` in the selection group" },
   ], "many", [], [["focus-visible", "focus"]]),
   stateAxis("selection", [
     { word: "selectable", arity: "binary", driver: "interaction", stateCategory: "capability", note: "entails nothing; distributes capability down" },
-    { word: "selected", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-selected", "aria-pressed", ":checked"], note: "Law 6b merge",
+    { word: "selected", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-selected", ":checked"], note: "selected item truth, not toggle-button pressed truth",
       // P6 form (b) as declared data (B1): a binary `selected` standing in for the
       // tri-state truth that `checked-mixed` owns.
       misuse: { whenBacking: ["aria-checked=mixed", ":indeterminate"], msg: "'selected' with a mixed/indeterminate backing — use the dedicated word 'checked-mixed'." } },
+    { word: "pressed", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-pressed"], note: "toggle-button pressed truth; distinct from selected item truth" },
     { word: "checked-mixed", arity: "binary", driver: "interaction", stateCategory: "instance", entails: ["aria-checked=mixed", ":indeterminate"], note: "the tri-state 'mixed/indeterminate' value as a complete word (binary arity: the word IS the value, no enum suffix)." },
     { word: "current", arity: "enumerated", driver: "interaction", stateCategory: "instance", entails: ["aria-current"], enumValues: ["page", "step", "location", "date", "time", "true"] },
   ], "many", [["selected", "checked-mixed"]]),
@@ -1233,6 +1234,7 @@ export const INTERACTION_SCOPES: ScopePrefix[] = [
 export const STATE_SCOPES: ScopePrefix[] = [
   { id: "selected", pattern: /^selected$/, shape: "selected:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted selected" },
   { id: "checked", pattern: /^checked$/, shape: "checked:", role: "none", backedBy: "selectable", note: "backed conditioned skin while the element is asserted checked" },
+  { id: "pressed", pattern: /^pressed$/, shape: "pressed:", role: "none", backedBy: "pressable", note: "backed conditioned skin while the element is asserted pressed (aria-pressed)" },
   { id: "current", pattern: /^current$/, shape: "current:", role: "none", note: "attribute-backed conditioned skin while the element is asserted current (aria-current)" },
 ];
 

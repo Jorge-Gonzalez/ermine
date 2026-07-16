@@ -424,6 +424,12 @@ project's actual selected look compose from carriers, retiring the fixed subtle/
 could express neither. `checked` is its sibling (`[aria-checked]`). Surfaced when the selection-sink
 wiring hit the hue/property mismatch. Source: ADR-0008.
 
+Amended (ADR-0051): `pressed` is split back out of `selected` for toggle-button truth. The earlier
+Law 6b merge was good enough for bare entailment but failed prefix serialization: `selected:` can
+only honestly target `[aria-selected="true"]`, while toolbar toggle buttons expose
+`aria-pressed`. `pressed:` uses the same backed condition-prefix mechanism, but requires the
+existing `pressable` affordance and serializes to `[aria-pressed="true"]`.
+
 ## RAT:R-STATE-12
 Monky's modal navigation marks the active tab with `aria-current="page"` and colours it locally —
 three declarations (accent ink, subtle ground, accent bottom rule) that every reconciliation pass

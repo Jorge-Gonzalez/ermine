@@ -2195,7 +2195,7 @@
           "label": "active",
           "insertText": "active",
           "kind": "word",
-          "meaning": "the transient press; toggle `pressed` was folded into `selected` (Law 6b)"
+          "meaning": "the transient press; toggle state is `pressed` in the selection group"
         }
       ]
     },
@@ -2213,7 +2213,13 @@
           "label": "selected",
           "insertText": "selected",
           "kind": "word",
-          "meaning": "Law 6b merge"
+          "meaning": "selected item truth, not toggle-button pressed truth"
+        },
+        {
+          "label": "pressed",
+          "insertText": "pressed",
+          "kind": "word",
+          "meaning": "toggle-button pressed truth; distinct from selected item truth"
         },
         {
           "label": "checked-mixed",

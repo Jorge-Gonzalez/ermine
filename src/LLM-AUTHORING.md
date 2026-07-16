@@ -90,8 +90,8 @@ the decision is the maintainer's, made in the constitution, never improvised at 
 
 Emitting a state word commits you to its truth. This is the one place generation carries a duty beyond
 word choice (full predicate in `src/LINT-SPEC.md` §5, P8):
-- Emit a **`state-instance`** word (`selected`, `open`, `invalid`, …) ⇒ you are responsible for *one of*
-  its backing set existing on the element (`selected` ⇒ `aria-selected` ∨ `aria-pressed` ∨ `:checked`).
+- Emit a **`state-instance`** word (`selected`, `pressed`, `open`, `invalid`, …) ⇒ you are responsible for *one of*
+  its backing set existing on the element (`selected` ⇒ `aria-selected` ∨ `:checked`; `pressed` ⇒ `aria-pressed`).
   A state class without backing renders something *visually true but semantically false* — never emit it.
 - Emit a **`state-relational`** word (`active-descendant`) ⇒ the backing is on the **container**
   (`aria-activedescendant` pointing at this element's id), not the element.
@@ -313,4 +313,3 @@ required invalid
 ```
 
 axes: state.validity, two independent predicates co-occurring — source: validity audit
-

@@ -173,13 +173,14 @@ like*. You compose the condition with the look:
 `selectable` says "these can be selected"; `selection-subtle` is the skin for the selected look. Keeping
 them separate is the point — the same condition can drive different looks.
 
-The everyday state words: `hover`, `focus`, `selected`, `disabled`, `expanded`, `open`, `invalid`,
+The everyday state words: `hover`, `focus`, `selected`, `pressed`, `disabled`, `expanded`, `open`, `invalid`,
 `required`. States from different groups stack freely (`hover` + `selected` + `invalid` can all be true
 at once).
 
 > **One rule worth internalizing:** a visible state must be *backed by the real thing*. If you mark
-> something `selected`, the element also needs its real selection truth (`aria-selected`, `aria-pressed`,
-> or `:checked`). Otherwise it *looks* selected but isn't — which trips up assistive tech and the linter.
+> something `selected`, the element also needs its real selection truth (`aria-selected` or
+> `:checked`). A toggle button uses `pressed` with `aria-pressed`. Otherwise it *looks* true but
+> isn't — which trips up assistive tech and the linter.
 > The grammar styles the condition; you still set the condition.
 
 ### Responsive is just state

@@ -1591,7 +1591,7 @@
     },
     "active": {
       "axis": "state.focus",
-      "meaning": "the transient press; toggle `pressed` was folded into `selected` (Law 6b)",
+      "meaning": "the transient press; toggle state is `pressed` in the selection group",
       "reference": "src/ERMINE-SPEC.md §2.4 — state.focus"
     },
     "selectable": {
@@ -1601,7 +1601,12 @@
     },
     "selected": {
       "axis": "state.selection",
-      "meaning": "Law 6b merge",
+      "meaning": "selected item truth, not toggle-button pressed truth",
+      "reference": "src/ERMINE-SPEC.md §2.4 — state.selection"
+    },
+    "pressed": {
+      "axis": "state.selection",
+      "meaning": "toggle-button pressed truth; distinct from selected item truth",
       "reference": "src/ERMINE-SPEC.md §2.4 — state.selection"
     },
     "checked-mixed": {

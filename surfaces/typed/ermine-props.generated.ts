@@ -76,7 +76,7 @@ export interface ErminePlainProps {
   /** axis `state.focus` */
   focus?: "hover" | "focus" | "focus-visible" | "active" | readonly ("hover" | "focus" | "focus-visible" | "active")[];
   /** axis `state.selection` */
-  selection?: "selectable" | "selected" | "checked-mixed" | "current-page" | "current-step" | "current-location" | "current-date" | "current-time" | "current-true" | readonly ("selectable" | "selected" | "checked-mixed" | "current-page" | "current-step" | "current-location" | "current-date" | "current-time" | "current-true")[];
+  selection?: "selectable" | "selected" | "pressed" | "checked-mixed" | "current-page" | "current-step" | "current-location" | "current-date" | "current-time" | "current-true" | readonly ("selectable" | "selected" | "pressed" | "checked-mixed" | "current-page" | "current-step" | "current-location" | "current-date" | "current-time" | "current-true")[];
   /** axis `state.availability` */
   availability?: "disabled" | "read-only" | "busy" | readonly ("disabled" | "read-only" | "busy")[];
   /** axis `state.disclosure` */

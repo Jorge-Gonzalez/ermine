@@ -668,7 +668,7 @@ Tokens:
 | `hover` | `binary` | `interaction` | `instance` | `:hover` | — | — | — |
 | `focus` | `binary` | `interaction` | `instance` | `:focus` | — | — | — |
 | `focus-visible` | `binary` | `interaction` | `instance` | `:focus-visible` | — | — | — |
-| `active` | `binary` | `interaction` | `instance` | `:active` | — | — | the transient press; toggle `pressed` was folded into `selected` (Law 6b) |
+| `active` | `binary` | `interaction` | `instance` | `:active` | — | — | the transient press; toggle state is `pressed` in the selection group |
 
 Tokens:
 
@@ -679,7 +679,7 @@ Tokens:
 #### state.selection
 
 - role: `none` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `selectable` `selected` `checked-mixed` `current`
+- value space: `selectable` `selected` `pressed` `checked-mixed` `current`
 - default: none
 - controls: —
 - must never touch: `*`
@@ -691,7 +691,8 @@ Tokens:
 | Word | Arity | Driver | Category | Entails (any one) | Enum values | Relational backing | Notes |
 |---|---|---|---|---|---|---|---|
 | `selectable` | `binary` | `interaction` | `capability` | — | — | — | entails nothing; distributes capability down |
-| `selected` | `binary` | `interaction` | `instance` | `aria-selected` `aria-pressed` `:checked` | — | — | Law 6b merge |
+| `selected` | `binary` | `interaction` | `instance` | `aria-selected` `:checked` | — | — | selected item truth, not toggle-button pressed truth |
+| `pressed` | `binary` | `interaction` | `instance` | `aria-pressed` | — | — | toggle-button pressed truth; distinct from selected item truth |
 | `checked-mixed` | `binary` | `interaction` | `instance` | `aria-checked=mixed` `:indeterminate` | — | — | the tri-state 'mixed/indeterminate' value as a complete word (binary arity: the word IS the value, no enum suffix). |
 | `current` | `enumerated` | `interaction` | `instance` | `aria-current` | `page` `step` `location` `date` `time` `true` | — | — |
 
@@ -700,7 +701,7 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `current-<value>` | `/^(current)-(page\|step\|location\|date\|time\|true)$/` | `enum` | no |
-| `<selection-state>` | `/^(selectable\|selected\|checked-mixed)$/` | — | no |
+| `<selection-state>` | `/^(selectable\|selected\|pressed\|checked-mixed)$/` | — | no |
 | `current-<value?>` | `/^(current)(?:-.*)?$/` | `enum` | no |
 
 #### state.availability
@@ -1154,6 +1155,7 @@ These prefixes are closed condition scopes, not registry-axis members. The guard
 | `disabled` | `disabled:` | `/^disabled$/` | `none` | conditioned skin while the form control is disabled |
 | `selected` | `selected:` | `/^selected$/` | `none` | backed conditioned skin while the element is asserted selected |
 | `checked` | `checked:` | `/^checked$/` | `none` | backed conditioned skin while the element is asserted checked |
+| `pressed` | `pressed:` | `/^pressed$/` | `none` | backed conditioned skin while the element is asserted pressed (aria-pressed) |
 | `current` | `current:` | `/^current$/` | `none` | attribute-backed conditioned skin while the element is asserted current (aria-current) |
 | `parent-hover` | `parent-hover:` | `/^parent-hover$/` | `none` | conditioned skin while the selectable ancestor is hovered |
 | `parent-selected` | `parent-selected:` | `/^parent-selected$/` | `none` | conditioned skin while the selectable ancestor is asserted selected |

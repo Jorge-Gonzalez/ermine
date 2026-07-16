@@ -132,7 +132,8 @@ A grammar word touching a `must-never-touch` property (e.g. a layout word emitti
 
 ### P8 — state entailment (category-dispatched)  ‹IMPLEMENTED›
 - `instance`, binary: requires *one of* its backing set present on the element. None present →
-  **error** `state-entailment` (e.g. `selected` with no `aria-selected`/`aria-pressed`/`:checked`).
+  **error** `state-entailment` (e.g. `selected` with no `aria-selected`/`:checked`, or `pressed`
+  with no `aria-pressed`).
   Suppressed for a word P6 already gave a more specific diagnosis (`selected` with mixed backing
   reports only `arity-misuse`, not also a redundant `state-entailment` — one fix, not two).
 - `instance`, enumerated (**value-aware**, this revision): requires *one of* its backing set present

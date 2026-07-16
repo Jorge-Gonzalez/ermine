@@ -91,6 +91,13 @@ test("a backed selected: scope serializes to the [aria-selected] attribute selec
   assert.doesNotMatch(css, /@media/, "a backed state scope must not become an at-rule");
 });
 
+test("a backed pressed: scope serializes to the [aria-pressed] attribute selector (R-STATE-11)", () => {
+  const css = toCss("pressable pressed:ground-defined pressed:ink-accent");
+  assert.match(css, /\.pressed\\:ground-defined\[aria-pressed="true"\] \{[^}]*background: var\(--ground-defined\);/s);
+  assert.match(css, /\.pressed\\:ink-accent\[aria-pressed="true"\] \{[^}]*color: var\(--accent\);/s);
+  assert.doesNotMatch(css, /@media/, "a backed state scope must not become an at-rule");
+});
+
 test("elevated reads its socket with the default geometry composed on the shadow colour (R-SKIN-09)", () => {
   const css = toCss("elevated");
   assert.match(css, /\.elevated \{[^}]*box-shadow: var\(--shadow-elevated, 0 4px 12px var\(--shadow\)\);/s);

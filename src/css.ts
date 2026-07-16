@@ -165,6 +165,7 @@ function scopeAttribute(scope: string): string | undefined {
   const exact: Record<string, string> = {
     selected: '[aria-selected="true"]',
     checked: '[aria-checked="true"]',
+    pressed: '[aria-pressed="true"]',
     current: '[aria-current]:not([aria-current="false"])',
   };
   return exact[scope];

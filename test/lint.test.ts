@@ -51,7 +51,8 @@ const cases: Case[] = [
   { s: "quarter", ctx: { parentClasses: "columns-12" }, expect: "ok", why: "intent proportion under columns-12" },
   // state
   { s: "selected", expect: "fail", why: "P8 no backing" },
-  { s: "selected", backing: ["aria-pressed"], expect: "ok", why: "P8 Law-6b disjunction" },
+  { s: "selected", backing: ["aria-pressed"], expect: "fail", why: "pressed toggle truth is not selected item truth" },
+  { s: "pressed", backing: ["aria-pressed"], expect: "ok", why: "toggle-button pressed truth" },
   { s: "selectable", expect: "ok", why: "capability entails nothing" },
   { s: "stretchy", expect: "fail", why: "P2 coined" },
   { s: "modal", expect: "ok", why: "top-layer mechanism" },
@@ -165,6 +166,8 @@ const cases: Case[] = [
   { s: "selected:ground-defined", expect: "fail", why: "R-STATE-11: selected: without selectable" },
   { s: "selectable selected:ground-defined selected:ink-accent", expect: "ok", why: "backed by selectable" },
   { s: "checked:ground-accent", expect: "fail", why: "R-STATE-11: checked: without selectable" },
+  { s: "pressed:ground-defined", expect: "fail", why: "R-STATE-11: pressed: without pressable" },
+  { s: "pressable pressed:ground-defined pressed:ink-accent", expect: "ok", why: "backed by pressable" },
   { s: "hover:ground-subtle", expect: "ok", why: "hover: is unbacked — no capability required" },
   // R-STATE-12 — attribute-backed: the aria-current selector is the backing, no capability word
   { s: "current:ink-accent current:ground-subtle", expect: "ok", why: "R-STATE-12: attribute-backed, no capability required" },
