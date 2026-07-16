@@ -19,16 +19,16 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the editor style-option state migration is Ermine
-8c7b5b7 / Monky 16d21d8:
+were migrated). Current live ledger after the pressed/expanded state-prefix migration is
+Ermine e0a2802 / Monky 38ba893:
 
-  current declarations:                 520
-  adopted/infrastructure declarations:  364
-  project-owned residue declarations:   156
+  current declarations:                 522
+  adopted/infrastructure declarations:  368
+  project-owned residue declarations:   154
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 17, brand-identity 8, component-contract 8, state-mechanics 3,
+  recipe-identity 17, brand-identity 8, component-contract 8, state-mechanics 1,
   parent-relational 2, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 5,
   user-content 43, identity-geometry 30.
@@ -94,7 +94,7 @@ the repeated property-targeted transition rows moved to targeted tween envelopes
 `tween-opacity-transform-quick`). The remaining motion row is the local `.shake {
 transition: none !important }` suppression; bespoke segmented-control pill timing is
 classified as pseudo/component recipe rather than `motion-followup`. user-content
-(43 = the `prose` molecule) and recipe-identity (21 by the live ledger, R-SKIN-10) remain the
+(43 = the `prose` molecule) and recipe-identity (17 by the live ledger, R-SKIN-10) remain the
 genuinely-licensed-local bundles. The first dimension endpoint pass admitted
 `max-width-none`, and the delete-confirm `max-width: none` row migrated to that word. The
 next dimension pass admitted `control-size-<spacing>` and migrated the 16px radio/checkbox
@@ -130,9 +130,10 @@ transparent endpoint, migrated the current-tab underline, and moved search row h
 backgrounds to existing relational state skin. The checked group skin pass then moved
 SelectableGroup selected skin to existing `checked:` carrier words, leaving only local opacity
 and lockout mechanics. The editor style-option state pass then moved the listbox option active
-skin to existing `selected:` and `parent-selected:` carrier words, leaving toolbar `aria-pressed`
-skin local pending a pressed-scope ruling; the live residue is now 156. Shorthand-asymmetry and
-raw micro-padding rows remain as the next spacing questions.
+skin to existing `selected:` and `parent-selected:` carrier words. The pressed/expanded
+state-prefix pass then admitted `pressed:` and `expanded:`, migrating the content-editor toolbar
+button and style trigger active skin; the live residue is now 154. Shorthand-asymmetry and raw
+micro-padding rows remain as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -192,7 +193,7 @@ src/popup/popup.css:
 popup-button, popup-container, popup-icon-button, popup-item-detail, popup-item-toggle, popup-macro-text, popup-results, popup-search-input, popup-toggle-label
 
 src/styles/components/content-editor.css:
-ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep, content-editor, content-editor-body, is-active
+ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep, content-editor, content-editor-body
 
 src/styles/entries/pages.css:
 page-title
@@ -346,7 +347,7 @@ Representative declarations:
   color/border-color on selected/current/checked;
   opacity: 0.6 / 0.9 / 0.95 / 1;
   transform: scale(0.98); vertical-align: middle;
-  .is-active, [aria-current], [aria-checked], [aria-selected], :disabled, :hover,
+  .is-selected, [aria-current], [aria-checked], [aria-selected], :disabled, :hover,
     :active, :focus, :only-of-type.
 
 Reading:

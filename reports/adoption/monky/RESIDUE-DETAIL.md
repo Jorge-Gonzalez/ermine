@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `8c7b5b7fe0a0` |
-| monky | `16d21d86c070` |
+| Ermine | `e0a2802e8788` |
+| monky | `38ba893d0529` |
 
 ## Summary
 
-- Current declarations: 520
-- Adopted/infrastructure declarations: 364
-- Project-owned residue declarations: 156
+- Current declarations: 522
+- Adopted/infrastructure declarations: 368
+- Project-owned residue declarations: 154
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -22,7 +22,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `recipe-identity` | 17 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
 | `component-contract` | 8 | Component-owned mechanics, exact geometry, or product contract. |
-| `state-mechanics` | 3 | Native/JS state mechanics outside backed Ermine conditions. |
+| `state-mechanics` | 1 | Native/JS state mechanics outside backed Ermine conditions. |
 | `parent-relational` | 2 | Guarded parent/descendant state mechanics outside ruled relational words. |
 | `pseudo-mechanics` | 23 | Pseudo-element geometry, generated content, and fills. |
 | `scrollbar-followup` | 9 | Engine-drawn scrollbar identity outside R-SKIN-15 standard properties. |
@@ -92,7 +92,7 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 50 | `.content-editor-body` | `font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif` |
+| 45 | `.content-editor-body` | `font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif` |
 
 ### src/styles/entries/pages.css (2)
 
@@ -131,18 +131,11 @@ Component-owned mechanics, exact geometry, or product contract.
 | line | selector | declaration |
 |---:|---|---|
 | 10 | `.ce-toolbar-sep` | `background-color: var(--harmonic)` |
-| 38 | `.ce-style-dropdown` | `left: 0` |
+| 33 | `.ce-style-dropdown` | `left: 0` |
 
-## state-mechanics (3)
+## state-mechanics (1)
 
 Native/JS state mechanics outside backed Ermine conditions.
-
-### src/styles/components/content-editor.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 19 | `.ce-toolbar-btn.is-active` | `background-color: var(--tone)` |
-| 20 | `.ce-toolbar-btn.is-active` | `color: var(--accent)` |
 
 ### src/styles/skin/controls.css (1)
 
@@ -204,9 +197,9 @@ Pseudo-element geometry, generated content, and fills.
 
 | line | selector | declaration |
 |---:|---|---|
-| 55 | `.content-editor-body:empty::before` | `content: attr(data-placeholder)` |
-| 56 | `.content-editor-body:empty::before` | `color: var(--ink-soft)` |
-| 57 | `.content-editor-body:empty::before` | `pointer-events: none` |
+| 50 | `.content-editor-body:empty::before` | `content: attr(data-placeholder)` |
+| 51 | `.content-editor-body:empty::before` | `color: var(--ink-soft)` |
+| 52 | `.content-editor-body:empty::before` | `pointer-events: none` |
 
 ## scrollbar-followup (9)
 
@@ -255,7 +248,7 @@ Opacity prominence/treatment evidence.
 
 | line | selector | declaration |
 |---:|---|---|
-| 33 | `.ce-style-caret` | `opacity: 0.6` |
+| 28 | `.ce-style-caret` | `opacity: 0.6` |
 
 ### src/styles/skin/controls.css (2)
 
@@ -308,7 +301,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 51 | `.content-editor-body` | `line-height: normal` |
+| 46 | `.content-editor-body` | `line-height: normal` |
 
 ## user-content (43)
 
@@ -318,49 +311,49 @@ Rich-text defaults inside user-authored content.
 
 | line | selector | declaration |
 |---:|---|---|
-| 62 | `.content-editor-body p` | `margin-bottom: 0.75em` |
-| 66 | `.content-editor-body p:last-child` | `margin-bottom: 0` |
-| 70 | `.content-editor-body h1` | `font-size: 1.75em` |
-| 71 | `.content-editor-body h1` | `font-weight: 700` |
-| 72 | `.content-editor-body h1` | `margin: 0.75em 0 0.4em` |
-| 76 | `.content-editor-body h2` | `font-size: 1.4em` |
-| 77 | `.content-editor-body h2` | `font-weight: 700` |
-| 78 | `.content-editor-body h2` | `margin: 0.75em 0 0.4em` |
-| 82 | `.content-editor-body h3` | `font-size: 1.15em` |
-| 83 | `.content-editor-body h3` | `font-weight: 700` |
-| 84 | `.content-editor-body h3` | `margin: 0.75em 0 0.4em` |
-| 90 | `.content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child` | `margin-top: 0` |
-| 95 | `.content-editor-body strong, .content-editor-body b` | `font-weight: 700` |
-| 100 | `.content-editor-body em, .content-editor-body i` | `font-style: italic` |
-| 104 | `.content-editor-body u` | `text-decoration: underline` |
-| 108 | `.content-editor-body s` | `text-decoration: line-through` |
-| 112 | `.content-editor-body code` | `font-family: 'IBM Plex Mono', 'Fira Code', monospace` |
-| 113 | `.content-editor-body code` | `font-size: 0.88em` |
-| 114 | `.content-editor-body code` | `background-color: var(--tone)` |
-| 115 | `.content-editor-body code` | `color: var(--ink)` |
-| 116 | `.content-editor-body code` | `padding: 0.1em 0.35em` |
-| 117 | `.content-editor-body code` | `border-radius: var(--radius-sm)` |
-| 121 | `.content-editor-body pre` | `font-family: 'IBM Plex Mono', 'Fira Code', monospace` |
-| 122 | `.content-editor-body pre` | `font-size: 0.88em` |
-| 123 | `.content-editor-body pre` | `background-color: var(--tone)` |
-| 124 | `.content-editor-body pre` | `padding: var(--spacing-md)` |
-| 125 | `.content-editor-body pre` | `border-radius: var(--radius-sm)` |
-| 126 | `.content-editor-body pre` | `overflow-x: auto` |
-| 127 | `.content-editor-body pre` | `margin: 0.75em 0` |
-| 131 | `.content-editor-body blockquote` | `border-left: 3px solid var(--accent-dim)` |
-| 132 | `.content-editor-body blockquote` | `padding-left: var(--spacing-md)` |
-| 133 | `.content-editor-body blockquote` | `margin: 0.75em 0` |
-| 134 | `.content-editor-body blockquote` | `color: var(--ink-soft)` |
-| 135 | `.content-editor-body blockquote` | `font-style: italic` |
-| 140 | `.content-editor .content-editor-body ul, .content-editor .content-editor-body ol` | `padding-left: 1.5em` |
-| 141 | `.content-editor .content-editor-body ul, .content-editor .content-editor-body ol` | `margin-bottom: 0.75em` |
-| 145 | `.content-editor .content-editor-body ul` | `list-style-type: disc` |
-| 149 | `.content-editor .content-editor-body ol` | `list-style-type: decimal` |
-| 153 | `.content-editor-body li` | `display: list-item` |
-| 154 | `.content-editor-body li` | `margin-bottom: 0.2em` |
-| 158 | `.content-editor-body a` | `color: var(--accent)` |
-| 159 | `.content-editor-body a` | `text-decoration: underline` |
-| 163 | `.content-editor-body a:hover` | `opacity: 0.8` |
+| 57 | `.content-editor-body p` | `margin-bottom: 0.75em` |
+| 61 | `.content-editor-body p:last-child` | `margin-bottom: 0` |
+| 65 | `.content-editor-body h1` | `font-size: 1.75em` |
+| 66 | `.content-editor-body h1` | `font-weight: 700` |
+| 67 | `.content-editor-body h1` | `margin: 0.75em 0 0.4em` |
+| 71 | `.content-editor-body h2` | `font-size: 1.4em` |
+| 72 | `.content-editor-body h2` | `font-weight: 700` |
+| 73 | `.content-editor-body h2` | `margin: 0.75em 0 0.4em` |
+| 77 | `.content-editor-body h3` | `font-size: 1.15em` |
+| 78 | `.content-editor-body h3` | `font-weight: 700` |
+| 79 | `.content-editor-body h3` | `margin: 0.75em 0 0.4em` |
+| 85 | `.content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child` | `margin-top: 0` |
+| 90 | `.content-editor-body strong, .content-editor-body b` | `font-weight: 700` |
+| 95 | `.content-editor-body em, .content-editor-body i` | `font-style: italic` |
+| 99 | `.content-editor-body u` | `text-decoration: underline` |
+| 103 | `.content-editor-body s` | `text-decoration: line-through` |
+| 107 | `.content-editor-body code` | `font-family: 'IBM Plex Mono', 'Fira Code', monospace` |
+| 108 | `.content-editor-body code` | `font-size: 0.88em` |
+| 109 | `.content-editor-body code` | `background-color: var(--tone)` |
+| 110 | `.content-editor-body code` | `color: var(--ink)` |
+| 111 | `.content-editor-body code` | `padding: 0.1em 0.35em` |
+| 112 | `.content-editor-body code` | `border-radius: var(--radius-sm)` |
+| 116 | `.content-editor-body pre` | `font-family: 'IBM Plex Mono', 'Fira Code', monospace` |
+| 117 | `.content-editor-body pre` | `font-size: 0.88em` |
+| 118 | `.content-editor-body pre` | `background-color: var(--tone)` |
+| 119 | `.content-editor-body pre` | `padding: var(--spacing-md)` |
+| 120 | `.content-editor-body pre` | `border-radius: var(--radius-sm)` |
+| 121 | `.content-editor-body pre` | `overflow-x: auto` |
+| 122 | `.content-editor-body pre` | `margin: 0.75em 0` |
+| 126 | `.content-editor-body blockquote` | `border-left: 3px solid var(--accent-dim)` |
+| 127 | `.content-editor-body blockquote` | `padding-left: var(--spacing-md)` |
+| 128 | `.content-editor-body blockquote` | `margin: 0.75em 0` |
+| 129 | `.content-editor-body blockquote` | `color: var(--ink-soft)` |
+| 130 | `.content-editor-body blockquote` | `font-style: italic` |
+| 135 | `.content-editor .content-editor-body ul, .content-editor .content-editor-body ol` | `padding-left: 1.5em` |
+| 136 | `.content-editor .content-editor-body ul, .content-editor .content-editor-body ol` | `margin-bottom: 0.75em` |
+| 140 | `.content-editor .content-editor-body ul` | `list-style-type: disc` |
+| 144 | `.content-editor .content-editor-body ol` | `list-style-type: decimal` |
+| 148 | `.content-editor-body li` | `display: list-item` |
+| 149 | `.content-editor-body li` | `margin-bottom: 0.2em` |
+| 153 | `.content-editor-body a` | `color: var(--accent)` |
+| 154 | `.content-editor-body a` | `text-decoration: underline` |
+| 158 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
 ## identity-geometry (30)
 
@@ -422,12 +415,12 @@ Project-exact dimensions, spacing, positioning, and geometry.
 |---:|---|---|
 | 11 | `.ce-toolbar-sep` | `margin: 0 var(--spacing-xs)` |
 | 15 | `.ce-toolbar-btn` | `padding: 0` |
-| 24 | `.ce-toolbar-icon` | `padding: 0 var(--spacing-xs)` |
-| 29 | `.ce-style-trigger` | `padding: 0 var(--spacing-xs)` |
-| 30 | `.ce-style-trigger` | `gap: 2px` |
-| 37 | `.ce-style-dropdown` | `top: calc(100% + 4px)` |
-| 39 | `.ce-style-dropdown` | `gap: 2px` |
-| 43 | `.ce-link-input` | `padding: 0 var(--spacing-sm)` |
+| 19 | `.ce-toolbar-icon` | `padding: 0 var(--spacing-xs)` |
+| 24 | `.ce-style-trigger` | `padding: 0 var(--spacing-xs)` |
+| 25 | `.ce-style-trigger` | `gap: 2px` |
+| 32 | `.ce-style-dropdown` | `top: calc(100% + 4px)` |
+| 34 | `.ce-style-dropdown` | `gap: 2px` |
+| 38 | `.ce-link-input` | `padding: 0 var(--spacing-sm)` |
 
 ### src/styles/entries/pages.css (2)
 
