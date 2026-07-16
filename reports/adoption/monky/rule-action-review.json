@@ -2,16 +2,16 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "a3a421271201040d8876951c9aaade5f6ba98261",
-    "projectCommit": "3052c7043fa7643fca33dedb97703e360ff65d06"
+    "ermineCommit": "fd9c6d4ffc28b1e2b828335210f36e1243f666f0",
+    "projectCommit": "8f0301b159ff8e025bfc17ce052b047272d724f9"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 180,
+    "reviewedDeclarations": 170,
     "assimilableNow": 0,
-    "latentGeneralizable": 80,
+    "latentGeneralizable": 70,
     "likelyRecipe": 97,
     "likelyLocal": 3,
     "byRuleAction": {
@@ -19,17 +19,17 @@
       "dimension-constraint": 1,
       "attachment-edge-layer": 6,
       "spacing-rhythm": 31,
-      "surface-line-elevation-cutout": 33,
+      "surface-line-elevation-cutout": 31,
       "typography-content": 31,
       "interaction-affordance-state": 14,
       "motion-transition": 3,
-      "reset-inheritance-neutralization": 20,
+      "reset-inheritance-neutralization": 12,
       "component-private-drawing": 41
     },
     "byLatentOutcome": {
       "admitted": 0,
       "latent-word": 11,
-      "latent-facet": 59,
+      "latent-facet": 49,
       "latent-scale": 10,
       "recipe": 97,
       "local-identity": 3
@@ -40,11 +40,11 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 23,
+      "recipe-identity": 21,
       "rule-mechanics": 0,
       "brand-identity": 8,
       "affordance-mechanics": 0,
-      "component-contract": 10,
+      "component-contract": 8,
       "state-mechanics": 5,
       "state-review": 0,
       "focus-state": 0,
@@ -55,7 +55,7 @@
       "motion-followup": 1,
       "opacity-followup": 4,
       "elevation-followup": 3,
-      "reset-absence": 12,
+      "reset-absence": 6,
       "user-content": 43,
       "identity-geometry": 30,
       "skin-review": 0,
@@ -233,37 +233,9 @@
       "proposedForm": "layer tier"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::#macro-suggestions *::box-sizing::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 10,
-      "selector": "#macro-suggestions *",
-      "property": "box-sizing",
-      "value": "border-box",
-      "currentCode": "component-contract",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::button, input, textarea, select::font-family::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 16,
-      "selector": "button, input, textarea, select",
-      "property": "font-family",
-      "value": "inherit",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::box-shadow::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 20,
+      "line": 10,
       "selector": ".macro-suggestions-container",
       "property": "box-shadow",
       "value": "0 10px 25px -5px var(--shadow-color)",
@@ -277,7 +249,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow::width::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 24,
+      "line": 14,
       "selector": ".macro-suggestions-arrow",
       "property": "width",
       "value": "0",
@@ -291,7 +263,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow::border::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 25,
+      "line": 15,
       "selector": ".macro-suggestions-arrow",
       "property": "border",
       "value": "6px solid transparent",
@@ -305,7 +277,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::border-top-color::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 29,
+      "line": 19,
       "selector": ".macro-suggestions-arrow.top",
       "property": "border-top-color",
       "value": "var(--base-tone)",
@@ -319,7 +291,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::border-bottom-color::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 33,
+      "line": 23,
       "selector": ".macro-suggestions-arrow.bottom",
       "property": "border-bottom-color",
       "value": "var(--base-tone)",
@@ -333,7 +305,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 37,
+      "line": 27,
       "selector": ".macro-suggestions-command-item",
       "property": "padding",
       "value": "3px 6px",
@@ -347,7 +319,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 42,
+      "line": 32,
       "selector": ".macro-suggestions-kbd",
       "property": "padding",
       "value": "1px 4px",
@@ -400,20 +372,6 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "proportional/viewport relation",
       "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-top::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 18,
-      "selector": ".command-suggestions",
-      "property": "border-top",
-      "value": "none",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-results::align-content::1",
@@ -1006,37 +964,9 @@
       "proposedForm": "condition-backed state skin/affordance facet"
     },
     {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option:last-child::border-right::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 55,
-      "selector": ".seg-option:last-child",
-      "property": "border-right",
-      "value": "none",
-      "currentCode": "recipe-identity",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option[aria-checked=\"true\"]::border-right-color::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 59,
-      "selector": ".seg-option[aria-checked=\"true\"]",
-      "property": "border-right-color",
-      "value": "transparent",
-      "currentCode": "recipe-identity",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.is-sliding .seg-option[aria-checked=\"true\"]::background::1",
       "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 65,
+      "line": 56,
       "selector": ".seg-control.is-sliding .seg-option[aria-checked=\"true\"]",
       "property": "background",
       "value": "transparent",
@@ -1048,23 +978,9 @@
       "proposedForm": "segmented-control recipe"
     },
     {
-      "id": "src/popup/popup.css::.popup-button, .popup-icon-button::border::1",
-      "file": "src/popup/popup.css",
-      "line": 7,
-      "selector": ".popup-button, .popup-icon-button",
-      "property": "border",
-      "value": "none",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
       "id": "src/popup/popup.css::.popup-button:hover, .popup-icon-button:hover::opacity::1",
       "file": "src/popup/popup.css",
-      "line": 12,
+      "line": 7,
       "selector": ".popup-button:hover, .popup-icon-button:hover",
       "property": "opacity",
       "value": "0.9",
@@ -1076,51 +992,9 @@
       "proposedForm": "condition-backed state skin/affordance facet"
     },
     {
-      "id": "src/popup/popup.css::.popup-search-input::box-sizing::1",
-      "file": "src/popup/popup.css",
-      "line": 16,
-      "selector": ".popup-search-input",
-      "property": "box-sizing",
-      "value": "border-box",
-      "currentCode": "component-contract",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
-      "id": "src/popup/popup.css::.popup-item-toggle::border::1",
-      "file": "src/popup/popup.css",
-      "line": 21,
-      "selector": ".popup-item-toggle",
-      "property": "border",
-      "value": "none",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
-      "id": "src/popup/popup.css::.popup-item-toggle::background::1",
-      "file": "src/popup/popup.css",
-      "line": 22,
-      "selector": ".popup-item-toggle",
-      "property": "background",
-      "value": "transparent",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
       "id": "src/popup/popup.css::.popup-macro-text::margin::1",
       "file": "src/popup/popup.css",
-      "line": 26,
+      "line": 11,
       "selector": ".popup-macro-text",
       "property": "margin",
       "value": "0",
@@ -1134,7 +1008,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::padding::1",
       "file": "src/popup/popup.css",
-      "line": 33,
+      "line": 18,
       "selector": ".popup-results",
       "property": "padding",
       "value": "var(--spacing-sm) 0",
@@ -1149,7 +1023,7 @@
     {
       "id": "src/popup/popup.css::.popup-results::margin::1",
       "file": "src/popup/popup.css",
-      "line": 34,
+      "line": 19,
       "selector": ".popup-results",
       "property": "margin",
       "value": "0",
@@ -1159,20 +1033,6 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "map to an existing/proportional scale or admit a named scale role",
       "proposedForm": "per-edge spacing facet or smaller density step"
-    },
-    {
-      "id": "src/popup/popup.css::.popup-results::list-style::1",
-      "file": "src/popup/popup.css",
-      "line": 35,
-      "selector": ".popup-results",
-      "property": "list-style",
-      "value": "none",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
     },
     {
       "id": "src/styles/components/content-editor.css::.ce-toolbar-sep::background-color::1",

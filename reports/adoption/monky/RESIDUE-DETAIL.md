@@ -6,22 +6,22 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `a3a421271201` |
-| monky | `3052c7043fa7` |
+| Ermine | `fd9c6d4ffc28` |
+| monky | `8f0301b159ff` |
 
 ## Summary
 
-- Current declarations: 532
-- Adopted/infrastructure declarations: 352
-- Project-owned residue declarations: 180
+- Current declarations: 524
+- Adopted/infrastructure declarations: 354
+- Project-owned residue declarations: 170
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 23 | Project recipe bundles licensed by R-SKIN-10. |
+| `recipe-identity` | 21 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
-| `component-contract` | 10 | Component-owned mechanics, exact geometry, or product contract. |
+| `component-contract` | 8 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
 | `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
 | `parent-relational` | 8 | Guarded parent/descendant state mechanics outside ruled relational words. |
@@ -30,21 +30,19 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `motion-followup` | 1 | Transition/animation timing evidence for the animation-plane follow-up. |
 | `opacity-followup` | 4 | Opacity prominence/treatment evidence. |
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
-| `reset-absence` | 12 | Absence/reset/transparent mechanics, not positive style carriers. |
+| `reset-absence` | 6 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
 | `identity-geometry` | 30 | Project-exact dimensions, spacing, positioning, and geometry. |
 
-## recipe-identity (23)
+## recipe-identity (21)
 
 Project recipe bundles licensed by R-SKIN-10.
 
-### src/content/overlays/views/settings/settingsViewStyles.css (3)
+### src/content/overlays/views/settings/settingsViewStyles.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
 | 50 | `.seg-option svg` | `vertical-align: middle` |
-| 55 | `.seg-option:last-child` | `border-right: none` |
-| 59 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
 
 ### src/styles/skin/controls.css (20)
 
@@ -108,7 +106,7 @@ Monky-specific brand typography and type treatment.
 | 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (10)
+## component-contract (8)
 
 Component-owned mechanics, exact geometry, or product contract.
 
@@ -119,13 +117,12 @@ Component-owned mechanics, exact geometry, or product contract.
 | 19 | `.modal-backdrop` | `background-color: var(--shadow-color)` |
 | 28 | `.modal-dialog` | `mix-blend-mode: multiply` |
 
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (3)
+### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
-| 10 | `#macro-suggestions *` | `box-sizing: border-box` |
-| 29 | `.macro-suggestions-arrow.top` | `border-top-color: var(--base-tone)` |
-| 33 | `.macro-suggestions-arrow.bottom` | `border-bottom-color: var(--base-tone)` |
+| 19 | `.macro-suggestions-arrow.top` | `border-top-color: var(--base-tone)` |
+| 23 | `.macro-suggestions-arrow.bottom` | `border-bottom-color: var(--base-tone)` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (2)
 
@@ -133,12 +130,6 @@ Component-owned mechanics, exact geometry, or product contract.
 |---:|---|---|
 | 9 | `.macro-search-results` | `align-content: start` |
 | 68 | `.macro-search-kbd` | `border-radius: 4px` |
-
-### src/popup/popup.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 16 | `.popup-search-input` | `box-sizing: border-box` |
 
 ### src/styles/components/content-editor.css (2)
 
@@ -194,13 +185,13 @@ Guarded parent/descendant state mechanics outside ruled relational words.
 
 | line | selector | declaration |
 |---:|---|---|
-| 65 | `.seg-control.is-sliding .seg-option[aria-checked="true"]` | `background: transparent` |
+| 56 | `.seg-control.is-sliding .seg-option[aria-checked="true"]` | `background: transparent` |
 
 ### src/popup/popup.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 12 | `.popup-button:hover, .popup-icon-button:hover` | `opacity: 0.9` |
+| 7 | `.popup-button:hover, .popup-icon-button:hover` | `opacity: 0.9` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -320,7 +311,7 @@ Identity shadows/rings outside the shared elevated treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 20 | `.macro-suggestions-container` | `box-shadow: 0 10px 25px -5px var(--shadow-color)` |
+| 10 | `.macro-suggestions-container` | `box-shadow: 0 10px 25px -5px var(--shadow-color)` |
 
 ### src/content/overlays/views/macroEditor/editorViewStyles.css (1)
 
@@ -328,7 +319,7 @@ Identity shadows/rings outside the shared elevated treatment.
 |---:|---|---|
 | 13 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
 
-## reset-absence (12)
+## reset-absence (6)
 
 Absence/reset/transparent mechanics, not positive style carriers.
 
@@ -338,18 +329,11 @@ Absence/reset/transparent mechanics, not positive style carriers.
 |---:|---|---|
 | 45 | `.modal-nav-tab` | `border-bottom: 2px solid transparent` |
 
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
+### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 16 | `button, input, textarea, select` | `font-family: inherit` |
-| 25 | `.macro-suggestions-arrow` | `border: 6px solid transparent` |
-
-### src/content/overlays/views/macroEditor/editorViewStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 18 | `.command-suggestions` | `border-top: none` |
+| 15 | `.macro-suggestions-arrow` | `border: 6px solid transparent` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (3)
 
@@ -358,15 +342,6 @@ Absence/reset/transparent mechanics, not positive style carriers.
 | 35 | `.macro-search-item-text mark` | `background: transparent` |
 | 36 | `.macro-search-item-text mark` | `color: inherit` |
 | 37 | `.macro-search-item-text mark` | `font-style: normal` |
-
-### src/popup/popup.css (4)
-
-| line | selector | declaration |
-|---:|---|---|
-| 7 | `.popup-button, .popup-icon-button` | `border: none` |
-| 21 | `.popup-item-toggle` | `border: none` |
-| 22 | `.popup-item-toggle` | `background: transparent` |
-| 35 | `.popup-results` | `list-style: none` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -443,9 +418,9 @@ Project-exact dimensions, spacing, positioning, and geometry.
 |---:|---|---|
 | 5 | `:host, #macro-suggestions` | `position: fixed !important` |
 | 6 | `:host, #macro-suggestions` | `z-index: 2147483646 !important` |
-| 24 | `.macro-suggestions-arrow` | `width: 0` |
-| 37 | `.macro-suggestions-command-item` | `padding: 3px 6px` |
-| 42 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
+| 14 | `.macro-suggestions-arrow` | `width: 0` |
+| 27 | `.macro-suggestions-command-item` | `padding: 3px 6px` |
+| 32 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
 
 ### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
 
@@ -476,9 +451,9 @@ Project-exact dimensions, spacing, positioning, and geometry.
 
 | line | selector | declaration |
 |---:|---|---|
-| 26 | `.popup-macro-text` | `margin: 0` |
-| 33 | `.popup-results` | `padding: var(--spacing-sm) 0` |
-| 34 | `.popup-results` | `margin: 0` |
+| 11 | `.popup-macro-text` | `margin: 0` |
+| 18 | `.popup-results` | `padding: var(--spacing-sm) 0` |
+| 19 | `.popup-results` | `margin: 0` |
 
 ### src/styles/components/content-editor.css (8)
 

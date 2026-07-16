@@ -19,18 +19,18 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the role-measured dimension migration is Ermine
-a3a421 / Monky 3052c70:
+were migrated). Current live ledger after the rule-presence edge-facet migration is Ermine
+fd9c6d4 / Monky 8f0301b:
 
-  current declarations:                 532
-  adopted/infrastructure declarations:  352
-  project-owned residue declarations:   180
+  current declarations:                 524
+  adopted/infrastructure declarations:  354
+  project-owned residue declarations:   170
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 23, brand-identity 8, component-contract 10, state-mechanics 5,
+  recipe-identity 21, brand-identity 8, component-contract 8, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
-  motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 12,
+  motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 6,
   user-content 43, identity-geometry 30.
 
 Historical invariance sample:
@@ -121,8 +121,11 @@ the macro command joined corners. The role-measured dimension pass then admitted
 popover, command, result, control, separator, editor-floor, `width-auto`, and `height-none`
 words, migrated the modal/search/popup/settings/editor/suggestions/delete size rows, and
 left only the editor flex-fill recipe in the dimension-constraint pilot; the live residue
-is now 180. Shorthand-asymmetry and raw micro-padding rows remain as the next spacing
-questions.
+fell to 180. The rule-presence edge-facet pass then made side rule presence footprint-aware,
+migrated the command dropdown from local top-border suppression to positive
+`ruled-left ruled-right ruled-bottom`, and removed redundant reset echoes already owned by
+Monky's substrate; the live residue is now 170. Shorthand-asymmetry and raw micro-padding
+rows remain as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -486,7 +489,8 @@ declaring it local. Possible outputs:
 4. Admit missing facets before inventing large concepts.
 
 Several rule families look like current Ermine concepts with one missing axis:
-  - side-specific rules: rule-bottom, rule-right-none, rule-transparent.
+  - line/reset facets: transparent rule sentinels and negative release rows that cannot be
+    replaced by positive rule-edge facts.
   - side-specific radius: corner-bottom-md, corner-top-md, corner-bottom-none.
   - edge attachment: attach-below, attach-above, stretch-inline, edge-end-sm.
   - layer tiers: layer-modal, layer-popover, layer-local.
@@ -511,9 +515,9 @@ Recipes should expose sockets for scale, skin, state, and motion where the patte
 6. Process the remaining categories in priority order.
 
 Recommended queue:
-  1. side-specific rule/elevation/cutout facets.
-  2. reset/inheritance neutralization facets.
-  3. selected/current/checked/disabled state skin.
+  1. reset/inheritance neutralization facets.
+  2. selected/current/checked/disabled state skin.
+  3. side-specific elevation/cutout facets.
   4. remaining spacing-rhythm shorthand and raw micro-padding questions.
   5. tween suppression/stagger follow-up.
   6. prose/editor-content molecule.
@@ -537,8 +541,8 @@ Implementation artifacts:
     dimension/constraint declaration to a scale/proportion reading and proposed form.
   - `npm run adoption:check` now checks that these generated reports are current.
 
-Immediate next action: work the highest-pressure latent facets now that the dimension
-pilot is down to a single recipe row. The strongest candidates are side-specific
-rule/cutout facets, reset/inheritance neutralization, and state-skin facets; promote the
-remaining editor/content, keycap, callout, and segmented-control shapes as recipes only
-when reuse proves they deserve sockets.
+Immediate next action: work the remaining reset/inheritance and state-skin facets now that
+rule-presence edge composition is settled. Keep transparent selection underlines and
+sliding-pill mechanics local unless they can be replaced with positive facts or promoted as
+recipes; promote the remaining editor/content, keycap, callout, and segmented-control
+shapes as recipes only when reuse proves they deserve sockets.
