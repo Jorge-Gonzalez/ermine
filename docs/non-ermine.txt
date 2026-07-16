@@ -19,17 +19,17 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the rule-presence edge-facet migration is Ermine
-fd9c6d4 / Monky 8f0301b:
+were migrated). Current live ledger after the text-flow release migration is Ermine
+36be671 / Monky 25971e4:
 
-  current declarations:                 524
-  adopted/infrastructure declarations:  354
-  project-owned residue declarations:   170
+  current declarations:                 525
+  adopted/infrastructure declarations:  358
+  project-owned residue declarations:   167
   assimilable now:                        0
 
 Current residue by reason code:
   recipe-identity 21, brand-identity 8, component-contract 8, state-mechanics 5,
-  aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
+  aria-current 1, parent-relational 5, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 6,
   user-content 43, identity-geometry 30.
 
@@ -94,7 +94,7 @@ the repeated property-targeted transition rows moved to targeted tween envelopes
 `tween-opacity-transform-quick`). The remaining motion row is the local `.shake {
 transition: none !important }` suppression; bespoke segmented-control pill timing is
 classified as pseudo/component recipe rather than `motion-followup`. user-content
-(43 = the `prose` molecule) and recipe-identity (23 by the live ledger, R-SKIN-10) remain the
+(43 = the `prose` molecule) and recipe-identity (21 by the live ledger, R-SKIN-10) remain the
 genuinely-licensed-local bundles. The first dimension endpoint pass admitted
 `max-width-none`, and the delete-confirm `max-width: none` row migrated to that word. The
 next dimension pass admitted `control-size-<spacing>` and migrated the 16px radio/checkbox
@@ -103,9 +103,8 @@ control boxes to `control-size-lg`. The next existing-word pass moved the shared
 into `rigid`. The footer alignment pass fixed Ermine's flex endpoint emission and moved
 the shared suggestions/delete footer alignment to `justify-end`. The text wrapping pass
 admitted `text-nowrap` and `text-pre-wrap`, migrated the editor toast, command suggestion,
-segmented option, and popup macro text rows, and left only the search selection reset
-(`white-space: normal` / `overflow: visible` / `text-overflow: clip`) as reset/release
-evidence. The ordinary z-scale pass bound `--z-content` and `--z-dropdown`, migrated
+segmented option, and popup macro text rows. The ordinary z-scale pass bound `--z-content`
+and `--z-dropdown`, migrated
 segmented-option layering plus the command/style dropdown `z-index: 10` rows, and left the
 extension/top-layer and pseudo-negative layer values for later ruling; the live assimilable
 work list remains zero. The block/inline spacing pass then moved the modal tab padding and
@@ -124,8 +123,10 @@ left only the editor flex-fill recipe in the dimension-constraint pilot; the liv
 fell to 180. The rule-presence edge-facet pass then made side rule presence footprint-aware,
 migrated the command dropdown from local top-border suppression to positive
 `ruled-left ruled-right ruled-bottom`, and removed redundant reset echoes already owned by
-Monky's substrate; the live residue is now 170. Shorthand-asymmetry and raw micro-padding
-rows remain as the next spacing questions.
+Monky's substrate. The text-flow release pass then admitted `text-wrap` plus
+`overflow-visible` as state-scoped release endpoints and migrated the selected search result
+reset; the live residue is now 167. Shorthand-asymmetry and raw micro-padding rows remain
+as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -515,8 +516,8 @@ Recipes should expose sockets for scale, skin, state, and motion where the patte
 6. Process the remaining categories in priority order.
 
 Recommended queue:
-  1. reset/inheritance neutralization facets.
-  2. selected/current/checked/disabled state skin.
+  1. selected/current/checked/disabled state skin.
+  2. remaining reset/inheritance neutralization endpoints.
   3. side-specific elevation/cutout facets.
   4. remaining spacing-rhythm shorthand and raw micro-padding questions.
   5. tween suppression/stagger follow-up.
@@ -541,8 +542,9 @@ Implementation artifacts:
     dimension/constraint declaration to a scale/proportion reading and proposed form.
   - `npm run adoption:check` now checks that these generated reports are current.
 
-Immediate next action: work the remaining reset/inheritance and state-skin facets now that
-rule-presence edge composition is settled. Keep transparent selection underlines and
-sliding-pill mechanics local unless they can be replaced with positive facts or promoted as
-recipes; promote the remaining editor/content, keycap, callout, and segmented-control
-shapes as recipes only when reuse proves they deserve sockets.
+Immediate next action: work the selected/current/checked/disabled state-skin residue and
+the remaining reset endpoints now that text-flow release is settled. Keep transparent
+selection underlines and sliding-pill mechanics local unless they can be replaced with
+positive facts or promoted as recipes; promote the remaining editor/content, keycap,
+callout, and segmented-control shapes as recipes only when reuse proves they deserve
+sockets.

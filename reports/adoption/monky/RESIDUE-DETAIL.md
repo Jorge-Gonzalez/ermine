@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `fd9c6d4ffc28` |
-| monky | `8f0301b159ff` |
+| Ermine | `36be67136071` |
+| monky | `25971e46a429` |
 
 ## Summary
 
-- Current declarations: 524
-- Adopted/infrastructure declarations: 354
-- Project-owned residue declarations: 170
+- Current declarations: 525
+- Adopted/infrastructure declarations: 358
+- Project-owned residue declarations: 167
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -24,7 +24,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `component-contract` | 8 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
 | `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
-| `parent-relational` | 8 | Guarded parent/descendant state mechanics outside ruled relational words. |
+| `parent-relational` | 5 | Guarded parent/descendant state mechanics outside ruled relational words. |
 | `pseudo-mechanics` | 23 | Pseudo-element geometry, generated content, and fills. |
 | `scrollbar-followup` | 9 | Engine-drawn scrollbar identity outside R-SKIN-15 standard properties. |
 | `motion-followup` | 1 | Transition/animation timing evidence for the animation-plane follow-up. |
@@ -90,8 +90,8 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 48 | `.modal-command-item .modal-command-description` | `font-style: italic` |
-| 65 | `.macro-search-kbd` | `line-height: 1` |
+| 41 | `.modal-command-item .modal-command-description` | `font-style: italic` |
+| 58 | `.macro-search-kbd` | `line-height: 1` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -129,7 +129,7 @@ Component-owned mechanics, exact geometry, or product contract.
 | line | selector | declaration |
 |---:|---|---|
 | 9 | `.macro-search-results` | `align-content: start` |
-| 68 | `.macro-search-kbd` | `border-radius: 4px` |
+| 61 | `.macro-search-kbd` | `border-radius: 4px` |
 
 ### src/styles/components/content-editor.css (2)
 
@@ -167,19 +167,16 @@ Current-state layer mechanics left local around ruled current: skin.
 |---:|---|---|
 | 52 | `.modal-nav-tab[aria-current="page"]` | `border-bottom-color: var(--accent)` |
 
-## parent-relational (8)
+## parent-relational (5)
 
 Guarded parent/descendant state mechanics outside ruled relational words.
 
-### src/content/overlays/views/search/searchViewStyles.css (5)
+### src/content/overlays/views/search/searchViewStyles.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
-| 14 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `white-space: normal` |
-| 15 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `overflow: visible` |
-| 16 | `.macro-search-item[aria-selected="true"] .macro-search-item-text` | `text-overflow: clip` |
-| 21 | `.macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-text` | `background-color: var(--tone-dim)` |
-| 26 | `.macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-text` | `background-color: var(--tone)` |
+| 14 | `.macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"]):hover .macro-search-item-text` | `background-color: var(--tone-dim)` |
+| 19 | `.macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-command, .macro-search-item:not([data-state="confirming-delete"])[aria-selected="true"] .macro-search-item-text` | `background-color: var(--tone)` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (1)
 
@@ -207,14 +204,14 @@ Pseudo-element geometry, generated content, and fills.
 
 | line | selector | declaration |
 |---:|---|---|
-| 73 | `.macro-search-kbd::after` | `content: ''` |
-| 74 | `.macro-search-kbd::after` | `position: absolute` |
-| 75 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
-| 76 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
-| 77 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
-| 78 | `.macro-search-kbd::after` | `border-radius: 2px` |
-| 79 | `.macro-search-kbd::after` | `pointer-events: none` |
-| 80 | `.macro-search-kbd::after` | `z-index: -1` |
+| 66 | `.macro-search-kbd::after` | `content: ''` |
+| 67 | `.macro-search-kbd::after` | `position: absolute` |
+| 68 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
+| 69 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
+| 70 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
+| 71 | `.macro-search-kbd::after` | `border-radius: 2px` |
+| 72 | `.macro-search-kbd::after` | `pointer-events: none` |
+| 73 | `.macro-search-kbd::after` | `z-index: -1` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (12)
 
@@ -282,7 +279,7 @@ Opacity prominence/treatment evidence.
 
 | line | selector | declaration |
 |---:|---|---|
-| 41 | `.macro-search-item-text mark span` | `opacity: 0.35` |
+| 34 | `.macro-search-item-text mark span` | `opacity: 0.35` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -339,9 +336,9 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 35 | `.macro-search-item-text mark` | `background: transparent` |
-| 36 | `.macro-search-item-text mark` | `color: inherit` |
-| 37 | `.macro-search-item-text mark` | `font-style: normal` |
+| 28 | `.macro-search-item-text mark` | `background: transparent` |
+| 29 | `.macro-search-item-text mark` | `color: inherit` |
+| 30 | `.macro-search-item-text mark` | `font-style: normal` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -433,11 +430,11 @@ Project-exact dimensions, spacing, positioning, and geometry.
 
 | line | selector | declaration |
 |---:|---|---|
-| 31 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
-| 66 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
-| 67 | `.macro-search-kbd` | `min-width: 26px` |
-| 69 | `.macro-search-kbd` | `z-index: 0` |
-| 84 | `.macro-search-kbd:first-child` | `margin-left: 0` |
+| 24 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
+| 59 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
+| 60 | `.macro-search-kbd` | `min-width: 26px` |
+| 62 | `.macro-search-kbd` | `z-index: 0` |
+| 77 | `.macro-search-kbd:first-child` | `margin-left: 0` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (3)
 
