@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 159 |
+| reviewed residue declarations | 156 |
 | assimilable now | 0 |
-| latent generalizable | 59 |
+| latent generalizable | 56 |
 | likely recipe/molecule | 97 |
 | likely local identity | 3 |
 
@@ -21,7 +21,7 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | 1 |
 | attachment-edge-layer | 6 |
 | spacing-rhythm | 31 |
-| surface-line-elevation-cutout | 24 |
+| surface-line-elevation-cutout | 21 |
 | typography-content | 29 |
 | interaction-affordance-state | 14 |
 | motion-transition | 3 |
@@ -33,7 +33,7 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | latent-word | 9 |
-| latent-facet | 40 |
+| latent-facet | 37 |
 | latent-scale | 10 |
 | recipe | 97 |
 | local-identity | 3 |
@@ -45,8 +45,8 @@ generalization, recipe, and local-identity pressure.
 | recipe-identity | 17 |
 | brand-identity | 8 |
 | component-contract | 8 |
-| state-mechanics | 5 |
-| parent-relational | 3 |
+| state-mechanics | 3 |
+| parent-relational | 2 |
 | pseudo-mechanics | 23 |
 | scrollbar-followup | 9 |
 | motion-followup | 1 |
@@ -65,9 +65,9 @@ generalization, recipe, and local-identity pressure.
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | latent-facet | 11 | add a missing facet on an existing Ermine concept |
-| surface-line-elevation-cutout | latent-facet | 11 | add a missing facet on an existing Ermine concept |
 | spacing-rhythm | latent-scale | 10 | map to an existing/proportional scale or admit a named scale role |
 | reset-inheritance-neutralization | latent-facet | 8 | add a missing facet on an existing Ermine concept |
+| surface-line-elevation-cutout | latent-facet | 8 | add a missing facet on an existing Ermine concept |
 | spacing-rhythm | latent-facet | 7 | add a missing facet on an existing Ermine concept |
 | typography-content | latent-word | 5 | admit a new Ermine word only if it survives the invariance test |
 | attachment-edge-layer | latent-word | 3 | admit relational attachment/layer word |

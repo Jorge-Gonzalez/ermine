@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `8c7b5b7fe0a01490fb87f3345b06278641e01cb2` |
-| monky | `a94e7c815491dc2ce05386cd4d3c0aa7ff7814da` |
+| monky | `16d21d86c070a549032b2914226b3545959cf8b8` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 522 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 363 |
-| **residue — project-owned declarations** | **159** |
+| current declarations | 520 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 364 |
+| **residue — project-owned declarations** | **156** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,15 +34,15 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 250 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 251 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 59 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 17 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 8 | project brand typography and type treatment |
 | `component-contract` | 8 | component-owned mechanics, exact geometry, or product contract |
-| `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
-| `parent-relational` | 3 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
+| `state-mechanics` | 3 | JS/native state mechanics outside backed Ermine conditions |
+| `parent-relational` | 2 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `scrollbar-followup` | 9 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
@@ -56,7 +56,7 @@ re-validated on every run.
 
 | file | declarations |
 |---|---:|
-| `src/styles/components/content-editor.css` | 64 |
+| `src/styles/components/content-editor.css` | 61 |
 | `src/styles/skin/controls.css` | 28 |
 | `src/content/overlays/views/search/searchViewStyles.css` | 21 |
 | `src/content/overlays/views/settings/settingsViewStyles.css` | 17 |

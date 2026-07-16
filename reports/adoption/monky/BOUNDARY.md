@@ -23,7 +23,7 @@ invariance pass as the roadmap for future ruling cycles.
 | source | commit |
 |---|---|
 | Ermine | `8c7b5b7fe0a01490fb87f3345b06278641e01cb2` |
-| monky | `a94e7c815491dc2ce05386cd4d3c0aa7ff7814da` |
+| monky | `16d21d86c070a549032b2914226b3545959cf8b8` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 159 |
+| project-owned residue | 156 |
 
 ## Product Identity
 
@@ -75,7 +75,7 @@ shadowed-words gate holds every paragraph true or silent about every property.
 | code | count | boundary |
 |---|---:|---|
 | `component-contract` | 8 | component-owned mechanics, exact geometry, or product contract |
-| `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
+| `state-mechanics` | 3 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `reset-absence` | 5 | absence/reset mechanics, not a positive carrier |
 
@@ -94,7 +94,7 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 
 | code | rows | evidence |
 |---|---:|---|
-| `parent-relational` | 3 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
+| `parent-relational` | 2 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
 | `scrollbar-followup` | 9 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
 | `motion-followup` | 1 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 4 | named follow-up: opacity prominence treatment (no report filed yet) |

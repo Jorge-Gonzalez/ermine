@@ -19,17 +19,17 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the checked group skin migration is Ermine
-8c7b5b7 / Monky a94e7c8:
+were migrated). Current live ledger after the editor style-option state migration is Ermine
+8c7b5b7 / Monky 16d21d8:
 
-  current declarations:                 522
-  adopted/infrastructure declarations:  363
-  project-owned residue declarations:   159
+  current declarations:                 520
+  adopted/infrastructure declarations:  364
+  project-owned residue declarations:   156
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 21, brand-identity 8, component-contract 8, state-mechanics 5,
-  parent-relational 3, pseudo-mechanics 23, scrollbar-followup 9,
+  recipe-identity 17, brand-identity 8, component-contract 8, state-mechanics 3,
+  parent-relational 2, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 5,
   user-content 43, identity-geometry 30.
 
@@ -129,8 +129,10 @@ reset. The rule edge-colour pass then admitted physical rule colour dials plus t
 transparent endpoint, migrated the current-tab underline, and moved search row hover/selected
 backgrounds to existing relational state skin. The checked group skin pass then moved
 SelectableGroup selected skin to existing `checked:` carrier words, leaving only local opacity
-and lockout mechanics; the live residue is now 159. Shorthand-asymmetry and raw micro-padding
-rows remain as the next spacing questions.
+and lockout mechanics. The editor style-option state pass then moved the listbox option active
+skin to existing `selected:` and `parent-selected:` carrier words, leaving toolbar `aria-pressed`
+skin local pending a pressed-scope ruling; the live residue is now 156. Shorthand-asymmetry and
+raw micro-padding rows remain as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)

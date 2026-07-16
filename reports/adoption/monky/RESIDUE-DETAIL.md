@@ -7,13 +7,13 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | source | commit |
 |---|---|
 | Ermine | `8c7b5b7fe0a0` |
-| monky | `a94e7c815491` |
+| monky | `16d21d86c070` |
 
 ## Summary
 
-- Current declarations: 522
-- Adopted/infrastructure declarations: 363
-- Project-owned residue declarations: 159
+- Current declarations: 520
+- Adopted/infrastructure declarations: 364
+- Project-owned residue declarations: 156
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -22,8 +22,8 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `recipe-identity` | 17 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
 | `component-contract` | 8 | Component-owned mechanics, exact geometry, or product contract. |
-| `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
-| `parent-relational` | 3 | Guarded parent/descendant state mechanics outside ruled relational words. |
+| `state-mechanics` | 3 | Native/JS state mechanics outside backed Ermine conditions. |
+| `parent-relational` | 2 | Guarded parent/descendant state mechanics outside ruled relational words. |
 | `pseudo-mechanics` | 23 | Pseudo-element geometry, generated content, and fills. |
 | `scrollbar-followup` | 9 | Engine-drawn scrollbar identity outside R-SKIN-15 standard properties. |
 | `motion-followup` | 1 | Transition/animation timing evidence for the animation-plane follow-up. |
@@ -92,7 +92,7 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 59 | `.content-editor-body` | `font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif` |
+| 50 | `.content-editor-body` | `font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif` |
 
 ### src/styles/entries/pages.css (2)
 
@@ -133,18 +133,16 @@ Component-owned mechanics, exact geometry, or product contract.
 | 10 | `.ce-toolbar-sep` | `background-color: var(--harmonic)` |
 | 38 | `.ce-style-dropdown` | `left: 0` |
 
-## state-mechanics (5)
+## state-mechanics (3)
 
 Native/JS state mechanics outside backed Ermine conditions.
 
-### src/styles/components/content-editor.css (4)
+### src/styles/components/content-editor.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
 | 19 | `.ce-toolbar-btn.is-active` | `background-color: var(--tone)` |
 | 20 | `.ce-toolbar-btn.is-active` | `color: var(--accent)` |
-| 43 | `.ce-style-option.is-active` | `color: var(--accent)` |
-| 44 | `.ce-style-option.is-active` | `background-color: var(--tone)` |
 
 ### src/styles/skin/controls.css (1)
 
@@ -152,7 +150,7 @@ Native/JS state mechanics outside backed Ermine conditions.
 |---:|---|---|
 | 86 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 
-## parent-relational (3)
+## parent-relational (2)
 
 Guarded parent/descendant state mechanics outside ruled relational words.
 
@@ -167,12 +165,6 @@ Guarded parent/descendant state mechanics outside ruled relational words.
 | line | selector | declaration |
 |---:|---|---|
 | 7 | `.popup-button:hover, .popup-icon-button:hover` | `opacity: 0.9` |
-
-### src/styles/components/content-editor.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 48 | `.ce-style-option.is-active .ce-style-option-short` | `color: var(--accent)` |
 
 ## pseudo-mechanics (23)
 
@@ -212,9 +204,9 @@ Pseudo-element geometry, generated content, and fills.
 
 | line | selector | declaration |
 |---:|---|---|
-| 64 | `.content-editor-body:empty::before` | `content: attr(data-placeholder)` |
-| 65 | `.content-editor-body:empty::before` | `color: var(--ink-soft)` |
-| 66 | `.content-editor-body:empty::before` | `pointer-events: none` |
+| 55 | `.content-editor-body:empty::before` | `content: attr(data-placeholder)` |
+| 56 | `.content-editor-body:empty::before` | `color: var(--ink-soft)` |
+| 57 | `.content-editor-body:empty::before` | `pointer-events: none` |
 
 ## scrollbar-followup (9)
 
@@ -316,7 +308,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 60 | `.content-editor-body` | `line-height: normal` |
+| 51 | `.content-editor-body` | `line-height: normal` |
 
 ## user-content (43)
 
@@ -326,49 +318,49 @@ Rich-text defaults inside user-authored content.
 
 | line | selector | declaration |
 |---:|---|---|
-| 71 | `.content-editor-body p` | `margin-bottom: 0.75em` |
-| 75 | `.content-editor-body p:last-child` | `margin-bottom: 0` |
-| 79 | `.content-editor-body h1` | `font-size: 1.75em` |
-| 80 | `.content-editor-body h1` | `font-weight: 700` |
-| 81 | `.content-editor-body h1` | `margin: 0.75em 0 0.4em` |
-| 85 | `.content-editor-body h2` | `font-size: 1.4em` |
-| 86 | `.content-editor-body h2` | `font-weight: 700` |
-| 87 | `.content-editor-body h2` | `margin: 0.75em 0 0.4em` |
-| 91 | `.content-editor-body h3` | `font-size: 1.15em` |
-| 92 | `.content-editor-body h3` | `font-weight: 700` |
-| 93 | `.content-editor-body h3` | `margin: 0.75em 0 0.4em` |
-| 99 | `.content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child` | `margin-top: 0` |
-| 104 | `.content-editor-body strong, .content-editor-body b` | `font-weight: 700` |
-| 109 | `.content-editor-body em, .content-editor-body i` | `font-style: italic` |
-| 113 | `.content-editor-body u` | `text-decoration: underline` |
-| 117 | `.content-editor-body s` | `text-decoration: line-through` |
-| 121 | `.content-editor-body code` | `font-family: 'IBM Plex Mono', 'Fira Code', monospace` |
-| 122 | `.content-editor-body code` | `font-size: 0.88em` |
-| 123 | `.content-editor-body code` | `background-color: var(--tone)` |
-| 124 | `.content-editor-body code` | `color: var(--ink)` |
-| 125 | `.content-editor-body code` | `padding: 0.1em 0.35em` |
-| 126 | `.content-editor-body code` | `border-radius: var(--radius-sm)` |
-| 130 | `.content-editor-body pre` | `font-family: 'IBM Plex Mono', 'Fira Code', monospace` |
-| 131 | `.content-editor-body pre` | `font-size: 0.88em` |
-| 132 | `.content-editor-body pre` | `background-color: var(--tone)` |
-| 133 | `.content-editor-body pre` | `padding: var(--spacing-md)` |
-| 134 | `.content-editor-body pre` | `border-radius: var(--radius-sm)` |
-| 135 | `.content-editor-body pre` | `overflow-x: auto` |
-| 136 | `.content-editor-body pre` | `margin: 0.75em 0` |
-| 140 | `.content-editor-body blockquote` | `border-left: 3px solid var(--accent-dim)` |
-| 141 | `.content-editor-body blockquote` | `padding-left: var(--spacing-md)` |
-| 142 | `.content-editor-body blockquote` | `margin: 0.75em 0` |
-| 143 | `.content-editor-body blockquote` | `color: var(--ink-soft)` |
-| 144 | `.content-editor-body blockquote` | `font-style: italic` |
-| 149 | `.content-editor .content-editor-body ul, .content-editor .content-editor-body ol` | `padding-left: 1.5em` |
-| 150 | `.content-editor .content-editor-body ul, .content-editor .content-editor-body ol` | `margin-bottom: 0.75em` |
-| 154 | `.content-editor .content-editor-body ul` | `list-style-type: disc` |
-| 158 | `.content-editor .content-editor-body ol` | `list-style-type: decimal` |
-| 162 | `.content-editor-body li` | `display: list-item` |
-| 163 | `.content-editor-body li` | `margin-bottom: 0.2em` |
-| 167 | `.content-editor-body a` | `color: var(--accent)` |
-| 168 | `.content-editor-body a` | `text-decoration: underline` |
-| 172 | `.content-editor-body a:hover` | `opacity: 0.8` |
+| 62 | `.content-editor-body p` | `margin-bottom: 0.75em` |
+| 66 | `.content-editor-body p:last-child` | `margin-bottom: 0` |
+| 70 | `.content-editor-body h1` | `font-size: 1.75em` |
+| 71 | `.content-editor-body h1` | `font-weight: 700` |
+| 72 | `.content-editor-body h1` | `margin: 0.75em 0 0.4em` |
+| 76 | `.content-editor-body h2` | `font-size: 1.4em` |
+| 77 | `.content-editor-body h2` | `font-weight: 700` |
+| 78 | `.content-editor-body h2` | `margin: 0.75em 0 0.4em` |
+| 82 | `.content-editor-body h3` | `font-size: 1.15em` |
+| 83 | `.content-editor-body h3` | `font-weight: 700` |
+| 84 | `.content-editor-body h3` | `margin: 0.75em 0 0.4em` |
+| 90 | `.content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child` | `margin-top: 0` |
+| 95 | `.content-editor-body strong, .content-editor-body b` | `font-weight: 700` |
+| 100 | `.content-editor-body em, .content-editor-body i` | `font-style: italic` |
+| 104 | `.content-editor-body u` | `text-decoration: underline` |
+| 108 | `.content-editor-body s` | `text-decoration: line-through` |
+| 112 | `.content-editor-body code` | `font-family: 'IBM Plex Mono', 'Fira Code', monospace` |
+| 113 | `.content-editor-body code` | `font-size: 0.88em` |
+| 114 | `.content-editor-body code` | `background-color: var(--tone)` |
+| 115 | `.content-editor-body code` | `color: var(--ink)` |
+| 116 | `.content-editor-body code` | `padding: 0.1em 0.35em` |
+| 117 | `.content-editor-body code` | `border-radius: var(--radius-sm)` |
+| 121 | `.content-editor-body pre` | `font-family: 'IBM Plex Mono', 'Fira Code', monospace` |
+| 122 | `.content-editor-body pre` | `font-size: 0.88em` |
+| 123 | `.content-editor-body pre` | `background-color: var(--tone)` |
+| 124 | `.content-editor-body pre` | `padding: var(--spacing-md)` |
+| 125 | `.content-editor-body pre` | `border-radius: var(--radius-sm)` |
+| 126 | `.content-editor-body pre` | `overflow-x: auto` |
+| 127 | `.content-editor-body pre` | `margin: 0.75em 0` |
+| 131 | `.content-editor-body blockquote` | `border-left: 3px solid var(--accent-dim)` |
+| 132 | `.content-editor-body blockquote` | `padding-left: var(--spacing-md)` |
+| 133 | `.content-editor-body blockquote` | `margin: 0.75em 0` |
+| 134 | `.content-editor-body blockquote` | `color: var(--ink-soft)` |
+| 135 | `.content-editor-body blockquote` | `font-style: italic` |
+| 140 | `.content-editor .content-editor-body ul, .content-editor .content-editor-body ol` | `padding-left: 1.5em` |
+| 141 | `.content-editor .content-editor-body ul, .content-editor .content-editor-body ol` | `margin-bottom: 0.75em` |
+| 145 | `.content-editor .content-editor-body ul` | `list-style-type: disc` |
+| 149 | `.content-editor .content-editor-body ol` | `list-style-type: decimal` |
+| 153 | `.content-editor-body li` | `display: list-item` |
+| 154 | `.content-editor-body li` | `margin-bottom: 0.2em` |
+| 158 | `.content-editor-body a` | `color: var(--accent)` |
+| 159 | `.content-editor-body a` | `text-decoration: underline` |
+| 163 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
 ## identity-geometry (30)
 
@@ -435,7 +427,7 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 30 | `.ce-style-trigger` | `gap: 2px` |
 | 37 | `.ce-style-dropdown` | `top: calc(100% + 4px)` |
 | 39 | `.ce-style-dropdown` | `gap: 2px` |
-| 52 | `.ce-link-input` | `padding: 0 var(--spacing-sm)` |
+| 43 | `.ce-link-input` | `padding: 0 var(--spacing-sm)` |
 
 ### src/styles/entries/pages.css (2)
 
