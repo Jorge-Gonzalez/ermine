@@ -50,7 +50,7 @@ scales, proportional relationships, or measure/control-size roles.
 | src/content/overlays/modal/modalStyles.css:29 | width | min(600px, calc(100vw - 2rem)) | bounded dialog/container measure | latent-word | proportional/viewport relation | dialog-measure recipe with viewport bound |
 | src/content/overlays/modal/modalStyles.css:30 | height | min(560px, 85vh) | bounded dialog/container measure | latent-word | proportional/viewport relation | dialog-measure recipe with viewport bound |
 | src/content/overlays/modal/modalStyles.css:35 | min-height | 48px | interaction/content floor | latent-scale | 2 * spacing-2xl | control-min-block or editor-min-block |
-| src/content/overlays/modal/modalStyles.css:65 | height | 18px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
+| src/content/overlays/modal/modalStyles.css:63 | height | 18px | icon/control square | latent-scale | off current named scale | square/icon/control-size scale member |
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:21 | min-width | 200px | inline measure/popover width | latent-scale | 5 * spacing-3xl | measure/popover size role |
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:22 | max-width | 360px | inline measure/popover width | latent-scale | 9 * spacing-3xl | measure/popover size role |
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:48 | max-width | 8em | inline measure/popover width | latent-word | content-relative measure | measure/popover size role |
@@ -60,8 +60,8 @@ scales, proportional relationships, or measure/control-size roles.
 | src/content/overlays/views/macroEditor/editorViewStyles.css:29 | min-height | 0 | min-content escape | recipe |  | prose/editor-content molecule |
 | src/content/overlays/views/search/searchViewStyles.css:14 | max-height | 400px | scrollable result cap | latent-scale | 10 * spacing-3xl | max-block/scroll-cap scale |
 | src/content/overlays/views/settings/settingsViewStyles.css:20 | height | 0 | block-size measure | latent-facet |  | constraint reset/escape facet |
-| src/content/overlays/views/settings/settingsViewStyles.css:25 | width | 2rem | icon/control square | latent-word | 2 * spacing-lg | square/icon/control-size scale member |
-| src/content/overlays/views/settings/settingsViewStyles.css:26 | height | 2rem | icon/control square | latent-word | 2 * spacing-lg | square/icon/control-size scale member |
+| src/content/overlays/views/settings/settingsViewStyles.css:24 | width | 2rem | icon/control square | latent-word | 2 * spacing-lg | square/icon/control-size scale member |
+| src/content/overlays/views/settings/settingsViewStyles.css:25 | height | 2rem | icon/control square | latent-word | 2 * spacing-lg | square/icon/control-size scale member |
 | src/options/options.css:5 | width | 3rem | icon/control square | latent-word | 2 * spacing-2xl | square/icon/control-size scale member |
 | src/options/options.css:6 | height | 3rem | icon/control square | latent-word | 2 * spacing-2xl | square/icon/control-size scale member |
 | src/popup/popup.css:6 | width | 320px | inline measure/popover width | latent-scale | 8 * spacing-3xl | measure/popover size role |

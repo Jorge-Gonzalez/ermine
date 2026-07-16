@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 244 |
+| reviewed residue declarations | 242 |
 | assimilable now | 0 |
-| latent generalizable | 139 |
+| latent generalizable | 137 |
 | likely recipe/molecule | 102 |
 | likely local identity | 3 |
 
@@ -20,7 +20,7 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | dimension-constraint | 30 |
 | attachment-edge-layer | 7 |
-| spacing-rhythm | 41 |
+| spacing-rhythm | 39 |
 | surface-line-elevation-cutout | 36 |
 | typography-content | 31 |
 | interaction-affordance-state | 14 |
@@ -33,7 +33,7 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | latent-word | 32 |
-| latent-facet | 80 |
+| latent-facet | 78 |
 | latent-scale | 27 |
 | recipe | 102 |
 | local-identity | 3 |
@@ -55,7 +55,7 @@ generalization, recipe, and local-identity pressure.
 | elevation-followup | 3 |
 | reset-absence | 12 |
 | user-content | 43 |
-| identity-geometry | 51 |
+| identity-geometry | 49 |
 
 ## Highest-Pressure Families
 
@@ -66,8 +66,8 @@ generalization, recipe, and local-identity pressure.
 | reset-inheritance-neutralization | latent-facet | 22 | add a missing facet on an existing Ermine concept |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
 | dimension-constraint | latent-scale | 17 | map to an existing/proportional scale or admit a named scale role |
-| spacing-rhythm | latent-facet | 17 | add a missing facet on an existing Ermine concept |
 | motion-transition | latent-word | 15 | admit property-targeted tween word |
+| spacing-rhythm | latent-facet | 15 | add a missing facet on an existing Ermine concept |
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | latent-facet | 11 | add a missing facet on an existing Ermine concept |

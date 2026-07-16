@@ -19,19 +19,19 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the ordinary z-scale migration is Ermine
-e9640d2 / Monky f61cefd:
+were migrated). Current live ledger after the block/inline spacing migration is Ermine
+e9640d2 / Monky 2713af3:
 
-  current declarations:                 511
-  adopted/infrastructure declarations:  267
-  project-owned residue declarations:   244
+  current declarations:                 512
+  adopted/infrastructure declarations:  270
+  project-owned residue declarations:   242
   assimilable now:                        0
 
 Current residue by reason code:
   recipe-identity 27, brand-identity 8, component-contract 37, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 12,
-  user-content 43, identity-geometry 51.
+  user-content 43, identity-geometry 49.
 
 Historical invariance sample:
 
@@ -104,7 +104,10 @@ segmented option, and popup macro text rows, and left only the search selection 
 evidence. The ordinary z-scale pass bound `--z-content` and `--z-dropdown`, migrated
 segmented-option layering plus the command/style dropdown `z-index: 10` rows, and left the
 extension/top-layer and pseudo-negative layer values for later ruling; the live assimilable
-work list remains zero.
+work list remains zero. The block/inline spacing pass then moved the modal tab padding and
+settings divider margin shorthands to existing `padding-block`/`padding-inline` and
+`margin-block`/`margin-inline` words; per-edge spacing and zero-reset rows remain as the
+next spacing ruling question.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -232,19 +235,19 @@ Function: distribute internal padding and external rhythm, especially where curr
 block/inline dials cannot express one edge independently.
 
 Representative declarations:
-  padding: var(--spacing-md) var(--spacing-2xl);
   padding: var(--spacing-2xl) 0 var(--spacing-xl);
   padding: var(--spacing-md) var(--spacing-sm) 0 0;
   padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm);
   padding: 3px 6px 6px; padding: 1px 4px; padding: 0;
   padding-left/right: var(--spacing-xs); padding-top: var(--spacing-sm);
   margin: 0; margin-top: var(--spacing-sm); margin-right: 1rem / var(--spacing-xl);
-  margin-left: var(--spacing-sm); margin: var(--spacing-sm) var(--spacing-xl);
+  margin-left: var(--spacing-sm);
   gap: 2px.
 
 Reading:
-  - Scale-backed padding/margin mostly wants finer Ermine spacing facets: start/end and
-    before/after, not more component classes.
+  - Symmetric two-axis padding/margin now uses existing Ermine inline/block words. The
+    remaining scale-backed padding/margin wants finer facets: start/end and before/after,
+    not more component classes.
   - The raw 3px/6px/1px/4px keycap and suggestion-chip padding is micro-object drawing;
     it is probably a recipe unless the design wants a tiny density scale.
   - `gap:2px` repeats inside menus/dropdowns as a very small cluster gap. This could be a

@@ -7,13 +7,13 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | source | commit |
 |---|---|
 | Ermine | `e9640d2a453` |
-| monky | `f61cefd1d45` |
+| monky | `2713af3ed63` |
 
 ## Summary
 
-- Current declarations: 511
-- Adopted/infrastructure declarations: 267
-- Project-owned residue declarations: 244
+- Current declarations: 512
+- Adopted/infrastructure declarations: 270
+- Project-owned residue declarations: 242
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -32,7 +32,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 12 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 51 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 49 | Project-exact dimensions, spacing, positioning, and geometry. |
 
 ## recipe-identity (27)
 
@@ -49,10 +49,10 @@ Project recipe bundles licensed by R-SKIN-10.
 
 | line | selector | declaration |
 |---:|---|---|
-| 61 | `.seg-option` | `transition: color var(--transition-fast)` |
-| 67 | `.seg-option svg` | `vertical-align: middle` |
-| 72 | `.seg-option:last-child` | `border-right: none` |
-| 76 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
+| 60 | `.seg-option` | `transition: color var(--transition-fast)` |
+| 66 | `.seg-option svg` | `vertical-align: middle` |
+| 71 | `.seg-option:last-child` | `border-right: none` |
+| 75 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
 
 ### src/styles/skin/controls.css (21)
 
@@ -88,7 +88,7 @@ Monky-specific brand typography and type treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 69 | `.modal-nav-label` | `font-size: var(--text-base)` |
+| 67 | `.modal-nav-label` | `font-size: var(--text-base)` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
 
@@ -129,7 +129,7 @@ Component-owned mechanics, exact geometry, or product contract.
 | 28 | `.modal-dialog` | `mix-blend-mode: multiply` |
 | 29 | `.modal-dialog` | `width: min(600px, calc(100vw - 2rem))` |
 | 30 | `.modal-dialog` | `height: min(560px, 85vh)` |
-| 65 | `.modal-nav-icon` | `height: 18px` |
+| 63 | `.modal-nav-icon` | `height: 18px` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (6)
 
@@ -168,8 +168,8 @@ Component-owned mechanics, exact geometry, or product contract.
 | line | selector | declaration |
 |---:|---|---|
 | 20 | `.settings-divider` | `height: 0` |
-| 25 | `.settings-prefix-btn` | `width: 2rem` |
-| 26 | `.settings-prefix-btn` | `height: 2rem` |
+| 24 | `.settings-prefix-btn` | `width: 2rem` |
+| 25 | `.settings-prefix-btn` | `height: 2rem` |
 
 ### src/options/options.css (2)
 
@@ -225,7 +225,7 @@ Current-state layer mechanics left local around ruled current: skin.
 
 | line | selector | declaration |
 |---:|---|---|
-| 61 | `.modal-nav-tab[aria-current="page"]` | `border-bottom-color: var(--accent)` |
+| 59 | `.modal-nav-tab[aria-current="page"]` | `border-bottom-color: var(--accent)` |
 
 ## parent-relational (8)
 
@@ -245,7 +245,7 @@ Guarded parent/descendant state mechanics outside ruled relational words.
 
 | line | selector | declaration |
 |---:|---|---|
-| 82 | `.seg-control.is-sliding .seg-option[aria-checked="true"]` | `background: transparent` |
+| 81 | `.seg-control.is-sliding .seg-option[aria-checked="true"]` | `background: transparent` |
 
 ### src/popup/popup.css (1)
 
@@ -280,18 +280,18 @@ Pseudo-element geometry, generated content, and fills.
 
 | line | selector | declaration |
 |---:|---|---|
-| 41 | `.seg-control::before` | `content: ''` |
-| 42 | `.seg-control::before` | `position: absolute` |
-| 43 | `.seg-control::before` | `top: 0` |
-| 44 | `.seg-control::before` | `bottom: 0` |
-| 45 | `.seg-control::before` | `left: var(--pill-left, 0)` |
-| 46 | `.seg-control::before` | `width: var(--pill-width, 0)` |
-| 47 | `.seg-control::before` | `background: var(--accent)` |
-| 48 | `.seg-control::before` | `opacity: 0` |
-| 49 | `.seg-control::before` | `transition: left 0.1s ease, width 0.1s ease` |
-| 50 | `.seg-control::before` | `pointer-events: none` |
-| 53 | `.seg-control.is-sliding::before` | `opacity: 1` |
-| 56 | `.seg-control.seg-snap::before` | `transition: none` |
+| 40 | `.seg-control::before` | `content: ''` |
+| 41 | `.seg-control::before` | `position: absolute` |
+| 42 | `.seg-control::before` | `top: 0` |
+| 43 | `.seg-control::before` | `bottom: 0` |
+| 44 | `.seg-control::before` | `left: var(--pill-left, 0)` |
+| 45 | `.seg-control::before` | `width: var(--pill-width, 0)` |
+| 46 | `.seg-control::before` | `background: var(--accent)` |
+| 47 | `.seg-control::before` | `opacity: 0` |
+| 48 | `.seg-control::before` | `transition: left 0.1s ease, width 0.1s ease` |
+| 49 | `.seg-control::before` | `pointer-events: none` |
+| 52 | `.seg-control.is-sliding::before` | `opacity: 1` |
+| 55 | `.seg-control.seg-snap::before` | `transition: none` |
 
 ### src/styles/components/content-editor.css (3)
 
@@ -424,7 +424,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 54 | `.modal-nav-tab` | `border-bottom: 2px solid transparent` |
+| 52 | `.modal-nav-tab` | `border-bottom: 2px solid transparent` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
 
@@ -514,7 +514,7 @@ Rich-text defaults inside user-authored editor content.
 | 185 | `.content-editor-body a` | `text-decoration: underline` |
 | 189 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (51)
+## identity-geometry (49)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -524,14 +524,13 @@ Project-exact dimensions, spacing, positioning, and geometry.
 |---:|---|---|
 | 2 | `.macro-suggestions-container.delete-confirm` | `min-width: 240px` |
 
-### src/content/overlays/modal/modalStyles.css (4)
+### src/content/overlays/modal/modalStyles.css (3)
 
 | line | selector | declaration |
 |---:|---|---|
 | 20 | `.modal-backdrop` | `z-index: 10000` |
 | 35 | `.modal-nav-container` | `min-height: 48px` |
 | 39 | `.modal-nav-branding` | `margin-right: 1rem` |
-| 53 | `.modal-nav-tab` | `padding: var(--spacing-md) var(--spacing-2xl)` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (8)
 
@@ -568,15 +567,14 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 97 | `.macro-search-kbd` | `z-index: 0` |
 | 112 | `.macro-search-kbd:first-child` | `margin-left: 0` |
 
-### src/content/overlays/views/settings/settingsViewStyles.css (5)
+### src/content/overlays/views/settings/settingsViewStyles.css (4)
 
 | line | selector | declaration |
 |---:|---|---|
 | 9 | `.settings-body` | `padding: var(--spacing-2xl) 0 var(--spacing-xl)` |
 | 15 | `.settings-section-label` | `padding: var(--spacing-md) var(--spacing-sm) 0 0` |
-| 21 | `.settings-divider` | `margin: var(--spacing-sm) var(--spacing-xl)` |
-| 27 | `.settings-prefix-btn` | `padding: 0` |
-| 31 | `.settings-import-status` | `padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm)` |
+| 26 | `.settings-prefix-btn` | `padding: 0` |
+| 30 | `.settings-import-status` | `padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm)` |
 
 ### src/popup/popup.css (7)
 
