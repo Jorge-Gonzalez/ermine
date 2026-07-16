@@ -55,9 +55,9 @@ scales, proportional relationships, or measure/control-size roles.
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:22 | max-width | 360px | inline measure/popover width | latent-scale | 9 * spacing-3xl | measure/popover size role |
 | src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:44 | max-width | 8em | inline measure/popover width | latent-word | content-relative measure | measure/popover size role |
 | src/content/overlays/views/macroEditor/editorViewStyles.css:7 | width | 280px | inline measure/popover width | latent-scale | 7 * spacing-3xl | measure/popover size role |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:20 | min-height | 0 | min-content escape | latent-facet |  | min-height-none escape, possibly layer/specificity fix |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:24 | flex | 1 | flex negotiation | recipe |  | prose/editor-content molecule |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:25 | min-height | 0 | min-content escape | recipe |  | prose/editor-content molecule |
+| src/content/overlays/views/macroEditor/editorViewStyles.css:14 | min-height | 0 | min-content escape | latent-facet |  | min-height-none escape, possibly layer/specificity fix |
+| src/content/overlays/views/macroEditor/editorViewStyles.css:18 | flex | 1 | flex negotiation | recipe |  | prose/editor-content molecule |
+| src/content/overlays/views/macroEditor/editorViewStyles.css:19 | min-height | 0 | min-content escape | recipe |  | prose/editor-content molecule |
 | src/content/overlays/views/search/searchViewStyles.css:9 | max-height | 400px | scrollable result cap | latent-scale | 10 * spacing-3xl | max-block/scroll-cap scale |
 | src/content/overlays/views/settings/settingsViewStyles.css:20 | height | 0 | block-size measure | latent-facet |  | constraint reset/escape facet |
 | src/content/overlays/views/settings/settingsViewStyles.css:24 | width | 2rem | icon/control square | latent-word | 2 * spacing-lg | square/icon/control-size scale member |

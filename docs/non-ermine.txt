@@ -19,16 +19,16 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the positioned edge-attachment migration is Ermine
-23bf0cf / Monky d9749ca:
+were migrated). Current live ledger after the side-corner migration is Ermine
+122a68f / Monky 9634a3b:
 
-  current declarations:                 515
-  adopted/infrastructure declarations:  300
-  project-owned residue declarations:   215
+  current declarations:                 516
+  adopted/infrastructure declarations:  306
+  project-owned residue declarations:   210
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 25, brand-identity 8, component-contract 34, state-mechanics 5,
+  recipe-identity 23, brand-identity 8, component-contract 31, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 12,
   user-content 43, identity-geometry 39.
@@ -115,8 +115,10 @@ and margin edge facets, migrating the search cells/shortcuts plus popup/settings
 The targeted tween pass then admitted repeated
 transition-property target sets. The positioned edge-attachment pass admitted
 `attach-below`, `attach-above`, and `stretch-inline`, migrating command dropdown and
-suggestion-arrow placement while leaving one-sided offset pins local; the live residue is now 215.
-Zero-reset, shorthand-asymmetry, and raw micro-padding rows remain as the next spacing questions.
+suggestion-arrow placement while leaving one-sided offset pins local. The side-corner pass
+then admitted `corner-top-*`, `corner-bottom-*`, and their side `none` endpoints, migrating
+the macro command joined corners; the live residue is now 210. Shorthand-asymmetry and raw
+micro-padding rows remain as the next spacing questions.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -146,8 +148,8 @@ radio/checkbox width/height rules, the `.input { width: 100%; }` rule, and the
 flex-end; }` rules. The targeted tween pass removed the local property-targeted
 transition declarations from inputs, search rows, popup buttons, content-editor controls,
 suggestion rows, and segmented options. The positioned edge-attachment pass removed local
-command-dropdown and suggestion-arrow edge placement declarations. The token names below otherwise
-persist.
+command-dropdown and suggestion-arrow edge placement declarations. The side-corner pass removed
+local macro command/error/dropdown radius declarations. The token names below otherwise persist.
 
 CSS-backed local class selectors by source file:
 

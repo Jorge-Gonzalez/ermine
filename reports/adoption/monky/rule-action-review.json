@@ -2,16 +2,16 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "23bf0cf91f87b17df2ee9933304545fb38092cd0",
-    "projectCommit": "d9749ca3367ddd4e44fdd2cdfad078863f65bd45"
+    "ermineCommit": "122a68f3a56c33e10613cdea6735e0f3047160fe",
+    "projectCommit": "9634a3bbfa2eb15c5b6d9899dce1b03d07492a1c"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 215,
+    "reviewedDeclarations": 210,
     "assimilableNow": 0,
-    "latentGeneralizable": 112,
+    "latentGeneralizable": 107,
     "likelyRecipe": 100,
     "likelyLocal": 3,
     "byRuleAction": {
@@ -19,17 +19,17 @@
       "dimension-constraint": 30,
       "attachment-edge-layer": 6,
       "spacing-rhythm": 31,
-      "surface-line-elevation-cutout": 36,
+      "surface-line-elevation-cutout": 33,
       "typography-content": 31,
       "interaction-affordance-state": 14,
       "motion-transition": 3,
-      "reset-inheritance-neutralization": 22,
+      "reset-inheritance-neutralization": 20,
       "component-private-drawing": 42
     },
     "byLatentOutcome": {
       "admitted": 0,
       "latent-word": 18,
-      "latent-facet": 67,
+      "latent-facet": 62,
       "latent-scale": 27,
       "recipe": 100,
       "local-identity": 3
@@ -40,11 +40,11 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 25,
+      "recipe-identity": 23,
       "rule-mechanics": 0,
       "brand-identity": 8,
       "affordance-mechanics": 0,
-      "component-contract": 34,
+      "component-contract": 31,
       "state-mechanics": 5,
       "state-review": 0,
       "focus-state": 0,
@@ -508,37 +508,9 @@
       "proposedForm": "measure/popover size role"
     },
     {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-command-error::border-bottom-left-radius::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 12,
-      "selector": ".editor-command-error",
-      "property": "border-bottom-left-radius",
-      "value": "var(--radius-md)",
-      "currentCode": "component-contract",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-command-error::border-bottom-right-radius::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 13,
-      "selector": ".editor-command-error",
-      "property": "border-bottom-right-radius",
-      "value": "var(--radius-md)",
-      "currentCode": "component-contract",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content.content-editor::min-height::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 20,
+      "line": 14,
       "selector": ".editor-content.content-editor",
       "property": "min-height",
       "value": "0",
@@ -552,7 +524,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::flex::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 24,
+      "line": 18,
       "selector": ".editor-content .content-editor-body",
       "property": "flex",
       "value": "1",
@@ -566,7 +538,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::min-height::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 25,
+      "line": 19,
       "selector": ".editor-content .content-editor-body",
       "property": "min-height",
       "value": "0",
@@ -580,7 +552,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::bottom::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 30,
+      "line": 24,
       "selector": ".editor-toast",
       "property": "bottom",
       "value": "52px",
@@ -594,7 +566,7 @@
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::box-shadow::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 31,
+      "line": 25,
       "selector": ".editor-toast",
       "property": "box-shadow",
       "value": "0 6px 16px -4px rgb(0 0 0 / 25%)",
@@ -607,37 +579,9 @@
       "proposedForm": "recipe/molecule socket"
     },
     {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.input-dropdown-open::border-bottom-left-radius::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 35,
-      "selector": ".input-dropdown-open",
-      "property": "border-bottom-left-radius",
-      "value": "0",
-      "currentCode": "recipe-identity",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.input-dropdown-open::border-bottom-right-radius::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 36,
-      "selector": ".input-dropdown-open",
-      "property": "border-bottom-right-radius",
-      "value": "0",
-      "currentCode": "recipe-identity",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "latent-facet",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "negative/escape facet"
-    },
-    {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-top::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 41,
+      "line": 30,
       "selector": ".command-suggestions",
       "property": "border-top",
       "value": "none",
@@ -647,20 +591,6 @@
       "function": "removes defaults or forces inheritance so authored words can take over",
       "erminePressure": "add a missing facet on an existing Ermine concept",
       "proposedForm": "negative/escape facet"
-    },
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.command-suggestions::border-radius::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 42,
-      "selector": ".command-suggestions",
-      "property": "border-radius",
-      "value": "0 0 var(--radius-md) var(--radius-md)",
-      "currentCode": "component-contract",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-results::max-height::1",
@@ -3278,7 +3208,7 @@
       {
         "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content.content-editor::min-height::1",
         "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-        "line": 20,
+        "line": 14,
         "selector": ".editor-content.content-editor",
         "property": "min-height",
         "value": "0",
@@ -3293,7 +3223,7 @@
       {
         "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::flex::1",
         "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-        "line": 24,
+        "line": 18,
         "selector": ".editor-content .content-editor-body",
         "property": "flex",
         "value": "1",
@@ -3308,7 +3238,7 @@
       {
         "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::min-height::1",
         "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-        "line": 25,
+        "line": 19,
         "selector": ".editor-content .content-editor-body",
         "property": "min-height",
         "value": "0",

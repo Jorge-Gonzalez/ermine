@@ -6,22 +6,22 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `23bf0cf91f8` |
-| monky | `d9749ca3367` |
+| Ermine | `122a68f3a56` |
+| monky | `9634a3bbfa2` |
 
 ## Summary
 
-- Current declarations: 515
-- Adopted/infrastructure declarations: 300
-- Project-owned residue declarations: 215
+- Current declarations: 516
+- Adopted/infrastructure declarations: 306
+- Project-owned residue declarations: 210
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 25 | Project recipe bundles licensed by R-SKIN-10. |
+| `recipe-identity` | 23 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
-| `component-contract` | 34 | Component-owned mechanics, exact geometry, or product contract. |
+| `component-contract` | 31 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
 | `aria-current` | 1 | Current-state layer mechanics left local around ruled current: skin. |
 | `parent-relational` | 8 | Guarded parent/descendant state mechanics outside ruled relational words. |
@@ -34,16 +34,9 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
 | `identity-geometry` | 39 | Project-exact dimensions, spacing, positioning, and geometry. |
 
-## recipe-identity (25)
+## recipe-identity (23)
 
 Project recipe bundles licensed by R-SKIN-10.
-
-### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 35 | `.input-dropdown-open` | `border-bottom-left-radius: 0` |
-| 36 | `.input-dropdown-open` | `border-bottom-right-radius: 0` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (3)
 
@@ -115,7 +108,7 @@ Monky-specific brand typography and type treatment.
 | 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (34)
+## component-contract (31)
 
 Component-owned mechanics, exact geometry, or product contract.
 
@@ -139,16 +132,13 @@ Component-owned mechanics, exact geometry, or product contract.
 | 32 | `.macro-suggestions-arrow.top` | `border-top-color: var(--base-tone)` |
 | 36 | `.macro-suggestions-arrow.bottom` | `border-bottom-color: var(--base-tone)` |
 
-### src/content/overlays/views/macroEditor/editorViewStyles.css (6)
+### src/content/overlays/views/macroEditor/editorViewStyles.css (3)
 
 | line | selector | declaration |
 |---:|---|---|
 | 7 | `.editor-command` | `width: 280px` |
-| 12 | `.editor-command-error` | `border-bottom-left-radius: var(--radius-md)` |
-| 13 | `.editor-command-error` | `border-bottom-right-radius: var(--radius-md)` |
-| 20 | `.editor-content.content-editor` | `min-height: 0` |
-| 25 | `.editor-content .content-editor-body` | `min-height: 0` |
-| 42 | `.command-suggestions` | `border-radius: 0 0 var(--radius-md) var(--radius-md)` |
+| 14 | `.editor-content.content-editor` | `min-height: 0` |
+| 19 | `.editor-content .content-editor-body` | `min-height: 0` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (2)
 
@@ -372,7 +362,7 @@ Identity shadows/rings outside the shared elevated treatment.
 
 | line | selector | declaration |
 |---:|---|---|
-| 31 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
+| 25 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
 
 ## reset-absence (12)
 
@@ -395,7 +385,7 @@ Absence/reset/transparent mechanics, not positive style carriers.
 
 | line | selector | declaration |
 |---:|---|---|
-| 41 | `.command-suggestions` | `border-top: none` |
+| 30 | `.command-suggestions` | `border-top: none` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (3)
 
@@ -506,8 +496,8 @@ Project-exact dimensions, spacing, positioning, and geometry.
 
 | line | selector | declaration |
 |---:|---|---|
-| 24 | `.editor-content .content-editor-body` | `flex: 1` |
-| 30 | `.editor-toast` | `bottom: 52px` |
+| 18 | `.editor-content .content-editor-body` | `flex: 1` |
+| 24 | `.editor-toast` | `bottom: 52px` |
 
 ### src/content/overlays/views/search/searchViewStyles.css (6)
 
@@ -564,4 +554,3 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | line | selector | declaration |
 |---:|---|---|
 | 14 | `.editor-content` | `min-height: 150px` |
-

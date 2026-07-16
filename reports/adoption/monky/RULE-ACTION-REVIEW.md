@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 215 |
+| reviewed residue declarations | 210 |
 | assimilable now | 0 |
-| latent generalizable | 112 |
+| latent generalizable | 107 |
 | likely recipe/molecule | 100 |
 | likely local identity | 3 |
 
@@ -21,11 +21,11 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | 30 |
 | attachment-edge-layer | 6 |
 | spacing-rhythm | 31 |
-| surface-line-elevation-cutout | 36 |
+| surface-line-elevation-cutout | 33 |
 | typography-content | 31 |
 | interaction-affordance-state | 14 |
 | motion-transition | 3 |
-| reset-inheritance-neutralization | 22 |
+| reset-inheritance-neutralization | 20 |
 | component-private-drawing | 42 |
 
 ## By Latent Outcome
@@ -33,7 +33,7 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | latent-word | 18 |
-| latent-facet | 67 |
+| latent-facet | 62 |
 | latent-scale | 27 |
 | recipe | 100 |
 | local-identity | 3 |
@@ -42,9 +42,9 @@ generalization, recipe, and local-identity pressure.
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 25 |
+| recipe-identity | 23 |
 | brand-identity | 8 |
-| component-contract | 34 |
+| component-contract | 31 |
 | state-mechanics | 5 |
 | aria-current | 1 |
 | parent-relational | 8 |
@@ -62,9 +62,9 @@ generalization, recipe, and local-identity pressure.
 | family | latent outcome | declarations | primary pressure |
 | --- | --- | --- | --- |
 | component-private-drawing | recipe | 42 | promote as molecule/recipe only if reused |
-| surface-line-elevation-cutout | latent-facet | 23 | add a missing facet on an existing Ermine concept |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
-| reset-inheritance-neutralization | latent-facet | 20 | add a missing facet on an existing Ermine concept |
+| surface-line-elevation-cutout | latent-facet | 20 | add a missing facet on an existing Ermine concept |
+| reset-inheritance-neutralization | latent-facet | 18 | add a missing facet on an existing Ermine concept |
 | dimension-constraint | latent-scale | 17 | map to an existing/proportional scale or admit a named scale role |
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
