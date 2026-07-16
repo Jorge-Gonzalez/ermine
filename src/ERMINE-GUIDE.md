@@ -98,6 +98,7 @@ or `-block` (top/bottom):
 <!-- BEGIN GENERATED: guide-alignment (registry words generated; teaching prose editable) -->
 - Container aligns its children: `align-start|center|end|stretch|baseline`,
   `justify-start|center|end|between|around`.
+- A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`.
 - A member overrides its own alignment: `self-start|center|end|stretch|baseline`.
 <!-- END GENERATED: guide-alignment -->
 

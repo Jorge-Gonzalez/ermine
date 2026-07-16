@@ -938,7 +938,7 @@ Source: pre-split `constitution/ERMINE.md` lines 1950–2014.
 > drift in the implementation, not the law. Fixes, all bringing code into agreement with existing prose:
 > 1. **Sub-dial axes generalized.** The `subDials`/`dialOf` mechanism (built for m2) was only wired into
 >    m2; it is now applied to every axis the constitution already describes as multi-directional:
->    **alignment-container** (align / justify dials → `align-center justify-between` composes),
+>    **alignment-container** (align / justify / content-align dials → `align-center justify-between content-align-start` composes),
 >    **padding** and **margin** (inline / block dials, with `padding-<density>` as the whole-axis form),
 >    and **overflow** (x / y dials, with `scroll-auto`/`clip` whole-axis). The linter logic needed no
 >    change — only the records did. This confirms the m2 "whole-axis alias + dials" shape was never

@@ -29,6 +29,8 @@ export interface ErminePlainProps {
   align?: "align-start" | "align-center" | "align-end" | "align-stretch" | "align-baseline";
   /** axis `alignment-container` */
   justify?: "justify-start" | "justify-center" | "justify-end" | "justify-between" | "justify-around";
+  /** axis `alignment-container` */
+  contentAlign?: "content-align-start" | "content-align-center" | "content-align-end" | "content-align-stretch" | "content-align-between" | "content-align-around";
   /** axis `divider` */
   divider?: "divided" | "undivided";
   /** axis `wrapping` */
@@ -230,6 +232,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "push", axis: "push", kind: "word" },
   { prop: "align", axis: "alignment-container", kind: "word" },
   { prop: "justify", axis: "alignment-container", kind: "word" },
+  { prop: "contentAlign", axis: "alignment-container", kind: "word" },
   { prop: "divider", axis: "divider", kind: "word" },
   { prop: "wrapping", axis: "wrapping", kind: "word" },
   { prop: "overflow", axis: "overflow", kind: "word" },

@@ -479,7 +479,8 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
-  // --- sub-dial axis: container alignment (align dial → align-items, justify dial → justify-content) ---
+  // --- sub-dial axis: container alignment (align → align-items, justify → justify-content,
+  //     content-align → align-content) ---
   "alignment-container": {
     effectKind: "css",
     plain: (word): Record<string, string> | null => {
@@ -487,6 +488,8 @@ const EMISSION: Record<string, EmitSpec> = {
       if (a) return { "align-items": flexAlignmentValue(a[1]) };
       const j = word.match(/^justify-(start|center|end|between|around)$/);
       if (j) return { "justify-content": j[1] === "between" || j[1] === "around" ? `space-${j[1]}` : flexAlignmentValue(j[1]) };
+      const c = word.match(/^content-align-(start|center|end|stretch|between|around)$/);
+      if (c) return { "align-content": c[1] === "between" || c[1] === "around" ? `space-${c[1]}` : c[1] };
       return null;
     },
   },
@@ -850,7 +853,7 @@ export const VOCABULARY: Record<string, string[]> = {
     ...["top", "right", "bottom", "left"].map((edge) => `margin-${edge}-none`),
   ],
   "m4-self-alignment": ["self-start", "self-center", "self-end", "self-stretch", "self-baseline"],
-  "alignment-container": ["align-start", "align-center", "align-end", "align-stretch", "align-baseline", "justify-start", "justify-center", "justify-end", "justify-between", "justify-around"],
+  "alignment-container": ["align-start", "align-center", "align-end", "align-stretch", "align-baseline", "justify-start", "justify-center", "justify-end", "justify-between", "justify-around", "content-align-start", "content-align-center", "content-align-end", "content-align-stretch", "content-align-between", "content-align-around"],
   overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip", "hidden", "overflow-visible"],
   "position-mode": ["position-static", "position-relative", "position-absolute", "position-fixed", "position-sticky"],
   "stacking-context": ["isolate"],

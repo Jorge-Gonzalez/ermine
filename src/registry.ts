@@ -358,17 +358,23 @@ export const LAYOUT: AxisRecord[] = [
     valueSpace: [
       "align-start", "align-center", "align-end", "align-stretch", "align-baseline",
       "justify-start", "justify-center", "justify-end", "justify-between", "justify-around",
+      "content-align-start", "content-align-center", "content-align-end", "content-align-stretch", "content-align-between", "content-align-around",
     ],
     tokens: [
       { pattern: /^align-(start|center|end|stretch|baseline)$/, shape: "align-<x>" },
       { pattern: /^justify-(start|center|end|between|around)$/, shape: "justify-<x>" },
+      { pattern: /^content-align-(start|center|end|stretch|between|around)$/, shape: "content-align-<x>" },
     ],
-    subDials: ["align", "justify"],
-    dialOf: (word: string) => word.startsWith("align-") ? "align" : word.startsWith("justify-") ? "justify" : null,
+    subDials: ["align", "justify", "content-align"],
+    dialOf: (word: string) =>
+      word.startsWith("align-") ? "align"
+        : word.startsWith("justify-") ? "justify"
+          : word.startsWith("content-align-") ? "content-align"
+            : null,
     default: null,
-    controls: ["align-items", "justify-content"],
+    controls: ["align-items", "justify-content", "align-content"],
     mustNeverTouch: ["align-self", "gap", "padding"],
-    notes: "two sub-dials: align (align-items) and justify (justify-content). They write different properties, so `align-center justify-between` composes; two align-* or two justify-* conflict.",
+    notes: "three sub-dials: align (align-items), justify (justify-content), and content-align (align-content). They write different properties, so `align-center justify-between content-align-start` composes; two words on the same sub-dial conflict.",
   },
   {
     axis: "divider",

@@ -1206,6 +1206,42 @@
           "insertText": "justify-around",
           "kind": "word",
           "meaning": "Container aligns its children: `align-start|center|end|stretch|baseline`, `justify-start|center|end|between|around`."
+        },
+        {
+          "label": "content-align-start",
+          "insertText": "content-align-start",
+          "kind": "word",
+          "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`."
+        },
+        {
+          "label": "content-align-center",
+          "insertText": "content-align-center",
+          "kind": "word",
+          "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`."
+        },
+        {
+          "label": "content-align-end",
+          "insertText": "content-align-end",
+          "kind": "word",
+          "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`."
+        },
+        {
+          "label": "content-align-stretch",
+          "insertText": "content-align-stretch",
+          "kind": "word",
+          "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`."
+        },
+        {
+          "label": "content-align-between",
+          "insertText": "content-align-between",
+          "kind": "word",
+          "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`."
+        },
+        {
+          "label": "content-align-around",
+          "insertText": "content-align-around",
+          "kind": "word",
+          "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`."
         }
       ]
     },

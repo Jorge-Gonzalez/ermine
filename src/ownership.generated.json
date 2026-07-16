@@ -53,6 +53,7 @@
     "margin-inline-start"
   ],
   "alignment-container": [
+    "align-content",
     "align-items",
     "justify-content"
   ],

@@ -884,6 +884,36 @@
       "meaning": "Container aligns its children: `align-start|center|end|stretch|baseline`, `justify-start|center|end|between|around`.",
       "reference": "src/ERMINE-SPEC.md §2.1 — alignment-container"
     },
+    "content-align-start": {
+      "axis": "alignment-container",
+      "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — alignment-container"
+    },
+    "content-align-center": {
+      "axis": "alignment-container",
+      "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — alignment-container"
+    },
+    "content-align-end": {
+      "axis": "alignment-container",
+      "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — alignment-container"
+    },
+    "content-align-stretch": {
+      "axis": "alignment-container",
+      "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — alignment-container"
+    },
+    "content-align-between": {
+      "axis": "alignment-container",
+      "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — alignment-container"
+    },
+    "content-align-around": {
+      "axis": "alignment-container",
+      "meaning": "A multi-line/grid container packs its content: `content-align-start|center|end|stretch|between|around`.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — alignment-container"
+    },
     "divided": {
       "axis": "divider",
       "meaning": "a line drawn *between* children (not on each child). `undivided` is the default.",

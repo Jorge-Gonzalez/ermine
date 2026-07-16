@@ -319,6 +319,12 @@
       "anchor": "ADR-0053"
     },
     {
+      "id": "ADR-0054",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0054-content-alignment-dial.md",
+      "anchor": "ADR-0054"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

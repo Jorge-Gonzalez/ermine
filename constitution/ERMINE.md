@@ -373,10 +373,12 @@ classes. A single-word reading may return only as an alias earned by recurrence.
 
 ## R-ALIGN-01 — Container alignment
 
-Container alignment is two closed exclusive sub-axes over the fixed `align-*` and `justify-*`
-keyword sets. It does not control spacing or structure.
+Container alignment is three closed exclusive sub-axes over the fixed `align-*`, `justify-*`, and
+`content-align-*` keyword sets. `align-*` aligns child items, `justify-*` distributes inline/main
+axis space, and `content-align-*` packs multi-line/grid content via `align-content`. It does not
+control spacing or structure.
 
-→ rationale: RAT:R-ALIGN-01 · history: unrecorded · code: src/registry.ts#LAYOUT
+→ rationale: RAT:R-ALIGN-01 · history: ADR-0054 · code: src/registry.ts#LAYOUT
 
 ## R-DIVIDER-01 — Divider belongs to the container
 

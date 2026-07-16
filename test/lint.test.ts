@@ -78,8 +78,9 @@ const cases: Case[] = [
   { s: "text-nowrap text-pre-wrap", expect: "fail", why: "two text-flow treatments on one axis" },
   { s: "truncate text-nowrap", expect: "fail", why: "truncate already owns nowrap as a text-flow treatment" },
   // sub-dial axes compose
-  { s: "align-center justify-between", expect: "ok", why: "different sub-dials (align-items vs justify-content)" },
+  { s: "align-center justify-between content-align-start", expect: "ok", why: "different sub-dials (align-items vs justify-content vs align-content)" },
   { s: "align-center align-start", expect: "fail", why: "two values on the align sub-dial" },
+  { s: "content-align-start content-align-center", expect: "fail", why: "two values on the content-align sub-dial" },
   { s: "padding-inline-lg padding-block-sm", expect: "ok", why: "different padding sub-dials" },
   { s: "padding-md padding-inline-lg", expect: "fail", why: "whole-axis padding + a per-side dial" },
   { s: "padding-left-xs padding-right-sm", expect: "ok", why: "disjoint padding edge dials compose" },

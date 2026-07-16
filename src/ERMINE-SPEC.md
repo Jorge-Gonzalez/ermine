@@ -356,13 +356,13 @@ Tokens:
 #### alignment-container
 
 - role: `container` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `align-start` `align-center` `align-end` `align-stretch` `align-baseline` `justify-start` `justify-center` `justify-end` `justify-between` `justify-around`
+- value space: `align-start` `align-center` `align-end` `align-stretch` `align-baseline` `justify-start` `justify-center` `justify-end` `justify-between` `justify-around` `content-align-start` `content-align-center` `content-align-end` `content-align-stretch` `content-align-between` `content-align-around`
 - default: none
-- controls: `align-items` `justify-content`
+- controls: `align-items` `justify-content` `align-content`
 - must never touch: `align-self` `gap` `padding`
-- sub-dials: `align` `justify`
+- sub-dials: `align` `justify` `content-align`
 - dial resolver: declared in `registry.ts`
-- notes: two sub-dials: align (align-items) and justify (justify-content). They write different properties, so `align-center justify-between` composes; two align-* or two justify-* conflict.
+- notes: three sub-dials: align (align-items), justify (justify-content), and content-align (align-content). They write different properties, so `align-center justify-between content-align-start` composes; two words on the same sub-dial conflict.
 
 Tokens:
 
@@ -370,6 +370,7 @@ Tokens:
 |---|---|---|---|
 | `align-<x>` | `/^align-(start\|center\|end\|stretch\|baseline)$/` | — | no |
 | `justify-<x>` | `/^justify-(start\|center\|end\|between\|around)$/` | — | no |
+| `content-align-<x>` | `/^content-align-(start\|center\|end\|stretch\|between\|around)$/` | — | no |
 
 #### divider
 

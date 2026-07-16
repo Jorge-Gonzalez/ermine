@@ -140,10 +140,12 @@ function renderAlignment(current: string): string {
   const container = axis("alignment-container").valueSpace;
   const align = container.filter((word) => word.startsWith("align-"));
   const justify = container.filter((word) => word.startsWith("justify-"));
+  const contentAlign = container.filter((word) => word.startsWith("content-align-"));
   const member = axis("m4-self-alignment").valueSpace;
   return replaceCodeSpans(current, [
     compactPrefixed(align, "align-"),
     compactPrefixed(justify, "justify-"),
+    compactPrefixed(contentAlign, "content-align-"),
     compactPrefixed(member, "self-"),
   ], "alignment listing");
 }
