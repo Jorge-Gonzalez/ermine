@@ -24,7 +24,7 @@ Options weighed:
   same text-flow treatment axis.
 
 The conditioned reset/release rows (`white-space: normal`, `overflow: visible`,
-`text-overflow: clip`) are not admitted here. They remain follow-up evidence for a reset or
-conditioned-release model.
+`text-overflow: clip`) were deferred here and later ruled by ADR-0049 as `text-wrap` plus
+`overflow-visible`.
 
 Amends ruling: R-SKIN-12.

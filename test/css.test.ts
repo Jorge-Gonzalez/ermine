@@ -179,6 +179,12 @@ test("truncate owns only the text properties and composes with hidden (R-SKIN-12
   assert.doesNotMatch(css, /\.truncate \{[^}]*overflow-[xy]/s, "truncate must not touch the overflow axis's properties");
 });
 
+test("text-wrap and overflow-visible release a scoped truncation state (R-SKIN-12/R-OVERFLOW-01)", () => {
+  const css = toCss("parent-selected:text-wrap parent-selected:overflow-visible");
+  assert.match(css, /\.selectable\[aria-selected="true"\] \.parent-selected\\:text-wrap \{[^}]*text-overflow: clip;[^}]*white-space: normal;/s);
+  assert.match(css, /\.selectable\[aria-selected="true"\] \.parent-selected\\:overflow-visible \{[^}]*overflow-x: visible;[^}]*overflow-y: visible;/s);
+});
+
 test("ruled emits all-side width and style at the line-weight socket; rule keeps colour (R-SKIN-11)", () => {
   const css = toCss("rule ruled");
   assert.match(css, /\.ruled \{[^}]*border-width: var\(--rule-weight, 1px\);[^}]*border-style: solid;/s);

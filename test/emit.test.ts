@@ -55,6 +55,7 @@ test("grid-fit: grid with one fit-content track and one fill track (R-STRUCTURE-
 
 test("overflow whole-axis word writes BOTH longhands, never the shorthand", () => {
   assert.deepEqual(declOf("scroll-auto"), [["overflow-x", "auto"], ["overflow-y", "auto"]]);
+  assert.deepEqual(declOf("overflow-visible"), [["overflow-x", "visible"], ["overflow-y", "visible"]]);
   assert.deepEqual(declOf("scroll-x"), [["overflow-x", "scroll"]]);
 });
 
@@ -74,6 +75,7 @@ test("truncation: `truncate` is single-line ellipsis; `clamp-N` is the N-line -w
   assert.deepEqual(declOf("clamp-3"), [["display", "-webkit-box"], ["-webkit-box-orient", "vertical"], ["-webkit-line-clamp", "3"]]);
   assert.deepEqual(declOf("text-nowrap"), [["white-space", "nowrap"]]);
   assert.deepEqual(declOf("text-pre-wrap"), [["white-space", "pre-wrap"]]);
+  assert.deepEqual(declOf("text-wrap"), [["text-overflow", "clip"], ["white-space", "normal"]]);
 });
 
 test("fill: whole-axis sets both, dials write one logical size each (R-SIZE-01)", () => {

@@ -403,20 +403,20 @@ Tokens:
 #### overflow
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `scroll-y` `scroll-x` `scroll-auto` `clip` `hidden`
+- value space: `scroll-y` `scroll-x` `scroll-auto` `clip` `hidden` `overflow-visible`
 - default: none
 - controls: `overflow-x` `overflow-y`
 - must never touch: `display` `padding`
 - sub-dials: `x` `y`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01).
+- notes: two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, hidden, and overflow-visible are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01). `overflow-visible` is a release endpoint for scoped overrides that need to undo an authored clipping word.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<overflow>` | `/^(scroll-y\|scroll-x\|scroll-auto\|clip\|hidden)$/` | — | no |
+| `<overflow>` | `/^(scroll-y\|scroll-x\|scroll-auto\|clip\|hidden\|overflow-visible)$/` | — | no |
 
 #### constraints
 
@@ -1104,7 +1104,7 @@ Tokens:
 #### truncation
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `truncate` `clamp-N` `text-nowrap` `text-pre-wrap`
+- value space: `truncate` `clamp-N` `text-nowrap` `text-pre-wrap` `text-wrap`
 - default: none
 - controls: `text-overflow` `white-space` `display` `-webkit-box-orient` `-webkit-line-clamp`
 - must never touch: `gap` `flex` `overflow-x` `overflow-y` `background` `color` `font-size`
@@ -1114,7 +1114,7 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<text-flow-treatment>` | `/^(truncate\|text-nowrap\|text-pre-wrap)$/` | — | no |
+| `<text-flow-treatment>` | `/^(truncate\|text-nowrap\|text-pre-wrap\|text-wrap)$/` | — | no |
 | `clamp-N` | `/^clamp-(\d+)$/` | `integer-≥1` | no |
 | `clamp-<bad>` | `/^clamp-.+$/` | `integer-≥1` | yes |
 

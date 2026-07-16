@@ -1175,31 +1175,37 @@
           "label": "scroll-x",
           "insertText": "scroll-x",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, hidden, and overflow-visible are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01). `overflow-visible` is a release endpoint for scoped overrides that need to undo an authored clipping word."
         },
         {
           "label": "scroll-y",
           "insertText": "scroll-y",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, hidden, and overflow-visible are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01). `overflow-visible` is a release endpoint for scoped overrides that need to undo an authored clipping word."
         },
         {
           "label": "scroll-auto",
           "insertText": "scroll-auto",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, hidden, and overflow-visible are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01). `overflow-visible` is a release endpoint for scoped overrides that need to undo an authored clipping word."
         },
         {
           "label": "clip",
           "insertText": "clip",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, hidden, and overflow-visible are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01). `overflow-visible` is a release endpoint for scoped overrides that need to undo an authored clipping word."
         },
         {
           "label": "hidden",
           "insertText": "hidden",
           "kind": "word",
-          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01)."
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, hidden, and overflow-visible are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01). `overflow-visible` is a release endpoint for scoped overrides that need to undo an authored clipping word."
+        },
+        {
+          "label": "overflow-visible",
+          "insertText": "overflow-visible",
+          "kind": "word",
+          "meaning": "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, hidden, and overflow-visible are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01). `overflow-visible` is a release endpoint for scoped overrides that need to undo an authored clipping word."
         }
       ]
     },
@@ -3076,6 +3082,12 @@
         {
           "label": "text-pre-wrap",
           "insertText": "text-pre-wrap",
+          "kind": "word",
+          "meaning": "<text-flow-treatment>"
+        },
+        {
+          "label": "text-wrap",
+          "insertText": "text-wrap",
           "kind": "word",
           "meaning": "<text-flow-treatment>"
         },

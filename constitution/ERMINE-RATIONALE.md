@@ -216,6 +216,10 @@ dependency (`text-overflow` requires a hidden/clip overflow, and `clip`'s no-scr
 semantics are wrong for a scroll-adjacent clip). `hidden` establishes a clipping scroll
 container; `clip` forbids scrolling — two intents, two words.
 
+Amended (ADR-0049): `overflow-visible` is admitted as the scoped release endpoint for authored
+clipping. It is deliberately named with the axis because bare `visible` would read as opacity or
+presence, while the word's job is exactly to restore overflow visibility under a state.
+
 ## RAT:R-CONSTRAINT-01
 Source: pre-split `constitution/ERMINE.md` lines 1112–1126.
 
@@ -637,9 +641,13 @@ are not overflow, typography scale, or local identity; they are text-flow treatm
 as `text-nowrap` (emits only `white-space: nowrap`) and `text-pre-wrap` (emits only
 `white-space: pre-wrap`). They stay on the existing truncation/text-flow axis because
 `truncate` already owns `white-space`; a separate axis would create a P7 property collision,
-while composing `truncate text-nowrap` would say the same flow treatment twice. The search
-view reset trio (`white-space: normal`, `overflow: visible`, `text-overflow: clip`) remains
-conditioned release/project mechanics until the reset model is ruled.
+while composing `truncate text-nowrap` would say the same flow treatment twice.
+
+Amended (ADR-0049) to admit the selected-row release pair. `text-wrap` restores normal wrapping
+and clips overflow markers, undoing the text-flow half of `truncate` under a state; the overflow
+half is `overflow-visible` on R-OVERFLOW-01. This keeps ownership split along the same seam as
+`hidden truncate`: text-flow words own `white-space`/`text-overflow`, overflow words own
+`overflow-x/y`.
 
 ## RAT:R-SKIN-13
 The pattern screen found the focus indicator was never scattered mechanics: seven

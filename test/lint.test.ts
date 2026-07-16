@@ -73,6 +73,7 @@ const cases: Case[] = [
   // text-flow treatments — one white-space/truncation treatment per element
   { s: "text-nowrap", expect: "ok", why: "bare non-ellipsis nowrap treatment" },
   { s: "text-pre-wrap", expect: "ok", why: "preserves authored line breaks" },
+  { s: "text-wrap", expect: "ok", why: "scoped release endpoint for truncation" },
   { s: "text-nowrap text-pre-wrap", expect: "fail", why: "two text-flow treatments on one axis" },
   { s: "truncate text-nowrap", expect: "fail", why: "truncate already owns nowrap as a text-flow treatment" },
   // sub-dial axes compose
@@ -87,6 +88,7 @@ const cases: Case[] = [
   { s: "padding-top-sm padding-bottom-xl", expect: "ok", why: "disjoint block edges compose" },
   { s: "scroll-x scroll-y", expect: "ok", why: "different overflow sub-dials" },
   { s: "scroll-x scroll-auto", expect: "fail", why: "per-axis dial + whole-axis clip/auto" },
+  { s: "hidden overflow-visible", expect: "fail", why: "two whole-axis overflow treatments" },
   { s: "centered flush-block", expect: "ok", why: "flow centering and block flush are different logical margin dials" },
   { s: "centered centered", expect: "fail", why: "two values on the same flow-centering dial" },
   { s: "margin-left-sm margin-right-xl", expect: "ok", why: "disjoint margin edge dials compose" },

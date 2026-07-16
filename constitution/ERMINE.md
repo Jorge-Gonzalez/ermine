@@ -400,12 +400,14 @@ Wrapping is a closed axis over `wrap-allowed`, `wrap-prevent`, and `wrap-reverse
 
 ## R-OVERFLOW-01 — Overflow
 
-Overflow is a closed axis over `scroll-y`, `scroll-x`, `scroll-auto`, `clip`, and `hidden`.
+Overflow is a closed axis over `scroll-y`, `scroll-x`, `scroll-auto`, `clip`, `hidden`, and
+`overflow-visible`.
 `hidden` and `clip` are distinct intents: `hidden` establishes a clipping scroll container
 (programmatic scrolling remains possible, and `text-overflow` requires it); `clip` forbids
-scrolling entirely. Both are whole-axis words.
+scrolling entirely. `overflow-visible` is the release endpoint for scoped overrides that need to
+undo an authored clipping word. The whole-axis words conflict with per-axis scroll dials.
 
-→ rationale: RAT:R-OVERFLOW-01 · history: ADR-0013 · code: src/registry.ts#LAYOUT
+→ rationale: RAT:R-OVERFLOW-01 · history: ADR-0013, ADR-0049 · code: src/registry.ts#LAYOUT
 
 ## R-CONSTRAINT-01 — Independent bounds
 
@@ -911,19 +913,21 @@ Truncation is a treatment: `truncate` marks text that yields to its container on
 owning `text-overflow: ellipsis` and `white-space: nowrap`. It does not own overflow — the
 treatment takes effect composed with the `hidden` overflow word (`hidden truncate`), the same
 explicit-composition seam as `rule ruled`: two words, both facts visible in markup, ownership
-disjoint. Releasing truncation under a state is a conditioned override or project mechanics.
+disjoint. Releasing truncation under a state uses `text-wrap` for the text-flow half and
+`overflow-visible` for the overflow half.
 The multi-line clamp is admitted as `clamp-N` (ADR-0023): `clamp-3` limits to three lines,
 then ellipsizes. It is named `clamp`, not the reserved `truncate-N`, because the number reads
 as the retained-line limit, not an amount removed. Bare white-space treatments are admitted
 on the same text-flow axis (ADR-0042): `text-nowrap` prevents soft wrapping without
 ellipsis, and `text-pre-wrap` preserves authored line breaks and wrapping behavior. `clamp-N`,
-`truncate`, `text-nowrap`, and `text-pre-wrap` are one axis (an element clamps, truncates,
-prevents wrapping, or preserves authored line breaks, never more than one). The `-webkit-box`
+`truncate`, `text-nowrap`, `text-pre-wrap`, and `text-wrap` are one axis (an element clamps,
+truncates, prevents wrapping, preserves authored line breaks, or restores ordinary wrapping,
+never more than one). The `-webkit-box`
 clamp requires `display: -webkit-box`, a whole-display legacy value that overlaps the
 structure/m1 display facet twin; the overlap is a sanctioned exclusion, not a composition -
 a clamped text block is never a flex/grid container.
 
-→ rationale: RAT:R-SKIN-12 · history: ADR-0013, ADR-0023, ADR-0042 · code: src/registry.ts#SKIN, src/emit.ts#emit
+→ rationale: RAT:R-SKIN-12 · history: ADR-0013, ADR-0023, ADR-0042, ADR-0049 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SKIN-13 — Focus ring treatment
 

@@ -242,6 +242,7 @@ const EMISSION: Record<string, EmitSpec> = {
       if (word === "truncate") return { "text-overflow": "ellipsis", "white-space": "nowrap" };
       if (word === "text-nowrap") return { "white-space": "nowrap" };
       if (word === "text-pre-wrap") return { "white-space": "pre-wrap" };
+      if (word === "text-wrap") return { "text-overflow": "clip", "white-space": "normal" };
       const m = word.match(/^clamp-(\d+)$/);
       return m
         ? { display: "-webkit-box", "-webkit-box-orient": "vertical", "-webkit-line-clamp": m[1] }
@@ -493,6 +494,7 @@ const EMISSION: Record<string, EmitSpec> = {
         case "scroll-auto": return { "overflow-x": "auto", "overflow-y": "auto" };
         case "clip": return { "overflow-x": "clip", "overflow-y": "clip" };
         case "hidden": return { "overflow-x": "hidden", "overflow-y": "hidden" };
+        case "overflow-visible": return { "overflow-x": "visible", "overflow-y": "visible" };
         default: return null;
       }
     },
@@ -832,7 +834,7 @@ export const VOCABULARY: Record<string, string[]> = {
   ],
   "m4-self-alignment": ["self-start", "self-center", "self-end", "self-stretch", "self-baseline"],
   "alignment-container": ["align-start", "align-center", "align-end", "align-stretch", "align-baseline", "justify-start", "justify-center", "justify-end", "justify-between", "justify-around"],
-  overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip", "hidden"],
+  overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip", "hidden", "overflow-visible"],
   "position-mode": ["position-static", "position-relative", "position-absolute", "position-fixed", "position-sticky"],
   "stacking-context": ["isolate"],
   "skin-ground": carrierWords("ground"),
@@ -849,7 +851,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "font-family": ["font-mono"],
   "text-align": ["text-start", "text-center"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
-  truncation: ["truncate", "clamp-2", "clamp-3", "text-nowrap", "text-pre-wrap"],
+  truncation: ["truncate", "clamp-2", "clamp-3", "text-nowrap", "text-pre-wrap", "text-wrap"],
   affordance: ["pressable"],
   concealment: ["concealed", "revealed"],
   scrollbar: ["scrollbar-subtle"],

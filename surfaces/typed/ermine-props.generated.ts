@@ -120,7 +120,7 @@ export interface ErminePlainProps {
   /** axis `focus-ring` */
   focusRing?: "ring";
   /** axis `truncation` */
-  truncation?: "truncate" | `clamp-${number}` | "text-nowrap" | "text-pre-wrap";
+  truncation?: "truncate" | `clamp-${number}` | "text-nowrap" | "text-pre-wrap" | "text-wrap";
   /** axis `selection-treatment` */
   selectionTreatment?: "selection-subtle" | "selection-strong";
 }
@@ -142,7 +142,7 @@ export type MarginExclusive =
 
 // axis `overflow`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type OverflowExclusive =
-  | ({ overflow?: "scroll-auto" | "clip" | "hidden"; } & None<"overflowX" | "overflowY">)
+  | ({ overflow?: "scroll-auto" | "clip" | "hidden" | "overflow-visible"; } & None<"overflowX" | "overflowY">)
   | ({ overflowX?: "scroll-x"; overflowY?: "scroll-y"; } & None<"overflow">);
 
 // axis `fill`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)

@@ -289,6 +289,12 @@
       "anchor": "ADR-0048"
     },
     {
+      "id": "ADR-0049",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0049-text-flow-release.md",
+      "anchor": "ADR-0049"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

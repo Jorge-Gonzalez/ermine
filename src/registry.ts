@@ -408,15 +408,15 @@ export const LAYOUT: AxisRecord[] = [
     axis: "overflow",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["scroll-y", "scroll-x", "scroll-auto", "clip", "hidden"],
-    tokens: [{ pattern: /^(scroll-y|scroll-x|scroll-auto|clip|hidden)$/, shape: "<overflow>" }],
+    valueSpace: ["scroll-y", "scroll-x", "scroll-auto", "clip", "hidden", "overflow-visible"],
+    tokens: [{ pattern: /^(scroll-y|scroll-x|scroll-auto|clip|hidden|overflow-visible)$/, shape: "<overflow>" }],
     subDials: ["x", "y"],
     dialOf: (word: string) => word === "scroll-x" ? "x" : word === "scroll-y" ? "y" : null,
-    aliasMatch: (word: string) => word === "scroll-auto" || word === "clip" || word === "hidden",
+    aliasMatch: (word: string) => word === "scroll-auto" || word === "clip" || word === "hidden" || word === "overflow-visible",
     default: null,
     controls: ["overflow-x", "overflow-y"],
     mustNeverTouch: ["display", "padding"],
-    notes: "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, and hidden are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01).",
+    notes: "two sub-dials: scroll-x (overflow-x) and scroll-y (overflow-y) compose; scroll-auto, clip, hidden, and overflow-visible are whole-axis (both directions), so they conflict with a per-axis dial. hidden establishes a clipping scroll container; clip forbids scrolling (R-OVERFLOW-01). `overflow-visible` is a release endpoint for scoped overrides that need to undo an authored clipping word.",
   },
   {
     axis: "constraints",
@@ -992,16 +992,18 @@ export const SKIN: AxisRecord[] = [
     // `-webkit-box` clamp idiom (admitted from Monky evidence, ADR-0023 — the
     // reserved multi-line member, named `clamp` so the number reads as the retained
     // line limit, not an amount removed). `text-nowrap` and `text-pre-wrap` are
-    // bare white-space treatments for non-ellipsis text (ADR-0042). One axis: an
-    // element truncates, clamps, prevents wrapping, or preserves author line breaks.
+    // bare white-space treatments for non-ellipsis text (ADR-0042). `text-wrap` is
+    // the release endpoint for scoped overrides that undo `truncate`. One axis: an
+    // element truncates, clamps, prevents wrapping, preserves author line breaks, or
+    // restores ordinary wrapping.
     // `clamp-<n>` writes `display: -webkit-box`, so it is exclusive with a structure
     // word by property collision — a clamped text block is not also a flex/grid box.
     axis: "truncation",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["truncate", "clamp-N", "text-nowrap", "text-pre-wrap"],
+    valueSpace: ["truncate", "clamp-N", "text-nowrap", "text-pre-wrap", "text-wrap"],
     tokens: [
-      { pattern: /^(truncate|text-nowrap|text-pre-wrap)$/, shape: "<text-flow-treatment>" },
+      { pattern: /^(truncate|text-nowrap|text-pre-wrap|text-wrap)$/, shape: "<text-flow-treatment>" },
       { pattern: /^clamp-(\d+)$/, shape: "clamp-N", valueDomain: "integer-≥1" },
       { pattern: /^clamp-.+$/, shape: "clamp-<bad>", valueDomain: "integer-≥1", fallback: true },
     ],
