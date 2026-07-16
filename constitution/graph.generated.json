@@ -277,6 +277,12 @@
       "anchor": "ADR-0046"
     },
     {
+      "id": "ADR-0047",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0047-role-measured-dimensions.md",
+      "anchor": "ADR-0047"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -887,6 +893,12 @@
       "register": "constitution",
       "file": "constitution/ERMINE.md",
       "anchor": "R-SIZE-10"
+    },
+    {
+      "id": "R-SIZE-11",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SIZE-11"
     },
     {
       "id": "R-SKIN-01",
@@ -1607,6 +1619,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SIZE-10"
+    },
+    {
+      "id": "RAT:R-SIZE-11",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SIZE-11"
     },
     {
       "id": "RAT:R-SKIN-01",
@@ -2584,6 +2602,11 @@
     {
       "from": "RAT:R-SIZE-10",
       "to": "R-SIZE-10",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SIZE-11",
+      "to": "R-SIZE-11",
       "type": "rationale-of"
     },
     {

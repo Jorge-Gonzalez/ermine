@@ -75,7 +75,9 @@
   ],
   "fill": [
     "block-size",
-    "inline-size"
+    "height",
+    "inline-size",
+    "width"
   ],
   "aspect": [
     "aspect-ratio"

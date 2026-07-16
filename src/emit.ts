@@ -316,9 +316,17 @@ const EMISSION: Record<string, EmitSpec> = {
   // --- open axis, four independent dials, no alias (constraints shape) ---
   constraints: {
     effectKind: "css",
-    plain: (word) => {
+    plain: (word): Record<string, string> | null => {
       const none = word.match(/^(min-width|min-height|max-width)-none$/);
       if (none) return { [none[1]]: none[1] === "max-width" ? "none" : "0" };
+      const popover = word.match(new RegExp(`^(min-width|max-width)-popover-(${SCALES.popover.join("|")})$`));
+      if (popover) return { [popover[1]]: `var(--measure-popover-${popover[2]})` };
+      if (word === "max-width-command") return { "max-width": "var(--measure-command-inline)" };
+      const control = word.match(new RegExp(`^(min-width|min-height)-control-(${SCALES.control.join("|")})$`));
+      if (control) return { [control[1]]: `var(--control-size-${control[2]})` };
+      if (word === "min-height-editor") return { "min-height": "var(--measure-editor-min-block)" };
+      const results = word.match(new RegExp(`^max-height-results-(${SCALES.resultCap.join("|")})$`));
+      if (results) return { "max-height": `var(--measure-results-${results[1]})` };
       const m = word.match(new RegExp(`^(min-width|max-width|min-height|max-height)-(${SCALES.size.join("|")})$`));
       return m ? { [m[1]]: `var(--size-${m[2]})` } : null;
     },
@@ -332,6 +340,24 @@ const EMISSION: Record<string, EmitSpec> = {
       if (word === "fill-inline") return { "inline-size": "100%" };
       if (word === "fill-block") return { "block-size": "100%" };
       if (word === "hug-inline") return { "inline-size": "fit-content" };
+      if (word === "width-auto") return { width: "auto" };
+      if (word === "height-none") return { height: "0" };
+      if (word === "dialog-measure") {
+        return {
+          width: "min(var(--measure-dialog-inline), calc(100vw - var(--measure-dialog-gutter)))",
+          height: "min(var(--measure-dialog-block), var(--measure-dialog-max-block))",
+        };
+      }
+      const popover = word.match(new RegExp(`^width-popover-(${SCALES.popover.join("|")})$`));
+      if (popover) return { width: `var(--measure-popover-${popover[1]})` };
+      const controlBox = word.match(new RegExp(`^control-box-(${SCALES.control.join("|")})$`));
+      if (controlBox) return { width: `var(--control-size-${controlBox[1]})`, height: `var(--control-size-${controlBox[1]})` };
+      const controlInline = word.match(new RegExp(`^control-inline-(${SCALES.control.join("|")})$`));
+      if (controlInline) return { width: `var(--control-size-${controlInline[1]})` };
+      const controlBlock = word.match(new RegExp(`^control-block-(${SCALES.control.join("|")})$`));
+      if (controlBlock) return { height: `var(--control-size-${controlBlock[1]})` };
+      const separator = word.match(new RegExp(`^separator-mark-(${SCALES.control.join("|")})$`));
+      if (separator) return { width: "var(--rule-weight, 1px)", height: `var(--control-size-${separator[1]})` };
       const controlSize = word.match(new RegExp(`^control-size-(${SCALES.spacing.join("|")})$`));
       if (controlSize) return { "inline-size": `var(--spacing-${controlSize[1]})`, "block-size": `var(--spacing-${controlSize[1]})` };
       return null;
@@ -766,9 +792,18 @@ export const VOCABULARY: Record<string, string[]> = {
   "m3-self-size": ["basis-content", "basis-ratio", ...SCALES.size.map((s) => `basis-exact-${s}`)],
   constraints: [
     ...["min-width", "max-width", "min-height", "max-height"].flatMap((d) => SCALES.size.map((s) => `${d}-${s}`)),
+    ...["min-width", "max-width"].flatMap((d) => SCALES.popover.map((s) => `${d}-popover-${s}`)),
+    ...SCALES.control.flatMap((s) => [`min-width-control-${s}`, `min-height-control-${s}`]),
+    ...SCALES.resultCap.map((s) => `max-height-results-${s}`),
+    "max-width-command", "min-height-editor",
     "min-width-none", "min-height-none", "max-width-none",
   ],
-  fill: ["fill", "fill-inline", "fill-block", "hug-inline", ...SCALES.spacing.map((s) => `control-size-${s}`)],
+  fill: [
+    "fill", "fill-inline", "fill-block", "hug-inline", "width-auto", "height-none", "dialog-measure",
+    ...SCALES.popover.map((s) => `width-popover-${s}`),
+    ...SCALES.control.flatMap((s) => [`control-box-${s}`, `control-inline-${s}`, `control-block-${s}`, `separator-mark-${s}`]),
+    ...SCALES.spacing.map((s) => `control-size-${s}`),
+  ],
   aspect: ["square"],
   "viewport-fill": ["fill-viewport"],
   numeric: ["tabular"],

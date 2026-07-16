@@ -753,6 +753,14 @@ read the shared spacing socket so the grammar owns the role and step name while 
 the number. This differs from `square`, which is only the self-ratio relation (`aspect-ratio: 1`),
 and from layout constraints, which read the layout size scale.
 
+## RAT:R-SIZE-11
+Source: ADR-0047. The Monky dimension residue contains several real patterns, but not one
+homogeneous numeric scale: overlay measures (200-360px and an 8em command cap), dialog viewport
+bounds, result-list caps, compact control/icon chrome (16-48px), and reset endpoints. Folding all
+of these into `--size-*` would erase the distinction between layout tracks, overlays, and controls.
+Keeping them local would miss recurring roles. Role-measured words split the difference: grammar
+owns the role and footprint, while project/theme sockets own the measured values.
+
 ## RAT:R-COMPILE-01
 Source: pre-split `constitution/ERMINE.md` lines 1715–1752.
 

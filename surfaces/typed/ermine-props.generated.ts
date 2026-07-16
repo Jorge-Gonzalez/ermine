@@ -149,8 +149,8 @@ export type OverflowExclusive =
 
 // axis `fill`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type FillExclusive =
-  | ({ fill?: "fill"; controlSize?: SpacingStep; } & None<"fillInline" | "fillBlock">)
-  | ({ fillInline?: "fill-inline" | "hug-inline"; fillBlock?: "fill-block"; } & None<"fill" | "controlSize">);
+  | ({ fill?: "fill" | "dialog-measure"; controlSize?: SpacingStep; } & None<"fillInline" | "fillBlock">)
+  | ({ fillInline?: "fill-inline" | "hug-inline" | "width-auto"; fillBlock?: "fill-block" | "height-none"; } & None<"fill" | "controlSize">);
 
 // axis `corner`: a whole-axis value fixes every dial — combining is a COMPILE error (P1/P5)
 export type CornerExclusive =

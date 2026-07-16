@@ -153,6 +153,19 @@ test("control-size emits a physical control box from the spacing scale (R-SIZE-0
   assert.doesNotMatch(css, /aspect-ratio|display|padding/, "control-size is physical box size only");
 });
 
+test("role-size words emit project-measured dimensions without display or spacing side effects (R-SIZE-11)", () => {
+  const css = toCss("dialog-measure width-popover-xl control-box-lg control-block-sm min-width-popover-md max-height-results-sm width-auto height-none");
+  assert.match(css, /\.dialog-measure \{[^}]*width: min\(var\(--measure-dialog-inline\), calc\(100vw - var\(--measure-dialog-gutter\)\)\);[^}]*height: min\(var\(--measure-dialog-block\), var\(--measure-dialog-max-block\)\);/s);
+  assert.match(css, /\.width-popover-xl \{[^}]*width: var\(--measure-popover-xl\);/s);
+  assert.match(css, /\.control-box-lg \{[^}]*width: var\(--control-size-lg\);[^}]*height: var\(--control-size-lg\);/s);
+  assert.match(css, /\.control-block-sm \{[^}]*height: var\(--control-size-sm\);/s);
+  assert.match(css, /\.min-width-popover-md \{[^}]*min-width: var\(--measure-popover-md\);/s);
+  assert.match(css, /\.max-height-results-sm \{[^}]*max-height: var\(--measure-results-sm\);/s);
+  assert.match(css, /\.width-auto \{[^}]*width: auto;/s);
+  assert.match(css, /\.height-none \{[^}]*height: 0;/s);
+  assert.doesNotMatch(css, /display:|padding:/, "role sizes only set dimensions");
+});
+
 test("hidden emits both overflow axes; clip stays distinct (R-OVERFLOW-01)", () => {
   const css = toCss("hidden");
   assert.match(css, /\.hidden \{[^}]*overflow-x: hidden;[^}]*overflow-y: hidden;/s);

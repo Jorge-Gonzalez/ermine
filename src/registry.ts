@@ -26,6 +26,9 @@
 export const SCALES = {
   spacing: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"], // R-DENSITY-01 T-shirt spacing scale (density words retired → aliases)
   size: ["sm", "md", "lg", "xl", "2xl"], // R-SCALE-01 size scale — basis-exact-<step>, constraints
+  control: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"], // R-SIZE-11 role scale — control/icon boxes, not layout measures
+  popover: ["sm", "md", "lg", "xl", "2xl"], // R-SIZE-11 role scale — overlay/popover measures
+  resultCap: ["sm", "md"], // R-SIZE-11 role scale — scrollable result block caps
   breakpoint: ["sm", "md", "lg", "xl"], // R-SCALE-01-style named breakpoint scale
   zTier2: ["base", "content", "raised", "dropdown", "sticky", "tooltip"],
   duration: ["quick", "settled"], // R-MOTION-08 named temporal scale — values remain theme-bound
@@ -419,9 +422,19 @@ export const LAYOUT: AxisRecord[] = [
     axis: "constraints",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "open", regime: "free",
-    valueSpace: ["min-width-<size>", "max-width-<size>", "min-height-<size>", "max-height-<size>", "max-width-none"],
+    valueSpace: [
+      "min-width-<size>", "max-width-<size>", "min-height-<size>", "max-height-<size>",
+      "min-width-popover-<step>", "max-width-popover-<step>", "max-width-command",
+      "min-width-control-<step>", "min-height-control-<step>", "min-height-editor",
+      "max-height-results-<step>", "max-width-none",
+    ],
     tokens: [
       { pattern: new RegExp(`^(min-width|max-width|min-height|max-height)-(${SCALES.size.join("|")})$`), shape: "min/max-width/height-<size>", valueDomain: "size-step" },
+      { pattern: new RegExp(`^(min-width|max-width)-popover-(${SCALES.popover.join("|")})$`), shape: "min/max-width-popover-<step>" },
+      { pattern: /^(max-width-command)$/, shape: "max-width-command" },
+      { pattern: new RegExp(`^(min-width|min-height)-control-(${SCALES.control.join("|")})$`), shape: "min-width/height-control-<step>" },
+      { pattern: /^(min-height-editor)$/, shape: "min-height-editor" },
+      { pattern: new RegExp(`^max-height-results-(${SCALES.resultCap.join("|")})$`), shape: "max-height-results-<step>" },
       // R-CONSTRAINT-01 endpoints: no minimum at all (flex min-content escape);
       // no max-width cap at all (inherited measure escape, ADR-0040).
       { pattern: /^(min-width|min-height|max-width)-(none)$/, shape: "min-width/height-none | max-width-none" },
@@ -439,13 +452,14 @@ export const LAYOUT: AxisRecord[] = [
     default: null,
     controls: ["min-width", "max-width", "min-height", "max-height"],
     mustNeverTouch: ["flex-grow", "flex-shrink", "flex-basis", "width"],
-    notes: "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
+    notes: "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.",
   },
   {
     // fill/hug/control-size: explicit self extent along logical axes. `fill` spans the
     // container (R-SIZE-01); `hug-inline` sizes the inline axis from content (R-SIZE-05);
     // `control-size-*` sets both axes from the spacing scale for interactive/icon boxes
-    // (R-SIZE-09).
+    // (R-SIZE-09). Role-sized words cover measured overlay and control affordance boxes
+    // without forcing those numbers into the generic layout size scale (R-SIZE-11).
     // Both are socket-free relational sizes and share the same inline-size dial, so
     // `fill-inline hug-inline` conflicts while `hug-inline fill-block` composes.
     // Distinct from flex growth (`grow-1`/`expandable`, m2) and flex-basis source
@@ -453,19 +467,33 @@ export const LAYOUT: AxisRecord[] = [
     axis: "fill",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["fill", "fill-inline", "fill-block", "hug-inline", "control-size-<spacing>"],
+    valueSpace: [
+      "fill", "fill-inline", "fill-block", "hug-inline", "width-auto", "height-none",
+      "dialog-measure", "width-popover-<step>",
+      "control-box-<step>", "control-inline-<step>", "control-block-<step>",
+      "separator-mark-<step>", "control-size-<spacing>",
+    ],
     tokens: [
-      { pattern: /^(?:fill(?:-(inline|block))?|hug-inline)$/, shape: "fill[-<axis>] | hug-inline" },
+      { pattern: /^(?:fill(?:-(inline|block))?|hug-inline|width-auto|height-none|dialog-measure)$/, shape: "fill[-<axis>] | hug-inline | width-auto | height-none | dialog-measure" },
+      { pattern: new RegExp(`^width-popover-(${SCALES.popover.join("|")})$`), shape: "width-popover-<step>" },
+      { pattern: new RegExp(`^control-(?:box|inline|block)-(${SCALES.control.join("|")})$`), shape: "control-box/inline/block-<step>" },
+      { pattern: new RegExp(`^separator-mark-(${SCALES.control.join("|")})$`), shape: "separator-mark-<step>" },
       { pattern: new RegExp(`^control-size-(${SCALES.spacing.join("|")})$`), shape: "control-size-<spacing>", valueDomain: "spacing-step" },
       { pattern: /^control-size-.+$/, shape: "control-size-<bad>", valueDomain: "spacing-step", fallback: true },
     ],
     subDials: ["inline", "block"],
-    dialOf: (word: string) => word === "fill-inline" || word === "hug-inline" ? "inline" : word === "fill-block" ? "block" : null,
-    aliasMatch: (word: string) => word === "fill" || word.startsWith("control-size-"),
+    dialOf: (word: string) => (
+      word === "fill-inline" || word === "hug-inline" || word === "width-auto" || word.startsWith("width-popover-") || word.startsWith("control-inline-")
+        ? "inline"
+        : word === "fill-block" || word === "height-none" || word.startsWith("control-block-")
+          ? "block"
+          : null
+    ),
+    aliasMatch: (word: string) => word === "fill" || word === "dialog-measure" || word.startsWith("control-size-") || word.startsWith("control-box-") || word.startsWith("separator-mark-"),
     default: null,
-    controls: ["inline-size", "block-size"],
+    controls: ["inline-size", "block-size", "width", "height"],
     mustNeverTouch: ["display", "gap", "flex", "flex-grow", "flex-basis", "position", "margin", "padding", "border-radius", "font-size", "aspect-ratio"],
-    notes: "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.",
+    notes: "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures.",
   },
   {
     // aspect: an element's own two dimensions related by a fixed ratio (R-SIZE-02). Self

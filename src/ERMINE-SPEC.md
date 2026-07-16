@@ -145,6 +145,9 @@ layout=21 · layering=4 · motion=4 · state=9 · skin=18. Every fact below is r
 |---|---|
 | `spacing` | `xs` `sm` `md` `lg` `xl` `2xl` `3xl` |
 | `size` | `sm` `md` `lg` `xl` `2xl` |
+| `control` | `xs` `sm` `md` `lg` `xl` `2xl` `3xl` |
+| `popover` | `sm` `md` `lg` `xl` `2xl` |
+| `resultCap` | `sm` `md` |
 | `breakpoint` | `sm` `md` `lg` `xl` |
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
 | `duration` | `quick` `settled` |
@@ -418,39 +421,47 @@ Tokens:
 #### constraints
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `open` · regime: `free`
-- value space: `min-width-<size>` `max-width-<size>` `min-height-<size>` `max-height-<size>` `max-width-none`
+- value space: `min-width-<size>` `max-width-<size>` `min-height-<size>` `max-height-<size>` `min-width-popover-<step>` `max-width-popover-<step>` `max-width-command` `min-width-control-<step>` `min-height-control-<step>` `min-height-editor` `max-height-results-<step>` `max-width-none`
 - default: none
 - controls: `min-width` `max-width` `min-height` `max-height`
 - must never touch: `flex-grow` `flex-shrink` `flex-basis` `width`
 - sub-dials: `min-width` `max-width` `min-height` `max-height`
 - dial resolver: declared in `registry.ts`
-- notes: four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.
+- notes: four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `min/max-width/height-<size>` | `/^(min-width\|max-width\|min-height\|max-height)-(sm\|md\|lg\|xl\|2xl)$/` | `size-step` | no |
+| `min/max-width-popover-<step>` | `/^(min-width\|max-width)-popover-(sm\|md\|lg\|xl\|2xl)$/` | — | no |
+| `max-width-command` | `/^(max-width-command)$/` | — | no |
+| `min-width/height-control-<step>` | `/^(min-width\|min-height)-control-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
+| `min-height-editor` | `/^(min-height-editor)$/` | — | no |
+| `max-height-results-<step>` | `/^max-height-results-(sm\|md)$/` | — | no |
 | `min-width/height-none \| max-width-none` | `/^(min-width\|min-height\|max-width)-(none)$/` | — | no |
 | `min/max-width/height-<bad>` | `/^(min-width\|max-width\|min-height\|max-height)-.+$/` | `size-step` | yes |
 
 #### fill
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `fill` `fill-inline` `fill-block` `hug-inline` `control-size-<spacing>`
+- value space: `fill` `fill-inline` `fill-block` `hug-inline` `width-auto` `height-none` `dialog-measure` `width-popover-<step>` `control-box-<step>` `control-inline-<step>` `control-block-<step>` `separator-mark-<step>` `control-size-<spacing>`
 - default: none
-- controls: `inline-size` `block-size`
+- controls: `inline-size` `block-size` `width` `height`
 - must never touch: `display` `gap` `flex` `flex-grow` `flex-basis` `position` `margin` `padding` `border-radius` `font-size` `aspect-ratio`
 - sub-dials: `inline` `block`
 - dial resolver: declared in `registry.ts`
 - whole-axis pattern matcher: declared in `registry.ts`
-- notes: explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`.
+- notes: explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `fill[-<axis>] \| hug-inline` | `/^(?:fill(?:-(inline\|block))?\|hug-inline)$/` | — | no |
+| `fill[-<axis>] \| hug-inline \| width-auto \| height-none \| dialog-measure` | `/^(?:fill(?:-(inline\|block))?\|hug-inline\|width-auto\|height-none\|dialog-measure)$/` | — | no |
+| `width-popover-<step>` | `/^width-popover-(sm\|md\|lg\|xl\|2xl)$/` | — | no |
+| `control-box/inline/block-<step>` | `/^control-(?:box\|inline\|block)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
+| `separator-mark-<step>` | `/^separator-mark-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | — | no |
 | `control-size-<spacing>` | `/^control-size-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `control-size-<bad>` | `/^control-size-.+$/` | `spacing-step` | yes |
 

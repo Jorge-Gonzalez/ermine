@@ -1211,163 +1211,331 @@
           "label": "min-width-sm",
           "insertText": "min-width-sm",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-width-md",
           "insertText": "min-width-md",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-width-lg",
           "insertText": "min-width-lg",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-width-xl",
           "insertText": "min-width-xl",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-width-2xl",
           "insertText": "min-width-2xl",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-width-sm",
           "insertText": "max-width-sm",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-width-md",
           "insertText": "max-width-md",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-width-lg",
           "insertText": "max-width-lg",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-width-xl",
           "insertText": "max-width-xl",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-width-2xl",
           "insertText": "max-width-2xl",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-height-sm",
           "insertText": "min-height-sm",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-height-md",
           "insertText": "min-height-md",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-height-lg",
           "insertText": "min-height-lg",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-height-xl",
           "insertText": "min-height-xl",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-height-2xl",
           "insertText": "min-height-2xl",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-height-sm",
           "insertText": "max-height-sm",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-height-md",
           "insertText": "max-height-md",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-height-lg",
           "insertText": "max-height-lg",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-height-xl",
           "insertText": "max-height-xl",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-height-2xl",
           "insertText": "max-height-2xl",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-popover-sm",
+          "insertText": "min-width-popover-sm",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-popover-md",
+          "insertText": "min-width-popover-md",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-popover-lg",
+          "insertText": "min-width-popover-lg",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-popover-xl",
+          "insertText": "min-width-popover-xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-popover-2xl",
+          "insertText": "min-width-popover-2xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-width-popover-sm",
+          "insertText": "max-width-popover-sm",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-width-popover-md",
+          "insertText": "max-width-popover-md",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-width-popover-lg",
+          "insertText": "max-width-popover-lg",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-width-popover-xl",
+          "insertText": "max-width-popover-xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-width-popover-2xl",
+          "insertText": "max-width-popover-2xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-control-xs",
+          "insertText": "min-width-control-xs",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-control-xs",
+          "insertText": "min-height-control-xs",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-control-sm",
+          "insertText": "min-width-control-sm",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-control-sm",
+          "insertText": "min-height-control-sm",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-control-md",
+          "insertText": "min-width-control-md",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-control-md",
+          "insertText": "min-height-control-md",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-control-lg",
+          "insertText": "min-width-control-lg",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-control-lg",
+          "insertText": "min-height-control-lg",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-control-xl",
+          "insertText": "min-width-control-xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-control-xl",
+          "insertText": "min-height-control-xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-control-2xl",
+          "insertText": "min-width-control-2xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-control-2xl",
+          "insertText": "min-height-control-2xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-width-control-3xl",
+          "insertText": "min-width-control-3xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-control-3xl",
+          "insertText": "min-height-control-3xl",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-height-results-sm",
+          "insertText": "max-height-results-sm",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-height-results-md",
+          "insertText": "max-height-results-md",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "max-width-command",
+          "insertText": "max-width-command",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+        },
+        {
+          "label": "min-height-editor",
+          "insertText": "min-height-editor",
+          "kind": "word",
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-width-none",
           "insertText": "min-width-none",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-height-none",
           "insertText": "min-height-none",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-width-none",
           "insertText": "max-width-none",
           "kind": "word",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-width-<size>",
           "insertText": "min-width-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-width-<size>",
           "insertText": "max-width-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "min-height-<size>",
           "insertText": "min-height-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         },
         {
           "label": "max-height-<size>",
           "insertText": "max-height-${1|sm,md,lg,xl,2xl|}",
           "kind": "snippet",
-          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
+          "meaning": "four sub-dials, one per longhand. min-width/max-width compose as a width band; min-height/max-height compose as a height band; all four can co-occur. Interior generic bounds stay on the layout size scale; role-bound bounds (`popover`, `control`, `results`, `editor`, `command`) read their own project-measured sockets so control chrome and overlay measures do not distort the layout size scale. A future semantic check (not yet implemented) should warn when a band is inverted, e.g. min-width-lg max-width-sm."
         }
       ]
     },
@@ -1379,73 +1547,289 @@
           "label": "fill",
           "insertText": "fill",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "fill-inline",
           "insertText": "fill-inline",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "fill-block",
           "insertText": "fill-block",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "hug-inline",
           "insertText": "hug-inline",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "width-auto",
+          "insertText": "width-auto",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "height-none",
+          "insertText": "height-none",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "dialog-measure",
+          "insertText": "dialog-measure",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "width-popover-sm",
+          "insertText": "width-popover-sm",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "width-popover-md",
+          "insertText": "width-popover-md",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "width-popover-lg",
+          "insertText": "width-popover-lg",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "width-popover-xl",
+          "insertText": "width-popover-xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "width-popover-2xl",
+          "insertText": "width-popover-2xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-box-xs",
+          "insertText": "control-box-xs",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-inline-xs",
+          "insertText": "control-inline-xs",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-block-xs",
+          "insertText": "control-block-xs",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "separator-mark-xs",
+          "insertText": "separator-mark-xs",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-box-sm",
+          "insertText": "control-box-sm",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-inline-sm",
+          "insertText": "control-inline-sm",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-block-sm",
+          "insertText": "control-block-sm",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "separator-mark-sm",
+          "insertText": "separator-mark-sm",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-box-md",
+          "insertText": "control-box-md",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-inline-md",
+          "insertText": "control-inline-md",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-block-md",
+          "insertText": "control-block-md",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "separator-mark-md",
+          "insertText": "separator-mark-md",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-box-lg",
+          "insertText": "control-box-lg",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-inline-lg",
+          "insertText": "control-inline-lg",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-block-lg",
+          "insertText": "control-block-lg",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "separator-mark-lg",
+          "insertText": "separator-mark-lg",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-box-xl",
+          "insertText": "control-box-xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-inline-xl",
+          "insertText": "control-inline-xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-block-xl",
+          "insertText": "control-block-xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "separator-mark-xl",
+          "insertText": "separator-mark-xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-box-2xl",
+          "insertText": "control-box-2xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-inline-2xl",
+          "insertText": "control-inline-2xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-block-2xl",
+          "insertText": "control-block-2xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "separator-mark-2xl",
+          "insertText": "separator-mark-2xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-box-3xl",
+          "insertText": "control-box-3xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-inline-3xl",
+          "insertText": "control-inline-3xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "control-block-3xl",
+          "insertText": "control-block-3xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
+        },
+        {
+          "label": "separator-mark-3xl",
+          "insertText": "separator-mark-3xl",
+          "kind": "word",
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "control-size-xs",
           "insertText": "control-size-xs",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "control-size-sm",
           "insertText": "control-size-sm",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "control-size-md",
           "insertText": "control-size-md",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "control-size-lg",
           "insertText": "control-size-lg",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "control-size-xl",
           "insertText": "control-size-xl",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "control-size-2xl",
           "insertText": "control-size-2xl",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "control-size-3xl",
           "insertText": "control-size-3xl",
           "kind": "word",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         },
         {
           "label": "control-size-<spacing>",
           "insertText": "control-size-${1|xs,sm,md,lg,xl,2xl,3xl|}",
           "kind": "snippet",
-          "meaning": "explicit self-size dials. Whole-axis `fill` and `control-size-<spacing>` set both inline-size and block-size, so each conflicts with per-axis dials; `fill-inline fill-block` and `hug-inline fill-block` compose. `hug-inline` sets inline-size from content (`fit-content`). `control-size-<spacing>` is scale-bound physical control/icon box size over the shared spacing scale; it does not imply display, alignment, padding, glyph size, radius, or `aspect-ratio`."
+          "meaning": "explicit self-size dials. Whole-axis `fill`, `dialog-measure`, `control-size-<spacing>`, `control-box-<step>`, and `separator-mark-<step>` set both inline and block footprints, so each conflicts with per-axis dials; `fill-inline fill-block`, `hug-inline fill-block`, and one inline role plus one block role compose. `hug-inline` sets inline-size from content (`fit-content`). `width-auto` and `height-none` are reset endpoints on their respective footprints. `control-size-<spacing>` remains the spacing-scale physical control box; `control-box/inline/block-<step>`, `width-popover-<step>`, `dialog-measure`, and `separator-mark-<step>` use role sockets for project-measured chrome and overlay measures."
         }
       ]
     },

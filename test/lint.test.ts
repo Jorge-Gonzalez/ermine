@@ -108,6 +108,12 @@ const cases: Case[] = [
   { s: "min-width-sm max-width-lg", expect: "ok", why: "width band: min + max compose" },
   { s: "min-width-sm min-width-lg", expect: "fail", why: "two values on the same min-width dial" },
   { s: "min-width-sm max-width-lg min-height-sm max-height-lg", expect: "ok", why: "all four constraint dials co-occur" },
+  { s: "width-popover-lg control-block-md", expect: "ok", why: "role inline size composes with role block size" },
+  { s: "dialog-measure width-popover-lg", expect: "fail", why: "dialog measure owns both size footprints" },
+  { s: "control-box-lg control-inline-md", expect: "fail", why: "control box owns the inline footprint" },
+  { s: "width-auto height-none", expect: "ok", why: "reset endpoints are separate self-size dials" },
+  { s: "min-width-popover-sm max-width-popover-2xl max-height-results-md", expect: "ok", why: "role-bound constraints are independent dials" },
+  { s: "min-width-popover-sm min-width-control-2xl", expect: "fail", why: "only one value may own the min-width dial" },
   // checked-mixed token
   { s: "checked-mixed", backing: ["aria-checked=mixed"], expect: "ok", why: "the word is complete, not checked-mixed-mixed" },
   // enum value parses as a real value

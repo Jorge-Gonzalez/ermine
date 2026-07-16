@@ -525,6 +525,25 @@ pin on the same slot conflict.
 
 → rationale: RAT:R-SIZE-10 · history: ADR-0045 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
+## R-SIZE-11 — Role-measured dimensions
+
+Some dimensions are neither arbitrary component constants nor members of the generic layout size
+scale. They are recurring role measures: dialog bounds, popover widths, result-list caps, editor
+minimums, and control/icon chrome. These use role-specific words and sockets rather than expanding
+`--size-*` into a mixed ladder.
+
+The explicit self-size axis admits `dialog-measure`, `width-popover-<step>`,
+`control-box-<step>`, `control-inline-<step>`, `control-block-<step>`, `separator-mark-<step>`,
+plus the observed reset endpoints `width-auto` and `height-none`. Whole-box role words own both
+inline and block footprints; per-axis role words compose only when their footprints are disjoint.
+
+The constraint axis admits role-bound bounds: `min-width-popover-<step>`,
+`max-width-popover-<step>`, `max-width-command`, `min-width-control-<step>`,
+`min-height-control-<step>`, `min-height-editor`, and `max-height-results-<step>`. These remain
+min/max bounds, so min and max bands compose while two values on the same bound conflict.
+
+→ rationale: RAT:R-SIZE-11 · history: ADR-0047 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+
 ## R-TYPE-01 — Type belongs to skin
 
 Type is not layout grammar. Font size and line height are generative-proportional skin; typeface and

@@ -82,6 +82,28 @@ test("fill: whole-axis sets both, dials write one logical size each (R-SIZE-01)"
   assert.deepEqual(declOf("fill-block"), [["block-size", "100%"]]);
 });
 
+test("role-size words emit measured dialog, popover, control, and endpoint dimensions (R-SIZE-11)", () => {
+  assert.deepEqual(declOf("dialog-measure"), [
+    ["width", "min(var(--measure-dialog-inline), calc(100vw - var(--measure-dialog-gutter)))"],
+    ["height", "min(var(--measure-dialog-block), var(--measure-dialog-max-block))"],
+  ]);
+  assert.deepEqual(declOf("width-popover-lg"), [["width", "var(--measure-popover-lg)"]]);
+  assert.deepEqual(declOf("control-box-lg"), [["width", "var(--control-size-lg)"], ["height", "var(--control-size-lg)"]]);
+  assert.deepEqual(declOf("control-inline-md"), [["width", "var(--control-size-md)"]]);
+  assert.deepEqual(declOf("control-block-sm"), [["height", "var(--control-size-sm)"]]);
+  assert.deepEqual(declOf("separator-mark-xs"), [["width", "var(--rule-weight, 1px)"], ["height", "var(--control-size-xs)"]]);
+  assert.deepEqual(declOf("width-auto"), [["width", "auto"]]);
+  assert.deepEqual(declOf("height-none"), [["height", "0"]]);
+});
+
+test("role-bound constraints emit measured min/max sockets (R-SIZE-11)", () => {
+  assert.deepEqual(declOf("min-width-popover-sm"), [["min-width", "var(--measure-popover-sm)"]]);
+  assert.deepEqual(declOf("max-width-command"), [["max-width", "var(--measure-command-inline)"]]);
+  assert.deepEqual(declOf("min-height-control-3xl"), [["min-height", "var(--control-size-3xl)"]]);
+  assert.deepEqual(declOf("min-height-editor"), [["min-height", "var(--measure-editor-min-block)"]]);
+  assert.deepEqual(declOf("max-height-results-md"), [["max-height", "var(--measure-results-md)"]]);
+});
+
 test("hug-inline: inline size follows content without a spacing socket (R-SIZE-05)", () => {
   assert.deepEqual(declOf("hug-inline"), [["inline-size", "fit-content"]]);
 });
