@@ -559,16 +559,13 @@ ${table(["intent", "declarations"], [...byIntent.entries()].sort((a, b) => b[1] 
 
 ## Candidate Vocabulary Pressure
 
-- control/icon squares: test \`square-*\`, \`icon-*\`, or \`control-size-*\` against 16px,
-  18px, 24px, 28px, 2rem, and 3rem before calling them local.
-- measures/popovers: test \`measure-*\`, \`popover-measure\`, and \`dialog-measure\`
-  roles against 200px, 240px, 280px, 320px, 360px, and the viewport-bounded dialog
-  formulas.
-- block caps/floors: test \`max-block-*\`, \`scroll-cap-*\`, \`control-min-block\`,
-  and \`editor-min-block\` against result caps and minimum interaction/content floors.
-- escapes: keep the remaining \`min-height:0\`, \`width:auto\`, \`height:0\`, and related
-  values as facets or layer/specificity repairs, not positive size words. The observed
-  \`max-width:none\` endpoint is now admitted as \`max-width-none\`.
+- role-measured dimensions are now admitted for dialog, popover, command, result caps,
+  controls, separators, and editor floors; the raw Monky rows for those roles migrated.
+- zero-height endpoints are admitted as \`height-none\`; the remaining zero-width triangle
+  geometry stays local because no zero-width endpoint has been ruled.
+- the remaining dimension/constraint declaration is flex negotiation inside the editor
+  body. It should become part of a prose/editor-content recipe only if that molecule is
+  promoted.
 
 ## Declarations
 

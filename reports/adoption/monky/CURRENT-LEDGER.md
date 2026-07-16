@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `122a68f3a56c33e10613cdea6735e0f3047160fe` |
-| monky | `9634a3bbfa2eb15c5b6d9899dce1b03d07492a1c` |
+| Ermine | `a3a421271201040d8876951c9aaade5f6ba98261` |
+| monky | `3052c7043fa7643fca33dedb97703e360ff65d06` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 516 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 306 |
-| **residue — project-owned declarations** | **210** |
+| current declarations | 532 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 352 |
+| **residue — project-owned declarations** | **180** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,13 +34,13 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 213 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 239 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
-| `theme-metric` | 39 | project scale values and Ermine scale bindings (deliberate non-coverage) |
+| `theme-metric` | 59 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 23 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 8 | project brand typography and type treatment |
-| `component-contract` | 31 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 10 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `aria-current` | 1 | aria-current-conditioned remainder (current: itself is ruled, R-STATE-12) |
 | `parent-relational` | 8 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
@@ -51,23 +51,21 @@ re-validated on every run.
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 12 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 39 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 30 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
 | file | declarations |
 |---|---:|
-| `src/styles/components/content-editor.css` | 73 |
-| `src/styles/skin/controls.css` | 33 |
-| `src/content/overlays/views/search/searchViewStyles.css` | 27 |
-| `src/content/overlays/views/settings/settingsViewStyles.css` | 22 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 17 |
-| `src/content/overlays/modal/modalStyles.css` | 12 |
-| `src/popup/popup.css` | 11 |
-| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 7 |
+| `src/styles/components/content-editor.css` | 64 |
+| `src/styles/skin/controls.css` | 32 |
+| `src/content/overlays/views/search/searchViewStyles.css` | 26 |
+| `src/content/overlays/views/settings/settingsViewStyles.css` | 19 |
+| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 13 |
+| `src/popup/popup.css` | 9 |
+| `src/content/overlays/modal/modalStyles.css` | 8 |
+| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 4 |
 | `src/styles/entries/pages.css` | 4 |
-| `src/options/options.css` | 2 |
-| `src/content/overlays/deleteConfirm/deleteConfirmStyles.css` | 1 |
 | `src/styles/theme/metrics.css` | 1 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.

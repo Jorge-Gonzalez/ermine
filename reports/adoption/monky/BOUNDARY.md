@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `122a68f3a56c33e10613cdea6735e0f3047160fe` |
-| monky | `9634a3bbfa2eb15c5b6d9899dce1b03d07492a1c` |
+| Ermine | `a3a421271201040d8876951c9aaade5f6ba98261` |
+| monky | `3052c7043fa7643fca33dedb97703e360ff65d06` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 210 |
+| project-owned residue | 180 |
 
 ## Product Identity
 
@@ -44,7 +44,7 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 | code | count | boundary |
 |---|---:|---|
 | `recipe-identity` | 23 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `identity-geometry` | 39 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 30 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 8 | project brand typography and type treatment |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
@@ -74,7 +74,7 @@ shadowed-words gate holds every paragraph true or silent about every property.
 
 | code | count | boundary |
 |---|---:|---|
-| `component-contract` | 31 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 10 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `reset-absence` | 12 | absence/reset mechanics, not a positive carrier |
