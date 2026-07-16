@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 141 |
+| reviewed residue declarations | 140 |
 | assimilable now | 0 |
-| latent generalizable | 6 |
+| latent generalizable | 5 |
 | likely recipe/molecule | 124 |
 | likely local identity | 11 |
 
@@ -23,7 +23,7 @@ generalization, recipe, and local-identity pressure.
 | spacing-rhythm | 19 |
 | alignment-layout | 1 |
 | surface-line-elevation-cutout | 18 |
-| typography-content | 28 |
+| typography-content | 27 |
 | interaction-affordance-state | 14 |
 | motion-transition | 3 |
 | reset-inheritance-neutralization | 10 |
@@ -33,7 +33,6 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| latent-word | 1 |
 | latent-facet | 5 |
 | recipe | 124 |
 | local-identity | 11 |
@@ -43,7 +42,7 @@ generalization, recipe, and local-identity pressure.
 | current code | declarations |
 | --- | --- |
 | recipe-identity | 17 |
-| brand-identity | 7 |
+| brand-identity | 6 |
 | component-contract | 8 |
 | state-mechanics | 1 |
 | parent-relational | 2 |
@@ -89,7 +88,6 @@ generalization, recipe, and local-identity pressure.
 | motion-transition | local-identity | 1 | keep local after invariance/scale tests |
 | reset-inheritance-neutralization | local-identity | 1 | keep local after invariance/scale tests |
 | surface-line-elevation-cutout | latent-facet | 1 | add a missing facet on an existing Ermine concept |
-| typography-content | latent-word | 1 | admit a new Ermine word only if it survives the invariance test |
 
 ## Reading
 

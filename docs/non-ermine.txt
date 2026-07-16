@@ -19,16 +19,16 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the modal-nav existing-scale migration is
-Ermine 5f5fb67 / Monky e8aace8:
+were migrated). Current live ledger after the command-description semantic emphasis migration is
+Ermine 5f5fb67 / Monky d5d43c7:
 
-  current declarations:                 523
+  current declarations:                 522
   adopted/infrastructure declarations:  382
-  project-owned residue declarations:   141
+  project-owned residue declarations:   140
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 17, brand-identity 7, component-contract 8, state-mechanics 1,
+  recipe-identity 17, brand-identity 6, component-contract 8, state-mechanics 1,
   parent-relational 2, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 1, opacity-followup 4, elevation-followup 3, reset-absence 5,
   user-content 43, identity-geometry 18.
@@ -136,7 +136,8 @@ button and style trigger active skin. The spacing-none endpoint pass then admitt
 `none` on whole, logical, and physical footprints, migrated the remaining component zero-spacing
 resets, and kept document-root plus structural selector resets local. The existing-scale playbook
 pass then moved the modal nav branding margin and label type to existing `margin-right-lg` and
-`font-md` words; the live residue is now 141.
+`font-md` words. The semantic-emphasis pass then moved the command description's italic treatment
+from CSS into an `<em>` element; the live residue is now 140.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================

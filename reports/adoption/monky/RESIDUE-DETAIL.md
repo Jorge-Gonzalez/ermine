@@ -13,20 +13,20 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `5f5fb67af7a89b25d19cab682db37f08ebdf88ba` |
-| monky | `e8aace8c69a8d2cc456ba55edcca6bf5f1e6bb62` |
+| monky | `d5d43c7fd6b3cbda75a66c2880d966ce4db273b5` |
 
 ## Summary
 
-- Current declarations: 523
+- Current declarations: 522
 - Adopted/infrastructure declarations: 382
-- Project-owned residue declarations: 141
+- Project-owned residue declarations: 140
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
 | `recipe-identity` | 17 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `brand-identity` | 7 | project brand typography and type treatment |
+| `brand-identity` | 6 | project brand typography and type treatment |
 | `component-contract` | 8 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 2 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
@@ -70,7 +70,7 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 | 78 | `.selectable-group > *:active` | `transform: scale(0.98)` |
 | 82 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
 
-## brand-identity (7)
+## brand-identity (6)
 
 project brand typography and type treatment
 
@@ -81,12 +81,11 @@ project brand typography and type treatment
 | 3 | `:host, #macro-suggestions` | `font-family: 'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif` |
 | 4 | `:host, #macro-suggestions` | `line-height: 1.5` |
 
-### src/content/overlays/views/search/searchViewStyles.css (2)
+### src/content/overlays/views/search/searchViewStyles.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 31 | `.modal-command-item .modal-command-description` | `font-style: italic` |
-| 48 | `.macro-search-kbd` | `line-height: 1` |
+| 42 | `.macro-search-kbd` | `line-height: 1` |
 
 ### src/styles/components/content-editor.css (1)
 
@@ -124,7 +123,7 @@ component-owned mechanics, exact geometry, or product contract
 | line | selector | declaration |
 |---:|---|---|
 | 9 | `.macro-search-results` | `align-content: start` |
-| 51 | `.macro-search-kbd` | `border-radius: 4px` |
+| 45 | `.macro-search-kbd` | `border-radius: 4px` |
 
 ### src/styles/components/content-editor.css (2)
 
@@ -167,14 +166,14 @@ pseudo-element geometry, fills, and content
 
 | line | selector | declaration |
 |---:|---|---|
-| 56 | `.macro-search-kbd::after` | `content: ''` |
-| 57 | `.macro-search-kbd::after` | `position: absolute` |
-| 58 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
-| 59 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
-| 60 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
-| 61 | `.macro-search-kbd::after` | `border-radius: 2px` |
-| 62 | `.macro-search-kbd::after` | `pointer-events: none` |
-| 63 | `.macro-search-kbd::after` | `z-index: -1` |
+| 50 | `.macro-search-kbd::after` | `content: ''` |
+| 51 | `.macro-search-kbd::after` | `position: absolute` |
+| 52 | `.macro-search-kbd::after` | `background: var(--tone-dim)` |
+| 53 | `.macro-search-kbd::after` | `inset: 0 2px 4px` |
+| 54 | `.macro-search-kbd::after` | `border: 1px solid var(--harmonic-minor)` |
+| 55 | `.macro-search-kbd::after` | `border-radius: 2px` |
+| 56 | `.macro-search-kbd::after` | `pointer-events: none` |
+| 57 | `.macro-search-kbd::after` | `z-index: -1` |
 
 ### src/content/overlays/views/settings/settingsViewStyles.css (12)
 
@@ -387,10 +386,10 @@ project-exact geometry on a grammar-family property
 | line | selector | declaration |
 |---:|---|---|
 | 14 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
-| 49 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
-| 50 | `.macro-search-kbd` | `min-width: 26px` |
-| 52 | `.macro-search-kbd` | `z-index: 0` |
-| 67 | `.macro-search-kbd:first-child` | `margin-left: 0` |
+| 43 | `.macro-search-kbd` | `padding: 3px 6px 6px` |
+| 44 | `.macro-search-kbd` | `min-width: 26px` |
+| 46 | `.macro-search-kbd` | `z-index: 0` |
+| 61 | `.macro-search-kbd:first-child` | `margin-left: 0` |
 
 ### src/styles/components/content-editor.css (3)
 
