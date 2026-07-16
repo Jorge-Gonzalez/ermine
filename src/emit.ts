@@ -84,6 +84,10 @@ const carrierWords = (carrier: string): string[] => [
   ]),
 ];
 
+function flexAlignmentValue(value: string): string {
+  return value === "start" || value === "end" ? `flex-${value}` : value;
+}
+
 const EMISSION: Record<string, EmitSpec> = {
   // --- plain closed axis (no dials, no parametrics) ---
   structure: {
@@ -411,9 +415,9 @@ const EMISSION: Record<string, EmitSpec> = {
     effectKind: "css",
     plain: (word): Record<string, string> | null => {
       const a = word.match(/^align-(start|center|end|stretch|baseline)$/);
-      if (a) return { "align-items": a[1] };
+      if (a) return { "align-items": flexAlignmentValue(a[1]) };
       const j = word.match(/^justify-(start|center|end|between|around)$/);
-      if (j) return { "justify-content": j[1] === "between" || j[1] === "around" ? `space-${j[1]}` : j[1] };
+      if (j) return { "justify-content": j[1] === "between" || j[1] === "around" ? `space-${j[1]}` : flexAlignmentValue(j[1]) };
       return null;
     },
   },

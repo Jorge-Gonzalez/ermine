@@ -61,6 +61,8 @@ test("overflow whole-axis word writes BOTH longhands, never the shorthand", () =
 test("alignment-container maps between/around to space-*", () => {
   assert.deepEqual(declOf("justify-between"), [["justify-content", "space-between"]]);
   assert.deepEqual(declOf("align-center"), [["align-items", "center"]]);
+  assert.deepEqual(declOf("justify-end"), [["justify-content", "flex-end"]]);
+  assert.deepEqual(declOf("align-start"), [["align-items", "flex-start"]]);
 });
 
 test("position-mode strips the grammar prefix", () => {
