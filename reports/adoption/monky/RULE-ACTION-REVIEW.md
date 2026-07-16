@@ -8,9 +8,9 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 258 |
+| reviewed residue declarations | 254 |
 | assimilable now | 0 |
-| latent generalizable | 153 |
+| latent generalizable | 149 |
 | likely recipe/molecule | 102 |
 | likely local identity | 3 |
 
@@ -18,7 +18,7 @@ generalization, recipe, and local-identity pressure.
 
 | rule action | declarations |
 | --- | --- |
-| dimension-constraint | 36 |
+| dimension-constraint | 32 |
 | attachment-edge-layer | 10 |
 | spacing-rhythm | 41 |
 | surface-line-elevation-cutout | 37 |
@@ -34,7 +34,7 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | latent-word | 40 |
 | latent-facet | 82 |
-| latent-scale | 31 |
+| latent-scale | 27 |
 | recipe | 102 |
 | local-identity | 3 |
 
@@ -42,7 +42,7 @@ generalization, recipe, and local-identity pressure.
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 34 |
+| recipe-identity | 30 |
 | brand-identity | 8 |
 | component-contract | 39 |
 | state-mechanics | 5 |
@@ -64,8 +64,8 @@ generalization, recipe, and local-identity pressure.
 | component-private-drawing | recipe | 44 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | latent-facet | 24 | add a missing facet on an existing Ermine concept |
 | reset-inheritance-neutralization | latent-facet | 22 | add a missing facet on an existing Ermine concept |
-| dimension-constraint | latent-scale | 21 | map to an existing/proportional scale or admit a named scale role |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
+| dimension-constraint | latent-scale | 17 | map to an existing/proportional scale or admit a named scale role |
 | spacing-rhythm | latent-facet | 17 | add a missing facet on an existing Ermine concept |
 | motion-transition | latent-word | 15 | admit property-targeted tween word |
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |

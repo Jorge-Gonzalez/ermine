@@ -6,20 +6,20 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `15727e7b7115` |
-| monky | `4f71305190e1` |
+| Ermine | `b2946ce0be25` |
+| monky | `caabf9136551` |
 
 ## Summary
 
-- Current declarations: 516
-- Adopted/infrastructure declarations: 258
-- Project-owned residue declarations: 258
+- Current declarations: 514
+- Adopted/infrastructure declarations: 260
+- Project-owned residue declarations: 254
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 34 | Project recipe bundles licensed by R-SKIN-10. |
+| `recipe-identity` | 30 | Project recipe bundles licensed by R-SKIN-10. |
 | `brand-identity` | 8 | Monky-specific brand typography and type treatment. |
 | `component-contract` | 39 | Component-owned mechanics, exact geometry, or product contract. |
 | `state-mechanics` | 5 | Native/JS state mechanics outside backed Ermine conditions. |
@@ -34,7 +34,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
 | `identity-geometry` | 56 | Project-exact dimensions, spacing, positioning, and geometry. |
 
-## recipe-identity (34)
+## recipe-identity (30)
 
 Project recipe bundles licensed by R-SKIN-10.
 
@@ -56,36 +56,32 @@ Project recipe bundles licensed by R-SKIN-10.
 | 74 | `.seg-option:last-child` | `border-right: none` |
 | 78 | `.seg-option[aria-checked="true"]` | `border-right-color: transparent` |
 
-### src/styles/skin/controls.css (26)
+### src/styles/skin/controls.css (22)
 
 | line | selector | declaration |
 |---:|---|---|
 | 4 | `.input` | `width: 100%` |
 | 5 | `.input` | `transition: border-color var(--transition-fast)` |
 | 9 | `.input-error:focus` | `box-shadow: inset 0 0 0 2px var(--status-error-wash)` |
-| 13 | `.radio` | `width: 16px` |
-| 14 | `.radio` | `height: 16px` |
-| 18 | `.radio-label` | `cursor: pointer` |
-| 19 | `.radio-label` | `user-select: none` |
-| 23 | `.checkbox` | `width: 16px` |
-| 24 | `.checkbox` | `height: 16px` |
-| 35 | `.btn-success:hover` | `background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))` |
-| 39 | `.btn-link` | `text-decoration: none` |
-| 43 | `.btn-link:hover` | `text-decoration: underline` |
-| 47 | `.btn-link-danger` | `text-decoration: none` |
-| 51 | `.btn-link-danger:hover` | `text-decoration: underline` |
-| 55 | `.btn:disabled` | `cursor: not-allowed` |
-| 56 | `.btn:disabled` | `opacity: 0.6` |
-| 60 | `.btn:disabled:hover` | `background-color: var(--tone-dim)` |
-| 61 | `.btn:disabled:hover` | `opacity: 0.6` |
-| 93 | `.selectable-group > *` | `cursor: pointer` |
-| 94 | `.selectable-group > *` | `user-select: none` |
-| 98 | `.selectable-group > *:active` | `transform: scale(0.98)` |
-| 102 | `.selectable-group > .is-selected` | `background-color: var(--accent)` |
-| 103 | `.selectable-group > .is-selected` | `color: var(--ink-alt)` |
-| 104 | `.selectable-group > .is-selected` | `border-color: var(--accent)` |
-| 108 | `.selectable-group > .is-selected:hover` | `background-color: var(--accent)` |
-| 109 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
+| 12 | `.radio-label` | `cursor: pointer` |
+| 13 | `.radio-label` | `user-select: none` |
+| 24 | `.btn-success:hover` | `background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))` |
+| 28 | `.btn-link` | `text-decoration: none` |
+| 32 | `.btn-link:hover` | `text-decoration: underline` |
+| 36 | `.btn-link-danger` | `text-decoration: none` |
+| 40 | `.btn-link-danger:hover` | `text-decoration: underline` |
+| 44 | `.btn:disabled` | `cursor: not-allowed` |
+| 45 | `.btn:disabled` | `opacity: 0.6` |
+| 49 | `.btn:disabled:hover` | `background-color: var(--tone-dim)` |
+| 50 | `.btn:disabled:hover` | `opacity: 0.6` |
+| 82 | `.selectable-group > *` | `cursor: pointer` |
+| 83 | `.selectable-group > *` | `user-select: none` |
+| 87 | `.selectable-group > *:active` | `transform: scale(0.98)` |
+| 91 | `.selectable-group > .is-selected` | `background-color: var(--accent)` |
+| 92 | `.selectable-group > .is-selected` | `color: var(--ink-alt)` |
+| 93 | `.selectable-group > .is-selected` | `border-color: var(--accent)` |
+| 97 | `.selectable-group > .is-selected:hover` | `background-color: var(--accent)` |
+| 98 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
 
 ## brand-identity (8)
 

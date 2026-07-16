@@ -19,16 +19,16 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the first dimension endpoint migration is Ermine
-15727e7 / Monky 4f71305:
+were migrated). Current live ledger after the first control-size migration is Ermine
+b2946ce / Monky caabf91:
 
-  current declarations:                 516
-  adopted/infrastructure declarations:  258
-  project-owned residue declarations:   258
+  current declarations:                 514
+  adopted/infrastructure declarations:  260
+  project-owned residue declarations:   254
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 34, brand-identity 8, component-contract 39, state-mechanics 5,
+  recipe-identity 30, brand-identity 8, component-contract 39, state-mechanics 5,
   aria-current 1, parent-relational 8, pseudo-mechanics 23, scrollbar-followup 9,
   motion-followup 13, opacity-followup 4, elevation-followup 3, reset-absence 12,
   user-content 43, identity-geometry 56.
@@ -90,8 +90,9 @@ remaining motion rows are property-targeted transitions, the local `.shake { tra
 !important }` suppression, and bespoke segmented-control/overlay timing. user-content
 (43 = the `prose` molecule) and recipe-identity (34, R-SKIN-10) remain the
 genuinely-licensed-local bundles. The first dimension endpoint pass admitted
-`max-width-none`, and the delete-confirm `max-width: none` row has now migrated to that
-word; the live assimilable work list is back to zero.
+`max-width-none`, and the delete-confirm `max-width: none` row migrated to that word. The
+next dimension pass admitted `control-size-<spacing>` and migrated the 16px radio/checkbox
+control boxes to `control-size-lg`; the live assimilable work list remains zero.
 
 ========================================================================
 PART B — CLASS-TOKEN INVENTORY (project class names, Ermine words omitted)
@@ -173,7 +174,7 @@ minimum interaction height, viewport-bounded dialog size, or scrollable result h
 
 Representative declarations:
   width: 320px; width: 280px; width: min(600px, calc(100vw - 2rem));
-  height: min(560px, 85vh); width/height: 16px; 18px; 24px; 28px; 2rem; 3rem;
+  height: min(560px, 85vh); height: 16px / 18px / 28px; width: 24px / 2rem / 3rem;
   min-width: 36px / 200px / 240px / 26px; max-width: 8em / 360px / none;
   min-height: 48px / 150px / 0; max-height: 256px / 400px;
   flex: 0 0 auto; flex: 1.

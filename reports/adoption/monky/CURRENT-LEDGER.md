@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `15727e7b7115a537d2e09fc5d544c8586825f309` |
-| monky | `4f71305190e1e796c3def9f958ae874094e3556d` |
+| Ermine | `b2946ce0be25213fccba25c00098b842775304a4` |
+| monky | `caabf9136551152789a7ce97dfefcfa684cb303a` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 516 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 258 |
-| **residue — project-owned declarations** | **258** |
+| current declarations | 514 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 260 |
+| **residue — project-owned declarations** | **254** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,11 +34,11 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 167 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 169 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 37 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
-| `recipe-identity` | 34 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 30 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 8 | project brand typography and type treatment |
 | `component-contract` | 39 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 5 | JS/native state mechanics outside backed Ermine conditions |
@@ -58,7 +58,7 @@ re-validated on every run.
 | file | declarations |
 |---|---:|
 | `src/styles/components/content-editor.css` | 76 |
-| `src/styles/skin/controls.css` | 39 |
+| `src/styles/skin/controls.css` | 35 |
 | `src/content/overlays/views/search/searchViewStyles.css` | 34 |
 | `src/content/overlays/views/settings/settingsViewStyles.css` | 27 |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 22 |
