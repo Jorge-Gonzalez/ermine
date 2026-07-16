@@ -8,6 +8,7 @@ import {
   type AdoptionDisposition,
   type AdoptionLedger,
 } from "./types.ts";
+import { runRuleActionReview } from "./rule-action-review.ts";
 
 type JsonObject = Record<string, unknown>;
 
@@ -304,7 +305,9 @@ export async function checkAdoptionLedgers(
       }
     }
   }
-  return valid && await checkCurrentLedgerReportDrift(repositoryRoot, log);
+  const currentLedgerReportsValid = await checkCurrentLedgerReportDrift(repositoryRoot, log);
+  const ruleActionReportsValid = await runRuleActionReview(repositoryRoot, true);
+  return valid && currentLedgerReportsValid && ruleActionReportsValid;
 }
 
 interface CurrentLedgerHead {

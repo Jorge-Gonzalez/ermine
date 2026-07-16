@@ -156,3 +156,354 @@ action-toolbar, alert, alert-error, alert-success, button-group, button-label, c
 
 Non-class local selectors and mechanics still in the ledger/review boundary:
 body, :host, #macro-suggestions, #macro-suggestions *, button/input/textarea/select inheritance rules, input number-spin pseudo-elements, content-editor rich-text descendants, scrollbar pseudo-elements, and the local `.shake { transition: none !important }` suppression. The `shake` keyframes now ship from generated Ermine CSS; unapplied `flash`/`pulse` are not current CSS-backed residue.
+
+========================================================================
+PART C — RULE-ACTION CLASSIFICATION (what the declarations are doing)
+========================================================================
+
+Class names are intentionally ignored here. The new structure should come from the
+declarations: what they change, which visual/mechanical function they serve, and whether
+that function wants an Ermine word, a recipe molecule, or a local component drawing.
+
+1. Dimension and constraint rules.
+Function: set a component's physical envelope: fixed inline size, square control size,
+minimum interaction height, viewport-bounded dialog size, or scrollable result height.
+
+Representative declarations:
+  width: 320px; width: 280px; width: min(600px, calc(100vw - 2rem));
+  height: min(560px, 85vh); width/height: 16px; 18px; 24px; 28px; 2rem; 3rem;
+  min-width: 36px / 200px / 240px / 26px; max-width: 8em / 360px / none;
+  min-height: 48px / 150px / 0; max-height: 256px / 400px;
+  flex: 0 0 auto; flex: 1.
+
+Reading:
+  - The relational pieces are already Ermine-shaped: fill, viewport bounds, rigid/grow,
+    and min-height escapes.
+  - The repeated raw constants are the real size vocabulary gap: icon/control squares,
+    popover widths, editor command width, dialog bounds, kbd minimums, and result caps.
+  - These should become size/measure words only where the same physical intent repeats
+    across components. One-off dialog or popover measurements can remain recipe identity.
+
+Likely Ermine pressure:
+  measured width/height scale; square-size/icon-size words; dialog/popover measure recipe;
+  scroll-cap/max-block words; control-min-block.
+
+2. Attachment, edge, and layer rules.
+Function: attach a child to an edge, place a floating affordance, or assert stack order.
+
+Representative declarations:
+  left: 0; right: 0; top: 100%; top: calc(100% + 4px);
+  bottom: 52px; right: var(--spacing-sm); top: 0; bottom: 0;
+  z-index: 10 / 10000 / 2147483646; position: fixed !important;
+  inset: 0 2px 4px; pointer-events: none.
+
+Reading:
+  - `left:0/right:0/top:100%` is dropdown attachment, not component identity.
+  - arrow top/bottom placement and edit-button right offset are edge-attachment variants.
+  - z-index values are layer order. They are not visual identity; they want named stack
+    tiers or project-bound layer sockets.
+  - `bottom:52px` is a local toast avoidance offset and probably recipe-local unless a
+    general "float above bar" pattern repeats.
+
+Likely Ermine pressure:
+  edge-attach words; below/above attachment; layer tiers; inset member/facet; float-above
+  recipe for transient bars.
+
+3. Spacing and rhythm rules.
+Function: distribute internal padding and external rhythm, especially where current
+block/inline dials cannot express one edge independently.
+
+Representative declarations:
+  padding: var(--spacing-md) var(--spacing-2xl);
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-sm) 0 0;
+  padding: var(--spacing-xs) var(--spacing-xl) var(--spacing-sm);
+  padding: 3px 6px 6px; padding: 1px 4px; padding: 0;
+  padding-left/right: var(--spacing-xs); padding-top: var(--spacing-sm);
+  margin: 0; margin-top: var(--spacing-sm); margin-right: 1rem / var(--spacing-xl);
+  margin-left: var(--spacing-sm); margin: var(--spacing-sm) var(--spacing-xl);
+  gap: 2px.
+
+Reading:
+  - Scale-backed padding/margin mostly wants finer Ermine spacing facets: start/end and
+    before/after, not more component classes.
+  - The raw 3px/6px/1px/4px keycap and suggestion-chip padding is micro-object drawing;
+    it is probably a recipe unless the design wants a tiny density scale.
+  - `gap:2px` repeats inside menus/dropdowns as a very small cluster gap. This could be a
+    `gap-2xs` style scale member if admitted.
+
+Likely Ermine pressure:
+  per-edge spacing words; zero-padding/reset words; smaller gap/density step; keycap/chip
+  recipe for raw micro-padding.
+
+4. Surface, line, elevation, and cutout rules.
+Function: paint or remove surfaces, borders, shadows, separators, and the transparent
+sentinels that make state changes possible.
+
+Representative declarations:
+  background-color/background: var(--shadow-color), var(--tone), var(--tone-dim),
+    var(--accent), transparent, color-mix(...);
+  color: var(--accent), var(--ink-alt), var(--ink-soft), inherit;
+  border: none; border-top: none; border-bottom: 2px solid transparent;
+  border-bottom-color: var(--accent); border-right: none;
+  border-right-color: transparent; border: 1px solid var(--tone-dim);
+  border-radius: var(--radius-md), var(--radius-sm), 4px, 2px, 0 0 md md;
+  border-bottom-left/right-radius: 0 / var(--radius-md);
+  box-shadow: modal/elevated shadows; mix-blend-mode: multiply.
+
+Reading:
+  - Many color/surface rows are already conceptually Ermine skin words, but remain local
+    because selector specificity or pseudo drawing requires a local hook.
+  - Transparent border sentinels and "remove one side of the rule" are rule mechanics.
+    They want line-presence facets, not named component classes.
+  - The modal shadow/multiply blend and suggestion arrow border trick are recipe identity.
+  - The validation focus inset shadow is state skin, likely a focus/error treatment word.
+
+Likely Ermine pressure:
+  side-specific rule presence; transparent rule sentinel; state skin facets; elevation
+  tokens; recipe-local drawing for arrows and modal-specific blend/shadow.
+
+5. Typography and content semantics.
+Function: define font family, typographic emphasis, wrapping, rich-text defaults, list
+semantics, placeholder content, and matching/highlight behavior.
+
+Representative declarations:
+  font-family: app face, system UI, IBM Plex Mono; font-size: 0.88em / 1.75em / 1.4em /
+    1.15em / var(--text-base); font-weight: 700; font-style: italic / normal;
+  line-height: 1.5 / 1 / normal; white-space: nowrap / normal / pre-wrap;
+  overflow: visible / auto; text-overflow: clip; text-decoration: none / underline /
+    line-through; list-style: none / disc / decimal; display: list-item;
+  content: attr(data-placeholder) / ''; opacity: 0.35 / 0.6 / 0.8;
+  margin-bottom: 0.75em / 0.2em; padding-left: 1.5em.
+
+Reading:
+  - Rich-text descendant styling is not a normal utility plane; it is a `prose` or
+    editor-content molecule because selectors target user-authored descendants.
+  - nowrap/pre-wrap and list reset/list restore are reusable text/content words.
+  - The mark/highlight treatment (`mark span { opacity: .35 }`) is search-result recipe.
+  - App font vs neutral editor font is a substrate/content boundary, not component skin.
+
+Likely Ermine pressure:
+  prose/editor molecule; wrap words; list reset/list restore; mono/code treatment;
+  placeholder pseudo recipe; search-highlight recipe.
+
+6. Interaction affordance and state rules.
+Function: signal hover, selected, active, disabled, current, checked, focus/error, and
+minimum-selection states.
+
+Representative declarations:
+  cursor: pointer / not-allowed; user-select: none;
+  background-color on hover/selected/checked/disabled/current;
+  color/border-color on selected/current/checked;
+  opacity: 0.6 / 0.9 / 0.95 / 1;
+  transform: scale(0.98); vertical-align: middle;
+  .is-active, [aria-current], [aria-checked], [aria-selected], :disabled, :hover,
+    :active, :focus, :only-of-type.
+
+Reading:
+  - The state grammar is the biggest signal here: many local rules are not component
+    identity, they are "when selected/current/disabled, apply skin/affordance."
+  - `only-of-type` for minimum selection is business behavior made visible; it can remain
+    a small recipe or become a min-selection state word if reused.
+  - vertical icon alignment inside segmented options is component-local unless a general
+    "inline-icon-middle" word is admitted.
+
+Likely Ermine pressure:
+  condition-backed state facets; disabled affordance; selected/current/checked skin;
+  min-selection recipe; press/active affordance.
+
+7. Motion and transition rules.
+Function: define which properties animate, at what tempo, and when animation is suppressed.
+
+Representative declarations:
+  transition: border-color var(--transition-fast);
+  transition: background/background-color/color/opacity/transform var(--transition-fast);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition: left 0.1s ease, width 0.1s ease;
+  transition: all 0.15s ease; transition: none !important.
+
+Reading:
+  - `tween-quick` handled universal transition rows, but property-targeted transitions
+    remain. This is not identity; it is an animation plane gap.
+  - segmented-control pill movement is a bespoke mechanism because it animates CSS custom
+    coordinate variables and snaps before sliding.
+  - `transition:none !important` on `shake` is an effect-composition override: suppress
+    local tweens so the generated shake effect can own the frame.
+
+Likely Ermine pressure:
+  property-targeted tween words; tween-none/suppress-tween for effect composition;
+  recipe-local segmented pill timing.
+
+8. Reset, inheritance, and neutralization rules.
+Function: remove browser/component defaults or force inheritance so Ermine words can take
+over without fighting UA or previous recipe styling.
+
+Representative declarations:
+  box-sizing: border-box; font-family: inherit; border: none; background: transparent;
+  margin: 0; padding: 0; list-style: none; width: auto; max-width: none;
+  border-top: none; border-right: none; border-radius: 0;
+  min-height: 0; overflow: visible; text-overflow: clip.
+
+Reading:
+  - These are usually not new positive words. They are reset/substrate escape hatches or
+    side-effect removals.
+  - Repeated neutralization might deserve explicit negative words only where authors need
+    to opt out in markup: unbordered, transparent, unrounded-side, unbounded, untruncate.
+
+Likely Ermine pressure:
+  reset layer coverage; negative/escape facets for border/background/radius/truncation;
+  min-content escape already covered by `min-height-none`.
+
+9. Component-private drawing recipes.
+Function: draw a specific object whose geometry is not a general layout word.
+
+Representative declarations:
+  triangle arrow: width:0; height:0; border:6px solid transparent; border-top/bottom-color.
+  keycap bevel: ::after content; inset: 0 2px 4px; border; background; z-index:-1.
+  segmented pill: ::before content; absolute fill; custom left/width variables.
+  modal blend/shadow pair; search mark fade; placeholder pseudo-element.
+
+Reading:
+  - These are the strongest "keep local or recipe" candidates. They are not class names
+    looking for assimilation; they are small drawings made from CSS primitives.
+  - If reused broadly, they should enter Ermine as recipes/molecules, not as flat utility
+    words.
+
+Likely Ermine pressure:
+  kbd/keycap recipe; arrow/callout recipe; segmented-control recipe; placeholder recipe.
+
+Summary shape for the next assimilation pass:
+  - Most likely words: per-edge spacing, edge attachment, layer tiers, property-targeted
+    tweens, side-specific rule/radius resets, measured size scale.
+  - Most likely molecules/recipes: prose/editor content, keycap, callout arrow, segmented
+    control pill, modal/dialog measure, search highlight.
+  - Most likely to stay local: one-off offsets, modal blend/shadow identity, raw micro
+    drawing constants, business-specific min-selection behavior.
+
+========================================================================
+PART D — ASSIMILATION PLAN FROM RULE ACTIONS
+========================================================================
+
+Reframe the headline first: "0 assimilable" means "0 declarations match words that
+already exist," not "0 declarations are generalizable." The rule-action pass shows a
+large latent grammar layer: declarations that express broad layout, scale, state, motion,
+or recipe behavior but have not yet been admitted into Ermine.
+
+Planning principle: do not reject a declaration family merely because its current Monky
+value is raw or component-named. First ask whether the function can be expressed through
+an existing Ermine scale, a proportional relation, a missing facet of an existing word, or
+a molecule/recipe with sockets. Dimensions are the clearest example: `320px`, `28px`, and
+`min(600px, calc(100vw - 2rem))` are not automatically local identity. They may be scale
+members, measure roles, bounded-container relationships, icon/control sizes, or recipe
+sockets.
+
+1. Reclassify the residue.
+
+Replace the flat "Monky-owned" reading with review buckets that describe why a rule is
+not assimilated yet:
+  - admitted: already expressible by current Ermine words.
+  - latent-word: general behavior, but no Ermine word exists yet.
+  - latent-facet: the concept exists, but an axis is missing (edge, side, property, state).
+  - latent-scale: a raw value that can map to an existing or proportional Ermine scale.
+  - recipe: reusable molecule, not a flat utility word.
+  - local-identity: genuinely Monky-specific after the invariance and scale tests.
+
+This makes future reports say:
+  assimilable-now: N
+  latent-generalizable: N
+  likely-recipe: N
+  likely-local: N
+
+2. Build a declaration corpus.
+
+For every non-Ermine declaration, record:
+  selector, property, value, pseudo/state condition, source file, current reason code,
+  rule-action category, invariance reading, scale/proportion mapping, and proposed Ermine
+  outcome.
+
+Use this ruling template:
+  Rule observed:
+  General function:
+  Invariance test:
+  Existing Ermine neighbor:
+  Scale/proportion mapping:
+  Proposed Ermine form:
+  Why not local:
+  Why not recipe:
+  Migration target:
+  Expected ledger reduction:
+
+3. Pilot the dimension and constraint family first.
+
+Do not treat size constants as identity by default. Sort the rules by function:
+  - control/icon squares: 16px, 18px, 24px, 28px, 2rem, 3rem.
+  - measure widths: 200px, 240px, 280px, 320px, 360px.
+  - bounded containers: min(600px, calc(100vw - 2rem)), min(560px, 85vh).
+  - scroll caps: 256px, 400px.
+  - interaction floors: 48px, 150px.
+  - proportional constraints: 85vh, 100vw - 2rem, 8em.
+
+Then test each against Ermine's existing scales and proportional relationships before
+declaring it local. Possible outputs:
+  square-xs/sm/md/lg; icon-sm/md/lg; measure-sm/md/lg; max-block-sm/md;
+  dialog-measure; popover-measure; control-min-block; editor-min-block.
+
+4. Admit missing facets before inventing large concepts.
+
+Several rule families look like current Ermine concepts with one missing axis:
+  - per-edge spacing: padding-before/after/start/end, margin-before/after/start/end.
+  - side-specific rules: rule-bottom, rule-right-none, rule-transparent.
+  - side-specific radius: corner-bottom-md, corner-top-md, corner-bottom-none.
+  - edge attachment: attach-below, attach-above, stretch-inline, edge-end-sm.
+  - layer tiers: layer-modal, layer-popover, layer-local.
+  - property-targeted tweens: tween-border, tween-color, tween-opacity, tween-transform.
+  - state skin: selected/current/checked/disabled/focus-error facets.
+
+These should be evaluated before adding broad new planes.
+
+5. Promote repeated drawings as recipes, not flat utilities.
+
+The following are broad enough to preserve, but too shape-specific for atomic words:
+  - prose/editor-content molecule.
+  - keycap/kbd recipe.
+  - callout arrow recipe.
+  - segmented-control pill recipe.
+  - modal/dialog measure and frame recipe.
+  - search-highlight recipe.
+
+Recipes should expose sockets for scale, skin, state, and motion where the pattern varies.
+
+6. Process the remaining categories in priority order.
+
+Recommended queue:
+  1. dimension/measure scale pilot.
+  2. per-edge spacing facets.
+  3. edge attachment and layer tiers.
+  4. side-specific rule/radius/reset facets.
+  5. property-targeted tween words.
+  6. selected/current/checked/disabled state skin.
+  7. prose/editor-content molecule.
+  8. keycap/callout/segmented recipes.
+
+The order is chosen to reduce residue while strengthening Ermine's grammar, not merely to
+chase Monky selectors.
+
+7. Update the tooling after the first pilot.
+
+The validator should keep the strict `assimilable-now` number, but add a review overlay
+for latent categories. Without that overlay, "not admitted yet" keeps collapsing into
+"Monky-owned," which hides the generalization work still available.
+
+Implementation artifacts:
+  - `adoption/rule-action-review.ts` generates the latent review overlay.
+  - `reports/adoption/monky/rule-action-review.json` is the machine-readable corpus.
+  - `reports/adoption/monky/RULE-ACTION-REVIEW.md` summarizes rule-action and latent
+    outcome counts.
+  - `reports/adoption/monky/DIMENSION-CONSTRAINT-PILOT.md` maps every current
+    dimension/constraint declaration to a scale/proportion reading and proposed form.
+  - `npm run adoption:check` now checks that these generated reports are current.
+
+Immediate next action: convert the dimension/constraint pilot into rulings. Decide which
+candidate outputs become Ermine words (`square-*`, `measure-*`, `max-block-*`, etc.),
+which become recipes (`dialog-measure`, `popover-measure`, editor content), and which
+remain local after the scale/proportion test.
