@@ -5,7 +5,13 @@ import { join } from "node:path";
 import { test } from "node:test";
 
 import { parseCssDeclarations } from "../adoption/css-parser.ts";
-import { DEFAULT_PROJECT_PROFILE, findShadowedWords } from "../adoption/current-ledger.ts";
+import {
+  buildEnvironment,
+  buildInverseErmineMap,
+  classifyDeclarationForTest,
+  DEFAULT_PROJECT_PROFILE,
+  findShadowedWords,
+} from "../adoption/current-ledger.ts";
 import { checkAdoptionLedgers, validateLedger } from "../adoption/validate-ledger.ts";
 
 const validFixture = JSON.parse(await readFile(
@@ -155,6 +161,48 @@ test("shadowed word check respects class exclusions inside :not()", async () => 
       identity: "item",
       word: "max-width-none",
       selector: ".item:not(.wide)",
+    },
+  ]);
+});
+
+test("current ledger keeps structural and document-root zero spacing out of the work list", () => {
+  const declarations = parseCssDeclarations(
+    [
+      "body { margin: 0; padding: 0; }",
+      ".macro-search-kbd:first-child { margin-left: 0; }",
+      ".plain { padding: 0; }",
+    ].join("\n"),
+    "src/styles.css",
+  );
+  const environment = buildEnvironment(declarations, {});
+  const inverse = buildInverseErmineMap(environment);
+  const classified = declarations.map((declaration) => ({
+    selector: declaration.selector,
+    property: declaration.property,
+    ...classifyDeclarationForTest(declaration, inverse, environment),
+  }));
+
+  assert.deepEqual(classified, [
+    {
+      selector: "body",
+      property: "margin",
+      code: "identity-geometry",
+    },
+    {
+      selector: "body",
+      property: "padding",
+      code: "identity-geometry",
+    },
+    {
+      selector: ".macro-search-kbd:first-child",
+      property: "margin-left",
+      code: "identity-geometry",
+    },
+    {
+      selector: ".plain",
+      property: "padding",
+      code: "assimilable",
+      words: ["padding-none"],
     },
   ]);
 });

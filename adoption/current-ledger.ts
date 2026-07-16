@@ -343,6 +343,7 @@ export function buildInverseErmineMap(environment: VarEnvironment): InverseErmin
 // ---------------------------------------------------------------------------
 
 const STATE_MARK = /:(hover|active|focus-within|focus-visible|focus|checked|disabled)\b|\[aria-(selected|checked|current|disabled)[^\]]*\]|\[data-state[^\]]*\]|\.is-(active|selected|sliding)\b/;
+const STRUCTURAL_PSEUDO_MARK = /:(first-child|last-child|first-of-type|last-of-type|nth-child|nth-last-child|nth-of-type|nth-last-of-type|only-child|only-of-type)\b/;
 const ABSENCE_VALUES = new Set(["none", "transparent", "inherit", "normal", "unset", "initial"]);
 const PAINT_PROPERTY = /^(color|background|border|outline|box-shadow|fill|stroke|caret-color|accent-color|text-decoration)/;
 const SKIN_PROPERTY = /^(color|background|border|outline|fill|stroke|caret-color|accent-color|text-decoration|font|line-height|letter-spacing|text-transform|text-align|font-variant)/;
@@ -420,13 +421,14 @@ function classify(
   const parts = compounds(selector);
   const ancestors = parts.slice(0, -1);
   const subject = parts[parts.length - 1] ?? "";
+  const directWordSubject = !/^(html|body)\b/.test(subject) && !STRUCTURAL_PSEUDO_MARK.test(subject);
   if (ancestors.some((part) => STATE_MARK.test(part))) return { code: "parent-relational" };
   if (selectorMatchesRecipe(parts, profile)) return { code: "recipe-identity" };
 
   // Ruled conditions (hover:/focus:/selected:/checked:/current:) attempt a
   // condition-aware inverse match before falling to their remainder codes.
   const condition = selectorCondition(subject);
-  if (condition) {
+  if (condition && directWordSubject) {
     const matches = inverse.get(matchKey(condition, property, value));
     if (matches?.length) {
       return { code: "assimilable", words: [...new Set(matches.map((match) => match.word))].sort() };
@@ -441,7 +443,7 @@ function classify(
   // A state the grammar cannot condition on yet (.is-active, :active, :checked…)
   // must not receive a plain-word suggestion; the declaration is state-driven.
   if (!condition && STATE_MARK.test(subject)) return { code: "state-mechanics" };
-  if (!condition) {
+  if (!condition && directWordSubject) {
     const matches = inverse.get(matchKey("", property, value));
     if (matches?.length) {
       return { code: "assimilable", words: [...new Set(matches.map((match) => match.word))].sort() };
@@ -461,6 +463,15 @@ function classify(
     return { code: "identity-geometry" };
   }
   return { code: "component-contract" };
+}
+
+export function classifyDeclarationForTest(
+  declaration: ParsedCssDeclaration,
+  inverse: InverseErmineMap,
+  environment: VarEnvironment,
+  profile: ProjectProfile = DEFAULT_PROJECT_PROFILE,
+): Classified {
+  return classify(declaration, inverse, environment, profile);
 }
 
 // ---------------------------------------------------------------------------
