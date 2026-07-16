@@ -6,14 +6,14 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 
 | source | commit |
 |---|---|
-| Ermine | `b2946ce0be25` |
-| monky | `f54460965310` |
+| Ermine | `3795e740971` |
+| monky | `0b4aa41a609` |
 
 ## Summary
 
 - Current declarations: 512
-- Adopted/infrastructure declarations: 260
-- Project-owned residue declarations: 252
+- Adopted/infrastructure declarations: 261
+- Project-owned residue declarations: 251
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -32,7 +32,7 @@ Generated from `reports/adoption/monky/current-ledger.json`. This lists every cu
 | `elevation-followup` | 3 | Identity shadows/rings outside the shared elevated treatment. |
 | `reset-absence` | 12 | Absence/reset/transparent mechanics, not positive style carriers. |
 | `user-content` | 43 | Rich-text defaults inside user-authored editor content. |
-| `identity-geometry` | 55 | Project-exact dimensions, spacing, positioning, and geometry. |
+| `identity-geometry` | 54 | Project-exact dimensions, spacing, positioning, and geometry. |
 
 ## recipe-identity (29)
 
@@ -518,7 +518,7 @@ Rich-text defaults inside user-authored editor content.
 | 186 | `.content-editor-body a` | `text-decoration: underline` |
 | 190 | `.content-editor-body a:hover` | `opacity: 0.8` |
 
-## identity-geometry (55)
+## identity-geometry (54)
 
 Project-exact dimensions, spacing, positioning, and geometry.
 
@@ -537,7 +537,7 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 39 | `.modal-nav-branding` | `margin-right: 1rem` |
 | 53 | `.modal-nav-tab` | `padding: var(--spacing-md) var(--spacing-2xl)` |
 
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (9)
+### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (8)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -548,8 +548,7 @@ Project-exact dimensions, spacing, positioning, and geometry.
 | 33 | `.macro-suggestions-arrow.top` | `top: 100%` |
 | 43 | `.macro-suggestions-command-item` | `max-width: 8em` |
 | 44 | `.macro-suggestions-command-item` | `padding: 3px 6px` |
-| 49 | `.macro-suggestions-footer` | `justify-content: flex-end` |
-| 54 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
+| 53 | `.macro-suggestions-kbd` | `padding: 1px 4px` |
 
 ### src/content/overlays/views/macroEditor/editorViewStyles.css (4)
 

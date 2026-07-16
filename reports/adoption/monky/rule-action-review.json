@@ -2,16 +2,16 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "b2946ce0be25213fccba25c00098b842775304a4",
-    "projectCommit": "f54460965310ad74c358c19b09df3936cdabd617"
+    "ermineCommit": "3795e7409714871218bd961efb36cf6ac7dddffa",
+    "projectCommit": "0b4aa41a6097cbcb13b5d173c81b72cdbb4e73ba"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 252,
+    "reviewedDeclarations": 251,
     "assimilableNow": 0,
-    "latentGeneralizable": 147,
+    "latentGeneralizable": 146,
     "likelyRecipe": 102,
     "likelyLocal": 3,
     "byRuleAction": {
@@ -19,7 +19,7 @@
       "dimension-constraint": 30,
       "attachment-edge-layer": 10,
       "spacing-rhythm": 41,
-      "surface-line-elevation-cutout": 37,
+      "surface-line-elevation-cutout": 36,
       "typography-content": 35,
       "interaction-affordance-state": 14,
       "motion-transition": 17,
@@ -29,7 +29,7 @@
     "byLatentOutcome": {
       "admitted": 0,
       "latent-word": 39,
-      "latent-facet": 81,
+      "latent-facet": 80,
       "latent-scale": 27,
       "recipe": 102,
       "local-identity": 3
@@ -57,7 +57,7 @@
       "elevation-followup": 3,
       "reset-absence": 12,
       "user-content": 43,
-      "identity-geometry": 55,
+      "identity-geometry": 54,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -550,23 +550,9 @@
       "proposedForm": "measure/popover size role"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-footer::justify-content::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 52,
-      "selector": ".macro-suggestions-footer",
-      "property": "justify-content",
-      "value": "flex-end",
-      "currentCode": "identity-geometry",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "latent-facet",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "add a missing facet on an existing Ermine concept",
-      "proposedForm": "side-specific rule/radius/state-skin facet"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 57,
+      "line": 53,
       "selector": ".macro-suggestions-kbd",
       "property": "padding",
       "value": "1px 4px",
