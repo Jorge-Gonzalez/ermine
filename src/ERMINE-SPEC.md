@@ -1078,7 +1078,7 @@ Tokens:
 #### truncation
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `truncate` `clamp-N`
+- value space: `truncate` `clamp-N` `text-nowrap` `text-pre-wrap`
 - default: none
 - controls: `text-overflow` `white-space` `display` `-webkit-box-orient` `-webkit-line-clamp`
 - must never touch: `gap` `flex` `overflow-x` `overflow-y` `background` `color` `font-size`
@@ -1088,7 +1088,7 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<truncation>` | `/^(truncate)$/` | — | no |
+| `<text-flow-treatment>` | `/^(truncate\|text-nowrap\|text-pre-wrap)$/` | — | no |
 | `clamp-N` | `/^clamp-(\d+)$/` | `integer-≥1` | no |
 | `clamp-<bad>` | `/^clamp-.+$/` | `integer-≥1` | yes |
 

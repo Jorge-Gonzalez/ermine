@@ -247,6 +247,12 @@
       "anchor": "ADR-0041"
     },
     {
+      "id": "ADR-0042",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0042-text-wrapping-treatments.md",
+      "anchor": "ADR-0042"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

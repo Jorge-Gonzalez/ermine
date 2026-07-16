@@ -1461,7 +1461,17 @@
     },
     "truncate": {
       "axis": "truncation",
-      "meaning": "<truncation>",
+      "meaning": "<text-flow-treatment>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — truncation"
+    },
+    "text-nowrap": {
+      "axis": "truncation",
+      "meaning": "<text-flow-treatment>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — truncation"
+    },
+    "text-pre-wrap": {
+      "axis": "truncation",
+      "meaning": "<text-flow-treatment>",
       "reference": "src/ERMINE-SPEC.md §2.5 — truncation"
     },
     "selection-subtle": {

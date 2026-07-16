@@ -862,12 +862,16 @@ explicit-composition seam as `rule ruled`: two words, both facts visible in mark
 disjoint. Releasing truncation under a state is a conditioned override or project mechanics.
 The multi-line clamp is admitted as `clamp-N` (ADR-0023): `clamp-3` limits to three lines,
 then ellipsizes. It is named `clamp`, not the reserved `truncate-N`, because the number reads
-as the retained-line limit, not an amount removed. `clamp-N` and `truncate` are one axis (an
-element truncates OR clamps, never both). Its `-webkit-box` clamp requires `display: -webkit-box`,
-a whole-display legacy value that overlaps the structure/m1 display facet twin; the overlap is a
-sanctioned exclusion, not a composition — a clamped text block is never a flex/grid container.
+as the retained-line limit, not an amount removed. Bare white-space treatments are admitted
+on the same text-flow axis (ADR-0042): `text-nowrap` prevents soft wrapping without
+ellipsis, and `text-pre-wrap` preserves authored line breaks and wrapping behavior. `clamp-N`,
+`truncate`, `text-nowrap`, and `text-pre-wrap` are one axis (an element clamps, truncates,
+prevents wrapping, or preserves authored line breaks, never more than one). The `-webkit-box`
+clamp requires `display: -webkit-box`, a whole-display legacy value that overlaps the
+structure/m1 display facet twin; the overlap is a sanctioned exclusion, not a composition -
+a clamped text block is never a flex/grid container.
 
-→ rationale: RAT:R-SKIN-12 · history: ADR-0013, ADR-0023 · code: src/registry.ts#SKIN, src/emit.ts#emit
+→ rationale: RAT:R-SKIN-12 · history: ADR-0013, ADR-0023, ADR-0042 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SKIN-13 — Focus ring treatment
 

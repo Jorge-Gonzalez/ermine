@@ -66,6 +66,11 @@ const cases: Case[] = [
   { s: "divided wrap-prevent", expect: "ok", why: "no wrapping risk — order can't change" },
   { s: "divided", expect: "ok", why: "divided alone, no wrap word present" },
   { s: "wrap-allowed", expect: "ok", why: "wrapping alone, no divider to misplace" },
+  // text-flow treatments — one white-space/truncation treatment per element
+  { s: "text-nowrap", expect: "ok", why: "bare non-ellipsis nowrap treatment" },
+  { s: "text-pre-wrap", expect: "ok", why: "preserves authored line breaks" },
+  { s: "text-nowrap text-pre-wrap", expect: "fail", why: "two text-flow treatments on one axis" },
+  { s: "truncate text-nowrap", expect: "fail", why: "truncate already owns nowrap as a text-flow treatment" },
   // sub-dial axes compose
   { s: "align-center justify-between", expect: "ok", why: "different sub-dials (align-items vs justify-content)" },
   { s: "align-center align-start", expect: "fail", why: "two values on the align sub-dial" },

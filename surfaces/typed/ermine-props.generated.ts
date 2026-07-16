@@ -117,7 +117,7 @@ export interface ErminePlainProps {
   /** axis `focus-ring` */
   focusRing?: "ring";
   /** axis `truncation` */
-  truncation?: "truncate" | `clamp-${number}`;
+  truncation?: "truncate" | `clamp-${number}` | "text-nowrap" | "text-pre-wrap";
   /** axis `selection-treatment` */
   selectionTreatment?: "selection-subtle" | "selection-strong";
 }

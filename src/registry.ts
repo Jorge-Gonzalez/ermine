@@ -885,20 +885,22 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "box-shadow", "border-width", "border-color", "background", "color"],
   },
   {
-    // truncation: text that yields to its container (R-SKIN-12). `truncate` is the
-    // single-line ellipsis (text-overflow + white-space); `clamp-<n>` limits to N
-    // lines via the `-webkit-box` clamp idiom (admitted from Monky evidence,
-    // ADR-0023 — the reserved multi-line member, named `clamp` so the number reads
-    // as the retained-line limit, not an amount removed). One axis (an element
-    // truncates OR clamps, never both); both compose with the `hidden` overflow word.
+    // truncation/text wrapping: text that yields to or preserves line breaks inside
+    // its container (R-SKIN-12). `truncate` is the single-line ellipsis
+    // (text-overflow + white-space); `clamp-<n>` limits to N lines via the
+    // `-webkit-box` clamp idiom (admitted from Monky evidence, ADR-0023 — the
+    // reserved multi-line member, named `clamp` so the number reads as the retained
+    // line limit, not an amount removed). `text-nowrap` and `text-pre-wrap` are
+    // bare white-space treatments for non-ellipsis text (ADR-0042). One axis: an
+    // element truncates, clamps, prevents wrapping, or preserves author line breaks.
     // `clamp-<n>` writes `display: -webkit-box`, so it is exclusive with a structure
     // word by property collision — a clamped text block is not also a flex/grid box.
     axis: "truncation",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["truncate", "clamp-N"],
+    valueSpace: ["truncate", "clamp-N", "text-nowrap", "text-pre-wrap"],
     tokens: [
-      { pattern: /^(truncate)$/, shape: "<truncation>" },
+      { pattern: /^(truncate|text-nowrap|text-pre-wrap)$/, shape: "<text-flow-treatment>" },
       { pattern: /^clamp-(\d+)$/, shape: "clamp-N", valueDomain: "integer-≥1" },
       { pattern: /^clamp-.+$/, shape: "clamp-<bad>", valueDomain: "integer-≥1", fallback: true },
     ],

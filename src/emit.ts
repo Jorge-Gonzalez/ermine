@@ -222,13 +222,16 @@ const EMISSION: Record<string, EmitSpec> = {
         : null,
   },
 
-  // --- truncation: yielding text (R-SKIN-12). `truncate` = single-line ellipsis;
-  // `clamp-<n>` = N-line clamp via the -webkit-box idiom (ADR-0023). Both compose
-  // with the `hidden` overflow word. ---
+  // --- truncation/text wrapping (R-SKIN-12). `truncate` = single-line ellipsis;
+  // `clamp-<n>` = N-line clamp via the -webkit-box idiom (ADR-0023).
+  // `text-nowrap` / `text-pre-wrap` are bare white-space treatments (ADR-0042).
+  // `truncate` still composes with the `hidden` overflow word. ---
   truncation: {
     effectKind: "css",
     plain: (word): Record<string, string> | null => {
       if (word === "truncate") return { "text-overflow": "ellipsis", "white-space": "nowrap" };
+      if (word === "text-nowrap") return { "white-space": "nowrap" };
+      if (word === "text-pre-wrap") return { "white-space": "pre-wrap" };
       const m = word.match(/^clamp-(\d+)$/);
       return m
         ? { display: "-webkit-box", "-webkit-box-orient": "vertical", "-webkit-line-clamp": m[1] }
@@ -765,7 +768,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "font-family": ["font-mono"],
   "text-align": ["text-start", "text-center"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
-  truncation: ["truncate", "clamp-2", "clamp-3"],
+  truncation: ["truncate", "clamp-2", "clamp-3", "text-nowrap", "text-pre-wrap"],
   affordance: ["pressable"],
   concealment: ["concealed", "revealed"],
   scrollbar: ["scrollbar-subtle"],

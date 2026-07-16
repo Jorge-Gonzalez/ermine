@@ -591,6 +591,17 @@ display twin; the overlap is sanctioned as a mutual exclusion (a clamped block i
 box), computed in `checkDimensionalPurity`. Evidence: `reports/GAP-U-truncate-clamp.md`
 (Monky's 3-line suggestion-preview clamp).
 
+Amended (ADR-0042) to admit the bare white-space treatments. Monky's current residue has
+repeated `white-space: nowrap` rows where the intent is not ellipsis, and one repeated
+macro/user-text row where authored line breaks must render (`white-space: pre-wrap`). These
+are not overflow, typography scale, or local identity; they are text-flow treatments. Admitted
+as `text-nowrap` (emits only `white-space: nowrap`) and `text-pre-wrap` (emits only
+`white-space: pre-wrap`). They stay on the existing truncation/text-flow axis because
+`truncate` already owns `white-space`; a separate axis would create a P7 property collision,
+while composing `truncate text-nowrap` would say the same flow treatment twice. The search
+view reset trio (`white-space: normal`, `overflow: visible`, `text-overflow: clip`) remains
+conditioned release/project mechanics until the reset model is ruled.
+
 ## RAT:R-SKIN-13
 The pattern screen found the focus indicator was never scattered mechanics: seven
 `outline: none` suppressions pairing seven `box-shadow: 0 0 0 2px var(--tone)` draws, one

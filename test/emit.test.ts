@@ -72,6 +72,8 @@ test("position-mode strips the grammar prefix", () => {
 test("truncation: `truncate` is single-line ellipsis; `clamp-N` is the N-line -webkit-box clamp (R-SKIN-12)", () => {
   assert.deepEqual(declOf("truncate"), [["text-overflow", "ellipsis"], ["white-space", "nowrap"]]);
   assert.deepEqual(declOf("clamp-3"), [["display", "-webkit-box"], ["-webkit-box-orient", "vertical"], ["-webkit-line-clamp", "3"]]);
+  assert.deepEqual(declOf("text-nowrap"), [["white-space", "nowrap"]]);
+  assert.deepEqual(declOf("text-pre-wrap"), [["white-space", "pre-wrap"]]);
 });
 
 test("fill: whole-axis sets both, dials write one logical size each (R-SIZE-01)", () => {

@@ -2201,13 +2201,25 @@
           "label": "truncate",
           "insertText": "truncate",
           "kind": "word",
-          "meaning": "<truncation>"
+          "meaning": "<text-flow-treatment>"
+        },
+        {
+          "label": "text-nowrap",
+          "insertText": "text-nowrap",
+          "kind": "word",
+          "meaning": "<text-flow-treatment>"
+        },
+        {
+          "label": "text-pre-wrap",
+          "insertText": "text-pre-wrap",
+          "kind": "word",
+          "meaning": "<text-flow-treatment>"
         },
         {
           "label": "clamp-N",
           "insertText": "clamp-${1:1}",
           "kind": "snippet",
-          "meaning": "<truncation>"
+          "meaning": "<text-flow-treatment>"
         }
       ]
     },
