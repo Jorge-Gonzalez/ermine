@@ -361,6 +361,12 @@
       "anchor": "ADR-0060"
     },
     {
+      "id": "ADR-0061",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0061-positioned-inset-edge-steps.md",
+      "anchor": "ADR-0061"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

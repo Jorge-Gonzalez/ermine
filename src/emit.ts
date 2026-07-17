@@ -457,16 +457,11 @@ const EMISSION: Record<string, EmitSpec> = {
     plain: (word) => (word in EFFECT_ANIMATION ? { animation: EFFECT_ANIMATION[word] } : null),
   },
 
-  // --- cover: all-edge attachment to the containing block (R-SIZE-03). ---
-  cover: {
-    effectKind: "css",
-    plain: (word) => (word === "cover" ? { inset: "0" } : null),
-  },
-
   // --- positioned-relation: centering and edge-attachment relations (R-SIZE-06/R-SIZE-10). ---
   "positioned-relation": {
     effectKind: "css",
     plain: (word): Record<string, string> | null => {
+      if (word === "cover") return { inset: "0" };
       if (word === "center-x") return { left: "50%", transform: "translateX(-50%)" };
       if (word === "center-y") return { top: "50%", transform: "translateY(-50%)" };
       if (word === "attach-below") return { top: "100%" };
@@ -475,6 +470,8 @@ const EMISSION: Record<string, EmitSpec> = {
       if (offset) return { [offset[1] === "below" ? "top" : "bottom"]: `calc(100% + ${spacingValue(offset[2])})` };
       if (word === "attach-left") return { left: "0" };
       if (word === "attach-right") return { right: "0" };
+      const inset = word.match(new RegExp(`^inset-(top|right|bottom|left)-(${SCALES.spacing.join("|")})$`));
+      if (inset) return { [inset[1]]: spacingValue(inset[2]) };
       if (word === "stretch-inline") return { left: "0", right: "0" };
       return null;
     },
@@ -869,11 +866,11 @@ export const VOCABULARY: Record<string, string[]> = {
     "tween-opacity-transform-quick",
   ],
   effect: ["shake"],
-  cover: ["cover"],
   "positioned-relation": [
-    "center-x", "center-y", "attach-below", "attach-above",
+    "cover", "center-x", "center-y", "attach-below", "attach-above",
     ...SCALES.spacing.flatMap((s) => [`attach-below-${s}`, `attach-above-${s}`]),
     "attach-left", "attach-right", "stretch-inline",
+    ...["top", "right", "bottom", "left"].flatMap((edge) => SCALES.spacing.map((s) => `inset-${edge}-${s}`)),
   ],
   push: ["push"],
   margin: [

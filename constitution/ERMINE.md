@@ -451,9 +451,10 @@ An element may attach to all four edges of its containing block: `cover` sets `i
 Like `fill`, this is a container-relatum relational metric with no theme socket. It is not a
 position mode and does not imply `position:absolute` or `position:fixed`; those remain authored
 with the `position-mode` axis. `cover` only names the all-edge relation once a containing block
-and positioned element already exist.
+and positioned element already exist. It is the all-edge member of the positioned-relation axis,
+so it conflicts with one-edge positioned relations such as `center-y` or `inset-right-sm`.
 
-→ rationale: RAT:R-SIZE-03 · history: ADR-0026 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+→ rationale: RAT:R-SIZE-03 · history: ADR-0026, ADR-0061 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
 ## R-SIZE-04 — Push
 
@@ -523,14 +524,15 @@ and exact flex basis.
 A positioned element may attach one of its edges to an anchor edge: `attach-below` sets
 `top: 100%`; `attach-above` sets `bottom: 100%`; `attach-below-<spacing>` and
 `attach-above-<spacing>` add a scale-backed gap beyond that anchor edge; `attach-left` and
-`attach-right` pin one physical inline edge; `stretch-inline` sets `left: 0` and `right: 0`.
+`attach-right` pin one physical inline edge; `inset-<edge>-<spacing>` offsets one physical edge
+from its containing block by a ruled spacing step; `stretch-inline` sets `left: 0` and `right: 0`.
 The percentages and zero edge pins are relational metrics resolved against the containing block;
 the offset forms read the spacing scale and still do not open arbitrary raw offsets. They do not
 imply `position:absolute` or `position:fixed`. Edge footprints compose only when their physical
-slots do not overlap; `attach-below-xs attach-left` is valid, while centering and an edge pin on
-the same slot conflict.
+slots do not overlap; `center-y inset-right-sm` is valid, while `cover inset-right-sm`,
+`attach-right inset-right-sm`, and centering plus an edge relation on the same slot conflict.
 
-→ rationale: RAT:R-SIZE-10 · history: ADR-0045, ADR-0060 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+→ rationale: RAT:R-SIZE-10 · history: ADR-0045, ADR-0060, ADR-0061 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
 ## R-SIZE-11 — Role-measured dimensions
 

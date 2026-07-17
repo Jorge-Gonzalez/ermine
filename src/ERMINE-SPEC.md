@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (57 axes)  ‹SHARED›
+## 2. The axis registry (56 axes)  ‹SHARED›
 
-layout=21 · layering=4 · motion=4 · state=9 · skin=19. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=20 · layering=4 · motion=4 · state=9 · skin=19. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -152,7 +152,7 @@ layout=21 · layering=4 · motion=4 · state=9 · skin=19. Every fact below is r
 | `zTier2` | `base` `content` `raised` `dropdown` `sticky` `tooltip` |
 | `duration` | `quick` `settled` |
 
-### 2.1 LAYOUT (21 axes)
+### 2.1 LAYOUT (20 axes)
 
 #### structure
 
@@ -480,38 +480,26 @@ Tokens:
 |---|---|---|---|
 | `<aspect>` | `/^(square)$/` | — | no |
 
-#### cover
-
-- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `cover`
-- default: none
-- controls: `inset`
-- must never touch: `position` `display` `gap` `flex` `inline-size` `block-size` `width` `height` `margin` `padding`
-
-Tokens:
-
-| Shape | Pattern | Value domain | Fallback |
-|---|---|---|---|
-| `<cover>` | `/^cover$/` | — | no |
-
 #### positioned-relation
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `center-x` `center-y` `attach-below` `attach-above` `attach-below-xs` `attach-above-xs` `attach-below-sm` `attach-above-sm` `attach-below-md` `attach-above-md` `attach-below-lg` `attach-above-lg` `attach-below-xl` `attach-above-xl` `attach-below-2xl` `attach-above-2xl` `attach-below-3xl` `attach-above-3xl` `attach-left` `attach-right` `stretch-inline`
+- value space: `cover` `center-x` `center-y` `attach-below` `attach-above` `attach-below-xs` `attach-above-xs` `attach-below-sm` `attach-above-sm` `attach-below-md` `attach-above-md` `attach-below-lg` `attach-above-lg` `attach-below-xl` `attach-above-xl` `attach-below-2xl` `attach-above-2xl` `attach-below-3xl` `attach-above-3xl` `attach-left` `attach-right` `stretch-inline` `inset-top-xs` `inset-top-sm` `inset-top-md` `inset-top-lg` `inset-top-xl` `inset-top-2xl` `inset-top-3xl` `inset-right-xs` `inset-right-sm` `inset-right-md` `inset-right-lg` `inset-right-xl` `inset-right-2xl` `inset-right-3xl` `inset-bottom-xs` `inset-bottom-sm` `inset-bottom-md` `inset-bottom-lg` `inset-bottom-xl` `inset-bottom-2xl` `inset-bottom-3xl` `inset-left-xs` `inset-left-sm` `inset-left-md` `inset-left-lg` `inset-left-xl` `inset-left-2xl` `inset-left-3xl`
 - default: none
-- controls: `left` `right` `top` `bottom` `transform`
-- must never touch: `position` `inset` `margin` `inline-size` `block-size` `width` `height`
-- sub-dials: `inline-center` `block-center` `block-after-edge` `block-before-edge` `left-edge` `right-edge` `inline-edges`
+- controls: `inset` `left` `right` `top` `bottom` `transform`
+- must never touch: `position` `margin` `inline-size` `block-size` `width` `height`
+- sub-dials: `all-edges` `inline-center` `block-center` `block-after-edge` `block-before-edge` `top-edge` `right-edge` `bottom-edge` `left-edge` `inline-edges`
 - dial resolver: declared in `registry.ts`
-- notes: positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.
+- notes: positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<positioned-relation>` | `/^(center-(x\|y)\|attach-(below\|above\|left\|right)\|stretch-inline)$/` | — | no |
+| `<positioned-relation>` | `/^(cover\|center-(x\|y)\|attach-(below\|above\|left\|right)\|stretch-inline)$/` | — | no |
 | `attach-<block-edge>-<spacing>` | `/^attach-(below\|above)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
 | `attach-<block-edge>-<bad>` | `/^attach-(below\|above)-.+$/` | `spacing-step` | yes |
+| `inset-<edge>-<spacing>` | `/^inset-(top\|right\|bottom\|left)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `inset-<edge>-<bad>` | `/^inset-(top\|right\|bottom\|left)-.+$/` | `spacing-step` | yes |
 
 #### viewport-fill
 

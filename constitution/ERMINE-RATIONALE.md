@@ -355,6 +355,13 @@ word is `attach-left` rather than a direction-aware inline-start claim. The offs
 arbitrary top value; it is the same edge relation plus a ruled spacing step, so `attach-below-xs`
 owns the same top footprint as `attach-below` and composes with `attach-left`.
 
+Amended by ADR-0061 after the search edit button exposed a different scale-backed positioned
+offset: `right: var(--spacing-sm)` while already using `center-y`. This is not attachment to the
+anchor edge; it is a one-edge inset from the containing block, so the word is
+`inset-right-sm`. The amendment also folds `cover` into the positioned-relation axis as the
+all-edge member, closing the prior shorthand/longhand source-order trap (`cover center-y` and
+`cover inset-right-sm` now conflict by footprint).
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 

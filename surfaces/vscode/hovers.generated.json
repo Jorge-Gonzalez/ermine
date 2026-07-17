@@ -1465,113 +1465,253 @@
       "reference": "src/ERMINE-SPEC.md §2.1 — aspect"
     },
     "cover": {
-      "axis": "cover",
-      "meaning": "<cover>",
-      "reference": "src/ERMINE-SPEC.md §2.1 — cover"
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "center-x": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "center-y": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-below": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-above": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-below-xs": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-above-xs": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-below-sm": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-above-sm": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-below-md": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-above-md": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-below-lg": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-above-lg": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-below-xl": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-above-xl": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-below-2xl": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-above-2xl": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-below-3xl": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-above-3xl": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-left": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "attach-right": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "stretch-inline": {
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-top-xs": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-top-sm": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-top-md": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-top-lg": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-top-xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-top-2xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-top-3xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-right-xs": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-right-sm": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-right-md": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-right-lg": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-right-xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-right-2xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-right-3xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-bottom-xs": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-bottom-sm": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-bottom-md": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-bottom-lg": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-bottom-xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-bottom-2xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-bottom-3xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-left-xs": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-left-sm": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-left-md": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-left-lg": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-left-xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-left-2xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    "inset-left-3xl": {
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     "fill-viewport": {
@@ -2900,7 +3040,13 @@
     {
       "pattern": "^attach-(below|above)-(xs|sm|md|lg|xl|2xl|3xl)$",
       "axis": "positioned-relation",
-      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
+      "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
+    },
+    {
+      "pattern": "^inset-(top|right|bottom|left)-(xs|sm|md|lg|xl|2xl|3xl)$",
+      "axis": "positioned-relation",
+      "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `cover` sets all four edges with `inset: 0`; `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, `inset-<edge>-<spacing>` offsets one physical edge by a spacing step, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored controls.",
       "reference": "src/ERMINE-SPEC.md §2.1 — positioned-relation"
     },
     {

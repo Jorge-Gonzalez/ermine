@@ -13,7 +13,7 @@ test("P7: no unsanctioned property collisions across covered axes", () => {
     [],
     report.violations.map((violation) => `${violation.property}: ${violation.axes.join(" ~ ")}`).join("; "),
   );
-  assert.equal(report.verifiedAxes.length, 57);
+  assert.equal(report.verifiedAxes.length, 56);
   assert.deepEqual(report.unverifiedAxes, []);
   assert.deepEqual(
     report.warnings.filter((warning) => warning.rule === "unverified-ownership").map((warning) => warning.axis),
@@ -186,6 +186,7 @@ test("cover: attaches a positioned element to all containing-block edges (R-SIZE
 });
 
 test("positioned relations: center and edge attachment compile to physical offsets", () => {
+  assert.deepEqual(declOf("cover"), [["inset", "0"]]);
   assert.deepEqual(declOf("center-x"), [["left", "50%"], ["transform", "translateX(-50%)"]]);
   assert.deepEqual(declOf("center-y"), [["top", "50%"], ["transform", "translateY(-50%)"]]);
   assert.deepEqual(declOf("attach-below"), [["top", "100%"]]);
@@ -194,6 +195,8 @@ test("positioned relations: center and edge attachment compile to physical offse
   assert.deepEqual(declOf("attach-above-sm"), [["bottom", "calc(100% + var(--spacing-sm))"]]);
   assert.deepEqual(declOf("attach-left"), [["left", "0"]]);
   assert.deepEqual(declOf("attach-right"), [["right", "0"]]);
+  assert.deepEqual(declOf("inset-right-sm"), [["right", "var(--spacing-sm)"]]);
+  assert.deepEqual(declOf("inset-top-xs"), [["top", "var(--spacing-xs)"]]);
   assert.deepEqual(declOf("stretch-inline"), [["left", "0"], ["right", "0"]]);
   assert.deepEqual(declOf("attach-below stretch-inline"), [["top", "100%"], ["left", "0"], ["right", "0"]]);
   assert.deepEqual(declOf("attach-below-xs attach-left"), [["top", "calc(100% + var(--spacing-xs))"], ["left", "0"]]);

@@ -83,11 +83,9 @@
   "aspect": [
     "aspect-ratio"
   ],
-  "cover": [
-    "inset"
-  ],
   "positioned-relation": [
     "bottom",
+    "inset",
     "left",
     "right",
     "top",

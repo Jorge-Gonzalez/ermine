@@ -45,8 +45,8 @@ export interface ErminePlainProps {
   maxHeight?: SizeStep;
   /** axis `aspect` */
   aspect?: "square";
-  /** axis `cover` */
-  cover?: "cover";
+  /** axis `positioned-relation` */
+  allEdges?: "cover";
   /** axis `positioned-relation` */
   inlineCenter?: "center-x";
   /** axis `positioned-relation` */
@@ -56,9 +56,13 @@ export interface ErminePlainProps {
   /** axis `positioned-relation` */
   blockBeforeEdge?: "attach-above" | "attach-above-xs" | "attach-above-sm" | "attach-above-md" | "attach-above-lg" | "attach-above-xl" | "attach-above-2xl" | "attach-above-3xl";
   /** axis `positioned-relation` */
-  leftEdge?: "attach-left";
+  topEdge?: "inset-top-xs" | "inset-top-sm" | "inset-top-md" | "inset-top-lg" | "inset-top-xl" | "inset-top-2xl" | "inset-top-3xl";
   /** axis `positioned-relation` */
-  rightEdge?: "attach-right";
+  rightEdge?: "attach-right" | "inset-right-xs" | "inset-right-sm" | "inset-right-md" | "inset-right-lg" | "inset-right-xl" | "inset-right-2xl" | "inset-right-3xl";
+  /** axis `positioned-relation` */
+  bottomEdge?: "inset-bottom-xs" | "inset-bottom-sm" | "inset-bottom-md" | "inset-bottom-lg" | "inset-bottom-xl" | "inset-bottom-2xl" | "inset-bottom-3xl";
+  /** axis `positioned-relation` */
+  leftEdge?: "attach-left" | "inset-left-xs" | "inset-left-sm" | "inset-left-md" | "inset-left-lg" | "inset-left-xl" | "inset-left-2xl" | "inset-left-3xl";
   /** axis `positioned-relation` */
   inlineEdges?: "stretch-inline";
   /** axis `viewport-fill` */
@@ -253,13 +257,15 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "fillInline", axis: "fill", kind: "word" },
   { prop: "fillBlock", axis: "fill", kind: "word" },
   { prop: "aspect", axis: "aspect", kind: "word" },
-  { prop: "cover", axis: "cover", kind: "word" },
+  { prop: "allEdges", axis: "positioned-relation", kind: "word" },
   { prop: "inlineCenter", axis: "positioned-relation", kind: "word" },
   { prop: "blockCenter", axis: "positioned-relation", kind: "word" },
   { prop: "blockAfterEdge", axis: "positioned-relation", kind: "word" },
   { prop: "blockBeforeEdge", axis: "positioned-relation", kind: "word" },
-  { prop: "leftEdge", axis: "positioned-relation", kind: "word" },
+  { prop: "topEdge", axis: "positioned-relation", kind: "word" },
   { prop: "rightEdge", axis: "positioned-relation", kind: "word" },
+  { prop: "bottomEdge", axis: "positioned-relation", kind: "word" },
+  { prop: "leftEdge", axis: "positioned-relation", kind: "word" },
   { prop: "inlineEdges", axis: "positioned-relation", kind: "word" },
   { prop: "viewportFill", axis: "viewport-fill", kind: "word" },
   { prop: "zScale", axis: "z-scale", kind: "word" },
