@@ -145,8 +145,8 @@ residue fell to 138. The alpha opacity pass then admitted bounded `alpha-*` valu
 increments and migrated the search placeholder braces, popup hover softening, and editor style
 caret. The text-decoration treatment pass then admitted `undecorated`, `underlined`, and
 `struck`, moved the link-button hover decoration into authored button words, and left rich-text
-`u`/`s`/`a` descendants inside the prose/editor molecule; the live residue is now 131 with zero
-latent-generalizable rows.
+`u`/`s`/`a` descendants inside the authored-content substrate; the live residue is now 131 with
+zero latent-generalizable rows.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -340,15 +340,16 @@ Representative declarations:
   margin-bottom: 0.75em / 0.2em; padding-left: 1.5em.
 
 Reading:
-  - Rich-text descendant styling is not a normal utility plane; it is a `prose` or
-    editor-content molecule because selectors target user-authored descendants.
+  - Rich-text descendant styling is not a normal utility plane; it is authored-content
+    substrate because selectors target user-authored descendants and deliberately restore
+    useful native HTML semantics.
   - nowrap/pre-wrap are now ruled text-flow words; list reset/list restore remain reusable
     content-word pressure.
   - The mark/highlight treatment (`mark span { opacity: .35 }`) is search-result recipe.
   - App font vs neutral editor font is a substrate/content boundary, not component skin.
 
 Likely Ermine pressure:
-  prose/editor molecule; wrap words; list reset/list restore; mono/code treatment;
+  authored-content substrate; wrap words; list reset/list restore; mono/code treatment;
   placeholder pseudo recipe; search-highlight recipe.
 
 6. Interaction affordance and state rules.
@@ -525,7 +526,7 @@ These should be evaluated before adding broad new planes.
 5. Promote repeated drawings as recipes, not flat utilities.
 
 The following are broad enough to preserve, but too shape-specific for atomic words:
-  - prose/editor-content molecule.
+  - authored-content substrate / optional prose recipe.
   - keycap/kbd recipe.
   - callout arrow recipe.
   - segmented-control pill recipe.
@@ -542,7 +543,7 @@ Recommended queue:
   3. side-specific elevation/cutout facets.
   4. remaining spacing-rhythm shorthand and raw micro-padding questions.
   5. tween suppression/stagger follow-up.
-  6. prose/editor-content molecule.
+  6. authored-content substrate / optional prose recipe.
   7. keycap/callout/segmented recipes.
 
 The order is chosen to reduce residue while strengthening Ermine's grammar, not merely to

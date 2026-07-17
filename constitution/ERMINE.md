@@ -1019,7 +1019,7 @@ Text line decoration is a skin treatment, not a link recipe. `underlined` owns
 owns `text-decoration: none`. The words name the reusable decoration state of text; they do not
 decide when a component should look link-like. A link-button recipe can still choose
 `undecorated hover:underlined`, while user-content descendants such as `u`, `s`, and `a` stay in
-their prose/editor molecule unless the authored element itself can carry words.
+their authored-content substrate unless the authored element itself can carry words.
 
 → rationale: RAT:R-SKIN-20 · history: ADR-0056 · code: src/registry.ts#SKIN, src/emit.ts#emit
 

@@ -397,7 +397,8 @@ function proposedForm(record: CurrentRecord, action: RuleAction, outcome: Latent
     if (/kbd/.test(record.selector)) return "keycap/kbd recipe";
     if (/seg-control/.test(record.selector)) return "segmented-control recipe";
     if (/arrow/.test(record.selector)) return "callout-arrow recipe";
-    if (/content-editor-body/.test(record.selector)) return "prose/editor-content molecule";
+    if (/\.editor-content\s+\.content-editor-body\b/.test(record.selector)) return "editor layout bridge";
+    if (/content-editor-body/.test(record.selector)) return "authored-content substrate";
     return "recipe/molecule socket";
   }
   if (action === "dimension-constraint") return dimensionProposal(record);
@@ -411,7 +412,7 @@ function proposedForm(record: CurrentRecord, action: RuleAction, outcome: Latent
   if (action === "surface-line-elevation-cutout") return "side-specific rule/radius/state-skin facet";
   if (action === "motion-transition") return "property-targeted tween or tween suppression word";
   if (action === "reset-inheritance-neutralization") return "negative/escape facet";
-  if (action === "typography-content") return "wrap/list/code/prose word or molecule";
+  if (action === "typography-content") return "wrap/list/code word, authored-content substrate, or molecule";
   if (action === "interaction-affordance-state") return "condition-backed state skin/affordance facet";
   return undefined;
 }

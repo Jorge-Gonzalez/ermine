@@ -30,11 +30,13 @@ included.
 
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
-| rich-text/editor-content molecule | 21 | 48 | Descendant prose defaults inside user-authored content. This is one authored content recipe, not a set of Ermine utility gaps. |
-| private drawing / engine pseudo | 13 | 38 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
+| authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
+| editor chrome recipes | 3 | 5 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
+| editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
+| private drawing / engine pseudo | 14 | 41 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
-| exact attachment / geometry | 8 | 12 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
-| component-local surface/type fragments | 6 | 9 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
+| exact attachment / geometry | 5 | 7 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
+| component-local surface/type fragments | 5 | 8 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
 
 ## By Source File
@@ -91,12 +93,12 @@ drawing, code/pre blocks, blockquotes, and host identity.
 
 2. Content-editor residue is a molecule boundary.
 
-   `src/styles/components/content-editor.css` has 24 residue rules. Twenty-one are scoped
-   under `.content-editor-body` or `.content-editor .content-editor-body`, meaning they
-   describe rendered user content: headings, paragraphs, lists, inline code, pre blocks,
-   blockquotes, links, emphasis, decorations, and placeholder text. These rules document a
-   prose/editor-content contract. Flattening them into individual words would make Ermine
-   noisier without making adoption clearer.
+   `src/styles/components/content-editor.css` has 24 residue rules. Twenty are authored-content
+   substrate under `.content-editor-body` or `.content-editor .content-editor-body`: headings,
+   paragraphs, lists, inline code, pre blocks, blockquotes, links, emphasis, and decorations.
+   Three are `ce-*` editor chrome. One is placeholder pseudo drawing. Treating those as one vague
+   "content editor" bucket hides the important distinction: the body is an authored HTML island,
+   while the surrounding `ce-*` selectors are ordinary component chrome.
 
 3. Pseudo and engine drawing remains correctly project-owned.
 
@@ -122,10 +124,12 @@ drawing, code/pre blocks, blockquotes, and host identity.
 
 ## High-Signal Rule Families
 
-### Rich Text / Editor Content
+### Authored Content Substrate
 
-These rules form a content rendering molecule. Their selectors are descendants of
-`.content-editor-body`, not standalone visual utilities.
+These rules intentionally point the other way from a utility framework. `.content-editor-body`
+is an authored HTML island: a neutral/prose substrate where user content can render ordinary
+`p`, `h1`, `ul`, `em`, `u`, `s`, `a`, `code`, and `blockquote` semantics without
+requiring class words on descendants.
 
 | selector family | rules | role |
 | --- | --- | --- |
@@ -133,12 +137,25 @@ These rules form a content rendering molecule. Their selectors are descendants o
 | paragraphs and lists | 6 | `p`, `p:last-child`, `ul`, `ol`, shared list rhythm, `li` |
 | inline semantics | 6 | `a`, `a:hover`, `strong/b`, `em/i`, `u`, `s` |
 | code blocks | 2 | inline `code` and block `pre` treatment |
-| quoted/placeholder content | 2 | `blockquote` and empty placeholder |
+| quoted content | 1 | `blockquote` treatment |
 | editor body root | 1 | content font family and line-height normalization |
 
-Reading: these are becoming clearer, not noisier. The selectors document browser-rendered
-content semantics that class strings cannot attach to directly unless the project rewrites
-authored HTML. Ermine should remember the conversion as a prose/editor molecule boundary.
+Reading: this is not a failed absorption frontier. It is a deliberate boundary where the project
+restores useful native HTML defaults so users can bring their own styling and semantics. Ermine
+should remember it as authored-content substrate evidence, not as scattered missing words.
+
+### Editor Chrome And Bridges
+
+The `ce-*` selectors are editor controls around the authored-content island. They are different
+from `.content-editor-body`: dropdown placement, toolbar separators, and tiny trigger gaps are
+component chrome recipes. The `.editor-content .content-editor-body` row is different again: it
+is a layout bridge that lets the editor shell hand remaining block space to the authored content.
+
+| selector group | reading |
+| --- | --- |
+| `ce-*` | editor toolbar/menu chrome; recipe-local unless repeated elsewhere |
+| `.content-editor-body:empty::before` | placeholder pseudo drawing, classified with private drawing |
+| `.editor-content .content-editor-body` | layout bridge between shell and authored-content substrate |
 
 ### Private Drawing / Engine Pseudo
 

@@ -134,9 +134,19 @@ function groupRules(declarations: ReviewedDeclaration[]): RuleGroup[] {
   );
 }
 
-function isContentEditorRule(group: RuleGroup): boolean {
+function isAuthoredContentSubstrateRule(group: RuleGroup): boolean {
   return group.file.endsWith("content-editor.css")
-    && /(?:^|\s|,)\.content-editor(?:\s+\.)?|\bcontent-editor-body\b/.test(group.selector);
+    && /\bcontent-editor-body\b/.test(group.selector)
+    && !group.selector.includes("::");
+}
+
+function isEditorChromeRule(group: RuleGroup): boolean {
+  return group.file.endsWith("content-editor.css")
+    && /^\.ce-/.test(group.selector);
+}
+
+function isEditorLayoutBridge(group: RuleGroup): boolean {
+  return /\.editor-content\s+\.content-editor-body\b/.test(group.selector);
 }
 
 function isPrivateDrawingRule(group: RuleGroup): boolean {
@@ -169,8 +179,10 @@ function isExactGeometry(group: RuleGroup): boolean {
 }
 
 function familyId(group: RuleGroup): string {
-  if (isContentEditorRule(group)) return "rich-text/editor-content molecule";
   if (isPrivateDrawingRule(group)) return "private drawing / engine pseudo";
+  if (isAuthoredContentSubstrateRule(group)) return "authored-content substrate";
+  if (isEditorChromeRule(group)) return "editor chrome recipes";
+  if (isEditorLayoutBridge(group)) return "editor layout bridge";
   if (isControlRecipe(group)) return "control-state recipes";
   if (isRootIdentity(group)) return "root/page/host identity";
   if (isExactGeometry(group)) return "exact attachment / geometry";
@@ -179,8 +191,12 @@ function familyId(group: RuleGroup): string {
 
 function familyReading(id: string): string {
   switch (id) {
-    case "rich-text/editor-content molecule":
-      return "Descendant prose defaults inside user-authored content. This is one authored content recipe, not a set of Ermine utility gaps.";
+    case "authored-content substrate":
+      return "A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar.";
+    case "editor chrome recipes":
+      return "Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures.";
+    case "editor layout bridge":
+      return "Layout handoff between the editor shell and the authored-content island.";
     case "private drawing / engine pseudo":
       return "Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts.";
     case "control-state recipes":
@@ -197,7 +213,9 @@ function familyReading(id: string): string {
 }
 
 const FAMILY_ORDER = [
-  "rich-text/editor-content molecule",
+  "authored-content substrate",
+  "editor chrome recipes",
+  "editor layout bridge",
   "private drawing / engine pseudo",
   "control-state recipes",
   "exact attachment / geometry",
@@ -270,25 +288,43 @@ function densityKey(group: RuleGroup): "1 declaration" | "2 declarations" | "3 d
   return "4+ declarations";
 }
 
-function renderContentEditorSection(groups: RuleGroup[]): string {
-  if (!groups.some(isContentEditorRule)) return "";
-  return `### Rich Text / Editor Content
+function renderAuthoredContentSection(groups: RuleGroup[]): string {
+  if (!groups.some(isAuthoredContentSubstrateRule)) return "";
+  return `### Authored Content Substrate
 
-These rules form a content rendering molecule. Their selectors are descendants of
-\`.content-editor-body\`, not standalone visual utilities.
+These rules intentionally point the other way from a utility framework. \`.content-editor-body\`
+is an authored HTML island: a neutral/prose substrate where user content can render ordinary
+\`p\`, \`h1\`, \`ul\`, \`em\`, \`u\`, \`s\`, \`a\`, \`code\`, and \`blockquote\` semantics without
+requiring class words on descendants.
 
 ${table(["selector family", "rules", "role"], [
     ["headings", "4", "`h1`, `h2`, `h3`, and first-child rhythm reset"],
     ["paragraphs and lists", "6", "`p`, `p:last-child`, `ul`, `ol`, shared list rhythm, `li`"],
     ["inline semantics", "6", "`a`, `a:hover`, `strong/b`, `em/i`, `u`, `s`"],
     ["code blocks", "2", "inline `code` and block `pre` treatment"],
-    ["quoted/placeholder content", "2", "`blockquote` and empty placeholder"],
+    ["quoted content", "1", "`blockquote` treatment"],
     ["editor body root", "1", "content font family and line-height normalization"],
   ])}
 
-Reading: these are becoming clearer, not noisier. The selectors document browser-rendered
-content semantics that class strings cannot attach to directly unless the project rewrites
-authored HTML. Ermine should remember the conversion as a prose/editor molecule boundary.`;
+Reading: this is not a failed absorption frontier. It is a deliberate boundary where the project
+restores useful native HTML defaults so users can bring their own styling and semantics. Ermine
+should remember it as authored-content substrate evidence, not as scattered missing words.`;
+}
+
+function renderEditorChromeSection(groups: RuleGroup[]): string {
+  if (!groups.some((group) => isEditorChromeRule(group) || isEditorLayoutBridge(group))) return "";
+  return `### Editor Chrome And Bridges
+
+The \`ce-*\` selectors are editor controls around the authored-content island. They are different
+from \`.content-editor-body\`: dropdown placement, toolbar separators, and tiny trigger gaps are
+component chrome recipes. The \`.editor-content .content-editor-body\` row is different again: it
+is a layout bridge that lets the editor shell hand remaining block space to the authored content.
+
+${table(["selector group", "reading"], [
+    ["`ce-*`", "editor toolbar/menu chrome; recipe-local unless repeated elsewhere"],
+    ["`.content-editor-body:empty::before`", "placeholder pseudo drawing, classified with private drawing"],
+    ["`.editor-content .content-editor-body`", "layout bridge between shell and authored-content substrate"],
+  ])}`;
 }
 
 function renderPrivateDrawingSection(groups: RuleGroup[]): string {
@@ -417,12 +453,12 @@ drawing, code/pre blocks, blockquotes, and host identity.
 
 2. Content-editor residue is a molecule boundary.
 
-   \`src/styles/components/content-editor.css\` has 24 residue rules. Twenty-one are scoped
-   under \`.content-editor-body\` or \`.content-editor .content-editor-body\`, meaning they
-   describe rendered user content: headings, paragraphs, lists, inline code, pre blocks,
-   blockquotes, links, emphasis, decorations, and placeholder text. These rules document a
-   prose/editor-content contract. Flattening them into individual words would make Ermine
-   noisier without making adoption clearer.
+   \`src/styles/components/content-editor.css\` has 24 residue rules. Twenty are authored-content
+   substrate under \`.content-editor-body\` or \`.content-editor .content-editor-body\`: headings,
+   paragraphs, lists, inline code, pre blocks, blockquotes, links, emphasis, and decorations.
+   Three are \`ce-*\` editor chrome. One is placeholder pseudo drawing. Treating those as one vague
+   "content editor" bucket hides the important distinction: the body is an authored HTML island,
+   while the surrounding \`ce-*\` selectors are ordinary component chrome.
 
 3. Pseudo and engine drawing remains correctly project-owned.
 
@@ -449,7 +485,8 @@ drawing, code/pre blocks, blockquotes, and host identity.
 ## High-Signal Rule Families
 
 ${[
-    renderContentEditorSection(groups),
+    renderAuthoredContentSection(groups),
+    renderEditorChromeSection(groups),
     renderPrivateDrawingSection(groups),
     renderControlStateSection(groups),
   ].filter(Boolean).join("\n\n")}

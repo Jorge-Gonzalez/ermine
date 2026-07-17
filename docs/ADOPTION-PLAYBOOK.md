@@ -56,7 +56,7 @@ grammar design.
 | `state-backed-prefix` | conversion | mechanical | ARIA/platform-backed states become scoped skin words with required backing. |
 | `root-and-structural-reset-boundary` | boundary | mechanical | Root resets and structural pseudo-class offsets stay local even when a word emits the same declaration. |
 | `pseudo-drawing-boundary` | boundary | mechanical | Pseudo-element drawing stays local or enters as a recipe/molecule. |
-| `user-content-molecule-boundary` | boundary | human | Rich-text descendants move only as a prose/editor-content molecule. |
+| `authored-content-substrate-boundary` | boundary | human | Rich-text descendants remain an authored-HTML substrate, not flat utility gaps. |
 
 ## Batch Order
 
@@ -69,7 +69,7 @@ For the next project, start with recipes that have low semantic risk and high re
 3. Relational layout conversions: edge attachment, fill/cover/push/centering if present.
 4. Surface facets: rule edge presence/colour and side corner facets.
 5. Motion: targeted tween envelopes; leave suppression and bespoke recipe timing local.
-6. Boundary registration: root/substrate resets, pseudo drawing, user-content molecules,
+6. Boundary registration: root/substrate resets, pseudo drawing, authored-content substrate,
    recipe bundles.
 
 The goal is not to eliminate local CSS. The goal is to make the first pass mostly mechanical,

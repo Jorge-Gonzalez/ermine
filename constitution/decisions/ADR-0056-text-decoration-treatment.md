@@ -23,6 +23,6 @@ Options weighed:
   selector machinery.
 - Admit the property treatment only. Chosen: `underlined`, `struck`, and `undecorated` own
   `text-decoration` and nothing else. Recipes can compose them when the element can carry words;
-  user-content descendant selectors remain a prose/editor molecule boundary.
+  user-content descendant selectors remain an authored-content substrate boundary.
 
 Introduces ruling: R-SKIN-20.

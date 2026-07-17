@@ -57,7 +57,7 @@ generalization, recipe, and local-identity pressure.
 
 | recipe | kind | confidence | matches | conversion memory |
 | --- | --- | --- | --- | --- |
-| user-content-molecule-boundary | boundary | human | 49 | Group descendant typography and rhythm as prose/editor-content evidence. |
+| authored-content-substrate-boundary | boundary | human | 49 | Group descendant typography and rhythm as authored-content substrate evidence. |
 | pseudo-drawing-boundary | boundary | mechanical | 31 | Do not flatten pseudo drawing into ordinary element words. |
 | root-and-structural-reset-boundary | boundary | mechanical | 5 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
 | edge-attachment | conversion | review | 3 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |

@@ -75,7 +75,7 @@
       "state-backed-prefix": 1,
       "root-and-structural-reset-boundary": 5,
       "pseudo-drawing-boundary": 31,
-      "user-content-molecule-boundary": 49
+      "authored-content-substrate-boundary": 49
     }
   },
   "declarations": [
@@ -310,9 +310,9 @@
       "latentOutcome": "recipe",
       "function": "sets physical envelope, measure, control size, or constraint",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "editor layout bridge",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -950,9 +950,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -969,7 +969,7 @@
       "erminePressure": "keep local after invariance/scale tests",
       "proposedForm": "keep local",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -984,10 +984,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
         "pseudo-drawing-boundary",
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1002,10 +1002,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
         "pseudo-drawing-boundary",
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1020,10 +1020,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
         "pseudo-drawing-boundary",
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1039,9 +1039,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "content-relative measure",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1056,10 +1056,10 @@
       "latentOutcome": "recipe",
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
         "root-and-structural-reset-boundary",
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1074,9 +1074,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1091,9 +1091,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1109,9 +1109,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "content-relative measure",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1126,9 +1126,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1143,9 +1143,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1161,9 +1161,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "content-relative measure",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1178,9 +1178,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1195,9 +1195,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1213,9 +1213,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "content-relative measure",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1230,10 +1230,10 @@
       "latentOutcome": "recipe",
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
         "root-and-structural-reset-boundary",
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1248,9 +1248,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1265,9 +1265,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1282,9 +1282,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1299,9 +1299,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1316,9 +1316,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1333,9 +1333,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1350,9 +1350,9 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1367,9 +1367,9 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1385,9 +1385,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "content-relative measure",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1402,9 +1402,9 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1419,9 +1419,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1436,9 +1436,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1453,9 +1453,9 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1471,9 +1471,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "spacing-md",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1488,9 +1488,9 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1505,9 +1505,9 @@
       "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1522,9 +1522,9 @@
       "latentOutcome": "recipe",
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1539,9 +1539,9 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1557,9 +1557,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "spacing-md",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1574,9 +1574,9 @@
       "latentOutcome": "recipe",
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1591,9 +1591,9 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1608,9 +1608,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1626,9 +1626,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "content-relative measure",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1644,9 +1644,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "content-relative measure",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1661,9 +1661,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1678,9 +1678,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1695,9 +1695,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1713,9 +1713,9 @@
       "function": "distributes padding, margin, or cluster rhythm",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "content-relative measure",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1730,9 +1730,9 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1747,9 +1747,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -1764,9 +1764,9 @@
       "latentOutcome": "recipe",
       "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "prose/editor-content molecule",
+      "proposedForm": "authored-content substrate",
       "playbookRecipes": [
-        "user-content-molecule-boundary"
+        "authored-content-substrate-boundary"
       ]
     },
     {
@@ -2215,9 +2215,9 @@
         "latentOutcome": "recipe",
         "function": "sets physical envelope, measure, control size, or constraint",
         "erminePressure": "promote as molecule/recipe only if reused",
-        "proposedForm": "prose/editor-content molecule",
+        "proposedForm": "editor layout bridge",
         "playbookRecipes": [
-          "user-content-molecule-boundary"
+          "authored-content-substrate-boundary"
         ],
         "dimensionIntent": "flex negotiation"
       }

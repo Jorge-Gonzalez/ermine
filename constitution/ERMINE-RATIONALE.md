@@ -778,7 +778,7 @@ Source: ADR-0056. Monky's button-link recipes and editor content both exposed li
 pressure. The reusable part is smaller than a link recipe: underline, strike-through, and absence
 are property-level text treatments that can be state-scoped like other skin words. The recipe
 boundary remains intact because these words do not choose link semantics, colour, cursor, spacing,
-or disabled behaviour. User-content descendant selectors stay a prose/editor molecule boundary;
+or disabled behaviour. User-content descendant selectors stay an authored-content substrate boundary;
 only authored elements that can wear the words migrate.
 
 ## RAT:R-SCALE-01

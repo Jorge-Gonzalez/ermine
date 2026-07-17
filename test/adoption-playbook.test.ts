@@ -46,7 +46,7 @@ test("playbook keeps root and structural zero spacing in the boundary memory", (
   assert.ok(structuralMatches.includes("root-and-structural-reset-boundary"));
 });
 
-test("playbook recognizes pseudo drawing and user-content molecule boundaries", () => {
+test("playbook recognizes pseudo drawing and authored-content substrate boundaries", () => {
   assert.ok(matchPlaybookRecipes(record({
     selector: ".macro-search-kbd::after",
     property: "content",
@@ -59,10 +59,10 @@ test("playbook recognizes pseudo drawing and user-content molecule boundaries", 
     property: "margin",
     value: "0.75em 0 0.4em",
     code: "user-content",
-  })).some((recipe) => recipe.id === "user-content-molecule-boundary"));
+  })).some((recipe) => recipe.id === "authored-content-substrate-boundary"));
 });
 
-test("playbook keeps user-content scale tokens out of flat migration recipes", () => {
+test("playbook keeps authored-content scale tokens out of flat migration recipes", () => {
   const matches = matchPlaybookRecipes(record({
     selector: ".content-editor-body blockquote",
     property: "padding-left",
@@ -72,5 +72,5 @@ test("playbook keeps user-content scale tokens out of flat migration recipes", (
 
   assert.equal(matches.includes("existing-scale-word"), false);
   assert.equal(matches.includes("spacing-edge-decomposition"), false);
-  assert.ok(matches.includes("user-content-molecule-boundary"));
+  assert.ok(matches.includes("authored-content-substrate-boundary"));
 });

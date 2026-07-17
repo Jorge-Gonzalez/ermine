@@ -35,4 +35,4 @@ scales, proportional relationships, or measure/control-size roles.
 
 | source | property | value | intent | latent outcome | scale/proportion mapping | proposed form |
 | --- | --- | --- | --- | --- | --- | --- |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:7 | flex | 1 | flex negotiation | recipe |  | prose/editor-content molecule |
+| src/content/overlays/views/macroEditor/editorViewStyles.css:7 | flex | 1 | flex negotiation | recipe |  | editor layout bridge |
