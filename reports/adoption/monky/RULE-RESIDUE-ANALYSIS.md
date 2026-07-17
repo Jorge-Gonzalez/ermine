@@ -19,9 +19,9 @@ included.
 | metric | count |
 | --- | --- |
 | current declarations | 498 |
-| adopted/infrastructure declarations | 399 |
-| project-owned residue declarations | 99 |
-| project-owned residue rules | 45 |
+| adopted/infrastructure declarations | 400 |
+| project-owned residue declarations | 98 |
+| project-owned residue rules | 44 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 | latent-generalizable declarations | 0 |
@@ -31,8 +31,8 @@ included.
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
 | authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
-| private drawing / engine pseudo | 18 | 46 | Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure. |
-| control-state recipes | 6 | 7 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| private drawing / engine pseudo | 22 | 51 | Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure. |
+| control-state recipes | 1 | 1 | Local control recipes such as radio-label selection suppression; named selectable-group fragments are visible in the fragment bucket. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 
 ## Word-Assimilation Target
@@ -45,13 +45,13 @@ The authored-content substrate is likewise a deliberate authored-HTML island.
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 99 | 45 | All remaining project-owned declarations in the current ledger. |
-| semantic fragments excluded | 46 | 18 | Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work. |
+| conserved project-owned residue | 98 | 44 | All remaining project-owned declarations in the current ledger. |
+| semantic fragments excluded | 51 | 22 | Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 8 | 7 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 2 | 2 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
-The exclusion is union-aware: 91 declarations across
-38 rules are outside the word-assimilation target. They remain visible
+The exclusion is union-aware: 96 declarations across
+42 rules are outside the word-assimilation target. They remain visible
 in the conserved ledger and boundary reports for full CSS accounting, not because they are
 missed Ermine assimilation.
 
@@ -59,15 +59,15 @@ missed Ermine assimilation.
 
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
-| control-state recipes | 6 | 7 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| control-state recipes | 1 | 1 | Local control recipes such as radio-label selection suppression; named selectable-group fragments are visible in the fragment bucket. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 
 ## By Source File
 
 | file | residue rules |
 | --- | --- |
-| `src/styles/fragments/semantic-fragments.css` | 39 |
-| `src/styles/skin/controls.css` | 6 |
+| `src/styles/fragments/semantic-fragments.css` | 43 |
+| `src/styles/skin/controls.css` | 1 |
 
 ## By Primary Rule Action
 
@@ -78,7 +78,7 @@ rules are listed later because a single selector can combine several kinds of re
 | --- | --- |
 | component-private-drawing | 15 |
 | typography-content | 14 |
-| interaction-affordance-state | 5 |
+| interaction-affordance-state | 4 |
 | spacing-rhythm | 4 |
 | motion-transition | 2 |
 | reset-inheritance-neutralization | 2 |
@@ -89,7 +89,7 @@ rules are listed later because a single selector can combine several kinds of re
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 25 |
+| 1 declaration | 24 |
 | 2 declarations | 9 |
 | 3 declarations | 5 |
 | 4+ declarations | 6 |
@@ -186,17 +186,18 @@ allowed to do under disabled, selected, active, or constrained states.
 
 | rule cluster | examples | reading |
 | --- | --- | --- |
-| disabled buttons | `.btn:disabled`, `.btn:disabled:hover` | Local disabled recipe: cursor, opacity, and hover neutralization. |
-| selectable groups | `.selectable-group > *`, `.selectable-group > .is-selected:hover`, `.selectable-group > *:active` | Parent/child interaction recipe. |
-| minimum-selection guard | `.min-selected-1 > .is-selected:only-of-type*` | JS/state invariant expressed through selectors. |
+| native disabled buttons | `disabled:blocked disabled:ground-subtle disabled:ink-soft disabled:alpha-60` | The generic disabled cursor cue is now Ermine; remaining disabled policy would be recipe-specific. |
+| selectable group fragment | `.sf-selectable-group > *`, `.sf-selectable-group > *:active` | Parent/child interaction mechanics are a named semantic fragment. |
+| minimum-selection fragment | `.sf-min-selected-1 > .is-selected:only-of-type*` | JS/cardinality invariant expressed as a named semantic fragment. |
 | radio labels | `.radio-label` | Local clickable label recipe. |
-| state icons | `.seg-option svg` | Local icon alignment inside a control option. |
+| state icons | `.sf-segmented-control-option svg` | Local icon alignment inside a control option fragment. |
 
 Reading: Ermine already owns the reusable visual side when a backed state can carry skin
 (`selected:`, `checked:`, `pressed:`, `expanded:`, `current:`, and ordinary hover/focus
-skin). What remains here is different: behavior and invariants. Disabled hover neutralization,
-minimum-selection lockout, parent/child selectable-group mechanics, clickable-label affordance,
-and local control icon alignment are project control contracts. They are good recipe boundary
+skin), and ADR-0063 adds the generic `blocked` cursor cue. What remains here is different:
+behavior, structural child selectors, and invariants. Minimum-selection lockout,
+parent/child selectable-group mechanics, clickable-label selection suppression, and local control
+icon alignment are project control contracts or semantic fragments. They are good recipe boundary
 evidence and poor flat-word candidates.
 
 ## Complete Rule Inventory
@@ -236,18 +237,17 @@ evidence and poor flat-word candidates.
 | `src/styles/fragments/semantic-fragments.css` | `.sf-keycap-raised` | 5 | component-private-drawing | recipe | line-height: 1<br>padding: 3px 6px 6px<br>min-width: 26px<br>border-radius: 4px<br>z-index: 0 |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-keycap-raised::after` | 8 | component-private-drawing | recipe | content: ''<br>position: absolute<br>background: var(--tone-dim)<br>inset: 0 2px 4px<br>border: 1px solid var(--harmonic-minor)<br>border-radius: 2px<br>pointer-events: none<br>z-index: -1 |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-keycap-raised:first-child` | 1 | component-private-drawing | recipe | margin-left: 0 |
+| `src/styles/fragments/semantic-fragments.css` | `.sf-min-selected-1 > .is-selected:only-of-type` | 2 | interaction-affordance-state | recipe | cursor: not-allowed<br>opacity: 0.95 |
+| `src/styles/fragments/semantic-fragments.css` | `.sf-min-selected-1 > .is-selected:only-of-type:hover` | 1 | interaction-affordance-state | recipe | opacity: 0.95 |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-control-option svg` | 1 | interaction-affordance-state | recipe | vertical-align: middle |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill::before` | 10 | component-private-drawing, motion-transition | recipe | content: ''<br>position: absolute<br>top: 0<br>bottom: 0<br>left: var(--pill-left, 0)<br>width: var(--pill-width, 0)<br>background: var(--accent)<br>opacity: 0<br>transition: left 0.1s ease, width 0.1s ease<br>pointer-events: none |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked="true"]` | 1 | component-private-drawing | recipe | background: transparent |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.is-sliding::before` | 1 | component-private-drawing | recipe | opacity: 1 |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.seg-snap::before` | 1 | motion-transition | recipe | transition: none |
+| `src/styles/fragments/semantic-fragments.css` | `.sf-selectable-group > *` | 1 | reset-inheritance-neutralization | recipe | user-select: none |
+| `src/styles/fragments/semantic-fragments.css` | `.sf-selectable-group > *:active` | 1 | interaction-affordance-state | recipe | transform: scale(0.98) |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-shake-suppression` | 1 | motion-transition | recipe | transition: none !important |
-| `src/styles/skin/controls.css` | `.btn:disabled` | 1 | interaction-affordance-state | recipe | cursor: not-allowed |
-| `src/styles/skin/controls.css` | `.min-selected-1 > .is-selected:only-of-type` | 2 | interaction-affordance-state | recipe | cursor: not-allowed<br>opacity: 0.95 |
-| `src/styles/skin/controls.css` | `.min-selected-1 > .is-selected:only-of-type:hover` | 1 | interaction-affordance-state | recipe | opacity: 0.95 |
 | `src/styles/skin/controls.css` | `.radio-label` | 1 | reset-inheritance-neutralization | recipe | user-select: none |
-| `src/styles/skin/controls.css` | `.selectable-group > *` | 1 | reset-inheritance-neutralization | recipe | user-select: none |
-| `src/styles/skin/controls.css` | `.selectable-group > *:active` | 1 | interaction-affordance-state | recipe | transform: scale(0.98) |
 
 ## Reading
 

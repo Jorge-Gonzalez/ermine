@@ -20,19 +20,19 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the recessed-fail validation treatment is
-Ermine 24eef50 / Monky e8d1507:
+were migrated). Current live ledger after the blocked affordance and selectable-fragment naming
+pass is Ermine f87be06 / Monky 4907231:
 
   current declarations:                 498
-  adopted/infrastructure declarations:  399
-  project-owned residue declarations:    99
+  adopted/infrastructure declarations:  400
+  project-owned residue declarations:    98
   assimilable now:                        0
-  word-assimilation target:               8 declarations across 7 rules
+  word-assimilation target:               2 declarations across 2 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 99 project-owned declarations; 91 declarations across 38 rules are
-deliberately outside the flat-word target: 46 semantic-fragment declarations and
+still carries the full 98 project-owned declarations; 96 declarations across 42 rules are
+deliberately outside the flat-word target: 51 semantic-fragment declarations and
 45 content-editor default declarations.
 Semantic fragments are counted this way because they are adoption sub-products: discovered
 middle-layer style units, not Ermine targets and not unassimilated Ermine work. They remain in
@@ -41,9 +41,8 @@ Vendor-specific browser-adapter hooks follow the same rule: they are conserved f
 but once named as adapter/fragment boundaries they are not residual Ermine word pressure.
 
 Current residue by reason code:
-  recipe-identity 21, state-mechanics 1,
+  recipe-identity 23,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
-  opacity-followup 2,
   user-content 43.
 
 Historical invariance sample:
@@ -223,6 +222,11 @@ The recessed-fail validation pass then admitted `recessed-fail` for the focused 
 inset wash and moved the former `.input-error:focus` box-shadow into `focus:recessed-fail`.
 Live residue is now 99, and the adjusted word-assimilation target is 8 declarations across 7
 rules.
+The blocked affordance/selectable fragment pass then admitted `blocked` for the generic
+`cursor:not-allowed` cue, moved native disabled button cursors to `disabled:blocked`, and renamed
+the selectable group/minimum-selection hooks as `.sf-selectable-group` and `.sf-min-selected-1`.
+Live residue is now 98, and the adjusted word-assimilation target is 2 declarations across 2
+rules.
 The remaining target is recipe/local-identity review rather than immediate flat-word pressure.
 
 ========================================================================
@@ -286,10 +290,10 @@ CSS-backed local class selectors by source file (current CSS declarations, with 
 Ermine grammar and infrastructure/theme/substrate sheets filtered out):
 
 src/styles/fragments/semantic-fragments.css:
-is-sliding, seg-snap, sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-foreign-overlay-host, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-segmented-control-option, sf-segmented-pill, sf-shake-suppression
+is-selected, is-sliding, seg-snap, sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-foreign-overlay-host, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-min-selected-1, sf-segmented-control-option, sf-segmented-pill, sf-selectable-group, sf-shake-suppression
 
 src/styles/skin/controls.css:
-btn, is-selected, min-selected-1, radio-label, selectable-group
+radio-label
 
 Markup-only local class tokens (runtime class strings with no current local CSS rule here;
 Ermine grammar words filtered out):
@@ -519,9 +523,9 @@ Likely Ermine pressure:
   keycap recipe; callout-arrow recipe; segmented-control recipe; placeholder recipe;
   engine-scrollbar browser-adapter/post-processing layer.
 
-Summary shape after the recessed-fail validation treatment:
-  - Adjusted word-assimilation target: 8 declarations across 7 rules after excluding
-    semantic fragments and content-editor defaults from the conserved 99-declaration residue.
+Summary shape after the blocked affordance/selectable-fragment naming pass:
+  - Adjusted word-assimilation target: 2 declarations across 2 rules after excluding
+    semantic fragments and content-editor defaults from the conserved 98-declaration residue.
   - Semantic fragments are not failed assimilation; they are discovered sub-products of the
     conversion and are counted outside the Ermine word target by design.
   - Vendor-specific scrollbar pseudo-elements are browser-adapter hooks, not residual
@@ -656,7 +660,8 @@ Implementation artifacts:
   - `npm run adoption:check` now checks that these generated reports are current.
 
 Immediate next action: treat the remaining target as recipe-boundary review, not a flat-word
-absorption queue. Disabled lockout, minimum-selection guards, authored-content substrate,
-keycap, callout, segmented-pill, and generated-placeholder shapes should be promoted only if
-reuse proves they deserve sockets; engine-scrollbar pseudo-elements belong to a browser-adapter
-post-process. Otherwise they remain explicit Monky fragments or local control contracts.
+absorption queue. Radio-label selection suppression, authored-content substrate, keycap,
+callout, segmented-pill, selectable-group/min-selection, and generated-placeholder shapes should
+be promoted only if reuse proves they deserve sockets; engine-scrollbar pseudo-elements belong
+to a browser-adapter post-process. Otherwise they remain explicit Monky fragments or local
+control contracts.

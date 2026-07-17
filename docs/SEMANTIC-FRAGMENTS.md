@@ -74,6 +74,7 @@ the browser-adapter boundary is explicit.
 | engine scrollbar | `::-webkit-scrollbar*` inside the fragment file | browser-engine pseudo-elements adapt the standard scrollbar socket handoff |
 | generated placeholder | `.sf-generated-placeholder:empty::before` | generated content, placeholder colour, and pointer-event suppression form one empty-state affordance |
 | effect composition | `.sf-shake-suppression` | local tween suppression lets the admitted Ermine `shake` effect atom own the frame |
+| selectable group | `.sf-selectable-group`, `.sf-min-selected-1` | direct-child selection suppression, press feedback, and cardinality lock form one control fragment |
 | authored-content substrate | `.sf-authored-content` descendants | user-authored HTML defaults deliberately point away from utility grammar |
 | control-state recipe | disabled/selectable/min-selection/radio-label mechanics | behavior and invariants remain project control contracts after state skin migrates |
 
@@ -97,9 +98,9 @@ fragment up front. Real applications expose the fragments that matter.
 
 For assimilation reporting, semantic fragments should be excluded from the flat-word target
 while remaining visible in the conserved project-owned residue ledger. In Monky, the current
-fragment set accounts for 46 declarations across 18 rules; paired with the authored-content
-default substrate, it narrows the current word-assimilation target to 8 declarations across
-7 rules.
+fragment set accounts for 51 declarations across 22 rules; paired with the authored-content
+default substrate, it narrows the current word-assimilation target to 2 declarations across
+2 rules.
 
 ## Possible Future Shape
 

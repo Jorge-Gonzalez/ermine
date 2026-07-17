@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 99 |
+| reviewed residue declarations | 98 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 99 |
+| likely recipe/molecule | 98 |
 | likely local identity | 0 |
 
 ## By Rule Action
@@ -22,7 +22,7 @@ generalization, recipe, and local-identity pressure.
 | spacing-rhythm | 14 |
 | surface-line-elevation-cutout | 8 |
 | typography-content | 21 |
-| interaction-affordance-state | 6 |
+| interaction-affordance-state | 5 |
 | motion-transition | 3 |
 | reset-inheritance-neutralization | 4 |
 | component-private-drawing | 41 |
@@ -31,18 +31,16 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 99 |
+| recipe | 98 |
 
 ## By Current Ledger Code
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 21 |
-| state-mechanics | 1 |
+| recipe-identity | 23 |
 | parent-relational | 1 |
 | pseudo-mechanics | 23 |
 | scrollbar-followup | 8 |
-| opacity-followup | 2 |
 | user-content | 43 |
 
 ## Matched Playbook Recipes
@@ -56,11 +54,12 @@ of residue declarations.
 | pseudo-drawing-boundary | boundary | mechanical | 31 | Do not flatten pseudo drawing into ordinary element words. |
 | keycap-drawing-boundary | boundary | review | 15 | Group keycap face, bevel, shadow, and exact micro-padding as one drawing recipe. |
 | segmented-pill-boundary | boundary | review | 13 | Group active-pill pseudo geometry, custom coordinate variables, opacity, and snap/slide timing. |
-| control-state-recipe-boundary | boundary | review | 8 | Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors. |
 | engine-scrollbar-boundary | boundary | mechanical | 8 | Keep engine-specific pseudo selectors grouped by scrollbar part until a post-process adapter owns them. |
+| selectable-group-fragment-boundary | boundary | review | 5 | Group direct-child selection suppression, press feedback, and min-selection lock styling around the selectable group contract. |
 | callout-arrow-boundary | boundary | review | 4 | Group zero-size box, transparent borders, orientation colour, and attachment together. |
 | generated-placeholder-boundary | boundary | mechanical | 3 | Group generated content, placeholder colour, and pointer-events suppression. |
 | root-and-structural-reset-boundary | boundary | mechanical | 3 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
+| control-state-recipe-boundary | boundary | review | 2 | Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors. |
 | dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |
 | edge-attachment | conversion | review | 2 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | foreign-overlay-host-boundary | boundary | review | 2 | Group fixed host positioning and the configurable foreign-page z floor as one overlay-host fragment. |
@@ -76,7 +75,7 @@ of residue declarations.
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 8 | promote as molecule/recipe only if reused |
-| interaction-affordance-state | recipe | 6 | promote as molecule/recipe only if reused |
+| interaction-affordance-state | recipe | 5 | promote as molecule/recipe only if reused |
 | reset-inheritance-neutralization | recipe | 4 | promote as molecule/recipe only if reused |
 | motion-transition | recipe | 3 | promote as molecule/recipe only if reused |
 | attachment-edge-layer | recipe | 2 | promote as molecule/recipe only if reused |

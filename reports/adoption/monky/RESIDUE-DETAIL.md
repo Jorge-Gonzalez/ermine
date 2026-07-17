@@ -12,32 +12,30 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | source | commit |
 |---|---|
-| Ermine | `24eef502d00a129c9f171e2d0f5429152c75afec` |
-| monky | `e8d15071a37c19092f38ef4d74e877c681ae2127` |
+| Ermine | `f87be063e15466bf92cdbca0fab012d079e82bc5` |
+| monky | `49072318cef9303cfac29bf634c6d5c9404a2fae` |
 
 ## Summary
 
 - Current declarations: 498
-- Adopted/infrastructure declarations: 399
-- Project-owned residue declarations: 99
+- Adopted/infrastructure declarations: 400
+- Project-owned residue declarations: 98
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 21 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
+| `recipe-identity` | 23 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
-| `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
 
-## recipe-identity (21)
+## recipe-identity (23)
 
 a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 
-### src/styles/fragments/semantic-fragments.css (17)
+### src/styles/fragments/semantic-fragments.css (22)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -58,25 +56,17 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 | 170 | `.sf-keycap-raised:first-child` | `margin-left: 0` |
 | 196 | `.sf-segmented-control-option svg` | `vertical-align: middle` |
 | 205 | `.sf-shake-suppression` | `transition: none !important` |
-
-### src/styles/skin/controls.css (4)
-
-| line | selector | declaration |
-|---:|---|---|
-| 4 | `.radio-label` | `user-select: none` |
-| 10 | `.btn:disabled` | `cursor: not-allowed` |
-| 22 | `.selectable-group > *` | `user-select: none` |
-| 26 | `.selectable-group > *:active` | `transform: scale(0.98)` |
-
-## state-mechanics (1)
-
-JS/native state mechanics outside backed Ermine conditions
+| 210 | `.sf-selectable-group > *` | `user-select: none` |
+| 214 | `.sf-selectable-group > *:active` | `transform: scale(0.98)` |
+| 219 | `.sf-min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
+| 220 | `.sf-min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
+| 224 | `.sf-min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
 ### src/styles/skin/controls.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
-| 30 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
+| 4 | `.radio-label` | `user-select: none` |
 
 ## parent-relational (1)
 
@@ -128,25 +118,14 @@ engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15)
 
 | line | selector | declaration |
 |---:|---|---|
-| 210 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
-| 211 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
-| 215 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
-| 216 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
-| 220 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
-| 221 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
-| 222 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
-| 226 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
-
-## opacity-followup (2)
-
-opacity state treatment (named follow-up question)
-
-### src/styles/skin/controls.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 31 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
-| 35 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
+| 229 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
+| 230 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
+| 234 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
+| 235 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
+| 239 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
+| 240 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
+| 241 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
+| 245 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
 
 ## user-content (43)
 

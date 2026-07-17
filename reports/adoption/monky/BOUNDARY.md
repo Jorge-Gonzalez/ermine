@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `24eef502d00a129c9f171e2d0f5429152c75afec` |
-| monky | `e8d15071a37c19092f38ef4d74e877c681ae2127` |
+| Ermine | `f87be063e15466bf92cdbca0fab012d079e82bc5` |
+| monky | `49072318cef9303cfac29bf634c6d5c9404a2fae` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 99 |
+| project-owned residue | 98 |
 
 ## Product Identity
 
@@ -43,7 +43,7 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 
 | code | count | boundary |
 |---|---:|---|
-| `recipe-identity` | 21 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 23 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 
 ## Relational / Scale-Backed Follow-Up
 
@@ -71,7 +71,6 @@ shadowed-words gate holds every paragraph true or silent about every property.
 
 | code | count | boundary |
 |---|---:|---|
-| `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 
 ## User Content
@@ -91,4 +90,3 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 |---|---:|---|
 | `parent-relational` | 1 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
 | `scrollbar-followup` | 8 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
-| `opacity-followup` | 2 | named follow-up: opacity prominence treatment (no report filed yet) |

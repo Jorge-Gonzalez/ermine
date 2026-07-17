@@ -67,6 +67,7 @@ const SEMANTIC_FRAGMENT_RECIPE_IDS = new Set([
   "generated-placeholder-boundary",
   "foreign-overlay-host-boundary",
   "effect-composition-fragment-boundary",
+  "selectable-group-fragment-boundary",
 ]);
 
 function slash(path: string): string {
@@ -182,7 +183,7 @@ function isPrivateDrawingRule(group: RuleGroup): boolean {
     || group.selector.startsWith("::-webkit-scrollbar")
     || /\.macro-suggestions-arrow\b/.test(group.selector)
     || /\.macro-search-kbd\b/.test(group.selector)
-    || /\.sf-(?:callout-arrow|keycap|segmented-pill|generated-placeholder|foreign-overlay-host|shake-suppression)\b/.test(group.selector);
+    || /\.sf-(?:callout-arrow|keycap|segmented-pill|generated-placeholder|foreign-overlay-host|shake-suppression|selectable-group|min-selected-1)\b/.test(group.selector);
 }
 
 function smallNumberWord(value: number): string {
@@ -226,7 +227,7 @@ function familyReading(id: string): string {
     case "private drawing / engine pseudo":
       return "Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure.";
     case "control-state recipes":
-      return "Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards.";
+      return "Local control recipes such as radio-label selection suppression; named selectable-group fragments are visible in the fragment bucket.";
     case "exact attachment / geometry":
       return "Exact offsets, overlay layer numbers, dropdown placement, and component geometry values.";
     case "component-local surface/type fragments":
@@ -502,18 +503,19 @@ These are not plain state variants. They encode project decisions about what con
 allowed to do under disabled, selected, active, or constrained states.
 
 ${table(["rule cluster", "examples", "reading"], [
-    ["disabled buttons", "`.btn:disabled`, `.btn:disabled:hover`", "Local disabled recipe: cursor, opacity, and hover neutralization."],
-    ["selectable groups", "`.selectable-group > *`, `.selectable-group > .is-selected:hover`, `.selectable-group > *:active`", "Parent/child interaction recipe."],
-    ["minimum-selection guard", "`.min-selected-1 > .is-selected:only-of-type*`", "JS/state invariant expressed through selectors."],
+    ["native disabled buttons", "`disabled:blocked disabled:ground-subtle disabled:ink-soft disabled:alpha-60`", "The generic disabled cursor cue is now Ermine; remaining disabled policy would be recipe-specific."],
+    ["selectable group fragment", "`.sf-selectable-group > *`, `.sf-selectable-group > *:active`", "Parent/child interaction mechanics are a named semantic fragment."],
+    ["minimum-selection fragment", "`.sf-min-selected-1 > .is-selected:only-of-type*`", "JS/cardinality invariant expressed as a named semantic fragment."],
     ["radio labels", "`.radio-label`", "Local clickable label recipe."],
-    ["state icons", "`.seg-option svg`", "Local icon alignment inside a control option."],
+    ["state icons", "`.sf-segmented-control-option svg`", "Local icon alignment inside a control option fragment."],
   ])}
 
 Reading: Ermine already owns the reusable visual side when a backed state can carry skin
 (\`selected:\`, \`checked:\`, \`pressed:\`, \`expanded:\`, \`current:\`, and ordinary hover/focus
-skin). What remains here is different: behavior and invariants. Disabled hover neutralization,
-minimum-selection lockout, parent/child selectable-group mechanics, clickable-label affordance,
-and local control icon alignment are project control contracts. They are good recipe boundary
+skin), and ADR-0063 adds the generic \`blocked\` cursor cue. What remains here is different:
+behavior, structural child selectors, and invariants. Minimum-selection lockout,
+parent/child selectable-group mechanics, clickable-label selection suppression, and local control
+icon alignment are project control contracts or semantic fragments. They are good recipe boundary
 evidence and poor flat-word candidates.`;
 }
 

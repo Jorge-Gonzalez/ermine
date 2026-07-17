@@ -2,17 +2,17 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "24eef502d00a129c9f171e2d0f5429152c75afec",
-    "projectCommit": "e8d15071a37c19092f38ef4d74e877c681ae2127"
+    "ermineCommit": "f87be063e15466bf92cdbca0fab012d079e82bc5",
+    "projectCommit": "49072318cef9303cfac29bf634c6d5c9404a2fae"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 99,
+    "reviewedDeclarations": 98,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 99,
+    "likelyRecipe": 98,
     "likelyLocal": 0,
     "byRuleAction": {
       "already-admitted": 0,
@@ -22,7 +22,7 @@
       "alignment-layout": 0,
       "surface-line-elevation-cutout": 8,
       "typography-content": 21,
-      "interaction-affordance-state": 6,
+      "interaction-affordance-state": 5,
       "motion-transition": 3,
       "reset-inheritance-neutralization": 4,
       "component-private-drawing": 41
@@ -32,7 +32,7 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 99,
+      "recipe": 98,
       "local-identity": 0
     },
     "byCurrentCode": {
@@ -41,12 +41,12 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 21,
+      "recipe-identity": 23,
       "rule-mechanics": 0,
       "brand-identity": 0,
       "affordance-mechanics": 0,
       "component-contract": 0,
-      "state-mechanics": 1,
+      "state-mechanics": 0,
       "state-review": 0,
       "focus-state": 0,
       "aria-current": 0,
@@ -54,7 +54,7 @@
       "pseudo-mechanics": 23,
       "scrollbar-followup": 8,
       "motion-followup": 0,
-      "opacity-followup": 2,
+      "opacity-followup": 0,
       "elevation-followup": 0,
       "reset-absence": 0,
       "user-content": 43,
@@ -73,7 +73,8 @@
       "rule-edge-facets": 2,
       "side-corner-facets": 0,
       "state-backed-prefix": 1,
-      "control-state-recipe-boundary": 8,
+      "control-state-recipe-boundary": 2,
+      "selectable-group-fragment-boundary": 5,
       "root-and-structural-reset-boundary": 3,
       "keycap-drawing-boundary": 15,
       "callout-arrow-boundary": 4,
@@ -1559,9 +1560,94 @@
       ]
     },
     {
-      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::width::1",
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-selectable-group > *::user-select::1",
       "file": "src/styles/fragments/semantic-fragments.css",
       "line": 210,
+      "selector": ".sf-selectable-group > *",
+      "property": "user-select",
+      "value": "none",
+      "currentCode": "recipe-identity",
+      "ruleAction": "reset-inheritance-neutralization",
+      "latentOutcome": "recipe",
+      "function": "removes defaults or forces inheritance so authored words can take over",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "selectable-group-fragment-boundary"
+      ]
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-selectable-group > *:active::transform::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 214,
+      "selector": ".sf-selectable-group > *:active",
+      "property": "transform",
+      "value": "scale(0.98)",
+      "currentCode": "recipe-identity",
+      "ruleAction": "interaction-affordance-state",
+      "latentOutcome": "recipe",
+      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "selectable-group-fragment-boundary"
+      ]
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-min-selected-1 > .is-selected:only-of-type::cursor::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 219,
+      "selector": ".sf-min-selected-1 > .is-selected:only-of-type",
+      "property": "cursor",
+      "value": "not-allowed",
+      "currentCode": "recipe-identity",
+      "ruleAction": "interaction-affordance-state",
+      "latentOutcome": "recipe",
+      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "selectable-group-fragment-boundary"
+      ]
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-min-selected-1 > .is-selected:only-of-type::opacity::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 220,
+      "selector": ".sf-min-selected-1 > .is-selected:only-of-type",
+      "property": "opacity",
+      "value": "0.95",
+      "currentCode": "recipe-identity",
+      "ruleAction": "interaction-affordance-state",
+      "latentOutcome": "recipe",
+      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "selectable-group-fragment-boundary"
+      ]
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 224,
+      "selector": ".sf-min-selected-1 > .is-selected:only-of-type:hover",
+      "property": "opacity",
+      "value": "0.95",
+      "currentCode": "recipe-identity",
+      "ruleAction": "interaction-affordance-state",
+      "latentOutcome": "recipe",
+      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "selectable-group-fragment-boundary"
+      ]
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::width::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 229,
       "selector": "::-webkit-scrollbar",
       "property": "width",
       "value": "var(--spacing-md) !important",
@@ -1579,7 +1665,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::height::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 211,
+      "line": 230,
       "selector": "::-webkit-scrollbar",
       "property": "height",
       "value": "var(--spacing-md) !important",
@@ -1597,7 +1683,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 215,
+      "line": 234,
       "selector": "::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--tone-dim) !important",
@@ -1615,7 +1701,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 216,
+      "line": 235,
       "selector": "::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -1633,7 +1719,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 220,
+      "line": 239,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--tone) !important",
@@ -1651,7 +1737,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 221,
+      "line": 240,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -1669,7 +1755,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 222,
+      "line": 241,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--tone-dim) !important",
@@ -1687,7 +1773,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb:hover::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 226,
+      "line": 245,
       "selector": "::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--accent-dim) !important",
@@ -1713,108 +1799,6 @@
       "ruleAction": "reset-inheritance-neutralization",
       "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket",
-      "playbookRecipes": [
-        "control-state-recipe-boundary"
-      ]
-    },
-    {
-      "id": "src/styles/skin/controls.css::.btn:disabled::cursor::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 10,
-      "selector": ".btn:disabled",
-      "property": "cursor",
-      "value": "not-allowed",
-      "currentCode": "recipe-identity",
-      "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "recipe",
-      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket",
-      "playbookRecipes": [
-        "control-state-recipe-boundary"
-      ]
-    },
-    {
-      "id": "src/styles/skin/controls.css::.selectable-group > *::user-select::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 22,
-      "selector": ".selectable-group > *",
-      "property": "user-select",
-      "value": "none",
-      "currentCode": "recipe-identity",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "recipe",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket",
-      "playbookRecipes": [
-        "control-state-recipe-boundary"
-      ]
-    },
-    {
-      "id": "src/styles/skin/controls.css::.selectable-group > *:active::transform::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 26,
-      "selector": ".selectable-group > *:active",
-      "property": "transform",
-      "value": "scale(0.98)",
-      "currentCode": "recipe-identity",
-      "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "recipe",
-      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket",
-      "playbookRecipes": [
-        "control-state-recipe-boundary"
-      ]
-    },
-    {
-      "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 30,
-      "selector": ".min-selected-1 > .is-selected:only-of-type",
-      "property": "cursor",
-      "value": "not-allowed",
-      "currentCode": "state-mechanics",
-      "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "recipe",
-      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket",
-      "playbookRecipes": [
-        "control-state-recipe-boundary"
-      ]
-    },
-    {
-      "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 31,
-      "selector": ".min-selected-1 > .is-selected:only-of-type",
-      "property": "opacity",
-      "value": "0.95",
-      "currentCode": "opacity-followup",
-      "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "recipe",
-      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket",
-      "playbookRecipes": [
-        "control-state-recipe-boundary"
-      ]
-    },
-    {
-      "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 35,
-      "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
-      "property": "opacity",
-      "value": "0.95",
-      "currentCode": "opacity-followup",
-      "ruleAction": "interaction-affordance-state",
-      "latentOutcome": "recipe",
-      "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [

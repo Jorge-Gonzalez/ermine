@@ -116,6 +116,12 @@ function isControlStateRecipe(record: CurrentRecord): boolean {
     || /\.(?:seg-option|sf-segmented-control-option)\s+svg\b/.test(record.selector);
 }
 
+function isSelectableGroupFragment(record: CurrentRecord): boolean {
+  return /\.sf-(?:selectable-group|min-selected-1)\b/.test(record.selector)
+    || /\.selectable-group\b/.test(record.selector)
+    || /\.min-selected-1\b/.test(record.selector);
+}
+
 function isKeycapDrawing(record: CurrentRecord): boolean {
   return /\.sf-keycap\b/.test(record.selector)
     || /\.macro-(?:search|suggestions)-kbd\b/.test(record.selector);
@@ -301,6 +307,19 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     boundary: "Do not coin words for JS invariants, structural guards, hover neutralization policies, or parent/child control contracts.",
     evidence: ["Monky control-state residue", "R-SKIN-10 recipe boundary", "reports/adoption/monky/RULE-RESIDUE-ANALYSIS.md"],
     match: isControlStateRecipe,
+  },
+  {
+    id: "selectable-group-fragment-boundary",
+    title: "Selectable group fragment boundary",
+    kind: "boundary",
+    confidence: "review",
+    decision: "Selectable-group mechanics and minimum-selection guards are control fragments, not flat Ermine words.",
+    before: ".sf-min-selected-1 > .is-selected:only-of-type { cursor: not-allowed; opacity: 0.95; }",
+    after: "keep as semantic fragment unless a reusable control molecule is admitted",
+    conversion: "Group direct-child selection suppression, press feedback, and min-selection lock styling around the selectable group contract.",
+    boundary: "Ermine owns generic cursor cues and state skin; the fragment owns structural child selectors and cardinality invariants.",
+    evidence: ["Monky SelectableGroup", "R-SKIN-10 recipe boundary", "ADR-0057 semantic fragments"],
+    match: isSelectableGroupFragment,
   },
   {
     id: "root-and-structural-reset-boundary",
