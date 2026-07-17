@@ -193,49 +193,45 @@ flex-end; }` rules. The targeted tween pass removed the local property-targeted
 transition declarations from inputs, search rows, popup buttons, content-editor controls,
 suggestion rows, and segmented options. The positioned edge-attachment pass removed local
 command-dropdown and suggestion-arrow edge placement declarations. The side-corner pass removed
-local macro command/error/dropdown radius declarations. The token names below otherwise persist.
+local macro command/error/dropdown radius declarations. The inventory below is the current live
+non-Ermine class surface after the popup hook dissolution; comment-only sheets and retired hooks
+are no longer listed as CSS-backed style owners.
 
-CSS-backed local class selectors by source file:
-
-src/content/overlays/deleteConfirm/deleteConfirmStyles.css:
-delete-confirm, delete-confirm-option, macro-suggestions-command-item, macro-suggestions-container
+CSS-backed local class selectors by source file (current CSS declarations, with generated
+Ermine grammar and infrastructure/theme/substrate sheets filtered out):
 
 src/content/overlays/modal/modalStyles.css:
-modal-backdrop, modal-dialog, modal-nav-branding, modal-nav-container, modal-nav-icon, modal-nav-label, modal-nav-tab
+modal-backdrop, modal-dialog
 
 src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:
-macro-suggestions-command-item, macro-suggestions-container, macro-suggestions-footer
+macro-suggestions-command-item, macro-suggestions-container
 
 src/content/overlays/views/macroEditor/editorViewStyles.css:
-command-suggestions, content-editor, content-editor-body, editor-command, editor-command-error, editor-content, editor-toast, input-dropdown-open
+content-editor-body, editor-content, editor-toast
 
 src/content/overlays/views/search/searchViewStyles.css:
-macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-results, macro-search-shortcut, modal-command-description, modal-command-item
-
-src/content/overlays/views/settings/settingsViewStyles.css:
-settings-body, settings-divider, settings-import-status, settings-prefix-btn, settings-section-label
-
-src/options/options.css:
-prefix-cell
+macro-search-item-edit, macro-search-item-text
 
 src/styles/components/content-editor.css:
-ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep
+ce-style-dropdown, ce-style-trigger, ce-toolbar-sep
 
 src/styles/fragments/semantic-fragments.css:
-sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-segmented-control-option, sf-segmented-pill
+is-sliding, seg-snap, sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-segmented-control-option, sf-segmented-pill
 
 src/styles/entries/pages.css:
 page-title
 
 src/styles/skin/controls.css:
-btn, btn-success, checkbox, editor-content, input-error, is-selected, min-selected-1, radio, radio-label, selectable-group, shake
+btn, btn-success, input-error, is-selected, min-selected-1, radio-label, selectable-group
 
 Markup-only local class tokens (runtime class strings with no current local CSS rule here;
 Ermine grammar words filtered out):
-action-toolbar, alert, alert-error, alert-success, button-group, button-label, cancel, card, ce-link-field, ce-style-menu, ce-style-option-label, ce-toolbar, clear-button, command-input, command-input-container, command-input-error, command-input-error-message, command-input-hint, command-input-label, command-suggestion-actions, command-suggestion-text, command-suggestion-wrapper, command-suggestions-label, confirm, delete, delete-confirm-command, delete-confirm-danger, delete-confirm-message, divider, editor-bottombar, editor-form, editor-sensitive, editor-title, editor-topbar, editor-topbar-lead, empty, empty-state, enabled, focused, fuzzy-search-field, icon-text, import-status--error, import-status--ok, list, list-item, macro-editor-view, macro-search-count, macro-search-empty, macro-search-footer, macro-search-input-container, macro-search-view, macro-suggestions-commands-list, macro-suggestions-text-preview, modal-command-hint, modal-command-name, modal-content, mode-choice, mode-row, multi-select-list, page-container, panel-button, search-field, search-focused-item, search-input, search-input-wrapper, search-spinner, searchable-list-container, searchable-list-search, searchable-list-toolbar, searchable-list-view, section, section-description, section-title, settings-appearance-controls, settings-group, settings-row, settings-row-label, settings-rows, settings-view, toggle-field, toggle-field-description, toggle-field-input, toggle-field-label, toggle-field-text, toolbar, toolbar-button, validation-error
+action-toolbar, alert, alert-error, alert-success, bottom, btn-link, btn-link-danger, button-group, button-label, cancel, card, ce-link-field, ce-link-input, ce-style-caret, ce-style-menu, ce-style-option, ce-style-option-label, ce-style-option-short, ce-toolbar, ce-toolbar-btn, ce-toolbar-icon, checkbox, clear-button, command-input, command-input-container, command-input-error, command-input-error-message, command-input-hint, command-input-label, command-suggestion-action, command-suggestion-actions, command-suggestion-command, command-suggestion-item, command-suggestion-text, command-suggestion-wrapper, command-suggestions, command-suggestions-label, confirm, content-editor, dark, delete, delete-confirm, delete-confirm-command, delete-confirm-danger, delete-confirm-message, delete-confirm-option, divider, editor-bottombar, editor-command, editor-command-error, editor-form, editor-popout, editor-sensitive, editor-title, editor-topbar, editor-topbar-lead, empty, empty-state, enabled, focused, fuzzy-search-field, icon-text, import-status--error, import-status--ok, input, light, list, list-item, macro-editor-view, macro-search-count, macro-search-empty, macro-search-footer, macro-search-input, macro-search-input-container, macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-kbd, macro-search-results, macro-search-shortcut, macro-search-view, macro-suggestions-arrow, macro-suggestions-commands-list, macro-suggestions-footer, macro-suggestions-kbd, macro-suggestions-text-preview, modal-command-description, modal-command-hint, modal-command-item, modal-command-name, modal-content, modal-nav-branding, modal-nav-container, modal-nav-icon, modal-nav-label, modal-nav-tab, mode-choice, mode-row, multi-select-list, page-container, panel-button, radio, search-field, search-focused-item, search-input, search-input-wrapper, search-spinner, searchable-list-container, searchable-list-search, searchable-list-toolbar, searchable-list-view, section, section-description, section-title, seg-control, seg-option, settings-appearance-controls, settings-body, settings-divider, settings-group, settings-import-status, settings-row, settings-row-label, settings-rows, settings-section-label, settings-view, show, toggle-field, toggle-field-description, toggle-field-input, toggle-field-label, toggle-field-text, toolbar, toolbar-button, top, validation-error
 
 Non-class local selectors and mechanics still in the ledger/review boundary:
-body, :host, #macro-suggestions, #macro-suggestions *, button/input/textarea/select inheritance rules, input number-spin pseudo-elements, content-editor rich-text descendants, scrollbar pseudo-elements, and the local `.shake { transition: none !important }` suppression. The `shake` keyframes now ship from generated Ermine CSS; unapplied `flash`/`pulse` are not current CSS-backed residue.
+body, :host, #macro-suggestions, content-editor rich-text descendants, scrollbar pseudo-elements,
+and the local `.shake { transition: none !important }` suppression. The `shake` keyframes now
+ship from generated Ermine CSS; unapplied `flash`/`pulse` are not current CSS-backed residue.
 
 ========================================================================
 PART C — RULE-ACTION CLASSIFICATION (what the declarations are doing)
