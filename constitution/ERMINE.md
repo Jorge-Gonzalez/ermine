@@ -1012,6 +1012,17 @@ label/eyebrow type role — a treatment, not a size or weight — and reads its 
 
 → rationale: RAT:R-SKIN-19 · history: ADR-0037 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
+## R-SKIN-20 — Text decoration treatment
+
+Text line decoration is a skin treatment, not a link recipe. `underlined` owns
+`text-decoration: underline`, `struck` owns `text-decoration: line-through`, and `undecorated`
+owns `text-decoration: none`. The words name the reusable decoration state of text; they do not
+decide when a component should look link-like. A link-button recipe can still choose
+`undecorated hover:underlined`, while user-content descendants such as `u`, `s`, and `a` stay in
+their prose/editor molecule unless the authored element itself can carry words.
+
+→ rationale: RAT:R-SKIN-20 · history: ADR-0056 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
 ## R-SCALE-01 — Generator-defined scales
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.

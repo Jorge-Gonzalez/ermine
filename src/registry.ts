@@ -919,6 +919,19 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight", "font-family", "line-height"],
   },
   {
+    // text-decoration: line decoration treatment (R-SKIN-20). This is a text
+    // treatment, not a link recipe: link recipes may still decide when decoration
+    // appears, but the underline/strike/absence itself is a reusable property choice.
+    axis: "text-decoration",
+    sibling: "skin", role: "self", signature: "set-with-exclusivity",
+    vocabulary: "closed", regime: "free",
+    valueSpace: ["undecorated", "underlined", "struck"],
+    tokens: [{ pattern: /^(undecorated|underlined|struck)$/, shape: "<text-decoration>" }],
+    default: null,
+    controls: ["text-decoration"],
+    mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight", "font-family", "line-height", "color"],
+  },
+  {
     // elevation: the cast-shadow treatment (R-SKIN-09). Owns box-shadow; the word reads
     // its like-named socket with an Ermine default geometry composed on the standalone
     // `shadow` colour socket, so a theme owns the numbers. `elevated` admitted;

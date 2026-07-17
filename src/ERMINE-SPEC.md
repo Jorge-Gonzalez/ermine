@@ -135,9 +135,9 @@ Field rules:
 <!-- BEGIN GENERATED: registry (do not edit between markers) -->
 > Generated from src/registry.ts by src/generate-spec.ts — do not edit.
 
-## 2. The axis registry (56 axes)  ‹SHARED›
+## 2. The axis registry (57 axes)  ‹SHARED›
 
-layout=21 · layering=4 · motion=4 · state=9 · skin=18. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
+layout=21 · layering=4 · motion=4 · state=9 · skin=19. Every fact below is rendered directly from `REGISTRY`, `SCALES`, or `ENVIRONMENT_SCOPES`.
 
 ### Registry scales
 
@@ -867,7 +867,7 @@ Tokens:
 |---|---|---|---|
 | `<relational-state>` | `/^(active-descendant)$/` | — | no |
 
-### 2.5 SKIN (18 axes)
+### 2.5 SKIN (19 axes)
 
 #### skin-ground
 
@@ -1009,6 +1009,20 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `text-<alignment>` | `/^text-(start\|center)$/` | — | no |
+
+#### text-decoration
+
+- role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
+- value space: `undecorated` `underlined` `struck`
+- default: none
+- controls: `text-decoration`
+- must never touch: `display` `gap` `flex` `margin` `font-size` `font-weight` `font-family` `line-height` `color`
+
+Tokens:
+
+| Shape | Pattern | Value domain | Fallback |
+|---|---|---|---|
+| `<text-decoration>` | `/^(undecorated\|underlined\|struck)$/` | — | no |
 
 #### elevation
 

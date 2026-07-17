@@ -105,6 +105,8 @@ export interface ErminePlainProps {
   fontFamily?: "font-mono";
   /** axis `text-align` */
   textAlign?: "text-start" | "text-center";
+  /** axis `text-decoration` */
+  textDecoration?: "undecorated" | "underlined" | "struck";
   /** axis `elevation` */
   elevation?: "elevated";
   /** axis `affordance` */
@@ -290,6 +292,7 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "fontWeight", axis: "font-weight", kind: "word" },
   { prop: "fontFamily", axis: "font-family", kind: "word" },
   { prop: "textAlign", axis: "text-align", kind: "word" },
+  { prop: "textDecoration", axis: "text-decoration", kind: "word" },
   { prop: "elevation", axis: "elevation", kind: "word" },
   { prop: "affordance", axis: "affordance", kind: "word" },
   { prop: "concealment", axis: "concealment", kind: "word" },

@@ -147,6 +147,13 @@ test("text alignment facet emits logical values (R-SKIN-14)", () => {
   assert.match(toCss("text-start"), /\.text-start \{[^}]*text-align: start;/s);
 });
 
+test("text decoration treatment emits underline, strike, and absence (R-SKIN-20)", () => {
+  const css = toCss("undecorated hover:underlined struck");
+  assert.match(css, /\.undecorated \{[^}]*text-decoration: none;/s);
+  assert.match(css, /\.hover\\:underlined:hover \{[^}]*text-decoration: underline;/s);
+  assert.match(css, /\.struck \{[^}]*text-decoration: line-through;/s);
+});
+
 test("focus:ring restyles the platform outline under the focus condition (R-SKIN-13)", () => {
   const css = toCss("focus:ring");
   assert.match(css, /\.focus\\:ring:focus \{[^}]*outline: var\(--ring, 2px solid var\(--ground-defined\)\);[^}]*outline-offset: var\(--ring-offset, 0px\);/s);

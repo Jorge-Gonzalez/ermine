@@ -198,6 +198,19 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
+  // --- text-decoration: underline/strike/absence treatment (R-SKIN-20). ---
+  "text-decoration": {
+    effectKind: "css",
+    plain: (word) => {
+      switch (word) {
+        case "undecorated": return { "text-decoration": "none" };
+        case "underlined": return { "text-decoration": "underline" };
+        case "struck": return { "text-decoration": "line-through" };
+        default: return null;
+      }
+    },
+  },
+
   // --- affordance: the invitation to press (R-SKIN-17). ---
   affordance: {
     effectKind: "css",
@@ -879,6 +892,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "font-weight": SKIN_PLANE.scales.weight.map((s) => `font-${s}`),
   "font-family": ["font-mono"],
   "text-align": ["text-start", "text-center"],
+  "text-decoration": ["undecorated", "underlined", "struck"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   truncation: ["truncate", "clamp-2", "clamp-3", "text-nowrap", "text-pre-wrap", "text-wrap"],
   affordance: ["pressable"],

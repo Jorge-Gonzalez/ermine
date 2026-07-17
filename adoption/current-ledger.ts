@@ -276,7 +276,7 @@ interface WordMatch {
 
 export type InverseErmineMap = Map<string, WordMatch[]>;
 
-const PREFIXABLE_AXES = new Set(["skin-ground", "skin-ink", "skin-rule"]);
+const PREFIXABLE_AXES = new Set(["skin-ground", "skin-ink", "skin-rule", "text-decoration"]);
 const CONDITION_PREFIXES = ["hover", "focus", "selected", "checked", "current"];
 
 function candidateWords(): string[] {

@@ -13,10 +13,10 @@ Real-property FAMILY coverage (the ceiling on what an ingestor could express):
 
 | corpus | coverage | theme custom-props |
 |---|---|---|
-| swagger-ui | 93.5% | 0.0% |
+| swagger-ui | 94.1% | 0.0% |
 
 Declarations: 3989 total; 3989 real properties; 0 theme custom properties.
-Top uncovered families: order (40), vertical-align (27), line-height (24), text-decoration (23), -webkit-text-decoration (21), clear (17), float (14), content (13), text-shadow (9), fill (9), clip (8), -webkit-appearance (7).
+Top uncovered families: order (40), vertical-align (27), line-height (24), -webkit-text-decoration (21), clear (17), float (14), content (13), text-shadow (9), fill (9), clip (8), -webkit-appearance (7), word-break (7).
 
 ## Layer 2 — value distribution (do real values snap to a small scale?)
 

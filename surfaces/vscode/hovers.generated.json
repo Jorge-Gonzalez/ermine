@@ -2529,6 +2529,21 @@
       "meaning": "text-<alignment>",
       "reference": "src/ERMINE-SPEC.md §2.5 — text-align"
     },
+    "undecorated": {
+      "axis": "text-decoration",
+      "meaning": "<text-decoration>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — text-decoration"
+    },
+    "underlined": {
+      "axis": "text-decoration",
+      "meaning": "<text-decoration>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — text-decoration"
+    },
+    "struck": {
+      "axis": "text-decoration",
+      "meaning": "<text-decoration>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — text-decoration"
+    },
     "elevated": {
       "axis": "elevation",
       "meaning": "<elevation>",

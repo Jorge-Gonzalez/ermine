@@ -773,6 +773,14 @@ Bundled as one treatment (text-transform + tracking) rather than two raw declara
 tracking as a theme socket. Evidence: Monky's settings-section-label. Named for the role, not the
 mechanism (R-SKIN-01).
 
+## RAT:R-SKIN-20
+Source: ADR-0056. Monky's button-link recipes and editor content both exposed line-decoration
+pressure. The reusable part is smaller than a link recipe: underline, strike-through, and absence
+are property-level text treatments that can be state-scoped like other skin words. The recipe
+boundary remains intact because these words do not choose link semantics, colour, cursor, spacing,
+or disabled behaviour. User-content descendant selectors stay a prose/editor molecule boundary;
+only authored elements that can wear the words migrate.
+
 ## RAT:R-SCALE-01
 Source: pre-split `constitution/ERMINE.md` lines 1653–1672 and 1693–1702.
 

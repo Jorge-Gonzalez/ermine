@@ -3436,6 +3436,30 @@
       ]
     },
     {
+      "axis": "text-decoration",
+      "reference": "src/ERMINE-SPEC.md §2.5 — text-decoration",
+      "items": [
+        {
+          "label": "undecorated",
+          "insertText": "undecorated",
+          "kind": "word",
+          "meaning": "<text-decoration>"
+        },
+        {
+          "label": "underlined",
+          "insertText": "underlined",
+          "kind": "word",
+          "meaning": "<text-decoration>"
+        },
+        {
+          "label": "struck",
+          "insertText": "struck",
+          "kind": "word",
+          "meaning": "<text-decoration>"
+        }
+      ]
+    },
+    {
       "axis": "elevation",
       "reference": "src/ERMINE-SPEC.md §2.5 — elevation",
       "items": [
