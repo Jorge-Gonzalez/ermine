@@ -20,8 +20,8 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the macro editor residue dissolution is
-Ermine ed12f35 / Monky fdedcfd:
+were migrated). Current live ledger after the unused CSS file cleanup is
+Ermine ed12f35 / Monky 4925c47:
 
   current declarations:                 510
   adopted/infrastructure declarations:  396
@@ -196,6 +196,9 @@ The macro editor residue pass then moved the nested editor body fill to `elastic
 mapped the toast shadow to `elevated-soft`, snapped its bottom clearance to the closest existing
 spacing step (`inset-bottom-3xl`), and retired `editorViewStyles.css`. Live residue is now 114
 and the adjusted word-assimilation target is 24 declarations across 17 rules.
+The unused CSS cleanup then deleted the remaining comment-only modal, search, settings,
+delete-confirm, and options stylesheets. Counts stayed fixed because those files no longer carried
+live declarations.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -211,6 +214,11 @@ historical ledger. Retired sheets that no longer exist in current Monky:
   - src/styles/grammar/legacy.css
   - src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css
   - src/content/overlays/views/macroEditor/editorViewStyles.css
+  - src/content/overlays/modal/modalStyles.css
+  - src/content/overlays/views/search/searchViewStyles.css
+  - src/content/overlays/views/settings/settingsViewStyles.css
+  - src/content/overlays/deleteConfirm/deleteConfirmStyles.css
+  - src/options/options.css
 
 Note: the fill/clamp/center-x/center-y/max-width-2xl/centered+flush-block/grid-fit-sm
 migrations removed the CSS rules for macro-editor-view, macro-search-view, settings-view
@@ -238,8 +246,9 @@ padding, and duplicate host font/leading. The foreign-overlay-host pass then ret
 `sf-foreign-overlay-host`. The modal backdrop reuse then removed the remaining
 `modalStyles.css` z-index rule by putting the backdrop on the same fragment. The macro editor
 residue pass then retired `editorViewStyles.css` by moving its body flex, toast clearance, and
-toast shadow onto Ermine words. The inventory below is the current live non-Ermine class surface
-after the macro editor residue dissolution;
+toast shadow onto Ermine words. The unused CSS cleanup then removed the comment-only modal,
+search, settings, delete-confirm, and options stylesheets. The inventory below is the current live
+non-Ermine class surface after the unused CSS file cleanup;
 comment-only sheets and retired hooks
 are no longer listed as CSS-backed style owners.
 

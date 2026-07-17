@@ -91,7 +91,7 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `fdedcfd`: 510 declarations, 396
+The current generated ledger is at Monky `4925c47`: 510 declarations, 396
 adopted/infrastructure declarations, 114 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
@@ -128,7 +128,7 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate held the list at zero before the first post-adoption dimension endpoint
-pass. The current ledger at Monky `fdedcfd` reports 510
+pass. The current ledger at Monky `4925c47` reports 510
 current declarations, 396 adopted/infrastructure declarations, 114 project-owned residue,
 `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
@@ -241,6 +241,7 @@ scrim backdrop, offset attachment, positioned inset cleanup, suggestions surface
 and the foreign overlay host fragment
 plus modal backdrop fragment reuse
 plus macro editor residue dissolution
+plus unused CSS file cleanup
 moved the live
 ledger to
 510 current declarations,

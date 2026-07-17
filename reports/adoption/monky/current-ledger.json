@@ -3,7 +3,7 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "fdedcfd3ba2e159efd677473801c32bb5d5e282c"
+    "projectCommit": "4925c478cb3fff2409f678494c4f76edca24fcbc"
   },
   "summary": {
     "totalDeclarations": 510,
