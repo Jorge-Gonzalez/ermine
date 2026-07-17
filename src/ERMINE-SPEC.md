@@ -497,19 +497,21 @@ Tokens:
 #### positioned-relation
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `center-x` `center-y` `attach-below` `attach-above` `stretch-inline`
+- value space: `center-x` `center-y` `attach-below` `attach-above` `attach-below-xs` `attach-above-xs` `attach-below-sm` `attach-above-sm` `attach-below-md` `attach-above-md` `attach-below-lg` `attach-above-lg` `attach-below-xl` `attach-above-xl` `attach-below-2xl` `attach-above-2xl` `attach-below-3xl` `attach-above-3xl` `attach-left` `attach-right` `stretch-inline`
 - default: none
 - controls: `left` `right` `top` `bottom` `transform`
 - must never touch: `position` `inset` `margin` `inline-size` `block-size` `width` `height`
-- sub-dials: `inline-center` `block-center` `block-after-edge` `block-before-edge` `inline-edges`
+- sub-dials: `inline-center` `block-center` `block-after-edge` `block-before-edge` `left-edge` `right-edge` `inline-edges`
 - dial resolver: declared in `registry.ts`
-- notes: positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.
+- notes: positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.
 
 Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<positioned-relation>` | `/^(center-(x\|y)\|attach-(below\|above)\|stretch-inline)$/` | — | no |
+| `<positioned-relation>` | `/^(center-(x\|y)\|attach-(below\|above\|left\|right)\|stretch-inline)$/` | — | no |
+| `attach-<block-edge>-<spacing>` | `/^attach-(below\|above)-(xs\|sm\|md\|lg\|xl\|2xl\|3xl)$/` | `spacing-step` | no |
+| `attach-<block-edge>-<bad>` | `/^attach-(below\|above)-.+$/` | `spacing-step` | yes |
 
 #### viewport-fill
 

@@ -533,17 +533,29 @@ export const LAYOUT: AxisRecord[] = [
     // positioned-relation: a positioned element relates one or more physical edges/centers to
     // its containing block or anchor (R-SIZE-06/R-SIZE-10). Footprints keep centered transforms
     // exclusive while allowing disjoint edge attachments such as `attach-below stretch-inline`.
+    // Offset attachment (`attach-below-xs`) is scale-backed: the edge relation remains 100%,
+    // and the gap rides the spacing scale.
     axis: "positioned-relation",
     sibling: "layout", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["center-x", "center-y", "attach-below", "attach-above", "stretch-inline"],
-    tokens: [{ pattern: /^(center-(x|y)|attach-(below|above)|stretch-inline)$/, shape: "<positioned-relation>" }],
-    subDials: ["inline-center", "block-center", "block-after-edge", "block-before-edge", "inline-edges"],
+    valueSpace: [
+      "center-x", "center-y", "attach-below", "attach-above",
+      ...SCALES.spacing.flatMap((step) => [`attach-below-${step}`, `attach-above-${step}`]),
+      "attach-left", "attach-right", "stretch-inline",
+    ],
+    tokens: [
+      { pattern: /^(center-(x|y)|attach-(below|above|left|right)|stretch-inline)$/, shape: "<positioned-relation>" },
+      { pattern: new RegExp(`^attach-(below|above)-(${SCALES.spacing.join("|")})$`), shape: "attach-<block-edge>-<spacing>", valueDomain: "spacing-step" },
+      { pattern: /^attach-(below|above)-.+$/, shape: "attach-<block-edge>-<bad>", valueDomain: "spacing-step", fallback: true },
+    ],
+    subDials: ["inline-center", "block-center", "block-after-edge", "block-before-edge", "left-edge", "right-edge", "inline-edges"],
     dialOf: (word: string) => {
       if (word === "center-x") return "inline-center";
       if (word === "center-y") return "block-center";
-      if (word === "attach-below") return "block-after-edge";
-      if (word === "attach-above") return "block-before-edge";
+      if (word === "attach-below" || word.startsWith("attach-below-")) return "block-after-edge";
+      if (word === "attach-above" || word.startsWith("attach-above-")) return "block-before-edge";
+      if (word === "attach-left") return "left-edge";
+      if (word === "attach-right") return "right-edge";
       if (word === "stretch-inline") return "inline-edges";
       return null;
     },
@@ -552,13 +564,15 @@ export const LAYOUT: AxisRecord[] = [
       if (dial === "block-center") return ["top", "transform"];
       if (dial === "block-after-edge") return ["top"];
       if (dial === "block-before-edge") return ["bottom"];
+      if (dial === "left-edge") return ["left"];
+      if (dial === "right-edge") return ["right"];
       if (dial === "inline-edges") return ["left", "right"];
       return [dial];
     },
     default: null,
     controls: ["left", "right", "top", "bottom", "transform"],
     mustNeverTouch: ["position", "inset", "margin", "inline-size", "block-size", "width", "height"],
-    notes: "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
+    notes: "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns.",
   },
   {
     // viewport-fill: the full-height page shell — at least a viewport tall, growing with content

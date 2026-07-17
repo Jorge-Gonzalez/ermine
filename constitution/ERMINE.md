@@ -521,14 +521,16 @@ and exact flex basis.
 ## R-SIZE-10 — Positioned Edge Attachment
 
 A positioned element may attach one of its edges to an anchor edge: `attach-below` sets
-`top: 100%`; `attach-above` sets `bottom: 100%`; `stretch-inline` sets `left: 0` and `right: 0`.
-These are relational metrics with no theme socket: the percentages and zero edge pins are resolved
-against the containing block, not a project scale. They do not imply `position:absolute` or
-`position:fixed`, and they do not admit arbitrary offsets. Edge footprints compose only when their
-physical slots do not overlap; `attach-below stretch-inline` is valid, while centering and an edge
-pin on the same slot conflict.
+`top: 100%`; `attach-above` sets `bottom: 100%`; `attach-below-<spacing>` and
+`attach-above-<spacing>` add a scale-backed gap beyond that anchor edge; `attach-left` and
+`attach-right` pin one physical inline edge; `stretch-inline` sets `left: 0` and `right: 0`.
+The percentages and zero edge pins are relational metrics resolved against the containing block;
+the offset forms read the spacing scale and still do not open arbitrary raw offsets. They do not
+imply `position:absolute` or `position:fixed`. Edge footprints compose only when their physical
+slots do not overlap; `attach-below-xs attach-left` is valid, while centering and an edge pin on
+the same slot conflict.
 
-→ rationale: RAT:R-SIZE-10 · history: ADR-0045 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
+→ rationale: RAT:R-SIZE-10 · history: ADR-0045, ADR-0060 · code: src/registry.ts#LAYOUT, src/emit.ts#emit
 
 ## R-SIZE-11 — Role-measured dimensions
 

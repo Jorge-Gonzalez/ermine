@@ -355,6 +355,12 @@
       "anchor": "ADR-0059"
     },
     {
+      "id": "ADR-0060",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0060-offset-and-single-edge-attachment.md",
+      "anchor": "ADR-0060"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

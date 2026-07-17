@@ -190,8 +190,13 @@ test("positioned relations: center and edge attachment compile to physical offse
   assert.deepEqual(declOf("center-y"), [["top", "50%"], ["transform", "translateY(-50%)"]]);
   assert.deepEqual(declOf("attach-below"), [["top", "100%"]]);
   assert.deepEqual(declOf("attach-above"), [["bottom", "100%"]]);
+  assert.deepEqual(declOf("attach-below-xs"), [["top", "calc(100% + var(--spacing-xs))"]]);
+  assert.deepEqual(declOf("attach-above-sm"), [["bottom", "calc(100% + var(--spacing-sm))"]]);
+  assert.deepEqual(declOf("attach-left"), [["left", "0"]]);
+  assert.deepEqual(declOf("attach-right"), [["right", "0"]]);
   assert.deepEqual(declOf("stretch-inline"), [["left", "0"], ["right", "0"]]);
   assert.deepEqual(declOf("attach-below stretch-inline"), [["top", "100%"], ["left", "0"], ["right", "0"]]);
+  assert.deepEqual(declOf("attach-below-xs attach-left"), [["top", "calc(100% + var(--spacing-xs))"], ["left", "0"]]);
 });
 
 test("flow centering: decomposes margin:0 auto into centering and block flush (R-SIZE-07)", () => {

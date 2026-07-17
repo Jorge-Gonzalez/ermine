@@ -471,6 +471,10 @@ const EMISSION: Record<string, EmitSpec> = {
       if (word === "center-y") return { top: "50%", transform: "translateY(-50%)" };
       if (word === "attach-below") return { top: "100%" };
       if (word === "attach-above") return { bottom: "100%" };
+      const offset = word.match(new RegExp(`^attach-(below|above)-(${SCALES.spacing.join("|")})$`));
+      if (offset) return { [offset[1] === "below" ? "top" : "bottom"]: `calc(100% + ${spacingValue(offset[2])})` };
+      if (word === "attach-left") return { left: "0" };
+      if (word === "attach-right") return { right: "0" };
       if (word === "stretch-inline") return { left: "0", right: "0" };
       return null;
     },
@@ -866,7 +870,11 @@ export const VOCABULARY: Record<string, string[]> = {
   ],
   effect: ["shake"],
   cover: ["cover"],
-  "positioned-relation": ["center-x", "center-y", "attach-below", "attach-above", "stretch-inline"],
+  "positioned-relation": [
+    "center-x", "center-y", "attach-below", "attach-above",
+    ...SCALES.spacing.flatMap((s) => [`attach-below-${s}`, `attach-above-${s}`]),
+    "attach-left", "attach-right", "stretch-inline",
+  ],
   push: ["push"],
   margin: [
     "centered",

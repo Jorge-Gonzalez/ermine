@@ -52,9 +52,13 @@ export interface ErminePlainProps {
   /** axis `positioned-relation` */
   blockCenter?: "center-y";
   /** axis `positioned-relation` */
-  blockAfterEdge?: "attach-below";
+  blockAfterEdge?: "attach-below" | "attach-below-xs" | "attach-below-sm" | "attach-below-md" | "attach-below-lg" | "attach-below-xl" | "attach-below-2xl" | "attach-below-3xl";
   /** axis `positioned-relation` */
-  blockBeforeEdge?: "attach-above";
+  blockBeforeEdge?: "attach-above" | "attach-above-xs" | "attach-above-sm" | "attach-above-md" | "attach-above-lg" | "attach-above-xl" | "attach-above-2xl" | "attach-above-3xl";
+  /** axis `positioned-relation` */
+  leftEdge?: "attach-left";
+  /** axis `positioned-relation` */
+  rightEdge?: "attach-right";
   /** axis `positioned-relation` */
   inlineEdges?: "stretch-inline";
   /** axis `viewport-fill` */
@@ -254,6 +258,8 @@ export const BASE_DESCRIPTORS: readonly PropDescriptor[] = [
   { prop: "blockCenter", axis: "positioned-relation", kind: "word" },
   { prop: "blockAfterEdge", axis: "positioned-relation", kind: "word" },
   { prop: "blockBeforeEdge", axis: "positioned-relation", kind: "word" },
+  { prop: "leftEdge", axis: "positioned-relation", kind: "word" },
+  { prop: "rightEdge", axis: "positioned-relation", kind: "word" },
   { prop: "inlineEdges", axis: "positioned-relation", kind: "word" },
   { prop: "viewportFill", axis: "viewport-fill", kind: "word" },
   { prop: "zScale", axis: "z-scale", kind: "word" },

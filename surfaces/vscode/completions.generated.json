@@ -1991,31 +1991,127 @@
           "label": "center-x",
           "insertText": "center-x",
           "kind": "word",
-          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
         },
         {
           "label": "center-y",
           "insertText": "center-y",
           "kind": "word",
-          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
         },
         {
           "label": "attach-below",
           "insertText": "attach-below",
           "kind": "word",
-          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
         },
         {
           "label": "attach-above",
           "insertText": "attach-above",
           "kind": "word",
-          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-below-xs",
+          "insertText": "attach-below-xs",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-above-xs",
+          "insertText": "attach-above-xs",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-below-sm",
+          "insertText": "attach-below-sm",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-above-sm",
+          "insertText": "attach-above-sm",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-below-md",
+          "insertText": "attach-below-md",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-above-md",
+          "insertText": "attach-above-md",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-below-lg",
+          "insertText": "attach-below-lg",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-above-lg",
+          "insertText": "attach-above-lg",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-below-xl",
+          "insertText": "attach-below-xl",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-above-xl",
+          "insertText": "attach-above-xl",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-below-2xl",
+          "insertText": "attach-below-2xl",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-above-2xl",
+          "insertText": "attach-above-2xl",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-below-3xl",
+          "insertText": "attach-below-3xl",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-above-3xl",
+          "insertText": "attach-above-3xl",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-left",
+          "insertText": "attach-left",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+        },
+        {
+          "label": "attach-right",
+          "insertText": "attach-right",
+          "kind": "word",
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
         },
         {
           "label": "stretch-inline",
           "insertText": "stretch-inline",
           "kind": "word",
-          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
+          "meaning": "positioned relations require a positioned element from `position-mode` but do not imply it. `center-x` = `left: 50%` plus `translateX(-50%)`; `center-y` = `top: 50%` plus `translateY(-50%)`; they remain exclusive because both own the transform slot. `attach-below` sets `top: 100%`, `attach-above` sets `bottom: 100%`, `attach-below-<spacing>`/`attach-above-<spacing>` add a scale-backed gap beyond the anchor edge, `attach-left`/`attach-right` pin one physical inline edge, and `stretch-inline` sets `left: 0; right: 0`; disjoint edge footprints compose for anchored dropdowns."
         }
       ]
     },

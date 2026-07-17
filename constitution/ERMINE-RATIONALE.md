@@ -349,6 +349,12 @@ and `center-y` because all of these words write physical offsets and must be che
 `center-x stretch-inline` overlap. Offset variants, component arrows, and raw z/top-layer policy
 remain separate evidence.
 
+Amended by ADR-0060 after the content-editor style dropdown exposed a narrower anchor relation:
+`left: 0` without `right: 0`, plus `top: calc(100% + 4px)`. The left edge pin is physical, so the
+word is `attach-left` rather than a direction-aware inline-start claim. The offset form is not an
+arbitrary top value; it is the same edge relation plus a ruled spacing step, so `attach-below-xs`
+owns the same top footprint as `attach-below` and composes with `attach-left`.
+
 ## RAT:R-TYPE-01
 Source: pre-split `constitution/ERMINE.md` lines 1129–1156.
 
