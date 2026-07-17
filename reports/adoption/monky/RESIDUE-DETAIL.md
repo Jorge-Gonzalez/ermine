@@ -12,14 +12,14 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | source | commit |
 |---|---|
-| Ermine | `6ec20ef0a92d902764558298509d83b644703760` |
-| monky | `6714b7aede685f61d91289576df306c06eb03ddd` |
+| Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
+| monky | `aeb2cb954cfaaaeae315471a40488a412dd83b16` |
 
 ## Summary
 
-- Current declarations: 520
-- Adopted/infrastructure declarations: 394
-- Project-owned residue declarations: 126
+- Current declarations: 517
+- Adopted/infrastructure declarations: 395
+- Project-owned residue declarations: 122
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -35,9 +35,8 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 2 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
-| `reset-absence` | 3 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 11 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 10 | project-exact geometry on a grammar-family property |
 
 ## recipe-identity (26)
 
@@ -213,18 +212,6 @@ box-shadow outside the elevated treatment — rings and identity signatures (R-S
 |---:|---|---|
 | 13 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
 
-## reset-absence (3)
-
-absence/reset mechanics, not a positive carrier
-
-### src/content/overlays/views/search/searchViewStyles.css (3)
-
-| line | selector | declaration |
-|---:|---|---|
-| 13 | `.macro-search-item-text mark` | `background: transparent` |
-| 14 | `.macro-search-item-text mark` | `color: inherit` |
-| 15 | `.macro-search-item-text mark` | `font-style: normal` |
-
 ## user-content (43)
 
 rich-text defaults inside user-authored content
@@ -277,7 +264,7 @@ rich-text defaults inside user-authored content
 | 108 | `.sf-authored-content a` | `text-decoration: underline` |
 | 112 | `.sf-authored-content a:hover` | `opacity: 0.8` |
 
-## identity-geometry (11)
+## identity-geometry (10)
 
 project-exact geometry on a grammar-family property
 
@@ -301,12 +288,6 @@ project-exact geometry on a grammar-family property
 |---:|---|---|
 | 7 | `.editor-content .content-editor-body` | `flex: 1` |
 | 12 | `.editor-toast` | `bottom: 52px` |
-
-### src/content/overlays/views/search/searchViewStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 9 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
 
 ### src/styles/components/content-editor.css (2)
 

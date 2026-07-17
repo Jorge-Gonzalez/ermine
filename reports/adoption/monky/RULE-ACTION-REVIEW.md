@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 126 |
+| reviewed residue declarations | 122 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 116 |
+| likely recipe/molecule | 112 |
 | likely local identity | 10 |
 
 ## By Rule Action
@@ -19,20 +19,20 @@ generalization, recipe, and local-identity pressure.
 | rule action | declarations |
 | --- | --- |
 | dimension-constraint | 1 |
-| attachment-edge-layer | 5 |
+| attachment-edge-layer | 4 |
 | spacing-rhythm | 19 |
 | surface-line-elevation-cutout | 14 |
 | typography-content | 25 |
 | interaction-affordance-state | 11 |
 | motion-transition | 3 |
-| reset-inheritance-neutralization | 7 |
+| reset-inheritance-neutralization | 4 |
 | component-private-drawing | 41 |
 
 ## By Latent Outcome
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 116 |
+| recipe | 112 |
 | local-identity | 10 |
 
 ## By Current Ledger Code
@@ -49,9 +49,8 @@ generalization, recipe, and local-identity pressure.
 | motion-followup | 1 |
 | opacity-followup | 2 |
 | elevation-followup | 2 |
-| reset-absence | 3 |
 | user-content | 43 |
-| identity-geometry | 11 |
+| identity-geometry | 10 |
 
 ## Matched Playbook Recipes
 
@@ -83,12 +82,12 @@ of residue declarations.
 | spacing-rhythm | recipe | 17 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 14 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 11 | promote as molecule/recipe only if reused |
-| reset-inheritance-neutralization | recipe | 7 | promote as molecule/recipe only if reused |
+| reset-inheritance-neutralization | recipe | 4 | promote as molecule/recipe only if reused |
 | typography-content | local-identity | 4 | keep local after invariance/scale tests |
 | attachment-edge-layer | local-identity | 3 | keep local after invariance/scale tests |
-| attachment-edge-layer | recipe | 2 | promote as molecule/recipe only if reused |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
+| attachment-edge-layer | recipe | 1 | promote as molecule/recipe only if reused |
 | dimension-constraint | recipe | 1 | promote as molecule/recipe only if reused |
 | motion-transition | local-identity | 1 | keep local after invariance/scale tests |
 

@@ -2,29 +2,29 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "6ec20ef0a92d902764558298509d83b644703760",
-    "projectCommit": "6714b7aede685f61d91289576df306c06eb03ddd"
+    "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
+    "projectCommit": "aeb2cb954cfaaaeae315471a40488a412dd83b16"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 126,
+    "reviewedDeclarations": 122,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 116,
+    "likelyRecipe": 112,
     "likelyLocal": 10,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 1,
-      "attachment-edge-layer": 5,
+      "attachment-edge-layer": 4,
       "spacing-rhythm": 19,
       "alignment-layout": 0,
       "surface-line-elevation-cutout": 14,
       "typography-content": 25,
       "interaction-affordance-state": 11,
       "motion-transition": 3,
-      "reset-inheritance-neutralization": 7,
+      "reset-inheritance-neutralization": 4,
       "component-private-drawing": 41
     },
     "byLatentOutcome": {
@@ -32,7 +32,7 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 116,
+      "recipe": 112,
       "local-identity": 10
     },
     "byCurrentCode": {
@@ -56,9 +56,9 @@
       "motion-followup": 1,
       "opacity-followup": 2,
       "elevation-followup": 2,
-      "reset-absence": 3,
+      "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 11,
+      "identity-geometry": 10,
       "skin-review": 0,
       "identity-review": 0
     },
@@ -227,62 +227,6 @@
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
       "scaleMapping": "proportional/viewport relation",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-edit::right::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 9,
-      "selector": ".macro-search-item-edit",
-      "property": "right",
-      "value": "var(--spacing-sm)",
-      "currentCode": "identity-geometry",
-      "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "recipe",
-      "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::background::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 13,
-      "selector": ".macro-search-item-text mark",
-      "property": "background",
-      "value": "transparent",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "recipe",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::color::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 14,
-      "selector": ".macro-search-item-text mark",
-      "property": "color",
-      "value": "inherit",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "recipe",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-item-text mark::font-style::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 15,
-      "selector": ".macro-search-item-text mark",
-      "property": "font-style",
-      "value": "normal",
-      "currentCode": "reset-absence",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "recipe",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket"
     },
     {

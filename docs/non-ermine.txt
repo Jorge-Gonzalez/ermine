@@ -20,26 +20,26 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the offset attachment migration is
-Ermine 6ec20ef / Monky 6714b7a:
+were migrated). Current live ledger after the positioned inset cleanup is
+Ermine ed12f35 / Monky aeb2cb9:
 
-  current declarations:                 520
-  adopted/infrastructure declarations:  394
-  project-owned residue declarations:   126
+  current declarations:                 517
+  adopted/infrastructure declarations:  395
+  project-owned residue declarations:   122
   assimilable now:                        0
-  word-assimilation target:              38 declarations across 25 rules
+  word-assimilation target:              34 declarations across 23 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 126 project-owned declarations; 88 declarations across 36 rules are
+still carries the full 122 project-owned declarations; 88 declarations across 36 rules are
 deliberately outside the flat-word target: 43 semantic-fragment declarations and
 45 content-editor default declarations.
 
 Current residue by reason code:
   recipe-identity 26, brand-identity 4, component-contract 1, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
-  motion-followup 1, opacity-followup 2, elevation-followup 2, reset-absence 3,
-  user-content 43, identity-geometry 11.
+  motion-followup 1, opacity-followup 2, elevation-followup 2,
+  user-content 43, identity-geometry 10.
 
 Historical invariance sample:
 
@@ -172,6 +172,11 @@ The offset attachment pass then admitted `attach-left` plus scale-backed `attach
 `attach-above-*` words and moved the content-editor style dropdown's `top` and `left` placement
 into Ermine. The live residue is now 126 and the adjusted word-assimilation target is
 38 declarations across 25 rules.
+The positioned inset cleanup then admitted `inset-<edge>-<spacing>` words, folded `cover`
+into the same positioned-relation footprint family, moved the macro search edit button's
+right offset to `inset-right-sm`, and replaced neutralized `<mark>` placeholder wrappers with
+plain spans. The live residue is now 122 and the adjusted word-assimilation target is
+34 declarations across 23 rules.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -205,7 +210,8 @@ suggestion rows, and segmented options. The positioned edge-attachment pass remo
 command-dropdown and suggestion-arrow edge placement declarations. The side-corner pass removed
 local macro command/error/dropdown radius declarations. The soft-elevation pass removed the modal
 dialog shadow/blend rule. The scrim pass removed the modal backdrop colour declaration. The
-inventory below is the current live non-Ermine class surface after the offset attachment migration;
+positioned inset cleanup removed the local macro search edit offset and the neutralized mark reset.
+The inventory below is the current live non-Ermine class surface after the positioned inset cleanup;
 comment-only sheets and retired hooks
 are no longer listed as CSS-backed style owners.
 
@@ -220,9 +226,6 @@ macro-suggestions-command-item, macro-suggestions-container
 
 src/content/overlays/views/macroEditor/editorViewStyles.css:
 content-editor-body, editor-content, editor-toast
-
-src/content/overlays/views/search/searchViewStyles.css:
-macro-search-item-edit, macro-search-item-text
 
 src/styles/components/content-editor.css:
 ce-style-dropdown, ce-style-trigger, ce-toolbar-sep
@@ -464,8 +467,8 @@ Likely Ermine pressure:
   engine-scrollbar post-processing or recipe layer.
 
 Summary shape for the next assimilation pass:
-  - Adjusted word-assimilation target: 38 declarations across 25 rules after excluding
-    semantic fragments and content-editor defaults from the conserved 126-declaration residue.
+  - Adjusted word-assimilation target: 34 declarations across 23 rules after excluding
+    semantic fragments and content-editor defaults from the conserved 122-declaration residue.
   - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
     measured size scale.
   - Most likely molecules/recipes: authored-content substrate / optional prose recipe,

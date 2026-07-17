@@ -18,10 +18,10 @@ included.
 
 | metric | count |
 | --- | --- |
-| current declarations | 520 |
-| adopted/infrastructure declarations | 394 |
-| project-owned residue declarations | 126 |
-| project-owned residue rules | 61 |
+| current declarations | 517 |
+| adopted/infrastructure declarations | 395 |
+| project-owned residue declarations | 122 |
+| project-owned residue rules | 59 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 | latent-generalizable declarations | 0 |
@@ -35,8 +35,8 @@ included.
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
 | private drawing / engine pseudo | 16 | 43 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
-| exact attachment / geometry | 4 | 5 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
-| component-local surface/type fragments | 3 | 5 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
+| exact attachment / geometry | 3 | 4 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
+| component-local surface/type fragments | 2 | 2 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
 
 ## Word-Assimilation Target
@@ -47,10 +47,10 @@ not missing flat words: they are recipe/fragments or a deliberate authored-HTML 
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 126 | 61 | All remaining project-owned declarations in the current ledger. |
+| conserved project-owned residue | 122 | 59 | All remaining project-owned declarations in the current ledger. |
 | semantic fragments excluded | 43 | 16 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, and generated-placeholder fragments. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 38 | 25 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 34 | 23 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
 The exclusion is union-aware: 88 declarations across
 36 rules are outside the word-assimilation target. They remain visible
@@ -63,8 +63,8 @@ in the conserved ledger and boundary reports.
 | editor chrome recipes | 3 | 3 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
-| exact attachment / geometry | 4 | 5 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
-| component-local surface/type fragments | 3 | 5 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
+| exact attachment / geometry | 3 | 4 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
+| component-local surface/type fragments | 2 | 2 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
 
 ## By Source File
@@ -76,7 +76,6 @@ in the conserved ledger and boundary reports.
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 3 |
 | `src/styles/components/content-editor.css` | 3 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 2 |
-| `src/content/overlays/views/search/searchViewStyles.css` | 2 |
 | `src/styles/entries/pages.css` | 2 |
 | `src/content/overlays/modal/modalStyles.css` | 1 |
 
@@ -92,18 +91,17 @@ rules are listed later because a single selector can combine several kinds of re
 | interaction-affordance-state | 8 |
 | spacing-rhythm | 7 |
 | surface-line-elevation-cutout | 7 |
-| attachment-edge-layer | 3 |
+| attachment-edge-layer | 2 |
 | motion-transition | 2 |
 | dimension-constraint | 1 |
-| reset-inheritance-neutralization | 1 |
 
 ## Rule Density
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 34 |
+| 1 declaration | 33 |
 | 2 declarations | 13 |
-| 3 declarations | 7 |
+| 3 declarations | 6 |
 | 4+ declarations | 7 |
 
 This matters because most remaining rules are narrow and intentional. The seven
@@ -233,8 +231,6 @@ evidence and poor flat-word candidates.
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `.macro-suggestions-container` | 1 | surface-line-elevation-cutout | recipe | box-shadow: 0 10px 25px -5px var(--shadow-color) |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | `.editor-content .content-editor-body` | 1 | dimension-constraint | recipe | flex: 1 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | `.editor-toast` | 2 | attachment-edge-layer, surface-line-elevation-cutout | recipe | bottom: 52px<br>box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%) |
-| `src/content/overlays/views/search/searchViewStyles.css` | `.macro-search-item-edit` | 1 | attachment-edge-layer | recipe | right: var(--spacing-sm) |
-| `src/content/overlays/views/search/searchViewStyles.css` | `.macro-search-item-text mark` | 3 | reset-inheritance-neutralization | recipe | background: transparent<br>color: inherit<br>font-style: normal |
 | `src/styles/components/content-editor.css` | `.ce-style-dropdown` | 1 | spacing-rhythm | recipe | gap: 2px |
 | `src/styles/components/content-editor.css` | `.ce-style-trigger` | 1 | spacing-rhythm | recipe | gap: 2px |
 | `src/styles/components/content-editor.css` | `.ce-toolbar-sep` | 1 | surface-line-elevation-cutout | recipe | background-color: var(--harmonic) |
