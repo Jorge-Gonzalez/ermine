@@ -20,28 +20,30 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the page entry cleanup is
-Ermine ed12f35 / Monky c356463:
+were migrated). Current live ledger after the shake-suppression fragment naming is
+Ermine ed12f35 / Monky 092f22d:
 
   current declarations:                 498
   adopted/infrastructure declarations:  398
   project-owned residue declarations:   100
   assimilable now:                        0
-  word-assimilation target:              10 declarations across 9 rules
+  word-assimilation target:               9 declarations across 8 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 100 project-owned declarations; 90 declarations across 37 rules are
-deliberately outside the flat-word target: 45 semantic-fragment declarations and
+still carries the full 100 project-owned declarations; 91 declarations across 38 rules are
+deliberately outside the flat-word target: 46 semantic-fragment declarations and
 45 content-editor default declarations.
 Semantic fragments are counted this way because they are adoption sub-products: discovered
 middle-layer style units, not Ermine targets and not unassimilated Ermine work. They remain in
 the conserved ledger only so every project-owned declaration stays auditable.
+Vendor-specific browser-adapter hooks follow the same rule: they are conserved for audit,
+but once named as adapter/fragment boundaries they are not residual Ermine word pressure.
 
 Current residue by reason code:
-  recipe-identity 21, state-mechanics 1,
+  recipe-identity 22, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
-  motion-followup 1, opacity-followup 2,
+  opacity-followup 2,
   user-content 43.
 
 Historical invariance sample:
@@ -96,16 +98,17 @@ most of this "identity" into grammar. The bucket names (identity-geometry, compo
 encode the metric trap: they read exact-looking CSS as bespoke, when order/proportion/edge/
 alignment are the most general things there are.
 
-The named-follow-up residue has narrowed: motion is now 1, opacity 2, scrollbar 8, and
-elevation 2 (= 13). `shake` moved into the effect-atom layer, the universal
+The named-follow-up residue has narrowed: motion is now 0, opacity 2, scrollbar 8, and
+elevation 2 (= 12). `shake` moved into the effect-atom layer, the universal
 `transition: all var(--transition-fast)` rows moved to the open `tween-quick` word, and
 the repeated property-targeted transition rows moved to targeted tween envelopes
 (`tween-rule-quick`, `tween-ground-quick`, `tween-ink-quick`, `tween-ground-ink-quick`,
 `tween-opacity-ground-quick`, `tween-opacity-ground-ink-quick`,
-`tween-opacity-transform-quick`). The remaining motion row is the local `.shake {
-transition: none !important }` suppression; bespoke segmented-control pill timing is
-classified as pseudo/component recipe rather than `motion-followup`. user-content
-(43 = the `prose` molecule) and recipe-identity (17 by the live ledger, R-SKIN-10) remain the
+`tween-opacity-transform-quick`). The former `.shake { transition: none !important }`
+suppression is now the explicit `.sf-shake-suppression` semantic fragment; bespoke
+segmented-control pill timing is classified as pseudo/component recipe rather than
+`motion-followup`. user-content (43 = the `prose` molecule) and recipe-identity (22 by the
+live ledger, R-SKIN-10 plus semantic fragments) remain the
 genuinely-licensed-local bundles. The first dimension endpoint pass admitted
 `max-width-none`, and the delete-confirm `max-width: none` row migrated to that word. The
 next dimension pass admitted `control-size-<spacing>` and migrated the 16px radio/checkbox
@@ -213,6 +216,9 @@ The page entry cleanup then removed the redundant standalone-page body reset/fon
 now-unneeded `.page-title` hook. The reset already owns body margin/padding, and the theme font
 layer owns the IBM Plex body stack; live residue is now 100 and the adjusted word-assimilation
 target is 10 declarations across 9 rules.
+The shake-suppression pass then renamed the local `.shake` transition override as
+`.sf-shake-suppression`, making it an explicit effect-composition fragment. Conserved residue
+remains 100, and the adjusted word-assimilation target is 9 declarations across 8 rules.
 The remaining target is recipe/local-identity review rather than immediate flat-word pressure.
 
 ========================================================================
@@ -266,18 +272,19 @@ toast shadow onto Ermine words. The unused CSS cleanup then removed the comment-
 search, settings, delete-confirm, and options stylesheets. The inferable control residue cleanup
 then deleted the now-empty content-editor stylesheet after moving its remaining toolbar/menu
 micro styles into Ermine class strings. The page entry cleanup then deleted the redundant standalone
-page stylesheet after reset/theme inheritance covered it. The inventory below is the current live
-non-Ermine class surface after the page entry cleanup; comment-only sheets and retired hooks are no longer
+page stylesheet after reset/theme inheritance covered it. The shake-suppression fragment naming
+then moved the remaining shake transition override into `sf-shake-suppression`. The inventory
+below is the current live non-Ermine class surface after that pass; comment-only sheets and retired hooks are no longer
 listed as CSS-backed style owners.
 
 CSS-backed local class selectors by source file (current CSS declarations, with generated
 Ermine grammar and infrastructure/theme/substrate sheets filtered out):
 
 src/styles/fragments/semantic-fragments.css:
-is-sliding, seg-snap, sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-foreign-overlay-host, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-segmented-control-option, sf-segmented-pill
+is-sliding, seg-snap, sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-foreign-overlay-host, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-segmented-control-option, sf-segmented-pill, sf-shake-suppression
 
 src/styles/skin/controls.css:
-btn, input-error, is-selected, min-selected-1, radio-label, selectable-group, shake
+btn, input-error, is-selected, min-selected-1, radio-label, selectable-group
 
 Markup-only local class tokens (runtime class strings with no current local CSS rule here;
 Ermine grammar words filtered out):
@@ -285,8 +292,8 @@ action-toolbar, alert, alert-error, alert-success, bottom, btn-link, btn-link-da
 
 Non-class local selectors and mechanics still in the ledger/review boundary:
 :host, content-editor rich-text descendants, scrollbar pseudo-elements,
-and the local `.shake { transition: none !important }` suppression. The `shake` keyframes now
-ship from generated Ermine CSS; unapplied `flash`/`pulse` are not current CSS-backed residue.
+and the `.sf-shake-suppression` effect-composition fragment. The `shake` keyframes now ship
+from generated Ermine CSS; unapplied `flash`/`pulse` are not current CSS-backed residue.
 
 ========================================================================
 PART C — RULE-ACTION CLASSIFICATION (what the declarations are doing)
@@ -457,8 +464,9 @@ Reading:
     envelopes handled the repeated border/ground/ink/opacity/transform target sets.
   - segmented-control pill movement is a bespoke mechanism because it animates CSS custom
     coordinate variables and snaps before sliding.
-  - `transition:none !important` on `shake` is an effect-composition override: suppress
-    local tweens so the generated shake effect can own the frame.
+  - `.sf-shake-suppression { transition:none !important }` is now an explicit
+    effect-composition fragment: it suppresses local tweens so the generated shake effect
+    can own the frame.
 
 Likely Ermine pressure:
   tween-none/suppress-tween for effect composition; recipe-local segmented pill timing.
@@ -506,11 +514,13 @@ Likely Ermine pressure:
   keycap recipe; callout-arrow recipe; segmented-control recipe; placeholder recipe;
   engine-scrollbar browser-adapter/post-processing layer.
 
-Summary shape after the page entry cleanup:
-  - Adjusted word-assimilation target: 10 declarations across 9 rules after excluding
+Summary shape after the shake-suppression fragment naming:
+  - Adjusted word-assimilation target: 9 declarations across 8 rules after excluding
     semantic fragments and content-editor defaults from the conserved 100-declaration residue.
   - Semantic fragments are not failed assimilation; they are discovered sub-products of the
     conversion and are counted outside the Ermine word target by design.
+  - Vendor-specific scrollbar pseudo-elements are browser-adapter hooks, not residual
+    Ermine vocabulary pressure.
   - Likely flat-word pressure: none in the current rule-action review (`0` latent-generalizable).
   - Most likely molecules/recipes: authored-content substrate / optional prose recipe,
     keycap, callout arrow, segmented-control pill, modal/dialog measure, search highlight.

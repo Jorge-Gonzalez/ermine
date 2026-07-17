@@ -23,7 +23,7 @@ invariance pass as the roadmap for future ruling cycles.
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `c356463cf08540968cf871b5fb640240601cc551` |
+| monky | `092f22d6f2648d3cae55cd9701e1a2617a44e9af` |
 
 ## Closure Gate
 
@@ -43,7 +43,7 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 
 | code | count | boundary |
 |---|---:|---|
-| `recipe-identity` | 21 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 22 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 
 ## Relational / Scale-Backed Follow-Up
 
@@ -91,5 +91,4 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 |---|---:|---|
 | `parent-relational` | 1 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
 | `scrollbar-followup` | 8 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
-| `motion-followup` | 1 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 2 | named follow-up: opacity prominence treatment (no report filed yet) |

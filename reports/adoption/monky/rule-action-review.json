@@ -3,7 +3,7 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "c356463cf08540968cf871b5fb640240601cc551"
+    "projectCommit": "092f22d6f2648d3cae55cd9701e1a2617a44e9af"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
@@ -12,8 +12,8 @@
     "reviewedDeclarations": 100,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 99,
-    "likelyLocal": 1,
+    "likelyRecipe": 100,
+    "likelyLocal": 0,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 0,
@@ -32,8 +32,8 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 99,
-      "local-identity": 1
+      "recipe": 100,
+      "local-identity": 0
     },
     "byCurrentCode": {
       "ermine-emitted": 0,
@@ -41,7 +41,7 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 21,
+      "recipe-identity": 22,
       "rule-mechanics": 0,
       "brand-identity": 0,
       "affordance-mechanics": 0,
@@ -53,7 +53,7 @@
       "parent-relational": 1,
       "pseudo-mechanics": 23,
       "scrollbar-followup": 8,
-      "motion-followup": 1,
+      "motion-followup": 0,
       "opacity-followup": 2,
       "elevation-followup": 0,
       "reset-absence": 0,
@@ -81,6 +81,7 @@
       "engine-scrollbar-boundary": 8,
       "generated-placeholder-boundary": 3,
       "foreign-overlay-host-boundary": 2,
+      "effect-composition-fragment-boundary": 1,
       "pseudo-drawing-boundary": 31,
       "authored-content-substrate-boundary": 45
     }
@@ -1541,9 +1542,26 @@
       ]
     },
     {
-      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::width::1",
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-shake-suppression::transition::1",
       "file": "src/styles/fragments/semantic-fragments.css",
       "line": 205,
+      "selector": ".sf-shake-suppression",
+      "property": "transition",
+      "value": "none !important",
+      "currentCode": "recipe-identity",
+      "ruleAction": "motion-transition",
+      "latentOutcome": "recipe",
+      "function": "defines animated properties, timing, or tween suppression",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "effect-composition fragment",
+      "playbookRecipes": [
+        "effect-composition-fragment-boundary"
+      ]
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::width::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 210,
       "selector": "::-webkit-scrollbar",
       "property": "width",
       "value": "var(--spacing-md) !important",
@@ -1561,7 +1579,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::height::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 206,
+      "line": 211,
       "selector": "::-webkit-scrollbar",
       "property": "height",
       "value": "var(--spacing-md) !important",
@@ -1579,7 +1597,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 210,
+      "line": 215,
       "selector": "::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--tone-dim) !important",
@@ -1597,7 +1615,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 211,
+      "line": 216,
       "selector": "::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -1615,7 +1633,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 215,
+      "line": 220,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--tone) !important",
@@ -1633,7 +1651,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 216,
+      "line": 221,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -1651,7 +1669,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 217,
+      "line": 222,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--tone-dim) !important",
@@ -1669,7 +1687,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb:hover::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 221,
+      "line": 226,
       "selector": "::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--accent-dim) !important",
@@ -1816,20 +1834,6 @@
       "playbookRecipes": [
         "control-state-recipe-boundary"
       ]
-    },
-    {
-      "id": "src/styles/skin/controls.css::.shake::transition::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 45,
-      "selector": ".shake",
-      "property": "transition",
-      "value": "none !important",
-      "currentCode": "motion-followup",
-      "ruleAction": "motion-transition",
-      "latentOutcome": "local-identity",
-      "function": "defines animated properties, timing, or tween suppression",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local"
     }
   ],
   "dimensionPilot": {

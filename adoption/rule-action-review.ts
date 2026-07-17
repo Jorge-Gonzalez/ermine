@@ -319,8 +319,8 @@ function isSearchHighlightReset(record: CurrentRecord): boolean {
 }
 
 function isShakeTransitionSuppression(record: CurrentRecord): boolean {
-  return record.code === "motion-followup"
-    && /\.shake\b/.test(record.selector)
+  return (record.code === "motion-followup" || record.code === "recipe-identity")
+    && /\.(?:shake|sf-shake-suppression)\b/.test(record.selector)
     && record.property === "transition"
     && /^none\b/.test(record.value);
 }
@@ -398,6 +398,7 @@ function proposedForm(record: CurrentRecord, action: RuleAction, outcome: Latent
     if (/kbd|sf-keycap/.test(record.selector)) return "keycap/kbd recipe";
     if (/seg-control|sf-segmented-pill/.test(record.selector)) return "segmented-control recipe";
     if (/arrow|sf-callout-arrow/.test(record.selector)) return "callout-arrow recipe";
+    if (/sf-shake-suppression|\.shake\b/.test(record.selector) && record.property === "transition") return "effect-composition fragment";
     if (/\.editor-content\s+\.content-editor-body\b/.test(record.selector)) return "editor layout bridge";
     if (/content-editor-body|sf-authored-content/.test(record.selector)) return "authored-content substrate";
     return "recipe/molecule socket";

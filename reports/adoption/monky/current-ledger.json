@@ -3,7 +3,7 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "c356463cf08540968cf871b5fb640240601cc551"
+    "projectCommit": "092f22d6f2648d3cae55cd9701e1a2617a44e9af"
   },
   "summary": {
     "totalDeclarations": 498,
@@ -15,7 +15,7 @@
       "theme-metric": 61,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 21,
+      "recipe-identity": 22,
       "rule-mechanics": 0,
       "brand-identity": 0,
       "affordance-mechanics": 0,
@@ -27,7 +27,7 @@
       "parent-relational": 1,
       "pseudo-mechanics": 23,
       "scrollbar-followup": 8,
-      "motion-followup": 1,
+      "motion-followup": 0,
       "opacity-followup": 2,
       "elevation-followup": 0,
       "reset-absence": 0,
@@ -786,9 +786,18 @@
       "code": "parent-relational"
     },
     {
-      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::width::1",
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-shake-suppression::transition::1",
       "file": "src/styles/fragments/semantic-fragments.css",
       "line": 205,
+      "selector": ".sf-shake-suppression",
+      "property": "transition",
+      "value": "none !important",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::width::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 210,
       "selector": "::-webkit-scrollbar",
       "property": "width",
       "value": "var(--spacing-md) !important",
@@ -797,7 +806,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::height::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 206,
+      "line": 211,
       "selector": "::-webkit-scrollbar",
       "property": "height",
       "value": "var(--spacing-md) !important",
@@ -806,7 +815,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 210,
+      "line": 215,
       "selector": "::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--tone-dim) !important",
@@ -815,7 +824,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 211,
+      "line": 216,
       "selector": "::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -824,7 +833,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 215,
+      "line": 220,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--tone) !important",
@@ -833,7 +842,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 216,
+      "line": 221,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -842,7 +851,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 217,
+      "line": 222,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--tone-dim) !important",
@@ -851,7 +860,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb:hover::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 221,
+      "line": 226,
       "selector": "::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--accent-dim) !important",
@@ -3475,15 +3484,6 @@
       "property": "opacity",
       "value": "0.95",
       "code": "opacity-followup"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.shake::transition::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 45,
-      "selector": ".shake",
-      "property": "transition",
-      "value": "none !important",
-      "code": "motion-followup"
     },
     {
       "id": "src/styles/substrate/reset.css::*, *::before, *::after::box-sizing::1",

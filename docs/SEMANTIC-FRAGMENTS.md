@@ -62,6 +62,9 @@ In adoption accounting, these are positive sub-products of the conversion proces
 not targets for Ermine absorption. They stay visible in the conserved project-owned ledger so
 the CSS remains fully accounted for, but they are excluded from the adjusted word-assimilation
 target rather than counted as unassimilated residue.
+Vendor-specific selectors and properties that adapt a standard socket to a browser engine are
+accounted the same way: visible for audit, excluded from residual Ermine word pressure once
+the browser-adapter boundary is explicit.
 
 | fragment | explicit Monky shape | why it is a fragment |
 |---|---|---|
@@ -70,10 +73,11 @@ target rather than counted as unassimilated residue.
 | segmented pill | `.sf-segmented-pill::before`, snap/slide state | active indicator uses pseudo geometry, custom coordinates, opacity, and local timing |
 | engine scrollbar | `::-webkit-scrollbar*` inside the fragment file | browser-engine pseudo-elements adapt the standard scrollbar socket handoff |
 | generated placeholder | `.sf-generated-placeholder:empty::before` | generated content, placeholder colour, and pointer-event suppression form one empty-state affordance |
+| effect composition | `.sf-shake-suppression` | local tween suppression lets the admitted Ermine `shake` effect atom own the frame |
 | authored-content substrate | `.sf-authored-content` descendants | user-authored HTML defaults deliberately point away from utility grammar |
 | control-state recipe | disabled/selectable/min-selection/radio-label mechanics | behavior and invariants remain project control contracts after state skin migrates |
 
-The first five are private drawing or engine-pseudo fragments. The last two are adjacent
+The first six are private drawing, engine-adapter, or effect-composition fragments. The last two are adjacent
 boundaries that clarify what should not become flat utilities.
 
 ## Adoption Workflow
@@ -93,9 +97,9 @@ fragment up front. Real applications expose the fragments that matter.
 
 For assimilation reporting, semantic fragments should be excluded from the flat-word target
 while remaining visible in the conserved project-owned residue ledger. In Monky, the current
-fragment set accounts for 45 declarations across 17 rules; paired with the authored-content
-default substrate, it narrows the current word-assimilation target to 10 declarations across
-9 rules.
+fragment set accounts for 46 declarations across 18 rules; paired with the authored-content
+default substrate, it narrows the current word-assimilation target to 9 declarations across
+8 rules.
 
 ## Possible Future Shape
 

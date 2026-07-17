@@ -148,6 +148,13 @@ function isForeignOverlayHost(record: CurrentRecord): boolean {
         || record.property === "z-index"));
 }
 
+function isEffectCompositionFragment(record: CurrentRecord): boolean {
+  return /\.sf-shake-suppression\b/.test(record.selector)
+    || (/\.shake\b/.test(record.selector)
+      && record.property === "transition"
+      && /^none\b/.test(record.value));
+}
+
 export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
   {
     id: "existing-scale-word",
@@ -385,6 +392,19 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     boundary: "Do not promise `topmost`; native top layer and arbitrary page stacking remain outside ordinary Ermine z words.",
     evidence: ["Monky suggestions host", "R-SKIN-10 recipe boundary", "top-layer mechanism distinction"],
     match: isForeignOverlayHost,
+  },
+  {
+    id: "effect-composition-fragment-boundary",
+    title: "Effect composition fragment boundary",
+    kind: "boundary",
+    confidence: "review",
+    decision: "Effect-composition guards that let an admitted effect atom own the frame are fragment hooks, not new motion words.",
+    before: ".sf-shake-suppression { transition: none !important; }",
+    after: "keep as semantic fragment unless a broader effect-composition layer is admitted",
+    conversion: "Group local tween suppression around the named effect it protects.",
+    boundary: "Ermine owns the effect atom; the fragment/project layer owns suppressing competing local tweens around that effect.",
+    evidence: ["Monky SelectableGroup shake feedback", "ADR-0038 effect atoms"],
+    match: isEffectCompositionFragment,
   },
   {
     id: "pseudo-drawing-boundary",

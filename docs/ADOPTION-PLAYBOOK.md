@@ -56,6 +56,9 @@ For adoption accounting, semantic fragments are counted as discovered sub-produc
 conversion: they remain visible in the conserved project-owned ledger for auditability, but
 they are excluded from the adjusted word-assimilation target and should not be read as
 unassimilated Ermine work.
+Vendor-specific selectors and properties follow the same reporting rule when they are
+browser-adapter hooks: they remain counted in the conserved ledger, but they are not residual
+Ermine vocabulary pressure after the standard socket or semantic fragment boundary is named.
 The detailed model and current Monky-discovered fragments are documented in
 [`SEMANTIC-FRAGMENTS.md`](SEMANTIC-FRAGMENTS.md). The historical decision is ADR-0057.
 
@@ -80,6 +83,8 @@ The detailed model and current Monky-discovered fragments are documented in
 | `segmented-pill-boundary` | boundary | review | Segmented-control active-pill pseudo geometry and coordinate motion stay recipe-local. |
 | `engine-scrollbar-boundary` | boundary | mechanical | Vendor scrollbar pseudo-elements stay post-process owned after standard socket integration. |
 | `generated-placeholder-boundary` | boundary | mechanical | Generated placeholder pseudo content stays local or becomes an editor placeholder recipe. |
+| `foreign-overlay-host-boundary` | boundary | review | Foreign-page overlay host positioning and z-floor stay fragment-local. |
+| `effect-composition-fragment-boundary` | boundary | review | Tween suppression around an admitted effect atom stays a fragment hook. |
 | `pseudo-drawing-boundary` | boundary | mechanical | Pseudo-element drawing stays local or enters as a recipe/molecule. |
 | `authored-content-substrate-boundary` | boundary | human | Rich-text descendants remain an authored-HTML substrate, not flat utility gaps. |
 

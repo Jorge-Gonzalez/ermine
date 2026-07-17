@@ -24,11 +24,12 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Adjusted word-assimilation target:** after excluding semantic fragments and the
   content-editor default substrate from flat-word planning, the remaining target is
-  **10 declarations across 9 rules**; the excluded boundary material remains in the
+  **9 declarations across 8 rules**; the excluded boundary material remains in the
   conserved 100-declaration ledger.
 - **Semantic fragments:** the `sf-*` layer is counted as a positive adoption sub-product,
-  not as unassimilated Ermine work. It stays visible in the conserved ledger only for full
-  CSS accounting.
+  not as unassimilated Ermine work. Vendor/browser-adapter hooks follow the same rule after
+  their boundary is explicit. Both stay visible in the conserved ledger only for full CSS
+  accounting.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
 
@@ -94,7 +95,7 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `c356463`: 498 declarations, 398
+The current generated ledger is at Monky `092f22d`: 498 declarations, 398
 adopted/infrastructure declarations, 100 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
@@ -131,7 +132,7 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate held the list at zero before the first post-adoption dimension endpoint
-pass. The current ledger at Monky `c356463` reports 498
+pass. The current ledger at Monky `092f22d` reports 498
 current declarations, 398 adopted/infrastructure declarations, 100 project-owned residue,
 `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
@@ -164,12 +165,12 @@ moved link-button decoration onto authored button words, and kept rich-text `u`/
 descendants in the prose/editor molecule.
 `RULE-RESIDUE-ANALYSIS.md` re-reads the 100 current project-owned declarations at rule
 granularity: they collapse to 46 authored CSS rules, mostly editor-content molecules,
-private pseudo drawing, control-state recipes, and a small local identity floor. It also
-reports the adjusted word-assimilation target: 10 declarations across 9 rules after
-excluding 45 semantic-fragment declarations and 45 content-editor default declarations
-from flat-word planning. Monky now names those fragment hooks with the `sf-*` prefix and
-centralizes them in `src/styles/fragments/semantic-fragments.css`; they are counted as
-discovered middle-layer sub-products, not Ermine misses.
+private pseudo drawing, browser-adapter hooks, control-state recipes, and a small local
+identity floor. It also reports the adjusted word-assimilation target: 9 declarations
+across 8 rules after excluding 46 semantic-fragment declarations and 45 content-editor
+default declarations from flat-word planning. Monky now names those fragment hooks with the
+`sf-*` prefix and centralizes them in `src/styles/fragments/semantic-fragments.css`; they
+are counted as discovered middle-layer sub-products, not Ermine misses.
 The remaining Phase 3 grammar work is the proportional/relational plane
 (remaining measure/viewport extents, filed in `reports/GAP-U-measure-viewport.md`, and
 columns + intent-proportions) plus the smaller
@@ -248,11 +249,12 @@ plus macro editor residue dissolution
 plus unused CSS file cleanup
 plus inferable control residue cleanup
 plus redundant page entry cleanup
+plus shake suppression fragment naming
 moved the live
 ledger to
 498 current declarations,
 100 project-owned residue,
-10 declarations in the adjusted word-assimilation target,
+9 declarations in the adjusted word-assimilation target,
 `assimilable = 0`,
 and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted

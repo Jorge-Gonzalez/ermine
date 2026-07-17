@@ -66,6 +66,7 @@ const SEMANTIC_FRAGMENT_RECIPE_IDS = new Set([
   "engine-scrollbar-boundary",
   "generated-placeholder-boundary",
   "foreign-overlay-host-boundary",
+  "effect-composition-fragment-boundary",
 ]);
 
 function slash(path: string): string {
@@ -181,7 +182,7 @@ function isPrivateDrawingRule(group: RuleGroup): boolean {
     || group.selector.startsWith("::-webkit-scrollbar")
     || /\.macro-suggestions-arrow\b/.test(group.selector)
     || /\.macro-search-kbd\b/.test(group.selector)
-    || /\.sf-(?:callout-arrow|keycap|segmented-pill|generated-placeholder|foreign-overlay-host)\b/.test(group.selector);
+    || /\.sf-(?:callout-arrow|keycap|segmented-pill|generated-placeholder|foreign-overlay-host|shake-suppression)\b/.test(group.selector);
 }
 
 function smallNumberWord(value: number): string {
@@ -223,7 +224,7 @@ function familyReading(id: string): string {
     case "editor layout bridge":
       return "Layout handoff between the editor shell and the authored-content island.";
     case "private drawing / engine pseudo":
-      return "Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar adapter parts.";
+      return "Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure.";
     case "control-state recipes":
       return "Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards.";
     case "exact attachment / geometry":
@@ -280,6 +281,21 @@ function countRows(groups: RuleGroup[], keyFor: (group: RuleGroup) => string): s
   return [...counts.entries()]
     .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
     .map(([key, count]) => [mdEscape(key), String(count)]);
+}
+
+function localIdentityFinding(localRules: number, mixedLocalRules: number): string {
+  if (localRules === 0) {
+    return `4. Local identity has been separated from the current target.
+
+   No residue rules contain \`local-identity\` outcomes. The remaining target is
+   recipe-shaped or boundary-shaped rather than a tail of unexamined local overrides.`;
+  }
+  return `4. Local identity is small and explicit.
+
+   ${localRules} residue rules contain \`local-identity\` outcomes. They are host/page
+   typography, overlay layer identity, root spacing resets, or local transition
+   suppression. ${mixedLocalRules} of those rules are mixed with recipe declarations,
+   which is expected for real CSS selectors.`;
 }
 
 function declarationText(declaration: ReviewedDeclaration): string {
@@ -593,17 +609,13 @@ drawing, code/pre blocks, blockquotes, and host identity.
 3. Pseudo and engine drawing remains correctly project-owned.
 
    Keyboard caps, suggestion arrows, segmented-control sliders, empty-content placeholders,
-   and WebKit scrollbar adapter parts are boundary recipes. Some declarations use values Ermine
-   can name in isolation, but the authored rule is either a miniature drawing program or an engine
-   adapter. The useful future extraction is a recipe/molecule with sockets for drawings, and a
+   effect-composition hooks, and WebKit scrollbar adapter parts are boundary recipes. Some
+   declarations use values Ermine can name in isolation, but the authored rule is either a
+   miniature drawing program, an effect guard, or an engine adapter. The useful future extraction
+   is a recipe/molecule with sockets for drawings and effect composition, and a
    browser-adapter/post-process layer for scrollbar pseudo-elements, not more flat class words.
 
-4. Local identity is small and explicit.
-
-   ${localRules} residue rules contain \`local-identity\` outcomes. They are host/page
-   typography, overlay layer identity, root spacing resets, or local transition
-   suppression. ${mixedLocalRules} of those rules are mixed with recipe declarations,
-   which is expected for real CSS selectors.
+${localIdentityFinding(localRules, mixedLocalRules)}
 
 5. There is no immediate grammar pressure.
 

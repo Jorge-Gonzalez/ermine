@@ -11,8 +11,8 @@ generalization, recipe, and local-identity pressure.
 | reviewed residue declarations | 100 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 99 |
-| likely local identity | 1 |
+| likely recipe/molecule | 100 |
+| likely local identity | 0 |
 
 ## By Rule Action
 
@@ -31,19 +31,17 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 99 |
-| local-identity | 1 |
+| recipe | 100 |
 
 ## By Current Ledger Code
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 21 |
+| recipe-identity | 22 |
 | state-mechanics | 1 |
 | parent-relational | 1 |
 | pseudo-mechanics | 23 |
 | scrollbar-followup | 8 |
-| motion-followup | 1 |
 | opacity-followup | 2 |
 | user-content | 43 |
 
@@ -67,6 +65,7 @@ of residue declarations.
 | edge-attachment | conversion | review | 2 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | foreign-overlay-host-boundary | boundary | review | 2 | Group fixed host positioning and the configurable foreign-page z floor as one overlay-host fragment. |
 | rule-edge-facets | conversion | review | 2 | Replace side-specific border presence/colour declarations with the matching rule edge word. |
+| effect-composition-fragment-boundary | boundary | review | 1 | Group local tween suppression around the named effect it protects. |
 | state-backed-prefix | conversion | mechanical | 1 | Use `checked:`, `selected:`, `pressed:`, `expanded:`, or `current:` only with their required backing/capability. |
 
 ## Highest-Pressure Families
@@ -79,9 +78,8 @@ of residue declarations.
 | surface-line-elevation-cutout | recipe | 9 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 6 | promote as molecule/recipe only if reused |
 | reset-inheritance-neutralization | recipe | 4 | promote as molecule/recipe only if reused |
+| motion-transition | recipe | 3 | promote as molecule/recipe only if reused |
 | attachment-edge-layer | recipe | 2 | promote as molecule/recipe only if reused |
-| motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
-| motion-transition | local-identity | 1 | keep local after invariance/scale tests |
 
 ## Reading
 

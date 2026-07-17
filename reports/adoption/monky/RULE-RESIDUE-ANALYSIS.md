@@ -31,8 +31,8 @@ included.
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
 | authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
-| private drawing / engine pseudo | 17 | 45 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar adapter parts. |
-| control-state recipes | 8 | 9 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| private drawing / engine pseudo | 18 | 46 | Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure. |
+| control-state recipes | 7 | 8 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 
 ## Word-Assimilation Target
@@ -46,12 +46,12 @@ The authored-content substrate is likewise a deliberate authored-HTML island.
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
 | conserved project-owned residue | 100 | 46 | All remaining project-owned declarations in the current ledger. |
-| semantic fragments excluded | 45 | 17 | Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work. |
+| semantic fragments excluded | 46 | 18 | Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 10 | 9 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 9 | 8 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
-The exclusion is union-aware: 90 declarations across
-37 rules are outside the word-assimilation target. They remain visible
+The exclusion is union-aware: 91 declarations across
+38 rules are outside the word-assimilation target. They remain visible
 in the conserved ledger and boundary reports for full CSS accounting, not because they are
 missed Ermine assimilation.
 
@@ -59,15 +59,15 @@ missed Ermine assimilation.
 
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
-| control-state recipes | 8 | 9 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| control-state recipes | 7 | 8 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 
 ## By Source File
 
 | file | residue rules |
 | --- | --- |
-| `src/styles/fragments/semantic-fragments.css` | 38 |
-| `src/styles/skin/controls.css` | 8 |
+| `src/styles/fragments/semantic-fragments.css` | 39 |
+| `src/styles/skin/controls.css` | 7 |
 
 ## By Primary Rule Action
 
@@ -120,17 +120,16 @@ drawing, code/pre blocks, blockquotes, and host identity.
 3. Pseudo and engine drawing remains correctly project-owned.
 
    Keyboard caps, suggestion arrows, segmented-control sliders, empty-content placeholders,
-   and WebKit scrollbar adapter parts are boundary recipes. Some declarations use values Ermine
-   can name in isolation, but the authored rule is either a miniature drawing program or an engine
-   adapter. The useful future extraction is a recipe/molecule with sockets for drawings, and a
+   effect-composition hooks, and WebKit scrollbar adapter parts are boundary recipes. Some
+   declarations use values Ermine can name in isolation, but the authored rule is either a
+   miniature drawing program, an effect guard, or an engine adapter. The useful future extraction
+   is a recipe/molecule with sockets for drawings and effect composition, and a
    browser-adapter/post-process layer for scrollbar pseudo-elements, not more flat class words.
 
-4. Local identity is small and explicit.
+4. Local identity has been separated from the current target.
 
-   1 residue rules contain `local-identity` outcomes. They are host/page
-   typography, overlay layer identity, root spacing resets, or local transition
-   suppression. 0 of those rules are mixed with recipe declarations,
-   which is expected for real CSS selectors.
+   No residue rules contain `local-identity` outcomes. The remaining target is
+   recipe-shaped or boundary-shaped rather than a tail of unexamined local overrides.
 
 5. There is no immediate grammar pressure.
 
@@ -242,6 +241,7 @@ evidence and poor flat-word candidates.
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked="true"]` | 1 | component-private-drawing | recipe | background: transparent |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.is-sliding::before` | 1 | component-private-drawing | recipe | opacity: 1 |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.seg-snap::before` | 1 | motion-transition | recipe | transition: none |
+| `src/styles/fragments/semantic-fragments.css` | `.sf-shake-suppression` | 1 | motion-transition | recipe | transition: none !important |
 | `src/styles/skin/controls.css` | `.btn:disabled` | 1 | interaction-affordance-state | recipe | cursor: not-allowed |
 | `src/styles/skin/controls.css` | `.input-error:focus` | 1 | surface-line-elevation-cutout | recipe | box-shadow: inset 0 0 0 2px var(--status-error-wash) |
 | `src/styles/skin/controls.css` | `.min-selected-1 > .is-selected:only-of-type` | 2 | interaction-affordance-state | recipe | cursor: not-allowed<br>opacity: 0.95 |
@@ -249,7 +249,6 @@ evidence and poor flat-word candidates.
 | `src/styles/skin/controls.css` | `.radio-label` | 1 | reset-inheritance-neutralization | recipe | user-select: none |
 | `src/styles/skin/controls.css` | `.selectable-group > *` | 1 | reset-inheritance-neutralization | recipe | user-select: none |
 | `src/styles/skin/controls.css` | `.selectable-group > *:active` | 1 | interaction-affordance-state | recipe | transform: scale(0.98) |
-| `src/styles/skin/controls.css` | `.shake` | 1 | motion-transition | local-identity | transition: none !important |
 
 ## Reading
 
