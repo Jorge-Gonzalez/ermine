@@ -19,8 +19,8 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
   enforces colour-literal drift with Stylelint.
 - **Live style reachability:** Monky's build-backed style audit now reports **201 live
   static classes and 0 dead-candidate declarations** at `d58cac0`.
-- **Current assimilation:** the generated current ledger now reports **523 current
-  declarations**, **388 adopted/infrastructure declarations**, **135 project-owned
+- **Current assimilation:** the generated current ledger now reports **521 current
+  declarations**, **390 adopted/infrastructure declarations**, **131 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
@@ -87,8 +87,8 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `bec19d4`: 523 declarations, 388
-adopted/infrastructure declarations, 135 project-owned residue declarations,
+The current generated ledger is at Monky `8382998`: 521 declarations, 390
+adopted/infrastructure declarations, 131 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
 ## 4. Theme coverage (the socket plane)
@@ -124,8 +124,8 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate held the list at zero before the first post-adoption dimension endpoint
-pass. The current ledger at Monky `bec19d4` reports 523
-current declarations, 388 adopted/infrastructure declarations, 135 project-owned residue,
+pass. The current ledger at Monky `8382998` reports 521
+current declarations, 390 adopted/infrastructure declarations, 131 project-owned residue,
 `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
@@ -152,8 +152,11 @@ the engine-specific boundary.
 The alpha opacity pass then admitted bounded `alpha-*` values and migrated the search
 placeholder braces, popup hover softening, and editor style caret, leaving no
 latent-generalizable rows in the rule-action review.
-`RULE-RESIDUE-ANALYSIS.md` re-reads the 135 current project-owned declarations at rule
-granularity: they collapse to 66 authored CSS rules, mostly editor-content molecules,
+The text-decoration treatment pass then admitted `undecorated`, `underlined`, and `struck`,
+moved link-button decoration onto authored button words, and kept rich-text `u`/`s`/`a`
+descendants in the prose/editor molecule.
+`RULE-RESIDUE-ANALYSIS.md` re-reads the 131 current project-owned declarations at rule
+granularity: they collapse to 62 authored CSS rules, mostly editor-content molecules,
 private pseudo drawing, control-state recipes, and a small local identity floor.
 The remaining Phase 3 grammar work is the proportional/relational plane
 (remaining measure/viewport extents, filed in `reports/GAP-U-measure-viewport.md`, and
@@ -224,10 +227,11 @@ counts at that checkpoint; later `fill`, `square`, `cover`, `push`, `hug-inline`
 edge-attachment, side-corner, role-measured dimension, and rule-presence edge-facet
 plus text-flow release (`text-wrap`/`overflow-visible`), rule edge-colour, checked group
 skin, editor style-option state, pressed/expanded state-prefix, spacing-none endpoint,
-existing-scale modal-nav, semantic-emphasis, content-alignment, scrollbar socket, and alpha opacity migrations moved the live
+existing-scale modal-nav, semantic-emphasis, content-alignment, scrollbar socket, alpha opacity,
+and text-decoration treatment migrations moved the live
 ledger to
-523 current declarations,
-135 project-owned residue,
+521 current declarations,
+131 project-owned residue,
 `assimilable = 0`,
 and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted

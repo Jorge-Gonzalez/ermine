@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 135 |
+| reviewed residue declarations | 131 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 124 |
+| likely recipe/molecule | 120 |
 | likely local identity | 11 |
 
 ## By Rule Action
@@ -22,24 +22,24 @@ generalization, recipe, and local-identity pressure.
 | attachment-edge-layer | 6 |
 | spacing-rhythm | 19 |
 | surface-line-elevation-cutout | 17 |
-| typography-content | 27 |
+| typography-content | 25 |
 | interaction-affordance-state | 11 |
 | motion-transition | 3 |
-| reset-inheritance-neutralization | 10 |
+| reset-inheritance-neutralization | 8 |
 | component-private-drawing | 41 |
 
 ## By Latent Outcome
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 124 |
+| recipe | 120 |
 | local-identity | 11 |
 
 ## By Current Ledger Code
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 17 |
+| recipe-identity | 13 |
 | brand-identity | 6 |
 | component-contract | 7 |
 | state-mechanics | 1 |
@@ -70,11 +70,11 @@ generalization, recipe, and local-identity pressure.
 | family | latent outcome | declarations | primary pressure |
 | --- | --- | --- | --- |
 | component-private-drawing | recipe | 41 | promote as molecule/recipe only if reused |
-| typography-content | recipe | 23 | promote as molecule/recipe only if reused |
+| typography-content | recipe | 21 | promote as molecule/recipe only if reused |
 | spacing-rhythm | recipe | 17 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 17 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 11 | promote as molecule/recipe only if reused |
-| reset-inheritance-neutralization | recipe | 9 | promote as molecule/recipe only if reused |
+| reset-inheritance-neutralization | recipe | 7 | promote as molecule/recipe only if reused |
 | typography-content | local-identity | 4 | keep local after invariance/scale tests |
 | attachment-edge-layer | local-identity | 3 | keep local after invariance/scale tests |
 | attachment-edge-layer | recipe | 3 | promote as molecule/recipe only if reused |

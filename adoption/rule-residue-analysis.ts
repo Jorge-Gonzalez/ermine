@@ -184,7 +184,7 @@ function familyReading(id: string): string {
     case "private drawing / engine pseudo":
       return "Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts.";
     case "control-state recipes":
-      return "Local control recipes such as disabled buttons, link buttons, selectable groups, and minimum-selection guards.";
+      return "Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards.";
     case "exact attachment / geometry":
       return "Exact offsets, overlay layer numbers, dropdown placement, and component geometry values.";
     case "component-local surface/type fragments":
@@ -325,11 +325,10 @@ function renderControlStateSection(groups: RuleGroup[]): string {
   return `### Control-State Recipes
 
 These are not plain state variants. They encode project decisions about what controls are
-allowed to do under disabled, selected, active, link-like, or constrained states.
+allowed to do under disabled, selected, active, or constrained states.
 
 ${table(["rule cluster", "examples", "reading"], [
     ["disabled buttons", "`.btn:disabled`, `.btn:disabled:hover`", "Local disabled recipe: cursor, opacity, and hover neutralization."],
-    ["link buttons", "`.btn-link*`, `.btn-link-danger*`", "Project link-button text-decoration policy."],
     ["selectable groups", "`.selectable-group > *`, `.selectable-group > .is-selected:hover`, `.selectable-group > *:active`", "Parent/child interaction recipe."],
     ["minimum-selection guard", "`.min-selected-1 > .is-selected:only-of-type*`", "JS/state invariant expressed through selectors."],
     ["radio labels", "`.radio-label`", "Local clickable label recipe."],

@@ -12,20 +12,20 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | source | commit |
 |---|---|
-| Ermine | `9bb1d71c341b389ad64877bbb70f2efe7f045214` |
-| monky | `bec19d4d1734f04fc02abac3f89664dfb0c6ccb4` |
+| Ermine | `847ecf95138e8216c7d3d82b231d2f04046a56a8` |
+| monky | `8382998e6116c889835e71f2b7850fac5e3715fb` |
 
 ## Summary
 
-- Current declarations: 523
-- Adopted/infrastructure declarations: 388
-- Project-owned residue declarations: 135
+- Current declarations: 521
+- Adopted/infrastructure declarations: 390
+- Project-owned residue declarations: 131
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 17 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 13 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 6 | project brand typography and type treatment |
 | `component-contract` | 7 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
@@ -39,7 +39,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `user-content` | 43 | rich-text defaults inside user-authored content |
 | `identity-geometry` | 18 | project-exact geometry on a grammar-family property |
 
-## recipe-identity (17)
+## recipe-identity (13)
 
 a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 
@@ -49,7 +49,7 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 |---:|---|---|
 | 35 | `.seg-option svg` | `vertical-align: middle` |
 
-### src/styles/skin/controls.css (16)
+### src/styles/skin/controls.css (12)
 
 | line | selector | declaration |
 |---:|---|---|
@@ -57,18 +57,14 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 | 8 | `.radio-label` | `cursor: pointer` |
 | 9 | `.radio-label` | `user-select: none` |
 | 15 | `.btn-success:hover` | `background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))` |
-| 19 | `.btn-link` | `text-decoration: none` |
-| 23 | `.btn-link:hover` | `text-decoration: underline` |
-| 27 | `.btn-link-danger` | `text-decoration: none` |
-| 31 | `.btn-link-danger:hover` | `text-decoration: underline` |
-| 35 | `.btn:disabled` | `cursor: not-allowed` |
-| 36 | `.btn:disabled` | `opacity: 0.6` |
-| 40 | `.btn:disabled:hover` | `background-color: var(--tone-dim)` |
-| 41 | `.btn:disabled:hover` | `opacity: 0.6` |
-| 73 | `.selectable-group > *` | `cursor: pointer` |
-| 74 | `.selectable-group > *` | `user-select: none` |
-| 78 | `.selectable-group > *:active` | `transform: scale(0.98)` |
-| 82 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
+| 19 | `.btn:disabled` | `cursor: not-allowed` |
+| 20 | `.btn:disabled` | `opacity: 0.6` |
+| 24 | `.btn:disabled:hover` | `background-color: var(--tone-dim)` |
+| 25 | `.btn:disabled:hover` | `opacity: 0.6` |
+| 57 | `.selectable-group > *` | `cursor: pointer` |
+| 58 | `.selectable-group > *` | `user-select: none` |
+| 62 | `.selectable-group > *:active` | `transform: scale(0.98)` |
+| 66 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
 
 ## brand-identity (6)
 
@@ -139,7 +135,7 @@ JS/native state mechanics outside backed Ermine conditions
 
 | line | selector | declaration |
 |---:|---|---|
-| 86 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
+| 70 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 
 ## parent-relational (1)
 
@@ -201,14 +197,14 @@ engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15)
 
 | line | selector | declaration |
 |---:|---|---|
-| 50 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
-| 51 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
-| 55 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
-| 56 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
-| 60 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
-| 61 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
-| 62 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
-| 66 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
+| 34 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
+| 35 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
+| 39 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
+| 40 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
+| 44 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
+| 45 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
+| 46 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
+| 50 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
 
 ## motion-followup (1)
 
@@ -218,7 +214,7 @@ transition/animation timing (deferred to GAP-U-animation-plane)
 
 | line | selector | declaration |
 |---:|---|---|
-| 97 | `.shake` | `transition: none !important` |
+| 81 | `.shake` | `transition: none !important` |
 
 ## opacity-followup (2)
 
@@ -228,8 +224,8 @@ opacity state treatment (named follow-up question)
 
 | line | selector | declaration |
 |---:|---|---|
-| 87 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
-| 91 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
+| 71 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
+| 75 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
 ## elevation-followup (3)
 

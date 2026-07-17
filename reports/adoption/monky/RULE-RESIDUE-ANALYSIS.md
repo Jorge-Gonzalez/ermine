@@ -18,10 +18,10 @@ included.
 
 | metric | count |
 | --- | --- |
-| current declarations | 523 |
-| adopted/infrastructure declarations | 388 |
-| project-owned residue declarations | 135 |
-| project-owned residue rules | 66 |
+| current declarations | 521 |
+| adopted/infrastructure declarations | 390 |
+| project-owned residue declarations | 131 |
+| project-owned residue rules | 62 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 | latent-generalizable declarations | 0 |
@@ -32,7 +32,7 @@ included.
 | --- | --- | --- | --- |
 | rich-text/editor-content molecule | 21 | 48 | Descendant prose defaults inside user-authored content. This is one authored content recipe, not a set of Ermine utility gaps. |
 | private drawing / engine pseudo | 13 | 38 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
-| control-state recipes | 15 | 20 | Local control recipes such as disabled buttons, link buttons, selectable groups, and minimum-selection guards. |
+| control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | exact attachment / geometry | 8 | 12 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
 | component-local surface/type fragments | 6 | 9 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
@@ -42,7 +42,7 @@ included.
 | file | residue rules |
 | --- | --- |
 | `src/styles/components/content-editor.css` | 24 |
-| `src/styles/skin/controls.css` | 19 |
+| `src/styles/skin/controls.css` | 15 |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 7 |
 | `src/content/overlays/views/search/searchViewStyles.css` | 5 |
 | `src/content/overlays/views/settings/settingsViewStyles.css` | 5 |
@@ -57,21 +57,21 @@ rules are listed later because a single selector can combine several kinds of re
 
 | primary rule action | rules |
 | --- | --- |
-| typography-content | 19 |
+| typography-content | 17 |
 | component-private-drawing | 15 |
 | surface-line-elevation-cutout | 9 |
 | interaction-affordance-state | 8 |
 | spacing-rhythm | 6 |
 | attachment-edge-layer | 3 |
-| reset-inheritance-neutralization | 3 |
 | motion-transition | 2 |
 | dimension-constraint | 1 |
+| reset-inheritance-neutralization | 1 |
 
 ## Rule Density
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 36 |
+| 1 declaration | 32 |
 | 2 declarations | 15 |
 | 3 declarations | 8 |
 | 4+ declarations | 7 |
@@ -158,12 +158,11 @@ pseudo selectors or delegates them to a future post-processing/recipe layer.
 ### Control-State Recipes
 
 These are not plain state variants. They encode project decisions about what controls are
-allowed to do under disabled, selected, active, link-like, or constrained states.
+allowed to do under disabled, selected, active, or constrained states.
 
 | rule cluster | examples | reading |
 | --- | --- | --- |
 | disabled buttons | `.btn:disabled`, `.btn:disabled:hover` | Local disabled recipe: cursor, opacity, and hover neutralization. |
-| link buttons | `.btn-link*`, `.btn-link-danger*` | Project link-button text-decoration policy. |
 | selectable groups | `.selectable-group > *`, `.selectable-group > .is-selected:hover`, `.selectable-group > *:active` | Parent/child interaction recipe. |
 | minimum-selection guard | `.min-selected-1 > .is-selected:only-of-type*` | JS/state invariant expressed through selectors. |
 | radio labels | `.radio-label` | Local clickable label recipe. |
@@ -226,10 +225,6 @@ Ermine words because the semantics depend on component state contracts.
 | `src/styles/skin/controls.css` | `::-webkit-scrollbar-thumb` | 3 | component-private-drawing | recipe | background: var(--tone) !important<br>border-radius: var(--radius-md) !important<br>border: 1px solid var(--tone-dim) !important |
 | `src/styles/skin/controls.css` | `::-webkit-scrollbar-thumb:hover` | 1 | component-private-drawing | recipe | background: var(--accent-dim) !important |
 | `src/styles/skin/controls.css` | `::-webkit-scrollbar-track` | 2 | component-private-drawing | recipe | background: var(--tone-dim) !important<br>border-radius: var(--radius-md) !important |
-| `src/styles/skin/controls.css` | `.btn-link` | 1 | reset-inheritance-neutralization | recipe | text-decoration: none |
-| `src/styles/skin/controls.css` | `.btn-link-danger` | 1 | reset-inheritance-neutralization | recipe | text-decoration: none |
-| `src/styles/skin/controls.css` | `.btn-link-danger:hover` | 1 | typography-content | recipe | text-decoration: underline |
-| `src/styles/skin/controls.css` | `.btn-link:hover` | 1 | typography-content | recipe | text-decoration: underline |
 | `src/styles/skin/controls.css` | `.btn-success:hover` | 1 | surface-line-elevation-cutout | recipe | background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color)) |
 | `src/styles/skin/controls.css` | `.btn:disabled` | 2 | interaction-affordance-state | recipe | cursor: not-allowed<br>opacity: 0.6 |
 | `src/styles/skin/controls.css` | `.btn:disabled:hover` | 2 | surface-line-elevation-cutout, interaction-affordance-state | recipe | background-color: var(--tone-dim)<br>opacity: 0.6 |

@@ -20,16 +20,16 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the alpha opacity migration is
-Ermine 9bb1d71 / Monky bec19d4:
+were migrated). Current live ledger after the text-decoration treatment migration is
+Ermine 847ecf9 / Monky 8382998:
 
-  current declarations:                 523
-  adopted/infrastructure declarations:  388
-  project-owned residue declarations:   135
+  current declarations:                 521
+  adopted/infrastructure declarations:  390
+  project-owned residue declarations:   131
   assimilable now:                        0
 
 Current residue by reason code:
-  recipe-identity 17, brand-identity 6, component-contract 7, state-mechanics 1,
+  recipe-identity 13, brand-identity 6, component-contract 7, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
   motion-followup 1, opacity-followup 2, elevation-followup 3, reset-absence 5,
   user-content 43, identity-geometry 18.
@@ -143,7 +143,10 @@ from CSS into an `<em>` element. The content-alignment and scrollbar socket pass
 and mapped Monky scrollbar colours through `--scrollbar-thumb` / `--scrollbar-track`; the live
 residue fell to 138. The alpha opacity pass then admitted bounded `alpha-*` values at 5 percent
 increments and migrated the search placeholder braces, popup hover softening, and editor style
-caret; the live residue is now 135 with zero latent-generalizable rows.
+caret. The text-decoration treatment pass then admitted `undecorated`, `underlined`, and
+`struck`, moved the link-button hover decoration into authored button words, and left rich-text
+`u`/`s`/`a` descendants inside the prose/editor molecule; the live residue is now 131 with zero
+latent-generalizable rows.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -210,7 +213,7 @@ src/styles/entries/pages.css:
 page-title
 
 src/styles/skin/controls.css:
-btn, btn-link, btn-link-danger, btn-success, checkbox, editor-content, input-error, is-selected, min-selected-1, radio, radio-label, selectable-group, shake
+btn, btn-success, checkbox, editor-content, input-error, is-selected, min-selected-1, radio, radio-label, selectable-group, shake
 
 Markup-only local class tokens (runtime class strings with no current local CSS rule here;
 Ermine grammar words filtered out):
