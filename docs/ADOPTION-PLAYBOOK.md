@@ -60,7 +60,11 @@ Vendor-specific selectors and properties follow the same reporting rule when the
 browser-adapter hooks: they remain counted in the conserved ledger, but they are not residual
 Ermine vocabulary pressure after the standard socket or semantic fragment boundary is named.
 The detailed model and current Monky-discovered fragments are documented in
-[`SEMANTIC-FRAGMENTS.md`](SEMANTIC-FRAGMENTS.md). The historical decision is ADR-0057.
+[`SEMANTIC-FRAGMENTS.md`](SEMANTIC-FRAGMENTS.md). The broader post-assimilation conclusions,
+including the label-placement model, composition-alias pressure, and VS Code adoption-lens
+direction, are recorded in
+[`MONKY-POST-ASSIMILATION-CONCLUSIONS.md`](MONKY-POST-ASSIMILATION-CONCLUSIONS.md).
+The historical decision is ADR-0057.
 
 ## Current Recipes
 

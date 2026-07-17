@@ -118,3 +118,8 @@ components. A fragment entry would likely declare:
 
 This keeps Ermine's word layer pure while giving the ecosystem a place for reusable, designer
 controllable style objects.
+
+The Monky post-assimilation conclusions extend this with the adjacent idea of semantic
+composition aliases: named expansions made only of Ermine words, used to shorten recurring
+paragraphs without admitting a new fragment or core word. See
+[`MONKY-POST-ASSIMILATION-CONCLUSIONS.md`](MONKY-POST-ASSIMILATION-CONCLUSIONS.md).
