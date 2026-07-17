@@ -20,26 +20,26 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the scrim backdrop migration is
-Ermine 99a921f / Monky e0231c1:
+were migrated). Current live ledger after the offset attachment migration is
+Ermine 6ec20ef / Monky 6714b7a:
 
   current declarations:                 520
-  adopted/infrastructure declarations:  392
-  project-owned residue declarations:   128
+  adopted/infrastructure declarations:  394
+  project-owned residue declarations:   126
   assimilable now:                        0
-  word-assimilation target:              40 declarations across 25 rules
+  word-assimilation target:              38 declarations across 25 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 128 project-owned declarations; 88 declarations across 36 rules are
+still carries the full 126 project-owned declarations; 88 declarations across 36 rules are
 deliberately outside the flat-word target: 43 semantic-fragment declarations and
 45 content-editor default declarations.
 
 Current residue by reason code:
-  recipe-identity 26, brand-identity 4, component-contract 2, state-mechanics 1,
+  recipe-identity 26, brand-identity 4, component-contract 1, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
   motion-followup 1, opacity-followup 2, elevation-followup 2, reset-absence 3,
-  user-content 43, identity-geometry 12.
+  user-content 43, identity-geometry 11.
 
 Historical invariance sample:
 
@@ -167,7 +167,11 @@ the modal dialog's local two-layer shadow into that word, intentionally leaving 
 `mix-blend-mode: multiply` exactness behind. The scrim pass then admitted `scrim` as backdrop
 dimming via an alpha background socket, moved the modal backdrop colour into that word, and fixed
 the modal manifest so `elevated-soft` is emitted in Monky's generated grammar bundle. The live
-residue is now 128 and the adjusted word-assimilation target is 40 declarations across 25 rules.
+residue fell to 128 and the adjusted word-assimilation target to 40 declarations across 25 rules.
+The offset attachment pass then admitted `attach-left` plus scale-backed `attach-below-*` /
+`attach-above-*` words and moved the content-editor style dropdown's `top` and `left` placement
+into Ermine. The live residue is now 126 and the adjusted word-assimilation target is
+38 declarations across 25 rules.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -201,7 +205,7 @@ suggestion rows, and segmented options. The positioned edge-attachment pass remo
 command-dropdown and suggestion-arrow edge placement declarations. The side-corner pass removed
 local macro command/error/dropdown radius declarations. The soft-elevation pass removed the modal
 dialog shadow/blend rule. The scrim pass removed the modal backdrop colour declaration. The
-inventory below is the current live non-Ermine class surface after the scrim backdrop migration;
+inventory below is the current live non-Ermine class surface after the offset attachment migration;
 comment-only sheets and retired hooks
 are no longer listed as CSS-backed style owners.
 
@@ -460,8 +464,8 @@ Likely Ermine pressure:
   engine-scrollbar post-processing or recipe layer.
 
 Summary shape for the next assimilation pass:
-  - Adjusted word-assimilation target: 40 declarations across 25 rules after excluding
-    semantic fragments and content-editor defaults from the conserved 128-declaration residue.
+  - Adjusted word-assimilation target: 38 declarations across 25 rules after excluding
+    semantic fragments and content-editor defaults from the conserved 126-declaration residue.
   - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
     measured size scale.
   - Most likely molecules/recipes: authored-content substrate / optional prose recipe,

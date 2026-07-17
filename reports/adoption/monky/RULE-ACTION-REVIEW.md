@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 128 |
+| reviewed residue declarations | 126 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 118 |
+| likely recipe/molecule | 116 |
 | likely local identity | 10 |
 
 ## By Rule Action
@@ -19,20 +19,20 @@ generalization, recipe, and local-identity pressure.
 | rule action | declarations |
 | --- | --- |
 | dimension-constraint | 1 |
-| attachment-edge-layer | 6 |
+| attachment-edge-layer | 5 |
 | spacing-rhythm | 19 |
 | surface-line-elevation-cutout | 14 |
 | typography-content | 25 |
 | interaction-affordance-state | 11 |
 | motion-transition | 3 |
-| reset-inheritance-neutralization | 8 |
+| reset-inheritance-neutralization | 7 |
 | component-private-drawing | 41 |
 
 ## By Latent Outcome
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 118 |
+| recipe | 116 |
 | local-identity | 10 |
 
 ## By Current Ledger Code
@@ -41,7 +41,7 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | recipe-identity | 26 |
 | brand-identity | 4 |
-| component-contract | 2 |
+| component-contract | 1 |
 | state-mechanics | 1 |
 | parent-relational | 1 |
 | pseudo-mechanics | 23 |
@@ -51,7 +51,7 @@ generalization, recipe, and local-identity pressure.
 | elevation-followup | 2 |
 | reset-absence | 3 |
 | user-content | 43 |
-| identity-geometry | 12 |
+| identity-geometry | 11 |
 
 ## Matched Playbook Recipes
 
@@ -68,9 +68,9 @@ of residue declarations.
 | engine-scrollbar-boundary | boundary | mechanical | 8 | Keep engine-specific pseudo selectors grouped by scrollbar part. |
 | root-and-structural-reset-boundary | boundary | mechanical | 5 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
 | callout-arrow-boundary | boundary | review | 4 | Group zero-size box, transparent borders, orientation colour, and attachment together. |
-| edge-attachment | conversion | review | 3 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | generated-placeholder-boundary | boundary | mechanical | 3 | Group generated content, placeholder colour, and pointer-events suppression. |
 | dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |
+| edge-attachment | conversion | review | 2 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | rule-edge-facets | conversion | review | 2 | Replace side-specific border presence/colour declarations with the matching rule edge word. |
 | state-backed-prefix | conversion | mechanical | 1 | Use `checked:`, `selected:`, `pressed:`, `expanded:`, or `current:` only with their required backing/capability. |
 
@@ -83,10 +83,10 @@ of residue declarations.
 | spacing-rhythm | recipe | 17 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 14 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 11 | promote as molecule/recipe only if reused |
-| reset-inheritance-neutralization | recipe | 8 | promote as molecule/recipe only if reused |
+| reset-inheritance-neutralization | recipe | 7 | promote as molecule/recipe only if reused |
 | typography-content | local-identity | 4 | keep local after invariance/scale tests |
 | attachment-edge-layer | local-identity | 3 | keep local after invariance/scale tests |
-| attachment-edge-layer | recipe | 3 | promote as molecule/recipe only if reused |
+| attachment-edge-layer | recipe | 2 | promote as molecule/recipe only if reused |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
 | dimension-constraint | recipe | 1 | promote as molecule/recipe only if reused |

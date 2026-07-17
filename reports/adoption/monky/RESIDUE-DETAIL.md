@@ -12,14 +12,14 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | source | commit |
 |---|---|
-| Ermine | `99a921f9960db4fea39098b3e299650136b5f244` |
-| monky | `e0231c154bbeba17ece2f65f1f9c70f48e286d84` |
+| Ermine | `6ec20ef0a92d902764558298509d83b644703760` |
+| monky | `6714b7aede685f61d91289576df306c06eb03ddd` |
 
 ## Summary
 
 - Current declarations: 520
-- Adopted/infrastructure declarations: 392
-- Project-owned residue declarations: 128
+- Adopted/infrastructure declarations: 394
+- Project-owned residue declarations: 126
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -27,7 +27,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 |---|---:|---|
 | `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 4 | project brand typography and type treatment |
-| `component-contract` | 2 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 1 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
@@ -37,7 +37,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `elevation-followup` | 2 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `reset-absence` | 3 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 12 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 11 | project-exact geometry on a grammar-family property |
 
 ## recipe-identity (26)
 
@@ -97,16 +97,15 @@ project brand typography and type treatment
 | 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (2)
+## component-contract (1)
 
 component-owned mechanics, exact geometry, or product contract
 
-### src/styles/components/content-editor.css (2)
+### src/styles/components/content-editor.css (1)
 
 | line | selector | declaration |
 |---:|---|---|
 | 10 | `.ce-toolbar-sep` | `background-color: var(--harmonic)` |
-| 21 | `.ce-style-dropdown` | `left: 0` |
 
 ## state-mechanics (1)
 
@@ -278,7 +277,7 @@ rich-text defaults inside user-authored content
 | 108 | `.sf-authored-content a` | `text-decoration: underline` |
 | 112 | `.sf-authored-content a:hover` | `opacity: 0.8` |
 
-## identity-geometry (12)
+## identity-geometry (11)
 
 project-exact geometry on a grammar-family property
 
@@ -309,13 +308,12 @@ project-exact geometry on a grammar-family property
 |---:|---|---|
 | 9 | `.macro-search-item-edit` | `right: var(--spacing-sm)` |
 
-### src/styles/components/content-editor.css (3)
+### src/styles/components/content-editor.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
 | 15 | `.ce-style-trigger` | `gap: 2px` |
-| 20 | `.ce-style-dropdown` | `top: calc(100% + 4px)` |
-| 22 | `.ce-style-dropdown` | `gap: 2px` |
+| 20 | `.ce-style-dropdown` | `gap: 2px` |
 
 ### src/styles/entries/pages.css (2)
 

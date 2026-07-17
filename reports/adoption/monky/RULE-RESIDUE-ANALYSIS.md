@@ -19,8 +19,8 @@ included.
 | metric | count |
 | --- | --- |
 | current declarations | 520 |
-| adopted/infrastructure declarations | 392 |
-| project-owned residue declarations | 128 |
+| adopted/infrastructure declarations | 394 |
+| project-owned residue declarations | 126 |
 | project-owned residue rules | 61 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
@@ -31,7 +31,7 @@ included.
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
 | authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
-| editor chrome recipes | 3 | 5 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
+| editor chrome recipes | 3 | 3 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
 | private drawing / engine pseudo | 16 | 43 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
@@ -47,10 +47,10 @@ not missing flat words: they are recipe/fragments or a deliberate authored-HTML 
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 128 | 61 | All remaining project-owned declarations in the current ledger. |
+| conserved project-owned residue | 126 | 61 | All remaining project-owned declarations in the current ledger. |
 | semantic fragments excluded | 43 | 16 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, and generated-placeholder fragments. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 40 | 25 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 38 | 25 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
 The exclusion is union-aware: 88 declarations across
 36 rules are outside the word-assimilation target. They remain visible
@@ -60,7 +60,7 @@ in the conserved ledger and boundary reports.
 
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
-| editor chrome recipes | 3 | 5 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
+| editor chrome recipes | 3 | 3 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | exact attachment / geometry | 4 | 5 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
@@ -90,9 +90,9 @@ rules are listed later because a single selector can combine several kinds of re
 | typography-content | 17 |
 | component-private-drawing | 15 |
 | interaction-affordance-state | 8 |
+| spacing-rhythm | 7 |
 | surface-line-elevation-cutout | 7 |
-| spacing-rhythm | 6 |
-| attachment-edge-layer | 4 |
+| attachment-edge-layer | 3 |
 | motion-transition | 2 |
 | dimension-constraint | 1 |
 | reset-inheritance-neutralization | 1 |
@@ -101,9 +101,9 @@ rules are listed later because a single selector can combine several kinds of re
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 33 |
+| 1 declaration | 34 |
 | 2 declarations | 13 |
-| 3 declarations | 8 |
+| 3 declarations | 7 |
 | 4+ declarations | 7 |
 
 This matters because most remaining rules are narrow and intentional. The seven
@@ -235,7 +235,7 @@ evidence and poor flat-word candidates.
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | `.editor-toast` | 2 | attachment-edge-layer, surface-line-elevation-cutout | recipe | bottom: 52px<br>box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%) |
 | `src/content/overlays/views/search/searchViewStyles.css` | `.macro-search-item-edit` | 1 | attachment-edge-layer | recipe | right: var(--spacing-sm) |
 | `src/content/overlays/views/search/searchViewStyles.css` | `.macro-search-item-text mark` | 3 | reset-inheritance-neutralization | recipe | background: transparent<br>color: inherit<br>font-style: normal |
-| `src/styles/components/content-editor.css` | `.ce-style-dropdown` | 3 | attachment-edge-layer, reset-inheritance-neutralization, spacing-rhythm | recipe | top: calc(100% + 4px)<br>left: 0<br>gap: 2px |
+| `src/styles/components/content-editor.css` | `.ce-style-dropdown` | 1 | spacing-rhythm | recipe | gap: 2px |
 | `src/styles/components/content-editor.css` | `.ce-style-trigger` | 1 | spacing-rhythm | recipe | gap: 2px |
 | `src/styles/components/content-editor.css` | `.ce-toolbar-sep` | 1 | surface-line-elevation-cutout | recipe | background-color: var(--harmonic) |
 | `src/styles/entries/pages.css` | `.page-title` | 1 | typography-content | local-identity | font-family: 'IBM Plex Condensed Light', sans-serif |
