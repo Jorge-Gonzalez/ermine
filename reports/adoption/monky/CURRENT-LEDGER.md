@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `aeb2cb954cfaaaeae315471a40488a412dd83b16` |
+| monky | `31d1529e60d9cf43e6910767bdd20d186f6239d5` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 517 |
+| current declarations | 513 |
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 395 |
-| **residue — project-owned declarations** | **122** |
+| **residue — project-owned declarations** | **118** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -39,7 +39,7 @@ re-validated on every run.
 | `theme-metric` | 61 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `brand-identity` | 4 | project brand typography and type treatment |
+| `brand-identity` | 2 | project brand typography and type treatment |
 | `component-contract` | 1 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
@@ -47,9 +47,9 @@ re-validated on every run.
 | `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
-| `elevation-followup` | 2 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
+| `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 10 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 9 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -57,10 +57,10 @@ re-validated on every run.
 |---|---:|
 | `src/styles/fragments/semantic-fragments.css` | 89 |
 | `src/styles/skin/controls.css` | 16 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 6 |
 | `src/styles/entries/pages.css` | 4 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 3 |
 | `src/styles/components/content-editor.css` | 3 |
+| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 2 |
 | `src/content/overlays/modal/modalStyles.css` | 1 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.

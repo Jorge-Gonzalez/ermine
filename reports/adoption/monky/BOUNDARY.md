@@ -23,7 +23,7 @@ invariance pass as the roadmap for future ruling cycles.
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `aeb2cb954cfaaaeae315471a40488a412dd83b16` |
+| monky | `31d1529e60d9cf43e6910767bdd20d186f6239d5` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 122 |
+| project-owned residue | 118 |
 
 ## Product Identity
 
@@ -44,9 +44,9 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 | code | count | boundary |
 |---|---:|---|
 | `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `identity-geometry` | 10 | project-exact geometry on a grammar-family property |
-| `brand-identity` | 4 | project brand typography and type treatment |
-| `elevation-followup` | 2 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
+| `identity-geometry` | 9 | project-exact geometry on a grammar-family property |
+| `brand-identity` | 2 | project brand typography and type treatment |
+| `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
 ## Relational / Scale-Backed Follow-Up
 
@@ -97,4 +97,4 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 | `scrollbar-followup` | 8 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
 | `motion-followup` | 1 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 2 | named follow-up: opacity prominence treatment (no report filed yet) |
-| `elevation-followup` | 2 | R-SKIN-09 boundary clause |
+| `elevation-followup` | 1 | R-SKIN-09 boundary clause |

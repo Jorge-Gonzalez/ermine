@@ -13,20 +13,20 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `aeb2cb954cfaaaeae315471a40488a412dd83b16` |
+| monky | `31d1529e60d9cf43e6910767bdd20d186f6239d5` |
 
 ## Summary
 
-- Current declarations: 517
+- Current declarations: 513
 - Adopted/infrastructure declarations: 395
-- Project-owned residue declarations: 122
+- Project-owned residue declarations: 118
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
 | `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `brand-identity` | 4 | project brand typography and type treatment |
+| `brand-identity` | 2 | project brand typography and type treatment |
 | `component-contract` | 1 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
@@ -34,9 +34,9 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
-| `elevation-followup` | 2 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
+| `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 10 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 9 | project-exact geometry on a grammar-family property |
 
 ## recipe-identity (26)
 
@@ -78,16 +78,9 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 | 42 | `.selectable-group > *:active` | `transform: scale(0.98)` |
 | 46 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
 
-## brand-identity (4)
+## brand-identity (2)
 
 project brand typography and type treatment
-
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 3 | `:host, #macro-suggestions` | `font-family: 'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif` |
-| 4 | `:host, #macro-suggestions` | `line-height: 1.5` |
 
 ### src/styles/entries/pages.css (2)
 
@@ -196,15 +189,9 @@ opacity state treatment (named follow-up question)
 | 51 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
 | 55 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
-## elevation-followup (2)
+## elevation-followup (1)
 
 box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09)
-
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 10 | `.macro-suggestions-container` | `box-shadow: 0 10px 25px -5px var(--shadow-color)` |
 
 ### src/content/overlays/views/macroEditor/editorViewStyles.css (1)
 
@@ -264,7 +251,7 @@ rich-text defaults inside user-authored content
 | 108 | `.sf-authored-content a` | `text-decoration: underline` |
 | 112 | `.sf-authored-content a:hover` | `opacity: 0.8` |
 
-## identity-geometry (10)
+## identity-geometry (9)
 
 project-exact geometry on a grammar-family property
 
@@ -274,13 +261,12 @@ project-exact geometry on a grammar-family property
 |---:|---|---|
 | 19 | `.modal-backdrop` | `z-index: 10000` |
 
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (3)
+### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
 
 | line | selector | declaration |
 |---:|---|---|
-| 5 | `:host, #macro-suggestions` | `position: fixed !important` |
-| 6 | `:host, #macro-suggestions` | `z-index: 2147483646 !important` |
-| 14 | `.macro-suggestions-command-item` | `padding: 3px 6px` |
+| 3 | `:host, #macro-suggestions` | `position: fixed !important` |
+| 4 | `:host, #macro-suggestions` | `z-index: 2147483646 !important` |
 
 ### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
 

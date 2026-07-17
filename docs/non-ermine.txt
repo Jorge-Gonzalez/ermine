@@ -20,26 +20,26 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the positioned inset cleanup is
-Ermine ed12f35 / Monky aeb2cb9:
+were migrated). Current live ledger after the suggestions surface cleanup is
+Ermine ed12f35 / Monky 31d1529:
 
-  current declarations:                 517
+  current declarations:                 513
   adopted/infrastructure declarations:  395
-  project-owned residue declarations:   122
+  project-owned residue declarations:   118
   assimilable now:                        0
-  word-assimilation target:              34 declarations across 23 rules
+  word-assimilation target:              30 declarations across 21 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 122 project-owned declarations; 88 declarations across 36 rules are
+still carries the full 118 project-owned declarations; 88 declarations across 36 rules are
 deliberately outside the flat-word target: 43 semantic-fragment declarations and
 45 content-editor default declarations.
 
 Current residue by reason code:
-  recipe-identity 26, brand-identity 4, component-contract 1, state-mechanics 1,
+  recipe-identity 26, brand-identity 2, component-contract 1, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
-  motion-followup 1, opacity-followup 2, elevation-followup 2,
-  user-content 43, identity-geometry 10.
+  motion-followup 1, opacity-followup 2, elevation-followup 1,
+  user-content 43, identity-geometry 9.
 
 Historical invariance sample:
 
@@ -177,6 +177,12 @@ into the same positioned-relation footprint family, moved the macro search edit 
 right offset to `inset-right-sm`, and replaced neutralized `<mark>` placeholder wrappers with
 plain spans. The live residue is now 122 and the adjusted word-assimilation target is
 34 declarations across 23 rules.
+The suggestions surface cleanup then moved the suggestions/delete-confirm container shadow to
+`elevated-soft`, snapped command-item padding to `padding-block-xs padding-inline-sm`, and removed
+redundant suggestions host font/leading already supplied by the shared shadow bundle. The
+suggestions stylesheet is now only the extension host overlay boundary (`position: fixed !important`
+plus the host-beating z-index). The live residue is now 118 and the adjusted
+word-assimilation target is 30 declarations across 21 rules.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -211,7 +217,10 @@ command-dropdown and suggestion-arrow edge placement declarations. The side-corn
 local macro command/error/dropdown radius declarations. The soft-elevation pass removed the modal
 dialog shadow/blend rule. The scrim pass removed the modal backdrop colour declaration. The
 positioned inset cleanup removed the local macro search edit offset and the neutralized mark reset.
-The inventory below is the current live non-Ermine class surface after the positioned inset cleanup;
+The suggestions surface cleanup removed the local suggestions container shadow, command-item
+padding, and duplicate host font/leading; `suggestionsOverlayStyles.css` now owns only the
+non-class overlay host boundary. The inventory below is the current live non-Ermine class surface
+after the suggestions surface cleanup;
 comment-only sheets and retired hooks
 are no longer listed as CSS-backed style owners.
 
@@ -220,9 +229,6 @@ Ermine grammar and infrastructure/theme/substrate sheets filtered out):
 
 src/content/overlays/modal/modalStyles.css:
 modal-backdrop
-
-src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:
-macro-suggestions-command-item, macro-suggestions-container
 
 src/content/overlays/views/macroEditor/editorViewStyles.css:
 content-editor-body, editor-content, editor-toast
@@ -467,8 +473,8 @@ Likely Ermine pressure:
   engine-scrollbar post-processing or recipe layer.
 
 Summary shape for the next assimilation pass:
-  - Adjusted word-assimilation target: 34 declarations across 23 rules after excluding
-    semantic fragments and content-editor defaults from the conserved 122-declaration residue.
+  - Adjusted word-assimilation target: 30 declarations across 21 rules after excluding
+    semantic fragments and content-editor defaults from the conserved 118-declaration residue.
   - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
     measured size scale.
   - Most likely molecules/recipes: authored-content substrate / optional prose recipe,

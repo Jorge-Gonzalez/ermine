@@ -8,11 +8,11 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 122 |
+| reviewed residue declarations | 118 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 112 |
-| likely local identity | 10 |
+| likely recipe/molecule | 110 |
+| likely local identity | 8 |
 
 ## By Rule Action
 
@@ -20,9 +20,9 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | dimension-constraint | 1 |
 | attachment-edge-layer | 4 |
-| spacing-rhythm | 19 |
-| surface-line-elevation-cutout | 14 |
-| typography-content | 25 |
+| spacing-rhythm | 18 |
+| surface-line-elevation-cutout | 13 |
+| typography-content | 23 |
 | interaction-affordance-state | 11 |
 | motion-transition | 3 |
 | reset-inheritance-neutralization | 4 |
@@ -32,15 +32,15 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 112 |
-| local-identity | 10 |
+| recipe | 110 |
+| local-identity | 8 |
 
 ## By Current Ledger Code
 
 | current code | declarations |
 | --- | --- |
 | recipe-identity | 26 |
-| brand-identity | 4 |
+| brand-identity | 2 |
 | component-contract | 1 |
 | state-mechanics | 1 |
 | parent-relational | 1 |
@@ -48,9 +48,9 @@ generalization, recipe, and local-identity pressure.
 | scrollbar-followup | 8 |
 | motion-followup | 1 |
 | opacity-followup | 2 |
-| elevation-followup | 2 |
+| elevation-followup | 1 |
 | user-content | 43 |
-| identity-geometry | 10 |
+| identity-geometry | 9 |
 
 ## Matched Playbook Recipes
 
@@ -79,14 +79,14 @@ of residue declarations.
 | --- | --- | --- | --- |
 | component-private-drawing | recipe | 41 | promote as molecule/recipe only if reused |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
-| spacing-rhythm | recipe | 17 | promote as molecule/recipe only if reused |
-| surface-line-elevation-cutout | recipe | 14 | promote as molecule/recipe only if reused |
+| spacing-rhythm | recipe | 16 | promote as molecule/recipe only if reused |
+| surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 11 | promote as molecule/recipe only if reused |
 | reset-inheritance-neutralization | recipe | 4 | promote as molecule/recipe only if reused |
-| typography-content | local-identity | 4 | keep local after invariance/scale tests |
 | attachment-edge-layer | local-identity | 3 | keep local after invariance/scale tests |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
+| typography-content | local-identity | 2 | keep local after invariance/scale tests |
 | attachment-edge-layer | recipe | 1 | promote as molecule/recipe only if reused |
 | dimension-constraint | recipe | 1 | promote as molecule/recipe only if reused |
 | motion-transition | local-identity | 1 | keep local after invariance/scale tests |

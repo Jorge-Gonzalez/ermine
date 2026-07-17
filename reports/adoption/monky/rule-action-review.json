@@ -3,25 +3,25 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "aeb2cb954cfaaaeae315471a40488a412dd83b16"
+    "projectCommit": "31d1529e60d9cf43e6910767bdd20d186f6239d5"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 122,
+    "reviewedDeclarations": 118,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 112,
-    "likelyLocal": 10,
+    "likelyRecipe": 110,
+    "likelyLocal": 8,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 1,
       "attachment-edge-layer": 4,
-      "spacing-rhythm": 19,
+      "spacing-rhythm": 18,
       "alignment-layout": 0,
-      "surface-line-elevation-cutout": 14,
-      "typography-content": 25,
+      "surface-line-elevation-cutout": 13,
+      "typography-content": 23,
       "interaction-affordance-state": 11,
       "motion-transition": 3,
       "reset-inheritance-neutralization": 4,
@@ -32,8 +32,8 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 112,
-      "local-identity": 10
+      "recipe": 110,
+      "local-identity": 8
     },
     "byCurrentCode": {
       "ermine-emitted": 0,
@@ -43,7 +43,7 @@
       "assimilable": 0,
       "recipe-identity": 26,
       "rule-mechanics": 0,
-      "brand-identity": 4,
+      "brand-identity": 2,
       "affordance-mechanics": 0,
       "component-contract": 1,
       "state-mechanics": 1,
@@ -55,10 +55,10 @@
       "scrollbar-followup": 8,
       "motion-followup": 1,
       "opacity-followup": 2,
-      "elevation-followup": 2,
+      "elevation-followup": 1,
       "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 10,
+      "identity-geometry": 9,
       "skin-review": 0,
       "identity-review": 0
     },
@@ -100,37 +100,9 @@
       "proposedForm": "keep local"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::font-family::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 3,
-      "selector": ":host, #macro-suggestions",
-      "property": "font-family",
-      "value": "'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-      "currentCode": "brand-identity",
-      "ruleAction": "typography-content",
-      "latentOutcome": "local-identity",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::line-height::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 4,
-      "selector": ":host, #macro-suggestions",
-      "property": "line-height",
-      "value": "1.5",
-      "currentCode": "brand-identity",
-      "ruleAction": "typography-content",
-      "latentOutcome": "local-identity",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::position::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 5,
+      "line": 3,
       "selector": ":host, #macro-suggestions",
       "property": "position",
       "value": "fixed !important",
@@ -144,7 +116,7 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::z-index::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 6,
+      "line": 4,
       "selector": ":host, #macro-suggestions",
       "property": "z-index",
       "value": "2147483646 !important",
@@ -154,34 +126,6 @@
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
       "erminePressure": "keep local after invariance/scale tests",
       "proposedForm": "keep local"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::box-shadow::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 10,
-      "selector": ".macro-suggestions-container",
-      "property": "box-shadow",
-      "value": "0 10px 25px -5px var(--shadow-color)",
-      "currentCode": "elevation-followup",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "recipe",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 14,
-      "selector": ".macro-suggestions-command-item",
-      "property": "padding",
-      "value": "3px 6px",
-      "currentCode": "identity-geometry",
-      "ruleAction": "spacing-rhythm",
-      "latentOutcome": "recipe",
-      "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::flex::1",

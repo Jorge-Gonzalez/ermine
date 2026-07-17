@@ -3,11 +3,11 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "aeb2cb954cfaaaeae315471a40488a412dd83b16"
+    "projectCommit": "31d1529e60d9cf43e6910767bdd20d186f6239d5"
   },
   "summary": {
-    "totalDeclarations": 517,
-    "residueDeclarations": 122,
+    "totalDeclarations": 513,
+    "residueDeclarations": 118,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 280,
@@ -17,7 +17,7 @@
       "assimilable": 0,
       "recipe-identity": 26,
       "rule-mechanics": 0,
-      "brand-identity": 4,
+      "brand-identity": 2,
       "affordance-mechanics": 0,
       "component-contract": 1,
       "state-mechanics": 1,
@@ -29,10 +29,10 @@
       "scrollbar-followup": 8,
       "motion-followup": 1,
       "opacity-followup": 2,
-      "elevation-followup": 2,
+      "elevation-followup": 1,
       "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 10,
+      "identity-geometry": 9,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -48,27 +48,9 @@
       "code": "identity-geometry"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::font-family::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 3,
-      "selector": ":host, #macro-suggestions",
-      "property": "font-family",
-      "value": "'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-      "code": "brand-identity"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::line-height::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 4,
-      "selector": ":host, #macro-suggestions",
-      "property": "line-height",
-      "value": "1.5",
-      "code": "brand-identity"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::position::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 5,
+      "line": 3,
       "selector": ":host, #macro-suggestions",
       "property": "position",
       "value": "fixed !important",
@@ -77,28 +59,10 @@
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::z-index::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 6,
+      "line": 4,
       "selector": ":host, #macro-suggestions",
       "property": "z-index",
       "value": "2147483646 !important",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-container::box-shadow::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 10,
-      "selector": ".macro-suggestions-container",
-      "property": "box-shadow",
-      "value": "0 10px 25px -5px var(--shadow-color)",
-      "code": "elevation-followup"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 14,
-      "selector": ".macro-suggestions-command-item",
-      "property": "padding",
-      "value": "3px 6px",
       "code": "identity-geometry"
     },
     {

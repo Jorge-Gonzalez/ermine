@@ -18,10 +18,10 @@ included.
 
 | metric | count |
 | --- | --- |
-| current declarations | 517 |
+| current declarations | 513 |
 | adopted/infrastructure declarations | 395 |
-| project-owned residue declarations | 122 |
-| project-owned residue rules | 59 |
+| project-owned residue declarations | 118 |
+| project-owned residue rules | 57 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 | latent-generalizable declarations | 0 |
@@ -35,9 +35,9 @@ included.
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
 | private drawing / engine pseudo | 16 | 43 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
-| exact attachment / geometry | 3 | 4 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
-| component-local surface/type fragments | 2 | 2 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
-| root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
+| exact attachment / geometry | 2 | 3 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
+| component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
+| root/page/host identity | 3 | 6 | Host/page reset and brand type identity. |
 
 ## Word-Assimilation Target
 
@@ -47,10 +47,10 @@ not missing flat words: they are recipe/fragments or a deliberate authored-HTML 
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 122 | 59 | All remaining project-owned declarations in the current ledger. |
+| conserved project-owned residue | 118 | 57 | All remaining project-owned declarations in the current ledger. |
 | semantic fragments excluded | 43 | 16 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, and generated-placeholder fragments. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 34 | 23 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 30 | 21 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
 The exclusion is union-aware: 88 declarations across
 36 rules are outside the word-assimilation target. They remain visible
@@ -63,9 +63,9 @@ in the conserved ledger and boundary reports.
 | editor chrome recipes | 3 | 3 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
-| exact attachment / geometry | 3 | 4 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
-| component-local surface/type fragments | 2 | 2 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
-| root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
+| exact attachment / geometry | 2 | 3 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
+| component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
+| root/page/host identity | 3 | 6 | Host/page reset and brand type identity. |
 
 ## By Source File
 
@@ -73,11 +73,11 @@ in the conserved ledger and boundary reports.
 | --- | --- |
 | `src/styles/fragments/semantic-fragments.css` | 37 |
 | `src/styles/skin/controls.css` | 11 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 3 |
 | `src/styles/components/content-editor.css` | 3 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 2 |
 | `src/styles/entries/pages.css` | 2 |
 | `src/content/overlays/modal/modalStyles.css` | 1 |
+| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 1 |
 
 ## By Primary Rule Action
 
@@ -86,12 +86,12 @@ rules are listed later because a single selector can combine several kinds of re
 
 | primary rule action | rules |
 | --- | --- |
-| typography-content | 17 |
+| typography-content | 16 |
 | component-private-drawing | 15 |
 | interaction-affordance-state | 8 |
-| spacing-rhythm | 7 |
-| surface-line-elevation-cutout | 7 |
-| attachment-edge-layer | 2 |
+| spacing-rhythm | 6 |
+| surface-line-elevation-cutout | 6 |
+| attachment-edge-layer | 3 |
 | motion-transition | 2 |
 | dimension-constraint | 1 |
 
@@ -99,12 +99,12 @@ rules are listed later because a single selector can combine several kinds of re
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 33 |
-| 2 declarations | 13 |
+| 1 declaration | 31 |
+| 2 declarations | 14 |
 | 3 declarations | 6 |
-| 4+ declarations | 7 |
+| 4+ declarations | 6 |
 
-This matters because most remaining rules are narrow and intentional. The seven
+This matters because most remaining rules are narrow and intentional. The six
 dense rules are recognizable authored shapes: segmented slider drawing, keyboard cap
 drawing, code/pre blocks, blockquotes, and host identity.
 
@@ -226,9 +226,7 @@ evidence and poor flat-word candidates.
 | file | selector | declarations | rule actions | outcome | residue declarations |
 | --- | --- | --- | --- | --- | --- |
 | `src/content/overlays/modal/modalStyles.css` | `.modal-backdrop` | 1 | attachment-edge-layer | local-identity | z-index: 10000 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `:host, #macro-suggestions` | 4 | typography-content, attachment-edge-layer | local-identity | font-family: 'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif<br>line-height: 1.5<br>position: fixed !important<br>z-index: 2147483646 !important |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `.macro-suggestions-command-item` | 1 | spacing-rhythm | recipe | padding: 3px 6px |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `.macro-suggestions-container` | 1 | surface-line-elevation-cutout | recipe | box-shadow: 0 10px 25px -5px var(--shadow-color) |
+| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `:host, #macro-suggestions` | 2 | attachment-edge-layer | local-identity | position: fixed !important<br>z-index: 2147483646 !important |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | `.editor-content .content-editor-body` | 1 | dimension-constraint | recipe | flex: 1 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | `.editor-toast` | 2 | attachment-edge-layer, surface-line-elevation-cutout | recipe | bottom: 52px<br>box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%) |
 | `src/styles/components/content-editor.css` | `.ce-style-dropdown` | 1 | spacing-rhythm | recipe | gap: 2px |
