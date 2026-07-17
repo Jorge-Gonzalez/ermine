@@ -3,16 +3,16 @@
   "project": "monky",
   "source": {
     "ermineCommit": "f87be063e15466bf92cdbca0fab012d079e82bc5",
-    "projectCommit": "49072318cef9303cfac29bf634c6d5c9404a2fae"
+    "projectCommit": "7eef9cdb989c579bfc89c646caebccf914f505a7"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 98,
+    "reviewedDeclarations": 97,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 98,
+    "likelyRecipe": 97,
     "likelyLocal": 0,
     "byRuleAction": {
       "already-admitted": 0,
@@ -24,7 +24,7 @@
       "typography-content": 21,
       "interaction-affordance-state": 5,
       "motion-transition": 3,
-      "reset-inheritance-neutralization": 4,
+      "reset-inheritance-neutralization": 3,
       "component-private-drawing": 41
     },
     "byLatentOutcome": {
@@ -32,7 +32,7 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 98,
+      "recipe": 97,
       "local-identity": 0
     },
     "byCurrentCode": {
@@ -41,7 +41,7 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 23,
+      "recipe-identity": 22,
       "rule-mechanics": 0,
       "brand-identity": 0,
       "affordance-mechanics": 0,
@@ -73,7 +73,7 @@
       "rule-edge-facets": 2,
       "side-corner-facets": 0,
       "state-backed-prefix": 1,
-      "control-state-recipe-boundary": 2,
+      "control-state-recipe-boundary": 1,
       "selectable-group-fragment-boundary": 5,
       "root-and-structural-reset-boundary": 3,
       "keycap-drawing-boundary": 15,
@@ -1786,23 +1786,6 @@
       "playbookRecipes": [
         "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
-      ]
-    },
-    {
-      "id": "src/styles/skin/controls.css::.radio-label::user-select::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 4,
-      "selector": ".radio-label",
-      "property": "user-select",
-      "value": "none",
-      "currentCode": "recipe-identity",
-      "ruleAction": "reset-inheritance-neutralization",
-      "latentOutcome": "recipe",
-      "function": "removes defaults or forces inheritance so authored words can take over",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket",
-      "playbookRecipes": [
-        "control-state-recipe-boundary"
       ]
     }
   ],

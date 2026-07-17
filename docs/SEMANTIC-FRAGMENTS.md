@@ -76,7 +76,7 @@ the browser-adapter boundary is explicit.
 | effect composition | `.sf-shake-suppression` | local tween suppression lets the admitted Ermine `shake` effect atom own the frame |
 | selectable group | `.sf-selectable-group`, `.sf-min-selected-1` | direct-child selection suppression, press feedback, and cardinality lock form one control fragment |
 | authored-content substrate | `.sf-authored-content` descendants | user-authored HTML defaults deliberately point away from utility grammar |
-| control-state recipe | disabled/selectable/min-selection/radio-label mechanics | behavior and invariants remain project control contracts after state skin migrates |
+| control-state recipe | disabled/selectable/min-selection mechanics | behavior and invariants remain project control contracts after state skin migrates |
 
 The first six are private drawing, engine-adapter, or effect-composition fragments. The last two are adjacent
 boundaries that clarify what should not become flat utilities.
@@ -99,8 +99,8 @@ fragment up front. Real applications expose the fragments that matter.
 For assimilation reporting, semantic fragments should be excluded from the flat-word target
 while remaining visible in the conserved project-owned residue ledger. In Monky, the current
 fragment set accounts for 51 declarations across 22 rules; paired with the authored-content
-default substrate, it narrows the current word-assimilation target to 2 declarations across
-2 rules.
+default substrate, it narrows the current word-assimilation target to 1 declaration across
+1 rule.
 
 ## Possible Future Shape
 

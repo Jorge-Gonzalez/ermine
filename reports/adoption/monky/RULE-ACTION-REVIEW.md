@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 98 |
+| reviewed residue declarations | 97 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 98 |
+| likely recipe/molecule | 97 |
 | likely local identity | 0 |
 
 ## By Rule Action
@@ -24,20 +24,20 @@ generalization, recipe, and local-identity pressure.
 | typography-content | 21 |
 | interaction-affordance-state | 5 |
 | motion-transition | 3 |
-| reset-inheritance-neutralization | 4 |
+| reset-inheritance-neutralization | 3 |
 | component-private-drawing | 41 |
 
 ## By Latent Outcome
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 98 |
+| recipe | 97 |
 
 ## By Current Ledger Code
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 23 |
+| recipe-identity | 22 |
 | parent-relational | 1 |
 | pseudo-mechanics | 23 |
 | scrollbar-followup | 8 |
@@ -59,11 +59,11 @@ of residue declarations.
 | callout-arrow-boundary | boundary | review | 4 | Group zero-size box, transparent borders, orientation colour, and attachment together. |
 | generated-placeholder-boundary | boundary | mechanical | 3 | Group generated content, placeholder colour, and pointer-events suppression. |
 | root-and-structural-reset-boundary | boundary | mechanical | 3 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
-| control-state-recipe-boundary | boundary | review | 2 | Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors. |
 | dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |
 | edge-attachment | conversion | review | 2 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | foreign-overlay-host-boundary | boundary | review | 2 | Group fixed host positioning and the configurable foreign-page z floor as one overlay-host fragment. |
 | rule-edge-facets | conversion | review | 2 | Replace side-specific border presence/colour declarations with the matching rule edge word. |
+| control-state-recipe-boundary | boundary | review | 1 | Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors. |
 | effect-composition-fragment-boundary | boundary | review | 1 | Group local tween suppression around the named effect it protects. |
 | state-backed-prefix | conversion | mechanical | 1 | Use `checked:`, `selected:`, `pressed:`, `expanded:`, or `current:` only with their required backing/capability. |
 
@@ -76,8 +76,8 @@ of residue declarations.
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 8 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 5 | promote as molecule/recipe only if reused |
-| reset-inheritance-neutralization | recipe | 4 | promote as molecule/recipe only if reused |
 | motion-transition | recipe | 3 | promote as molecule/recipe only if reused |
+| reset-inheritance-neutralization | recipe | 3 | promote as molecule/recipe only if reused |
 | attachment-edge-layer | recipe | 2 | promote as molecule/recipe only if reused |
 
 ## Reading

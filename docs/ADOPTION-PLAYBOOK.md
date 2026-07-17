@@ -76,7 +76,7 @@ The detailed model and current Monky-discovered fragments are documented in
 | `rule-edge-facets` | conversion | review | Side line presence and side line colour become edge rule facets. |
 | `side-corner-facets` | conversion | review | Joined/open side corners become side corner facets. |
 | `state-backed-prefix` | conversion | mechanical | ARIA/platform-backed states become scoped skin words with required backing. |
-| `control-state-recipe-boundary` | boundary | review | Disabled/selectable/min-selection/radio-label mechanics stay recipe-local unless a component molecule is admitted. |
+| `control-state-recipe-boundary` | boundary | review | Disabled/selectable/min-selection mechanics stay recipe-local unless a component molecule is admitted. |
 | `selectable-group-fragment-boundary` | boundary | review | Selectable-group child mechanics and minimum-selection guards are semantic fragments, not flat words. |
 | `root-and-structural-reset-boundary` | boundary | mechanical | Root resets and structural pseudo-class offsets stay local even when a word emits the same declaration. |
 | `keycap-drawing-boundary` | boundary | review | Keyboard-cap bevel, shadow, and micro-geometry stay local or become a keycap recipe. |

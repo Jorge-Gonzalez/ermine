@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `f87be063e15466bf92cdbca0fab012d079e82bc5` |
-| monky | `49072318cef9303cfac29bf634c6d5c9404a2fae` |
+| monky | `7eef9cdb989c579bfc89c646caebccf914f505a7` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 498 |
+| current declarations | 497 |
 | adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 400 |
-| **residue — project-owned declarations** | **98** |
+| **residue — project-owned declarations** | **97** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -38,7 +38,7 @@ re-validated on every run.
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 61 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
-| `recipe-identity` | 23 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 22 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
@@ -49,7 +49,6 @@ re-validated on every run.
 | file | declarations |
 |---|---:|
 | `src/styles/fragments/semantic-fragments.css` | 97 |
-| `src/styles/skin/controls.css` | 1 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.
 

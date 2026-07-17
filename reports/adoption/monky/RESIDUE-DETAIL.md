@@ -13,25 +13,25 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `f87be063e15466bf92cdbca0fab012d079e82bc5` |
-| monky | `49072318cef9303cfac29bf634c6d5c9404a2fae` |
+| monky | `7eef9cdb989c579bfc89c646caebccf914f505a7` |
 
 ## Summary
 
-- Current declarations: 498
+- Current declarations: 497
 - Adopted/infrastructure declarations: 400
-- Project-owned residue declarations: 98
+- Project-owned residue declarations: 97
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 23 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 22 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
 
-## recipe-identity (23)
+## recipe-identity (22)
 
 a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 
@@ -61,12 +61,6 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 | 219 | `.sf-min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 | 220 | `.sf-min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
 | 224 | `.sf-min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
-
-### src/styles/skin/controls.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 4 | `.radio-label` | `user-select: none` |
 
 ## parent-relational (1)
 

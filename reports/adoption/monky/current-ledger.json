@@ -3,11 +3,11 @@
   "project": "monky",
   "source": {
     "ermineCommit": "f87be063e15466bf92cdbca0fab012d079e82bc5",
-    "projectCommit": "49072318cef9303cfac29bf634c6d5c9404a2fae"
+    "projectCommit": "7eef9cdb989c579bfc89c646caebccf914f505a7"
   },
   "summary": {
-    "totalDeclarations": 498,
-    "residueDeclarations": 98,
+    "totalDeclarations": 497,
+    "residueDeclarations": 97,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 285,
@@ -15,7 +15,7 @@
       "theme-metric": 61,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 23,
+      "recipe-identity": 22,
       "rule-mechanics": 0,
       "brand-identity": 0,
       "affordance-mechanics": 0,
@@ -3475,15 +3475,6 @@
       "property": "height",
       "value": "var(--control-size-3xl)",
       "code": "ermine-emitted"
-    },
-    {
-      "id": "src/styles/skin/controls.css::.radio-label::user-select::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 4,
-      "selector": ".radio-label",
-      "property": "user-select",
-      "value": "none",
-      "code": "recipe-identity"
     },
     {
       "id": "src/styles/substrate/reset.css::*, *::before, *::after::box-sizing::1",

@@ -227,7 +227,7 @@ function familyReading(id: string): string {
     case "private drawing / engine pseudo":
       return "Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure.";
     case "control-state recipes":
-      return "Local control recipes such as radio-label selection suppression; named selectable-group fragments are visible in the fragment bucket.";
+      return "Local control recipes; named selectable-group fragments are visible in the fragment bucket.";
     case "exact attachment / geometry":
       return "Exact offsets, overlay layer numbers, dropdown placement, and component geometry values.";
     case "component-local surface/type fragments":
@@ -506,7 +506,6 @@ ${table(["rule cluster", "examples", "reading"], [
     ["native disabled buttons", "`disabled:blocked disabled:ground-subtle disabled:ink-soft disabled:alpha-60`", "The generic disabled cursor cue is now Ermine; remaining disabled policy would be recipe-specific."],
     ["selectable group fragment", "`.sf-selectable-group > *`, `.sf-selectable-group > *:active`", "Parent/child interaction mechanics are a named semantic fragment."],
     ["minimum-selection fragment", "`.sf-min-selected-1 > .is-selected:only-of-type*`", "JS/cardinality invariant expressed as a named semantic fragment."],
-    ["radio labels", "`.radio-label`", "Local clickable label recipe."],
     ["state icons", "`.sf-segmented-control-option svg`", "Local icon alignment inside a control option fragment."],
   ])}
 
@@ -514,9 +513,9 @@ Reading: Ermine already owns the reusable visual side when a backed state can ca
 (\`selected:\`, \`checked:\`, \`pressed:\`, \`expanded:\`, \`current:\`, and ordinary hover/focus
 skin), and ADR-0063 adds the generic \`blocked\` cursor cue. What remains here is different:
 behavior, structural child selectors, and invariants. Minimum-selection lockout,
-parent/child selectable-group mechanics, clickable-label selection suppression, and local control
-icon alignment are project control contracts or semantic fragments. They are good recipe boundary
-evidence and poor flat-word candidates.`;
+parent/child selectable-group mechanics, and local control icon alignment are project control
+contracts or semantic fragments. They are good recipe boundary evidence and poor flat-word
+candidates.`;
 }
 
 function renderRuleResidueMarkdown(review: RuleActionReviewInput, ledger: CurrentLedgerInput): string {
