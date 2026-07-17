@@ -428,17 +428,22 @@ Representative declarations:
 Reading:
   - These are the strongest "keep local or recipe" candidates. They are not class names
     looking for assimilation; they are small drawings made from CSS primitives.
+  - The current named boundaries are keycap drawing, callout arrow drawing, segmented-control
+    pill drawing, generated placeholder drawing, and engine scrollbar parts.
+  - Standard scrollbar socket integration is already Ermine-owned; the remaining WebKit
+    pseudo-elements are browser-engine hooks or post-processing/recipe work.
   - If reused broadly, they should enter Ermine as recipes/molecules, not as flat utility
     words.
 
 Likely Ermine pressure:
-  kbd/keycap recipe; arrow/callout recipe; segmented-control recipe; placeholder recipe.
+  keycap recipe; callout-arrow recipe; segmented-control recipe; placeholder recipe;
+  engine-scrollbar post-processing or recipe layer.
 
 Summary shape for the next assimilation pass:
   - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
     measured size scale.
-  - Most likely molecules/recipes: prose/editor content, keycap, callout arrow, segmented
-    control pill, modal/dialog measure, search highlight.
+  - Most likely molecules/recipes: authored-content substrate / optional prose recipe,
+    keycap, callout arrow, segmented-control pill, modal/dialog measure, search highlight.
   - Most likely to stay local: one-off offsets, modal blend/shadow identity, raw micro
     drawing constants, business-specific min-selection behavior.
 

@@ -102,3 +102,43 @@ test("playbook recognizes control-state recipes without swallowing ordinary butt
   assert.ok(guardMatches.includes("control-state-recipe-boundary"));
   assert.equal(surfaceMatches.includes("control-state-recipe-boundary"), false);
 });
+
+test("playbook names private drawing sub-boundaries", () => {
+  const keycapMatches = matchPlaybookRecipes(record({
+    selector: ".macro-search-kbd::after",
+    property: "inset",
+    value: "0 2px 4px",
+    code: "pseudo-mechanics",
+  })).map((recipe) => recipe.id);
+  const arrowMatches = matchPlaybookRecipes(record({
+    selector: ".macro-suggestions-arrow.bottom",
+    property: "border-bottom-color",
+    value: "var(--base-tone)",
+    code: "pseudo-mechanics",
+  })).map((recipe) => recipe.id);
+  const pillMatches = matchPlaybookRecipes(record({
+    selector: ".seg-control::before",
+    property: "left",
+    value: "var(--pill-left, 0)",
+    code: "pseudo-mechanics",
+  })).map((recipe) => recipe.id);
+  const scrollbarMatches = matchPlaybookRecipes(record({
+    selector: "::-webkit-scrollbar-thumb",
+    property: "background",
+    value: "var(--tone) !important",
+    code: "scrollbar-followup",
+  })).map((recipe) => recipe.id);
+  const placeholderMatches = matchPlaybookRecipes(record({
+    selector: ".content-editor-body:empty::before",
+    property: "content",
+    value: "attr(data-placeholder)",
+    code: "pseudo-mechanics",
+  })).map((recipe) => recipe.id);
+
+  assert.ok(keycapMatches.includes("keycap-drawing-boundary"));
+  assert.ok(keycapMatches.includes("pseudo-drawing-boundary"));
+  assert.ok(arrowMatches.includes("callout-arrow-boundary"));
+  assert.ok(pillMatches.includes("segmented-pill-boundary"));
+  assert.ok(scrollbarMatches.includes("engine-scrollbar-boundary"));
+  assert.ok(placeholderMatches.includes("generated-placeholder-boundary"));
+});

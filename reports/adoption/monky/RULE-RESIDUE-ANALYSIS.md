@@ -168,9 +168,12 @@ is a layout bridge that lets the editor shell hand remaining block space to the 
 | `.content-editor-body:empty::before` | 3 | Placeholder drawing tied to generated content. |
 | `.macro-search-kbd and variants` | 6 | Exact keyboard cap geometry. |
 
-Reading: the remaining browser-specific scrollbar rules are not a failure of Ermine's skin
-integration. Ermine owns the standard socket handoff; the project owns the engine-specific
-pseudo selectors or delegates them to a future post-processing/recipe layer.
+Reading: these are named recipe boundaries, not missing flat words. The keyboard cap is a
+beveled object, the callout arrow is a CSS triangle, the segmented pill is a pseudo-element
+driven by component coordinate variables, the empty placeholder is generated content, and the
+remaining scrollbar rules are engine pseudo-elements after Ermine's standard socket handoff.
+They should stay local, move to project recipes, or be delegated to a post-processing layer
+before Ermine considers any new atomic words.
 
 ### Control-State Recipes
 

@@ -116,6 +116,27 @@ function isControlStateRecipe(record: CurrentRecord): boolean {
     || /\.(seg-option)\s+svg\b/.test(record.selector);
 }
 
+function isKeycapDrawing(record: CurrentRecord): boolean {
+  return /\.macro-(?:search|suggestions)-kbd\b/.test(record.selector);
+}
+
+function isCalloutArrowDrawing(record: CurrentRecord): boolean {
+  return /\.macro-suggestions-arrow\b/.test(record.selector);
+}
+
+function isSegmentedPillDrawing(record: CurrentRecord): boolean {
+  return /\.seg-control\b/.test(record.selector)
+    && (record.selector.includes("::before") || record.selector.includes(".seg-option"));
+}
+
+function isEngineScrollbarDrawing(record: CurrentRecord): boolean {
+  return record.selector.startsWith("::-webkit-scrollbar");
+}
+
+function isGeneratedPlaceholderDrawing(record: CurrentRecord): boolean {
+  return /\.content-editor-body:empty::before\b/.test(record.selector);
+}
+
 export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
   {
     id: "existing-scale-word",
@@ -275,6 +296,71 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     boundary: "Only migrate zero spacing when it belongs to an authored element class string.",
     evidence: ["Ermine e22bcf3", "test: current ledger keeps structural and document-root zero spacing out of the work list"],
     match: (record) => isSpacingReset(record) && (isRootSelector(record.selector) || hasStructuralPseudo(record.selector)),
+  },
+  {
+    id: "keycap-drawing-boundary",
+    title: "Keycap drawing boundary",
+    kind: "boundary",
+    confidence: "review",
+    decision: "Keyboard-cap visuals are CSS drawings with bevel, inset, shadow, and micro-density constants; keep them local or promote a keycap recipe.",
+    before: ".macro-search-kbd::after { inset: 0 2px 4px; border-radius: 2px; }",
+    after: "keep local or promote as keycap recipe",
+    conversion: "Group keycap face, bevel, shadow, and exact micro-padding as one drawing recipe.",
+    boundary: "Do not flatten keycap bevel geometry into spacing, radius, layer, or pseudo-element utility words.",
+    evidence: ["Monky keycap residue", "R-SKIN-10 recipe boundary"],
+    match: isKeycapDrawing,
+  },
+  {
+    id: "callout-arrow-boundary",
+    title: "Callout arrow drawing boundary",
+    kind: "boundary",
+    confidence: "review",
+    decision: "CSS triangle arrows are shape recipes, not ordinary border or size facts.",
+    before: ".macro-suggestions-arrow { width: 0; border: 6px solid transparent; }",
+    after: "keep local or promote as callout-arrow recipe",
+    conversion: "Group zero-size box, transparent borders, orientation colour, and attachment together.",
+    boundary: "Do not migrate triangle-arrow border tricks as independent rule or dimension words.",
+    evidence: ["Monky suggestion arrow residue", "R-SKIN-10 recipe boundary"],
+    match: isCalloutArrowDrawing,
+  },
+  {
+    id: "segmented-pill-boundary",
+    title: "Segmented-control pill boundary",
+    kind: "boundary",
+    confidence: "review",
+    decision: "Segmented-control active-pill drawing is a component recipe driven by custom coordinates and sliding state.",
+    before: ".seg-control::before { left: var(--pill-left); width: var(--pill-width); }",
+    after: "keep local or promote as segmented-control recipe",
+    conversion: "Group active-pill pseudo geometry, custom coordinate variables, opacity, and snap/slide timing.",
+    boundary: "Do not turn custom-coordinate pill motion into flat position, opacity, or tween words.",
+    evidence: ["Monky segmented-control residue", "R-SKIN-10 recipe boundary"],
+    match: isSegmentedPillDrawing,
+  },
+  {
+    id: "engine-scrollbar-boundary",
+    title: "Engine scrollbar boundary",
+    kind: "boundary",
+    confidence: "mechanical",
+    decision: "Vendor scrollbar pseudo-elements are browser engine hooks after Ermine's standard scrollbar socket handoff.",
+    before: "::-webkit-scrollbar-thumb { background: var(--tone); }",
+    after: "keep local or delegate to a post-processing/recipe layer",
+    conversion: "Keep engine-specific pseudo selectors grouped by scrollbar part.",
+    boundary: "Ermine may own standard scrollbar tokens/sockets; browser-specific part selectors stay project/post-process owned.",
+    evidence: ["ADR-0017-scrollbar-prominence", "Monky scrollbar socket pass"],
+    match: isEngineScrollbarDrawing,
+  },
+  {
+    id: "generated-placeholder-boundary",
+    title: "Generated placeholder boundary",
+    kind: "boundary",
+    confidence: "mechanical",
+    decision: "Placeholder pseudo content is generated-content drawing tied to component state, not an element-authored class word.",
+    before: ".content-editor-body:empty::before { content: attr(data-placeholder); }",
+    after: "keep local or promote as editor placeholder recipe",
+    conversion: "Group generated content, placeholder colour, and pointer-events suppression.",
+    boundary: "Do not flatten `content: attr(...)` placeholders into ordinary typography or skin words.",
+    evidence: ["Monky editor placeholder residue", "R-SKIN-10 recipe boundary"],
+    match: isGeneratedPlaceholderDrawing,
   },
   {
     id: "pseudo-drawing-boundary",

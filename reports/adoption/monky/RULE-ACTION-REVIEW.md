@@ -55,13 +55,21 @@ generalization, recipe, and local-identity pressure.
 
 ## Matched Playbook Recipes
 
+Playbook matches are advisory and may overlap; they are adoption memory, not a partition
+of residue declarations.
+
 | recipe | kind | confidence | matches | conversion memory |
 | --- | --- | --- | --- | --- |
 | authored-content-substrate-boundary | boundary | human | 49 | Group descendant typography and rhythm as authored-content substrate evidence. |
 | pseudo-drawing-boundary | boundary | mechanical | 31 | Do not flatten pseudo drawing into ordinary element words. |
+| keycap-drawing-boundary | boundary | review | 15 | Group keycap face, bevel, shadow, and exact micro-padding as one drawing recipe. |
 | control-state-recipe-boundary | boundary | review | 14 | Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors. |
+| segmented-pill-boundary | boundary | review | 13 | Group active-pill pseudo geometry, custom coordinate variables, opacity, and snap/slide timing. |
+| engine-scrollbar-boundary | boundary | mechanical | 8 | Keep engine-specific pseudo selectors grouped by scrollbar part. |
 | root-and-structural-reset-boundary | boundary | mechanical | 5 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
+| callout-arrow-boundary | boundary | review | 4 | Group zero-size box, transparent borders, orientation colour, and attachment together. |
 | edge-attachment | conversion | review | 3 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
+| generated-placeholder-boundary | boundary | mechanical | 3 | Group generated content, placeholder colour, and pointer-events suppression. |
 | dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |
 | rule-edge-facets | conversion | review | 2 | Replace side-specific border presence/colour declarations with the matching rule edge word. |
 | state-backed-prefix | conversion | mechanical | 1 | Use `checked:`, `selected:`, `pressed:`, `expanded:`, or `current:` only with their required backing/capability. |

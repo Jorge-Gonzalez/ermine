@@ -584,6 +584,9 @@ ${table(["current code", "declarations"], codeRows)}
 
 ## Matched Playbook Recipes
 
+Playbook matches are advisory and may overlap; they are adoption memory, not a partition
+of residue declarations.
+
 ${playbookRows.length
     ? table(["recipe", "kind", "confidence", "matches", "conversion memory"], playbookRows)
     : "No playbook recipe matched this residue.\n"}

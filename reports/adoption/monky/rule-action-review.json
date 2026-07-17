@@ -75,6 +75,11 @@
       "state-backed-prefix": 1,
       "control-state-recipe-boundary": 14,
       "root-and-structural-reset-boundary": 5,
+      "keycap-drawing-boundary": 15,
+      "callout-arrow-boundary": 4,
+      "segmented-pill-boundary": 13,
+      "engine-scrollbar-boundary": 8,
+      "generated-placeholder-boundary": 3,
       "pseudo-drawing-boundary": 31,
       "authored-content-substrate-boundary": 49
     }
@@ -220,7 +225,8 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "callout-arrow recipe",
       "playbookRecipes": [
-        "dimension-role-measure"
+        "dimension-role-measure",
+        "callout-arrow-boundary"
       ]
     },
     {
@@ -235,7 +241,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "callout-arrow recipe"
+      "proposedForm": "callout-arrow recipe",
+      "playbookRecipes": [
+        "callout-arrow-boundary"
+      ]
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::border-top-color::1",
@@ -251,7 +260,8 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "callout-arrow recipe",
       "playbookRecipes": [
-        "rule-edge-facets"
+        "rule-edge-facets",
+        "callout-arrow-boundary"
       ]
     },
     {
@@ -268,7 +278,8 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "callout-arrow recipe",
       "playbookRecipes": [
-        "rule-edge-facets"
+        "rule-edge-facets",
+        "callout-arrow-boundary"
       ]
     },
     {
@@ -297,7 +308,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "keycap/kbd recipe"
+      "proposedForm": "keycap/kbd recipe",
+      "playbookRecipes": [
+        "keycap-drawing-boundary"
+      ]
     },
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::flex::1",
@@ -413,7 +427,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "keycap/kbd recipe"
+      "proposedForm": "keycap/kbd recipe",
+      "playbookRecipes": [
+        "keycap-drawing-boundary"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::padding::1",
@@ -427,7 +444,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "keycap/kbd recipe"
+      "proposedForm": "keycap/kbd recipe",
+      "playbookRecipes": [
+        "keycap-drawing-boundary"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::min-width::1",
@@ -443,7 +463,8 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
-        "dimension-role-measure"
+        "dimension-role-measure",
+        "keycap-drawing-boundary"
       ]
     },
     {
@@ -458,7 +479,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "keycap/kbd recipe"
+      "proposedForm": "keycap/kbd recipe",
+      "playbookRecipes": [
+        "keycap-drawing-boundary"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::z-index::1",
@@ -472,7 +496,10 @@
       "latentOutcome": "recipe",
       "function": "draws a specific object from CSS primitives",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "keycap/kbd recipe"
+      "proposedForm": "keycap/kbd recipe",
+      "playbookRecipes": [
+        "keycap-drawing-boundary"
+      ]
     },
     {
       "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::content::1",
@@ -488,6 +515,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
+        "keycap-drawing-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -505,6 +533,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
+        "keycap-drawing-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -522,6 +551,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
+        "keycap-drawing-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -539,6 +569,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
+        "keycap-drawing-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -556,6 +587,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
+        "keycap-drawing-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -573,6 +605,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
+        "keycap-drawing-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -590,6 +623,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
+        "keycap-drawing-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -607,6 +641,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
+        "keycap-drawing-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -624,7 +659,8 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "keycap/kbd recipe",
       "playbookRecipes": [
-        "root-and-structural-reset-boundary"
+        "root-and-structural-reset-boundary",
+        "keycap-drawing-boundary"
       ]
     },
     {
@@ -641,6 +677,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -658,6 +695,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -676,6 +714,7 @@
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
         "edge-attachment",
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -694,6 +733,7 @@
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
         "edge-attachment",
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -711,6 +751,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -728,6 +769,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -745,6 +787,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -762,6 +805,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -779,6 +823,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -796,6 +841,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -813,6 +859,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -830,6 +877,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
+        "segmented-pill-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -864,7 +912,8 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "segmented-control recipe",
       "playbookRecipes": [
-        "state-backed-prefix"
+        "state-backed-prefix",
+        "segmented-pill-boundary"
       ]
     },
     {
@@ -990,6 +1039,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "authored-content substrate",
       "playbookRecipes": [
+        "generated-placeholder-boundary",
         "pseudo-drawing-boundary",
         "authored-content-substrate-boundary"
       ]
@@ -1008,6 +1058,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "authored-content substrate",
       "playbookRecipes": [
+        "generated-placeholder-boundary",
         "pseudo-drawing-boundary",
         "authored-content-substrate-boundary"
       ]
@@ -1026,6 +1077,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "authored-content substrate",
       "playbookRecipes": [
+        "generated-placeholder-boundary",
         "pseudo-drawing-boundary",
         "authored-content-substrate-boundary"
       ]
@@ -1980,6 +2032,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
+        "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -1997,6 +2050,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
+        "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -2014,6 +2068,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
+        "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -2031,6 +2086,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
+        "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -2048,6 +2104,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
+        "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -2065,6 +2122,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
+        "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -2082,6 +2140,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
+        "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
       ]
     },
@@ -2099,6 +2158,7 @@
       "erminePressure": "promote as molecule/recipe only if reused",
       "proposedForm": "recipe/molecule socket",
       "playbookRecipes": [
+        "engine-scrollbar-boundary",
         "pseudo-drawing-boundary"
       ]
     },

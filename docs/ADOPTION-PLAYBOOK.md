@@ -56,6 +56,11 @@ grammar design.
 | `state-backed-prefix` | conversion | mechanical | ARIA/platform-backed states become scoped skin words with required backing. |
 | `control-state-recipe-boundary` | boundary | review | Disabled/selectable/min-selection/radio-label mechanics stay recipe-local unless a component molecule is admitted. |
 | `root-and-structural-reset-boundary` | boundary | mechanical | Root resets and structural pseudo-class offsets stay local even when a word emits the same declaration. |
+| `keycap-drawing-boundary` | boundary | review | Keyboard-cap bevel, shadow, and micro-geometry stay local or become a keycap recipe. |
+| `callout-arrow-boundary` | boundary | review | CSS triangle arrows stay local or become a callout-arrow recipe. |
+| `segmented-pill-boundary` | boundary | review | Segmented-control active-pill pseudo geometry and coordinate motion stay recipe-local. |
+| `engine-scrollbar-boundary` | boundary | mechanical | Vendor scrollbar pseudo-elements stay project/post-process owned after standard socket integration. |
+| `generated-placeholder-boundary` | boundary | mechanical | Generated placeholder pseudo content stays local or becomes an editor placeholder recipe. |
 | `pseudo-drawing-boundary` | boundary | mechanical | Pseudo-element drawing stays local or enters as a recipe/molecule. |
 | `authored-content-substrate-boundary` | boundary | human | Rich-text descendants remain an authored-HTML substrate, not flat utility gaps. |
 
@@ -70,8 +75,8 @@ For the next project, start with recipes that have low semantic risk and high re
 3. Relational layout conversions: edge attachment, fill/cover/push/centering if present.
 4. Surface facets: rule edge presence/colour and side corner facets.
 5. Motion: targeted tween envelopes; leave suppression and bespoke recipe timing local.
-6. Boundary registration: root/substrate resets, control-state recipes, pseudo drawing,
-   authored-content substrate, recipe bundles.
+6. Boundary registration: root/substrate resets, control-state recipes, private drawing,
+   engine pseudo-elements, authored-content substrate, recipe bundles.
 
 The goal is not to eliminate local CSS. The goal is to make the first pass mostly mechanical,
 and to reserve human time for the small set of declarations that really need a ruling.
