@@ -59,6 +59,7 @@ generalization, recipe, and local-identity pressure.
 | --- | --- | --- | --- | --- |
 | authored-content-substrate-boundary | boundary | human | 49 | Group descendant typography and rhythm as authored-content substrate evidence. |
 | pseudo-drawing-boundary | boundary | mechanical | 31 | Do not flatten pseudo drawing into ordinary element words. |
+| control-state-recipe-boundary | boundary | review | 14 | Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors. |
 | root-and-structural-reset-boundary | boundary | mechanical | 5 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
 | edge-attachment | conversion | review | 3 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |

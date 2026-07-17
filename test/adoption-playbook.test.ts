@@ -74,3 +74,31 @@ test("playbook keeps authored-content scale tokens out of flat migration recipes
   assert.equal(matches.includes("spacing-edge-decomposition"), false);
   assert.ok(matches.includes("authored-content-substrate-boundary"));
 });
+
+test("playbook recognizes control-state recipes without swallowing ordinary button skin", () => {
+  const disabledMatches = matchPlaybookRecipes(record({
+    file: "src/styles/skin/controls.css",
+    selector: ".btn:disabled:hover",
+    property: "opacity",
+    value: "0.6",
+    code: "recipe-identity",
+  })).map((recipe) => recipe.id);
+  const guardMatches = matchPlaybookRecipes(record({
+    file: "src/styles/skin/controls.css",
+    selector: ".min-selected-1 > .is-selected:only-of-type",
+    property: "cursor",
+    value: "not-allowed",
+    code: "opacity-followup",
+  })).map((recipe) => recipe.id);
+  const surfaceMatches = matchPlaybookRecipes(record({
+    file: "src/styles/skin/controls.css",
+    selector: ".btn-success:hover",
+    property: "background-color",
+    value: "color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))",
+    code: "recipe-identity",
+  })).map((recipe) => recipe.id);
+
+  assert.ok(disabledMatches.includes("control-state-recipe-boundary"));
+  assert.ok(guardMatches.includes("control-state-recipe-boundary"));
+  assert.equal(surfaceMatches.includes("control-state-recipe-boundary"), false);
+});

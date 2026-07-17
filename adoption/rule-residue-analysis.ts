@@ -368,10 +368,15 @@ ${table(["rule cluster", "examples", "reading"], [
     ["selectable groups", "`.selectable-group > *`, `.selectable-group > .is-selected:hover`, `.selectable-group > *:active`", "Parent/child interaction recipe."],
     ["minimum-selection guard", "`.min-selected-1 > .is-selected:only-of-type*`", "JS/state invariant expressed through selectors."],
     ["radio labels", "`.radio-label`", "Local clickable label recipe."],
+    ["state icons", "`.seg-option svg`", "Local icon alignment inside a control option."],
   ])}
 
-Reading: these are good candidates for recipe documentation, but poor candidates for flat
-Ermine words because the semantics depend on component state contracts.`;
+Reading: Ermine already owns the reusable visual side when a backed state can carry skin
+(\`selected:\`, \`checked:\`, \`pressed:\`, \`expanded:\`, \`current:\`, and ordinary hover/focus
+skin). What remains here is different: behavior and invariants. Disabled hover neutralization,
+minimum-selection lockout, parent/child selectable-group mechanics, clickable-label affordance,
+and local control icon alignment are project control contracts. They are good recipe boundary
+evidence and poor flat-word candidates.`;
 }
 
 function renderRuleResidueMarkdown(review: RuleActionReviewInput, ledger: CurrentLedgerInput): string {

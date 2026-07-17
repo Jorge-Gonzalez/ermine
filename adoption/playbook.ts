@@ -107,6 +107,15 @@ function isMeasureOrControlSize(record: CurrentRecord): boolean {
     && /^(0|none|auto|\d+(?:\.\d+)?px|\d+(?:\.\d+)?rem|8em|100%|100vh|fit-content\([^)]*\)|min\([^)]*\))$/.test(record.value);
 }
 
+function isControlStateRecipe(record: CurrentRecord): boolean {
+  return (record.file.endsWith("controls.css")
+    && (/\.btn:disabled\b/.test(record.selector)
+      || /\.selectable-group\b/.test(record.selector)
+      || /\.min-selected-1\b/.test(record.selector)
+      || /\.radio-label\b/.test(record.selector)))
+    || /\.(seg-option)\s+svg\b/.test(record.selector);
+}
+
 export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
   {
     id: "existing-scale-word",
@@ -240,6 +249,19 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     boundary: "JS-only classes, structural pseudo-classes, and unbacked parent state remain local or recipe unless a condition is admitted.",
     evidence: ["ADR-0051-pressed-condition-prefix", "ADR-0052-expanded-condition-prefix", "R-STATE-11", "R-STATE-12"],
     match: (record) => /\[aria-(pressed|expanded|selected|checked|current)[^\]]*\]/.test(record.selector),
+  },
+  {
+    id: "control-state-recipe-boundary",
+    title: "Control-state recipe boundary",
+    kind: "boundary",
+    confidence: "review",
+    decision: "Component state contracts such as disabled neutralization, selectable-group mechanics, minimum-selection guards, and clickable labels are recipes, not flat state words.",
+    before: ".btn:disabled:hover { opacity: 0.6; } .min-selected-1 > .is-selected:only-of-type { cursor: not-allowed; }",
+    after: "keep local as control-state recipe unless a reused component molecule is admitted",
+    conversion: "Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors.",
+    boundary: "Do not coin words for JS invariants, structural guards, hover neutralization policies, or parent/child control contracts.",
+    evidence: ["Monky control-state residue", "R-SKIN-10 recipe boundary", "reports/adoption/monky/RULE-RESIDUE-ANALYSIS.md"],
+    match: isControlStateRecipe,
   },
   {
     id: "root-and-structural-reset-boundary",

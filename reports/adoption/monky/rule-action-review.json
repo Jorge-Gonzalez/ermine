@@ -73,6 +73,7 @@
       "rule-edge-facets": 2,
       "side-corner-facets": 0,
       "state-backed-prefix": 1,
+      "control-state-recipe-boundary": 14,
       "root-and-structural-reset-boundary": 5,
       "pseudo-drawing-boundary": 31,
       "authored-content-substrate-boundary": 49
@@ -844,7 +845,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.is-sliding .seg-option[aria-checked=\"true\"]::background::1",
@@ -1857,7 +1861,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.radio-label::user-select::1",
@@ -1871,7 +1878,10 @@
       "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.btn-success:hover::background-color::1",
@@ -1900,7 +1910,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.btn:disabled::opacity::1",
@@ -1914,7 +1927,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.btn:disabled:hover::background-color::1",
@@ -1928,7 +1944,10 @@
       "latentOutcome": "recipe",
       "function": "paints/removes surface, line, radius, shadow, or cutout state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.btn:disabled:hover::opacity::1",
@@ -1942,7 +1961,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::::-webkit-scrollbar::width::1",
@@ -2092,7 +2114,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::user-select::1",
@@ -2106,7 +2131,10 @@
       "latentOutcome": "recipe",
       "function": "removes defaults or forces inheritance so authored words can take over",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *:active::transform::1",
@@ -2120,7 +2148,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::opacity::1",
@@ -2134,7 +2165,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
@@ -2148,7 +2182,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
@@ -2162,7 +2199,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
@@ -2176,7 +2216,10 @@
       "latentOutcome": "recipe",
       "function": "expresses hover, active, selected, disabled, focus, or affordance state",
       "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "control-state-recipe-boundary"
+      ]
     },
     {
       "id": "src/styles/skin/controls.css::.shake::transition::1",

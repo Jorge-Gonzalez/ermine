@@ -366,16 +366,17 @@ Representative declarations:
     :active, :focus, :only-of-type.
 
 Reading:
-  - The state grammar is the biggest signal here: many local rules are not component
-    identity, they are "when selected/current/disabled, apply skin/affordance."
-  - `only-of-type` for minimum selection is business behavior made visible; it can remain
-    a small recipe or become a min-selection state word if reused.
-  - vertical icon alignment inside segmented options is component-local unless a general
-    "inline-icon-middle" word is admitted.
+  - The reusable state-skin signal has mostly moved: checked/selected/current/pressed/
+    expanded skins now belong to backed Ermine prefixes where the element can carry words.
+  - The residue is control-state recipe policy: disabled hover neutralization, selectable
+    parent/child mechanics, minimum-selection lockout, clickable radio labels, and local
+    icon alignment.
+  - `only-of-type` for minimum selection is business behavior made visible; it should stay
+    recipe-local unless a reused control molecule earns a socket.
 
 Likely Ermine pressure:
-  condition-backed state facets; disabled affordance; selected/current/checked skin;
-  min-selection recipe; press/active affordance.
+  reusable control recipes with sockets; disabled affordance only if it separates from
+  project-specific cursor/opacity/hover-neutralization policy.
 
 7. Motion and transition rules.
 Function: define which properties animate, at what tempo, and when animation is suppressed.
@@ -538,7 +539,7 @@ Recipes should expose sockets for scale, skin, state, and motion where the patte
 6. Process the remaining categories in priority order.
 
 Recommended queue:
-  1. selected/current/checked/disabled state skin.
+  1. control-state recipe boundary and any reusable disabled affordance evidence.
   2. remaining reset/inheritance neutralization endpoints.
   3. side-specific elevation/cutout facets.
   4. remaining spacing-rhythm shorthand and raw micro-padding questions.
