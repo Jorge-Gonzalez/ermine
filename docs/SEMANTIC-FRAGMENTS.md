@@ -82,6 +82,12 @@ Semantic fragments come from subtraction:
 This process is useful because it is discoverable. The framework does not need to invent every
 fragment up front. Real applications expose the fragments that matter.
 
+For assimilation reporting, semantic fragments should be excluded from the flat-word target
+while remaining visible in the conserved project-owned residue ledger. In Monky, the first
+named fragment set accounts for 43 declarations across 16 rules; paired with the
+authored-content default substrate, it narrows the current word-assimilation target to
+43 declarations across 26 rules.
+
 ## Possible Future Shape
 
 A future fragment repository could publish small, portable style units rather than full UI

@@ -39,6 +39,34 @@ included.
 | component-local surface/type fragments | 5 | 8 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
 
+## Word-Assimilation Target
+
+The conserved ledger still counts all project-owned residue. For word-assimilation planning,
+semantic fragments and content-editor default substrate rules are excluded because they are
+not missing flat words: they are recipe/fragments or a deliberate authored-HTML island.
+
+| bucket | declarations | rules | reading |
+| --- | --- | --- | --- |
+| conserved project-owned residue | 131 | 62 | All remaining project-owned declarations in the current ledger. |
+| semantic fragments excluded | 43 | 16 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, and generated-placeholder fragments. |
+| content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.content-editor-body`, excluding pseudo drawing. |
+| adjusted word-assimilation target | 43 | 26 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+
+The exclusion is union-aware: 88 declarations across
+36 rules are outside the word-assimilation target. They remain visible
+in the conserved ledger and boundary reports.
+
+### Remaining Target Shape
+
+| rule shape | rules | declarations | reading |
+| --- | --- | --- | --- |
+| editor chrome recipes | 3 | 5 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
+| editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
+| control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| exact attachment / geometry | 4 | 6 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
+| component-local surface/type fragments | 4 | 7 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
+| root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
+
 ## By Source File
 
 | file | residue rules |

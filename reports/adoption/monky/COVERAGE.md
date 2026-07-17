@@ -22,6 +22,10 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
 - **Current assimilation:** the generated current ledger now reports **521 current
   declarations**, **390 adopted/infrastructure declarations**, **131 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
+- **Adjusted word-assimilation target:** after excluding semantic fragments and the
+  content-editor default substrate from flat-word planning, the remaining target is
+  **43 declarations across 26 rules**; the excluded boundary material remains in the
+  conserved 131-declaration ledger.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
 
@@ -157,7 +161,10 @@ moved link-button decoration onto authored button words, and kept rich-text `u`/
 descendants in the prose/editor molecule.
 `RULE-RESIDUE-ANALYSIS.md` re-reads the 131 current project-owned declarations at rule
 granularity: they collapse to 62 authored CSS rules, mostly editor-content molecules,
-private pseudo drawing, control-state recipes, and a small local identity floor.
+private pseudo drawing, control-state recipes, and a small local identity floor. It also
+reports the adjusted word-assimilation target: 43 declarations across 26 rules after
+excluding 43 semantic-fragment declarations and 45 content-editor default declarations
+from flat-word planning.
 The remaining Phase 3 grammar work is the proportional/relational plane
 (remaining measure/viewport extents, filed in `reports/GAP-U-measure-viewport.md`, and
 columns + intent-proportions) plus the smaller
@@ -232,6 +239,7 @@ and text-decoration treatment migrations moved the live
 ledger to
 521 current declarations,
 131 project-owned residue,
+43 declarations in the adjusted word-assimilation target,
 `assimilable = 0`,
 and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted

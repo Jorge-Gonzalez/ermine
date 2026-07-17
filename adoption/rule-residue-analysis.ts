@@ -29,6 +29,7 @@ interface ReviewedDeclaration {
   currentCode: string;
   ruleAction: string;
   latentOutcome: string;
+  playbookRecipes?: string[];
 }
 
 interface RuleActionReviewInput {
@@ -57,6 +58,14 @@ interface RuleFamily {
   reading: string;
   rules: RuleGroup[];
 }
+
+const SEMANTIC_FRAGMENT_RECIPE_IDS = new Set([
+  "keycap-drawing-boundary",
+  "callout-arrow-boundary",
+  "segmented-pill-boundary",
+  "engine-scrollbar-boundary",
+  "generated-placeholder-boundary",
+]);
 
 function slash(path: string): string {
   return path.replaceAll("\\", "/");
@@ -132,6 +141,20 @@ function groupRules(declarations: ReviewedDeclaration[]): RuleGroup[] {
   return [...groups.values()].sort((left, right) =>
     left.file.localeCompare(right.file) || left.selector.localeCompare(right.selector)
   );
+}
+
+function isSemanticFragmentDeclaration(declaration: ReviewedDeclaration): boolean {
+  return declaration.playbookRecipes?.some((recipe) => SEMANTIC_FRAGMENT_RECIPE_IDS.has(recipe)) ?? false;
+}
+
+function isSemanticFragmentRule(group: RuleGroup): boolean {
+  return group.declarations.some(isSemanticFragmentDeclaration);
+}
+
+function isAuthoredContentSubstrateDeclaration(declaration: ReviewedDeclaration): boolean {
+  return declaration.file.endsWith("content-editor.css")
+    && /\bcontent-editor-body\b/.test(declaration.selector)
+    && !declaration.selector.includes("::");
 }
 
 function isAuthoredContentSubstrateRule(group: RuleGroup): boolean {
@@ -281,6 +304,97 @@ function ruleShapeRows(ruleFamilies: RuleFamily[]): string[][] {
   ]);
 }
 
+interface AssimilationTargetSummary {
+  semanticFragmentDeclarations: number;
+  authoredContentDeclarations: number;
+  excludedDeclarations: number;
+  remainingDeclarations: number;
+  semanticFragmentRules: number;
+  authoredContentRules: number;
+  excludedRules: number;
+  remainingRules: RuleGroup[];
+}
+
+function assimilationTargetSummary(review: RuleActionReviewInput, groups: RuleGroup[]): AssimilationTargetSummary {
+  const excludedDeclarations = new Set<string>();
+  let semanticFragmentDeclarations = 0;
+  let authoredContentDeclarations = 0;
+
+  for (const declaration of review.declarations) {
+    if (isSemanticFragmentDeclaration(declaration)) {
+      semanticFragmentDeclarations += 1;
+      excludedDeclarations.add(declaration.id);
+    }
+    if (isAuthoredContentSubstrateDeclaration(declaration)) {
+      authoredContentDeclarations += 1;
+      excludedDeclarations.add(declaration.id);
+    }
+  }
+
+  const semanticFragmentRules = groups.filter(isSemanticFragmentRule).length;
+  const authoredContentRules = groups.filter(isAuthoredContentSubstrateRule).length;
+  const remainingRules = groups.filter((group) =>
+    !isSemanticFragmentRule(group) && !isAuthoredContentSubstrateRule(group)
+  );
+
+  return {
+    semanticFragmentDeclarations,
+    authoredContentDeclarations,
+    excludedDeclarations: excludedDeclarations.size,
+    remainingDeclarations: review.declarations.length - excludedDeclarations.size,
+    semanticFragmentRules,
+    authoredContentRules,
+    excludedRules: groups.length - remainingRules.length,
+    remainingRules,
+  };
+}
+
+function renderAssimilationTargetSection(review: RuleActionReviewInput, groups: RuleGroup[]): string {
+  const target = assimilationTargetSummary(review, groups);
+  const remainingFamilies = families(target.remainingRules);
+
+  return `## Word-Assimilation Target
+
+The conserved ledger still counts all project-owned residue. For word-assimilation planning,
+semantic fragments and content-editor default substrate rules are excluded because they are
+not missing flat words: they are recipe/fragments or a deliberate authored-HTML island.
+
+${table(["bucket", "declarations", "rules", "reading"], [
+    [
+      "conserved project-owned residue",
+      String(review.declarations.length),
+      String(groups.length),
+      "All remaining project-owned declarations in the current ledger.",
+    ],
+    [
+      "semantic fragments excluded",
+      String(target.semanticFragmentDeclarations),
+      String(target.semanticFragmentRules),
+      "Keycap, callout-arrow, segmented-pill, engine-scrollbar, and generated-placeholder fragments.",
+    ],
+    [
+      "content-editor defaults excluded",
+      String(target.authoredContentDeclarations),
+      String(target.authoredContentRules),
+      "Authored-content substrate defaults under \`.content-editor-body\`, excluding pseudo drawing.",
+    ],
+    [
+      "adjusted word-assimilation target",
+      String(target.remainingDeclarations),
+      String(target.remainingRules.length),
+      "Residue still worth reading for future words, recipes, or project identity after those exclusions.",
+    ],
+  ])}
+
+The exclusion is union-aware: ${target.excludedDeclarations} declarations across
+${target.excludedRules} rules are outside the word-assimilation target. They remain visible
+in the conserved ledger and boundary reports.
+
+### Remaining Target Shape
+
+${table(["rule shape", "rules", "declarations", "reading"], ruleShapeRows(remainingFamilies))}`;
+}
+
 function densityKey(group: RuleGroup): "1 declaration" | "2 declarations" | "3 declarations" | "4+ declarations" {
   if (group.declarations.length === 1) return "1 declaration";
   if (group.declarations.length === 2) return "2 declarations";
@@ -425,6 +539,8 @@ ${table(["metric", "count"], [
 ## Rule Shape
 
 ${table(["rule shape", "rules", "declarations", "reading"], ruleShapeRows(ruleFamilies))}
+
+${renderAssimilationTargetSection(review, groups)}
 
 ## By Source File
 

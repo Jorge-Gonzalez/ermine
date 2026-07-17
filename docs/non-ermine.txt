@@ -27,6 +27,13 @@ Ermine 847ecf9 / Monky 8382998:
   adopted/infrastructure declarations:  390
   project-owned residue declarations:   131
   assimilable now:                        0
+  word-assimilation target:              43 declarations across 26 rules
+
+The word-assimilation target is the project-owned residue after excluding semantic fragments
+and authored-content default substrate rules now recognized as boundaries. The conserved ledger
+still carries the full 131 project-owned declarations; 88 declarations across 36 rules are
+deliberately outside the flat-word target: 43 semantic-fragment declarations and
+45 content-editor default declarations.
 
 Current residue by reason code:
   recipe-identity 13, brand-identity 6, component-contract 7, state-mechanics 1,
@@ -146,7 +153,9 @@ increments and migrated the search placeholder braces, popup hover softening, an
 caret. The text-decoration treatment pass then admitted `undecorated`, `underlined`, and
 `struck`, moved the link-button hover decoration into authored button words, and left rich-text
 `u`/`s`/`a` descendants inside the authored-content substrate; the live residue is now 131 with
-zero latent-generalizable rows.
+zero latent-generalizable rows. The rule-residue report now separates that conserved residue
+from the sharper word-assimilation target: excluding semantic fragments and content-editor
+defaults leaves 43 declarations across 26 rules for future word/recipe/local-identity review.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -440,6 +449,8 @@ Likely Ermine pressure:
   engine-scrollbar post-processing or recipe layer.
 
 Summary shape for the next assimilation pass:
+  - Adjusted word-assimilation target: 43 declarations across 26 rules after excluding
+    semantic fragments and content-editor defaults from the conserved 131-declaration residue.
   - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
     measured size scale.
   - Most likely molecules/recipes: authored-content substrate / optional prose recipe,
