@@ -2,17 +2,17 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "bde7d09dad751b13c45aeb8aed778592ae4c79ac",
-    "projectCommit": "531a7cda505cc036ac802feb1e53da8a0168826e"
+    "ermineCommit": "99a921f9960db4fea39098b3e299650136b5f244",
+    "projectCommit": "e0231c154bbeba17ece2f65f1f9c70f48e286d84"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 129,
+    "reviewedDeclarations": 128,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 119,
+    "likelyRecipe": 118,
     "likelyLocal": 10,
     "byRuleAction": {
       "already-admitted": 0,
@@ -20,7 +20,7 @@
       "attachment-edge-layer": 6,
       "spacing-rhythm": 19,
       "alignment-layout": 0,
-      "surface-line-elevation-cutout": 15,
+      "surface-line-elevation-cutout": 14,
       "typography-content": 25,
       "interaction-affordance-state": 11,
       "motion-transition": 3,
@@ -32,7 +32,7 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 119,
+      "recipe": 118,
       "local-identity": 10
     },
     "byCurrentCode": {
@@ -45,7 +45,7 @@
       "rule-mechanics": 0,
       "brand-identity": 4,
       "affordance-mechanics": 0,
-      "component-contract": 3,
+      "component-contract": 2,
       "state-mechanics": 1,
       "state-review": 0,
       "focus-state": 0,
@@ -86,23 +86,9 @@
   },
   "declarations": [
     {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::background-color::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 19,
-      "selector": ".modal-backdrop",
-      "property": "background-color",
-      "value": "var(--shadow-color)",
-      "currentCode": "component-contract",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "recipe",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
       "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::z-index::1",
       "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 20,
+      "line": 19,
       "selector": ".modal-backdrop",
       "property": "z-index",
       "value": "10000",

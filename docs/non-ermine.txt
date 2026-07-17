@@ -20,23 +20,23 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the soft-elevation modal migration is
-Ermine bde7d09 / Monky 531a7cd:
+were migrated). Current live ledger after the scrim backdrop migration is
+Ermine 99a921f / Monky e0231c1:
 
-  current declarations:                 519
-  adopted/infrastructure declarations:  390
-  project-owned residue declarations:   129
+  current declarations:                 520
+  adopted/infrastructure declarations:  392
+  project-owned residue declarations:   128
   assimilable now:                        0
-  word-assimilation target:              41 declarations across 25 rules
+  word-assimilation target:              40 declarations across 25 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 129 project-owned declarations; 88 declarations across 36 rules are
+still carries the full 128 project-owned declarations; 88 declarations across 36 rules are
 deliberately outside the flat-word target: 43 semantic-fragment declarations and
 45 content-editor default declarations.
 
 Current residue by reason code:
-  recipe-identity 26, brand-identity 4, component-contract 3, state-mechanics 1,
+  recipe-identity 26, brand-identity 4, component-contract 2, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
   motion-followup 1, opacity-followup 2, elevation-followup 2, reset-absence 3,
   user-content 43, identity-geometry 12.
@@ -164,8 +164,10 @@ remaining `popup-*` markup hooks, and replaced the bespoke inline site switch dr
 ordinary Ermine-styled checkbox. The current ledger counts stay conserved.
 The soft-elevation pass then admitted `elevated-soft` as a close drop-shadow treatment and moved
 the modal dialog's local two-layer shadow into that word, intentionally leaving the old
-`mix-blend-mode: multiply` exactness behind. The live residue is now 129 and the adjusted
-word-assimilation target is 41 declarations across 25 rules.
+`mix-blend-mode: multiply` exactness behind. The scrim pass then admitted `scrim` as backdrop
+dimming via an alpha background socket, moved the modal backdrop colour into that word, and fixed
+the modal manifest so `elevated-soft` is emitted in Monky's generated grammar bundle. The live
+residue is now 128 and the adjusted word-assimilation target is 40 declarations across 25 rules.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -198,8 +200,9 @@ transition declarations from inputs, search rows, popup buttons, content-editor 
 suggestion rows, and segmented options. The positioned edge-attachment pass removed local
 command-dropdown and suggestion-arrow edge placement declarations. The side-corner pass removed
 local macro command/error/dropdown radius declarations. The soft-elevation pass removed the modal
-dialog shadow/blend rule. The inventory below is the current live non-Ermine class surface after
-the soft-elevation modal migration; comment-only sheets and retired hooks
+dialog shadow/blend rule. The scrim pass removed the modal backdrop colour declaration. The
+inventory below is the current live non-Ermine class surface after the scrim backdrop migration;
+comment-only sheets and retired hooks
 are no longer listed as CSS-backed style owners.
 
 CSS-backed local class selectors by source file (current CSS declarations, with generated
@@ -457,8 +460,8 @@ Likely Ermine pressure:
   engine-scrollbar post-processing or recipe layer.
 
 Summary shape for the next assimilation pass:
-  - Adjusted word-assimilation target: 41 declarations across 25 rules after excluding
-    semantic fragments and content-editor defaults from the conserved 129-declaration residue.
+  - Adjusted word-assimilation target: 40 declarations across 25 rules after excluding
+    semantic fragments and content-editor defaults from the conserved 128-declaration residue.
   - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
     measured size scale.
   - Most likely molecules/recipes: authored-content substrate / optional prose recipe,

@@ -10,8 +10,8 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 
 | source | commit |
 |---|---|
-| Ermine | `bde7d09dad751b13c45aeb8aed778592ae4c79ac` |
-| monky | `531a7cda505cc036ac802feb1e53da8a0168826e` |
+| Ermine | `99a921f9960db4fea39098b3e299650136b5f244` |
+| monky | `e0231c154bbeba17ece2f65f1f9c70f48e286d84` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 519 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 390 |
-| **residue — project-owned declarations** | **129** |
+| current declarations | 520 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 392 |
+| **residue — project-owned declarations** | **128** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,13 +34,13 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 275 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 277 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 61 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
 | `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 4 | project brand typography and type treatment |
-| `component-contract` | 3 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 2 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
@@ -63,7 +63,7 @@ re-validated on every run.
 | `src/content/overlays/views/search/searchViewStyles.css` | 4 |
 | `src/styles/entries/pages.css` | 4 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 3 |
-| `src/content/overlays/modal/modalStyles.css` | 2 |
+| `src/content/overlays/modal/modalStyles.css` | 1 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.
 

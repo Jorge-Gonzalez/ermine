@@ -19,13 +19,13 @@ provenance in `CURRENT-LEDGER.md` / `BOUNDARY.md`.
   enforces colour-literal drift with Stylelint.
 - **Live style reachability:** Monky's build-backed style audit now reports **201 live
   static classes and 0 dead-candidate declarations** at `d58cac0`.
-- **Current assimilation:** the generated current ledger now reports **519 current
-  declarations**, **390 adopted/infrastructure declarations**, **129 project-owned
+- **Current assimilation:** the generated current ledger now reports **520 current
+  declarations**, **392 adopted/infrastructure declarations**, **128 project-owned
   residue**, **0 assimilable declarations**, and **0 shadowed words**.
 - **Adjusted word-assimilation target:** after excluding semantic fragments and the
   content-editor default substrate from flat-word planning, the remaining target is
-  **41 declarations across 25 rules**; the excluded boundary material remains in the
-  conserved 129-declaration ledger.
+  **40 declarations across 25 rules**; the excluded boundary material remains in the
+  conserved 128-declaration ledger.
 - **Nothing is lost:** every residual is either declared boundary in `BOUNDARY.md` or
   pre-counted evidence for a named follow-up/ruling question.
 
@@ -91,15 +91,15 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `531a7cd`: 519 declarations, 390
-adopted/infrastructure declarations, 129 project-owned residue declarations,
+The current generated ledger is at Monky `e0231c1`: 520 declarations, 392
+adopted/infrastructure declarations, 128 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
 ## 4. Theme coverage (the socket plane)
 
 The ratified skin colour plane (R-SKIN-02…08, R-SCALE-03) was bound to Monky's real theme:
 
-- **45-socket contract**; Monky binds **23** per theme × mode, all **contract-valid**.
+- **53-socket contract**; Monky binds **23** colour sockets per theme × mode, all **contract-valid**.
 - Covers the whole theme-varying palette: surface hierarchy (`ground` + subtle/defined +
   hover/active/selected), ink family + inverse + selected, `rule` + soft, `accent` + soft,
   status `pass/warn/fail/note` + washes, and `shadow`.
@@ -128,8 +128,8 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate held the list at zero before the first post-adoption dimension endpoint
-pass. The current ledger at Monky `531a7cd` reports 519
-current declarations, 390 adopted/infrastructure declarations, 129 project-owned residue,
+pass. The current ledger at Monky `e0231c1` reports 520
+current declarations, 392 adopted/infrastructure declarations, 128 project-owned residue,
 `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
 
@@ -159,10 +159,10 @@ latent-generalizable rows in the rule-action review.
 The text-decoration treatment pass then admitted `undecorated`, `underlined`, and `struck`,
 moved link-button decoration onto authored button words, and kept rich-text `u`/`s`/`a`
 descendants in the prose/editor molecule.
-`RULE-RESIDUE-ANALYSIS.md` re-reads the 129 current project-owned declarations at rule
+`RULE-RESIDUE-ANALYSIS.md` re-reads the 128 current project-owned declarations at rule
 granularity: they collapse to 61 authored CSS rules, mostly editor-content molecules,
 private pseudo drawing, control-state recipes, and a small local identity floor. It also
-reports the adjusted word-assimilation target: 41 declarations across 25 rules after
+reports the adjusted word-assimilation target: 40 declarations across 25 rules after
 excluding 43 semantic-fragment declarations and 45 content-editor default declarations
 from flat-word planning. Monky now names those fragment hooks with the `sf-*` prefix and
 centralizes them in `src/styles/fragments/semantic-fragments.css`.
@@ -236,12 +236,13 @@ edge-attachment, side-corner, role-measured dimension, and rule-presence edge-fa
 plus text-flow release (`text-wrap`/`overflow-visible`), rule edge-colour, checked group
 skin, editor style-option state, pressed/expanded state-prefix, spacing-none endpoint,
 existing-scale modal-nav, semantic-emphasis, content-alignment, scrollbar socket, alpha opacity,
-text-decoration treatment, semantic-fragment relocation, popup hook dissolution, and soft elevation
+text-decoration treatment, semantic-fragment relocation, popup hook dissolution, soft elevation,
+and scrim backdrop
 moved the live
 ledger to
-519 current declarations,
-129 project-owned residue,
-41 declarations in the adjusted word-assimilation target,
+520 current declarations,
+128 project-owned residue,
+40 declarations in the adjusted word-assimilation target,
 `assimilable = 0`,
 and `shadowed = 0`.
 **Closed:** adoption. Remaining work is post-adoption Ermine ruling cycles with pre-counted

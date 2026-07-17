@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 129 |
+| reviewed residue declarations | 128 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 119 |
+| likely recipe/molecule | 118 |
 | likely local identity | 10 |
 
 ## By Rule Action
@@ -21,7 +21,7 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | 1 |
 | attachment-edge-layer | 6 |
 | spacing-rhythm | 19 |
-| surface-line-elevation-cutout | 15 |
+| surface-line-elevation-cutout | 14 |
 | typography-content | 25 |
 | interaction-affordance-state | 11 |
 | motion-transition | 3 |
@@ -32,7 +32,7 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 119 |
+| recipe | 118 |
 | local-identity | 10 |
 
 ## By Current Ledger Code
@@ -41,7 +41,7 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | recipe-identity | 26 |
 | brand-identity | 4 |
-| component-contract | 3 |
+| component-contract | 2 |
 | state-mechanics | 1 |
 | parent-relational | 1 |
 | pseudo-mechanics | 23 |
@@ -81,7 +81,7 @@ of residue declarations.
 | component-private-drawing | recipe | 41 | promote as molecule/recipe only if reused |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
 | spacing-rhythm | recipe | 17 | promote as molecule/recipe only if reused |
-| surface-line-elevation-cutout | recipe | 15 | promote as molecule/recipe only if reused |
+| surface-line-elevation-cutout | recipe | 14 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 11 | promote as molecule/recipe only if reused |
 | reset-inheritance-neutralization | recipe | 8 | promote as molecule/recipe only if reused |
 | typography-content | local-identity | 4 | keep local after invariance/scale tests |

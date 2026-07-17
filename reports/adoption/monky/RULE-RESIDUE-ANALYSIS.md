@@ -18,9 +18,9 @@ included.
 
 | metric | count |
 | --- | --- |
-| current declarations | 519 |
-| adopted/infrastructure declarations | 390 |
-| project-owned residue declarations | 129 |
+| current declarations | 520 |
+| adopted/infrastructure declarations | 392 |
+| project-owned residue declarations | 128 |
 | project-owned residue rules | 61 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
@@ -35,7 +35,7 @@ included.
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
 | private drawing / engine pseudo | 16 | 43 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
-| exact attachment / geometry | 4 | 6 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
+| exact attachment / geometry | 4 | 5 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
 | component-local surface/type fragments | 3 | 5 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
 
@@ -47,10 +47,10 @@ not missing flat words: they are recipe/fragments or a deliberate authored-HTML 
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 129 | 61 | All remaining project-owned declarations in the current ledger. |
+| conserved project-owned residue | 128 | 61 | All remaining project-owned declarations in the current ledger. |
 | semantic fragments excluded | 43 | 16 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, and generated-placeholder fragments. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 41 | 25 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 40 | 25 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
 The exclusion is union-aware: 88 declarations across
 36 rules are outside the word-assimilation target. They remain visible
@@ -63,7 +63,7 @@ in the conserved ledger and boundary reports.
 | editor chrome recipes | 3 | 5 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
-| exact attachment / geometry | 4 | 6 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
+| exact attachment / geometry | 4 | 5 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
 | component-local surface/type fragments | 3 | 5 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 3 | 8 | Host/page reset and brand type identity. |
 
@@ -90,9 +90,9 @@ rules are listed later because a single selector can combine several kinds of re
 | typography-content | 17 |
 | component-private-drawing | 15 |
 | interaction-affordance-state | 8 |
-| surface-line-elevation-cutout | 8 |
+| surface-line-elevation-cutout | 7 |
 | spacing-rhythm | 6 |
-| attachment-edge-layer | 3 |
+| attachment-edge-layer | 4 |
 | motion-transition | 2 |
 | dimension-constraint | 1 |
 | reset-inheritance-neutralization | 1 |
@@ -101,8 +101,8 @@ rules are listed later because a single selector can combine several kinds of re
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 32 |
-| 2 declarations | 14 |
+| 1 declaration | 33 |
+| 2 declarations | 13 |
 | 3 declarations | 8 |
 | 4+ declarations | 7 |
 
@@ -139,7 +139,7 @@ drawing, code/pre blocks, blockquotes, and host identity.
 
    5 residue rules contain `local-identity` outcomes. They are host/page
    typography, overlay layer identity, root spacing resets, or local transition
-   suppression. 1 of those rules are mixed with recipe declarations,
+   suppression. 0 of those rules are mixed with recipe declarations,
    which is expected for real CSS selectors.
 
 5. There is no immediate grammar pressure.
@@ -227,7 +227,7 @@ evidence and poor flat-word candidates.
 
 | file | selector | declarations | rule actions | outcome | residue declarations |
 | --- | --- | --- | --- | --- | --- |
-| `src/content/overlays/modal/modalStyles.css` | `.modal-backdrop` | 2 | surface-line-elevation-cutout, attachment-edge-layer | recipe, local-identity | background-color: var(--shadow-color)<br>z-index: 10000 |
+| `src/content/overlays/modal/modalStyles.css` | `.modal-backdrop` | 1 | attachment-edge-layer | local-identity | z-index: 10000 |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `:host, #macro-suggestions` | 4 | typography-content, attachment-edge-layer | local-identity | font-family: 'IBM Plex Condensed Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif<br>line-height: 1.5<br>position: fixed !important<br>z-index: 2147483646 !important |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `.macro-suggestions-command-item` | 1 | spacing-rhythm | recipe | padding: 3px 6px |
 | `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `.macro-suggestions-container` | 1 | surface-line-elevation-cutout | recipe | box-shadow: 0 10px 25px -5px var(--shadow-color) |

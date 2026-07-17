@@ -12,14 +12,14 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | source | commit |
 |---|---|
-| Ermine | `bde7d09dad751b13c45aeb8aed778592ae4c79ac` |
-| monky | `531a7cda505cc036ac802feb1e53da8a0168826e` |
+| Ermine | `99a921f9960db4fea39098b3e299650136b5f244` |
+| monky | `e0231c154bbeba17ece2f65f1f9c70f48e286d84` |
 
 ## Summary
 
-- Current declarations: 519
-- Adopted/infrastructure declarations: 390
-- Project-owned residue declarations: 129
+- Current declarations: 520
+- Adopted/infrastructure declarations: 392
+- Project-owned residue declarations: 128
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -27,7 +27,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 |---|---:|---|
 | `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 4 | project brand typography and type treatment |
-| `component-contract` | 3 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 2 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
@@ -97,15 +97,9 @@ project brand typography and type treatment
 | 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (3)
+## component-contract (2)
 
 component-owned mechanics, exact geometry, or product contract
-
-### src/content/overlays/modal/modalStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 19 | `.modal-backdrop` | `background-color: var(--shadow-color)` |
 
 ### src/styles/components/content-editor.css (2)
 
@@ -292,7 +286,7 @@ project-exact geometry on a grammar-family property
 
 | line | selector | declaration |
 |---:|---|---|
-| 20 | `.modal-backdrop` | `z-index: 10000` |
+| 19 | `.modal-backdrop` | `z-index: 10000` |
 
 ### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (3)
 
