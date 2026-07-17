@@ -19,9 +19,9 @@ included.
 | metric | count |
 | --- | --- |
 | current declarations | 498 |
-| adopted/infrastructure declarations | 398 |
-| project-owned residue declarations | 100 |
-| project-owned residue rules | 46 |
+| adopted/infrastructure declarations | 399 |
+| project-owned residue declarations | 99 |
+| project-owned residue rules | 45 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 | latent-generalizable declarations | 0 |
@@ -32,7 +32,7 @@ included.
 | --- | --- | --- | --- |
 | authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
 | private drawing / engine pseudo | 18 | 46 | Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure. |
-| control-state recipes | 7 | 8 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| control-state recipes | 6 | 7 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 
 ## Word-Assimilation Target
@@ -45,10 +45,10 @@ The authored-content substrate is likewise a deliberate authored-HTML island.
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 100 | 46 | All remaining project-owned declarations in the current ledger. |
+| conserved project-owned residue | 99 | 45 | All remaining project-owned declarations in the current ledger. |
 | semantic fragments excluded | 46 | 18 | Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 9 | 8 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 8 | 7 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
 The exclusion is union-aware: 91 declarations across
 38 rules are outside the word-assimilation target. They remain visible
@@ -59,7 +59,7 @@ missed Ermine assimilation.
 
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
-| control-state recipes | 7 | 8 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| control-state recipes | 6 | 7 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 
 ## By Source File
@@ -67,7 +67,7 @@ missed Ermine assimilation.
 | file | residue rules |
 | --- | --- |
 | `src/styles/fragments/semantic-fragments.css` | 39 |
-| `src/styles/skin/controls.css` | 7 |
+| `src/styles/skin/controls.css` | 6 |
 
 ## By Primary Rule Action
 
@@ -80,16 +80,16 @@ rules are listed later because a single selector can combine several kinds of re
 | typography-content | 14 |
 | interaction-affordance-state | 5 |
 | spacing-rhythm | 4 |
-| surface-line-elevation-cutout | 3 |
 | motion-transition | 2 |
 | reset-inheritance-neutralization | 2 |
+| surface-line-elevation-cutout | 2 |
 | attachment-edge-layer | 1 |
 
 ## Rule Density
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 26 |
+| 1 declaration | 25 |
 | 2 declarations | 9 |
 | 3 declarations | 5 |
 | 4+ declarations | 6 |
@@ -243,7 +243,6 @@ evidence and poor flat-word candidates.
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.seg-snap::before` | 1 | motion-transition | recipe | transition: none |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-shake-suppression` | 1 | motion-transition | recipe | transition: none !important |
 | `src/styles/skin/controls.css` | `.btn:disabled` | 1 | interaction-affordance-state | recipe | cursor: not-allowed |
-| `src/styles/skin/controls.css` | `.input-error:focus` | 1 | surface-line-elevation-cutout | recipe | box-shadow: inset 0 0 0 2px var(--status-error-wash) |
 | `src/styles/skin/controls.css` | `.min-selected-1 > .is-selected:only-of-type` | 2 | interaction-affordance-state | recipe | cursor: not-allowed<br>opacity: 0.95 |
 | `src/styles/skin/controls.css` | `.min-selected-1 > .is-selected:only-of-type:hover` | 1 | interaction-affordance-state | recipe | opacity: 0.95 |
 | `src/styles/skin/controls.css` | `.radio-label` | 1 | reset-inheritance-neutralization | recipe | user-select: none |

@@ -20,18 +20,18 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the shake-suppression fragment naming is
-Ermine ed12f35 / Monky 092f22d:
+were migrated). Current live ledger after the recessed-fail validation treatment is
+Ermine 24eef50 / Monky e8d1507:
 
   current declarations:                 498
-  adopted/infrastructure declarations:  398
-  project-owned residue declarations:   100
+  adopted/infrastructure declarations:  399
+  project-owned residue declarations:    99
   assimilable now:                        0
-  word-assimilation target:               9 declarations across 8 rules
+  word-assimilation target:               8 declarations across 7 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 100 project-owned declarations; 91 declarations across 38 rules are
+still carries the full 99 project-owned declarations; 91 declarations across 38 rules are
 deliberately outside the flat-word target: 46 semantic-fragment declarations and
 45 content-editor default declarations.
 Semantic fragments are counted this way because they are adoption sub-products: discovered
@@ -41,7 +41,7 @@ Vendor-specific browser-adapter hooks follow the same rule: they are conserved f
 but once named as adapter/fragment boundaries they are not residual Ermine word pressure.
 
 Current residue by reason code:
-  recipe-identity 22, state-mechanics 1,
+  recipe-identity 21, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
   opacity-followup 2,
   user-content 43.
@@ -219,6 +219,10 @@ target is 10 declarations across 9 rules.
 The shake-suppression pass then renamed the local `.shake` transition override as
 `.sf-shake-suppression`, making it an explicit effect-composition fragment. Conserved residue
 remains 100, and the adjusted word-assimilation target is 9 declarations across 8 rules.
+The recessed-fail validation pass then admitted `recessed-fail` for the focused invalid-control
+inset wash and moved the former `.input-error:focus` box-shadow into `focus:recessed-fail`.
+Live residue is now 99, and the adjusted word-assimilation target is 8 declarations across 7
+rules.
 The remaining target is recipe/local-identity review rather than immediate flat-word pressure.
 
 ========================================================================
@@ -273,7 +277,8 @@ search, settings, delete-confirm, and options stylesheets. The inferable control
 then deleted the now-empty content-editor stylesheet after moving its remaining toolbar/menu
 micro styles into Ermine class strings. The page entry cleanup then deleted the redundant standalone
 page stylesheet after reset/theme inheritance covered it. The shake-suppression fragment naming
-then moved the remaining shake transition override into `sf-shake-suppression`. The inventory
+then moved the remaining shake transition override into `sf-shake-suppression`. The recessed-fail
+validation pass then moved the focused invalid-control inset wash into Ermine grammar. The inventory
 below is the current live non-Ermine class surface after that pass; comment-only sheets and retired hooks are no longer
 listed as CSS-backed style owners.
 
@@ -284,7 +289,7 @@ src/styles/fragments/semantic-fragments.css:
 is-sliding, seg-snap, sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-foreign-overlay-host, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-segmented-control-option, sf-segmented-pill, sf-shake-suppression
 
 src/styles/skin/controls.css:
-btn, input-error, is-selected, min-selected-1, radio-label, selectable-group
+btn, is-selected, min-selected-1, radio-label, selectable-group
 
 Markup-only local class tokens (runtime class strings with no current local CSS rule here;
 Ermine grammar words filtered out):
@@ -514,9 +519,9 @@ Likely Ermine pressure:
   keycap recipe; callout-arrow recipe; segmented-control recipe; placeholder recipe;
   engine-scrollbar browser-adapter/post-processing layer.
 
-Summary shape after the shake-suppression fragment naming:
-  - Adjusted word-assimilation target: 9 declarations across 8 rules after excluding
-    semantic fragments and content-editor defaults from the conserved 100-declaration residue.
+Summary shape after the recessed-fail validation treatment:
+  - Adjusted word-assimilation target: 8 declarations across 7 rules after excluding
+    semantic fragments and content-editor defaults from the conserved 99-declaration residue.
   - Semantic fragments are not failed assimilation; they are discovered sub-products of the
     conversion and are counted outside the Ermine word target by design.
   - Vendor-specific scrollbar pseudo-elements are browser-adapter hooks, not residual

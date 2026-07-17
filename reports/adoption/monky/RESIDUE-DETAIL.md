@@ -12,20 +12,20 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | source | commit |
 |---|---|
-| Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `092f22d6f2648d3cae55cd9701e1a2617a44e9af` |
+| Ermine | `24eef502d00a129c9f171e2d0f5429152c75afec` |
+| monky | `e8d15071a37c19092f38ef4d74e877c681ae2127` |
 
 ## Summary
 
 - Current declarations: 498
-- Adopted/infrastructure declarations: 398
-- Project-owned residue declarations: 100
+- Adopted/infrastructure declarations: 399
+- Project-owned residue declarations: 99
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 22 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 21 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
@@ -33,7 +33,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
 
-## recipe-identity (22)
+## recipe-identity (21)
 
 a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 
@@ -59,15 +59,14 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 | 196 | `.sf-segmented-control-option svg` | `vertical-align: middle` |
 | 205 | `.sf-shake-suppression` | `transition: none !important` |
 
-### src/styles/skin/controls.css (5)
+### src/styles/skin/controls.css (4)
 
 | line | selector | declaration |
 |---:|---|---|
-| 4 | `.input-error:focus` | `box-shadow: inset 0 0 0 2px var(--status-error-wash)` |
-| 8 | `.radio-label` | `user-select: none` |
-| 14 | `.btn:disabled` | `cursor: not-allowed` |
-| 26 | `.selectable-group > *` | `user-select: none` |
-| 30 | `.selectable-group > *:active` | `transform: scale(0.98)` |
+| 4 | `.radio-label` | `user-select: none` |
+| 10 | `.btn:disabled` | `cursor: not-allowed` |
+| 22 | `.selectable-group > *` | `user-select: none` |
+| 26 | `.selectable-group > *:active` | `transform: scale(0.98)` |
 
 ## state-mechanics (1)
 
@@ -77,7 +76,7 @@ JS/native state mechanics outside backed Ermine conditions
 
 | line | selector | declaration |
 |---:|---|---|
-| 34 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
+| 30 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 
 ## parent-relational (1)
 
@@ -146,8 +145,8 @@ opacity state treatment (named follow-up question)
 
 | line | selector | declaration |
 |---:|---|---|
-| 35 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
-| 39 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
+| 31 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
+| 35 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
 ## user-content (43)
 

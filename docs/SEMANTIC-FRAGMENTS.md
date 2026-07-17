@@ -98,8 +98,8 @@ fragment up front. Real applications expose the fragments that matter.
 For assimilation reporting, semantic fragments should be excluded from the flat-word target
 while remaining visible in the conserved project-owned residue ledger. In Monky, the current
 fragment set accounts for 46 declarations across 18 rules; paired with the authored-content
-default substrate, it narrows the current word-assimilation target to 9 declarations across
-8 rules.
+default substrate, it narrows the current word-assimilation target to 8 declarations across
+7 rules.
 
 ## Possible Future Shape
 

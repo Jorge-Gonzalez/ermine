@@ -2,17 +2,17 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "092f22d6f2648d3cae55cd9701e1a2617a44e9af"
+    "ermineCommit": "24eef502d00a129c9f171e2d0f5429152c75afec",
+    "projectCommit": "e8d15071a37c19092f38ef4d74e877c681ae2127"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 100,
+    "reviewedDeclarations": 99,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 100,
+    "likelyRecipe": 99,
     "likelyLocal": 0,
     "byRuleAction": {
       "already-admitted": 0,
@@ -20,7 +20,7 @@
       "attachment-edge-layer": 2,
       "spacing-rhythm": 14,
       "alignment-layout": 0,
-      "surface-line-elevation-cutout": 9,
+      "surface-line-elevation-cutout": 8,
       "typography-content": 21,
       "interaction-affordance-state": 6,
       "motion-transition": 3,
@@ -32,7 +32,7 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 100,
+      "recipe": 99,
       "local-identity": 0
     },
     "byCurrentCode": {
@@ -41,7 +41,7 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 22,
+      "recipe-identity": 21,
       "rule-mechanics": 0,
       "brand-identity": 0,
       "affordance-mechanics": 0,
@@ -1703,23 +1703,9 @@
       ]
     },
     {
-      "id": "src/styles/skin/controls.css::.input-error:focus::box-shadow::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 4,
-      "selector": ".input-error:focus",
-      "property": "box-shadow",
-      "value": "inset 0 0 0 2px var(--status-error-wash)",
-      "currentCode": "recipe-identity",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "recipe",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
       "id": "src/styles/skin/controls.css::.radio-label::user-select::1",
       "file": "src/styles/skin/controls.css",
-      "line": 8,
+      "line": 4,
       "selector": ".radio-label",
       "property": "user-select",
       "value": "none",
@@ -1736,7 +1722,7 @@
     {
       "id": "src/styles/skin/controls.css::.btn:disabled::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 14,
+      "line": 10,
       "selector": ".btn:disabled",
       "property": "cursor",
       "value": "not-allowed",
@@ -1753,7 +1739,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::user-select::1",
       "file": "src/styles/skin/controls.css",
-      "line": 26,
+      "line": 22,
       "selector": ".selectable-group > *",
       "property": "user-select",
       "value": "none",
@@ -1770,7 +1756,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *:active::transform::1",
       "file": "src/styles/skin/controls.css",
-      "line": 30,
+      "line": 26,
       "selector": ".selectable-group > *:active",
       "property": "transform",
       "value": "scale(0.98)",
@@ -1787,7 +1773,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 34,
+      "line": 30,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "cursor",
       "value": "not-allowed",
@@ -1804,7 +1790,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 35,
+      "line": 31,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "opacity",
       "value": "0.95",
@@ -1821,7 +1807,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 39,
+      "line": 35,
       "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
       "property": "opacity",
       "value": "0.95",
