@@ -8,18 +8,18 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 118 |
+| reviewed residue declarations | 117 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
 | likely recipe/molecule | 112 |
-| likely local identity | 6 |
+| likely local identity | 5 |
 
 ## By Rule Action
 
 | rule action | declarations |
 | --- | --- |
 | dimension-constraint | 1 |
-| attachment-edge-layer | 4 |
+| attachment-edge-layer | 3 |
 | spacing-rhythm | 18 |
 | surface-line-elevation-cutout | 13 |
 | typography-content | 23 |
@@ -33,7 +33,7 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | recipe | 112 |
-| local-identity | 6 |
+| local-identity | 5 |
 
 ## By Current Ledger Code
 
@@ -50,7 +50,7 @@ generalization, recipe, and local-identity pressure.
 | opacity-followup | 2 |
 | elevation-followup | 1 |
 | user-content | 43 |
-| identity-geometry | 7 |
+| identity-geometry | 6 |
 
 ## Matched Playbook Recipes
 
@@ -88,7 +88,6 @@ of residue declarations.
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
 | typography-content | local-identity | 2 | keep local after invariance/scale tests |
-| attachment-edge-layer | local-identity | 1 | keep local after invariance/scale tests |
 | dimension-constraint | recipe | 1 | promote as molecule/recipe only if reused |
 | motion-transition | local-identity | 1 | keep local after invariance/scale tests |
 

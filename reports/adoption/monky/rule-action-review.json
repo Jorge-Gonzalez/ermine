@@ -3,21 +3,21 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "da51d888db643d57dc9e1e7f784fc4f230556023"
+    "projectCommit": "8167857d335e5e2383233e6f2f062160b85b5cd4"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 118,
+    "reviewedDeclarations": 117,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
     "likelyRecipe": 112,
-    "likelyLocal": 6,
+    "likelyLocal": 5,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 1,
-      "attachment-edge-layer": 4,
+      "attachment-edge-layer": 3,
       "spacing-rhythm": 18,
       "alignment-layout": 0,
       "surface-line-elevation-cutout": 13,
@@ -33,7 +33,7 @@
       "latent-facet": 0,
       "latent-scale": 0,
       "recipe": 112,
-      "local-identity": 6
+      "local-identity": 5
     },
     "byCurrentCode": {
       "ermine-emitted": 0,
@@ -58,7 +58,7 @@
       "elevation-followup": 1,
       "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 7,
+      "identity-geometry": 6,
       "skin-review": 0,
       "identity-review": 0
     },
@@ -86,20 +86,6 @@
     }
   },
   "declarations": [
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::z-index::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 19,
-      "selector": ".modal-backdrop",
-      "property": "z-index",
-      "value": "10000",
-      "currentCode": "identity-geometry",
-      "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "local-identity",
-      "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local"
-    },
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::flex::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",

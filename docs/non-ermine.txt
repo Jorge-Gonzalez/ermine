@@ -20,18 +20,18 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the foreign overlay host fragment is
-Ermine ed12f35 / Monky da51d88:
+were migrated). Current live ledger after the modal backdrop reused the foreign-overlay-host
+fragment is Ermine ed12f35 / Monky 8167857:
 
-  current declarations:                 513
+  current declarations:                 512
   adopted/infrastructure declarations:  395
-  project-owned residue declarations:   118
+  project-owned residue declarations:   117
   assimilable now:                        0
-  word-assimilation target:              28 declarations across 20 rules
+  word-assimilation target:              27 declarations across 19 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 118 project-owned declarations; 90 declarations across 37 rules are
+still carries the full 117 project-owned declarations; 90 declarations across 37 rules are
 deliberately outside the flat-word target: 45 semantic-fragment declarations and
 45 content-editor default declarations.
 
@@ -39,7 +39,7 @@ Current residue by reason code:
   recipe-identity 28, brand-identity 2, component-contract 1, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
   motion-followup 1, opacity-followup 2, elevation-followup 1,
-  user-content 43, identity-geometry 7.
+  user-content 43, identity-geometry 6.
 
 Historical invariance sample:
 
@@ -186,9 +186,12 @@ word-assimilation target is 30 declarations across 21 rules.
 The foreign-overlay-host pass then named that remaining host boundary as the
 `sf-foreign-overlay-host` semantic fragment, moved the overlay host declarations into
 `semantic-fragments.css`, and replaced the old numeric ceiling with a configurable
-`--monky-foreign-overlay-z` floor defaulting to 10000. The conserved residue remains 118,
-but the adjusted word-assimilation target is now 28 declarations across 20 rules because
+`--monky-foreign-overlay-z` floor defaulting to 10000. The conserved residue remained 118,
+and the adjusted word-assimilation target became 28 declarations across 20 rules because
 the foreign-page host policy is out of flat-word scope.
+The modal backdrop then reused the same fragment, removing the last raw `z-index: 10000`
+modal declaration; live residue is now 117 and the adjusted word-assimilation target is
+27 declarations across 19 rules.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -227,16 +230,14 @@ positioned inset cleanup removed the local macro search edit offset and the neut
 The suggestions surface cleanup removed the local suggestions container shadow, command-item
 padding, and duplicate host font/leading. The foreign-overlay-host pass then retired
 `suggestionsOverlayStyles.css` by moving its remaining host policy into
-`sf-foreign-overlay-host`. The inventory below is the current live non-Ermine class surface
-after the foreign overlay host fragment;
+`sf-foreign-overlay-host`. The modal backdrop reuse then removed the remaining
+`modalStyles.css` z-index rule by putting the backdrop on the same fragment. The inventory below
+is the current live non-Ermine class surface after the modal backdrop fragment reuse;
 comment-only sheets and retired hooks
 are no longer listed as CSS-backed style owners.
 
 CSS-backed local class selectors by source file (current CSS declarations, with generated
 Ermine grammar and infrastructure/theme/substrate sheets filtered out):
-
-src/content/overlays/modal/modalStyles.css:
-modal-backdrop
 
 src/content/overlays/views/macroEditor/editorViewStyles.css:
 content-editor-body, editor-content, editor-toast
@@ -481,7 +482,7 @@ Likely Ermine pressure:
   engine-scrollbar post-processing or recipe layer.
 
 Summary shape for the next assimilation pass:
-  - Adjusted word-assimilation target: 28 declarations across 20 rules after excluding
+  - Adjusted word-assimilation target: 27 declarations across 19 rules after excluding
     semantic fragments and content-editor defaults from the conserved 118-declaration residue.
   - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
     measured size scale.

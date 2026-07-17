@@ -13,13 +13,13 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `da51d888db643d57dc9e1e7f784fc4f230556023` |
+| monky | `8167857d335e5e2383233e6f2f062160b85b5cd4` |
 
 ## Summary
 
-- Current declarations: 513
+- Current declarations: 512
 - Adopted/infrastructure declarations: 395
-- Project-owned residue declarations: 118
+- Project-owned residue declarations: 117
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -36,7 +36,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 7 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 6 | project-exact geometry on a grammar-family property |
 
 ## recipe-identity (28)
 
@@ -253,15 +253,9 @@ rich-text defaults inside user-authored content
 | 108 | `.sf-authored-content a` | `text-decoration: underline` |
 | 112 | `.sf-authored-content a:hover` | `opacity: 0.8` |
 
-## identity-geometry (7)
+## identity-geometry (6)
 
 project-exact geometry on a grammar-family property
-
-### src/content/overlays/modal/modalStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 19 | `.modal-backdrop` | `z-index: 10000` |
 
 ### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
 

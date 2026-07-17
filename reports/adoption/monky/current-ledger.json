@@ -3,11 +3,11 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "da51d888db643d57dc9e1e7f784fc4f230556023"
+    "projectCommit": "8167857d335e5e2383233e6f2f062160b85b5cd4"
   },
   "summary": {
-    "totalDeclarations": 513,
-    "residueDeclarations": 118,
+    "totalDeclarations": 512,
+    "residueDeclarations": 117,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 280,
@@ -32,21 +32,12 @@
       "elevation-followup": 1,
       "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 7,
+      "identity-geometry": 6,
       "skin-review": 0,
       "identity-review": 0
     }
   },
   "records": [
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-backdrop::z-index::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 19,
-      "selector": ".modal-backdrop",
-      "property": "z-index",
-      "value": "10000",
-      "code": "identity-geometry"
-    },
     {
       "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::flex::1",
       "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
