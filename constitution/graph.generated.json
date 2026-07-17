@@ -343,6 +343,12 @@
       "anchor": "ADR-0057"
     },
     {
+      "id": "ADR-0058",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0058-elevated-soft-strength.md",
+      "anchor": "ADR-0058"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

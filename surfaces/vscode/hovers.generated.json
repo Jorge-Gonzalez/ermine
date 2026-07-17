@@ -2544,6 +2544,11 @@
       "meaning": "<text-decoration>",
       "reference": "src/ERMINE-SPEC.md §2.5 — text-decoration"
     },
+    "elevated-soft": {
+      "axis": "elevation",
+      "meaning": "<elevation>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — elevation"
+    },
     "elevated": {
       "axis": "elevation",
       "meaning": "<elevation>",

@@ -108,7 +108,7 @@ export interface ErminePlainProps {
   /** axis `text-decoration` */
   textDecoration?: "undecorated" | "underlined" | "struck";
   /** axis `elevation` */
-  elevation?: "elevated";
+  elevation?: "elevated-soft" | "elevated";
   /** axis `affordance` */
   affordance?: "pressable";
   /** axis `concealment` */

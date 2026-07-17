@@ -110,6 +110,11 @@ test("elevated reads its socket with the default geometry composed on the shadow
   assert.match(css, /\.elevated \{[^}]*box-shadow: var\(--shadow-elevated, 0 4px 12px var\(--shadow\)\);/s);
 });
 
+test("elevated-soft reads its close drop-shadow socket with a two-layer neutral default (R-SKIN-09)", () => {
+  const css = toCss("elevated-soft");
+  assert.match(css, /\.elevated-soft \{[^}]*box-shadow: var\(--shadow-elevated-soft, 0 1px 2px rgb\(0 0 0 \/ 30%\), 0 2px 6px rgb\(0 0 0 \/ 15%\)\);/s);
+});
+
 test("elevated composes with base skin as independent atomic rules", () => {
   const css = toCss("ground corner-md elevated");
   assert.match(css, /\.ground \{[^}]*background: var\(--ground\);/s);

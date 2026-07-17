@@ -78,6 +78,8 @@ const cases: Case[] = [
   { s: "text-nowrap text-pre-wrap", expect: "fail", why: "two text-flow treatments on one axis" },
   { s: "truncate text-nowrap", expect: "fail", why: "truncate already owns nowrap as a text-flow treatment" },
   { s: "undecorated hover:underlined", expect: "ok", why: "base and hover text decoration scopes are independent" },
+  { s: "elevated-soft", expect: "ok", why: "soft elevation strength" },
+  { s: "elevated-soft elevated", expect: "fail", why: "one elevation strength per scope" },
   { s: "undecorated underlined", expect: "fail", why: "two text-decoration treatments in one scope" },
   // sub-dial axes compose
   { s: "align-center justify-between content-align-start", expect: "ok", why: "different sub-dials (align-items vs justify-content vs align-content)" },

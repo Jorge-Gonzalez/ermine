@@ -289,12 +289,20 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
-  // --- elevation: the cast-shadow treatment (R-SKIN-09). Socket with an Ermine
-  // default geometry composed on the standalone shadow colour socket. ---
+  // --- elevation: the cast-shadow treatment (R-SKIN-09). Sockets with Ermine
+  // default geometries composed on neutral shadow colours. ---
   elevation: {
     effectKind: "css",
-    plain: (word) =>
-      word === "elevated" ? { "box-shadow": "var(--shadow-elevated, 0 4px 12px var(--shadow))" } : null,
+    plain: (word) => {
+      switch (word) {
+        case "elevated-soft":
+          return { "box-shadow": "var(--shadow-elevated-soft, 0 1px 2px rgb(0 0 0 / 30%), 0 2px 6px rgb(0 0 0 / 15%))" };
+        case "elevated":
+          return { "box-shadow": "var(--shadow-elevated, 0 4px 12px var(--shadow))" };
+        default:
+          return null;
+      }
+    },
   },
 
   // --- ordered-chain scale axis WITH sub-dials + aliasMatch (padding shape) ---
@@ -899,7 +907,7 @@ export const VOCABULARY: Record<string, string[]> = {
   concealment: ["concealed", "revealed", ...Array.from({ length: 19 }, (_, index) => `alpha-${(index + 1) * 5}`)],
   scrollbar: ["scrollbar-subtle"],
   "focus-ring": ["ring"],
-  elevation: ["elevated"],
+  elevation: ["elevated-soft", "elevated"],
   "selection-treatment": ["selection-subtle", "selection-strong"],
   "motion-micro": ["decelerate", "accelerate", "standard", "emphasized", "symmetric", "asymmetric"],
   "motion-macro": ["together", "sequence", "cascade"],

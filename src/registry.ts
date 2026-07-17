@@ -932,17 +932,17 @@ export const SKIN: AxisRecord[] = [
     mustNeverTouch: ["display", "gap", "flex", "margin", "font-size", "font-weight", "font-family", "line-height", "color"],
   },
   {
-    // elevation: the cast-shadow treatment (R-SKIN-09). Owns box-shadow; the word reads
-    // its like-named socket with an Ermine default geometry composed on the standalone
-    // `shadow` colour socket, so a theme owns the numbers. `elevated` admitted;
-    // `recessed` (inset) is the family member reserved pending evidence. Distinct from
-    // the z-scale's `raised` stacking tier — order, not look. Identity shadows stay
-    // project-owned.
+    // elevation: the cast-shadow treatment (R-SKIN-09). Owns box-shadow; each word
+    // reads its like-named socket with an Ermine default geometry. `elevated-soft`
+    // is a close, low-offset drop shadow; `elevated` is the normal raised surface.
+    // `recessed` (inset) is the family member reserved pending evidence. Distinct
+    // from the z-scale's `raised` stacking tier — order, not look. Identity shadows
+    // and blend-mode compositing stay project-owned.
     axis: "elevation",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["elevated"],
-    tokens: [{ pattern: /^(elevated)$/, shape: "<elevation>" }],
+    valueSpace: ["elevated-soft", "elevated"],
+    tokens: [{ pattern: /^(elevated-soft|elevated)$/, shape: "<elevation>" }],
     default: null,
     controls: ["box-shadow"],
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "font-size"],
@@ -1105,7 +1105,7 @@ export const SKIN_PLANE = {
   // R-SKIN-07: the typeface-variant facet reads its socket the same way (default:
   // the platform's generic).
   treatments: {
-    elevation: ["shadow-elevated"],
+    elevation: ["shadow-elevated-soft", "shadow-elevated"],
     typeface: ["font-mono"],
     // R-SKIN-11: the line weight the presence words emit; themes rebind for heavier rules.
     line: ["rule-weight"],

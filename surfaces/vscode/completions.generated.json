@@ -3464,6 +3464,12 @@
       "reference": "src/ERMINE-SPEC.md §2.5 — elevation",
       "items": [
         {
+          "label": "elevated-soft",
+          "insertText": "elevated-soft",
+          "kind": "word",
+          "meaning": "<elevation>"
+        },
+        {
           "label": "elevated",
           "insertText": "elevated",
           "kind": "word",
