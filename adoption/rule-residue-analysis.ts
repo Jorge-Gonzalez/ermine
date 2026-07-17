@@ -152,14 +152,14 @@ function isSemanticFragmentRule(group: RuleGroup): boolean {
 }
 
 function isAuthoredContentSubstrateDeclaration(declaration: ReviewedDeclaration): boolean {
-  return declaration.file.endsWith("content-editor.css")
-    && /\bcontent-editor-body\b/.test(declaration.selector)
+  return (declaration.file.endsWith("content-editor.css") || declaration.file.endsWith("semantic-fragments.css"))
+    && /\b(?:content-editor-body|sf-authored-content)\b/.test(declaration.selector)
     && !declaration.selector.includes("::");
 }
 
 function isAuthoredContentSubstrateRule(group: RuleGroup): boolean {
-  return group.file.endsWith("content-editor.css")
-    && /\bcontent-editor-body\b/.test(group.selector)
+  return (group.file.endsWith("content-editor.css") || group.file.endsWith("semantic-fragments.css"))
+    && /\b(?:content-editor-body|sf-authored-content)\b/.test(group.selector)
     && !group.selector.includes("::");
 }
 
@@ -179,7 +179,8 @@ function isPrivateDrawingRule(group: RuleGroup): boolean {
   return group.selector.includes("::")
     || group.selector.startsWith("::-webkit-scrollbar")
     || /\.macro-suggestions-arrow\b/.test(group.selector)
-    || /\.macro-search-kbd\b/.test(group.selector);
+    || /\.macro-search-kbd\b/.test(group.selector)
+    || /\.sf-(?:callout-arrow|keycap|segmented-pill|generated-placeholder)\b/.test(group.selector);
 }
 
 function smallNumberWord(value: number): string {
@@ -376,7 +377,7 @@ ${table(["bucket", "declarations", "rules", "reading"], [
       "content-editor defaults excluded",
       String(target.authoredContentDeclarations),
       String(target.authoredContentRules),
-      "Authored-content substrate defaults under \`.content-editor-body\`, excluding pseudo drawing.",
+      "Authored-content substrate defaults under \`.sf-authored-content\`, excluding pseudo drawing.",
     ],
     [
       "adjusted word-assimilation target",
@@ -406,7 +407,7 @@ function renderAuthoredContentSection(groups: RuleGroup[]): string {
   if (!groups.some(isAuthoredContentSubstrateRule)) return "";
   return `### Authored Content Substrate
 
-These rules intentionally point the other way from a utility framework. \`.content-editor-body\`
+These rules intentionally point the other way from a utility framework. \`.sf-authored-content\`
 is an authored HTML island: a neutral/prose substrate where user content can render ordinary
 \`p\`, \`h1\`, \`ul\`, \`em\`, \`u\`, \`s\`, \`a\`, \`code\`, and \`blockquote\` semantics without
 requiring class words on descendants.
@@ -430,13 +431,13 @@ function renderEditorChromeSection(groups: RuleGroup[]): string {
   return `### Editor Chrome And Bridges
 
 The \`ce-*\` selectors are editor controls around the authored-content island. They are different
-from \`.content-editor-body\`: dropdown placement, toolbar separators, and tiny trigger gaps are
+from \`.sf-authored-content\`: dropdown placement, toolbar separators, and tiny trigger gaps are
 component chrome recipes. The \`.editor-content .content-editor-body\` row is different again: it
 is a layout bridge that lets the editor shell hand remaining block space to the authored content.
 
 ${table(["selector group", "reading"], [
     ["`ce-*`", "editor toolbar/menu chrome; recipe-local unless repeated elsewhere"],
-    ["`.content-editor-body:empty::before`", "placeholder pseudo drawing, classified with private drawing"],
+    ["`.sf-generated-placeholder:empty::before`", "placeholder pseudo drawing, classified with private drawing"],
     ["`.editor-content .content-editor-body`", "layout bridge between shell and authored-content substrate"],
   ])}`;
 }
@@ -444,18 +445,18 @@ ${table(["selector group", "reading"], [
 function renderPrivateDrawingSection(groups: RuleGroup[]): string {
   if (!groups.some(isPrivateDrawingRule)) return "";
   const examples = [
-    [".seg-control::before", "Segmented-control active pill driven by CSS variables and state."],
-    [".macro-search-kbd::after", "Keyboard cap underside/shadow drawing."],
+    [".sf-segmented-pill::before", "Segmented-control active pill driven by CSS variables and state."],
+    [".sf-keycap-raised::after", "Keyboard cap underside/shadow drawing."],
     ["::-webkit-scrollbar*", "Browser-specific scrollbar parts after standard socket integration."],
-    [".macro-suggestions-arrow*", "CSS triangle arrow drawing and orientation."],
-    [".content-editor-body:empty::before", "Placeholder drawing tied to generated content."],
-    [".macro-search-kbd and variants", "Exact keyboard cap geometry."],
+    [".sf-callout-arrow*", "CSS triangle arrow drawing and orientation."],
+    [".sf-generated-placeholder:empty::before", "Placeholder drawing tied to generated content."],
+    [".sf-keycap and variants", "Exact keyboard cap geometry."],
   ].map(([pattern, reading]) => {
     const count = groups
       .filter((group) => {
         if (pattern === "::-webkit-scrollbar*") return group.selector.startsWith("::-webkit-scrollbar");
-        if (pattern === ".macro-suggestions-arrow*") return group.selector.includes(".macro-suggestions-arrow");
-        if (pattern === ".macro-search-kbd and variants") return group.selector.includes(".macro-search-kbd") && !group.selector.includes("::after");
+        if (pattern === ".sf-callout-arrow*") return group.selector.includes(".sf-callout-arrow");
+        if (pattern === ".sf-keycap and variants") return group.selector.includes(".sf-keycap") && !group.selector.includes("::after");
         return group.selector === pattern;
       })
       .reduce((sum, group) => sum + group.declarations.length, 0);
@@ -578,7 +579,7 @@ drawing, code/pre blocks, blockquotes, and host identity.
 2. Content-editor residue is a molecule boundary.
 
    \`src/styles/components/content-editor.css\` has 24 residue rules. Twenty are authored-content
-   substrate under \`.content-editor-body\` or \`.content-editor .content-editor-body\`: headings,
+   substrate under \`.sf-authored-content\`: headings,
    paragraphs, lists, inline code, pre blocks, blockquotes, links, emphasis, and decorations.
    Three are \`ce-*\` editor chrome. One is placeholder pseudo drawing. Treating those as one vague
    "content editor" bucket hides the important distinction: the body is an authored HTML island,

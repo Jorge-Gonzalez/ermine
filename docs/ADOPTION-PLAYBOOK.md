@@ -49,6 +49,9 @@ and engine scrollbar adapters.
 
 Fragments are application-shaped but not application-bound. They preserve designer control over
 the internal style structure of a component without importing a broad component-library model.
+Monky now names this layer with `sf-*` classes and centralizes it in
+`src/styles/fragments/semantic-fragments.css`; those classes are project recipe hooks, not
+Ermine words.
 The detailed model and current Monky-discovered fragments are documented in
 [`SEMANTIC-FRAGMENTS.md`](SEMANTIC-FRAGMENTS.md). The historical decision is ADR-0057.
 

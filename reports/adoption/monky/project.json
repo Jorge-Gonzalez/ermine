@@ -5,11 +5,13 @@
     ".checkbox",
     ".radio",
     ".seg-",
+    ".sf-",
     ".selectable-group",
     ".panel-button"
   ],
   "userContent": [
-    ".content-editor-body"
+    ".content-editor-body",
+    ".sf-authored-content"
   ],
   "bridge": "src/theme/socketPalette.ts"
 }

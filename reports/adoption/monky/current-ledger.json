@@ -3,7 +3,7 @@
   "project": "monky",
   "source": {
     "ermineCommit": "847ecf95138e8216c7d3d82b231d2f04046a56a8",
-    "projectCommit": "8382998e6116c889835e71f2b7850fac5e3715fb"
+    "projectCommit": "667ccf35bc9c49811aa3bf540b4de49e9f1b4465"
   },
   "summary": {
     "totalDeclarations": 521,
@@ -15,11 +15,11 @@
       "theme-metric": 61,
       "config-departure": 1,
       "assimilable": 0,
-      "recipe-identity": 13,
+      "recipe-identity": 26,
       "rule-mechanics": 0,
-      "brand-identity": 6,
+      "brand-identity": 4,
       "affordance-mechanics": 0,
-      "component-contract": 7,
+      "component-contract": 4,
       "state-mechanics": 1,
       "state-review": 0,
       "focus-state": 0,
@@ -30,9 +30,9 @@
       "motion-followup": 1,
       "opacity-followup": 2,
       "elevation-followup": 3,
-      "reset-absence": 5,
+      "reset-absence": 3,
       "user-content": 43,
-      "identity-geometry": 18,
+      "identity-geometry": 12,
       "skin-review": 0,
       "identity-review": 0
     }
@@ -120,57 +120,12 @@
       "code": "elevation-followup"
     },
     {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow::width::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 14,
-      "selector": ".macro-suggestions-arrow",
-      "property": "width",
-      "value": "0",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow::border::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 15,
-      "selector": ".macro-suggestions-arrow",
-      "property": "border",
-      "value": "6px solid transparent",
-      "code": "reset-absence"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.top::border-top-color::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 19,
-      "selector": ".macro-suggestions-arrow.top",
-      "property": "border-top-color",
-      "value": "var(--base-tone)",
-      "code": "component-contract"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-arrow.bottom::border-bottom-color::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 23,
-      "selector": ".macro-suggestions-arrow.bottom",
-      "property": "border-bottom-color",
-      "value": "var(--base-tone)",
-      "code": "component-contract"
-    },
-    {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-command-item::padding::1",
       "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 27,
+      "line": 14,
       "selector": ".macro-suggestions-command-item",
       "property": "padding",
       "value": "3px 6px",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css::.macro-suggestions-kbd::padding::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 32,
-      "selector": ".macro-suggestions-kbd",
-      "property": "padding",
-      "value": "1px 4px",
       "code": "identity-geometry"
     },
     {
@@ -237,258 +192,6 @@
       "code": "reset-absence"
     },
     {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::line-height::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 32,
-      "selector": ".macro-search-kbd",
-      "property": "line-height",
-      "value": "1",
-      "code": "brand-identity"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::padding::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 33,
-      "selector": ".macro-search-kbd",
-      "property": "padding",
-      "value": "3px 6px 6px",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::min-width::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 34,
-      "selector": ".macro-search-kbd",
-      "property": "min-width",
-      "value": "26px",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::border-radius::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 35,
-      "selector": ".macro-search-kbd",
-      "property": "border-radius",
-      "value": "4px",
-      "code": "component-contract"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::z-index::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 36,
-      "selector": ".macro-search-kbd",
-      "property": "z-index",
-      "value": "0",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::content::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 40,
-      "selector": ".macro-search-kbd::after",
-      "property": "content",
-      "value": "''",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::position::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 41,
-      "selector": ".macro-search-kbd::after",
-      "property": "position",
-      "value": "absolute",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::background::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 42,
-      "selector": ".macro-search-kbd::after",
-      "property": "background",
-      "value": "var(--tone-dim)",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::inset::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 43,
-      "selector": ".macro-search-kbd::after",
-      "property": "inset",
-      "value": "0 2px 4px",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 44,
-      "selector": ".macro-search-kbd::after",
-      "property": "border",
-      "value": "1px solid var(--harmonic-minor)",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::border-radius::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 45,
-      "selector": ".macro-search-kbd::after",
-      "property": "border-radius",
-      "value": "2px",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::pointer-events::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 46,
-      "selector": ".macro-search-kbd::after",
-      "property": "pointer-events",
-      "value": "none",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd::after::z-index::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 47,
-      "selector": ".macro-search-kbd::after",
-      "property": "z-index",
-      "value": "-1",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/search/searchViewStyles.css::.macro-search-kbd:first-child::margin-left::1",
-      "file": "src/content/overlays/views/search/searchViewStyles.css",
-      "line": 51,
-      "selector": ".macro-search-kbd:first-child",
-      "property": "margin-left",
-      "value": "0",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::content::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 15,
-      "selector": ".seg-control::before",
-      "property": "content",
-      "value": "''",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::position::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 16,
-      "selector": ".seg-control::before",
-      "property": "position",
-      "value": "absolute",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::top::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 17,
-      "selector": ".seg-control::before",
-      "property": "top",
-      "value": "0",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::bottom::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 18,
-      "selector": ".seg-control::before",
-      "property": "bottom",
-      "value": "0",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::left::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 19,
-      "selector": ".seg-control::before",
-      "property": "left",
-      "value": "var(--pill-left, 0)",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::width::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 20,
-      "selector": ".seg-control::before",
-      "property": "width",
-      "value": "var(--pill-width, 0)",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::background::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 21,
-      "selector": ".seg-control::before",
-      "property": "background",
-      "value": "var(--accent)",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::opacity::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 22,
-      "selector": ".seg-control::before",
-      "property": "opacity",
-      "value": "0",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::transition::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 23,
-      "selector": ".seg-control::before",
-      "property": "transition",
-      "value": "left 0.1s ease, width 0.1s ease",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control::before::pointer-events::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 24,
-      "selector": ".seg-control::before",
-      "property": "pointer-events",
-      "value": "none",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.is-sliding::before::opacity::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 27,
-      "selector": ".seg-control.is-sliding::before",
-      "property": "opacity",
-      "value": "1",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.seg-snap::before::transition::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 30,
-      "selector": ".seg-control.seg-snap::before",
-      "property": "transition",
-      "value": "none",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-option svg::vertical-align::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 35,
-      "selector": ".seg-option svg",
-      "property": "vertical-align",
-      "value": "middle",
-      "code": "recipe-identity"
-    },
-    {
-      "id": "src/content/overlays/views/settings/settingsViewStyles.css::.seg-control.is-sliding .seg-option[aria-checked=\"true\"]::background::1",
-      "file": "src/content/overlays/views/settings/settingsViewStyles.css",
-      "line": 41,
-      "selector": ".seg-control.is-sliding .seg-option[aria-checked=\"true\"]",
-      "property": "background",
-      "value": "transparent",
-      "code": "parent-relational"
-    },
-    {
       "id": "src/styles/components/content-editor.css::.ce-toolbar-sep::background-color::1",
       "file": "src/styles/components/content-editor.css",
       "line": 10,
@@ -535,438 +238,6 @@
       "code": "identity-geometry"
     },
     {
-      "id": "src/styles/components/content-editor.css::.content-editor-body::font-family::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 29,
-      "selector": ".content-editor-body",
-      "property": "font-family",
-      "value": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
-      "code": "brand-identity"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body::line-height::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 30,
-      "selector": ".content-editor-body",
-      "property": "line-height",
-      "value": "normal",
-      "code": "reset-absence"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::content::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 34,
-      "selector": ".content-editor-body:empty::before",
-      "property": "content",
-      "value": "attr(data-placeholder)",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::color::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 35,
-      "selector": ".content-editor-body:empty::before",
-      "property": "color",
-      "value": "var(--ink-soft)",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body:empty::before::pointer-events::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 36,
-      "selector": ".content-editor-body:empty::before",
-      "property": "pointer-events",
-      "value": "none",
-      "code": "pseudo-mechanics"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body p::margin-bottom::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 41,
-      "selector": ".content-editor-body p",
-      "property": "margin-bottom",
-      "value": "0.75em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body p:last-child::margin-bottom::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 45,
-      "selector": ".content-editor-body p:last-child",
-      "property": "margin-bottom",
-      "value": "0",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h1::font-size::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 49,
-      "selector": ".content-editor-body h1",
-      "property": "font-size",
-      "value": "1.75em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h1::font-weight::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 50,
-      "selector": ".content-editor-body h1",
-      "property": "font-weight",
-      "value": "700",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h1::margin::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 51,
-      "selector": ".content-editor-body h1",
-      "property": "margin",
-      "value": "0.75em 0 0.4em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h2::font-size::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 55,
-      "selector": ".content-editor-body h2",
-      "property": "font-size",
-      "value": "1.4em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h2::font-weight::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 56,
-      "selector": ".content-editor-body h2",
-      "property": "font-weight",
-      "value": "700",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h2::margin::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 57,
-      "selector": ".content-editor-body h2",
-      "property": "margin",
-      "value": "0.75em 0 0.4em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h3::font-size::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 61,
-      "selector": ".content-editor-body h3",
-      "property": "font-size",
-      "value": "1.15em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h3::font-weight::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 62,
-      "selector": ".content-editor-body h3",
-      "property": "font-weight",
-      "value": "700",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h3::margin::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 63,
-      "selector": ".content-editor-body h3",
-      "property": "margin",
-      "value": "0.75em 0 0.4em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child::margin-top::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 69,
-      "selector": ".content-editor-body h1:first-child, .content-editor-body h2:first-child, .content-editor-body h3:first-child",
-      "property": "margin-top",
-      "value": "0",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body strong, .content-editor-body b::font-weight::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 74,
-      "selector": ".content-editor-body strong, .content-editor-body b",
-      "property": "font-weight",
-      "value": "700",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body em, .content-editor-body i::font-style::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 79,
-      "selector": ".content-editor-body em, .content-editor-body i",
-      "property": "font-style",
-      "value": "italic",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body u::text-decoration::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 83,
-      "selector": ".content-editor-body u",
-      "property": "text-decoration",
-      "value": "underline",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body s::text-decoration::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 87,
-      "selector": ".content-editor-body s",
-      "property": "text-decoration",
-      "value": "line-through",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body code::font-family::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 91,
-      "selector": ".content-editor-body code",
-      "property": "font-family",
-      "value": "'IBM Plex Mono', 'Fira Code', monospace",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body code::font-size::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 92,
-      "selector": ".content-editor-body code",
-      "property": "font-size",
-      "value": "0.88em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body code::background-color::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 93,
-      "selector": ".content-editor-body code",
-      "property": "background-color",
-      "value": "var(--tone)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body code::color::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 94,
-      "selector": ".content-editor-body code",
-      "property": "color",
-      "value": "var(--ink)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body code::padding::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 95,
-      "selector": ".content-editor-body code",
-      "property": "padding",
-      "value": "0.1em 0.35em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body code::border-radius::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 96,
-      "selector": ".content-editor-body code",
-      "property": "border-radius",
-      "value": "var(--radius-sm)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body pre::font-family::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 100,
-      "selector": ".content-editor-body pre",
-      "property": "font-family",
-      "value": "'IBM Plex Mono', 'Fira Code', monospace",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body pre::font-size::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 101,
-      "selector": ".content-editor-body pre",
-      "property": "font-size",
-      "value": "0.88em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body pre::background-color::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 102,
-      "selector": ".content-editor-body pre",
-      "property": "background-color",
-      "value": "var(--tone)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body pre::padding::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 103,
-      "selector": ".content-editor-body pre",
-      "property": "padding",
-      "value": "var(--spacing-md)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body pre::border-radius::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 104,
-      "selector": ".content-editor-body pre",
-      "property": "border-radius",
-      "value": "var(--radius-sm)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body pre::overflow-x::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 105,
-      "selector": ".content-editor-body pre",
-      "property": "overflow-x",
-      "value": "auto",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body pre::margin::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 106,
-      "selector": ".content-editor-body pre",
-      "property": "margin",
-      "value": "0.75em 0",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::border-left::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 110,
-      "selector": ".content-editor-body blockquote",
-      "property": "border-left",
-      "value": "3px solid var(--accent-dim)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::padding-left::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 111,
-      "selector": ".content-editor-body blockquote",
-      "property": "padding-left",
-      "value": "var(--spacing-md)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::margin::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 112,
-      "selector": ".content-editor-body blockquote",
-      "property": "margin",
-      "value": "0.75em 0",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::color::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 113,
-      "selector": ".content-editor-body blockquote",
-      "property": "color",
-      "value": "var(--ink-soft)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body blockquote::font-style::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 114,
-      "selector": ".content-editor-body blockquote",
-      "property": "font-style",
-      "value": "italic",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul, .content-editor .content-editor-body ol::padding-left::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 119,
-      "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
-      "property": "padding-left",
-      "value": "1.5em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul, .content-editor .content-editor-body ol::margin-bottom::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 120,
-      "selector": ".content-editor .content-editor-body ul, .content-editor .content-editor-body ol",
-      "property": "margin-bottom",
-      "value": "0.75em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ul::list-style-type::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 124,
-      "selector": ".content-editor .content-editor-body ul",
-      "property": "list-style-type",
-      "value": "disc",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor .content-editor-body ol::list-style-type::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 128,
-      "selector": ".content-editor .content-editor-body ol",
-      "property": "list-style-type",
-      "value": "decimal",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body li::display::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 132,
-      "selector": ".content-editor-body li",
-      "property": "display",
-      "value": "list-item",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body li::margin-bottom::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 133,
-      "selector": ".content-editor-body li",
-      "property": "margin-bottom",
-      "value": "0.2em",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body a::color::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 137,
-      "selector": ".content-editor-body a",
-      "property": "color",
-      "value": "var(--accent)",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body a::text-decoration::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 138,
-      "selector": ".content-editor-body a",
-      "property": "text-decoration",
-      "value": "underline",
-      "code": "user-content"
-    },
-    {
-      "id": "src/styles/components/content-editor.css::.content-editor-body a:hover::opacity::1",
-      "file": "src/styles/components/content-editor.css",
-      "line": 142,
-      "selector": ".content-editor-body a:hover",
-      "property": "opacity",
-      "value": "0.8",
-      "code": "user-content"
-    },
-    {
       "id": "src/styles/entries/pages.css::.page-title::font-family::1",
       "file": "src/styles/entries/pages.css",
       "line": 12,
@@ -1001,6 +272,807 @@
       "property": "padding",
       "value": "0",
       "code": "identity-geometry"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content::font-family::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 6,
+      "selector": ".sf-authored-content",
+      "property": "font-family",
+      "value": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content::line-height::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 7,
+      "selector": ".sf-authored-content",
+      "property": "line-height",
+      "value": "normal",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content p::margin-bottom::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 11,
+      "selector": ".sf-authored-content p",
+      "property": "margin-bottom",
+      "value": "0.75em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content p:last-child::margin-bottom::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 15,
+      "selector": ".sf-authored-content p:last-child",
+      "property": "margin-bottom",
+      "value": "0",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h1::font-size::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 19,
+      "selector": ".sf-authored-content h1",
+      "property": "font-size",
+      "value": "1.75em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h1::font-weight::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 20,
+      "selector": ".sf-authored-content h1",
+      "property": "font-weight",
+      "value": "700",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h1::margin::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 21,
+      "selector": ".sf-authored-content h1",
+      "property": "margin",
+      "value": "0.75em 0 0.4em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h2::font-size::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 25,
+      "selector": ".sf-authored-content h2",
+      "property": "font-size",
+      "value": "1.4em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h2::font-weight::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 26,
+      "selector": ".sf-authored-content h2",
+      "property": "font-weight",
+      "value": "700",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h2::margin::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 27,
+      "selector": ".sf-authored-content h2",
+      "property": "margin",
+      "value": "0.75em 0 0.4em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h3::font-size::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 31,
+      "selector": ".sf-authored-content h3",
+      "property": "font-size",
+      "value": "1.15em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h3::font-weight::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 32,
+      "selector": ".sf-authored-content h3",
+      "property": "font-weight",
+      "value": "700",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h3::margin::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 33,
+      "selector": ".sf-authored-content h3",
+      "property": "margin",
+      "value": "0.75em 0 0.4em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content h1:first-child, .sf-authored-content h2:first-child, .sf-authored-content h3:first-child::margin-top::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 39,
+      "selector": ".sf-authored-content h1:first-child, .sf-authored-content h2:first-child, .sf-authored-content h3:first-child",
+      "property": "margin-top",
+      "value": "0",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content strong, .sf-authored-content b::font-weight::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 44,
+      "selector": ".sf-authored-content strong, .sf-authored-content b",
+      "property": "font-weight",
+      "value": "700",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content em, .sf-authored-content i::font-style::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 49,
+      "selector": ".sf-authored-content em, .sf-authored-content i",
+      "property": "font-style",
+      "value": "italic",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content u::text-decoration::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 53,
+      "selector": ".sf-authored-content u",
+      "property": "text-decoration",
+      "value": "underline",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content s::text-decoration::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 57,
+      "selector": ".sf-authored-content s",
+      "property": "text-decoration",
+      "value": "line-through",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content code::font-family::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 61,
+      "selector": ".sf-authored-content code",
+      "property": "font-family",
+      "value": "'IBM Plex Mono', 'Fira Code', monospace",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content code::font-size::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 62,
+      "selector": ".sf-authored-content code",
+      "property": "font-size",
+      "value": "0.88em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content code::background-color::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 63,
+      "selector": ".sf-authored-content code",
+      "property": "background-color",
+      "value": "var(--tone)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content code::color::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 64,
+      "selector": ".sf-authored-content code",
+      "property": "color",
+      "value": "var(--ink)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content code::padding::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 65,
+      "selector": ".sf-authored-content code",
+      "property": "padding",
+      "value": "0.1em 0.35em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content code::border-radius::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 66,
+      "selector": ".sf-authored-content code",
+      "property": "border-radius",
+      "value": "var(--radius-sm)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content pre::font-family::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 70,
+      "selector": ".sf-authored-content pre",
+      "property": "font-family",
+      "value": "'IBM Plex Mono', 'Fira Code', monospace",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content pre::font-size::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 71,
+      "selector": ".sf-authored-content pre",
+      "property": "font-size",
+      "value": "0.88em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content pre::background-color::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 72,
+      "selector": ".sf-authored-content pre",
+      "property": "background-color",
+      "value": "var(--tone)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content pre::padding::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 73,
+      "selector": ".sf-authored-content pre",
+      "property": "padding",
+      "value": "var(--spacing-md)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content pre::border-radius::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 74,
+      "selector": ".sf-authored-content pre",
+      "property": "border-radius",
+      "value": "var(--radius-sm)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content pre::overflow-x::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 75,
+      "selector": ".sf-authored-content pre",
+      "property": "overflow-x",
+      "value": "auto",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content pre::margin::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 76,
+      "selector": ".sf-authored-content pre",
+      "property": "margin",
+      "value": "0.75em 0",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content blockquote::border-left::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 80,
+      "selector": ".sf-authored-content blockquote",
+      "property": "border-left",
+      "value": "3px solid var(--accent-dim)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content blockquote::padding-left::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 81,
+      "selector": ".sf-authored-content blockquote",
+      "property": "padding-left",
+      "value": "var(--spacing-md)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content blockquote::margin::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 82,
+      "selector": ".sf-authored-content blockquote",
+      "property": "margin",
+      "value": "0.75em 0",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content blockquote::color::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 83,
+      "selector": ".sf-authored-content blockquote",
+      "property": "color",
+      "value": "var(--ink-soft)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content blockquote::font-style::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 84,
+      "selector": ".sf-authored-content blockquote",
+      "property": "font-style",
+      "value": "italic",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content ul, .sf-authored-content ol::padding-left::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 89,
+      "selector": ".sf-authored-content ul, .sf-authored-content ol",
+      "property": "padding-left",
+      "value": "1.5em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content ul, .sf-authored-content ol::margin-bottom::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 90,
+      "selector": ".sf-authored-content ul, .sf-authored-content ol",
+      "property": "margin-bottom",
+      "value": "0.75em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content ul::list-style-type::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 94,
+      "selector": ".sf-authored-content ul",
+      "property": "list-style-type",
+      "value": "disc",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content ol::list-style-type::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 98,
+      "selector": ".sf-authored-content ol",
+      "property": "list-style-type",
+      "value": "decimal",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content li::display::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 102,
+      "selector": ".sf-authored-content li",
+      "property": "display",
+      "value": "list-item",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content li::margin-bottom::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 103,
+      "selector": ".sf-authored-content li",
+      "property": "margin-bottom",
+      "value": "0.2em",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content a::color::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 107,
+      "selector": ".sf-authored-content a",
+      "property": "color",
+      "value": "var(--accent)",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content a::text-decoration::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 108,
+      "selector": ".sf-authored-content a",
+      "property": "text-decoration",
+      "value": "underline",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content a:hover::opacity::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 112,
+      "selector": ".sf-authored-content a:hover",
+      "property": "opacity",
+      "value": "0.8",
+      "code": "user-content"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-generated-placeholder:empty::before::content::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 117,
+      "selector": ".sf-generated-placeholder:empty::before",
+      "property": "content",
+      "value": "attr(data-placeholder)",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-generated-placeholder:empty::before::color::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 118,
+      "selector": ".sf-generated-placeholder:empty::before",
+      "property": "color",
+      "value": "var(--ink-soft)",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-generated-placeholder:empty::before::pointer-events::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 119,
+      "selector": ".sf-generated-placeholder:empty::before",
+      "property": "pointer-events",
+      "value": "none",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-callout-arrow::width::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 124,
+      "selector": ".sf-callout-arrow",
+      "property": "width",
+      "value": "0",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-callout-arrow::border::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 125,
+      "selector": ".sf-callout-arrow",
+      "property": "border",
+      "value": "6px solid transparent",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-callout-arrow-top::border-top-color::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 129,
+      "selector": ".sf-callout-arrow-top",
+      "property": "border-top-color",
+      "value": "var(--base-tone)",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-callout-arrow-bottom::border-bottom-color::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 133,
+      "selector": ".sf-callout-arrow-bottom",
+      "property": "border-bottom-color",
+      "value": "var(--base-tone)",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap::padding::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 138,
+      "selector": ".sf-keycap",
+      "property": "padding",
+      "value": "1px 4px",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::line-height::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 143,
+      "selector": ".sf-keycap-raised",
+      "property": "line-height",
+      "value": "1",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::padding::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 144,
+      "selector": ".sf-keycap-raised",
+      "property": "padding",
+      "value": "3px 6px 6px",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::min-width::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 145,
+      "selector": ".sf-keycap-raised",
+      "property": "min-width",
+      "value": "26px",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::border-radius::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 146,
+      "selector": ".sf-keycap-raised",
+      "property": "border-radius",
+      "value": "4px",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::z-index::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 147,
+      "selector": ".sf-keycap-raised",
+      "property": "z-index",
+      "value": "0",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::content::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 151,
+      "selector": ".sf-keycap-raised::after",
+      "property": "content",
+      "value": "''",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::position::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 152,
+      "selector": ".sf-keycap-raised::after",
+      "property": "position",
+      "value": "absolute",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::background::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 153,
+      "selector": ".sf-keycap-raised::after",
+      "property": "background",
+      "value": "var(--tone-dim)",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::inset::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 154,
+      "selector": ".sf-keycap-raised::after",
+      "property": "inset",
+      "value": "0 2px 4px",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::border::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 155,
+      "selector": ".sf-keycap-raised::after",
+      "property": "border",
+      "value": "1px solid var(--harmonic-minor)",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::border-radius::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 156,
+      "selector": ".sf-keycap-raised::after",
+      "property": "border-radius",
+      "value": "2px",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::pointer-events::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 157,
+      "selector": ".sf-keycap-raised::after",
+      "property": "pointer-events",
+      "value": "none",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::z-index::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 158,
+      "selector": ".sf-keycap-raised::after",
+      "property": "z-index",
+      "value": "-1",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised:first-child::margin-left::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 162,
+      "selector": ".sf-keycap-raised:first-child",
+      "property": "margin-left",
+      "value": "0",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::content::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 167,
+      "selector": ".sf-segmented-pill::before",
+      "property": "content",
+      "value": "''",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::position::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 168,
+      "selector": ".sf-segmented-pill::before",
+      "property": "position",
+      "value": "absolute",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::top::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 169,
+      "selector": ".sf-segmented-pill::before",
+      "property": "top",
+      "value": "0",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::bottom::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 170,
+      "selector": ".sf-segmented-pill::before",
+      "property": "bottom",
+      "value": "0",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::left::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 171,
+      "selector": ".sf-segmented-pill::before",
+      "property": "left",
+      "value": "var(--pill-left, 0)",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::width::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 172,
+      "selector": ".sf-segmented-pill::before",
+      "property": "width",
+      "value": "var(--pill-width, 0)",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::background::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 173,
+      "selector": ".sf-segmented-pill::before",
+      "property": "background",
+      "value": "var(--accent)",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::opacity::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 174,
+      "selector": ".sf-segmented-pill::before",
+      "property": "opacity",
+      "value": "0",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::transition::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 175,
+      "selector": ".sf-segmented-pill::before",
+      "property": "transition",
+      "value": "left 0.1s ease, width 0.1s ease",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::pointer-events::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 176,
+      "selector": ".sf-segmented-pill::before",
+      "property": "pointer-events",
+      "value": "none",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill.is-sliding::before::opacity::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 180,
+      "selector": ".sf-segmented-pill.is-sliding::before",
+      "property": "opacity",
+      "value": "1",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill.seg-snap::before::transition::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 184,
+      "selector": ".sf-segmented-pill.seg-snap::before",
+      "property": "transition",
+      "value": "none",
+      "code": "pseudo-mechanics"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-control-option svg::vertical-align::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 188,
+      "selector": ".sf-segmented-control-option svg",
+      "property": "vertical-align",
+      "value": "middle",
+      "code": "recipe-identity"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked=\"true\"]::background::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 192,
+      "selector": ".sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked=\"true\"]",
+      "property": "background",
+      "value": "transparent",
+      "code": "parent-relational"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::width::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 197,
+      "selector": "::-webkit-scrollbar",
+      "property": "width",
+      "value": "var(--spacing-md) !important",
+      "code": "scrollbar-followup"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::height::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 198,
+      "selector": "::-webkit-scrollbar",
+      "property": "height",
+      "value": "var(--spacing-md) !important",
+      "code": "scrollbar-followup"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::background::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 202,
+      "selector": "::-webkit-scrollbar-track",
+      "property": "background",
+      "value": "var(--tone-dim) !important",
+      "code": "scrollbar-followup"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::border-radius::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 203,
+      "selector": "::-webkit-scrollbar-track",
+      "property": "border-radius",
+      "value": "var(--radius-md) !important",
+      "code": "scrollbar-followup"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::background::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 207,
+      "selector": "::-webkit-scrollbar-thumb",
+      "property": "background",
+      "value": "var(--tone) !important",
+      "code": "scrollbar-followup"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border-radius::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 208,
+      "selector": "::-webkit-scrollbar-thumb",
+      "property": "border-radius",
+      "value": "var(--radius-md) !important",
+      "code": "scrollbar-followup"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 209,
+      "selector": "::-webkit-scrollbar-thumb",
+      "property": "border",
+      "value": "1px solid var(--tone-dim) !important",
+      "code": "scrollbar-followup"
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb:hover::background::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 213,
+      "selector": "::-webkit-scrollbar-thumb:hover",
+      "property": "background",
+      "value": "var(--accent-dim) !important",
+      "code": "scrollbar-followup"
     },
     {
       "id": "src/styles/grammar/ermine.generated.css::@keyframes shake > 10%, 90%::transform::1",
@@ -3550,81 +3622,9 @@
       "code": "recipe-identity"
     },
     {
-      "id": "src/styles/skin/controls.css::::-webkit-scrollbar::width::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 34,
-      "selector": "::-webkit-scrollbar",
-      "property": "width",
-      "value": "var(--spacing-md) !important",
-      "code": "scrollbar-followup"
-    },
-    {
-      "id": "src/styles/skin/controls.css::::-webkit-scrollbar::height::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 35,
-      "selector": "::-webkit-scrollbar",
-      "property": "height",
-      "value": "var(--spacing-md) !important",
-      "code": "scrollbar-followup"
-    },
-    {
-      "id": "src/styles/skin/controls.css::::-webkit-scrollbar-track::background::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 39,
-      "selector": "::-webkit-scrollbar-track",
-      "property": "background",
-      "value": "var(--tone-dim) !important",
-      "code": "scrollbar-followup"
-    },
-    {
-      "id": "src/styles/skin/controls.css::::-webkit-scrollbar-track::border-radius::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 40,
-      "selector": "::-webkit-scrollbar-track",
-      "property": "border-radius",
-      "value": "var(--radius-md) !important",
-      "code": "scrollbar-followup"
-    },
-    {
-      "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::background::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 44,
-      "selector": "::-webkit-scrollbar-thumb",
-      "property": "background",
-      "value": "var(--tone) !important",
-      "code": "scrollbar-followup"
-    },
-    {
-      "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::border-radius::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 45,
-      "selector": "::-webkit-scrollbar-thumb",
-      "property": "border-radius",
-      "value": "var(--radius-md) !important",
-      "code": "scrollbar-followup"
-    },
-    {
-      "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb::border::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 46,
-      "selector": "::-webkit-scrollbar-thumb",
-      "property": "border",
-      "value": "1px solid var(--tone-dim) !important",
-      "code": "scrollbar-followup"
-    },
-    {
-      "id": "src/styles/skin/controls.css::::-webkit-scrollbar-thumb:hover::background::1",
-      "file": "src/styles/skin/controls.css",
-      "line": 50,
-      "selector": "::-webkit-scrollbar-thumb:hover",
-      "property": "background",
-      "value": "var(--accent-dim) !important",
-      "code": "scrollbar-followup"
-    },
-    {
       "id": "src/styles/skin/controls.css::.selectable-group > *::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 57,
+      "line": 37,
       "selector": ".selectable-group > *",
       "property": "cursor",
       "value": "pointer",
@@ -3633,7 +3633,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *::user-select::1",
       "file": "src/styles/skin/controls.css",
-      "line": 58,
+      "line": 38,
       "selector": ".selectable-group > *",
       "property": "user-select",
       "value": "none",
@@ -3642,7 +3642,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > *:active::transform::1",
       "file": "src/styles/skin/controls.css",
-      "line": 62,
+      "line": 42,
       "selector": ".selectable-group > *:active",
       "property": "transform",
       "value": "scale(0.98)",
@@ -3651,7 +3651,7 @@
     {
       "id": "src/styles/skin/controls.css::.selectable-group > .is-selected:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 66,
+      "line": 46,
       "selector": ".selectable-group > .is-selected:hover",
       "property": "opacity",
       "value": "0.9",
@@ -3660,7 +3660,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::cursor::1",
       "file": "src/styles/skin/controls.css",
-      "line": 70,
+      "line": 50,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "cursor",
       "value": "not-allowed",
@@ -3669,7 +3669,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 71,
+      "line": 51,
       "selector": ".min-selected-1 > .is-selected:only-of-type",
       "property": "opacity",
       "value": "0.95",
@@ -3678,7 +3678,7 @@
     {
       "id": "src/styles/skin/controls.css::.min-selected-1 > .is-selected:only-of-type:hover::opacity::1",
       "file": "src/styles/skin/controls.css",
-      "line": 75,
+      "line": 55,
       "selector": ".min-selected-1 > .is-selected:only-of-type:hover",
       "property": "opacity",
       "value": "0.95",
@@ -3687,7 +3687,7 @@
     {
       "id": "src/styles/skin/controls.css::.shake::transition::1",
       "file": "src/styles/skin/controls.css",
-      "line": 81,
+      "line": 61,
       "selector": ".shake",
       "property": "transition",
       "value": "none !important",

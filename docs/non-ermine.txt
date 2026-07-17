@@ -20,8 +20,8 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the text-decoration treatment migration is
-Ermine 847ecf9 / Monky 8382998:
+were migrated). Current live ledger after the semantic-fragment relocation is
+Ermine 3c7f56c / Monky 667ccf3:
 
   current declarations:                 521
   adopted/infrastructure declarations:  390
@@ -36,10 +36,10 @@ deliberately outside the flat-word target: 43 semantic-fragment declarations and
 45 content-editor default declarations.
 
 Current residue by reason code:
-  recipe-identity 13, brand-identity 6, component-contract 7, state-mechanics 1,
+  recipe-identity 26, brand-identity 4, component-contract 4, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
-  motion-followup 1, opacity-followup 2, elevation-followup 3, reset-absence 5,
-  user-content 43, identity-geometry 18.
+  motion-followup 1, opacity-followup 2, elevation-followup 3, reset-absence 3,
+  user-content 43, identity-geometry 12.
 
 Historical invariance sample:
 
@@ -156,6 +156,9 @@ caret. The text-decoration treatment pass then admitted `undecorated`, `underlin
 zero latent-generalizable rows. The rule-residue report now separates that conserved residue
 from the sharper word-assimilation target: excluding semantic fragments and content-editor
 defaults leaves 43 declarations across 26 rules for future word/recipe/local-identity review.
+The semantic-fragment relocation then made that middle layer explicit in Monky:
+`src/styles/fragments/semantic-fragments.css` owns the `sf-*` fragment hooks while product
+classes remain available for behavior/tests. The live counts stay conserved at 521/390/131.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -198,16 +201,16 @@ src/content/overlays/modal/modalStyles.css:
 modal-backdrop, modal-dialog, modal-nav-branding, modal-nav-container, modal-nav-icon, modal-nav-label, modal-nav-tab
 
 src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:
-bottom, macro-suggestions-arrow, macro-suggestions-command-item, macro-suggestions-container, macro-suggestions-footer, macro-suggestions-kbd, top
+macro-suggestions-command-item, macro-suggestions-container, macro-suggestions-footer
 
 src/content/overlays/views/macroEditor/editorViewStyles.css:
 command-suggestions, content-editor, content-editor-body, editor-command, editor-command-error, editor-content, editor-toast, input-dropdown-open
 
 src/content/overlays/views/search/searchViewStyles.css:
-macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-kbd, macro-search-results, macro-search-shortcut, modal-command-description, modal-command-item
+macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-item-edit, macro-search-item-text, macro-search-results, macro-search-shortcut, modal-command-description, modal-command-item
 
 src/content/overlays/views/settings/settingsViewStyles.css:
-is-sliding, seg-control, seg-option, seg-snap, settings-body, settings-divider, settings-import-status, settings-prefix-btn, settings-section-label
+settings-body, settings-divider, settings-import-status, settings-prefix-btn, settings-section-label
 
 src/options/options.css:
 prefix-cell
@@ -216,7 +219,10 @@ src/popup/popup.css:
 popup-button, popup-container, popup-icon-button, popup-item-detail, popup-item-toggle, popup-macro-text, popup-results, popup-search-input, popup-toggle-label
 
 src/styles/components/content-editor.css:
-ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep, content-editor, content-editor-body
+ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep
+
+src/styles/fragments/semantic-fragments.css:
+sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-segmented-control-option, sf-segmented-pill
 
 src/styles/entries/pages.css:
 page-title

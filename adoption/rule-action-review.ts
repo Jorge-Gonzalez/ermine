@@ -170,6 +170,7 @@ function isPseudoDrawing(record: CurrentRecord): boolean {
 
 function isComponentDrawing(record: CurrentRecord): boolean {
   return isPseudoDrawing(record)
+    || /\.sf-(?:callout-arrow|segmented-pill|keycap|generated-placeholder)\b/.test(record.selector)
     || /\.macro-suggestions-arrow\b/.test(record.selector)
     || /\.seg-control\b/.test(record.selector)
     || /\.macro-search-kbd\b/.test(record.selector)
@@ -277,12 +278,12 @@ function classifyLatentOutcome(record: CurrentRecord, action: RuleAction): Laten
   if (isSpacingResetBoundary(record)) return "local-identity";
   if (isSearchHighlightReset(record)) return "recipe";
   if (isShakeTransitionSuppression(record)) return "local-identity";
-  if (/content-editor-body/.test(record.selector)) return "recipe";
+  if (/content-editor-body|sf-authored-content/.test(record.selector)) return "recipe";
   if (record.code === "brand-identity") {
     return record.property === "font-family" ? "local-identity" : "latent-word";
   }
   if (action === "motion-transition") {
-    return /\.seg-control\b/.test(record.selector) ? "recipe" : "latent-word";
+    return /\.seg-control\b|\.sf-segmented-pill\b/.test(record.selector) ? "recipe" : "latent-word";
   }
   if (action === "dimension-constraint") {
     if (/^flex/.test(record.property)) return "latent-facet";
@@ -298,7 +299,7 @@ function classifyLatentOutcome(record: CurrentRecord, action: RuleAction): Laten
     return "latent-facet";
   }
   if (action === "typography-content") {
-    return /content-editor-body| mark\b|::/.test(record.selector) ? "recipe" : "latent-word";
+    return /content-editor-body|sf-authored-content| mark\b|::/.test(record.selector) ? "recipe" : "latent-word";
   }
   if (action === "interaction-affordance-state") {
     return /:only-of-type|\.min-selected-1\b/.test(record.selector) ? "recipe" : "latent-facet";
@@ -394,11 +395,11 @@ function scaleMapping(record: CurrentRecord, action: RuleAction): string | undef
 function proposedForm(record: CurrentRecord, action: RuleAction, outcome: LatentOutcome): string | undefined {
   if (outcome === "local-identity") return "keep local";
   if (outcome === "recipe") {
-    if (/kbd/.test(record.selector)) return "keycap/kbd recipe";
-    if (/seg-control/.test(record.selector)) return "segmented-control recipe";
-    if (/arrow/.test(record.selector)) return "callout-arrow recipe";
+    if (/kbd|sf-keycap/.test(record.selector)) return "keycap/kbd recipe";
+    if (/seg-control|sf-segmented-pill/.test(record.selector)) return "segmented-control recipe";
+    if (/arrow|sf-callout-arrow/.test(record.selector)) return "callout-arrow recipe";
     if (/\.editor-content\s+\.content-editor-body\b/.test(record.selector)) return "editor layout bridge";
-    if (/content-editor-body/.test(record.selector)) return "authored-content substrate";
+    if (/content-editor-body|sf-authored-content/.test(record.selector)) return "authored-content substrate";
     return "recipe/molecule socket";
   }
   if (action === "dimension-constraint") return dimensionProposal(record);

@@ -54,14 +54,19 @@ overriding an opaque component bundle or dropping to raw declarations.
 
 ## Current Monky-Discovered Fragments
 
-| fragment | discovered shape | why it is a fragment |
+Monky now makes the layer explicit with the `sf-*` prefix in markup and one stylesheet,
+`src/styles/fragments/semantic-fragments.css`, imported after skin and before components.
+The prefix means "semantic fragment": project-owned, utility-like, and deliberately outside
+Ermine's flat word grammar.
+
+| fragment | explicit Monky shape | why it is a fragment |
 |---|---|---|
-| keycap drawing | `.macro-search-kbd`, `.macro-search-kbd::after`, suggestion keycap styles | bevel, face, shadow, micro-padding, and layer combine into one keyboard-cap object |
-| callout arrow | `.macro-suggestions-arrow`, `.top`, `.bottom` | zero-size box plus border triangle and orientation colour form one attached arrow |
-| segmented pill | `.seg-control::before`, snap/slide state | active indicator uses pseudo geometry, custom coordinates, opacity, and local timing |
-| engine scrollbar | `::-webkit-scrollbar*` | browser-engine pseudo-elements adapt the standard scrollbar socket handoff |
-| generated placeholder | `.content-editor-body:empty::before` | generated content, placeholder colour, and pointer-event suppression form one empty-state affordance |
-| authored-content substrate | `.content-editor-body` descendants | user-authored HTML defaults deliberately point away from utility grammar |
+| keycap drawing | `.sf-keycap`, `.sf-keycap-raised`, `.sf-keycap-raised::after` | bevel, face, shadow, micro-padding, and layer combine into one keyboard-cap object |
+| callout arrow | `.sf-callout-arrow`, `.sf-callout-arrow-top`, `.sf-callout-arrow-bottom` | zero-size box plus border triangle and orientation colour form one attached arrow |
+| segmented pill | `.sf-segmented-pill::before`, snap/slide state | active indicator uses pseudo geometry, custom coordinates, opacity, and local timing |
+| engine scrollbar | `::-webkit-scrollbar*` inside the fragment file | browser-engine pseudo-elements adapt the standard scrollbar socket handoff |
+| generated placeholder | `.sf-generated-placeholder:empty::before` | generated content, placeholder colour, and pointer-event suppression form one empty-state affordance |
+| authored-content substrate | `.sf-authored-content` descendants | user-authored HTML defaults deliberately point away from utility grammar |
 | control-state recipe | disabled/selectable/min-selection/radio-label mechanics | behavior and invariants remain project control contracts after state skin migrates |
 
 The first five are private drawing or engine-pseudo fragments. The last two are adjacent

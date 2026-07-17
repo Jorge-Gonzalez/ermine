@@ -38,7 +38,7 @@ function isElementOwnedSelector(selector: string): boolean {
 function isFlatMigrationSurface(record: CurrentRecord): boolean {
   return isElementOwnedSelector(record.selector)
     && record.code !== "user-content"
-    && !/content-editor-body/.test(record.selector);
+    && !/content-editor-body|sf-authored-content/.test(record.selector);
 }
 
 function isSpacingProperty(property: string): boolean {
@@ -113,20 +113,23 @@ function isControlStateRecipe(record: CurrentRecord): boolean {
       || /\.selectable-group\b/.test(record.selector)
       || /\.min-selected-1\b/.test(record.selector)
       || /\.radio-label\b/.test(record.selector)))
-    || /\.(seg-option)\s+svg\b/.test(record.selector);
+    || /\.(?:seg-option|sf-segmented-control-option)\s+svg\b/.test(record.selector);
 }
 
 function isKeycapDrawing(record: CurrentRecord): boolean {
-  return /\.macro-(?:search|suggestions)-kbd\b/.test(record.selector);
+  return /\.sf-keycap\b/.test(record.selector)
+    || /\.macro-(?:search|suggestions)-kbd\b/.test(record.selector);
 }
 
 function isCalloutArrowDrawing(record: CurrentRecord): boolean {
-  return /\.macro-suggestions-arrow\b/.test(record.selector);
+  return /\.sf-callout-arrow\b/.test(record.selector)
+    || /\.macro-suggestions-arrow\b/.test(record.selector);
 }
 
 function isSegmentedPillDrawing(record: CurrentRecord): boolean {
-  return /\.seg-control\b/.test(record.selector)
-    && (record.selector.includes("::before") || record.selector.includes(".seg-option"));
+  return /\.sf-segmented-pill\b/.test(record.selector)
+    || (/\.seg-control\b/.test(record.selector)
+      && (record.selector.includes("::before") || record.selector.includes(".seg-option")));
 }
 
 function isEngineScrollbarDrawing(record: CurrentRecord): boolean {
@@ -134,7 +137,8 @@ function isEngineScrollbarDrawing(record: CurrentRecord): boolean {
 }
 
 function isGeneratedPlaceholderDrawing(record: CurrentRecord): boolean {
-  return /\.content-editor-body:empty::before\b/.test(record.selector);
+  return /\.sf-generated-placeholder:empty::before\b/.test(record.selector)
+    || /\.content-editor-body:empty::before\b/.test(record.selector);
 }
 
 export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
@@ -303,7 +307,7 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     kind: "boundary",
     confidence: "review",
     decision: "Keyboard-cap visuals are CSS drawings with bevel, inset, shadow, and micro-density constants; keep them local or promote a keycap recipe.",
-    before: ".macro-search-kbd::after { inset: 0 2px 4px; border-radius: 2px; }",
+    before: ".sf-keycap-raised::after { inset: 0 2px 4px; border-radius: 2px; }",
     after: "keep local or promote as keycap recipe",
     conversion: "Group keycap face, bevel, shadow, and exact micro-padding as one drawing recipe.",
     boundary: "Do not flatten keycap bevel geometry into spacing, radius, layer, or pseudo-element utility words.",
@@ -316,7 +320,7 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     kind: "boundary",
     confidence: "review",
     decision: "CSS triangle arrows are shape recipes, not ordinary border or size facts.",
-    before: ".macro-suggestions-arrow { width: 0; border: 6px solid transparent; }",
+    before: ".sf-callout-arrow { width: 0; border: 6px solid transparent; }",
     after: "keep local or promote as callout-arrow recipe",
     conversion: "Group zero-size box, transparent borders, orientation colour, and attachment together.",
     boundary: "Do not migrate triangle-arrow border tricks as independent rule or dimension words.",
@@ -329,7 +333,7 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     kind: "boundary",
     confidence: "review",
     decision: "Segmented-control active-pill drawing is a component recipe driven by custom coordinates and sliding state.",
-    before: ".seg-control::before { left: var(--pill-left); width: var(--pill-width); }",
+    before: ".sf-segmented-pill::before { left: var(--pill-left); width: var(--pill-width); }",
     after: "keep local or promote as segmented-control recipe",
     conversion: "Group active-pill pseudo geometry, custom coordinate variables, opacity, and snap/slide timing.",
     boundary: "Do not turn custom-coordinate pill motion into flat position, opacity, or tween words.",
@@ -355,7 +359,7 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     kind: "boundary",
     confidence: "mechanical",
     decision: "Placeholder pseudo content is generated-content drawing tied to component state, not an element-authored class word.",
-    before: ".content-editor-body:empty::before { content: attr(data-placeholder); }",
+    before: ".sf-generated-placeholder:empty::before { content: attr(data-placeholder); }",
     after: "keep local or promote as editor placeholder recipe",
     conversion: "Group generated content, placeholder colour, and pointer-events suppression.",
     boundary: "Do not flatten `content: attr(...)` placeholders into ordinary typography or skin words.",
@@ -381,12 +385,12 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     kind: "boundary",
     confidence: "human",
     decision: "Rich-text defaults inside user-authored content are a neutral authored-HTML substrate, not scattered flat utility gaps.",
-    before: ".content-editor-body h1 { margin: 0.75em 0 0.4em; }",
+    before: ".sf-authored-content h1 { margin: 0.75em 0 0.4em; }",
     after: "keep local as authored-content substrate unless a project explicitly adopts a prose recipe",
     conversion: "Group descendant typography and rhythm as authored-content substrate evidence.",
     boundary: "Do not migrate descendant user-content rows into ordinary element class strings.",
     evidence: ["Monky user-content residue", "reports/adoption/monky/BOUNDARY.md"],
-    match: (record) => /content-editor-body/.test(record.selector) || record.code === "user-content",
+    match: (record) => /content-editor-body|sf-authored-content/.test(record.selector) || record.code === "user-content",
   },
 ];
 

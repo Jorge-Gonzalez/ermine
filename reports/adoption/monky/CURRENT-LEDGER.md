@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `847ecf95138e8216c7d3d82b231d2f04046a56a8` |
-| monky | `8382998e6116c889835e71f2b7850fac5e3715fb` |
+| monky | `667ccf35bc9c49811aa3bf540b4de49e9f1b4465` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -38,9 +38,9 @@ re-validated on every run.
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 61 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
-| `recipe-identity` | 13 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `brand-identity` | 6 | project brand typography and type treatment |
-| `component-contract` | 7 | component-owned mechanics, exact geometry, or product contract |
+| `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `brand-identity` | 4 | project brand typography and type treatment |
+| `component-contract` | 4 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
@@ -48,20 +48,20 @@ re-validated on every run.
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
-| `reset-absence` | 5 | absence/reset mechanics, not a positive carrier |
+| `reset-absence` | 3 | absence/reset mechanics, not a positive carrier |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 18 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 12 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
 | file | declarations |
 |---|---:|
-| `src/styles/components/content-editor.css` | 53 |
-| `src/styles/skin/controls.css` | 24 |
-| `src/content/overlays/views/search/searchViewStyles.css` | 18 |
-| `src/content/overlays/views/settings/settingsViewStyles.css` | 14 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 11 |
+| `src/styles/fragments/semantic-fragments.css` | 89 |
+| `src/styles/skin/controls.css` | 16 |
+| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 6 |
+| `src/styles/components/content-editor.css` | 5 |
 | `src/content/overlays/modal/modalStyles.css` | 4 |
+| `src/content/overlays/views/search/searchViewStyles.css` | 4 |
 | `src/styles/entries/pages.css` | 4 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 3 |
 
