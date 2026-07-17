@@ -13,13 +13,13 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `8167857d335e5e2383233e6f2f062160b85b5cd4` |
+| monky | `fdedcfd3ba2e159efd677473801c32bb5d5e282c` |
 
 ## Summary
 
-- Current declarations: 512
-- Adopted/infrastructure declarations: 395
-- Project-owned residue declarations: 117
+- Current declarations: 510
+- Adopted/infrastructure declarations: 396
+- Project-owned residue declarations: 114
 - Assimilable declarations: 0
 - Shadowed words: 0
 
@@ -34,9 +34,8 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
-| `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 6 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 4 | project-exact geometry on a grammar-family property |
 
 ## recipe-identity (28)
 
@@ -191,16 +190,6 @@ opacity state treatment (named follow-up question)
 | 51 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
 | 55 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
-## elevation-followup (1)
-
-box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09)
-
-### src/content/overlays/views/macroEditor/editorViewStyles.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 13 | `.editor-toast` | `box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%)` |
-
 ## user-content (43)
 
 rich-text defaults inside user-authored content
@@ -253,16 +242,9 @@ rich-text defaults inside user-authored content
 | 108 | `.sf-authored-content a` | `text-decoration: underline` |
 | 112 | `.sf-authored-content a:hover` | `opacity: 0.8` |
 
-## identity-geometry (6)
+## identity-geometry (4)
 
 project-exact geometry on a grammar-family property
-
-### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 7 | `.editor-content .content-editor-body` | `flex: 1` |
-| 12 | `.editor-toast` | `bottom: 52px` |
 
 ### src/styles/components/content-editor.css (2)
 

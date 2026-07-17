@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `8167857d335e5e2383233e6f2f062160b85b5cd4` |
+| monky | `fdedcfd3ba2e159efd677473801c32bb5d5e282c` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -24,9 +24,9 @@ re-validated on every run.
 
 | measure | count |
 |---|---:|
-| current declarations | 512 |
-| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 395 |
-| **residue — project-owned declarations** | **117** |
+| current declarations | 510 |
+| adopted/infrastructure (generated grammar, substrate, theme metrics, config) | 396 |
+| **residue — project-owned declarations** | **114** |
 | assimilable now (work list below) | 0 |
 | shadowed words (R-IMPL-02) | 0 undeclared / 0 declared |
 
@@ -34,7 +34,7 @@ re-validated on every run.
 
 | code | count | meaning |
 |---|---:|---|
-| `ermine-emitted` | 280 | the generated Ermine grammar surface (adopted, not residue) |
+| `ermine-emitted` | 281 | the generated Ermine grammar surface (adopted, not residue) |
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 61 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
@@ -47,9 +47,8 @@ re-validated on every run.
 | `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
-| `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 6 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 4 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
@@ -58,7 +57,6 @@ re-validated on every run.
 | `src/styles/fragments/semantic-fragments.css` | 91 |
 | `src/styles/skin/controls.css` | 16 |
 | `src/styles/entries/pages.css` | 4 |
-| `src/content/overlays/views/macroEditor/editorViewStyles.css` | 3 |
 | `src/styles/components/content-editor.css` | 3 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.

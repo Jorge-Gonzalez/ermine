@@ -23,7 +23,7 @@ invariance pass as the roadmap for future ruling cycles.
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `8167857d335e5e2383233e6f2f062160b85b5cd4` |
+| monky | `fdedcfd3ba2e159efd677473801c32bb5d5e282c` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 117 |
+| project-owned residue | 114 |
 
 ## Product Identity
 
@@ -44,9 +44,8 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 | code | count | boundary |
 |---|---:|---|
 | `recipe-identity` | 28 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `identity-geometry` | 6 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 4 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 2 | project brand typography and type treatment |
-| `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
 ## Relational / Scale-Backed Follow-Up
 
@@ -97,4 +96,3 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 | `scrollbar-followup` | 8 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
 | `motion-followup` | 1 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 2 | named follow-up: opacity prominence treatment (no report filed yet) |
-| `elevation-followup` | 1 | R-SKIN-09 boundary clause |

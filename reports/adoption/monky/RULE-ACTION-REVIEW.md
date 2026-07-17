@@ -8,20 +8,19 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 117 |
+| reviewed residue declarations | 114 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 112 |
+| likely recipe/molecule | 109 |
 | likely local identity | 5 |
 
 ## By Rule Action
 
 | rule action | declarations |
 | --- | --- |
-| dimension-constraint | 1 |
-| attachment-edge-layer | 3 |
+| attachment-edge-layer | 2 |
 | spacing-rhythm | 18 |
-| surface-line-elevation-cutout | 13 |
+| surface-line-elevation-cutout | 12 |
 | typography-content | 23 |
 | interaction-affordance-state | 11 |
 | motion-transition | 3 |
@@ -32,7 +31,7 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 112 |
+| recipe | 109 |
 | local-identity | 5 |
 
 ## By Current Ledger Code
@@ -48,9 +47,8 @@ generalization, recipe, and local-identity pressure.
 | scrollbar-followup | 8 |
 | motion-followup | 1 |
 | opacity-followup | 2 |
-| elevation-followup | 1 |
 | user-content | 43 |
-| identity-geometry | 6 |
+| identity-geometry | 4 |
 
 ## Matched Playbook Recipes
 
@@ -59,7 +57,7 @@ of residue declarations.
 
 | recipe | kind | confidence | matches | conversion memory |
 | --- | --- | --- | --- | --- |
-| authored-content-substrate-boundary | boundary | human | 46 | Group descendant typography and rhythm as authored-content substrate evidence. |
+| authored-content-substrate-boundary | boundary | human | 45 | Group descendant typography and rhythm as authored-content substrate evidence. |
 | pseudo-drawing-boundary | boundary | mechanical | 31 | Do not flatten pseudo drawing into ordinary element words. |
 | keycap-drawing-boundary | boundary | review | 15 | Group keycap face, bevel, shadow, and exact micro-padding as one drawing recipe. |
 | control-state-recipe-boundary | boundary | review | 14 | Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors. |
@@ -81,14 +79,13 @@ of residue declarations.
 | component-private-drawing | recipe | 41 | promote as molecule/recipe only if reused |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
 | spacing-rhythm | recipe | 16 | promote as molecule/recipe only if reused |
-| surface-line-elevation-cutout | recipe | 13 | promote as molecule/recipe only if reused |
+| surface-line-elevation-cutout | recipe | 12 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 11 | promote as molecule/recipe only if reused |
 | reset-inheritance-neutralization | recipe | 4 | promote as molecule/recipe only if reused |
-| attachment-edge-layer | recipe | 3 | promote as molecule/recipe only if reused |
+| attachment-edge-layer | recipe | 2 | promote as molecule/recipe only if reused |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
 | spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
 | typography-content | local-identity | 2 | keep local after invariance/scale tests |
-| dimension-constraint | recipe | 1 | promote as molecule/recipe only if reused |
 | motion-transition | local-identity | 1 | keep local after invariance/scale tests |
 
 ## Reading

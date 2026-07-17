@@ -8,18 +8,17 @@ scales, proportional relationships, or measure/control-size roles.
 
 | metric | count |
 | --- | --- |
-| dimension/constraint declarations | 1 |
+| dimension/constraint declarations | 0 |
 | latent scale | 0 |
 | latent word | 0 |
 | latent facet | 0 |
-| recipe | 1 |
+| recipe | 0 |
 | local identity | 0 |
 
 ## By Dimension Intent
 
 | intent | declarations |
 | --- | --- |
-| flex negotiation | 1 |
 
 ## Candidate Vocabulary Pressure
 
@@ -35,4 +34,3 @@ scales, proportional relationships, or measure/control-size roles.
 
 | source | property | value | intent | latent outcome | scale/proportion mapping | proposed form |
 | --- | --- | --- | --- | --- | --- | --- |
-| src/content/overlays/views/macroEditor/editorViewStyles.css:7 | flex | 1 | flex negotiation | recipe |  | editor layout bridge |

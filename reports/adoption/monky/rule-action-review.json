@@ -3,24 +3,24 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "8167857d335e5e2383233e6f2f062160b85b5cd4"
+    "projectCommit": "fdedcfd3ba2e159efd677473801c32bb5d5e282c"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 117,
+    "reviewedDeclarations": 114,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 112,
+    "likelyRecipe": 109,
     "likelyLocal": 5,
     "byRuleAction": {
       "already-admitted": 0,
-      "dimension-constraint": 1,
-      "attachment-edge-layer": 3,
+      "dimension-constraint": 0,
+      "attachment-edge-layer": 2,
       "spacing-rhythm": 18,
       "alignment-layout": 0,
-      "surface-line-elevation-cutout": 13,
+      "surface-line-elevation-cutout": 12,
       "typography-content": 23,
       "interaction-affordance-state": 11,
       "motion-transition": 3,
@@ -32,7 +32,7 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 112,
+      "recipe": 109,
       "local-identity": 5
     },
     "byCurrentCode": {
@@ -55,10 +55,10 @@
       "scrollbar-followup": 8,
       "motion-followup": 1,
       "opacity-followup": 2,
-      "elevation-followup": 1,
+      "elevation-followup": 0,
       "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 6,
+      "identity-geometry": 4,
       "skin-review": 0,
       "identity-review": 0
     },
@@ -82,56 +82,10 @@
       "generated-placeholder-boundary": 3,
       "foreign-overlay-host-boundary": 2,
       "pseudo-drawing-boundary": 31,
-      "authored-content-substrate-boundary": 46
+      "authored-content-substrate-boundary": 45
     }
   },
   "declarations": [
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::flex::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 7,
-      "selector": ".editor-content .content-editor-body",
-      "property": "flex",
-      "value": "1",
-      "currentCode": "identity-geometry",
-      "ruleAction": "dimension-constraint",
-      "latentOutcome": "recipe",
-      "function": "sets physical envelope, measure, control size, or constraint",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "editor layout bridge",
-      "playbookRecipes": [
-        "authored-content-substrate-boundary"
-      ]
-    },
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::bottom::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 12,
-      "selector": ".editor-toast",
-      "property": "bottom",
-      "value": "52px",
-      "currentCode": "identity-geometry",
-      "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "recipe",
-      "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-toast::box-shadow::1",
-      "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-      "line": 13,
-      "selector": ".editor-toast",
-      "property": "box-shadow",
-      "value": "0 6px 16px -4px rgb(0 0 0 / 25%)",
-      "currentCode": "elevation-followup",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "recipe",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "scaleMapping": "proportional/viewport relation",
-      "proposedForm": "recipe/molecule socket"
-    },
     {
       "id": "src/styles/components/content-editor.css::.ce-toolbar-sep::background-color::1",
       "file": "src/styles/components/content-editor.css",
@@ -2103,32 +2057,13 @@
   ],
   "dimensionPilot": {
     "summary": {
-      "declarations": 1,
+      "declarations": 0,
       "latentScale": 0,
       "latentWord": 0,
       "latentFacet": 0,
-      "recipe": 1,
+      "recipe": 0,
       "localIdentity": 0
     },
-    "entries": [
-      {
-        "id": "src/content/overlays/views/macroEditor/editorViewStyles.css::.editor-content .content-editor-body::flex::1",
-        "file": "src/content/overlays/views/macroEditor/editorViewStyles.css",
-        "line": 7,
-        "selector": ".editor-content .content-editor-body",
-        "property": "flex",
-        "value": "1",
-        "currentCode": "identity-geometry",
-        "ruleAction": "dimension-constraint",
-        "latentOutcome": "recipe",
-        "function": "sets physical envelope, measure, control size, or constraint",
-        "erminePressure": "promote as molecule/recipe only if reused",
-        "proposedForm": "editor layout bridge",
-        "playbookRecipes": [
-          "authored-content-substrate-boundary"
-        ],
-        "dimensionIntent": "flex negotiation"
-      }
-    ]
+    "entries": []
   }
 }
