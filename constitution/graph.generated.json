@@ -337,6 +337,12 @@
       "anchor": "ADR-0056"
     },
     {
+      "id": "ADR-0057",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0057-semantic-fragments.md",
+      "anchor": "ADR-0057"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

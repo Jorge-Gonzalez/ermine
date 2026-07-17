@@ -40,6 +40,18 @@ Each recipe records:
 This turns adoption into a queue of known transformations before it becomes exploratory
 grammar design.
 
+## Semantic Fragments
+
+Some residue is too object-shaped to become an Ermine word, but too portable to dismiss as
+project identity. The Monky adoption exposed this middle layer as semantic fragments: compact
+style units such as keycaps, callout arrows, segmented-control pills, generated placeholders,
+and engine scrollbar adapters.
+
+Fragments are application-shaped but not application-bound. They preserve designer control over
+the internal style structure of a component without importing a broad component-library model.
+The detailed model and current Monky-discovered fragments are documented in
+[`SEMANTIC-FRAGMENTS.md`](SEMANTIC-FRAGMENTS.md). The historical decision is ADR-0057.
+
 ## Current Recipes
 
 | recipe | kind | confidence | migration memory |
