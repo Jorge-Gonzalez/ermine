@@ -2784,6 +2784,11 @@
       "meaning": "<affordance>",
       "reference": "src/ERMINE-SPEC.md §2.5 — affordance"
     },
+    "blocked": {
+      "axis": "affordance",
+      "meaning": "<affordance>",
+      "reference": "src/ERMINE-SPEC.md §2.5 — affordance"
+    },
     "concealed": {
       "axis": "concealment",
       "meaning": "<concealment>",

@@ -216,10 +216,16 @@ const EMISSION: Record<string, EmitSpec> = {
     },
   },
 
-  // --- affordance: the invitation to press (R-SKIN-17). ---
+  // --- affordance: the interaction cursor cue (R-SKIN-17). ---
   affordance: {
     effectKind: "css",
-    plain: (word) => (word === "pressable" ? { cursor: "pointer" } : null),
+    plain: (word) => {
+      switch (word) {
+        case "pressable": return { cursor: "pointer" };
+        case "blocked": return { cursor: "not-allowed" };
+        default: return null;
+      }
+    },
   },
 
   // --- concealment/alpha: opacity treatment (R-SKIN-16, ADR-0055). ---
@@ -915,7 +921,7 @@ export const VOCABULARY: Record<string, string[]> = {
   "text-decoration": ["undecorated", "underlined", "struck"],
   "rule-presence": ["ruled", "ruled-top", "ruled-bottom", "ruled-left", "ruled-right"],
   truncation: ["truncate", "clamp-2", "clamp-3", "text-nowrap", "text-pre-wrap", "text-wrap"],
-  affordance: ["pressable"],
+  affordance: ["pressable", "blocked"],
   concealment: ["concealed", "revealed", ...Array.from({ length: 19 }, (_, index) => `alpha-${(index + 1) * 5}`)],
   scrollbar: ["scrollbar-subtle"],
   "focus-ring": ["ring"],

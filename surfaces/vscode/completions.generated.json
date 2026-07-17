@@ -3750,6 +3750,12 @@
           "insertText": "pressable",
           "kind": "word",
           "meaning": "<affordance>"
+        },
+        {
+          "label": "blocked",
+          "insertText": "blocked",
+          "kind": "word",
+          "meaning": "<affordance>"
         }
       ]
     },

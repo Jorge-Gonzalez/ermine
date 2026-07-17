@@ -373,6 +373,12 @@
       "anchor": "ADR-0062"
     },
     {
+      "id": "ADR-0063",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0063-blocked-affordance.md",
+      "anchor": "ADR-0063"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",

@@ -139,6 +139,12 @@ test("pressable declares the press invitation via cursor only (R-SKIN-17)", () =
   assert.doesNotMatch(css, /pointer-events|user-select/, "the affordance never touches behaviour-adjacent properties");
 });
 
+test("blocked declares the unavailable affordance via cursor only (R-SKIN-17)", () => {
+  const css = toCss("disabled:blocked");
+  assert.match(css, /\.disabled\\:blocked:disabled \{[^}]*cursor: not-allowed;/s);
+  assert.doesNotMatch(css, /pointer-events|user-select|opacity/, "blocked is only the cursor cue; disabled skin remains separate");
+});
+
 test("relational prefixes serialize as selectable-anchored ancestor compounds (R-STATE-13)", () => {
   const css = toCss("concealed parent-hover:revealed parent-selected:revealed");
   assert.match(css, /\.concealed \{[^}]*opacity: 0;/s);

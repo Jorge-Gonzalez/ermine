@@ -19,10 +19,10 @@ share is that the *platform* owns the condition, and `disabled` shares it. So th
 `hidden`-into-R-OVERFLOW-01 shape: a one-sentence amendment admitting a member to an existing
 closed set, not a new ruling.
 
-Scope of the prefix: only the conditioned skin (ground/ink washes). The affordance mechanics
-that co-occur with disabled — `cursor: not-allowed`, the dimming `opacity`, the
-`:disabled:hover` guard — are project-local identity, the same boundary `pressable` (R-SKIN-17)
-draws between affordance-read and behaviour.
+Scope of the prefix: conditioned skin (ground/ink washes) and, after ADR-0063, the `blocked`
+affordance cue when authored as `disabled:blocked`. The remaining mechanics that co-occur with
+disabled — dimming `opacity`, hover guards, and event behavior — stay separate project or skin
+decisions.
 
 `active` was admitted alongside (its own evidence, `.btn:active`) without a rule change, since
 R-STATE-10 already named it. `disabled` needed the amendment because the rule text did not.

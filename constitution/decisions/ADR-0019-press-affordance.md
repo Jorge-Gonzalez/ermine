@@ -24,5 +24,7 @@ JavaScript. Options weighed:
 `user-select` deliberately stays out of `pressable`: its evidence is recipe-only
 (selectable-group, radio labels), and R-SKIN-10 keeps recipe bundles whole.
 
+Refinement: ADR-0063 admits `blocked` as the unavailable cursor cue on the same affordance axis.
+
 Introduces ruling: R-SKIN-17. Resolves GAP-U-interaction-affordance (the pressable half is
 ruled; further members remain evidence-gated within the ruled family).

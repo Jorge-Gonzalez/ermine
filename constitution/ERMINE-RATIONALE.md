@@ -425,8 +425,9 @@ Amended (ADR-0021): `disabled` admitted — the platform supplies it exactly as 
 (form state, no application assertion, no backing), and the button evidence (`.btn:disabled`
 ground/ink washes across every consumer) is the recurrence. The interaction/form seam does not
 divide the closed set: what unites hover/active/focus/disabled is platform authorship, which
-`disabled` shares. The affordance mechanics that ride disabled — `cursor: not-allowed`, the dimming
-`opacity` — stay project-local; the prefix carries only the conditioned skin.
+`disabled` shares. ADR-0063 later moved the cursor half of disabled affordance into `blocked`.
+The remaining mechanics that ride disabled — dimming `opacity`, hover guards, and event behavior —
+stay separate project or skin decisions.
 
 ## RAT:R-STATE-11
 The original `selection-treatment` axis offered two fixed levels (`selection-subtle`,
@@ -780,15 +781,15 @@ word would smuggle behaviour into skin. Source: ADR-0018, ADR-0055.
 The pattern screen's largest single recurrence: `cursor: pointer`, twenty-one rows, twelve of
 them outside recipes — every clickable chip, cell, icon, toggle, and option repeating the same
 declaration. GAP-U-interaction-affordance asked whether affordance becomes capability
-vocabulary in the `selectable` mould; the constitution answers no by its own law: capabilities
-live on the state plane, and state controls nothing (P7-4d), while this affordance's entire
+vocabulary (`pressable / draggable / expandable / editable`) with behaviour left to JavaScript.
+The answer splits read from write. Behaviour belongs in JavaScript and platform state; pressed truth
+can live on the state plane, and state controls nothing (P7-4d), while this affordance's entire
 substance is a painted property. So the read side of interaction is skin — `pressable` names
-the invitation and owns `cursor` — and the write side (wiring, keyboard, focus) stays
-JavaScript, which is exactly the inversion-of-control boundary the gap report drew. The seam
-with recipes holds: `.btn` keeps its cursor inside the bundle, and `pressable` serves the
-elements that are not recipes. `user-select` stays out (its evidence is recipe-only);
-`draggable`/`editable`/`expandable` wait for occurrences that exist outside speculation.
-Source: ADR-0019.
+the pointer cue and `blocked` names the not-allowed cue, and nothing else. They imply no click
+handler, no role, no keyboard behaviour, no focus management, no opacity, and no `user-select`.
+`user-select` remains recipe-only because its evidence is selectable-list mechanics, not
+pressability or blockedness itself. `draggable`/`editable`/`expandable` wait for occurrences that
+exist outside speculation. Source: ADR-0019 and ADR-0063.
 
 ## RAT:R-SKIN-18
 Source: ADR-0036. Tabular figures are a genuine type facet (fixed-width digits for aligned columns),

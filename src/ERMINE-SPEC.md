@@ -1032,7 +1032,7 @@ Tokens:
 #### affordance
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `pressable`
+- value space: `pressable` `blocked`
 - default: none
 - controls: `cursor`
 - must never touch: `display` `gap` `flex` `background` `color` `pointer-events` `user-select`
@@ -1041,7 +1041,7 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<affordance>` | `/^(pressable)$/` | — | no |
+| `<affordance>` | `/^(pressable\|blocked)$/` | — | no |
 
 #### concealment
 

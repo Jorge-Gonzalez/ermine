@@ -987,17 +987,18 @@ increments. The endpoints are not duplicated as `alpha-0` or `alpha-100`.
 
 → rationale: RAT:R-SKIN-16 · history: ADR-0018, ADR-0055 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
-## R-SKIN-17 — Press affordance
+## R-SKIN-17 — Interaction affordance
 
-The invitation to press is a skin treatment: `pressable` owns `cursor` (pointer). It declares
-what the element invites — the read side of interaction — while behaviour (event wiring,
-keyboard, focus management) stays JavaScript's: the inversion-of-control boundary. It is
-deliberately not a state-plane capability, because capabilities condition and entail but
-control nothing (P7-4d), and this affordance's substance is a painted property. A recipe may
-still own its cursor inside its bundle (R-SKIN-10). Further affordance words (`draggable`,
-`editable`, `expandable`) are the family, reserved pending their own evidence.
+Interaction affordance is a skin treatment for cursor cues: `pressable` owns `cursor: pointer`
+and `blocked` owns `cursor: not-allowed`. Each declares one perceptual cue, not the event
+contract. Neither implies click handlers, keyboard behavior, focus management, `role=button`,
+disabled semantics, pointer-event suppression, opacity, or `user-select`. The words sit in skin
+because state/capability can say that something *is* pressed, disabled, or selectable, but state
+axes control nothing (P7-4d), and this affordance's substance is a painted property. Further
+affordance words (`draggable`, `editable`, `expandable`) remain reserved until their own evidence
+appears.
 
-→ rationale: RAT:R-SKIN-17 · history: ADR-0019 · code: src/registry.ts#SKIN, src/emit.ts#emit
+→ rationale: RAT:R-SKIN-17 · history: ADR-0019, ADR-0063 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
 ## R-SKIN-18 — Tabular figures
 
