@@ -116,7 +116,7 @@ export interface ErminePlainProps {
   /** axis `text-decoration` */
   textDecoration?: "undecorated" | "underlined" | "struck";
   /** axis `elevation` */
-  elevation?: "elevated-soft" | "elevated";
+  elevation?: "elevated-soft" | "elevated" | "recessed-fail";
   /** axis `affordance` */
   affordance?: "pressable";
   /** axis `concealment` */

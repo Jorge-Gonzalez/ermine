@@ -27,7 +27,8 @@ Options weighed:
 
 Recorded refinement: serialize under `:focus-visible` once the platform-condition family
 admits it; today's sites are text inputs where `:focus` and `:focus-visible` agree.
-Out of scope: the `.input-error:focus` inset wash ring (recipe conditional identity,
-R-SKIN-10); box-shadow rings generally (elevation's property).
+Out of scope at the time: the `.input-error:focus` inset wash ring and box-shadow rings
+generally. ADR-0062 later admits the validation wash as `recessed-fail` on the elevation axis,
+not as a focus-ring redraw.
 
 Introduces ruling: R-SKIN-13. Refines R-STATE-10's rationale. Resolves GAP-U-focus-ring.

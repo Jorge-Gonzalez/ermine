@@ -304,6 +304,8 @@ const EMISSION: Record<string, EmitSpec> = {
           return { "box-shadow": "var(--shadow-elevated-soft, 0 1px 2px rgb(0 0 0 / 30%), 0 2px 6px rgb(0 0 0 / 15%))" };
         case "elevated":
           return { "box-shadow": "var(--shadow-elevated, 0 4px 12px var(--shadow))" };
+        case "recessed-fail":
+          return { "box-shadow": "var(--shadow-recessed-fail, inset 0 0 0 2px var(--fail-faint))" };
         default:
           return null;
       }

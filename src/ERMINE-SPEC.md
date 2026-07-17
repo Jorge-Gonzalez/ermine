@@ -1018,7 +1018,7 @@ Tokens:
 #### elevation
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `elevated-soft` `elevated`
+- value space: `elevated-soft` `elevated` `recessed-fail`
 - default: none
 - controls: `box-shadow`
 - must never touch: `display` `gap` `flex` `position` `background` `color` `border-color` `border-radius` `font-size`
@@ -1027,7 +1027,7 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<elevation>` | `/^(elevated-soft\|elevated)$/` | — | no |
+| `<elevation>` | `/^(elevated-soft\|elevated\|recessed-fail)$/` | — | no |
 
 #### affordance
 

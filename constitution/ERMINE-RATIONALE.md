@@ -604,12 +604,13 @@ carries a default geometry the way carriers carry default colours (R-SKIN-03), s
 works before a theme binds `--shadow-elevated`. ADR-0058 admits `elevated-soft` for close,
 low-offset drop shadows after the Monky modal dialog proved a softer strength than the existing
 raised surface; the modal's old `mix-blend-mode: multiply` remains an exact rendering detail, not
-part of the treatment. The one inset occurrence is an error ring, not depth — so `recessed` stays
-reserved, the hover/focus admission pattern. Naming: the follow-up's working names were
+part of the treatment. ADR-0062 later admitted the one inset validation occurrence as
+`recessed-fail`: not a replacement for the platform focus ring, but a status inset wash that
+belongs on the same `box-shadow` axis as elevation. Naming: the follow-up's working names were
 `raised`/`sunken`, but `raised` is already a z-scale stacking tier and one word resolves to one
-axis, so the treatment takes `elevated`/`recessed`; shadow strength appears as a member suffix
-only where evidence proves a reusable strength (`elevated-soft`), not as arbitrary blur names.
-Source: ADR-0010 and ADR-0058.
+axis, so the treatment takes `elevated`/`recessed`; shadow strength or role appears as a member
+suffix only where evidence proves a reusable distinction (`elevated-soft`, `recessed-fail`), not
+as arbitrary blur names. Source: ADR-0010, ADR-0058, and ADR-0062.
 
 ## RAT:R-SKIN-10
 Every assimilation pilot since the colour pass hit the same wall and named it: `.settings-view
@@ -703,8 +704,9 @@ elevation, which is why box-shadow rings are explicitly not `ring`. The authored
 `focus:ring` — the treatment has no meaning outside a condition, and the existing R-STATE-10
 prefix supplies it; serialization to `:focus-visible` instead of `:focus` is the anticipated
 refinement once the platform-condition family admits it (today's evidence is all text inputs,
-where the two match identically). The error-tinted inset ring on `.input-error:focus` is recipe
-conditional identity and stays in the recipe. Source: ADR-0014.
+where the two match identically). ADR-0062 moved the error-tinted inset wash out of this ruling:
+it is `recessed-fail` on the elevation axis, not `ring`, and can be conditioned with `focus:`.
+Source: ADR-0014 and ADR-0062.
 
 ## RAT:R-SKIN-14
 The skin-type gap axis held two properties. They resolved oppositely, which is the point of

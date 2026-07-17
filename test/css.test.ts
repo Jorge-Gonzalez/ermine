@@ -115,6 +115,11 @@ test("elevated-soft reads its close drop-shadow socket with a two-layer neutral 
   assert.match(css, /\.elevated-soft \{[^}]*box-shadow: var\(--shadow-elevated-soft, 0 1px 2px rgb\(0 0 0 \/ 30%\), 0 2px 6px rgb\(0 0 0 \/ 15%\)\);/s);
 });
 
+test("recessed-fail reads an inset fail-wash shadow socket (R-SKIN-09)", () => {
+  const css = toCss("focus:recessed-fail");
+  assert.match(css, /\.focus\\:recessed-fail:focus \{[^}]*box-shadow: var\(--shadow-recessed-fail, inset 0 0 0 2px var\(--fail-faint\)\);/s);
+});
+
 test("scrim paints backdrop dimming through an alpha background socket (R-SKIN-21)", () => {
   const css = toCss("scrim");
   assert.match(css, /\.scrim \{[^}]*background: var\(--scrim, rgb\(0 0 0 \/ 35%\)\);/s);

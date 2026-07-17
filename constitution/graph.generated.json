@@ -367,6 +367,12 @@
       "anchor": "ADR-0061"
     },
     {
+      "id": "ADR-0062",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0062-recessed-fail-validation-treatment.md",
+      "anchor": "ADR-0062"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
