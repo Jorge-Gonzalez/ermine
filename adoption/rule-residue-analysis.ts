@@ -65,6 +65,7 @@ const SEMANTIC_FRAGMENT_RECIPE_IDS = new Set([
   "segmented-pill-boundary",
   "engine-scrollbar-boundary",
   "generated-placeholder-boundary",
+  "foreign-overlay-host-boundary",
 ]);
 
 function slash(path: string): string {
@@ -180,7 +181,7 @@ function isPrivateDrawingRule(group: RuleGroup): boolean {
     || group.selector.startsWith("::-webkit-scrollbar")
     || /\.macro-suggestions-arrow\b/.test(group.selector)
     || /\.macro-search-kbd\b/.test(group.selector)
-    || /\.sf-(?:callout-arrow|keycap|segmented-pill|generated-placeholder)\b/.test(group.selector);
+    || /\.sf-(?:callout-arrow|keycap|segmented-pill|generated-placeholder|foreign-overlay-host)\b/.test(group.selector);
 }
 
 function smallNumberWord(value: number): string {
@@ -371,7 +372,7 @@ ${table(["bucket", "declarations", "rules", "reading"], [
       "semantic fragments excluded",
       String(target.semanticFragmentDeclarations),
       String(target.semanticFragmentRules),
-      "Keycap, callout-arrow, segmented-pill, engine-scrollbar, and generated-placeholder fragments.",
+      "Keycap, callout-arrow, segmented-pill, engine-scrollbar, generated-placeholder, and foreign-overlay-host fragments.",
     ],
     [
       "content-editor defaults excluded",

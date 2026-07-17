@@ -141,6 +141,13 @@ function isGeneratedPlaceholderDrawing(record: CurrentRecord): boolean {
     || /\.content-editor-body:empty::before\b/.test(record.selector);
 }
 
+function isForeignOverlayHost(record: CurrentRecord): boolean {
+  return /\.sf-foreign-overlay-host\b/.test(record.selector)
+    || (/(?:#macro-suggestions|:host)/.test(record.selector)
+      && ((record.property === "position" && record.value === "fixed !important")
+        || record.property === "z-index"));
+}
+
 export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
   {
     id: "existing-scale-word",
@@ -365,6 +372,19 @@ export const PLAYBOOK_RECIPES: PlaybookRecipe[] = [
     boundary: "Do not flatten `content: attr(...)` placeholders into ordinary typography or skin words.",
     evidence: ["Monky editor placeholder residue", "R-SKIN-10 recipe boundary"],
     match: isGeneratedPlaceholderDrawing,
+  },
+  {
+    id: "foreign-overlay-host-boundary",
+    title: "Foreign overlay host boundary",
+    kind: "boundary",
+    confidence: "review",
+    decision: "Content-script overlay hosts compete with unknown page stacking, so they are a fragment/recipe boundary rather than a normal z-scale word.",
+    before: "#macro-suggestions { position: fixed !important; z-index: 2147483646 !important; }",
+    after: ".sf-foreign-overlay-host { position: fixed !important; z-index: var(--monky-foreign-overlay-z, 10000) !important; }",
+    conversion: "Group fixed host positioning and the configurable foreign-page z floor as one overlay-host fragment.",
+    boundary: "Do not promise `topmost`; native top layer and arbitrary page stacking remain outside ordinary Ermine z words.",
+    evidence: ["Monky suggestions host", "R-SKIN-10 recipe boundary", "top-layer mechanism distinction"],
+    match: isForeignOverlayHost,
   },
   {
     id: "pseudo-drawing-boundary",

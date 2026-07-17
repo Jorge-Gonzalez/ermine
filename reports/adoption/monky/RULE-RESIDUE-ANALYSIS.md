@@ -33,11 +33,11 @@ included.
 | authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
 | editor chrome recipes | 3 | 3 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
 | editor layout bridge | 1 | 1 | Layout handoff between the editor shell and the authored-content island. |
-| private drawing / engine pseudo | 16 | 43 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
+| private drawing / engine pseudo | 17 | 45 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | exact attachment / geometry | 2 | 3 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
-| root/page/host identity | 3 | 6 | Host/page reset and brand type identity. |
+| root/page/host identity | 2 | 4 | Host/page reset and brand type identity. |
 
 ## Word-Assimilation Target
 
@@ -48,12 +48,12 @@ not missing flat words: they are recipe/fragments or a deliberate authored-HTML 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
 | conserved project-owned residue | 118 | 57 | All remaining project-owned declarations in the current ledger. |
-| semantic fragments excluded | 43 | 16 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, and generated-placeholder fragments. |
+| semantic fragments excluded | 45 | 17 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, generated-placeholder, and foreign-overlay-host fragments. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 30 | 21 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 28 | 20 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
-The exclusion is union-aware: 88 declarations across
-36 rules are outside the word-assimilation target. They remain visible
+The exclusion is union-aware: 90 declarations across
+37 rules are outside the word-assimilation target. They remain visible
 in the conserved ledger and boundary reports.
 
 ### Remaining Target Shape
@@ -65,19 +65,18 @@ in the conserved ledger and boundary reports.
 | control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | exact attachment / geometry | 2 | 3 | Exact offsets, overlay layer numbers, dropdown placement, and component geometry values. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
-| root/page/host identity | 3 | 6 | Host/page reset and brand type identity. |
+| root/page/host identity | 2 | 4 | Host/page reset and brand type identity. |
 
 ## By Source File
 
 | file | residue rules |
 | --- | --- |
-| `src/styles/fragments/semantic-fragments.css` | 37 |
+| `src/styles/fragments/semantic-fragments.css` | 38 |
 | `src/styles/skin/controls.css` | 11 |
 | `src/styles/components/content-editor.css` | 3 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 2 |
 | `src/styles/entries/pages.css` | 2 |
 | `src/content/overlays/modal/modalStyles.css` | 1 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 1 |
 
 ## By Primary Rule Action
 
@@ -135,7 +134,7 @@ drawing, code/pre blocks, blockquotes, and host identity.
 
 4. Local identity is small and explicit.
 
-   5 residue rules contain `local-identity` outcomes. They are host/page
+   4 residue rules contain `local-identity` outcomes. They are host/page
    typography, overlay layer identity, root spacing resets, or local transition
    suppression. 0 of those rules are mixed with recipe declarations,
    which is expected for real CSS selectors.
@@ -226,7 +225,6 @@ evidence and poor flat-word candidates.
 | file | selector | declarations | rule actions | outcome | residue declarations |
 | --- | --- | --- | --- | --- | --- |
 | `src/content/overlays/modal/modalStyles.css` | `.modal-backdrop` | 1 | attachment-edge-layer | local-identity | z-index: 10000 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | `:host, #macro-suggestions` | 2 | attachment-edge-layer | local-identity | position: fixed !important<br>z-index: 2147483646 !important |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | `.editor-content .content-editor-body` | 1 | dimension-constraint | recipe | flex: 1 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | `.editor-toast` | 2 | attachment-edge-layer, surface-line-elevation-cutout | recipe | bottom: 52px<br>box-shadow: 0 6px 16px -4px rgb(0 0 0 / 25%) |
 | `src/styles/components/content-editor.css` | `.ce-style-dropdown` | 1 | spacing-rhythm | recipe | gap: 2px |
@@ -238,6 +236,7 @@ evidence and poor flat-word candidates.
 | `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-thumb` | 3 | component-private-drawing | recipe | background: var(--tone) !important<br>border-radius: var(--radius-md) !important<br>border: 1px solid var(--tone-dim) !important |
 | `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-thumb:hover` | 1 | component-private-drawing | recipe | background: var(--accent-dim) !important |
 | `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-track` | 2 | component-private-drawing | recipe | background: var(--tone-dim) !important<br>border-radius: var(--radius-md) !important |
+| `src/styles/fragments/semantic-fragments.css` | `:host(.sf-foreign-overlay-host), .sf-foreign-overlay-host` | 2 | attachment-edge-layer | recipe | position: fixed !important<br>z-index: var(--monky-foreign-overlay-z, 10000) !important |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-authored-content` | 2 | typography-content, reset-inheritance-neutralization | recipe | font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif<br>line-height: normal |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-authored-content a` | 2 | surface-line-elevation-cutout, typography-content | recipe | color: var(--accent)<br>text-decoration: underline |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-authored-content a:hover` | 1 | typography-content | recipe | opacity: 0.8 |

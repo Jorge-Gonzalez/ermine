@@ -20,26 +20,26 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the suggestions surface cleanup is
-Ermine ed12f35 / Monky 31d1529:
+were migrated). Current live ledger after the foreign overlay host fragment is
+Ermine ed12f35 / Monky da51d88:
 
   current declarations:                 513
   adopted/infrastructure declarations:  395
   project-owned residue declarations:   118
   assimilable now:                        0
-  word-assimilation target:              30 declarations across 21 rules
+  word-assimilation target:              28 declarations across 20 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 118 project-owned declarations; 88 declarations across 36 rules are
-deliberately outside the flat-word target: 43 semantic-fragment declarations and
+still carries the full 118 project-owned declarations; 90 declarations across 37 rules are
+deliberately outside the flat-word target: 45 semantic-fragment declarations and
 45 content-editor default declarations.
 
 Current residue by reason code:
-  recipe-identity 26, brand-identity 2, component-contract 1, state-mechanics 1,
+  recipe-identity 28, brand-identity 2, component-contract 1, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
   motion-followup 1, opacity-followup 2, elevation-followup 1,
-  user-content 43, identity-geometry 9.
+  user-content 43, identity-geometry 7.
 
 Historical invariance sample:
 
@@ -183,6 +183,12 @@ redundant suggestions host font/leading already supplied by the shared shadow bu
 suggestions stylesheet is now only the extension host overlay boundary (`position: fixed !important`
 plus the host-beating z-index). The live residue is now 118 and the adjusted
 word-assimilation target is 30 declarations across 21 rules.
+The foreign-overlay-host pass then named that remaining host boundary as the
+`sf-foreign-overlay-host` semantic fragment, moved the overlay host declarations into
+`semantic-fragments.css`, and replaced the old numeric ceiling with a configurable
+`--monky-foreign-overlay-z` floor defaulting to 10000. The conserved residue remains 118,
+but the adjusted word-assimilation target is now 28 declarations across 20 rules because
+the foreign-page host policy is out of flat-word scope.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -196,6 +202,7 @@ historical ledger. Retired sheets that no longer exist in current Monky:
   - src/styles/skin/surfaces.css
   - src/styles/skin/typography.css
   - src/styles/grammar/legacy.css
+  - src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css
 
 Note: the fill/clamp/center-x/center-y/max-width-2xl/centered+flush-block/grid-fit-sm
 migrations removed the CSS rules for macro-editor-view, macro-search-view, settings-view
@@ -218,9 +225,10 @@ local macro command/error/dropdown radius declarations. The soft-elevation pass 
 dialog shadow/blend rule. The scrim pass removed the modal backdrop colour declaration. The
 positioned inset cleanup removed the local macro search edit offset and the neutralized mark reset.
 The suggestions surface cleanup removed the local suggestions container shadow, command-item
-padding, and duplicate host font/leading; `suggestionsOverlayStyles.css` now owns only the
-non-class overlay host boundary. The inventory below is the current live non-Ermine class surface
-after the suggestions surface cleanup;
+padding, and duplicate host font/leading. The foreign-overlay-host pass then retired
+`suggestionsOverlayStyles.css` by moving its remaining host policy into
+`sf-foreign-overlay-host`. The inventory below is the current live non-Ermine class surface
+after the foreign overlay host fragment;
 comment-only sheets and retired hooks
 are no longer listed as CSS-backed style owners.
 
@@ -473,7 +481,7 @@ Likely Ermine pressure:
   engine-scrollbar post-processing or recipe layer.
 
 Summary shape for the next assimilation pass:
-  - Adjusted word-assimilation target: 30 declarations across 21 rules after excluding
+  - Adjusted word-assimilation target: 28 declarations across 20 rules after excluding
     semantic fragments and content-editor defaults from the conserved 118-declaration residue.
   - Most likely words: edge attachment, layer tiers, side-specific rule/radius resets,
     measured size scale.

@@ -11,7 +11,7 @@ node --import tsx adoption/current-ledger.ts --project ../monky --name monky --w
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `31d1529e60d9cf43e6910767bdd20d186f6239d5` |
+| monky | `da51d888db643d57dc9e1e7f784fc4f230556023` |
 
 Unlike the frozen baseline ledger, this report is a live reconciliation: it scans the
 project's current CSS, compiles the full Ermine vocabulary through the real emitter, and
@@ -38,7 +38,7 @@ re-validated on every run.
 | `substrate` | 53 | reset, base typography, and font delivery below grammar authoring |
 | `theme-metric` | 61 | project scale values and Ermine scale bindings (deliberate non-coverage) |
 | `config-departure` | 1 | explicit project departure recorded in ermine.config.css |
-| `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 28 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 2 | project brand typography and type treatment |
 | `component-contract` | 1 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
@@ -49,18 +49,17 @@ re-validated on every run.
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 9 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 7 | project-exact geometry on a grammar-family property |
 
 ## Residue by file
 
 | file | declarations |
 |---|---:|
-| `src/styles/fragments/semantic-fragments.css` | 89 |
+| `src/styles/fragments/semantic-fragments.css` | 91 |
 | `src/styles/skin/controls.css` | 16 |
 | `src/styles/entries/pages.css` | 4 |
 | `src/content/overlays/views/macroEditor/editorViewStyles.css` | 3 |
 | `src/styles/components/content-editor.css` | 3 |
-| `src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css` | 2 |
 | `src/content/overlays/modal/modalStyles.css` | 1 |
 
 No assimilable declarations remain — the residue is declared boundary and follow-up questions.

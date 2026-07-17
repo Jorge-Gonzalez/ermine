@@ -3,7 +3,7 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "31d1529e60d9cf43e6910767bdd20d186f6239d5"
+    "projectCommit": "da51d888db643d57dc9e1e7f784fc4f230556023"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
@@ -12,8 +12,8 @@
     "reviewedDeclarations": 118,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 110,
-    "likelyLocal": 8,
+    "likelyRecipe": 112,
+    "likelyLocal": 6,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 1,
@@ -32,8 +32,8 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 110,
-      "local-identity": 8
+      "recipe": 112,
+      "local-identity": 6
     },
     "byCurrentCode": {
       "ermine-emitted": 0,
@@ -41,7 +41,7 @@
       "theme-metric": 0,
       "config-departure": 0,
       "assimilable": 0,
-      "recipe-identity": 26,
+      "recipe-identity": 28,
       "rule-mechanics": 0,
       "brand-identity": 2,
       "affordance-mechanics": 0,
@@ -58,7 +58,7 @@
       "elevation-followup": 1,
       "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 9,
+      "identity-geometry": 7,
       "skin-review": 0,
       "identity-review": 0
     },
@@ -80,6 +80,7 @@
       "segmented-pill-boundary": 13,
       "engine-scrollbar-boundary": 8,
       "generated-placeholder-boundary": 3,
+      "foreign-overlay-host-boundary": 2,
       "pseudo-drawing-boundary": 31,
       "authored-content-substrate-boundary": 46
     }
@@ -92,34 +93,6 @@
       "selector": ".modal-backdrop",
       "property": "z-index",
       "value": "10000",
-      "currentCode": "identity-geometry",
-      "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "local-identity",
-      "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::position::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 3,
-      "selector": ":host, #macro-suggestions",
-      "property": "position",
-      "value": "fixed !important",
-      "currentCode": "identity-geometry",
-      "ruleAction": "attachment-edge-layer",
-      "latentOutcome": "local-identity",
-      "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local"
-    },
-    {
-      "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::z-index::1",
-      "file": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css",
-      "line": 4,
-      "selector": ":host, #macro-suggestions",
-      "property": "z-index",
-      "value": "2147483646 !important",
       "currentCode": "identity-geometry",
       "ruleAction": "attachment-edge-layer",
       "latentOutcome": "local-identity",
@@ -1111,9 +1084,43 @@
       ]
     },
     {
+      "id": "src/styles/fragments/semantic-fragments.css:::host(.sf-foreign-overlay-host), .sf-foreign-overlay-host::position::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 126,
+      "selector": ":host(.sf-foreign-overlay-host), .sf-foreign-overlay-host",
+      "property": "position",
+      "value": "fixed !important",
+      "currentCode": "recipe-identity",
+      "ruleAction": "attachment-edge-layer",
+      "latentOutcome": "recipe",
+      "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "foreign-overlay-host-boundary"
+      ]
+    },
+    {
+      "id": "src/styles/fragments/semantic-fragments.css:::host(.sf-foreign-overlay-host), .sf-foreign-overlay-host::z-index::1",
+      "file": "src/styles/fragments/semantic-fragments.css",
+      "line": 127,
+      "selector": ":host(.sf-foreign-overlay-host), .sf-foreign-overlay-host",
+      "property": "z-index",
+      "value": "var(--monky-foreign-overlay-z, 10000) !important",
+      "currentCode": "recipe-identity",
+      "ruleAction": "attachment-edge-layer",
+      "latentOutcome": "recipe",
+      "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
+      "erminePressure": "promote as molecule/recipe only if reused",
+      "proposedForm": "recipe/molecule socket",
+      "playbookRecipes": [
+        "foreign-overlay-host-boundary"
+      ]
+    },
+    {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-callout-arrow::width::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 124,
+      "line": 132,
       "selector": ".sf-callout-arrow",
       "property": "width",
       "value": "0",
@@ -1131,7 +1138,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-callout-arrow::border::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 125,
+      "line": 133,
       "selector": ".sf-callout-arrow",
       "property": "border",
       "value": "6px solid transparent",
@@ -1148,7 +1155,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-callout-arrow-top::border-top-color::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 129,
+      "line": 137,
       "selector": ".sf-callout-arrow-top",
       "property": "border-top-color",
       "value": "var(--base-tone)",
@@ -1166,7 +1173,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-callout-arrow-bottom::border-bottom-color::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 133,
+      "line": 141,
       "selector": ".sf-callout-arrow-bottom",
       "property": "border-bottom-color",
       "value": "var(--base-tone)",
@@ -1184,7 +1191,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap::padding::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 138,
+      "line": 146,
       "selector": ".sf-keycap",
       "property": "padding",
       "value": "1px 4px",
@@ -1201,7 +1208,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::line-height::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 143,
+      "line": 151,
       "selector": ".sf-keycap-raised",
       "property": "line-height",
       "value": "1",
@@ -1218,7 +1225,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::padding::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 144,
+      "line": 152,
       "selector": ".sf-keycap-raised",
       "property": "padding",
       "value": "3px 6px 6px",
@@ -1235,7 +1242,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::min-width::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 145,
+      "line": 153,
       "selector": ".sf-keycap-raised",
       "property": "min-width",
       "value": "26px",
@@ -1253,7 +1260,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 146,
+      "line": 154,
       "selector": ".sf-keycap-raised",
       "property": "border-radius",
       "value": "4px",
@@ -1270,7 +1277,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::z-index::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 147,
+      "line": 155,
       "selector": ".sf-keycap-raised",
       "property": "z-index",
       "value": "0",
@@ -1287,7 +1294,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::content::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 151,
+      "line": 159,
       "selector": ".sf-keycap-raised::after",
       "property": "content",
       "value": "''",
@@ -1305,7 +1312,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::position::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 152,
+      "line": 160,
       "selector": ".sf-keycap-raised::after",
       "property": "position",
       "value": "absolute",
@@ -1323,7 +1330,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 153,
+      "line": 161,
       "selector": ".sf-keycap-raised::after",
       "property": "background",
       "value": "var(--tone-dim)",
@@ -1341,7 +1348,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::inset::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 154,
+      "line": 162,
       "selector": ".sf-keycap-raised::after",
       "property": "inset",
       "value": "0 2px 4px",
@@ -1359,7 +1366,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::border::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 155,
+      "line": 163,
       "selector": ".sf-keycap-raised::after",
       "property": "border",
       "value": "1px solid var(--harmonic-minor)",
@@ -1377,7 +1384,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 156,
+      "line": 164,
       "selector": ".sf-keycap-raised::after",
       "property": "border-radius",
       "value": "2px",
@@ -1395,7 +1402,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::pointer-events::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 157,
+      "line": 165,
       "selector": ".sf-keycap-raised::after",
       "property": "pointer-events",
       "value": "none",
@@ -1413,7 +1420,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised::after::z-index::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 158,
+      "line": 166,
       "selector": ".sf-keycap-raised::after",
       "property": "z-index",
       "value": "-1",
@@ -1431,7 +1438,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-keycap-raised:first-child::margin-left::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 162,
+      "line": 170,
       "selector": ".sf-keycap-raised:first-child",
       "property": "margin-left",
       "value": "0",
@@ -1449,7 +1456,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::content::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 167,
+      "line": 175,
       "selector": ".sf-segmented-pill::before",
       "property": "content",
       "value": "''",
@@ -1467,7 +1474,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::position::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 168,
+      "line": 176,
       "selector": ".sf-segmented-pill::before",
       "property": "position",
       "value": "absolute",
@@ -1485,7 +1492,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::top::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 169,
+      "line": 177,
       "selector": ".sf-segmented-pill::before",
       "property": "top",
       "value": "0",
@@ -1504,7 +1511,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::bottom::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 170,
+      "line": 178,
       "selector": ".sf-segmented-pill::before",
       "property": "bottom",
       "value": "0",
@@ -1523,7 +1530,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::left::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 171,
+      "line": 179,
       "selector": ".sf-segmented-pill::before",
       "property": "left",
       "value": "var(--pill-left, 0)",
@@ -1541,7 +1548,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::width::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 172,
+      "line": 180,
       "selector": ".sf-segmented-pill::before",
       "property": "width",
       "value": "var(--pill-width, 0)",
@@ -1559,7 +1566,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 173,
+      "line": 181,
       "selector": ".sf-segmented-pill::before",
       "property": "background",
       "value": "var(--accent)",
@@ -1577,7 +1584,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::opacity::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 174,
+      "line": 182,
       "selector": ".sf-segmented-pill::before",
       "property": "opacity",
       "value": "0",
@@ -1595,7 +1602,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::transition::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 175,
+      "line": 183,
       "selector": ".sf-segmented-pill::before",
       "property": "transition",
       "value": "left 0.1s ease, width 0.1s ease",
@@ -1613,7 +1620,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill::before::pointer-events::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 176,
+      "line": 184,
       "selector": ".sf-segmented-pill::before",
       "property": "pointer-events",
       "value": "none",
@@ -1631,7 +1638,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill.is-sliding::before::opacity::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 180,
+      "line": 188,
       "selector": ".sf-segmented-pill.is-sliding::before",
       "property": "opacity",
       "value": "1",
@@ -1649,7 +1656,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill.seg-snap::before::transition::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 184,
+      "line": 192,
       "selector": ".sf-segmented-pill.seg-snap::before",
       "property": "transition",
       "value": "none",
@@ -1667,7 +1674,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-control-option svg::vertical-align::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 188,
+      "line": 196,
       "selector": ".sf-segmented-control-option svg",
       "property": "vertical-align",
       "value": "middle",
@@ -1684,7 +1691,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked=\"true\"]::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 192,
+      "line": 200,
       "selector": ".sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked=\"true\"]",
       "property": "background",
       "value": "transparent",
@@ -1702,7 +1709,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::width::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 197,
+      "line": 205,
       "selector": "::-webkit-scrollbar",
       "property": "width",
       "value": "var(--spacing-md) !important",
@@ -1720,7 +1727,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar::height::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 198,
+      "line": 206,
       "selector": "::-webkit-scrollbar",
       "property": "height",
       "value": "var(--spacing-md) !important",
@@ -1738,7 +1745,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 202,
+      "line": 210,
       "selector": "::-webkit-scrollbar-track",
       "property": "background",
       "value": "var(--tone-dim) !important",
@@ -1756,7 +1763,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-track::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 203,
+      "line": 211,
       "selector": "::-webkit-scrollbar-track",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -1774,7 +1781,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 207,
+      "line": 215,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "background",
       "value": "var(--tone) !important",
@@ -1792,7 +1799,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border-radius::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 208,
+      "line": 216,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border-radius",
       "value": "var(--radius-md) !important",
@@ -1810,7 +1817,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb::border::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 209,
+      "line": 217,
       "selector": "::-webkit-scrollbar-thumb",
       "property": "border",
       "value": "1px solid var(--tone-dim) !important",
@@ -1828,7 +1835,7 @@
     {
       "id": "src/styles/fragments/semantic-fragments.css::::-webkit-scrollbar-thumb:hover::background::1",
       "file": "src/styles/fragments/semantic-fragments.css",
-      "line": 213,
+      "line": 221,
       "selector": "::-webkit-scrollbar-thumb:hover",
       "property": "background",
       "value": "var(--accent-dim) !important",

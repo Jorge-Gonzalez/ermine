@@ -134,6 +134,12 @@ test("playbook names private drawing sub-boundaries", () => {
     value: "attr(data-placeholder)",
     code: "pseudo-mechanics",
   })).map((recipe) => recipe.id);
+  const foreignOverlayMatches = matchPlaybookRecipes(record({
+    selector: ":host(.sf-foreign-overlay-host), .sf-foreign-overlay-host",
+    property: "z-index",
+    value: "var(--monky-foreign-overlay-z, 10000) !important",
+    code: "recipe-identity",
+  })).map((recipe) => recipe.id);
 
   assert.ok(keycapMatches.includes("keycap-drawing-boundary"));
   assert.ok(keycapMatches.includes("pseudo-drawing-boundary"));
@@ -141,4 +147,5 @@ test("playbook names private drawing sub-boundaries", () => {
   assert.ok(pillMatches.includes("segmented-pill-boundary"));
   assert.ok(scrollbarMatches.includes("engine-scrollbar-boundary"));
   assert.ok(placeholderMatches.includes("generated-placeholder-boundary"));
+  assert.ok(foreignOverlayMatches.includes("foreign-overlay-host-boundary"));
 });

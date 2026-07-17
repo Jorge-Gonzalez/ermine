@@ -13,7 +13,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `31d1529e60d9cf43e6910767bdd20d186f6239d5` |
+| monky | `da51d888db643d57dc9e1e7f784fc4f230556023` |
 
 ## Summary
 
@@ -25,7 +25,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 28 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 2 | project brand typography and type treatment |
 | `component-contract` | 1 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
@@ -36,30 +36,32 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `elevation-followup` | 1 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 9 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 7 | project-exact geometry on a grammar-family property |
 
-## recipe-identity (26)
+## recipe-identity (28)
 
 a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 
-### src/styles/fragments/semantic-fragments.css (14)
+### src/styles/fragments/semantic-fragments.css (16)
 
 | line | selector | declaration |
 |---:|---|---|
 | 6 | `.sf-authored-content` | `font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif` |
 | 7 | `.sf-authored-content` | `line-height: normal` |
-| 124 | `.sf-callout-arrow` | `width: 0` |
-| 125 | `.sf-callout-arrow` | `border: 6px solid transparent` |
-| 129 | `.sf-callout-arrow-top` | `border-top-color: var(--base-tone)` |
-| 133 | `.sf-callout-arrow-bottom` | `border-bottom-color: var(--base-tone)` |
-| 138 | `.sf-keycap` | `padding: 1px 4px` |
-| 143 | `.sf-keycap-raised` | `line-height: 1` |
-| 144 | `.sf-keycap-raised` | `padding: 3px 6px 6px` |
-| 145 | `.sf-keycap-raised` | `min-width: 26px` |
-| 146 | `.sf-keycap-raised` | `border-radius: 4px` |
-| 147 | `.sf-keycap-raised` | `z-index: 0` |
-| 162 | `.sf-keycap-raised:first-child` | `margin-left: 0` |
-| 188 | `.sf-segmented-control-option svg` | `vertical-align: middle` |
+| 126 | `:host(.sf-foreign-overlay-host), .sf-foreign-overlay-host` | `position: fixed !important` |
+| 127 | `:host(.sf-foreign-overlay-host), .sf-foreign-overlay-host` | `z-index: var(--monky-foreign-overlay-z, 10000) !important` |
+| 132 | `.sf-callout-arrow` | `width: 0` |
+| 133 | `.sf-callout-arrow` | `border: 6px solid transparent` |
+| 137 | `.sf-callout-arrow-top` | `border-top-color: var(--base-tone)` |
+| 141 | `.sf-callout-arrow-bottom` | `border-bottom-color: var(--base-tone)` |
+| 146 | `.sf-keycap` | `padding: 1px 4px` |
+| 151 | `.sf-keycap-raised` | `line-height: 1` |
+| 152 | `.sf-keycap-raised` | `padding: 3px 6px 6px` |
+| 153 | `.sf-keycap-raised` | `min-width: 26px` |
+| 154 | `.sf-keycap-raised` | `border-radius: 4px` |
+| 155 | `.sf-keycap-raised` | `z-index: 0` |
+| 170 | `.sf-keycap-raised:first-child` | `margin-left: 0` |
+| 196 | `.sf-segmented-control-option svg` | `vertical-align: middle` |
 
 ### src/styles/skin/controls.css (12)
 
@@ -117,7 +119,7 @@ guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13)
 
 | line | selector | declaration |
 |---:|---|---|
-| 192 | `.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked="true"]` | `background: transparent` |
+| 200 | `.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked="true"]` | `background: transparent` |
 
 ## pseudo-mechanics (23)
 
@@ -130,26 +132,26 @@ pseudo-element geometry, fills, and content
 | 117 | `.sf-generated-placeholder:empty::before` | `content: attr(data-placeholder)` |
 | 118 | `.sf-generated-placeholder:empty::before` | `color: var(--ink-soft)` |
 | 119 | `.sf-generated-placeholder:empty::before` | `pointer-events: none` |
-| 151 | `.sf-keycap-raised::after` | `content: ''` |
-| 152 | `.sf-keycap-raised::after` | `position: absolute` |
-| 153 | `.sf-keycap-raised::after` | `background: var(--tone-dim)` |
-| 154 | `.sf-keycap-raised::after` | `inset: 0 2px 4px` |
-| 155 | `.sf-keycap-raised::after` | `border: 1px solid var(--harmonic-minor)` |
-| 156 | `.sf-keycap-raised::after` | `border-radius: 2px` |
-| 157 | `.sf-keycap-raised::after` | `pointer-events: none` |
-| 158 | `.sf-keycap-raised::after` | `z-index: -1` |
-| 167 | `.sf-segmented-pill::before` | `content: ''` |
-| 168 | `.sf-segmented-pill::before` | `position: absolute` |
-| 169 | `.sf-segmented-pill::before` | `top: 0` |
-| 170 | `.sf-segmented-pill::before` | `bottom: 0` |
-| 171 | `.sf-segmented-pill::before` | `left: var(--pill-left, 0)` |
-| 172 | `.sf-segmented-pill::before` | `width: var(--pill-width, 0)` |
-| 173 | `.sf-segmented-pill::before` | `background: var(--accent)` |
-| 174 | `.sf-segmented-pill::before` | `opacity: 0` |
-| 175 | `.sf-segmented-pill::before` | `transition: left 0.1s ease, width 0.1s ease` |
-| 176 | `.sf-segmented-pill::before` | `pointer-events: none` |
-| 180 | `.sf-segmented-pill.is-sliding::before` | `opacity: 1` |
-| 184 | `.sf-segmented-pill.seg-snap::before` | `transition: none` |
+| 159 | `.sf-keycap-raised::after` | `content: ''` |
+| 160 | `.sf-keycap-raised::after` | `position: absolute` |
+| 161 | `.sf-keycap-raised::after` | `background: var(--tone-dim)` |
+| 162 | `.sf-keycap-raised::after` | `inset: 0 2px 4px` |
+| 163 | `.sf-keycap-raised::after` | `border: 1px solid var(--harmonic-minor)` |
+| 164 | `.sf-keycap-raised::after` | `border-radius: 2px` |
+| 165 | `.sf-keycap-raised::after` | `pointer-events: none` |
+| 166 | `.sf-keycap-raised::after` | `z-index: -1` |
+| 175 | `.sf-segmented-pill::before` | `content: ''` |
+| 176 | `.sf-segmented-pill::before` | `position: absolute` |
+| 177 | `.sf-segmented-pill::before` | `top: 0` |
+| 178 | `.sf-segmented-pill::before` | `bottom: 0` |
+| 179 | `.sf-segmented-pill::before` | `left: var(--pill-left, 0)` |
+| 180 | `.sf-segmented-pill::before` | `width: var(--pill-width, 0)` |
+| 181 | `.sf-segmented-pill::before` | `background: var(--accent)` |
+| 182 | `.sf-segmented-pill::before` | `opacity: 0` |
+| 183 | `.sf-segmented-pill::before` | `transition: left 0.1s ease, width 0.1s ease` |
+| 184 | `.sf-segmented-pill::before` | `pointer-events: none` |
+| 188 | `.sf-segmented-pill.is-sliding::before` | `opacity: 1` |
+| 192 | `.sf-segmented-pill.seg-snap::before` | `transition: none` |
 
 ## scrollbar-followup (8)
 
@@ -159,14 +161,14 @@ engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15)
 
 | line | selector | declaration |
 |---:|---|---|
-| 197 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
-| 198 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
-| 202 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
-| 203 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
-| 207 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
-| 208 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
-| 209 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
-| 213 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
+| 205 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
+| 206 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
+| 210 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
+| 211 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
+| 215 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
+| 216 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
+| 217 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
+| 221 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
 
 ## motion-followup (1)
 
@@ -251,7 +253,7 @@ rich-text defaults inside user-authored content
 | 108 | `.sf-authored-content a` | `text-decoration: underline` |
 | 112 | `.sf-authored-content a:hover` | `opacity: 0.8` |
 
-## identity-geometry (9)
+## identity-geometry (7)
 
 project-exact geometry on a grammar-family property
 
@@ -260,13 +262,6 @@ project-exact geometry on a grammar-family property
 | line | selector | declaration |
 |---:|---|---|
 | 19 | `.modal-backdrop` | `z-index: 10000` |
-
-### src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 3 | `:host, #macro-suggestions` | `position: fixed !important` |
-| 4 | `:host, #macro-suggestions` | `z-index: 2147483646 !important` |
 
 ### src/content/overlays/views/macroEditor/editorViewStyles.css (2)
 
