@@ -13,21 +13,20 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `4925c478cb3fff2409f678494c4f76edca24fcbc` |
+| monky | `82663322f140d4e42ba0d74a86f5eb72b8a3c9f6` |
 
 ## Summary
 
-- Current declarations: 510
-- Adopted/infrastructure declarations: 396
-- Project-owned residue declarations: 114
+- Current declarations: 502
+- Adopted/infrastructure declarations: 398
+- Project-owned residue declarations: 104
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 28 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 21 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `brand-identity` | 2 | project brand typography and type treatment |
-| `component-contract` | 1 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
@@ -35,9 +34,9 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 4 | project-exact geometry on a grammar-family property |
+| `identity-geometry` | 2 | project-exact geometry on a grammar-family property |
 
-## recipe-identity (28)
+## recipe-identity (21)
 
 a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 
@@ -62,22 +61,15 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 | 170 | `.sf-keycap-raised:first-child` | `margin-left: 0` |
 | 196 | `.sf-segmented-control-option svg` | `vertical-align: middle` |
 
-### src/styles/skin/controls.css (12)
+### src/styles/skin/controls.css (5)
 
 | line | selector | declaration |
 |---:|---|---|
 | 4 | `.input-error:focus` | `box-shadow: inset 0 0 0 2px var(--status-error-wash)` |
-| 8 | `.radio-label` | `cursor: pointer` |
-| 9 | `.radio-label` | `user-select: none` |
-| 15 | `.btn-success:hover` | `background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color))` |
-| 19 | `.btn:disabled` | `cursor: not-allowed` |
-| 20 | `.btn:disabled` | `opacity: 0.6` |
-| 24 | `.btn:disabled:hover` | `background-color: var(--tone-dim)` |
-| 25 | `.btn:disabled:hover` | `opacity: 0.6` |
-| 37 | `.selectable-group > *` | `cursor: pointer` |
-| 38 | `.selectable-group > *` | `user-select: none` |
-| 42 | `.selectable-group > *:active` | `transform: scale(0.98)` |
-| 46 | `.selectable-group > .is-selected:hover` | `opacity: 0.9` |
+| 8 | `.radio-label` | `user-select: none` |
+| 14 | `.btn:disabled` | `cursor: not-allowed` |
+| 26 | `.selectable-group > *` | `user-select: none` |
+| 30 | `.selectable-group > *:active` | `transform: scale(0.98)` |
 
 ## brand-identity (2)
 
@@ -90,16 +82,6 @@ project brand typography and type treatment
 | 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
 | 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
-## component-contract (1)
-
-component-owned mechanics, exact geometry, or product contract
-
-### src/styles/components/content-editor.css (1)
-
-| line | selector | declaration |
-|---:|---|---|
-| 10 | `.ce-toolbar-sep` | `background-color: var(--harmonic)` |
-
 ## state-mechanics (1)
 
 JS/native state mechanics outside backed Ermine conditions
@@ -108,7 +90,7 @@ JS/native state mechanics outside backed Ermine conditions
 
 | line | selector | declaration |
 |---:|---|---|
-| 50 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
+| 34 | `.min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
 
 ## parent-relational (1)
 
@@ -177,7 +159,7 @@ transition/animation timing (deferred to GAP-U-animation-plane)
 
 | line | selector | declaration |
 |---:|---|---|
-| 61 | `.shake` | `transition: none !important` |
+| 45 | `.shake` | `transition: none !important` |
 
 ## opacity-followup (2)
 
@@ -187,8 +169,8 @@ opacity state treatment (named follow-up question)
 
 | line | selector | declaration |
 |---:|---|---|
-| 51 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
-| 55 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
+| 35 | `.min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
+| 39 | `.min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
 ## user-content (43)
 
@@ -242,16 +224,9 @@ rich-text defaults inside user-authored content
 | 108 | `.sf-authored-content a` | `text-decoration: underline` |
 | 112 | `.sf-authored-content a:hover` | `opacity: 0.8` |
 
-## identity-geometry (4)
+## identity-geometry (2)
 
 project-exact geometry on a grammar-family property
-
-### src/styles/components/content-editor.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 15 | `.ce-style-trigger` | `gap: 2px` |
-| 20 | `.ce-style-dropdown` | `gap: 2px` |
 
 ### src/styles/entries/pages.css (2)
 

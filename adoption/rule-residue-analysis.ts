@@ -577,14 +577,15 @@ drawing, code/pre blocks, blockquotes, and host identity.
    control recipes, exact geometry, and local identity. That is healthier than a tail of
    missing utilities.
 
-2. Content-editor residue is a molecule boundary.
+2. Authored-content residue is a molecule boundary.
 
-   \`src/styles/components/content-editor.css\` has 24 residue rules. Twenty are authored-content
-   substrate under \`.sf-authored-content\`: headings,
-   paragraphs, lists, inline code, pre blocks, blockquotes, links, emphasis, and decorations.
-   Three are \`ce-*\` editor chrome. One is placeholder pseudo drawing. Treating those as one vague
-   "content editor" bucket hides the important distinction: the body is an authored HTML island,
-   while the surrounding \`ce-*\` selectors are ordinary component chrome.
+   \`src/styles/fragments/semantic-fragments.css\` carries the authored-content substrate under
+   \`.sf-authored-content\`: headings, paragraphs, lists, inline code, pre blocks, blockquotes,
+   links, emphasis, and decorations. The old \`ce-*\` editor chrome rows have dissolved into
+   Ermine class strings; what remains is the authored HTML island plus adjacent private drawing
+   such as generated placeholders. Treating that as one vague "content editor" bucket hides the
+   important distinction: the body points away from utility grammar, while the surrounding chrome
+   can keep being absorbed when it is ordinary component structure.
 
 3. Pseudo and engine drawing remains correctly project-owned.
 

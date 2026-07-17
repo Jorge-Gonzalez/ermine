@@ -18,10 +18,10 @@ included.
 
 | metric | count |
 | --- | --- |
-| current declarations | 510 |
-| adopted/infrastructure declarations | 396 |
-| project-owned residue declarations | 114 |
-| project-owned residue rules | 54 |
+| current declarations | 502 |
+| adopted/infrastructure declarations | 398 |
+| project-owned residue declarations | 104 |
+| project-owned residue rules | 48 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 | latent-generalizable declarations | 0 |
@@ -31,9 +31,8 @@ included.
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
 | authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
-| editor chrome recipes | 3 | 3 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
 | private drawing / engine pseudo | 17 | 45 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
-| control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| control-state recipes | 8 | 9 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 2 | 4 | Host/page reset and brand type identity. |
 
@@ -45,10 +44,10 @@ not missing flat words: they are recipe/fragments or a deliberate authored-HTML 
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 114 | 54 | All remaining project-owned declarations in the current ledger. |
+| conserved project-owned residue | 104 | 48 | All remaining project-owned declarations in the current ledger. |
 | semantic fragments excluded | 45 | 17 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, generated-placeholder, and foreign-overlay-host fragments. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 24 | 17 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 14 | 11 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
 The exclusion is union-aware: 90 declarations across
 37 rules are outside the word-assimilation target. They remain visible
@@ -58,8 +57,7 @@ in the conserved ledger and boundary reports.
 
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
-| editor chrome recipes | 3 | 3 | Controls around the authored content surface: dropdowns, toolbar separators, and small editor UI signatures. |
-| control-state recipes | 11 | 16 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
+| control-state recipes | 8 | 9 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 | root/page/host identity | 2 | 4 | Host/page reset and brand type identity. |
 
@@ -68,8 +66,7 @@ in the conserved ledger and boundary reports.
 | file | residue rules |
 | --- | --- |
 | `src/styles/fragments/semantic-fragments.css` | 38 |
-| `src/styles/skin/controls.css` | 11 |
-| `src/styles/components/content-editor.css` | 3 |
+| `src/styles/skin/controls.css` | 8 |
 | `src/styles/entries/pages.css` | 2 |
 
 ## By Primary Rule Action
@@ -81,18 +78,19 @@ rules are listed later because a single selector can combine several kinds of re
 | --- | --- |
 | typography-content | 16 |
 | component-private-drawing | 15 |
-| interaction-affordance-state | 8 |
-| spacing-rhythm | 6 |
-| surface-line-elevation-cutout | 6 |
+| interaction-affordance-state | 5 |
+| spacing-rhythm | 4 |
+| surface-line-elevation-cutout | 3 |
 | motion-transition | 2 |
+| reset-inheritance-neutralization | 2 |
 | attachment-edge-layer | 1 |
 
 ## Rule Density
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 29 |
-| 2 declarations | 13 |
+| 1 declaration | 27 |
+| 2 declarations | 9 |
 | 3 declarations | 6 |
 | 4+ declarations | 6 |
 
@@ -109,14 +107,15 @@ drawing, code/pre blocks, blockquotes, and host identity.
    control recipes, exact geometry, and local identity. That is healthier than a tail of
    missing utilities.
 
-2. Content-editor residue is a molecule boundary.
+2. Authored-content residue is a molecule boundary.
 
-   `src/styles/components/content-editor.css` has 24 residue rules. Twenty are authored-content
-   substrate under `.sf-authored-content`: headings,
-   paragraphs, lists, inline code, pre blocks, blockquotes, links, emphasis, and decorations.
-   Three are `ce-*` editor chrome. One is placeholder pseudo drawing. Treating those as one vague
-   "content editor" bucket hides the important distinction: the body is an authored HTML island,
-   while the surrounding `ce-*` selectors are ordinary component chrome.
+   `src/styles/fragments/semantic-fragments.css` carries the authored-content substrate under
+   `.sf-authored-content`: headings, paragraphs, lists, inline code, pre blocks, blockquotes,
+   links, emphasis, and decorations. The old `ce-*` editor chrome rows have dissolved into
+   Ermine class strings; what remains is the authored HTML island plus adjacent private drawing
+   such as generated placeholders. Treating that as one vague "content editor" bucket hides the
+   important distinction: the body points away from utility grammar, while the surrounding chrome
+   can keep being absorbed when it is ordinary component structure.
 
 3. Pseudo and engine drawing remains correctly project-owned.
 
@@ -162,19 +161,6 @@ Reading: this is not a failed absorption frontier. It is a deliberate boundary w
 restores useful native HTML defaults so users can bring their own styling and semantics. Ermine
 should remember it as authored-content substrate evidence, not as scattered missing words.
 
-### Editor Chrome And Bridges
-
-The `ce-*` selectors are editor controls around the authored-content island. They are different
-from `.sf-authored-content`: dropdown placement, toolbar separators, and tiny trigger gaps are
-component chrome recipes. The `.editor-content .content-editor-body` row is different again: it
-is a layout bridge that lets the editor shell hand remaining block space to the authored content.
-
-| selector group | reading |
-| --- | --- |
-| `ce-*` | editor toolbar/menu chrome; recipe-local unless repeated elsewhere |
-| `.sf-generated-placeholder:empty::before` | placeholder pseudo drawing, classified with private drawing |
-| `.editor-content .content-editor-body` | layout bridge between shell and authored-content substrate |
-
 ### Private Drawing / Engine Pseudo
 
 | rule | residue declarations | reading |
@@ -217,9 +203,6 @@ evidence and poor flat-word candidates.
 
 | file | selector | declarations | rule actions | outcome | residue declarations |
 | --- | --- | --- | --- | --- | --- |
-| `src/styles/components/content-editor.css` | `.ce-style-dropdown` | 1 | spacing-rhythm | recipe | gap: 2px |
-| `src/styles/components/content-editor.css` | `.ce-style-trigger` | 1 | spacing-rhythm | recipe | gap: 2px |
-| `src/styles/components/content-editor.css` | `.ce-toolbar-sep` | 1 | surface-line-elevation-cutout | recipe | background-color: var(--harmonic) |
 | `src/styles/entries/pages.css` | `.page-title` | 1 | typography-content | local-identity | font-family: 'IBM Plex Condensed Light', sans-serif |
 | `src/styles/entries/pages.css` | `body` | 3 | typography-content, spacing-rhythm | local-identity | font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial<br>margin: 0<br>padding: 0 |
 | `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar` | 2 | component-private-drawing | recipe | width: var(--spacing-md) !important<br>height: var(--spacing-md) !important |
@@ -260,15 +243,12 @@ evidence and poor flat-word candidates.
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked="true"]` | 1 | component-private-drawing | recipe | background: transparent |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.is-sliding::before` | 1 | component-private-drawing | recipe | opacity: 1 |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-segmented-pill.seg-snap::before` | 1 | motion-transition | recipe | transition: none |
-| `src/styles/skin/controls.css` | `.btn-success:hover` | 1 | surface-line-elevation-cutout | recipe | background-color: color-mix(in oklch, var(--status-success) 82%, var(--shadow-color)) |
-| `src/styles/skin/controls.css` | `.btn:disabled` | 2 | interaction-affordance-state | recipe | cursor: not-allowed<br>opacity: 0.6 |
-| `src/styles/skin/controls.css` | `.btn:disabled:hover` | 2 | surface-line-elevation-cutout, interaction-affordance-state | recipe | background-color: var(--tone-dim)<br>opacity: 0.6 |
+| `src/styles/skin/controls.css` | `.btn:disabled` | 1 | interaction-affordance-state | recipe | cursor: not-allowed |
 | `src/styles/skin/controls.css` | `.input-error:focus` | 1 | surface-line-elevation-cutout | recipe | box-shadow: inset 0 0 0 2px var(--status-error-wash) |
 | `src/styles/skin/controls.css` | `.min-selected-1 > .is-selected:only-of-type` | 2 | interaction-affordance-state | recipe | cursor: not-allowed<br>opacity: 0.95 |
 | `src/styles/skin/controls.css` | `.min-selected-1 > .is-selected:only-of-type:hover` | 1 | interaction-affordance-state | recipe | opacity: 0.95 |
-| `src/styles/skin/controls.css` | `.radio-label` | 2 | interaction-affordance-state, reset-inheritance-neutralization | recipe | cursor: pointer<br>user-select: none |
-| `src/styles/skin/controls.css` | `.selectable-group > .is-selected:hover` | 1 | interaction-affordance-state | recipe | opacity: 0.9 |
-| `src/styles/skin/controls.css` | `.selectable-group > *` | 2 | interaction-affordance-state, reset-inheritance-neutralization | recipe | cursor: pointer<br>user-select: none |
+| `src/styles/skin/controls.css` | `.radio-label` | 1 | reset-inheritance-neutralization | recipe | user-select: none |
+| `src/styles/skin/controls.css` | `.selectable-group > *` | 1 | reset-inheritance-neutralization | recipe | user-select: none |
 | `src/styles/skin/controls.css` | `.selectable-group > *:active` | 1 | interaction-affordance-state | recipe | transform: scale(0.98) |
 | `src/styles/skin/controls.css` | `.shake` | 1 | motion-transition | local-identity | transition: none !important |
 
