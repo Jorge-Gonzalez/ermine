@@ -20,8 +20,8 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the semantic-fragment relocation is
-Ermine 3c7f56c / Monky 667ccf3:
+were migrated). Current live ledger after the popup hook dissolution is
+Ermine 3c7f56c / Monky 33a6140:
 
   current declarations:                 521
   adopted/infrastructure declarations:  390
@@ -159,6 +159,9 @@ defaults leaves 43 declarations across 26 rules for future word/recipe/local-ide
 The semantic-fragment relocation then made that middle layer explicit in Monky:
 `src/styles/fragments/semantic-fragments.css` owns the `sf-*` fragment hooks while product
 classes remain available for behavior/tests. The live counts stay conserved at 521/390/131.
+The popup hook dissolution then removed the empty `src/popup/popup.css` sheet, retired the
+remaining `popup-*` markup hooks, and replaced the bespoke inline site switch drawing with an
+ordinary Ermine-styled checkbox. The current ledger counts stay conserved.
 Raw micro-padding rows remain a spacing question.
 
 ========================================================================
@@ -215,9 +218,6 @@ settings-body, settings-divider, settings-import-status, settings-prefix-btn, se
 src/options/options.css:
 prefix-cell
 
-src/popup/popup.css:
-popup-button, popup-container, popup-icon-button, popup-item-detail, popup-item-toggle, popup-macro-text, popup-results, popup-search-input, popup-toggle-label
-
 src/styles/components/content-editor.css:
 ce-link-input, ce-style-caret, ce-style-dropdown, ce-style-option, ce-style-option-short, ce-style-trigger, ce-toolbar-btn, ce-toolbar-icon, ce-toolbar-sep
 
@@ -232,7 +232,7 @@ btn, btn-success, checkbox, editor-content, input-error, is-selected, min-select
 
 Markup-only local class tokens (runtime class strings with no current local CSS rule here;
 Ermine grammar words filtered out):
-action-toolbar, alert, alert-error, alert-success, button-group, button-label, cancel, card, ce-link-field, ce-style-menu, ce-style-option-label, ce-toolbar, clear-button, command-input, command-input-container, command-input-error, command-input-error-message, command-input-hint, command-input-label, command-suggestion-actions, command-suggestion-text, command-suggestion-wrapper, command-suggestions-label, confirm, delete, delete-confirm-command, delete-confirm-danger, delete-confirm-message, divider, editor-bottombar, editor-form, editor-sensitive, editor-title, editor-topbar, editor-topbar-lead, empty, empty-state, enabled, focused, fuzzy-search-field, icon-text, import-status--error, import-status--ok, list, list-item, macro-editor-view, macro-search-count, macro-search-empty, macro-search-footer, macro-search-input-container, macro-search-view, macro-suggestions-commands-list, macro-suggestions-text-preview, modal-command-hint, modal-command-name, modal-content, mode-choice, mode-row, multi-select-list, page-container, panel-button, popup-card, popup-result-item, popup-section, popup-site-copy, search-field, search-focused-item, search-input, search-input-wrapper, search-spinner, searchable-list-container, searchable-list-search, searchable-list-toolbar, searchable-list-view, section, section-description, section-title, settings-appearance-controls, settings-group, settings-row, settings-row-label, settings-rows, settings-view, toggle-field, toggle-field-description, toggle-field-input, toggle-field-label, toggle-field-text, toolbar, toolbar-button, validation-error
+action-toolbar, alert, alert-error, alert-success, button-group, button-label, cancel, card, ce-link-field, ce-style-menu, ce-style-option-label, ce-toolbar, clear-button, command-input, command-input-container, command-input-error, command-input-error-message, command-input-hint, command-input-label, command-suggestion-actions, command-suggestion-text, command-suggestion-wrapper, command-suggestions-label, confirm, delete, delete-confirm-command, delete-confirm-danger, delete-confirm-message, divider, editor-bottombar, editor-form, editor-sensitive, editor-title, editor-topbar, editor-topbar-lead, empty, empty-state, enabled, focused, fuzzy-search-field, icon-text, import-status--error, import-status--ok, list, list-item, macro-editor-view, macro-search-count, macro-search-empty, macro-search-footer, macro-search-input-container, macro-search-view, macro-suggestions-commands-list, macro-suggestions-text-preview, modal-command-hint, modal-command-name, modal-content, mode-choice, mode-row, multi-select-list, page-container, panel-button, search-field, search-focused-item, search-input, search-input-wrapper, search-spinner, searchable-list-container, searchable-list-search, searchable-list-toolbar, searchable-list-view, section, section-description, section-title, settings-appearance-controls, settings-group, settings-row, settings-row-label, settings-rows, settings-view, toggle-field, toggle-field-description, toggle-field-input, toggle-field-label, toggle-field-text, toolbar, toolbar-button, validation-error
 
 Non-class local selectors and mechanics still in the ledger/review boundary:
 body, :host, #macro-suggestions, #macro-suggestions *, button/input/textarea/select inheritance rules, input number-spin pseudo-elements, content-editor rich-text descendants, scrollbar pseudo-elements, and the local `.shake { transition: none !important }` suppression. The `shake` keyframes now ship from generated Ermine CSS; unapplied `flash`/`pulse` are not current CSS-backed residue.

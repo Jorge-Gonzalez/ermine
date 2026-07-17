@@ -3,7 +3,7 @@
   "project": "monky",
   "source": {
     "ermineCommit": "847ecf95138e8216c7d3d82b231d2f04046a56a8",
-    "projectCommit": "667ccf35bc9c49811aa3bf540b4de49e9f1b4465"
+    "projectCommit": "33a61408eaa799e59712ab04cb367ce3885e0173"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"

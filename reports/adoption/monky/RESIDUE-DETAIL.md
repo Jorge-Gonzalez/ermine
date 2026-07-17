@@ -13,7 +13,7 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `847ecf95138e8216c7d3d82b231d2f04046a56a8` |
-| monky | `667ccf35bc9c49811aa3bf540b4de49e9f1b4465` |
+| monky | `33a61408eaa799e59712ab04cb367ce3885e0173` |
 
 ## Summary
 

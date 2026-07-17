@@ -91,7 +91,7 @@ and closed in U8f (`pilots/LEDGER-CLOSURE.md`). The generator that report asked 
 exists: `npm run adoption:current` regenerates `CURRENT-LEDGER.md` /
 `current-ledger.json`, the live selector-aware reconciliation that replaces per-pilot
 hand counting. Phase B consumed the generated work list and left `assimilable = 0`.
-The current generated ledger is at Monky `667ccf3`: 521 declarations, 390
+The current generated ledger is at Monky `33a6140`: 521 declarations, 390
 adopted/infrastructure declarations, 131 project-owned residue declarations,
 `assimilable = 0`, and `shadowed = 0`.
 
@@ -128,7 +128,7 @@ reconciliation of live Monky CSS against emitted Ermine CSS that reason-codes ev
 declaration. Phase B (`pilots/PHASE-B-ASSIMILATION.md`) emptied the assimilable work list;
 Phase C's R-SKIN-10 then made the deferred recipe rows terminal (`recipe-identity`), and
 Phase D's gate held the list at zero before the first post-adoption dimension endpoint
-pass. The current ledger at Monky `667ccf3` reports 521
+pass. The current ledger at Monky `33a6140` reports 521
 current declarations, 390 adopted/infrastructure declarations, 131 project-owned residue,
 `assimilable = 0`, and no shadowed words;
 the declared boundary is `BOUNDARY.md`.
@@ -236,7 +236,7 @@ edge-attachment, side-corner, role-measured dimension, and rule-presence edge-fa
 plus text-flow release (`text-wrap`/`overflow-visible`), rule edge-colour, checked group
 skin, editor style-option state, pressed/expanded state-prefix, spacing-none endpoint,
 existing-scale modal-nav, semantic-emphasis, content-alignment, scrollbar socket, alpha opacity,
-and text-decoration treatment migrations moved the live
+text-decoration treatment, semantic-fragment relocation, and popup hook dissolution moved the live
 ledger to
 521 current declarations,
 131 project-owned residue,
