@@ -2,17 +2,17 @@
   "version": 1,
   "project": "monky",
   "source": {
-    "ermineCommit": "847ecf95138e8216c7d3d82b231d2f04046a56a8",
-    "projectCommit": "33a61408eaa799e59712ab04cb367ce3885e0173"
+    "ermineCommit": "bde7d09dad751b13c45aeb8aed778592ae4c79ac",
+    "projectCommit": "531a7cda505cc036ac802feb1e53da8a0168826e"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 131,
+    "reviewedDeclarations": 129,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
-    "likelyRecipe": 121,
+    "likelyRecipe": 119,
     "likelyLocal": 10,
     "byRuleAction": {
       "already-admitted": 0,
@@ -20,7 +20,7 @@
       "attachment-edge-layer": 6,
       "spacing-rhythm": 19,
       "alignment-layout": 0,
-      "surface-line-elevation-cutout": 17,
+      "surface-line-elevation-cutout": 15,
       "typography-content": 25,
       "interaction-affordance-state": 11,
       "motion-transition": 3,
@@ -32,7 +32,7 @@
       "latent-word": 0,
       "latent-facet": 0,
       "latent-scale": 0,
-      "recipe": 121,
+      "recipe": 119,
       "local-identity": 10
     },
     "byCurrentCode": {
@@ -45,7 +45,7 @@
       "rule-mechanics": 0,
       "brand-identity": 4,
       "affordance-mechanics": 0,
-      "component-contract": 4,
+      "component-contract": 3,
       "state-mechanics": 1,
       "state-review": 0,
       "focus-state": 0,
@@ -55,7 +55,7 @@
       "scrollbar-followup": 8,
       "motion-followup": 1,
       "opacity-followup": 2,
-      "elevation-followup": 3,
+      "elevation-followup": 2,
       "reset-absence": 3,
       "user-content": 43,
       "identity-geometry": 12,
@@ -112,34 +112,6 @@
       "function": "attaches to an edge, offsets a local affordance, or asserts stack order",
       "erminePressure": "keep local after invariance/scale tests",
       "proposedForm": "keep local"
-    },
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::box-shadow::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 27,
-      "selector": ".modal-dialog",
-      "property": "box-shadow",
-      "value": "rgba(31, 32, 34, 0.3) 0px 1px 2px 0px, rgba(31, 32, 34, 0.15) 0px 2px 6px 2px",
-      "currentCode": "elevation-followup",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "recipe",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
-    },
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::mix-blend-mode::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 28,
-      "selector": ".modal-dialog",
-      "property": "mix-blend-mode",
-      "value": "multiply",
-      "currentCode": "component-contract",
-      "ruleAction": "surface-line-elevation-cutout",
-      "latentOutcome": "recipe",
-      "function": "paints/removes surface, line, radius, shadow, or cutout state",
-      "erminePressure": "promote as molecule/recipe only if reused",
-      "proposedForm": "recipe/molecule socket"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::font-family::1",

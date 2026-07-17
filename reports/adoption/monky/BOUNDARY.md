@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `847ecf95138e8216c7d3d82b231d2f04046a56a8` |
-| monky | `33a61408eaa799e59712ab04cb367ce3885e0173` |
+| Ermine | `bde7d09dad751b13c45aeb8aed778592ae4c79ac` |
+| monky | `531a7cda505cc036ac802feb1e53da8a0168826e` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 131 |
+| project-owned residue | 129 |
 
 ## Product Identity
 
@@ -46,7 +46,7 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 | `recipe-identity` | 26 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `identity-geometry` | 12 | project-exact geometry on a grammar-family property |
 | `brand-identity` | 4 | project brand typography and type treatment |
-| `elevation-followup` | 3 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
+| `elevation-followup` | 2 | box-shadow outside the elevated treatment — rings and identity signatures (R-SKIN-09) |
 
 ## Relational / Scale-Backed Follow-Up
 
@@ -74,7 +74,7 @@ shadowed-words gate holds every paragraph true or silent about every property.
 
 | code | count | boundary |
 |---|---:|---|
-| `component-contract` | 4 | component-owned mechanics, exact geometry, or product contract |
+| `component-contract` | 3 | component-owned mechanics, exact geometry, or product contract |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
 | `reset-absence` | 3 | absence/reset mechanics, not a positive carrier |
@@ -98,4 +98,4 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 | `scrollbar-followup` | 8 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
 | `motion-followup` | 1 | reports/GAP-U-animation-plane.md |
 | `opacity-followup` | 2 | named follow-up: opacity prominence treatment (no report filed yet) |
-| `elevation-followup` | 3 | R-SKIN-09 boundary clause |
+| `elevation-followup` | 2 | R-SKIN-09 boundary clause |

@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 131 |
+| reviewed residue declarations | 129 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 121 |
+| likely recipe/molecule | 119 |
 | likely local identity | 10 |
 
 ## By Rule Action
@@ -21,7 +21,7 @@ generalization, recipe, and local-identity pressure.
 | dimension-constraint | 1 |
 | attachment-edge-layer | 6 |
 | spacing-rhythm | 19 |
-| surface-line-elevation-cutout | 17 |
+| surface-line-elevation-cutout | 15 |
 | typography-content | 25 |
 | interaction-affordance-state | 11 |
 | motion-transition | 3 |
@@ -32,7 +32,7 @@ generalization, recipe, and local-identity pressure.
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 121 |
+| recipe | 119 |
 | local-identity | 10 |
 
 ## By Current Ledger Code
@@ -41,14 +41,14 @@ generalization, recipe, and local-identity pressure.
 | --- | --- |
 | recipe-identity | 26 |
 | brand-identity | 4 |
-| component-contract | 4 |
+| component-contract | 3 |
 | state-mechanics | 1 |
 | parent-relational | 1 |
 | pseudo-mechanics | 23 |
 | scrollbar-followup | 8 |
 | motion-followup | 1 |
 | opacity-followup | 2 |
-| elevation-followup | 3 |
+| elevation-followup | 2 |
 | reset-absence | 3 |
 | user-content | 43 |
 | identity-geometry | 12 |
@@ -81,7 +81,7 @@ of residue declarations.
 | component-private-drawing | recipe | 41 | promote as molecule/recipe only if reused |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
 | spacing-rhythm | recipe | 17 | promote as molecule/recipe only if reused |
-| surface-line-elevation-cutout | recipe | 17 | promote as molecule/recipe only if reused |
+| surface-line-elevation-cutout | recipe | 15 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 11 | promote as molecule/recipe only if reused |
 | reset-inheritance-neutralization | recipe | 8 | promote as molecule/recipe only if reused |
 | typography-content | local-identity | 4 | keep local after invariance/scale tests |

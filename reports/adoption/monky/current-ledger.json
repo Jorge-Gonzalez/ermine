@@ -2,12 +2,12 @@
   "version": 2,
   "project": "monky",
   "source": {
-    "ermineCommit": "847ecf95138e8216c7d3d82b231d2f04046a56a8",
-    "projectCommit": "33a61408eaa799e59712ab04cb367ce3885e0173"
+    "ermineCommit": "bde7d09dad751b13c45aeb8aed778592ae4c79ac",
+    "projectCommit": "531a7cda505cc036ac802feb1e53da8a0168826e"
   },
   "summary": {
-    "totalDeclarations": 521,
-    "residueDeclarations": 131,
+    "totalDeclarations": 519,
+    "residueDeclarations": 129,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 275,
@@ -19,7 +19,7 @@
       "rule-mechanics": 0,
       "brand-identity": 4,
       "affordance-mechanics": 0,
-      "component-contract": 4,
+      "component-contract": 3,
       "state-mechanics": 1,
       "state-review": 0,
       "focus-state": 0,
@@ -29,7 +29,7 @@
       "scrollbar-followup": 8,
       "motion-followup": 1,
       "opacity-followup": 2,
-      "elevation-followup": 3,
+      "elevation-followup": 2,
       "reset-absence": 3,
       "user-content": 43,
       "identity-geometry": 12,
@@ -55,24 +55,6 @@
       "property": "z-index",
       "value": "10000",
       "code": "identity-geometry"
-    },
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::box-shadow::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 27,
-      "selector": ".modal-dialog",
-      "property": "box-shadow",
-      "value": "rgba(31, 32, 34, 0.3) 0px 1px 2px 0px, rgba(31, 32, 34, 0.15) 0px 2px 6px 2px",
-      "code": "elevation-followup"
-    },
-    {
-      "id": "src/content/overlays/modal/modalStyles.css::.modal-dialog::mix-blend-mode::1",
-      "file": "src/content/overlays/modal/modalStyles.css",
-      "line": 28,
-      "selector": ".modal-dialog",
-      "property": "mix-blend-mode",
-      "value": "multiply",
-      "code": "component-contract"
     },
     {
       "id": "src/content/overlays/suggestionsOverlay/suggestionsOverlayStyles.css:::host, #macro-suggestions::font-family::1",
