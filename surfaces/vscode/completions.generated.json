@@ -2640,6 +2640,12 @@
           "insertText": "ground-note-faint",
           "kind": "word",
           "meaning": "ground[-<role|step>[-<intensity>]]"
+        },
+        {
+          "label": "scrim",
+          "insertText": "scrim",
+          "kind": "word",
+          "meaning": "scrim"
         }
       ]
     },

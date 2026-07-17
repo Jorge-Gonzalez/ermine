@@ -1909,6 +1909,11 @@
       "meaning": "ground[-<role|step>[-<intensity>]]",
       "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
     },
+    "scrim": {
+      "axis": "skin-ground",
+      "meaning": "scrim",
+      "reference": "src/ERMINE-SPEC.md §2.5 — skin-ground"
+    },
     "ink": {
       "axis": "skin-ink",
       "meaning": "ink[-<role|step>[-<intensity>]]",

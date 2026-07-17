@@ -872,7 +872,7 @@ Tokens:
 #### skin-ground
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `ground` `ground-subtle` `ground-defined` `ground-hover` `ground-active` `ground-selected` `ground-accent` `ground-accent-soft` `ground-accent-faint` `ground-pass` `ground-pass-faint` `ground-warn` `ground-warn-faint` `ground-fail` `ground-fail-faint` `ground-note` `ground-note-faint`
+- value space: `ground` `ground-subtle` `ground-defined` `ground-hover` `ground-active` `ground-selected` `ground-accent` `ground-accent-soft` `ground-accent-faint` `ground-pass` `ground-pass-faint` `ground-warn` `ground-warn-faint` `ground-fail` `ground-fail-faint` `ground-note` `ground-note-faint` `scrim`
 - default: none
 - controls: `background`
 - must never touch: `display` `gap` `flex` `position` `color` `border-color` `border-radius` `font-size`
@@ -882,6 +882,7 @@ Tokens:
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
 | `ground[-<role\|step>[-<intensity>]]` | `/^ground(-(subtle\|defined\|hover\|active\|selected\|accent\|accent-soft\|accent-faint\|pass\|pass-faint\|warn\|warn-faint\|fail\|fail-faint\|note\|note-faint))?$/` | — | no |
+| `scrim` | `/^scrim$/` | — | no |
 
 #### skin-ink
 

@@ -115,6 +115,12 @@ test("elevated-soft reads its close drop-shadow socket with a two-layer neutral 
   assert.match(css, /\.elevated-soft \{[^}]*box-shadow: var\(--shadow-elevated-soft, 0 1px 2px rgb\(0 0 0 \/ 30%\), 0 2px 6px rgb\(0 0 0 \/ 15%\)\);/s);
 });
 
+test("scrim paints backdrop dimming through an alpha background socket (R-SKIN-21)", () => {
+  const css = toCss("scrim");
+  assert.match(css, /\.scrim \{[^}]*background: var\(--scrim, rgb\(0 0 0 \/ 35%\)\);/s);
+  assert.doesNotMatch(css, /opacity:/, "scrim must not fade descendants like an alpha opacity treatment");
+});
+
 test("elevated composes with base skin as independent atomic rules", () => {
   const css = toCss("ground corner-md elevated");
   assert.match(css, /\.ground \{[^}]*background: var\(--ground\);/s);

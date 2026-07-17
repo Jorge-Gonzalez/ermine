@@ -1022,6 +1022,17 @@ their authored-content substrate unless the authored element itself can carry wo
 
 → rationale: RAT:R-SKIN-20 · history: ADR-0056 · code: src/registry.ts#SKIN, src/emit.ts#emit
 
+## R-SKIN-21 — Scrim backdrop treatment
+
+A scrim is a backdrop-dimming skin treatment, not ordinary element opacity. `scrim` owns
+`background` on the ground axis and reads the `--scrim` socket with a neutral black-alpha default
+(`rgb(0 0 0 / 35%)`). It conflicts with `ground-*` words in the same scope because both paint the
+same background carrier. The dimming alpha lives inside the background colour; using an opacity
+word (`alpha-*`) would fade descendants such as dialogs and menus, which is the wrong relatum.
+Stacking order and host-beating z-index constants are layering/host identity, not scrim.
+
+→ rationale: RAT:R-SKIN-21 · history: ADR-0059 · code: src/registry.ts#SKIN, src/emit.ts#emit
+
 ## R-SCALE-01 — Generator-defined scales
 
 A generative-proportional scale is the output of a declared generator, not a hand-listed value set.

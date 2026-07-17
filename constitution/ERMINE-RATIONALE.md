@@ -723,6 +723,17 @@ stays identity, exactly as the modal's blend-mode shadow did under R-SKIN-09. `s
 (carousels, kiosk surfaces) is anticipated but unevidenced, so reserved. Naming rides the
 existing intensity vocabulary (`subtle`) rather than coining size words. Source: ADR-0017.
 
+## RAT:R-SKIN-21
+Monky's modal backdrop left one reusable paint fact after structure had already moved to Ermine:
+`background-color: var(--shadow-color)`. The z-index beside it is host identity, but the dimming
+colour itself recurs as a general UI object: a scrim is the translucent field between the page and
+an overlay. It cannot be modeled as `alpha-*`, because `opacity` belongs to the element and its
+rendered subtree; on Monky's backdrop that would also fade the dialog child. The correct relatum is
+the backdrop's own background paint, so `scrim` is placed on the `skin-ground` axis and conflicts
+with ordinary `ground-*` words. Its socket is a full alpha background colour, defaulting to neutral
+black rather than a palette role; a project can bind `--scrim` to match its shadow/theme policy.
+Source: ADR-0059.
+
 ## RAT:R-STATE-13
 The reveal-on-row-state pattern appeared independently in two surfaces (the search row's edit
 icon, the suggestion row's delete action) — the same recurrence bar that admitted `hover:` —

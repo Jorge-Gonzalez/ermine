@@ -144,7 +144,12 @@ const EMISSION: Record<string, EmitSpec> = {
   // Carrier steps read the carrier-prefixed socket (`ink-soft` → --ink-soft); role
   // hues read the un-prefixed role socket (`ink-fail` → --fail), since a role is a
   // shared hue that any carrier can wear (R-SKIN-05).
-  "skin-ground": { effectKind: "css", plain: carrierEmission("ground", "background") },
+  "skin-ground": {
+    effectKind: "css",
+    plain: (word) => word === "scrim"
+      ? { background: "var(--scrim, rgb(0 0 0 / 35%))" }
+      : carrierEmission("ground", "background")(word),
+  },
   "skin-ink": { effectKind: "css", plain: carrierEmission("ink", "color") },
   "skin-rule": { effectKind: "css", plain: carrierEmission("rule", "border-color") },
 
@@ -880,7 +885,7 @@ export const VOCABULARY: Record<string, string[]> = {
   overflow: ["scroll-x", "scroll-y", "scroll-auto", "clip", "hidden", "overflow-visible"],
   "position-mode": ["position-static", "position-relative", "position-absolute", "position-fixed", "position-sticky"],
   "stacking-context": ["isolate"],
-  "skin-ground": carrierWords("ground"),
+  "skin-ground": [...carrierWords("ground"), "scrim"],
   "skin-ink": carrierWords("ink"),
   "skin-rule": [
     ...carrierWords("rule"),

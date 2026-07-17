@@ -349,6 +349,12 @@
       "anchor": "ADR-0058"
     },
     {
+      "id": "ADR-0059",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0059-scrim-backdrop-treatment.md",
+      "anchor": "ADR-0059"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
@@ -1087,6 +1093,12 @@
       "anchor": "R-SKIN-20"
     },
     {
+      "id": "R-SKIN-21",
+      "register": "constitution",
+      "file": "constitution/ERMINE.md",
+      "anchor": "R-SKIN-21"
+    },
+    {
       "id": "R-SPACE-01",
       "register": "constitution",
       "file": "constitution/ERMINE.md",
@@ -1817,6 +1829,12 @@
       "register": "rationale",
       "file": "constitution/ERMINE-RATIONALE.md",
       "anchor": "RAT:R-SKIN-20"
+    },
+    {
+      "id": "RAT:R-SKIN-21",
+      "register": "rationale",
+      "file": "constitution/ERMINE-RATIONALE.md",
+      "anchor": "RAT:R-SKIN-21"
     },
     {
       "id": "RAT:R-SPACE-01",
@@ -2785,6 +2803,11 @@
     {
       "from": "RAT:R-SKIN-20",
       "to": "R-SKIN-20",
+      "type": "rationale-of"
+    },
+    {
+      "from": "RAT:R-SKIN-21",
+      "to": "R-SKIN-21",
       "type": "rationale-of"
     },
     {

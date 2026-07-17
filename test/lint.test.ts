@@ -80,6 +80,8 @@ const cases: Case[] = [
   { s: "undecorated hover:underlined", expect: "ok", why: "base and hover text decoration scopes are independent" },
   { s: "elevated-soft", expect: "ok", why: "soft elevation strength" },
   { s: "elevated-soft elevated", expect: "fail", why: "one elevation strength per scope" },
+  { s: "scrim", expect: "ok", why: "backdrop-dimming ground treatment" },
+  { s: "scrim ground", expect: "fail", why: "scrim owns background on the ground axis" },
   { s: "undecorated underlined", expect: "fail", why: "two text-decoration treatments in one scope" },
   // sub-dial axes compose
   { s: "align-center justify-between content-align-start", expect: "ok", why: "different sub-dials (align-items vs justify-content vs align-content)" },

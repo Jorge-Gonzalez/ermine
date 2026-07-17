@@ -760,14 +760,16 @@ const radiusSideToken = (side: "top" | "bottom"): Token => ({
 // implements: R-TYPE-01, R-SKIN-01
 export const SKIN: AxisRecord[] = [
   {
-    // skin-ground: the interior carrier (R-SKIN-03). Owns `background`; each word reads
+    // skin-ground: the interior carrier (R-SKIN-03). Owns `background`; each carrier word reads
     // its like-named socket — carrier steps (hierarchy + interaction tones) plus role
     // hues that ride the carrier (`ground-fail` = a fail-tinted surface).
+    // `scrim` is the backdrop-dimming treatment on this same axis (R-SKIN-21), so it
+    // conflicts with ordinary ground words instead of layering another background.
     axis: "skin-ground",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["ground", ...carrierSuffixes("ground").map((s) => `ground-${s}`)],
-    tokens: [carrierToken("ground")],
+    valueSpace: ["ground", ...carrierSuffixes("ground").map((s) => `ground-${s}`), "scrim"],
+    tokens: [carrierToken("ground"), { pattern: /^scrim$/, shape: "scrim" }],
     default: null,
     controls: ["background"],
     mustNeverTouch: ["display", "gap", "flex", "position", "color", "border-color", "border-radius", "font-size"],
@@ -1102,10 +1104,12 @@ export const SKIN_PLANE = {
   },
   // R-SKIN-09: elevation treatment sockets — full box-shadow values (geometry + colour).
   // Optional: the emitter composes a default geometry on `var(--shadow)` when unbound.
+  // R-SKIN-21: scrim socket — full alpha background colour for backdrop dimming.
   // R-SKIN-07: the typeface-variant facet reads its socket the same way (default:
   // the platform's generic).
   treatments: {
     elevation: ["shadow-elevated-soft", "shadow-elevated"],
+    backdrop: ["scrim"],
     typeface: ["font-mono"],
     // R-SKIN-11: the line weight the presence words emit; themes rebind for heavier rules.
     line: ["rule-weight"],

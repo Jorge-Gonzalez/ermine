@@ -94,7 +94,7 @@ export interface ErminePlainProps {
   /** axis `state.relational` */
   relational?: "active-descendant" | readonly ("active-descendant")[];
   /** axis `skin-ground` */
-  skinGround?: "ground" | "ground-subtle" | "ground-defined" | "ground-hover" | "ground-active" | "ground-selected" | "ground-accent" | "ground-accent-soft" | "ground-accent-faint" | "ground-pass" | "ground-pass-faint" | "ground-warn" | "ground-warn-faint" | "ground-fail" | "ground-fail-faint" | "ground-note" | "ground-note-faint";
+  skinGround?: "ground" | "ground-subtle" | "ground-defined" | "ground-hover" | "ground-active" | "ground-selected" | "ground-accent" | "ground-accent-soft" | "ground-accent-faint" | "ground-pass" | "ground-pass-faint" | "ground-warn" | "ground-warn-faint" | "ground-fail" | "ground-fail-faint" | "ground-note" | "ground-note-faint" | "scrim";
   /** axis `skin-ink` */
   skinInk?: "ink" | "ink-soft" | "ink-muted" | "ink-faint" | "ink-inverse" | "ink-selected" | "ink-accent" | "ink-accent-soft" | "ink-accent-faint" | "ink-pass" | "ink-pass-faint" | "ink-warn" | "ink-warn-faint" | "ink-fail" | "ink-fail-faint" | "ink-note" | "ink-note-faint";
   /** axis `font-size` */
