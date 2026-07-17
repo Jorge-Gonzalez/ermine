@@ -223,7 +223,7 @@ function familyReading(id: string): string {
     case "editor layout bridge":
       return "Layout handoff between the editor shell and the authored-content island.";
     case "private drawing / engine pseudo":
-      return "Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts.";
+      return "Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar adapter parts.";
     case "control-state recipes":
       return "Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards.";
     case "exact attachment / geometry":
@@ -359,7 +359,9 @@ function renderAssimilationTargetSection(review: RuleActionReviewInput, groups: 
 
 The conserved ledger still counts all project-owned residue. For word-assimilation planning,
 semantic fragments and content-editor default substrate rules are excluded because they are
-not missing flat words: they are recipe/fragments or a deliberate authored-HTML island.
+not missing flat words. Semantic fragments are adoption sub-products: named middle-layer
+objects discovered by subtraction, not Ermine targets and not unassimilated Ermine work.
+The authored-content substrate is likewise a deliberate authored-HTML island.
 
 ${table(["bucket", "declarations", "rules", "reading"], [
     [
@@ -372,7 +374,7 @@ ${table(["bucket", "declarations", "rules", "reading"], [
       "semantic fragments excluded",
       String(target.semanticFragmentDeclarations),
       String(target.semanticFragmentRules),
-      "Keycap, callout-arrow, segmented-pill, engine-scrollbar, generated-placeholder, and foreign-overlay-host fragments.",
+      "Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work.",
     ],
     [
       "content-editor defaults excluded",
@@ -390,7 +392,8 @@ ${table(["bucket", "declarations", "rules", "reading"], [
 
 The exclusion is union-aware: ${target.excludedDeclarations} declarations across
 ${target.excludedRules} rules are outside the word-assimilation target. They remain visible
-in the conserved ledger and boundary reports.
+in the conserved ledger and boundary reports for full CSS accounting, not because they are
+missed Ermine assimilation.
 
 ### Remaining Target Shape
 
@@ -448,7 +451,7 @@ function renderPrivateDrawingSection(groups: RuleGroup[]): string {
   const examples = [
     [".sf-segmented-pill::before", "Segmented-control active pill driven by CSS variables and state."],
     [".sf-keycap-raised::after", "Keyboard cap underside/shadow drawing."],
-    ["::-webkit-scrollbar*", "Browser-specific scrollbar parts after standard socket integration."],
+    ["::-webkit-scrollbar*", "Browser-specific scrollbar adapter parts after standard socket integration."],
     [".sf-callout-arrow*", "CSS triangle arrow drawing and orientation."],
     [".sf-generated-placeholder:empty::before", "Placeholder drawing tied to generated content."],
     [".sf-keycap and variants", "Exact keyboard cap geometry."],
@@ -471,8 +474,8 @@ Reading: these are named recipe boundaries, not missing flat words. The keyboard
 beveled object, the callout arrow is a CSS triangle, the segmented pill is a pseudo-element
 driven by component coordinate variables, the empty placeholder is generated content, and the
 remaining scrollbar rules are engine pseudo-elements after Ermine's standard socket handoff.
-They should stay local, move to project recipes, or be delegated to a post-processing layer
-before Ermine considers any new atomic words.`;
+They should be delegated to a browser-adapter/post-processing layer before Ermine considers
+any new atomic words.`;
 }
 
 function renderControlStateSection(groups: RuleGroup[]): string {
@@ -590,9 +593,10 @@ drawing, code/pre blocks, blockquotes, and host identity.
 3. Pseudo and engine drawing remains correctly project-owned.
 
    Keyboard caps, suggestion arrows, segmented-control sliders, empty-content placeholders,
-   and WebKit scrollbar parts are drawing recipes. Some declarations use values Ermine can
-   name in isolation, but the authored rule is a miniature drawing program. The useful
-   future extraction is a recipe/molecule with sockets, not more flat class words.
+   and WebKit scrollbar adapter parts are boundary recipes. Some declarations use values Ermine
+   can name in isolation, but the authored rule is either a miniature drawing program or an engine
+   adapter. The useful future extraction is a recipe/molecule with sockets for drawings, and a
+   browser-adapter/post-process layer for scrollbar pseudo-elements, not more flat class words.
 
 4. Local identity is small and explicit.
 

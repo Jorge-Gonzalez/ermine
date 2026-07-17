@@ -3,11 +3,11 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "82663322f140d4e42ba0d74a86f5eb72b8a3c9f6"
+    "projectCommit": "c356463cf08540968cf871b5fb640240601cc551"
   },
   "summary": {
-    "totalDeclarations": 502,
-    "residueDeclarations": 104,
+    "totalDeclarations": 498,
+    "residueDeclarations": 100,
     "assimilable": 0,
     "byCode": {
       "ermine-emitted": 283,
@@ -17,7 +17,7 @@
       "assimilable": 0,
       "recipe-identity": 21,
       "rule-mechanics": 0,
-      "brand-identity": 2,
+      "brand-identity": 0,
       "affordance-mechanics": 0,
       "component-contract": 0,
       "state-mechanics": 1,
@@ -32,48 +32,12 @@
       "elevation-followup": 0,
       "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 2,
+      "identity-geometry": 0,
       "skin-review": 0,
       "identity-review": 0
     }
   },
   "records": [
-    {
-      "id": "src/styles/entries/pages.css::.page-title::font-family::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 12,
-      "selector": ".page-title",
-      "property": "font-family",
-      "value": "'IBM Plex Condensed Light', sans-serif",
-      "code": "brand-identity"
-    },
-    {
-      "id": "src/styles/entries/pages.css::body::font-family::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 16,
-      "selector": "body",
-      "property": "font-family",
-      "value": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial",
-      "code": "brand-identity"
-    },
-    {
-      "id": "src/styles/entries/pages.css::body::margin::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 17,
-      "selector": "body",
-      "property": "margin",
-      "value": "0",
-      "code": "identity-geometry"
-    },
-    {
-      "id": "src/styles/entries/pages.css::body::padding::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 18,
-      "selector": "body",
-      "property": "padding",
-      "value": "0",
-      "code": "identity-geometry"
-    },
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content::font-family::1",
       "file": "src/styles/fragments/semantic-fragments.css",

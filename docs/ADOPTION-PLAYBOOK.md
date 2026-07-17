@@ -52,6 +52,10 @@ the internal style structure of a component without importing a broad component-
 Monky now names this layer with `sf-*` classes and centralizes it in
 `src/styles/fragments/semantic-fragments.css`; those classes are project recipe hooks, not
 Ermine words.
+For adoption accounting, semantic fragments are counted as discovered sub-products of the
+conversion: they remain visible in the conserved project-owned ledger for auditability, but
+they are excluded from the adjusted word-assimilation target and should not be read as
+unassimilated Ermine work.
 The detailed model and current Monky-discovered fragments are documented in
 [`SEMANTIC-FRAGMENTS.md`](SEMANTIC-FRAGMENTS.md). The historical decision is ADR-0057.
 
@@ -74,7 +78,7 @@ The detailed model and current Monky-discovered fragments are documented in
 | `keycap-drawing-boundary` | boundary | review | Keyboard-cap bevel, shadow, and micro-geometry stay local or become a keycap recipe. |
 | `callout-arrow-boundary` | boundary | review | CSS triangle arrows stay local or become a callout-arrow recipe. |
 | `segmented-pill-boundary` | boundary | review | Segmented-control active-pill pseudo geometry and coordinate motion stay recipe-local. |
-| `engine-scrollbar-boundary` | boundary | mechanical | Vendor scrollbar pseudo-elements stay project/post-process owned after standard socket integration. |
+| `engine-scrollbar-boundary` | boundary | mechanical | Vendor scrollbar pseudo-elements stay post-process owned after standard socket integration. |
 | `generated-placeholder-boundary` | boundary | mechanical | Generated placeholder pseudo content stays local or becomes an editor placeholder recipe. |
 | `pseudo-drawing-boundary` | boundary | mechanical | Pseudo-element drawing stays local or enters as a recipe/molecule. |
 | `authored-content-substrate-boundary` | boundary | human | Rich-text descendants remain an authored-HTML substrate, not flat utility gaps. |

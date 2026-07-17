@@ -8,20 +8,20 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 104 |
+| reviewed residue declarations | 100 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
 | likely recipe/molecule | 99 |
-| likely local identity | 5 |
+| likely local identity | 1 |
 
 ## By Rule Action
 
 | rule action | declarations |
 | --- | --- |
 | attachment-edge-layer | 2 |
-| spacing-rhythm | 16 |
+| spacing-rhythm | 14 |
 | surface-line-elevation-cutout | 9 |
-| typography-content | 23 |
+| typography-content | 21 |
 | interaction-affordance-state | 6 |
 | motion-transition | 3 |
 | reset-inheritance-neutralization | 4 |
@@ -32,14 +32,13 @@ generalization, recipe, and local-identity pressure.
 | latent outcome | declarations |
 | --- | --- |
 | recipe | 99 |
-| local-identity | 5 |
+| local-identity | 1 |
 
 ## By Current Ledger Code
 
 | current code | declarations |
 | --- | --- |
 | recipe-identity | 21 |
-| brand-identity | 2 |
 | state-mechanics | 1 |
 | parent-relational | 1 |
 | pseudo-mechanics | 23 |
@@ -47,7 +46,6 @@ generalization, recipe, and local-identity pressure.
 | motion-followup | 1 |
 | opacity-followup | 2 |
 | user-content | 43 |
-| identity-geometry | 2 |
 
 ## Matched Playbook Recipes
 
@@ -61,10 +59,10 @@ of residue declarations.
 | keycap-drawing-boundary | boundary | review | 15 | Group keycap face, bevel, shadow, and exact micro-padding as one drawing recipe. |
 | segmented-pill-boundary | boundary | review | 13 | Group active-pill pseudo geometry, custom coordinate variables, opacity, and snap/slide timing. |
 | control-state-recipe-boundary | boundary | review | 8 | Separate Ermine-owned perceptual state skin from project-owned behavior and invariant selectors. |
-| engine-scrollbar-boundary | boundary | mechanical | 8 | Keep engine-specific pseudo selectors grouped by scrollbar part. |
-| root-and-structural-reset-boundary | boundary | mechanical | 5 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
+| engine-scrollbar-boundary | boundary | mechanical | 8 | Keep engine-specific pseudo selectors grouped by scrollbar part until a post-process adapter owns them. |
 | callout-arrow-boundary | boundary | review | 4 | Group zero-size box, transparent borders, orientation colour, and attachment together. |
 | generated-placeholder-boundary | boundary | mechanical | 3 | Group generated content, placeholder colour, and pointer-events suppression. |
+| root-and-structural-reset-boundary | boundary | mechanical | 3 | Classify as boundary even when an admitted `none` word can emit the same declaration. |
 | dimension-role-measure | conversion | review | 2 | Cluster repeated values by role, bind the project metric, admit or use a role word, then migrate the element class string. |
 | edge-attachment | conversion | review | 2 | Map `top: 100%` to `attach-below`, `bottom: 100%` to `attach-above`, and paired `left/right: 0` to `stretch-inline`. |
 | foreign-overlay-host-boundary | boundary | review | 2 | Group fixed host positioning and the configurable foreign-page z floor as one overlay-host fragment. |
@@ -83,8 +81,6 @@ of residue declarations.
 | reset-inheritance-neutralization | recipe | 4 | promote as molecule/recipe only if reused |
 | attachment-edge-layer | recipe | 2 | promote as molecule/recipe only if reused |
 | motion-transition | recipe | 2 | promote as molecule/recipe only if reused |
-| spacing-rhythm | local-identity | 2 | keep local after invariance/scale tests |
-| typography-content | local-identity | 2 | keep local after invariance/scale tests |
 | motion-transition | local-identity | 1 | keep local after invariance/scale tests |
 
 ## Reading

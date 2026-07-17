@@ -3,25 +3,25 @@
   "project": "monky",
   "source": {
     "ermineCommit": "ed12f35b46a9e139bbdec298ae11fe98d4a86840",
-    "projectCommit": "82663322f140d4e42ba0d74a86f5eb72b8a3c9f6"
+    "projectCommit": "c356463cf08540968cf871b5fb640240601cc551"
   },
   "inputs": {
     "currentLedger": "reports/adoption/monky/current-ledger.json"
   },
   "summary": {
-    "reviewedDeclarations": 104,
+    "reviewedDeclarations": 100,
     "assimilableNow": 0,
     "latentGeneralizable": 0,
     "likelyRecipe": 99,
-    "likelyLocal": 5,
+    "likelyLocal": 1,
     "byRuleAction": {
       "already-admitted": 0,
       "dimension-constraint": 0,
       "attachment-edge-layer": 2,
-      "spacing-rhythm": 16,
+      "spacing-rhythm": 14,
       "alignment-layout": 0,
       "surface-line-elevation-cutout": 9,
-      "typography-content": 23,
+      "typography-content": 21,
       "interaction-affordance-state": 6,
       "motion-transition": 3,
       "reset-inheritance-neutralization": 4,
@@ -33,7 +33,7 @@
       "latent-facet": 0,
       "latent-scale": 0,
       "recipe": 99,
-      "local-identity": 5
+      "local-identity": 1
     },
     "byCurrentCode": {
       "ermine-emitted": 0,
@@ -43,7 +43,7 @@
       "assimilable": 0,
       "recipe-identity": 21,
       "rule-mechanics": 0,
-      "brand-identity": 2,
+      "brand-identity": 0,
       "affordance-mechanics": 0,
       "component-contract": 0,
       "state-mechanics": 1,
@@ -58,7 +58,7 @@
       "elevation-followup": 0,
       "reset-absence": 0,
       "user-content": 43,
-      "identity-geometry": 2,
+      "identity-geometry": 0,
       "skin-review": 0,
       "identity-review": 0
     },
@@ -74,7 +74,7 @@
       "side-corner-facets": 0,
       "state-backed-prefix": 1,
       "control-state-recipe-boundary": 8,
-      "root-and-structural-reset-boundary": 5,
+      "root-and-structural-reset-boundary": 3,
       "keycap-drawing-boundary": 15,
       "callout-arrow-boundary": 4,
       "segmented-pill-boundary": 13,
@@ -86,68 +86,6 @@
     }
   },
   "declarations": [
-    {
-      "id": "src/styles/entries/pages.css::.page-title::font-family::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 12,
-      "selector": ".page-title",
-      "property": "font-family",
-      "value": "'IBM Plex Condensed Light', sans-serif",
-      "currentCode": "brand-identity",
-      "ruleAction": "typography-content",
-      "latentOutcome": "local-identity",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local"
-    },
-    {
-      "id": "src/styles/entries/pages.css::body::font-family::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 16,
-      "selector": "body",
-      "property": "font-family",
-      "value": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial",
-      "currentCode": "brand-identity",
-      "ruleAction": "typography-content",
-      "latentOutcome": "local-identity",
-      "function": "sets typeface, emphasis, wrapping, rich content, or text semantics",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local"
-    },
-    {
-      "id": "src/styles/entries/pages.css::body::margin::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 17,
-      "selector": "body",
-      "property": "margin",
-      "value": "0",
-      "currentCode": "identity-geometry",
-      "ruleAction": "spacing-rhythm",
-      "latentOutcome": "local-identity",
-      "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local",
-      "playbookRecipes": [
-        "root-and-structural-reset-boundary"
-      ]
-    },
-    {
-      "id": "src/styles/entries/pages.css::body::padding::1",
-      "file": "src/styles/entries/pages.css",
-      "line": 18,
-      "selector": "body",
-      "property": "padding",
-      "value": "0",
-      "currentCode": "identity-geometry",
-      "ruleAction": "spacing-rhythm",
-      "latentOutcome": "local-identity",
-      "function": "distributes padding, margin, or cluster rhythm",
-      "erminePressure": "keep local after invariance/scale tests",
-      "proposedForm": "keep local",
-      "playbookRecipes": [
-        "root-and-structural-reset-boundary"
-      ]
-    },
     {
       "id": "src/styles/fragments/semantic-fragments.css::.sf-authored-content::font-family::1",
       "file": "src/styles/fragments/semantic-fragments.css",

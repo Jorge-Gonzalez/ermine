@@ -20,26 +20,29 @@ resolution?
 
 Applied to the two buckets previously called "genuine identity" (originally measured from
 current-ledger.json, Monky 386c4fb; live ledger counts have since moved as admitted words
-were migrated). Current live ledger after the inferable control residue cleanup is
-Ermine ed12f35 / Monky 8266332:
+were migrated). Current live ledger after the page entry cleanup is
+Ermine ed12f35 / Monky c356463:
 
-  current declarations:                 502
+  current declarations:                 498
   adopted/infrastructure declarations:  398
-  project-owned residue declarations:   104
+  project-owned residue declarations:   100
   assimilable now:                        0
-  word-assimilation target:              14 declarations across 11 rules
+  word-assimilation target:              10 declarations across 9 rules
 
 The word-assimilation target is the project-owned residue after excluding semantic fragments
 and authored-content default substrate rules now recognized as boundaries. The conserved ledger
-still carries the full 104 project-owned declarations; 90 declarations across 37 rules are
+still carries the full 100 project-owned declarations; 90 declarations across 37 rules are
 deliberately outside the flat-word target: 45 semantic-fragment declarations and
 45 content-editor default declarations.
+Semantic fragments are counted this way because they are adoption sub-products: discovered
+middle-layer style units, not Ermine targets and not unassimilated Ermine work. They remain in
+the conserved ledger only so every project-owned declaration stays auditable.
 
 Current residue by reason code:
-  recipe-identity 21, brand-identity 2, state-mechanics 1,
+  recipe-identity 21, state-mechanics 1,
   parent-relational 1, pseudo-mechanics 23, scrollbar-followup 8,
   motion-followup 1, opacity-followup 2,
-  user-content 43, identity-geometry 2.
+  user-content 43.
 
 Historical invariance sample:
 
@@ -158,7 +161,9 @@ from the sharper word-assimilation target: excluding semantic fragments and cont
 defaults left 43 declarations across 26 rules for future word/recipe/local-identity review.
 The semantic-fragment relocation then made that middle layer explicit in Monky:
 `src/styles/fragments/semantic-fragments.css` owns the `sf-*` fragment hooks while product
-classes remain available for behavior/tests. Those counts stayed conserved at 521/390/131.
+classes remain available for behavior/tests. Those counts stayed conserved at 521/390/131,
+but the fragments were thereafter counted as positive middle-layer products outside the
+adjusted Ermine word-assimilation target.
 The popup hook dissolution then removed the empty `src/popup/popup.css` sheet, retired the
 remaining `popup-*` markup hooks, and replaced the bespoke inline site switch drawing with an
 ordinary Ermine-styled checkbox. The current ledger counts stay conserved.
@@ -204,6 +209,10 @@ separator into existing Ermine words, deleted the now-empty content-editor style
 disabled opacity and success hover skin into explicit button class strings, and converted clickable
 label/group cursor rows to `pressable`. Live residue is now 104 and the adjusted word-assimilation
 target is 14 declarations across 11 rules.
+The page entry cleanup then removed the redundant standalone-page body reset/font override and the
+now-unneeded `.page-title` hook. The reset already owns body margin/padding, and the theme font
+layer owns the IBM Plex body stack; live residue is now 100 and the adjusted word-assimilation
+target is 10 declarations across 9 rules.
 The remaining target is recipe/local-identity review rather than immediate flat-word pressure.
 
 ========================================================================
@@ -225,6 +234,7 @@ historical ledger. Retired sheets that no longer exist in current Monky:
   - src/content/overlays/deleteConfirm/deleteConfirmStyles.css
   - src/options/options.css
   - src/styles/components/content-editor.css
+  - src/styles/entries/pages.css
 
 Note: the fill/clamp/center-x/center-y/max-width-2xl/centered+flush-block/grid-fit-sm
 migrations removed the CSS rules for macro-editor-view, macro-search-view, settings-view
@@ -255,8 +265,9 @@ residue pass then retired `editorViewStyles.css` by moving its body flex, toast 
 toast shadow onto Ermine words. The unused CSS cleanup then removed the comment-only modal,
 search, settings, delete-confirm, and options stylesheets. The inferable control residue cleanup
 then deleted the now-empty content-editor stylesheet after moving its remaining toolbar/menu
-micro styles into Ermine class strings. The inventory below is the current live non-Ermine class
-surface after the control residue cleanup; comment-only sheets and retired hooks are no longer
+micro styles into Ermine class strings. The page entry cleanup then deleted the redundant standalone
+page stylesheet after reset/theme inheritance covered it. The inventory below is the current live
+non-Ermine class surface after the page entry cleanup; comment-only sheets and retired hooks are no longer
 listed as CSS-backed style owners.
 
 CSS-backed local class selectors by source file (current CSS declarations, with generated
@@ -264,9 +275,6 @@ Ermine grammar and infrastructure/theme/substrate sheets filtered out):
 
 src/styles/fragments/semantic-fragments.css:
 is-sliding, seg-snap, sf-authored-content, sf-callout-arrow, sf-callout-arrow-bottom, sf-callout-arrow-top, sf-foreign-overlay-host, sf-generated-placeholder, sf-keycap, sf-keycap-raised, sf-segmented-control-option, sf-segmented-pill
-
-src/styles/entries/pages.css:
-page-title
 
 src/styles/skin/controls.css:
 btn, input-error, is-selected, min-selected-1, radio-label, selectable-group, shake
@@ -276,7 +284,7 @@ Ermine grammar words filtered out):
 action-toolbar, alert, alert-error, alert-success, bottom, btn-link, btn-link-danger, button-group, button-label, cancel, card, ce-link-field, ce-link-input, ce-style-caret, ce-style-menu, ce-style-option, ce-style-option-label, ce-style-option-short, ce-toolbar, ce-toolbar-btn, ce-toolbar-icon, checkbox, clear-button, command-input, command-input-container, command-input-error, command-input-error-message, command-input-hint, command-input-label, command-suggestion-action, command-suggestion-actions, command-suggestion-command, command-suggestion-item, command-suggestion-text, command-suggestion-wrapper, command-suggestions, command-suggestions-label, confirm, content-editor, dark, delete, delete-confirm, delete-confirm-command, delete-confirm-danger, delete-confirm-message, delete-confirm-option, divider, editor-bottombar, editor-command, editor-command-error, editor-form, editor-popout, editor-sensitive, editor-title, editor-topbar, editor-topbar-lead, empty, empty-state, enabled, focused, fuzzy-search-field, icon-text, import-status--error, import-status--ok, input, light, list, list-item, macro-editor-view, macro-search-count, macro-search-empty, macro-search-footer, macro-search-input, macro-search-input-container, macro-search-item, macro-search-item-command, macro-search-item-confirm, macro-search-kbd, macro-search-results, macro-search-shortcut, macro-search-view, macro-suggestions-arrow, macro-suggestions-commands-list, macro-suggestions-footer, macro-suggestions-kbd, macro-suggestions-text-preview, modal-command-description, modal-command-hint, modal-command-item, modal-command-name, modal-content, modal-dialog, modal-nav-branding, modal-nav-container, modal-nav-icon, modal-nav-label, modal-nav-tab, mode-choice, mode-row, multi-select-list, page-container, panel-button, radio, search-field, search-focused-item, search-input, search-input-wrapper, search-spinner, searchable-list-container, searchable-list-search, searchable-list-toolbar, searchable-list-view, section, section-description, section-title, seg-control, seg-option, settings-appearance-controls, settings-body, settings-divider, settings-group, settings-import-status, settings-row, settings-row-label, settings-rows, settings-section-label, settings-view, show, toggle-field, toggle-field-description, toggle-field-input, toggle-field-label, toggle-field-text, toolbar, toolbar-button, top, validation-error
 
 Non-class local selectors and mechanics still in the ledger/review boundary:
-body, :host, content-editor rich-text descendants, scrollbar pseudo-elements,
+:host, content-editor rich-text descendants, scrollbar pseudo-elements,
 and the local `.shake { transition: none !important }` suppression. The `shake` keyframes now
 ship from generated Ermine CSS; unapplied `flash`/`pulse` are not current CSS-backed residue.
 
@@ -488,19 +496,21 @@ Reading:
   - These are the strongest "keep local or recipe" candidates. They are not class names
     looking for assimilation; they are small drawings made from CSS primitives.
   - The current named boundaries are keycap drawing, callout arrow drawing, segmented-control
-    pill drawing, generated placeholder drawing, and engine scrollbar parts.
+    pill drawing, generated placeholder drawing, and engine scrollbar adapter parts.
   - Standard scrollbar socket integration is already Ermine-owned; the remaining WebKit
-    pseudo-elements are browser-engine hooks or post-processing/recipe work.
+    pseudo-elements are browser-engine hooks for a browser-adapter/post-processing layer.
   - If reused broadly, they should enter Ermine as recipes/molecules, not as flat utility
     words.
 
 Likely Ermine pressure:
   keycap recipe; callout-arrow recipe; segmented-control recipe; placeholder recipe;
-  engine-scrollbar post-processing or recipe layer.
+  engine-scrollbar browser-adapter/post-processing layer.
 
-Summary shape after the inferable control residue cleanup:
-  - Adjusted word-assimilation target: 14 declarations across 11 rules after excluding
-    semantic fragments and content-editor defaults from the conserved 104-declaration residue.
+Summary shape after the page entry cleanup:
+  - Adjusted word-assimilation target: 10 declarations across 9 rules after excluding
+    semantic fragments and content-editor defaults from the conserved 100-declaration residue.
+  - Semantic fragments are not failed assimilation; they are discovered sub-products of the
+    conversion and are counted outside the Ermine word target by design.
   - Likely flat-word pressure: none in the current rule-action review (`0` latent-generalizable).
   - Most likely molecules/recipes: authored-content substrate / optional prose recipe,
     keycap, callout arrow, segmented-control pill, modal/dialog measure, search highlight.
@@ -632,6 +642,6 @@ Implementation artifacts:
 
 Immediate next action: treat the remaining target as recipe-boundary review, not a flat-word
 absorption queue. Disabled lockout, minimum-selection guards, authored-content substrate,
-keycap, callout, segmented-pill, generated-placeholder, and engine-scrollbar shapes should be
-promoted only if reuse proves they deserve sockets; otherwise they remain explicit Monky
-fragments or local control contracts.
+keycap, callout, segmented-pill, and generated-placeholder shapes should be promoted only if
+reuse proves they deserve sockets; engine-scrollbar pseudo-elements belong to a browser-adapter
+post-process. Otherwise they remain explicit Monky fragments or local control contracts.

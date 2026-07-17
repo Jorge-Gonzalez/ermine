@@ -58,6 +58,10 @@ Monky now makes the layer explicit with the `sf-*` prefix in markup and one styl
 `src/styles/fragments/semantic-fragments.css`, imported after skin and before components.
 The prefix means "semantic fragment": project-owned, utility-like, and deliberately outside
 Ermine's flat word grammar.
+In adoption accounting, these are positive sub-products of the conversion process. They are
+not targets for Ermine absorption. They stay visible in the conserved project-owned ledger so
+the CSS remains fully accounted for, but they are excluded from the adjusted word-assimilation
+target rather than counted as unassimilated residue.
 
 | fragment | explicit Monky shape | why it is a fragment |
 |---|---|---|
@@ -88,10 +92,10 @@ This process is useful because it is discoverable. The framework does not need t
 fragment up front. Real applications expose the fragments that matter.
 
 For assimilation reporting, semantic fragments should be excluded from the flat-word target
-while remaining visible in the conserved project-owned residue ledger. In Monky, the first
-named fragment set accounts for 43 declarations across 16 rules; paired with the
-authored-content default substrate, it narrows the current word-assimilation target to
-43 declarations across 26 rules.
+while remaining visible in the conserved project-owned residue ledger. In Monky, the current
+fragment set accounts for 45 declarations across 17 rules; paired with the authored-content
+default substrate, it narrows the current word-assimilation target to 10 declarations across
+9 rules.
 
 ## Possible Future Shape
 

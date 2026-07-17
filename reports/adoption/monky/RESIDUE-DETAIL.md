@@ -13,20 +13,19 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | source | commit |
 |---|---|
 | Ermine | `ed12f35b46a9e139bbdec298ae11fe98d4a86840` |
-| monky | `82663322f140d4e42ba0d74a86f5eb72b8a3c9f6` |
+| monky | `c356463cf08540968cf871b5fb640240601cc551` |
 
 ## Summary
 
-- Current declarations: 502
+- Current declarations: 498
 - Adopted/infrastructure declarations: 398
-- Project-owned residue declarations: 104
+- Project-owned residue declarations: 100
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
 | `recipe-identity` | 21 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
-| `brand-identity` | 2 | project brand typography and type treatment |
 | `state-mechanics` | 1 | JS/native state mechanics outside backed Ermine conditions |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
@@ -34,7 +33,6 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 | `motion-followup` | 1 | transition/animation timing (deferred to GAP-U-animation-plane) |
 | `opacity-followup` | 2 | opacity state treatment (named follow-up question) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
-| `identity-geometry` | 2 | project-exact geometry on a grammar-family property |
 
 ## recipe-identity (21)
 
@@ -70,17 +68,6 @@ a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 | 14 | `.btn:disabled` | `cursor: not-allowed` |
 | 26 | `.selectable-group > *` | `user-select: none` |
 | 30 | `.selectable-group > *:active` | `transform: scale(0.98)` |
-
-## brand-identity (2)
-
-project brand typography and type treatment
-
-### src/styles/entries/pages.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 12 | `.page-title` | `font-family: 'IBM Plex Condensed Light', sans-serif` |
-| 16 | `body` | `font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial` |
 
 ## state-mechanics (1)
 
@@ -223,14 +210,3 @@ rich-text defaults inside user-authored content
 | 107 | `.sf-authored-content a` | `color: var(--accent)` |
 | 108 | `.sf-authored-content a` | `text-decoration: underline` |
 | 112 | `.sf-authored-content a:hover` | `opacity: 0.8` |
-
-## identity-geometry (2)
-
-project-exact geometry on a grammar-family property
-
-### src/styles/entries/pages.css (2)
-
-| line | selector | declaration |
-|---:|---|---|
-| 17 | `body` | `margin: 0` |
-| 18 | `body` | `padding: 0` |

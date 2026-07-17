@@ -18,10 +18,10 @@ included.
 
 | metric | count |
 | --- | --- |
-| current declarations | 502 |
+| current declarations | 498 |
 | adopted/infrastructure declarations | 398 |
-| project-owned residue declarations | 104 |
-| project-owned residue rules | 48 |
+| project-owned residue declarations | 100 |
+| project-owned residue rules | 46 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 | latent-generalizable declarations | 0 |
@@ -31,27 +31,29 @@ included.
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
 | authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
-| private drawing / engine pseudo | 17 | 45 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar parts. |
+| private drawing / engine pseudo | 17 | 45 | Pseudo-elements, triangle arrows, keyboard-cap drawing, segmented-control slider, placeholder drawing, and WebKit scrollbar adapter parts. |
 | control-state recipes | 8 | 9 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
-| root/page/host identity | 2 | 4 | Host/page reset and brand type identity. |
 
 ## Word-Assimilation Target
 
 The conserved ledger still counts all project-owned residue. For word-assimilation planning,
 semantic fragments and content-editor default substrate rules are excluded because they are
-not missing flat words: they are recipe/fragments or a deliberate authored-HTML island.
+not missing flat words. Semantic fragments are adoption sub-products: named middle-layer
+objects discovered by subtraction, not Ermine targets and not unassimilated Ermine work.
+The authored-content substrate is likewise a deliberate authored-HTML island.
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 104 | 48 | All remaining project-owned declarations in the current ledger. |
-| semantic fragments excluded | 45 | 17 | Keycap, callout-arrow, segmented-pill, engine-scrollbar, generated-placeholder, and foreign-overlay-host fragments. |
+| conserved project-owned residue | 100 | 46 | All remaining project-owned declarations in the current ledger. |
+| semantic fragments excluded | 45 | 17 | Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 14 | 11 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 10 | 9 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
 The exclusion is union-aware: 90 declarations across
 37 rules are outside the word-assimilation target. They remain visible
-in the conserved ledger and boundary reports.
+in the conserved ledger and boundary reports for full CSS accounting, not because they are
+missed Ermine assimilation.
 
 ### Remaining Target Shape
 
@@ -59,7 +61,6 @@ in the conserved ledger and boundary reports.
 | --- | --- | --- | --- |
 | control-state recipes | 8 | 9 | Local control recipes such as disabled buttons, selectable groups, and minimum-selection guards. |
 | component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
-| root/page/host identity | 2 | 4 | Host/page reset and brand type identity. |
 
 ## By Source File
 
@@ -67,7 +68,6 @@ in the conserved ledger and boundary reports.
 | --- | --- |
 | `src/styles/fragments/semantic-fragments.css` | 38 |
 | `src/styles/skin/controls.css` | 8 |
-| `src/styles/entries/pages.css` | 2 |
 
 ## By Primary Rule Action
 
@@ -76,8 +76,8 @@ rules are listed later because a single selector can combine several kinds of re
 
 | primary rule action | rules |
 | --- | --- |
-| typography-content | 16 |
 | component-private-drawing | 15 |
+| typography-content | 14 |
 | interaction-affordance-state | 5 |
 | spacing-rhythm | 4 |
 | surface-line-elevation-cutout | 3 |
@@ -89,9 +89,9 @@ rules are listed later because a single selector can combine several kinds of re
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 27 |
+| 1 declaration | 26 |
 | 2 declarations | 9 |
-| 3 declarations | 6 |
+| 3 declarations | 5 |
 | 4+ declarations | 6 |
 
 This matters because most remaining rules are narrow and intentional. The six
@@ -120,13 +120,14 @@ drawing, code/pre blocks, blockquotes, and host identity.
 3. Pseudo and engine drawing remains correctly project-owned.
 
    Keyboard caps, suggestion arrows, segmented-control sliders, empty-content placeholders,
-   and WebKit scrollbar parts are drawing recipes. Some declarations use values Ermine can
-   name in isolation, but the authored rule is a miniature drawing program. The useful
-   future extraction is a recipe/molecule with sockets, not more flat class words.
+   and WebKit scrollbar adapter parts are boundary recipes. Some declarations use values Ermine
+   can name in isolation, but the authored rule is either a miniature drawing program or an engine
+   adapter. The useful future extraction is a recipe/molecule with sockets for drawings, and a
+   browser-adapter/post-process layer for scrollbar pseudo-elements, not more flat class words.
 
 4. Local identity is small and explicit.
 
-   3 residue rules contain `local-identity` outcomes. They are host/page
+   1 residue rules contain `local-identity` outcomes. They are host/page
    typography, overlay layer identity, root spacing resets, or local transition
    suppression. 0 of those rules are mixed with recipe declarations,
    which is expected for real CSS selectors.
@@ -167,7 +168,7 @@ should remember it as authored-content substrate evidence, not as scattered miss
 | --- | --- | --- |
 | `.sf-segmented-pill::before` | 10 | Segmented-control active pill driven by CSS variables and state. |
 | `.sf-keycap-raised::after` | 8 | Keyboard cap underside/shadow drawing. |
-| `::-webkit-scrollbar*` | 8 | Browser-specific scrollbar parts after standard socket integration. |
+| `::-webkit-scrollbar*` | 8 | Browser-specific scrollbar adapter parts after standard socket integration. |
 | `.sf-callout-arrow*` | 4 | CSS triangle arrow drawing and orientation. |
 | `.sf-generated-placeholder:empty::before` | 3 | Placeholder drawing tied to generated content. |
 | `.sf-keycap and variants` | 7 | Exact keyboard cap geometry. |
@@ -176,8 +177,8 @@ Reading: these are named recipe boundaries, not missing flat words. The keyboard
 beveled object, the callout arrow is a CSS triangle, the segmented pill is a pseudo-element
 driven by component coordinate variables, the empty placeholder is generated content, and the
 remaining scrollbar rules are engine pseudo-elements after Ermine's standard socket handoff.
-They should stay local, move to project recipes, or be delegated to a post-processing layer
-before Ermine considers any new atomic words.
+They should be delegated to a browser-adapter/post-processing layer before Ermine considers
+any new atomic words.
 
 ### Control-State Recipes
 
@@ -203,8 +204,6 @@ evidence and poor flat-word candidates.
 
 | file | selector | declarations | rule actions | outcome | residue declarations |
 | --- | --- | --- | --- | --- | --- |
-| `src/styles/entries/pages.css` | `.page-title` | 1 | typography-content | local-identity | font-family: 'IBM Plex Condensed Light', sans-serif |
-| `src/styles/entries/pages.css` | `body` | 3 | typography-content, spacing-rhythm | local-identity | font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial<br>margin: 0<br>padding: 0 |
 | `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar` | 2 | component-private-drawing | recipe | width: var(--spacing-md) !important<br>height: var(--spacing-md) !important |
 | `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-thumb` | 3 | component-private-drawing | recipe | background: var(--tone) !important<br>border-radius: var(--radius-md) !important<br>border: 1px solid var(--tone-dim) !important |
 | `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-thumb:hover` | 1 | component-private-drawing | recipe | background: var(--accent-dim) !important |
