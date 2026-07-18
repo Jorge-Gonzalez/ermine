@@ -1,12 +1,15 @@
 import * as vscode from "vscode";
 
 import completionsJson from "./completions.generated.json" with { type: "json" };
+import explanationsJson from "./explanations.generated.json" with { type: "json" };
 import hoversJson from "./hovers.generated.json" with { type: "json" };
 import { classAttributeContextAt } from "./attributes.js";
-import type { CompletionData, HoverData, HoverEntry } from "./data.js";
+import type { CompletionData, ExplanationData, HoverData, HoverEntry } from "./data.js";
+import { explainClassParagraphMarkdown } from "./explain.js";
 
 const completions = completionsJson as CompletionData;
 const hovers = hoversJson as HoverData;
+const explanations = explanationsJson as ExplanationData;
 const hoverPatterns = hovers.patterns.map((entry) => ({ ...entry, matcher: new RegExp(entry.pattern) }));
 const scopePatterns = hovers.scopes.map((pattern) => new RegExp(pattern));
 
@@ -90,10 +93,32 @@ const hoverProvider: vscode.HoverProvider = {
   },
 };
 
+async function explainClassParagraph(): Promise<void> {
+  const editor = vscode.window.activeTextEditor;
+  if (!editor) return;
+  const document = editor.document;
+  const context = classAttributeContextAt(document.getText(), document.offsetAt(editor.selection.active));
+  if (!context) {
+    await vscode.window.showInformationMessage("Place the cursor inside a literal class or className attribute.");
+    return;
+  }
+  const classString = document.getText(new vscode.Range(
+    document.positionAt(context.valueStart),
+    document.positionAt(context.valueEnd),
+  ));
+  const markdown = explainClassParagraphMarkdown(classString, explanations);
+  const explanationDocument = await vscode.workspace.openTextDocument({
+    language: "markdown",
+    content: markdown,
+  });
+  await vscode.window.showTextDocument(explanationDocument, { preview: true, viewColumn: vscode.ViewColumn.Beside });
+}
+
 export function activate(context: vscode.ExtensionContext): void {
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(DOCUMENTS, completionProvider),
     vscode.languages.registerHoverProvider(DOCUMENTS, hoverProvider),
+    vscode.commands.registerCommand("ermine.explainClassParagraph", explainClassParagraph),
   );
 }
 

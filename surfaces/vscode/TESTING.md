@@ -3,6 +3,26 @@
 The extension-host path is manual on purpose: D4 does not add the VS Code test
 harness or download a second VS Code build.
 
+## Derived Data Contract
+
+The extension ships generated JSON caches for completions, hovers, and paragraph
+explanations. These files are not a second source of truth. They are derived from
+the registry, generated guide prose, `parseWord()`, and `emit()` by:
+
+```sh
+npm run vscode
+```
+
+Every update must pass:
+
+```sh
+npm run vscode:check
+```
+
+That check compares the committed JSON byte-for-byte against freshly rendered
+data. If the registry, guide, parser, or emitter changes, the check fails until
+the cache is regenerated.
+
 1. From the repository root, regenerate the editor data:
 
    ```sh
@@ -42,7 +62,14 @@ harness or download a second VS Code build.
    “a row”, `Axis: structure`, and
    `Reference: src/ERMINE-SPEC.md §2.1 — structure`.
 
-6. Move the same text outside the `class` string and invoke completion again.
+6. Put the cursor inside the same `class` attribute and run
+   `Ermine: Explain Class Paragraph`.
+
+   Expected screenshot-in-words: a Markdown document opens beside the editor. It
+   shows the source paragraph, normalized paragraph, word table, emitted CSS,
+   diagnostics note, and a simple paragraph -> word -> axis graph.
+
+7. Move the same text outside the `class` string and invoke completion again.
 
    Expected: Ermine offers no completion and no hover. Literal `className`
    strings behave like `class`; interpolated template strings remain invisible,

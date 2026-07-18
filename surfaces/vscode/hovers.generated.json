@@ -6,7 +6,18 @@
     "^viewport-(sm|md|lg|xl)$",
     "^viewport-(portrait|landscape)$",
     "^container-(sm|md|lg|xl)$",
-    "^prefers-(reduced-motion|color-scheme-dark|contrast-more|reduced-transparency)$"
+    "^prefers-(reduced-motion|color-scheme-dark|contrast-more|reduced-transparency)$",
+    "^hover$",
+    "^focus$",
+    "^active$",
+    "^disabled$",
+    "^selected$",
+    "^checked$",
+    "^pressed$",
+    "^expanded$",
+    "^current$",
+    "^parent-hover$",
+    "^parent-selected$"
   ],
   "words": {
     "horizontal": {

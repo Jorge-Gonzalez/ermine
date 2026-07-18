@@ -13,8 +13,17 @@
     "onLanguage:html",
     "onLanguage:javascriptreact",
     "onLanguage:typescriptreact",
-    "onLanguage:vue"
+    "onLanguage:vue",
+    "onCommand:ermine.explainClassParagraph"
   ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ermine.explainClassParagraph",
+        "title": "Ermine: Explain Class Paragraph"
+      }
+    ]
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "check": "tsc -p tsconfig.json --noEmit"

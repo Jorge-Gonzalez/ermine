@@ -14,6 +14,7 @@
   "include": [
     "attributes.ts",
     "data.ts",
+    "explain.ts",
     "extension.ts",
     "*.generated.json"
   ]
