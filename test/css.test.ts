@@ -120,6 +120,11 @@ test("recessed-fail reads an inset fail-wash shadow socket (R-SKIN-09)", () => {
   assert.match(css, /\.focus\\:recessed-fail:focus \{[^}]*box-shadow: var\(--shadow-recessed-fail, inset 0 0 0 2px var\(--fail-faint\)\);/s);
 });
 
+test("recessed-soft reads a shallow neutral inset shadow socket (R-SKIN-09)", () => {
+  const css = toCss("recessed-soft");
+  assert.match(css, /\.recessed-soft \{[^}]*box-shadow: var\(--shadow-recessed-soft, inset 0 1px 3px rgb\(0 0 0 \/ 28%\)\);/s);
+});
+
 test("scrim paints backdrop dimming through an alpha background socket (R-SKIN-21)", () => {
   const css = toCss("scrim");
   assert.match(css, /\.scrim \{[^}]*background: var\(--scrim, rgb\(0 0 0 \/ 35%\)\);/s);

@@ -947,14 +947,15 @@ export const SKIN: AxisRecord[] = [
     // elevation: the box-shadow treatment (R-SKIN-09). Owns box-shadow; each word
     // reads its like-named socket with an Ermine default geometry. `elevated-soft`
     // is a close, low-offset drop shadow; `elevated` is the normal raised surface.
+    // `recessed-soft` is a shallow neutral inset for sunken controls;
     // `recessed-fail` is the shallow inset fail wash for invalid control emphasis.
     // Distinct from the z-scale's `raised` stacking tier — order, not look.
     // Identity shadows, arbitrary rings, and blend-mode compositing stay project-owned.
     axis: "elevation",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["elevated-soft", "elevated", "recessed-fail"],
-    tokens: [{ pattern: /^(elevated-soft|elevated|recessed-fail)$/, shape: "<elevation>" }],
+    valueSpace: ["elevated-soft", "elevated", "recessed-soft", "recessed-fail"],
+    tokens: [{ pattern: /^(elevated-soft|elevated|recessed-soft|recessed-fail)$/, shape: "<elevation>" }],
     default: null,
     controls: ["box-shadow"],
     mustNeverTouch: ["display", "gap", "flex", "position", "background", "color", "border-color", "border-radius", "font-size"],
@@ -1118,7 +1119,7 @@ export const SKIN_PLANE = {
   // R-SKIN-07: the typeface-variant facet reads its socket the same way (default:
   // the platform's generic).
   treatments: {
-    elevation: ["shadow-elevated-soft", "shadow-elevated", "shadow-recessed-fail"],
+    elevation: ["shadow-elevated-soft", "shadow-elevated", "shadow-recessed-soft", "shadow-recessed-fail"],
     backdrop: ["scrim"],
     typeface: ["font-mono"],
     // R-SKIN-11: the line weight the presence words emit; themes rebind for heavier rules.

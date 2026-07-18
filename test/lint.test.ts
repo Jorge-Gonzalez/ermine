@@ -88,6 +88,7 @@ const cases: Case[] = [
   { s: "truncate text-nowrap", expect: "fail", why: "truncate already owns nowrap as a text-flow treatment" },
   { s: "undecorated hover:underlined", expect: "ok", why: "base and hover text decoration scopes are independent" },
   { s: "elevated-soft", expect: "ok", why: "soft elevation strength" },
+  { s: "recessed-soft", expect: "ok", why: "soft recessed control treatment" },
   { s: "elevated-soft elevated", expect: "fail", why: "one elevation strength per scope" },
   { s: "scrim", expect: "ok", why: "backdrop-dimming ground treatment" },
   { s: "scrim ground", expect: "fail", why: "scrim owns background on the ground axis" },
