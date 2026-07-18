@@ -26,7 +26,11 @@ regenerated.
 The `Ermine: Explain Class Paragraph` command is different: it is bundled with
 the core paragraph explainer, so lint diagnostics, emitted CSS, and graph data
 come from the same `parseWord()`, `lint()`, and `emit()` implementation used by
-the rest of Ermine.
+the rest of Ermine. If the workspace contains an `ermine.combines` file, or if
+`ermine.combinesFile` points to another workspace-relative file, the command
+parses that source file directly and explains visible combine names against
+their expanded Ermine classes. The combine source file remains the authoring
+truth; there is no generated VS Code explanation cache to update.
 
 1. From the repository root, regenerate the editor data:
 
@@ -71,8 +75,10 @@ the rest of Ermine.
    `Ermine: Explain Class Paragraph`.
 
    Expected screenshot-in-words: a Markdown document opens beside the editor. It
-   shows the source paragraph, normalized paragraph, word table, emitted CSS,
-   diagnostics note, and a simple paragraph -> word -> axis graph.
+   shows the source paragraph, normalized visible paragraph, expanded paragraph,
+   visible-token table, word table with origins, emitted CSS, diagnostics, and a
+   simple paragraph -> word -> axis graph. If a combine file is present, the
+   heading area names the combine source.
 
 7. Move the same text outside the `class` string and invoke completion again.
 

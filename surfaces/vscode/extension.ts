@@ -5,11 +5,13 @@ import hoversJson from "./hovers.generated.json" with { type: "json" };
 import { classAttributeContextAt } from "./attributes.js";
 import type { CompletionData, HoverData, HoverEntry } from "./data.js";
 import { explainClassParagraphMarkdown } from "./explain.js";
+import { parseAndNormalizeCombines, type CombineDocument } from "../../src/combines.js";
 
 const completions = completionsJson as CompletionData;
 const hovers = hoversJson as HoverData;
 const hoverPatterns = hovers.patterns.map((entry) => ({ ...entry, matcher: new RegExp(entry.pattern) }));
 const scopePatterns = hovers.scopes.map((pattern) => new RegExp(pattern));
+const DEFAULT_COMBINES_FILE = "ermine.combines";
 
 const DOCUMENTS: vscode.DocumentSelector = [
   "html",
@@ -17,6 +19,12 @@ const DOCUMENTS: vscode.DocumentSelector = [
   "typescriptreact",
   "vue",
 ];
+
+interface LoadedCombines {
+  document?: CombineDocument;
+  source?: string;
+  error?: string;
+}
 
 function bodyStart(word: string): number {
   const colon = word.indexOf(":");
@@ -32,6 +40,42 @@ function hoverFor(word: string): HoverEntry | undefined {
 
 function markdownEscape(value: string): string {
   return value.replace(/[\\`*_{}\[\]()#+.!|>-]/g, "\\$&");
+}
+
+function configuredCombinesFile(document: vscode.TextDocument): string | undefined {
+  const value = vscode.workspace
+    .getConfiguration("ermine", document.uri)
+    .get<string>("combinesFile", DEFAULT_COMBINES_FILE)
+    .trim();
+  return value || undefined;
+}
+
+function workspaceFileUri(folder: vscode.WorkspaceFolder, file: string): vscode.Uri {
+  return vscode.Uri.joinPath(folder.uri, ...file.replace(/\\/g, "/").replace(/^\/+/, "").split("/").filter(Boolean));
+}
+
+async function loadCombinesFor(document: vscode.TextDocument): Promise<LoadedCombines> {
+  const file = configuredCombinesFile(document);
+  const folder = vscode.workspace.getWorkspaceFolder(document.uri) ?? vscode.workspace.workspaceFolders?.[0];
+  if (!file || !folder) return {};
+
+  const uri = workspaceFileUri(folder, file);
+  const source = vscode.workspace.asRelativePath(uri, false);
+  try {
+    const bytes = await vscode.workspace.fs.readFile(uri);
+    const text = new TextDecoder().decode(bytes);
+    return {
+      source,
+      document: parseAndNormalizeCombines(text, { sourceName: source }),
+    };
+  } catch (error) {
+    const code = typeof error === "object" && error !== null && "code" in error ? String(error.code) : "";
+    if (code === "FileNotFound") return {};
+    return {
+      source,
+      error: error instanceof Error ? error.message : String(error),
+    };
+  }
 }
 
 const completionProvider: vscode.CompletionItemProvider = {
@@ -104,7 +148,12 @@ async function explainClassParagraph(): Promise<void> {
     document.positionAt(context.valueStart),
     document.positionAt(context.valueEnd),
   ));
-  const markdown = explainClassParagraphMarkdown(classString);
+  const combines = await loadCombinesFor(document);
+  const markdown = explainClassParagraphMarkdown(classString, {
+    combines: combines.document,
+    combineSource: combines.source,
+    combineLoadError: combines.error,
+  });
   const explanationDocument = await vscode.workspace.openTextDocument({
     language: "markdown",
     content: markdown,

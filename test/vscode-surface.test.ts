@@ -9,6 +9,7 @@ import { classAttributeContextAt } from "../surfaces/vscode/attributes.ts";
 import type { CompletionData, CompletionEntry, HoverData } from "../surfaces/vscode/data.ts";
 import { explainClassParagraphMarkdown } from "../surfaces/vscode/explain.ts";
 import { renderData } from "../surfaces/vscode/generate-data.ts";
+import { parseAndNormalizeCombines } from "../src/combines.ts";
 
 const guide = await readFile(new URL("../src/ERMINE-GUIDE.md", import.meta.url), "utf8");
 const generatedCompletions = JSON.parse(await readFile(
@@ -62,6 +63,24 @@ test("paragraph review renders core explanation, emissions, and lint diagnostics
   assert.match(markdown, /display\.inner: flex/);
   assert.match(markdown, /ERROR unknown-word/);
   assert.match(markdown, /ERROR one-word-per-axis/);
+});
+
+test("paragraph review explains combines from the project combine source", () => {
+  const combines = parseAndNormalizeCombines(`
+    combine option-chip: [
+      selectable padding-inline-sm ground-subtle pressable
+    ]
+  `);
+  const markdown = explainClassParagraphMarkdown("option-chip selected:ink-accent", {
+    combines,
+    combineSource: "ermine.combines",
+  });
+  assert.match(markdown, /Combine source: `ermine\\.combines`/);
+  assert.match(markdown, /Normalized visible: `option\\-chip selected:ink\\-accent`/);
+  assert.match(markdown, /Expanded: `padding\\-inline\\-sm selectable ground\\-subtle pressable selected:ink\\-accent`/);
+  assert.match(markdown, /\| `option\\-chip` \| combine \| \(combine\) \|/);
+  assert.match(markdown, /\| `padding\\-inline\\-sm` \| combine `option\\-chip` \| base \| `padding`/);
+  assert.match(markdown, /`option\\-chip` -> `padding-inline:/);
 });
 
 test("attribute context accepts only D3's literal class forms", () => {

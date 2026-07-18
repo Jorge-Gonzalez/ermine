@@ -17,6 +17,16 @@
     "onCommand:ermine.explainClassParagraph"
   ],
   "contributes": {
+    "configuration": {
+      "title": "Ermine",
+      "properties": {
+        "ermine.combinesFile": {
+          "type": "string",
+          "default": "ermine.combines",
+          "description": "Workspace-relative Ermine combine definition file used by paragraph explanation."
+        }
+      }
+    },
     "commands": [
       {
         "command": "ermine.explainClassParagraph",

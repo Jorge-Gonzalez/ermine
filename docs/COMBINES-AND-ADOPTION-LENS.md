@@ -735,9 +735,10 @@ This declaration is browser-adapter boundary.
 6. Done: emit paragraph-aware combine/direct compound CSS.
 7. Done: build the pure paragraph explainer.
 8. Done: add the adoption cluster miner.
-8. Add the VS Code command with structured Markdown output.
-9. Add the graph view.
-10. Connect explanations to generated adoption reports.
+9. Done: add the VS Code command with structured Markdown output.
+10. Done: load workspace combine source in the VS Code paragraph explanation.
+11. Add the graph view.
+12. Connect explanations to generated adoption reports.
 
 The implementation should stay conservative: combines are named groups, collisions remain
 collisions, and semantic fragments remain CSS-bearing objects outside Ermine's flat word
