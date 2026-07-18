@@ -22,6 +22,7 @@
     "src/lint.ts",
     "src/emit.ts",
     "src/combines.ts",
+    "src/paragraph-explainer.ts",
     "src/emitter-types.ts",
     "src/derive-ownership.ts",
     "src/ownership.generated.json",
