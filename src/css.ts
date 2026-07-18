@@ -13,6 +13,10 @@ import { emit, EFFECT_KEYFRAMES } from "./emit.ts";
 import type { FacetRule } from "./emitter-types.ts";
 import { parseWord, type LintContext } from "./lint.ts";
 
+export interface BuildStylesheetOptions {
+  selectorForWord?: (word: string, authoredWord: string) => string;
+}
+
 // Effect atoms (R-MOTION-07) reference substrate @keyframes by name. Prepend the
 // block for each atom actually used — once, deduped — so the definition ships
 // with the stylesheet without leaking when no atom is present.
@@ -47,10 +51,11 @@ function mergeFacets(facets: FacetRule[]): { selector: string; property: string;
 // compound selectors. Exact environment scopes become at-rules; breakpoint
 // scopes without project-measured values, conditions, and mechanisms surface as
 // trailing integration hints so nothing is silently dropped.
-export function buildStylesheet(classStrings: string[], ctx: LintContext = {}): string {
+export function buildStylesheet(classStrings: string[], ctx: LintContext = {}, options: BuildStylesheetOptions = {}): string {
   const bySelector = new Map<string, Map<string, string>>();
   const byCondition = new Map<string, Map<string, Map<string, string>>>();
   const notes: string[] = [];
+  const selectorForWord = options.selectorForWord ?? ((_word: string, authoredWord: string) => classSelector(authoredWord));
   const put = (target: Map<string, Map<string, string>>, selector: string, prop: string, value: string) => {
     (target.get(selector) ?? target.set(selector, new Map()).get(selector)!).set(prop, value);
   };
@@ -82,11 +87,11 @@ export function buildStylesheet(classStrings: string[], ctx: LintContext = {}): 
         : (byCondition.get(condition!) ?? byCondition.set(condition!, new Map()).get(condition!)!);
       const rules = emit(innerWords.join(" "), ctx, base ? undefined : scope);
       const scopedSelector = (selector: string): string => {
-        if (base) return selector;
         const rewritten = innerWords.reduce(
-          (current, word, index) => current.replaceAll(`.${word}`, classSelector(authoredWords[index])),
+          (current, word, index) => replaceClassSelector(current, word, selectorForWord(word, authoredWords[index])),
           selector,
         );
+        if (base) return collapseDuplicateClasses(rewritten);
         if (ancestor) return `${ancestor} ${rewritten}`;
         return pseudo ? rewritten + pseudo : rewritten;
       };
@@ -123,6 +128,15 @@ function renderBlocks(selectors: Map<string, Map<string, string>>): string[] {
 
 function classSelector(word: string): string {
   return `.${word.replace(/([^a-zA-Z0-9_-])/g, "\\$1")}`;
+}
+
+function collapseDuplicateClasses(selector: string): string {
+  return selector.replace(/(\.[a-zA-Z0-9_-]+)(?:\1)+/g, "$1");
+}
+
+function replaceClassSelector(selector: string, word: string, replacement: string): string {
+  const escaped = classSelector(word).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return selector.replace(new RegExp(`${escaped}(?![a-zA-Z0-9_-])`, "g"), replacement);
 }
 
 // Breakpoint values are intentionally theme-measured, not registry constants.

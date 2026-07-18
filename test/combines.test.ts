@@ -2,6 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 import {
+  buildCombineStylesheet,
   expandCombineParagraph,
   formatCombineSource,
   normalizeCombines,
@@ -219,4 +220,57 @@ test("formatCombineSource preserves long-form metadata and formats classes", () 
   ]
 }\n`,
   );
+});
+
+test("buildCombineStylesheet emits declarations under the combine selector", () => {
+  const doc = parseAndNormalizeCombines(`
+    combine option-chip: [
+      selectable ground-subtle padding-inline-sm pressable
+    ]
+  `);
+  const css = buildCombineStylesheet(doc);
+
+  assert.match(css, /\.option-chip \{[^}]*padding-inline: var\(--spacing-sm\);/s);
+  assert.match(css, /\.option-chip \{[^}]*background: var\(--ground-subtle\);/s);
+  assert.match(css, /\.option-chip \{[^}]*cursor: pointer;/s);
+  assert.doesNotMatch(css, /\.padding-inline-sm \{/);
+  assert.doesNotMatch(css, /\.ground-subtle \{/);
+});
+
+test("buildCombineStylesheet preserves compound facet emission under one combine selector", () => {
+  const doc = parseAndNormalizeCombines(`
+    combine inline-row: [
+      horizontal inline
+    ]
+  `);
+  const css = buildCombineStylesheet(doc);
+
+  assert.match(css, /\.inline-row \{[^}]*display: inline flex;/s);
+  assert.match(css, /\.inline-row \{[^}]*flex-direction: row;/s);
+  assert.doesNotMatch(css, /\.horizontal\.inline/);
+});
+
+test("buildCombineStylesheet maps interaction and backed state selectors to the combine selector", () => {
+  const doc = parseAndNormalizeCombines(`
+    combine selectable-chip: [
+      selectable hover:ground-defined selected:ink-accent
+    ]
+  `);
+  const css = buildCombineStylesheet(doc);
+
+  assert.match(css, /\.selectable-chip:hover \{[^}]*background: var\(--ground-defined\);/s);
+  assert.match(css, /\.selectable-chip\[aria-selected="true"\] \{[^}]*color: var\(--accent\);/s);
+  assert.doesNotMatch(css, /\.hover\\:ground-defined/);
+  assert.doesNotMatch(css, /\.selected\\:ink-accent/);
+});
+
+test("buildCombineStylesheet can emit a requested subset and rejects unknown names", () => {
+  const doc = parseAndNormalizeCombines(`
+    combine option-chip: [ selectable ]
+    combine icon-action: [ pressable ]
+  `);
+
+  assert.match(buildCombineStylesheet(doc, { names: ["icon-action"] }), /\.icon-action \{/);
+  assert.doesNotMatch(buildCombineStylesheet(doc, { names: ["icon-action"] }), /\.option-chip \{/);
+  assert.throws(() => buildCombineStylesheet(doc, { names: ["missing"] }), /unknown combine name: missing/);
 });

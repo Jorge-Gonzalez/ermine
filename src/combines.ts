@@ -1,3 +1,4 @@
+import { buildStylesheet } from "./css.ts";
 import { orderParagraph } from "./format-paragraph.ts";
 import { lint, parseWord, type Issue } from "./lint.ts";
 
@@ -54,6 +55,10 @@ export interface ParseCombineOptions {
 }
 
 export interface FormatCombineOptions extends ParseCombineOptions {}
+
+export interface BuildCombineStylesheetOptions {
+  names?: Iterable<string>;
+}
 
 type LongField = "intent" | "scope" | "evidence" | "classes";
 
@@ -297,6 +302,10 @@ function tokensOf(classString: string): string[] {
   return classString.trim().split(/\s+/).filter(Boolean);
 }
 
+function classSelector(word: string): string {
+  return `.${word.replace(/([^a-zA-Z0-9_-])/g, "\\$1")}`;
+}
+
 function normalizeVisible(tokens: VisibleCombineToken[]): string {
   const combines = tokens.filter((token) => token.kind === "combine").map((token) => token.token);
   const direct = tokens.filter((token) => token.kind === "class").map((token) => token.token);
@@ -393,4 +402,18 @@ export function formatCombineDocument(document: CombineDocument): string {
 
 export function formatCombineSource(source: string, options: FormatCombineOptions = {}): string {
   return formatCombineDocument(parseAndNormalizeCombines(source, options));
+}
+
+export function buildCombineStylesheet(document: CombineDocument, options: BuildCombineStylesheetOptions = {}): string {
+  const combines = combineMap(document);
+  const requested = options.names === undefined ? document.combines.map((combine) => combine.name) : [...options.names];
+  const unknown = requested.filter((name) => !combines.has(name));
+  if (unknown.length) throw new Error(`unknown combine name${unknown.length === 1 ? "" : "s"}: ${unknown.join(", ")}`);
+
+  return requested.map((name) => {
+    const combine = combines.get(name)!;
+    return buildStylesheet([combine.classString], {}, {
+      selectorForWord: () => classSelector(combine.name),
+    }).trimEnd();
+  }).filter(Boolean).join("\n\n") + (requested.length ? "\n" : "");
 }
