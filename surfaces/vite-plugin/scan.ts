@@ -12,10 +12,12 @@
 // on `.horizontal.inline`) only exist per element, so collecting single words
 // globally would silently drop them. Elements dedupe as whole strings.
 
+import { expandCombineParagraph, type CombineDocument } from "../../src/combines.ts";
 import { lint, parseWord, type Issue } from "../../src/lint.ts";
 
 export interface ScanSource { file: string; content: string }
 export interface ScanWarning { file: string; classAttribute: string; issues: Issue[] }
+export interface ScanOptions { combines?: CombineDocument }
 export interface ScanResult {
   // deduped per-element strings of RESOLVED words, in first-seen order
   elements: string[];
@@ -37,22 +39,34 @@ export function classAttributes(content: string): string[] {
     .filter((value) => value.trim().length > 0);
 }
 
-export function scanSources(sources: readonly ScanSource[]): ScanResult {
+function combineNames(document: CombineDocument | undefined): Set<string> {
+  return new Set(document?.combines.map((combine) => combine.name) ?? []);
+}
+
+function lintResolved(element: string, options: ScanOptions): Issue[] {
+  const issues = options.combines
+    ? expandCombineParagraph(element, options.combines).lint
+    : lint(element);
+  return issues.filter((issue) => issue.level === "error" && !RUNTIME_OBLIGATION_RULES.has(issue.rule));
+}
+
+export function scanSources(sources: readonly ScanSource[], options: ScanOptions = {}): ScanResult {
   const seen = new Set<string>();
   const elements: string[] = [];
   const warnings: ScanWarning[] = [];
+  const combines = combineNames(options.combines);
 
   for (const source of sources) {
     for (const attribute of classAttributes(source.content)) {
-      const resolved = attribute.split(/\s+/).filter((word) => word && parseWord(word).axis !== null);
+      const resolved = attribute.split(/\s+/).filter((word) =>
+        word && (parseWord(word).axis !== null || combines.has(word)));
       if (!resolved.length) continue;
       const element = resolved.join(" ");
       if (seen.has(element)) continue;
       seen.add(element);
       elements.push(element);
 
-      const issues = lint(element)
-        .filter((issue) => issue.level === "error" && !RUNTIME_OBLIGATION_RULES.has(issue.rule));
+      const issues = lintResolved(element, options);
       if (issues.length) warnings.push({ file: source.file, classAttribute: attribute, issues });
     }
   }

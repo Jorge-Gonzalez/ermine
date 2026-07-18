@@ -10,6 +10,7 @@ import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
+import { buildStylesheetWithCombines, parseAndNormalizeCombines } from "../src/combines.ts";
 import { buildStylesheet } from "../src/css.ts";
 import { classAttributes, formatWarning, scanSources } from "../surfaces/vite-plugin/scan.ts";
 
@@ -70,6 +71,44 @@ test("duplicate elements dedupe; distinct compositions do not", () => {
     content: `<div class="vertical gap-sm"></div><div class="vertical gap-sm"></div><div class="vertical"></div>`,
   }]);
   assert.deepEqual(elements, ["vertical gap-sm", "vertical"]);
+});
+
+test("scanner recognizes combine names when a combine document is supplied", () => {
+  const combines = parseAndNormalizeCombines(`
+    combine option-chip: [
+      selectable padding-inline-sm ground-subtle pressable
+    ]
+  `);
+  const { elements, warnings } = scanSources([{
+    file: "combines.html",
+    content: `<button class="option-chip selected:ink-accent project-only">save</button>`,
+  }], { combines });
+
+  assert.deepEqual(elements, ["option-chip selected:ink-accent"]);
+  assert.deepEqual(warnings, []);
+
+  const css = buildStylesheetWithCombines(elements, combines);
+  assert.match(css, /\.option-chip \{[^}]*padding-inline: var\(--spacing-sm\);/s);
+  assert.match(css, /\.option-chip \{[^}]*background: var\(--ground-subtle\);/s);
+  assert.match(css, /\.selected\\:ink-accent\[aria-selected="true"\] \{[^}]*color: var\(--accent\);/s);
+  assert.doesNotMatch(css, /\.padding-inline-sm \{/);
+});
+
+test("combine scanner warnings name hidden collisions", () => {
+  const combines = parseAndNormalizeCombines(`
+    combine compact-x: [
+      padding-inline-sm
+    ]
+  `);
+  const { warnings } = scanSources([{
+    file: "collision.html",
+    content: `<button class="compact-x padding-left-xs">bad</button>`,
+  }], { combines });
+
+  assert.equal(warnings.length, 1);
+  const text = formatWarning(warnings[0]);
+  assert.match(text, /one-word-per-axis/);
+  assert.match(text, /padding-inline-sm from combine 'compact-x'/);
 });
 
 test("building the demo through the plugin reproduces demo/ermine.css modulo provenance headers", () => {
