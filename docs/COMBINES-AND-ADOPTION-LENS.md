@@ -653,6 +653,16 @@ good combine, a too-generic idiom, or a semantic fragment boundary. The default 
 is capped for interactive use; deeper experiments can use `--itemset-max N`, and shorter or
 longer replacement walks can use `--greedy-rounds N`.
 
+The semantic review rule is:
+
+> Grow a mechanical seed only up to the point where the enlarged group still holds together as
+> a general reusable semantic style unit.
+
+This means a pair such as `horizontal align-center` may be a real high-frequency seed but still
+too generic to name by itself. A larger group containing it may become a combine if it can be
+named by style intention rather than by the Monky object that happened to use it. The miner
+therefore reports possible growth options, but it does not promote them automatically.
+
 ## Distinguish Fragment Vs Combine
 
 The miner and lens must classify candidates into the right layer:

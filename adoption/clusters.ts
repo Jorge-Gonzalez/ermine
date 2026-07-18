@@ -33,6 +33,19 @@ export interface GreedyCombineCandidate extends CountedPattern {
   axes: string[];
 }
 
+export interface SemanticGrowthOption extends CountedPattern {
+  tokenCount: number;
+  gain: number;
+  addedWords: string[];
+  axes: string[];
+}
+
+export interface SemanticUnitReview {
+  seed: GreedyCombineCandidate;
+  rule: string;
+  growthOptions: SemanticGrowthOption[];
+}
+
 export interface NearIdenticalParagraph {
   left: string;
   right: string;
@@ -53,6 +66,7 @@ export interface ClusterReport {
   nearIdentical: NearIdenticalParagraph[];
   combineCandidates: CountedPattern[];
   greedySelections: GreedyCombineCandidate[];
+  semanticUnitReview: SemanticUnitReview[];
 }
 
 export interface MineClassClustersOptions {
@@ -186,12 +200,16 @@ export function collectClassOccurrences(sources: readonly ClusterSource[]): Clas
 }
 
 function mineRepeatedParagraphs(occurrences: readonly ClassOccurrence[], options: Required<MineClassClustersOptions>): CountedPattern[] {
+  return sortCounted(countParagraphs(occurrences, options).values(), options.limit, options.minCount);
+}
+
+function countParagraphs(occurrences: readonly ClassOccurrence[], options: Required<MineClassClustersOptions>): Map<string, CountedPattern> {
   const counts = new Map<string, CountedPattern>();
   for (const occurrence of occurrences) {
     if (occurrence.ermineTokens.length < options.minTokens) continue;
     addCount(counts, occurrence.ermineClassString, `${occurrence.file}#${occurrence.index + 1}`);
   }
-  return sortCounted(counts.values(), options.limit, options.minCount);
+  return counts;
 }
 
 function mineNgrams(occurrences: readonly ClassOccurrence[], options: Required<MineClassClustersOptions>): CountedPattern[] {
@@ -375,6 +393,45 @@ function mineGreedySelections(
   return selections;
 }
 
+function mineSemanticUnitReview(
+  occurrences: readonly ClassOccurrence[],
+  greedySelections: readonly GreedyCombineCandidate[],
+  options: Required<MineClassClustersOptions>,
+): SemanticUnitReview[] {
+  const paragraphs = [...countParagraphs(occurrences, options).values()]
+    .filter((pattern) => pattern.count >= options.minCount)
+    .map((pattern) => ({ ...pattern, tokens: tokensOf(pattern.value), set: new Set(tokensOf(pattern.value)) }));
+  return greedySelections.slice(0, options.limit).map((seed) => {
+    const seedTokens = tokensOf(seed.value);
+    const seedSet = new Set(seedTokens);
+    const growthOptions = paragraphs
+      .filter((paragraph) => paragraph.tokens.length > seedTokens.length && isSubset(seedTokens, paragraph.set))
+      .map((paragraph): SemanticGrowthOption => {
+        const addedWords = paragraph.tokens.filter((token) => !seedSet.has(token));
+        return {
+          value: paragraph.value,
+          count: paragraph.count,
+          examples: paragraph.examples,
+          tokenCount: paragraph.tokens.length,
+          gain: gainFor(paragraph.count, paragraph.tokens.length),
+          addedWords,
+          axes: candidateAxes(paragraph.tokens),
+        };
+      })
+      .sort((left, right) =>
+        right.gain - left.gain ||
+        right.count - left.count ||
+        right.tokenCount - left.tokenCount ||
+        left.value.localeCompare(right.value))
+      .slice(0, 3);
+    return {
+      seed,
+      rule: "grow only while the enlarged group can still be named as a general reusable semantic style unit",
+      growthOptions,
+    };
+  });
+}
+
 export function mineClassClusters(
   sources: readonly ClusterSource[],
   inputOptions: MineClassClustersOptions = {},
@@ -383,6 +440,7 @@ export function mineClassClusters(
   const occurrences = collectClassOccurrences(sources);
   const repeatedParagraphs = mineRepeatedParagraphs(occurrences, options);
   const ngrams = mineNgrams(occurrences, options);
+  const greedySelections = mineGreedySelections(occurrences, options);
   return {
     sourceCount: sources.length,
     occurrenceCount: occurrences.length,
@@ -392,7 +450,8 @@ export function mineClassClusters(
     axisConstellations: mineAxisConstellations(occurrences, options),
     nearIdentical: mineNearIdentical(occurrences, options),
     combineCandidates: repeatedParagraphs.length ? repeatedParagraphs : ngrams.filter((pattern) => pattern.value.split(/\s+/).length >= 3),
-    greedySelections: mineGreedySelections(occurrences, options),
+    greedySelections,
+    semanticUnitReview: mineSemanticUnitReview(occurrences, greedySelections, options),
   };
 }
 
@@ -457,6 +516,27 @@ function renderGreedy(selections: readonly GreedyCombineCandidate[]): string[] {
   return lines;
 }
 
+function renderSemanticUnitReview(reviews: readonly SemanticUnitReview[]): string[] {
+  const lines = ["## Semantic Unit Growth Review", ""];
+  if (!reviews.length) return [...lines, "_No greedy seeds to review._", ""];
+  for (const review of reviews) {
+    lines.push(`- seed round ${review.seed.round}: \`${review.seed.value}\``);
+    lines.push(`  rule: ${review.rule}`);
+    if (!review.growthOptions.length) {
+      lines.push("  growth: no repeated larger paragraph contains this seed at the selected threshold");
+      continue;
+    }
+    for (const option of review.growthOptions) {
+      lines.push(`  grows to: ${option.count}x, gain ${option.gain}, ${option.tokenCount} words`);
+      lines.push(`    \`${option.value}\``);
+      lines.push(`    added: \`${option.addedWords.join(" ")}\``);
+      lines.push(`    axes: ${option.axes.join(", ")}`);
+    }
+  }
+  lines.push("");
+  return lines;
+}
+
 export function renderClusterReport(report: ClusterReport, project = "project"): string {
   return [
     `# Ermine Class Cluster Report: ${project}`,
@@ -466,6 +546,7 @@ export function renderClusterReport(report: ClusterReport, project = "project"):
     `- distinct Ermine paragraphs: ${report.paragraphCount}`,
     "",
     ...renderGreedy(report.greedySelections),
+    ...renderSemanticUnitReview(report.semanticUnitReview),
     ...renderCounted("Combine Candidates", report.combineCandidates),
     ...renderCounted("Repeated Paragraphs", report.repeatedParagraphs),
     ...renderCounted("Common N-Grams", report.ngrams),

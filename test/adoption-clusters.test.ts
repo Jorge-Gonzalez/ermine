@@ -22,6 +22,7 @@ const sources: ClusterSource[] = [
     file: "src/Panel.html",
     content: `
       <button class="pressable padding-inline-sm ground-subtle font-sm">D</button>
+      <button class="padding-inline-sm font-sm pressable ground-subtle">D2</button>
       <div class="project-card padding-sm">E</div>
     `,
   },
@@ -30,24 +31,24 @@ const sources: ClusterSource[] = [
 test("collectClassOccurrences extracts literal class attributes and canonicalizes Ermine tokens", () => {
   const occurrences = collectClassOccurrences(sources);
 
-  assert.equal(occurrences.length, 5);
+  assert.equal(occurrences.length, 6);
   assert.equal(occurrences[0].ermineClassString, "padding-inline-sm ground-subtle pressable");
   assert.equal(occurrences[1].ermineClassString, "padding-inline-sm ground-subtle pressable");
-  assert.deepEqual(occurrences[4].tokens, ["project-card", "padding-sm"]);
-  assert.deepEqual(occurrences[4].ermineTokens, ["padding-sm"]);
+  assert.deepEqual(occurrences[5].tokens, ["project-card", "padding-sm"]);
+  assert.deepEqual(occurrences[5].ermineTokens, ["padding-sm"]);
 });
 
 test("mineClassClusters reports repeated paragraphs, n-grams, axis constellations, and near matches", () => {
   const report = mineClassClusters(sources, { limit: 10 });
 
   assert.equal(report.sourceCount, 2);
-  assert.equal(report.occurrenceCount, 5);
+  assert.equal(report.occurrenceCount, 6);
   assert.ok(report.repeatedParagraphs.some((pattern) =>
     pattern.count === 3 &&
     pattern.value === "padding-inline-sm ground-subtle pressable"
   ));
   assert.ok(report.ngrams.some((pattern) =>
-    pattern.count === 4 &&
+    pattern.count === 5 &&
     pattern.value === "padding-inline-sm ground-subtle"
   ));
   assert.ok(report.axisConstellations.some((pattern) =>
@@ -60,9 +61,13 @@ test("mineClassClusters reports repeated paragraphs, n-grams, axis constellation
   ));
   assert.equal(report.combineCandidates[0].value, "padding-inline-sm ground-subtle pressable");
   assert.equal(report.greedySelections[0].value, "padding-inline-sm ground-subtle pressable");
-  assert.equal(report.greedySelections[0].count, 4);
-  assert.equal(report.greedySelections[0].gain, 5);
+  assert.equal(report.greedySelections[0].count, 5);
+  assert.equal(report.greedySelections[0].gain, 7);
   assert.deepEqual(report.greedySelections[0].axes, ["padding", "skin-ground", "affordance"]);
+  assert.equal(report.semanticUnitReview[0].seed.value, "padding-inline-sm ground-subtle pressable");
+  assert.match(report.semanticUnitReview[0].rule, /grow only while/);
+  assert.deepEqual(report.semanticUnitReview[0].growthOptions[0].addedWords, ["font-sm"]);
+  assert.equal(report.semanticUnitReview[0].growthOptions[0].value, "padding-inline-sm ground-subtle font-sm pressable");
 });
 
 test("renderClusterReport produces a markdown report for adoption review", () => {
@@ -71,7 +76,9 @@ test("renderClusterReport produces a markdown report for adoption review", () =>
 
   assert.match(markdown, /^# Ermine Class Cluster Report: fixture/);
   assert.match(markdown, /## Greedy Mechanical Selections/);
-  assert.match(markdown, /round 1: gain 5, 4x, 3 words/);
+  assert.match(markdown, /round 1: gain 7, 5x, 3 words/);
+  assert.match(markdown, /## Semantic Unit Growth Review/);
+  assert.match(markdown, /grow only while the enlarged group can still be named/);
   assert.match(markdown, /## Combine Candidates/);
   assert.match(markdown, /3x `padding-inline-sm ground-subtle pressable`/);
   assert.match(markdown, /## Near-Identical Paragraphs/);
