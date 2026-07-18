@@ -3,11 +3,11 @@
 The extension-host path is manual on purpose: D4 does not add the VS Code test
 harness or download a second VS Code build.
 
-## Derived Data Contract
+## Data Contract
 
-The extension ships generated JSON caches for completions, hovers, and paragraph
-explanations. These files are not a second source of truth. They are derived from
-the registry, generated guide prose, `parseWord()`, and `emit()` by:
+The extension ships generated JSON caches for completions and hovers. These files
+are not a second source of truth. They are derived from the registry and generated
+guide prose by:
 
 ```sh
 npm run vscode
@@ -20,8 +20,13 @@ npm run vscode:check
 ```
 
 That check compares the committed JSON byte-for-byte against freshly rendered
-data. If the registry, guide, parser, or emitter changes, the check fails until
-the cache is regenerated.
+data. If the registry or guide changes, the check fails until the cache is
+regenerated.
+
+The `Ermine: Explain Class Paragraph` command is different: it is bundled with
+the core paragraph explainer, so lint diagnostics, emitted CSS, and graph data
+come from the same `parseWord()`, `lint()`, and `emit()` implementation used by
+the rest of Ermine.
 
 1. From the repository root, regenerate the editor data:
 

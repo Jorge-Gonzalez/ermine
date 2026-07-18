@@ -1,64 +1,10 @@
-import type { ExplanationData, ExplanationEmission, ExplanationEntry } from "./data.js";
-
-interface ExplainedToken {
-  token: string;
-  scope: string;
-  body: string;
-  entry: ExplanationEntry | null;
-}
-
-function tokensOf(classString: string): string[] {
-  return classString.trim().split(/\s+/).filter(Boolean);
-}
+import { explainParagraph, type ExplainedEmission, type ExplainedParagraph } from "../../src/paragraph-explainer.js";
 
 function markdownEscape(value: string): string {
   return value.replace(/[\\`*_{}\[\]()#+.!|>-]/g, "\\$&");
 }
 
-function bodyStart(word: string, data: ExplanationData): number {
-  const colon = word.indexOf(":");
-  if (colon < 0) return 0;
-  const prefix = word.slice(0, colon);
-  return data.scopes.some((pattern) => new RegExp(pattern).test(prefix)) ? colon + 1 : 0;
-}
-
-function entryFor(body: string, data: ExplanationData): ExplanationEntry | null {
-  return data.words[body] ?? data.patterns.find((entry) => new RegExp(entry.pattern).test(body)) ?? null;
-}
-
-function explainToken(token: string, data: ExplanationData): ExplainedToken {
-  const start = bodyStart(token, data);
-  const body = token.slice(start);
-  return {
-    token,
-    scope: start ? token.slice(0, start - 1) : "base",
-    body,
-    entry: entryFor(body, data),
-  };
-}
-
-function normalizedTokens(tokens: readonly ExplainedToken[], data: ExplanationData): ExplainedToken[] {
-  const axisRank = new Map(data.axisOrder.map((axis, index) => [axis, index]));
-  const rank = (token: ExplainedToken): [number, number, string, string] => token.entry
-    ? [
-        token.scope === "base" ? 1 : 2,
-        axisRank.get(token.entry.axis) ?? Number.MAX_SAFE_INTEGER,
-        token.scope,
-        token.body,
-      ]
-    : [0, Number.MAX_SAFE_INTEGER, token.scope, token.body];
-  return [...tokens].sort((left, right) => {
-    const a = rank(left);
-    const b = rank(right);
-    for (let index = 0; index < a.length; index += 1) {
-      if (a[index] === b[index]) continue;
-      return a[index] < b[index] ? -1 : 1;
-    }
-    return 0;
-  });
-}
-
-function emissionLines(emission: ExplanationEmission): string[] {
+function emissionLines(emission: ExplainedEmission): string[] {
   if (emission.declarations) {
     return Object.entries(emission.declarations).map(([property, value]) => `\`${property}: ${markdownEscape(value)}\``);
   }
@@ -68,41 +14,50 @@ function emissionLines(emission: ExplanationEmission): string[] {
   return [];
 }
 
-function uniqueEmissionLines(tokens: readonly ExplainedToken[]): string[] {
+function uniqueEmissionLines(explanation: ExplainedParagraph): string[] {
   const seen = new Set<string>();
   const lines: string[] = [];
-  for (const token of tokens) {
-    for (const emission of token.entry?.emissions ?? []) {
-      for (const line of emissionLines(emission)) {
-        const rendered = `- \`${markdownEscape(token.token)}\` -> ${line}`;
-        if (seen.has(rendered)) continue;
-        seen.add(rendered);
-        lines.push(rendered);
-      }
+  for (const emission of explanation.emitted) {
+    const source = emission.sourceWords.map((word) => word.token).join(", ") || emission.token || emission.axis || emission.kind;
+    for (const line of emissionLines(emission)) {
+      const rendered = `- \`${markdownEscape(source)}\` -> ${line}`;
+      if (seen.has(rendered)) continue;
+      seen.add(rendered);
+      lines.push(rendered);
     }
   }
   return lines;
 }
 
-export function explainClassParagraphMarkdown(classString: string, data: ExplanationData): string {
-  const tokens = tokensOf(classString).map((token) => explainToken(token, data));
-  const normalized = normalizedTokens(tokens, data);
-  const known = normalized.filter((token) => token.entry);
-  const unknown = normalized.filter((token) => !token.entry);
-  const axes = [...new Set(known.map((token) => token.entry?.axis).filter((axis): axis is string => Boolean(axis)))];
-  const emissions = uniqueEmissionLines(normalized);
+function diagnosticLines(explanation: ExplainedParagraph): string[] {
+  if (!explanation.lint.length) return ["_No lint diagnostics._"];
+  return explanation.lint.map((issue) =>
+    `- ${issue.level.toUpperCase()} ${issue.rule}: ${markdownEscape(issue.msg)}${issue.target ? ` (${markdownEscape(issue.target)})` : ""}`);
+}
 
-  const wordRows = normalized.map((token) =>
-    `| \`${markdownEscape(token.token)}\` | ${token.scope} | ${token.entry ? `\`${markdownEscape(token.entry.axis)}\`` : "(project)"} | ${token.entry ? markdownEscape(token.entry.meaning) : "outside Ermine vocabulary"} |`);
-  const graphRows = known.map((token) =>
-    `- paragraph -> \`${markdownEscape(token.token)}\` -> \`${markdownEscape(token.entry?.axis ?? "")}\``);
+function graphRows(explanation: ExplainedParagraph): string[] {
+  if (!explanation.graph.edges.length) return ["_No Ermine graph nodes for this paragraph._"];
+  const labels = new Map(explanation.graph.nodes.map((node) => [node.id, node.label]));
+  return explanation.graph.edges.map((edge) =>
+    `- ${markdownEscape(labels.get(edge.from) ?? edge.from)} -> ${markdownEscape(labels.get(edge.to) ?? edge.to)} (${markdownEscape(edge.label)})`);
+}
+
+export function explainClassParagraphMarkdown(classString: string): string {
+  const explanation = explainParagraph(classString);
+  const known = explanation.words.filter((word) => word.axis);
+  const unknown = explanation.visibleTokens.filter((token) => token.kind === "class" && !token.axis);
+  const axes = [...new Set(known.map((word) => word.axis).filter((axis): axis is string => Boolean(axis)))];
+  const emissions = uniqueEmissionLines(explanation);
+
+  const wordRows = explanation.words.map((word) =>
+    `| \`${markdownEscape(word.token)}\` | ${word.scope} | ${word.axis ? `\`${markdownEscape(word.axis)}\`` : "(project)"} | ${word.meaning ? markdownEscape(word.meaning) : "outside Ermine vocabulary"} |`);
 
   return [
     "# Ermine Class Paragraph",
     "",
     `Source: \`${markdownEscape(classString)}\``,
     "",
-    `Normalized: \`${markdownEscape(normalized.map((token) => token.token).join(" "))}\``,
+    `Normalized: \`${markdownEscape(explanation.normalizedExpanded)}\``,
     "",
     `Known words: ${known.length}`,
     `Project words: ${unknown.length}`,
@@ -120,11 +75,11 @@ export function explainClassParagraphMarkdown(classString: string, data: Explana
     "",
     "## Diagnostics",
     "",
-    "_This VS Code command does not duplicate the core linter. The explanation cache is derived from the registry and emitter, and `npm run vscode:check` verifies it._",
+    ...diagnosticLines(explanation),
     "",
     "## Graph",
     "",
-    ...(graphRows.length ? graphRows : ["_No Ermine graph nodes for this paragraph._"]),
+    ...graphRows(explanation),
     "",
   ].join("\n");
 }

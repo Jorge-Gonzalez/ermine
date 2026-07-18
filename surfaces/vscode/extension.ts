@@ -1,15 +1,13 @@
 import * as vscode from "vscode";
 
 import completionsJson from "./completions.generated.json" with { type: "json" };
-import explanationsJson from "./explanations.generated.json" with { type: "json" };
 import hoversJson from "./hovers.generated.json" with { type: "json" };
 import { classAttributeContextAt } from "./attributes.js";
-import type { CompletionData, ExplanationData, HoverData, HoverEntry } from "./data.js";
+import type { CompletionData, HoverData, HoverEntry } from "./data.js";
 import { explainClassParagraphMarkdown } from "./explain.js";
 
 const completions = completionsJson as CompletionData;
 const hovers = hoversJson as HoverData;
-const explanations = explanationsJson as ExplanationData;
 const hoverPatterns = hovers.patterns.map((entry) => ({ ...entry, matcher: new RegExp(entry.pattern) }));
 const scopePatterns = hovers.scopes.map((pattern) => new RegExp(pattern));
 
@@ -106,7 +104,7 @@ async function explainClassParagraph(): Promise<void> {
     document.positionAt(context.valueStart),
     document.positionAt(context.valueEnd),
   ));
-  const markdown = explainClassParagraphMarkdown(classString, explanations);
+  const markdown = explainClassParagraphMarkdown(classString);
   const explanationDocument = await vscode.workspace.openTextDocument({
     language: "markdown",
     content: markdown,
