@@ -7,7 +7,7 @@ import { test } from "node:test";
 
 import { classAttributeContextAt } from "../surfaces/vscode/attributes.ts";
 import type { CompletionData, CompletionEntry, HoverData } from "../surfaces/vscode/data.ts";
-import { explainClassParagraphMarkdown } from "../surfaces/vscode/explain.ts";
+import { explainClassParagraphGraphHtml, explainClassParagraphMarkdown } from "../surfaces/vscode/explain.ts";
 import { renderData } from "../surfaces/vscode/generate-data.ts";
 import { parseAndNormalizeCombines } from "../src/combines.ts";
 
@@ -81,6 +81,25 @@ test("paragraph review explains combines from the project combine source", () =>
   assert.match(markdown, /\| `option\\-chip` \| combine \| \(combine\) \|/);
   assert.match(markdown, /\| `padding\\-inline\\-sm` \| combine `option\\-chip` \| base \| `padding`/);
   assert.match(markdown, /`option\\-chip` -> `padding-inline:/);
+});
+
+test("paragraph graph renders typed nodes and edges without script", () => {
+  const combines = parseAndNormalizeCombines(`
+    combine option-chip: [
+      selectable padding-inline-sm ground-subtle pressable
+    ]
+  `);
+  const html = explainClassParagraphGraphHtml("option-chip selected:ink-accent", {
+    combines,
+    combineSource: "ermine.combines",
+  });
+  assert.match(html, /<title>Ermine Class Paragraph Graph<\/title>/);
+  assert.match(html, /data-kind="combine"/);
+  assert.match(html, />option-chip</);
+  assert.match(html, />padding-inline-sm</);
+  assert.match(html, />padding-inline</);
+  assert.match(html, />expands</);
+  assert.doesNotMatch(html, /<script/i);
 });
 
 test("attribute context accepts only D3's literal class forms", () => {

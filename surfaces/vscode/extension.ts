@@ -4,7 +4,7 @@ import completionsJson from "./completions.generated.json" with { type: "json" }
 import hoversJson from "./hovers.generated.json" with { type: "json" };
 import { classAttributeContextAt } from "./attributes.js";
 import type { CompletionData, HoverData, HoverEntry } from "./data.js";
-import { explainClassParagraphMarkdown } from "./explain.js";
+import { explainClassParagraphGraphHtml, explainClassParagraphMarkdown } from "./explain.js";
 import { parseAndNormalizeCombines, type CombineDocument } from "../../src/combines.js";
 
 const completions = completionsJson as CompletionData;
@@ -24,6 +24,12 @@ interface LoadedCombines {
   document?: CombineDocument;
   source?: string;
   error?: string;
+}
+
+interface ActiveClassParagraph {
+  editor: vscode.TextEditor;
+  document: vscode.TextDocument;
+  classString: string;
 }
 
 function bodyStart(word: string): number {
@@ -135,19 +141,26 @@ const hoverProvider: vscode.HoverProvider = {
   },
 };
 
-async function explainClassParagraph(): Promise<void> {
+async function activeClassParagraph(): Promise<ActiveClassParagraph | undefined> {
   const editor = vscode.window.activeTextEditor;
-  if (!editor) return;
+  if (!editor) return undefined;
   const document = editor.document;
   const context = classAttributeContextAt(document.getText(), document.offsetAt(editor.selection.active));
   if (!context) {
     await vscode.window.showInformationMessage("Place the cursor inside a literal class or className attribute.");
-    return;
+    return undefined;
   }
   const classString = document.getText(new vscode.Range(
     document.positionAt(context.valueStart),
     document.positionAt(context.valueEnd),
   ));
+  return { editor, document, classString };
+}
+
+async function explainClassParagraph(): Promise<void> {
+  const active = await activeClassParagraph();
+  if (!active) return;
+  const { document, classString } = active;
   const combines = await loadCombinesFor(document);
   const markdown = explainClassParagraphMarkdown(classString, {
     combines: combines.document,
@@ -161,11 +174,32 @@ async function explainClassParagraph(): Promise<void> {
   await vscode.window.showTextDocument(explanationDocument, { preview: true, viewColumn: vscode.ViewColumn.Beside });
 }
 
+async function showClassParagraphGraph(context: vscode.ExtensionContext): Promise<void> {
+  const active = await activeClassParagraph();
+  if (!active) return;
+  const combines = await loadCombinesFor(active.document);
+  const panel = vscode.window.createWebviewPanel(
+    "ermineClassParagraphGraph",
+    "Ermine Class Paragraph Graph",
+    vscode.ViewColumn.Beside,
+    {
+      enableScripts: false,
+      localResourceRoots: [context.extensionUri],
+    },
+  );
+  panel.webview.html = explainClassParagraphGraphHtml(active.classString, {
+    combines: combines.document,
+    combineSource: combines.source,
+    combineLoadError: combines.error,
+  });
+}
+
 export function activate(context: vscode.ExtensionContext): void {
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(DOCUMENTS, completionProvider),
     vscode.languages.registerHoverProvider(DOCUMENTS, hoverProvider),
     vscode.commands.registerCommand("ermine.explainClassParagraph", explainClassParagraph),
+    vscode.commands.registerCommand("ermine.showClassParagraphGraph", () => showClassParagraphGraph(context)),
   );
 }
 

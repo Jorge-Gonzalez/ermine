@@ -80,7 +80,15 @@ truth; there is no generated VS Code explanation cache to update.
    simple paragraph -> word -> axis graph. If a combine file is present, the
    heading area names the combine source.
 
-7. Move the same text outside the `class` string and invoke completion again.
+7. Put the cursor inside the same `class` attribute and run
+   `Ermine: Show Class Paragraph Graph`.
+
+   Expected screenshot-in-words: a webview opens beside the editor. It renders
+   stable columns for paragraph, combines, words, axes, declarations,
+   conditions, and mechanisms, followed by an edge list. The graph is static and
+   script-free.
+
+8. Move the same text outside the `class` string and invoke completion again.
 
    Expected: Ermine offers no completion and no hover. Literal `className`
    strings behave like `class`; interpolated template strings remain invisible,

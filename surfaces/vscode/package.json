@@ -14,7 +14,8 @@
     "onLanguage:javascriptreact",
     "onLanguage:typescriptreact",
     "onLanguage:vue",
-    "onCommand:ermine.explainClassParagraph"
+    "onCommand:ermine.explainClassParagraph",
+    "onCommand:ermine.showClassParagraphGraph"
   ],
   "contributes": {
     "configuration": {
@@ -31,6 +32,10 @@
       {
         "command": "ermine.explainClassParagraph",
         "title": "Ermine: Explain Class Paragraph"
+      },
+      {
+        "command": "ermine.showClassParagraphGraph",
+        "title": "Ermine: Show Class Paragraph Graph"
       }
     ]
   },

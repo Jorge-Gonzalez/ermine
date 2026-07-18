@@ -737,7 +737,7 @@ This declaration is browser-adapter boundary.
 8. Done: add the adoption cluster miner.
 9. Done: add the VS Code command with structured Markdown output.
 10. Done: load workspace combine source in the VS Code paragraph explanation.
-11. Add the graph view.
+11. Done: add the static VS Code graph view.
 12. Connect explanations to generated adoption reports.
 
 The implementation should stay conservative: combines are named groups, collisions remain
