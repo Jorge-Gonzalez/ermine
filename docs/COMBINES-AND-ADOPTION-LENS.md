@@ -633,64 +633,108 @@ npm run adoption:clusters -- --project ../monky
 ```
 
 It is intentionally read-only. It scans literal `class`/`className` paragraphs in app source,
-skips common test/build directories, canonicalizes the Ermine tokens, and reports repeated
-paragraphs, common n-grams, axis constellations, near-identical paragraphs, and combine
-candidates. It does not name combines automatically; naming remains a design act.
+skips common test/build directories, canonicalizes the Ermine tokens, and reports promotion
+records (including count-one records when they help explain a family), repeated paragraphs,
+common n-grams, axis constellations, near-identical paragraphs, and combine candidates. It
+does not name combines automatically; naming remains a design act.
 
-The miner also includes a greedy mechanical selection pass. Each round counts frequent
-non-contiguous itemsets, scores them by compression gain, selects the highest positive-gain
-candidate, virtually removes those words from matching paragraphs, and repeats. The score is
-intentionally syntax-only:
+The promotion review is governed by ADR-0064: **promotion is vocabulary growth, not
+compression** — a group earns a name only when the name says more than the words already say,
+never merely shorter. A single-project corpus can prove local reuse but not generality, so the
+mechanics never promote; they report what the corpus can actually know, and the naming review
+(the grammar admission test, one level up) decides.
 
-```text
-gain = occurrences * (word-count - 1) - word-count
-```
+Each repeated paragraph is first reduced to its intrinsic core: scale-backed margin words
+place an element in its parent's layout — context, not identity — and are stripped into a
+per-candidate *context residue* report. Relational auto-margin words (`centered`,
+`flush-block`, `push`) describe self-placement behavior and stay intrinsic. The core then
+carries a typed evidence tuple instead of a score:
 
-Axis lists are displayed beside each selection as evidence, but they do not affect the score
-in this pass. That preserves the discovery order: first let repetition expose the project's
-hidden structure, then let humans or later tooling interpret whether the selected group is a
-good combine, a too-generic idiom, or a semantic fragment boundary. The default itemset depth
-is capped for interactive use; deeper experiments can use `--itemset-max N`, and shorter or
-longer replacement walks can use `--greedy-rounds N`.
+- context spread: distinct files and directories — the primary generality signal, ranked
+  ahead of raw repetition;
+- occurrence count;
+- cohesion: median internal pair closure and near-closed pair share, reported only at or
+  above an evidence floor (`cohesionMinCount`, default 4) — below it, rare pairs are
+  trivially closed and closure would reward exactly the thinnest evidence;
+- scoped words (`hover:`, `focus:`, …) and role-bound words (`popover`, `results`,
+  `command`, `editor` measures) — the latter are sanctioned grammar, but a paragraph can be
+  no more general than its most role-bound word, so they surface as review evidence.
 
-The semantic review rule is:
-
-> Grow a mechanical seed only up to the point where the enlarged group still holds together as
-> a general reusable semantic style unit.
-
-This means a pair such as `horizontal align-center` may be a real high-frequency seed but still
-too generic to name by itself. A larger group containing it may become a combine if it can be
-named by style intention rather than by the Monky object that happened to use it. The miner
-therefore reports possible growth options, but it does not promote them automatically.
-
-The stricter promotion review asks a more mechanical question:
-
-> Can repeated low-level words be promoted into the smallest larger unit that has enough
-> mechanical evidence to deserve a semantic name?
-
-This pass ranks repeated full paragraphs with explicit evidence:
-
-- frequency: how often the paragraph repeats;
-- compactness: whether it stays small enough to remain a combine rather than a recipe;
-- pair closure: whether internal pairs mostly travel with this paragraph instead of everywhere;
-- context spread: how many files and directories use the unit;
-- axis shape: whether the unit has enough axes to express a concept without becoming a component;
-- state load: whether scoped words such as `hover:`, `active:`, `disabled:`, and `focus:` make
-  the paragraph too stateful.
-
-The output classifies each candidate as:
+Each candidate is classified by what the corpus can know about it:
 
 | disposition | meaning |
 |---|---|
-| `promote` | compact, repeated, closed enough, and ready for naming review |
-| `review` | mechanically plausible but not strong enough for automatic promotion |
-| `hold-too-primitive` | repeated, but too small to prove a higher-level unit |
-| `hold-component-shaped` | too large, stateful, or multi-axis for a compact combine |
-| `hold-project-local` | repeats in one local context only |
-| `hold-low-closure` | internal pairs appear outside the candidate too often |
+| `candidate` | repeats across contexts; ready for the naming review |
+| `stem` | compositional core — a correct phrase with no surplus meaning; stays spelled out and organizes families |
+| `loose-bundle` | internal pairs travel apart more than together; likely coincidence |
+| `local-evidence` | repeats in one file only; this corpus cannot show generality |
+| `identity-shaped` | too large or stateful; belongs to the component identity plane |
+
+Stems deserve emphasis: they point in the correct direction. `horizontal gap-md align-center`
+is a perfectly grammatical phrase — it just paraphrases its own words, so naming it would add
+a synonym, not a word. It stays spelled out, and serves as the trunk that named idioms branch
+from.
+
+Candidates and stems that overlap on a shared core are grouped into **combine families** with
+an explicit core, kind, family spread, family usage, and per-member variant words. Count-one
+members are retained: a component often absorbs the variant before the variant can repeat, so
+singletons are still evidence when they orbit a reusable core. Short or divergent shared
+cores may surface `fluency` families: the grammar is composing well, but a name is usually
+unnecessary, so they are held structure in the review pack. Three-word-plus cores spread
+across files surface stronger `idiom` families: these become the primary review targets. This
+is the structure a flat candidate list hides: sibling chips, a control shell with and without
+its outline, row variants — base-plus-variant vocabulary rather than accidental near-synonyms.
+
+The report opens with the naming review contract so the judgment travels with the evidence:
+
+1. **Surplus meaning** — the name must say more than the words already say; never merely
+   shorter.
+2. **Role noun** — nameable as one general role noun, optionally with a variant modifier.
+3. **Project-agnostic** — the name would mean the same thing in a different product.
 
 The algorithm still does not choose the name. It narrows the adoption work to a short,
-explained list so humans or AI spend judgment on naming rather than pattern archaeology.
+explained list so humans or AI spend judgment on naming rather than pattern archaeology. A
+promoted combine folds into the vocabulary, and the next mining pass treats it as one word —
+specificity accretes one level per iteration, under the same admission test each time.
+
+Each occurrence also carries usage context — the element tag, a trimmed content sample, and
+the nearest classed ancestor — because the surplus-meaning test needs the role, not just the
+recipe: `ground-subtle ink rule corner-sm ruled font-xs font-mono` on eight `<kbd>` elements
+is a keycap, which no amount of word-level evidence can reveal.
+
+The admission pass is delegated across a file boundary — **Ermine defines the contract; the
+model runs outside it.** Ermine never calls a model and carries no AI dependency; it owns the
+two endpoints and validates what crosses them:
+
+```sh
+# Outbound: one self-contained prompt for any AI reviewer
+npm run adoption:review-pack -- --project ../monky [--budget N] [--combines <file>]
+
+# Inbound: validate the reviewer's verdicts and render the draft review
+npm run adoption:admission -- --project ../monky --verdicts admission-verdicts.json
+```
+
+The **pack** assembles idiom family cores as the primary review targets, fluency families as
+held structure, individual paragraph candidates as supporting evidence, everything the
+mechanics held (as context), the entire existing vocabulary, any existing combines, and the
+operative protocol. The protocol is structured against the reviewer's yes-bias: the default
+verdict is hold-as-stem, admission runs proposer-then-gatekeeper, every surviving name gets a
+back-translation expansion produced in a fresh conversation, and at most `--budget` combines
+(default 3) may be admitted per pass. The required output is a single JSON verdicts document
+whose schema the pack itself carries.
+
+The **intake** re-mines the project and holds the verdicts to what mechanics can guarantee:
+every paragraph or family core exists, the budget holds, admitted names are kebab-case, don't
+use the reserved `sf-` prefix, and collide with neither a grammar word (anything `parseWord`
+recognizes) nor an existing combine. It scores the back-translation overlap itself — the
+model's expansions, Ermine's math — flagging names that recover less than half their
+paragraph as opaque. The output is `ADMISSION-REVIEW.md`: validation results, verdicts, and
+a ready-to-commit draft ADR with the combine definitions. A human ratifies in commit review;
+neither endpoint changes the grammar by itself.
+
+Who fills the gap between the endpoints is deliberately open: a Claude Code session working
+in the repo, a pack pasted into any model, or external tooling — the verdicts file is the
+interface, and it can be committed alongside the ADR as the review's evidence.
 
 ## Distinguish Fragment Vs Combine
 

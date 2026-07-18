@@ -10,6 +10,15 @@ export interface ClusterSource {
   content: string;
 }
 
+// Where a paragraph is spoken: the element, a sample of what it says, and the
+// nearest classed ancestor. The naming review needs this to judge role, not
+// just recipe.
+export interface UsageContext {
+  tag: string | null;
+  content: string;
+  parentClasses: string | null;
+}
+
 export interface ClassOccurrence {
   file: string;
   index: number;
@@ -18,56 +27,13 @@ export interface ClassOccurrence {
   tokens: string[];
   ermineTokens: string[];
   axes: string[];
+  context: UsageContext;
 }
 
 export interface CountedPattern {
   value: string;
   count: number;
   examples: string[];
-}
-
-export interface GreedyCombineCandidate extends CountedPattern {
-  round: number;
-  tokenCount: number;
-  gain: number;
-  axes: string[];
-}
-
-export interface SemanticGrowthOption extends CountedPattern {
-  tokenCount: number;
-  gain: number;
-  addedWords: string[];
-  axes: string[];
-}
-
-export interface SemanticUnitReview {
-  seed: GreedyCombineCandidate;
-  rule: string;
-  growthOptions: SemanticGrowthOption[];
-}
-
-export type SemanticPromotionDisposition =
-  | "promote"
-  | "review"
-  | "hold-too-primitive"
-  | "hold-component-shaped"
-  | "hold-project-local"
-  | "hold-low-closure";
-
-export interface SemanticPromotionCandidate extends CountedPattern {
-  tokenCount: number;
-  axes: string[];
-  score: number;
-  disposition: SemanticPromotionDisposition;
-  reasons: string[];
-  metrics: {
-    medianClosure: number;
-    closedPairShare: number;
-    fileCount: number;
-    directoryCount: number;
-    scopedWordCount: number;
-  };
-  strongestPairs: CountedPattern[];
 }
 
 export interface NearIdenticalParagraph {
@@ -80,6 +46,63 @@ export interface NearIdenticalParagraph {
   examples: string[];
 }
 
+// The mechanics never promote. They gather evidence and counter-evidence; the
+// naming review (the grammar admission test, one level up) decides. Dispositions
+// therefore name what the corpus can actually know about a repeated paragraph.
+export type PromotionDisposition =
+  | "candidate"        // repeats across contexts; ready for the naming review
+  | "stem"             // compositional core; stays spelled out, organizes families
+  | "loose-bundle"     // internal pairs travel apart more than together; likely coincidence
+  | "local-evidence"   // repeats in one file only; this corpus cannot show generality
+  | "identity-shaped"; // too large or stateful; belongs to the component identity plane
+
+export interface PromotionEvidence {
+  fileCount: number;
+  directoryCount: number;
+  files: string[];
+  directories: string[];
+  // Median internal pair closure and share of near-closed pairs. Null below the
+  // evidence floor: with very few occurrences rare pairs are trivially closed,
+  // so closure would reward exactly the thinnest evidence.
+  cohesion: number | null;
+  closedPairShare: number | null;
+  scopedWords: string[];
+  roleBoundWords: string[];
+  contextResidue: CountedPattern[];
+}
+
+export interface PromotionCandidate extends CountedPattern {
+  tokenCount: number;
+  axes: string[];
+  disposition: PromotionDisposition;
+  evidence: PromotionEvidence;
+  usage: UsageContext[];
+}
+
+export interface FamilyMember {
+  value: string;
+  count: number;
+  fileCount: number;
+  disposition: PromotionDisposition;
+  variantWords: string[];
+}
+
+// Families see through component boundaries: a paragraph written once inside a
+// component is not a non-pattern — the component absorbed it. Idiom families
+// (multi-word core recurring across files) are the primary promotion evidence;
+// fluency families (one-word core, divergent members) are the grammar composing
+// well and stay spelled out.
+export interface PromotionFamily {
+  core: string;
+  coreAxes: string[];
+  kind: "idiom" | "fluency";
+  totalCount: number;
+  fileCount: number;
+  directoryCount: number;
+  members: FamilyMember[];
+  usage: UsageContext[];
+}
+
 export interface ClusterReport {
   sourceCount: number;
   occurrenceCount: number;
@@ -88,10 +111,8 @@ export interface ClusterReport {
   ngrams: CountedPattern[];
   axisConstellations: CountedPattern[];
   nearIdentical: NearIdenticalParagraph[];
-  combineCandidates: CountedPattern[];
-  greedySelections: GreedyCombineCandidate[];
-  semanticUnitReview: SemanticUnitReview[];
-  semanticPromotions: SemanticPromotionCandidate[];
+  promotions: PromotionCandidate[];
+  families: PromotionFamily[];
 }
 
 export interface MineClassClustersOptions {
@@ -99,10 +120,10 @@ export interface MineClassClustersOptions {
   minCount?: number;
   ngramMin?: number;
   ngramMax?: number;
-  itemsetMax?: number;
-  greedyRounds?: number;
   limit?: number;
   nearThreshold?: number;
+  familyThreshold?: number;
+  cohesionMinCount?: number;
 }
 
 const DEFAULT_OPTIONS = {
@@ -110,11 +131,24 @@ const DEFAULT_OPTIONS = {
   minCount: 2,
   ngramMin: 2,
   ngramMax: 6,
-  itemsetMax: 4,
-  greedyRounds: 12,
   limit: 20,
   nearThreshold: 0.72,
+  familyThreshold: 0.5,
+  cohesionMinCount: 4,
 } as const;
+
+const STEM_MAX_TOKENS = 3;
+const STEM_MAX_AXES = 2;
+const FLUENCY_MIN_CORE_WORDS = 2;
+const IDIOM_MIN_CORE_WORDS = 3;
+const IDENTITY_MIN_TOKENS = 12;
+const IDENTITY_MIN_AXES = 10;
+const IDENTITY_MIN_SCOPED = 4;
+const LOOSE_COHESION = 0.35;
+
+// Role-bound grammar words (popover/results/command/editor measures) are general
+// within their UI role but bind any paragraph containing them to that role.
+const ROLE_SEGMENT = /(^|-)(popover|results|command|editor)(-|$)/;
 
 const CLASS_ATTRIBUTE = /(?:class|className)\s*=\s*(?:"([^"]*)"|'([^']*)'|\{\s*`([^`$]*)`\s*\})/g;
 const SOURCE_EXTENSIONS = new Set([
@@ -172,15 +206,11 @@ function sortCounted(patterns: Iterable<CountedPattern>, limit: number, minCount
 }
 
 function keyOf(tokens: readonly string[]): string {
-  return tokens.join("\u0000");
+  return tokens.join("\u001f");
 }
 
 function patternValue(tokens: readonly string[]): string {
   return orderParagraph(tokens.join(" "));
-}
-
-function isSubset(candidate: readonly string[], transaction: Set<string>): boolean {
-  return candidate.every((token) => transaction.has(token));
 }
 
 function candidateAxes(tokens: readonly string[]): string[] {
@@ -189,11 +219,7 @@ function candidateAxes(tokens: readonly string[]): string[] {
     .filter((axis): axis is string => axis !== null));
 }
 
-function gainFor(count: number, tokenCount: number): number {
-  return count * (tokenCount - 1) - tokenCount;
-}
-
-function jaccard(left: string[], right: string[]): number {
+function jaccard(left: readonly string[], right: readonly string[]): number {
   const a = new Set(left);
   const b = new Set(right);
   const shared = [...a].filter((value) => b.has(value)).length;
@@ -201,40 +227,133 @@ function jaccard(left: string[], right: string[]): number {
   return total === 0 ? 1 : shared / total;
 }
 
-function classAttributes(content: string): string[] {
+function classAttributes(content: string): { value: string; index: number }[] {
   return [...content.matchAll(CLASS_ATTRIBUTE)]
-    .map((match) => match[1] ?? match[2] ?? match[3] ?? "")
-    .filter((value) => value.trim().length > 0);
+    .map((match) => ({ value: match[1] ?? match[2] ?? match[3] ?? "", index: match.index ?? 0 }))
+    .filter((attribute) => attribute.value.trim().length > 0);
+}
+
+const VOID_TAGS = new Set(["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"]);
+const TAG_START = /<(\/?)([A-Za-z][A-Za-z0-9.-]*)/g;
+const CONTENT_SAMPLE_MAX = 60;
+
+interface ScannedElement {
+  attrStart: number;
+  attrEnd: number;
+  tag: string;
+  contentSample: string;
+  parentClasses: string | null;
+}
+
+// Find the '>' that ends a tag, tolerating JSX expression attributes
+// (onClick={() => …}) by tracking brace depth and quotes.
+function tagEnd(content: string, from: number): { end: number; selfClosing: boolean } | null {
+  let braces = 0;
+  let quote: string | null = null;
+  for (let index = from; index < content.length; index += 1) {
+    const char = content[index];
+    if (quote) {
+      if (char === quote) quote = null;
+    } else if (char === '"' || char === "'" || char === "`") quote = char;
+    else if (char === "{") braces += 1;
+    else if (char === "}") braces -= 1;
+    else if (char === ">" && braces <= 0) return { end: index, selfClosing: content[index - 1] === "/" };
+  }
+  return null;
+}
+
+function contentSampleAfter(content: string, from: number): string {
+  const stop = content.indexOf("<", from);
+  return content
+    .slice(from, stop < 0 ? content.length : stop)
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, CONTENT_SAMPLE_MAX);
+}
+
+// One tolerant pass over a source file: element tags, their class attribute,
+// and the nearest classed ancestor via a tag stack. Non-markup angle brackets
+// degrade to unclassed stack entries; the regular JSX/HTML case reads cleanly.
+function scanElements(content: string): ScannedElement[] {
+  const elements: ScannedElement[] = [];
+  const stack: { tag: string; classes: string | null }[] = [];
+  TAG_START.lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = TAG_START.exec(content))) {
+    const scan = tagEnd(content, match.index + match[0].length);
+    if (!scan) break;
+    const tag = match[2];
+    if (match[1] === "/") {
+      for (let index = stack.length - 1; index >= 0; index -= 1) {
+        if (stack[index].tag === tag) {
+          stack.length = index;
+          break;
+        }
+      }
+    } else {
+      const attrs = content.slice(match.index, scan.end);
+      const classes = classAttributes(attrs)[0]?.value ?? null;
+      let parentClasses: string | null = null;
+      for (let index = stack.length - 1; index >= 0 && !parentClasses; index -= 1) {
+        parentClasses = stack[index].classes;
+      }
+      elements.push({
+        attrStart: match.index,
+        attrEnd: scan.end,
+        tag,
+        contentSample: scan.selfClosing ? "" : contentSampleAfter(content, scan.end + 1),
+        parentClasses,
+      });
+      if (!scan.selfClosing && !VOID_TAGS.has(tag.toLowerCase())) stack.push({ tag, classes });
+    }
+    TAG_START.lastIndex = scan.end + 1;
+  }
+  return elements;
+}
+
+function contextAt(elements: readonly ScannedElement[], index: number): UsageContext {
+  const element = elements.find((entry) => entry.attrStart <= index && index <= entry.attrEnd);
+  return {
+    tag: element?.tag ?? null,
+    content: element?.contentSample ?? "",
+    parentClasses: element?.parentClasses ?? null,
+  };
 }
 
 export function collectClassOccurrences(sources: readonly ClusterSource[]): ClassOccurrence[] {
   const occurrences: ClassOccurrence[] = [];
   for (const source of sources) {
-    classAttributes(source.content).forEach((classString, index) => {
-      const tokens = tokensOf(classString);
+    const elements = scanElements(source.content);
+    classAttributes(source.content).forEach((attribute, index) => {
+      const tokens = tokensOf(attribute.value);
       const ermineTokens = tokens.filter((token) => parseWord(token).axis !== null);
       if (!ermineTokens.length) return;
       const ermineClassString = orderParagraph(ermineTokens.join(" "));
       const axes = uniqueInOrder(tokensOf(ermineClassString)
         .map((token) => parseWord(token).axis)
         .filter((axis): axis is string => axis !== null));
-      occurrences.push({ file: source.file, index, classString, ermineClassString, tokens, ermineTokens: tokensOf(ermineClassString), axes });
+      occurrences.push({
+        file: source.file,
+        index,
+        classString: attribute.value,
+        ermineClassString,
+        tokens,
+        ermineTokens: tokensOf(ermineClassString),
+        axes,
+        context: contextAt(elements, attribute.index),
+      });
     });
   }
   return occurrences;
 }
 
 function mineRepeatedParagraphs(occurrences: readonly ClassOccurrence[], options: Required<MineClassClustersOptions>): CountedPattern[] {
-  return sortCounted(countParagraphs(occurrences, options).values(), options.limit, options.minCount);
-}
-
-function countParagraphs(occurrences: readonly ClassOccurrence[], options: Required<MineClassClustersOptions>): Map<string, CountedPattern> {
   const counts = new Map<string, CountedPattern>();
   for (const occurrence of occurrences) {
     if (occurrence.ermineTokens.length < options.minTokens) continue;
     addCount(counts, occurrence.ermineClassString, `${occurrence.file}#${occurrence.index + 1}`);
   }
-  return counts;
+  return sortCounted(counts.values(), options.limit, options.minCount);
 }
 
 function mineNgrams(occurrences: readonly ClassOccurrence[], options: Required<MineClassClustersOptions>): CountedPattern[] {
@@ -292,180 +411,39 @@ function mineNearIdentical(occurrences: readonly ClassOccurrence[], options: Req
     .slice(0, options.limit);
 }
 
-interface GreedyTransaction {
-  tokens: string[];
-  set: Set<string>;
-  weight: number;
-  examples: string[];
+// A scale-backed margin word places the element in its parent's layout — context,
+// not identity. Relational auto-margin words (centered, flush-block, push) describe
+// self-placement behavior and stay intrinsic.
+function isContextWord(token: string): boolean {
+  const parsed = parseWord(token);
+  return parsed.axis === "margin" && parsed.value !== undefined;
 }
 
-interface ItemsetCount {
+interface ParagraphRecord {
+  value: string;
   tokens: string[];
   count: number;
   examples: string[];
-}
-
-interface ParagraphRecord extends CountedPattern {
-  tokens: string[];
+  usage: UsageContext[];
   files: Set<string>;
   directories: Set<string>;
+  residue: Map<string, number>;
 }
 
-function transactionKey(tokens: readonly string[]): string {
-  return keyOf(tokensOf(patternValue([...tokens])));
-}
-
-function greedyTransactions(occurrences: readonly ClassOccurrence[], minTokens: number): GreedyTransaction[] {
-  const byTokens = new Map<string, GreedyTransaction>();
-  for (const occurrence of occurrences) {
-    if (occurrence.ermineTokens.length < minTokens) continue;
-    const tokens = uniqueInOrder(occurrence.ermineTokens);
-    const key = transactionKey(tokens);
-    const current = byTokens.get(key) ?? { tokens, set: new Set(tokens), weight: 0, examples: [] };
-    current.weight += 1;
-    if (current.examples.length < 5) current.examples.push(`${occurrence.file}#${occurrence.index + 1}`);
-    byTokens.set(key, current);
-  }
-  return [...byTokens.values()];
-}
-
-function countItemset(
-  counts: Map<string, ItemsetCount>,
-  tokens: string[],
-  transaction: GreedyTransaction,
-): void {
-  const key = keyOf(tokens);
-  const current = counts.get(key) ?? { tokens: [...tokens], count: 0, examples: [] };
-  current.count += transaction.weight;
-  for (const example of transaction.examples) {
-    if (current.examples.length >= 5) break;
-    if (!current.examples.includes(example)) current.examples.push(example);
-  }
-  counts.set(key, current);
-}
-
-function countCombinations(
-  counts: Map<string, ItemsetCount>,
-  transaction: GreedyTransaction,
-  size: number,
-  start = 0,
-  picked: string[] = [],
-): void {
-  if (picked.length === size) {
-    countItemset(counts, picked, transaction);
-    return;
-  }
-  const remaining = size - picked.length;
-  for (let index = start; index <= transaction.tokens.length - remaining; index += 1) {
-    picked.push(transaction.tokens[index]);
-    countCombinations(counts, transaction, size, index + 1, picked);
-    picked.pop();
-  }
-}
-
-function frequentItemsets(
-  transactions: readonly GreedyTransaction[],
-  options: Required<MineClassClustersOptions>,
-): ItemsetCount[] {
-  const counts = new Map<string, ItemsetCount>();
-  for (const transaction of transactions) {
-    for (let size = options.minTokens; size <= Math.min(options.itemsetMax, transaction.tokens.length); size += 1) {
-      countCombinations(counts, transaction, size);
-    }
-  }
-  return [...counts.values()].filter((item) => item.count >= options.minCount);
-}
-
-function bestGreedyCandidate(items: readonly ItemsetCount[]): ItemsetCount | undefined {
-  return [...items]
-    .filter((item) => gainFor(item.count, item.tokens.length) > 0)
-    .sort((left, right) =>
-      gainFor(right.count, right.tokens.length) - gainFor(left.count, left.tokens.length) ||
-      right.tokens.length - left.tokens.length ||
-      right.count - left.count ||
-      patternValue(left.tokens).localeCompare(patternValue(right.tokens)))
-    [0];
-}
-
-function removeCandidate(
-  transactions: readonly GreedyTransaction[],
-  candidate: readonly string[],
-  minTokens: number,
-): GreedyTransaction[] {
-  const candidateSet = new Set(candidate);
-  return transactions.flatMap((transaction) => {
-    if (!isSubset(candidate, transaction.set)) return [transaction];
-    const tokens = transaction.tokens.filter((token) => !candidateSet.has(token));
-    if (tokens.length < minTokens) return [];
-    return [{ tokens, set: new Set(tokens), weight: transaction.weight, examples: transaction.examples }];
-  });
-}
-
-function mineGreedySelections(
-  occurrences: readonly ClassOccurrence[],
-  options: Required<MineClassClustersOptions>,
-): GreedyCombineCandidate[] {
-  let transactions = greedyTransactions(occurrences, options.minTokens);
-  const selections: GreedyCombineCandidate[] = [];
-  for (let round = 1; round <= options.greedyRounds; round += 1) {
-    const best = bestGreedyCandidate(frequentItemsets(transactions, options));
-    if (!best) break;
-    selections.push({
-      round,
-      value: patternValue(best.tokens),
-      count: best.count,
-      examples: best.examples,
-      tokenCount: best.tokens.length,
-      gain: gainFor(best.count, best.tokens.length),
-      axes: candidateAxes(best.tokens),
-    });
-    transactions = removeCandidate(transactions, best.tokens, options.minTokens);
-  }
-  return selections;
-}
-
-function mineSemanticUnitReview(
-  occurrences: readonly ClassOccurrence[],
-  greedySelections: readonly GreedyCombineCandidate[],
-  options: Required<MineClassClustersOptions>,
-): SemanticUnitReview[] {
-  const paragraphs = [...countParagraphs(occurrences, options).values()]
-    .filter((pattern) => pattern.count >= options.minCount)
-    .map((pattern) => ({ ...pattern, tokens: tokensOf(pattern.value), set: new Set(tokensOf(pattern.value)) }));
-  return greedySelections.slice(0, options.limit).map((seed) => {
-    const seedTokens = tokensOf(seed.value);
-    const seedSet = new Set(seedTokens);
-    const growthOptions = paragraphs
-      .filter((paragraph) => paragraph.tokens.length > seedTokens.length && isSubset(seedTokens, paragraph.set))
-      .map((paragraph): SemanticGrowthOption => {
-        const addedWords = paragraph.tokens.filter((token) => !seedSet.has(token));
-        return {
-          value: paragraph.value,
-          count: paragraph.count,
-          examples: paragraph.examples,
-          tokenCount: paragraph.tokens.length,
-          gain: gainFor(paragraph.count, paragraph.tokens.length),
-          addedWords,
-          axes: candidateAxes(paragraph.tokens),
-        };
-      })
-      .sort((left, right) =>
-        right.gain - left.gain ||
-        right.count - left.count ||
-        right.tokenCount - left.tokenCount ||
-        left.value.localeCompare(right.value))
-      .slice(0, 3);
-    return {
-      seed,
-      rule: "grow only while the enlarged group can still be named as a general reusable semantic style unit",
-      growthOptions,
-    };
-  });
+interface PairCount {
+  count: number;
 }
 
 function directoryOf(file: string): string {
   const slashIndex = file.lastIndexOf("/");
   return slashIndex < 0 ? "." : file.slice(0, slashIndex);
+}
+
+function intrinsicSplit(tokens: readonly string[]): { intrinsic: string[]; residue: string[] } {
+  const intrinsic: string[] = [];
+  const residue: string[] = [];
+  for (const token of tokens) (isContextWord(token) ? residue : intrinsic).push(token);
+  return { intrinsic, residue };
 }
 
 function paragraphRecords(
@@ -474,55 +452,47 @@ function paragraphRecords(
 ): ParagraphRecord[] {
   const records = new Map<string, ParagraphRecord>();
   for (const occurrence of occurrences) {
-    if (occurrence.ermineTokens.length < options.minTokens) continue;
-    const current = records.get(occurrence.ermineClassString) ?? {
-      value: occurrence.ermineClassString,
-      tokens: occurrence.ermineTokens,
+    const { intrinsic, residue } = intrinsicSplit(uniqueInOrder(occurrence.ermineTokens));
+    if (intrinsic.length < options.minTokens) continue;
+    const value = patternValue(intrinsic);
+    const current = records.get(value) ?? {
+      value,
+      tokens: tokensOf(value),
       count: 0,
       examples: [],
+      usage: [],
       files: new Set<string>(),
       directories: new Set<string>(),
+      residue: new Map<string, number>(),
     };
     current.count += 1;
     current.files.add(occurrence.file);
     current.directories.add(directoryOf(occurrence.file));
-    if (current.examples.length < 5) current.examples.push(`${occurrence.file}#${occurrence.index + 1}`);
-    records.set(occurrence.ermineClassString, current);
+    for (const token of residue) current.residue.set(token, (current.residue.get(token) ?? 0) + 1);
+    if (current.examples.length < 5) {
+      current.examples.push(`${occurrence.file}#${occurrence.index + 1}`);
+      current.usage.push(occurrence.context);
+    }
+    records.set(value, current);
   }
   return [...records.values()];
 }
 
-function pairSupportKey(left: string, right: string): string {
-  return keyOf([left, right]);
-}
-
-function pairSupports(occurrences: readonly ClassOccurrence[], minTokens: number): Map<string, ItemsetCount> {
-  const supports = new Map<string, ItemsetCount>();
+function pairSupports(occurrences: readonly ClassOccurrence[], options: Required<MineClassClustersOptions>): Map<string, PairCount> {
+  const supports = new Map<string, PairCount>();
   for (const occurrence of occurrences) {
-    if (occurrence.ermineTokens.length < minTokens) continue;
-    const tokens = uniqueInOrder(occurrence.ermineTokens);
-    for (let left = 0; left < tokens.length; left += 1) {
-      for (let right = left + 1; right < tokens.length; right += 1) {
-        countItemset(supports, [tokens[left], tokens[right]], {
-          tokens,
-          set: new Set(tokens),
-          weight: 1,
-          examples: [`${occurrence.file}#${occurrence.index + 1}`],
-        });
+    const { intrinsic } = intrinsicSplit(uniqueInOrder(occurrence.ermineTokens));
+    if (intrinsic.length < options.minTokens) continue;
+    for (let left = 0; left < intrinsic.length; left += 1) {
+      for (let right = left + 1; right < intrinsic.length; right += 1) {
+        const key = keyOf([intrinsic[left], intrinsic[right]].sort());
+        const current = supports.get(key) ?? { count: 0 };
+        current.count += 1;
+        supports.set(key, current);
       }
     }
   }
   return supports;
-}
-
-function allPairs(tokens: readonly string[]): string[][] {
-  const pairs: string[][] = [];
-  for (let left = 0; left < tokens.length; left += 1) {
-    for (let right = left + 1; right < tokens.length; right += 1) {
-      pairs.push([tokens[left], tokens[right]]);
-    }
-  }
-  return pairs;
 }
 
 function median(values: readonly number[]): number {
@@ -535,164 +505,242 @@ function roundMetric(value: number): number {
   return Math.round(value * 100) / 100;
 }
 
-function scorePromotionCandidate(
-  record: ParagraphRecord,
-  axes: readonly string[],
-  medianClosure: number,
-  closedPairShare: number,
-  scopedWordCount: number,
-): number {
-  let score = 0;
-  score += Math.min(24, record.count * 3);
-  if (record.tokens.length >= 4 && record.tokens.length <= 8) score += 8;
-  else if (record.tokens.length === 3) score += 3;
-  else if (record.tokens.length <= 10) score += 2;
-  else score -= 6;
-  score += Math.round(medianClosure * 12);
-  score += Math.round(closedPairShare * 8);
-  if (record.files.size >= 2) score += 4;
-  if (record.directories.size >= 2) score += 3;
-  if (axes.length >= 4 && axes.length <= 7) score += 8;
-  else if (axes.length === 3) score += 2;
-  else if (axes.length <= 2) score -= 6;
-  else if (axes.length <= 9) score += 2;
-  else score -= 8;
-  score -= scopedWordCount * 3;
-  score -= Math.max(0, record.tokens.length - 8) * 3;
-  score -= Math.max(0, axes.length - 8) * 3;
-  if (record.files.size === 1 && record.directories.size === 1) score -= 4;
-  if (record.count <= 2 && record.files.size === 1) score -= 6;
-  return score;
+interface Cohesion {
+  cohesion: number | null;
+  closedPairShare: number | null;
 }
 
-function promotionDisposition(
+function cohesionOf(
+  record: ParagraphRecord,
+  pairs: Map<string, PairCount>,
+  options: Required<MineClassClustersOptions>,
+): Cohesion {
+  if (record.count < options.cohesionMinCount) return { cohesion: null, closedPairShare: null };
+  const ratios: number[] = [];
+  let closed = 0;
+  let total = 0;
+  for (let left = 0; left < record.tokens.length; left += 1) {
+    for (let right = left + 1; right < record.tokens.length; right += 1) {
+      const support = pairs.get(keyOf([record.tokens[left], record.tokens[right]].sort()))?.count ?? record.count;
+      ratios.push(record.count / support);
+      if (support <= record.count + 1) closed += 1;
+      total += 1;
+    }
+  }
+  return {
+    cohesion: roundMetric(median(ratios)),
+    closedPairShare: total === 0 ? null : roundMetric(closed / total),
+  };
+}
+
+function dispositionOf(
   record: ParagraphRecord,
   axes: readonly string[],
-  score: number,
-  medianClosure: number,
-  closedPairShare: number,
-  scopedWordCount: number,
-): SemanticPromotionDisposition {
-  if (record.tokens.length <= 3 || axes.length <= 2) return "hold-too-primitive";
+  scopedWords: readonly string[],
+  cohesion: Cohesion,
+): PromotionDisposition {
+  if (record.tokens.length <= STEM_MAX_TOKENS || axes.length <= STEM_MAX_AXES) return "stem";
   if (
-    record.tokens.length >= 12 ||
-    axes.length >= 10 ||
-    scopedWordCount >= 4 ||
-    (record.files.size === 1 && record.tokens.length >= 9 && axes.length >= 8)
-  ) return "hold-component-shaped";
-  if (record.files.size === 1 && record.count <= 3) return "hold-project-local";
-  if (medianClosure < 0.35 && closedPairShare < 0.35 && (score < 30 || record.files.size < 3 || record.directories.size < 2)) return "hold-low-closure";
-  return score >= 25 ? "promote" : "review";
+    record.tokens.length >= IDENTITY_MIN_TOKENS ||
+    axes.length >= IDENTITY_MIN_AXES ||
+    scopedWords.length >= IDENTITY_MIN_SCOPED
+  ) return "identity-shaped";
+  if (record.files.size === 1) return "local-evidence";
+  if (
+    cohesion.cohesion !== null && cohesion.cohesion < LOOSE_COHESION &&
+    cohesion.closedPairShare !== null && cohesion.closedPairShare < LOOSE_COHESION
+  ) return "loose-bundle";
+  return "candidate";
 }
 
-function promotionReasons(
-  record: ParagraphRecord,
-  axes: readonly string[],
-  disposition: SemanticPromotionDisposition,
-  medianClosure: number,
-  closedPairShare: number,
-  scopedWordCount: number,
-): string[] {
-  const reasons = [
-    `${record.count} repeated paragraphs`,
-    `${record.tokens.length} words across ${axes.length} axes`,
-    `median pair closure ${roundMetric(medianClosure)}`,
-    `${roundMetric(closedPairShare * 100)}% near-closed internal pairs`,
-    `${record.files.size} files and ${record.directories.size} directories`,
-  ];
-  if (scopedWordCount) reasons.push(`${scopedWordCount} scoped/stateful words`);
-  if (disposition === "promote") reasons.push("compact, repeated, and mechanically closed enough to name");
-  if (disposition === "hold-too-primitive") reasons.push("too small to prove a higher-level semantic unit");
-  if (disposition === "hold-component-shaped") reasons.push("too large, stateful, or multi-axis to treat as a compact combine");
-  if (disposition === "hold-project-local") reasons.push("currently repeats in one local context only");
-  if (disposition === "hold-low-closure") reasons.push("internal pairs travel more often outside this paragraph than inside it");
-  return reasons;
+function dispositionRank(disposition: PromotionDisposition): number {
+  switch (disposition) {
+    case "candidate": return 0;
+    case "stem": return 1;
+    case "loose-bundle": return 2;
+    case "local-evidence": return 3;
+    case "identity-shaped": return 4;
+  }
 }
 
-function mineSemanticPromotions(
+function residuePatterns(record: ParagraphRecord): CountedPattern[] {
+  return [...record.residue.entries()]
+    .map(([value, count]) => ({ value, count, examples: [] }))
+    .sort((left, right) => right.count - left.count || left.value.localeCompare(right.value));
+}
+
+function minePromotions(
   occurrences: readonly ClassOccurrence[],
   options: Required<MineClassClustersOptions>,
-): SemanticPromotionCandidate[] {
-  const pairs = pairSupports(occurrences, options.minTokens);
+): PromotionCandidate[] {
+  const pairs = pairSupports(occurrences, options);
   return paragraphRecords(occurrences, options)
-    .filter((record) => record.count >= options.minCount && record.tokens.length >= 3)
-    .map((record): SemanticPromotionCandidate => {
-      const pairItems = allPairs(record.tokens)
-        .map((tokens) => pairs.get(pairSupportKey(tokens[0], tokens[1])) ?? { tokens, count: record.count, examples: record.examples })
-        .map((item) => ({
-          value: patternValue(item.tokens),
-          count: item.count,
-          examples: item.examples,
-        }));
-      const closureRatios = pairItems.map((pair) => record.count / pair.count);
-      const medianClosure = roundMetric(median(closureRatios));
-      const closedPairShare = roundMetric(pairItems.filter((pair) => pair.count <= record.count + 1).length / pairItems.length);
+    .map((record): PromotionCandidate => {
       const axes = candidateAxes(record.tokens);
-      const scopedWordCount = record.tokens.filter((token) => parseWord(token).scope !== "base").length;
-      const score = scorePromotionCandidate(record, axes, medianClosure, closedPairShare, scopedWordCount);
-      const disposition = promotionDisposition(record, axes, score, medianClosure, closedPairShare, scopedWordCount);
+      const scopedWords = record.tokens.filter((token) => parseWord(token).scope !== "base");
+      const roleBoundWords = record.tokens.filter((token) => ROLE_SEGMENT.test(token));
+      const cohesion = cohesionOf(record, pairs, options);
       return {
         value: record.value,
         count: record.count,
         examples: record.examples,
+        usage: record.usage,
         tokenCount: record.tokens.length,
         axes,
-        score,
-        disposition,
-        reasons: promotionReasons(record, axes, disposition, medianClosure, closedPairShare, scopedWordCount),
-        metrics: {
-          medianClosure,
-          closedPairShare,
+        disposition: dispositionOf(record, axes, scopedWords, cohesion),
+        evidence: {
           fileCount: record.files.size,
           directoryCount: record.directories.size,
-          scopedWordCount,
+          files: [...record.files].sort(),
+          directories: [...record.directories].sort(),
+          cohesion: cohesion.cohesion,
+          closedPairShare: cohesion.closedPairShare,
+          scopedWords,
+          roleBoundWords,
+          contextResidue: residuePatterns(record),
         },
-        strongestPairs: pairItems
+      };
+    })
+    // Generality first: spread across distinct contexts outranks raw repetition.
+    .sort((left, right) =>
+      dispositionRank(left.disposition) - dispositionRank(right.disposition) ||
+      right.evidence.fileCount - left.evidence.fileCount ||
+      right.evidence.directoryCount - left.evidence.directoryCount ||
+      right.count - left.count ||
+      right.tokenCount - left.tokenCount ||
+      left.value.localeCompare(right.value));
+}
+
+function isSubsetOf(left: ReadonlySet<string>, right: ReadonlySet<string>): boolean {
+  if (left.size > right.size) return false;
+  return [...left].every((token) => right.has(token));
+}
+
+type FamilyNode = PromotionCandidate & { tokens: string[] };
+
+// A family relation needs at least a two-word shared core; one-word edges chain
+// unrelated paragraphs, while two-word edges can expose fluency families and
+// three-word-plus cores become the stronger idiom evidence.
+const FAMILY_MIN_SHARED = FLUENCY_MIN_CORE_WORDS;
+
+function familyEdge(left: FamilyNode, right: FamilyNode, threshold: number): boolean {
+  const leftSet = new Set(left.tokens);
+  const rightSet = new Set(right.tokens);
+  const shared = left.tokens.filter((token) => rightSet.has(token)).length;
+  if (shared < FAMILY_MIN_SHARED) return false;
+  return isSubsetOf(leftSet, rightSet) || isSubsetOf(rightSet, leftSet) || jaccard(left.tokens, right.tokens) >= threshold;
+}
+
+function uniqueUsage(usage: readonly UsageContext[], limit = 8): UsageContext[] {
+  const seen = new Set<string>();
+  const unique: UsageContext[] = [];
+  for (const context of usage) {
+    const key = JSON.stringify(context);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(context);
+    if (unique.length >= limit) break;
+  }
+  return unique;
+}
+
+function mineFamilies(
+  promotions: readonly PromotionCandidate[],
+  options: Required<MineClassClustersOptions>,
+): PromotionFamily[] {
+  // Identity-shaped paragraphs are components; a variant relation to a component
+  // is not vocabulary structure.
+  const nodes: FamilyNode[] = promotions
+    .filter((candidate) => candidate.disposition !== "identity-shaped")
+    .map((candidate) => ({ ...candidate, tokens: tokensOf(candidate.value) }));
+  const componentOf = new Map<FamilyNode, number>();
+  let componentCount = 0;
+  for (const node of nodes) {
+    if (componentOf.has(node)) continue;
+    const component = componentCount++;
+    const queue = [node];
+    componentOf.set(node, component);
+    while (queue.length) {
+      const current = queue.pop()!;
+      for (const other of nodes) {
+        if (componentOf.has(other)) continue;
+        if (familyEdge(current, other, options.familyThreshold)) {
+          componentOf.set(other, component);
+          queue.push(other);
+        }
+      }
+    }
+  }
+  const grouped = new Map<number, FamilyNode[]>();
+  for (const [node, component] of componentOf) {
+    grouped.set(component, [...grouped.get(component) ?? [], node]);
+  }
+  return [...grouped.values()]
+    .filter((members) => members.length >= 2)
+    .map((members): PromotionFamily => {
+      const core = members
+        .map((member) => new Set(member.tokens))
+        .reduce((shared, set) => shared.filter((token) => set.has(token)), [...members[0].tokens]);
+      const coreValue = core.length ? patternValue(core) : "";
+      const files = new Set(members.flatMap((member) => member.evidence.files));
+      const directories = new Set(members.flatMap((member) => member.evidence.directories));
+      const usage = uniqueUsage(members.flatMap((member) => member.usage));
+      const kind: PromotionFamily["kind"] =
+        core.length >= IDIOM_MIN_CORE_WORDS && files.size >= 2 ? "idiom" : "fluency";
+      return {
+        core: coreValue,
+        coreAxes: candidateAxes(core),
+        kind,
+        totalCount: members.reduce((total, member) => total + member.count, 0),
+        fileCount: files.size,
+        directoryCount: directories.size,
+        usage,
+        members: members
           .sort((left, right) => right.count - left.count || left.value.localeCompare(right.value))
-          .slice(0, 4),
+          .map((member) => ({
+            value: member.value,
+            count: member.count,
+            fileCount: member.evidence.fileCount,
+            disposition: member.disposition,
+            variantWords: member.tokens.filter((token) => !core.includes(token)),
+          })),
       };
     })
     .sort((left, right) =>
-      dispositionRank(left.disposition) - dispositionRank(right.disposition) ||
-      right.score - left.score ||
-      right.count - left.count ||
-      right.tokenCount - left.tokenCount ||
-      left.value.localeCompare(right.value))
+      right.totalCount - left.totalCount ||
+      right.fileCount - left.fileCount ||
+      right.core.split(/\s+/).length - left.core.split(/\s+/).length ||
+      left.core.localeCompare(right.core))
     .slice(0, options.limit);
 }
 
-function dispositionRank(disposition: SemanticPromotionDisposition): number {
-  switch (disposition) {
-    case "promote": return 0;
-    case "review": return 1;
-    case "hold-low-closure": return 2;
-    case "hold-project-local": return 3;
-    case "hold-too-primitive": return 4;
-    case "hold-component-shaped": return 5;
+// A plain spread would let explicitly-undefined keys clobber the defaults.
+function withDefaults(input: MineClassClustersOptions): Required<MineClassClustersOptions> {
+  const options: Required<MineClassClustersOptions> = { ...DEFAULT_OPTIONS };
+  for (const key of Object.keys(input) as (keyof MineClassClustersOptions)[]) {
+    const value = input[key];
+    if (value !== undefined) options[key] = value;
   }
+  return options;
 }
 
 export function mineClassClusters(
   sources: readonly ClusterSource[],
   inputOptions: MineClassClustersOptions = {},
 ): ClusterReport {
-  const options: Required<MineClassClustersOptions> = { ...DEFAULT_OPTIONS, ...inputOptions };
+  const options = withDefaults(inputOptions);
   const occurrences = collectClassOccurrences(sources);
-  const repeatedParagraphs = mineRepeatedParagraphs(occurrences, options);
-  const ngrams = mineNgrams(occurrences, options);
-  const greedySelections = mineGreedySelections(occurrences, options);
+  const promotions = minePromotions(occurrences, options);
   return {
     sourceCount: sources.length,
     occurrenceCount: occurrences.length,
     paragraphCount: new Set(occurrences.map((occurrence) => occurrence.ermineClassString)).size,
-    repeatedParagraphs,
-    ngrams,
+    repeatedParagraphs: mineRepeatedParagraphs(occurrences, options),
+    ngrams: mineNgrams(occurrences, options),
     axisConstellations: mineAxisConstellations(occurrences, options),
     nearIdentical: mineNearIdentical(occurrences, options),
-    combineCandidates: repeatedParagraphs.length ? repeatedParagraphs : ngrams.filter((pattern) => pattern.value.split(/\s+/).length >= 3),
-    greedySelections,
-    semanticUnitReview: mineSemanticUnitReview(occurrences, greedySelections, options),
-    semanticPromotions: mineSemanticPromotions(occurrences, options),
+    promotions: promotions.slice(0, options.limit),
+    families: mineFamilies(promotions, options),
   };
 }
 
@@ -744,51 +792,65 @@ function renderNear(near: readonly NearIdenticalParagraph[]): string[] {
   return lines;
 }
 
-function renderGreedy(selections: readonly GreedyCombineCandidate[]): string[] {
-  const lines = ["## Greedy Mechanical Selections", ""];
-  if (!selections.length) return [...lines, "_No positive-gain selections at the selected threshold._", ""];
-  for (const selection of selections) {
-    lines.push(`- round ${selection.round}: gain ${selection.gain}, ${selection.count}x, ${selection.tokenCount} words`);
-    lines.push(`  candidate: \`${selection.value}\``);
-    lines.push(`  axes: ${selection.axes.join(", ")}`);
-    lines.push(`  examples: ${selection.examples.join(", ")}`);
+export function formatUsage(usage: readonly UsageContext[], limit = 3): string[] {
+  const seen = new Set<string>();
+  const lines: string[] = [];
+  for (const context of usage) {
+    if (!context.tag) continue;
+    const parent = context.parentClasses ? ` in \`${context.parentClasses.slice(0, 60)}\`` : "";
+    const content = context.content ? ` "${context.content}"` : "";
+    const line = `<${context.tag}>${content}${parent}`;
+    if (seen.has(line)) continue;
+    seen.add(line);
+    lines.push(line);
+    if (lines.length >= limit) break;
   }
-  lines.push("");
   return lines;
 }
 
-function renderSemanticUnitReview(reviews: readonly SemanticUnitReview[]): string[] {
-  const lines = ["## Semantic Unit Growth Review", ""];
-  if (!reviews.length) return [...lines, "_No greedy seeds to review._", ""];
-  for (const review of reviews) {
-    lines.push(`- seed round ${review.seed.round}: \`${review.seed.value}\``);
-    lines.push(`  rule: ${review.rule}`);
-    if (!review.growthOptions.length) {
-      lines.push("  growth: no repeated larger paragraph contains this seed at the selected threshold");
-      continue;
-    }
-    for (const option of review.growthOptions) {
-      lines.push(`  grows to: ${option.count}x, gain ${option.gain}, ${option.tokenCount} words`);
-      lines.push(`    \`${option.value}\``);
-      lines.push(`    added: \`${option.addedWords.join(" ")}\``);
-      lines.push(`    axes: ${option.axes.join(", ")}`);
-    }
-  }
-  lines.push("");
-  return lines;
-}
+const NAMING_REVIEW_CONTRACT = [
+  "A candidate earns a name only through the naming review — the admission test, one level up:",
+  "",
+  "1. **Surplus meaning** — the name must say more than the words already say; never merely shorter.",
+  "2. **Role noun** — nameable as one general role noun, optionally with a variant modifier.",
+  "3. **Project-agnostic** — the name would mean the same thing in a different product.",
+];
 
-function renderSemanticPromotions(candidates: readonly SemanticPromotionCandidate[]): string[] {
-  const lines = ["## Semantic Promotion Review", ""];
+function renderPromotions(candidates: readonly PromotionCandidate[]): string[] {
+  const lines = ["## Promotion Review", "", ...NAMING_REVIEW_CONTRACT, ""];
   if (!candidates.length) return [...lines, "_No repeated paragraphs available for promotion review._", ""];
   for (const candidate of candidates) {
-    lines.push(`- ${candidate.disposition}: score ${candidate.score}, ${candidate.count}x, ${candidate.tokenCount} words`);
+    const { evidence } = candidate;
+    lines.push(`- ${candidate.disposition}: ${candidate.count}x, ${candidate.tokenCount} words, ${evidence.fileCount} files, ${evidence.directoryCount} directories`);
     lines.push(`  candidate: \`${candidate.value}\``);
     lines.push(`  axes: ${candidate.axes.join(", ")}`);
-    lines.push(`  metrics: closure ${candidate.metrics.medianClosure}, closed pairs ${(candidate.metrics.closedPairShare * 100).toFixed(0)}%, files ${candidate.metrics.fileCount}, directories ${candidate.metrics.directoryCount}, scoped ${candidate.metrics.scopedWordCount}`);
-    lines.push(`  strongest pairs: ${candidate.strongestPairs.map((pair) => `${pair.count}x \`${pair.value}\``).join("; ")}`);
-    lines.push(`  reasons: ${candidate.reasons.join("; ")}`);
+    lines.push(evidence.cohesion === null
+      ? `  cohesion: below evidence floor (${candidate.count}x)`
+      : `  cohesion: ${evidence.cohesion} median closure, ${((evidence.closedPairShare ?? 0) * 100).toFixed(0)}% closed pairs`);
+    if (evidence.scopedWords.length) lines.push(`  scoped: \`${evidence.scopedWords.join(" ")}\``);
+    if (evidence.roleBoundWords.length) lines.push(`  role-bound: \`${evidence.roleBoundWords.join(" ")}\``);
+    if (evidence.contextResidue.length) {
+      lines.push(`  context residue: ${evidence.contextResidue.map((item) => `${item.count}x \`${item.value}\``).join(", ")}`);
+    }
+    for (const usage of formatUsage(candidate.usage)) lines.push(`  usage: ${usage}`);
     lines.push(`  examples: ${candidate.examples.join(", ")}`);
+  }
+  lines.push("");
+  return lines;
+}
+
+function renderFamilies(families: readonly PromotionFamily[]): string[] {
+  const lines = ["## Combine Families", ""];
+  if (!families.length) return [...lines, "_No overlapping candidates at the selected threshold._", ""];
+  for (const family of families) {
+    lines.push(`- ${family.kind} family: ${family.totalCount}x, ${family.fileCount} files, ${family.directoryCount} directories`);
+    lines.push(`  core: \`${family.core || "(none)"}\``);
+    if (family.coreAxes.length) lines.push(`  core axes: ${family.coreAxes.join(", ")}`);
+    for (const usage of formatUsage(family.usage)) lines.push(`  usage: ${usage}`);
+    for (const member of family.members) {
+      const variants = member.variantWords.length ? ` + \`${member.variantWords.join(" ")}\`` : "";
+      lines.push(`  - ${member.count}x, ${member.fileCount} files, ${member.disposition} \`${member.value}\`${variants}`);
+    }
   }
   lines.push("");
   return lines;
@@ -802,10 +864,8 @@ export function renderClusterReport(report: ClusterReport, project = "project"):
     `- class attributes with Ermine words: ${report.occurrenceCount}`,
     `- distinct Ermine paragraphs: ${report.paragraphCount}`,
     "",
-    ...renderGreedy(report.greedySelections),
-    ...renderSemanticUnitReview(report.semanticUnitReview),
-    ...renderSemanticPromotions(report.semanticPromotions),
-    ...renderCounted("Combine Candidates", report.combineCandidates),
+    ...renderPromotions(report.promotions),
+    ...renderFamilies(report.families),
     ...renderCounted("Repeated Paragraphs", report.repeatedParagraphs),
     ...renderCounted("Common N-Grams", report.ngrams),
     ...renderCounted("Axis Constellations", report.axisConstellations),
@@ -825,15 +885,14 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const projectIndex = args.indexOf("--project");
   if (projectIndex < 0 || !args[projectIndex + 1]) {
-    throw new Error("usage: clusters.ts --project <path> [--limit N] [--min-count N] [--itemset-max N] [--greedy-rounds N] [--json]");
+    throw new Error("usage: clusters.ts --project <path> [--limit N] [--min-count N] [--family-threshold N] [--json]");
   }
   const project = args[projectIndex + 1];
   const sources = await loadProjectSources(project);
   const report = mineClassClusters(sources, {
     limit: numberArg(args, "--limit") ?? DEFAULT_OPTIONS.limit,
     minCount: numberArg(args, "--min-count") ?? DEFAULT_OPTIONS.minCount,
-    itemsetMax: numberArg(args, "--itemset-max") ?? DEFAULT_OPTIONS.itemsetMax,
-    greedyRounds: numberArg(args, "--greedy-rounds") ?? DEFAULT_OPTIONS.greedyRounds,
+    familyThreshold: numberArg(args, "--family-threshold") ?? DEFAULT_OPTIONS.familyThreshold,
   });
   if (args.includes("--json")) console.log(JSON.stringify(report, null, 2));
   else console.log(renderClusterReport(report, slash(project)));

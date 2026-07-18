@@ -47,6 +47,44 @@ const promotionSources: ClusterSource[] = [
   },
 ];
 
+const contextSources: ClusterSource[] = [
+  {
+    file: "src/Meta.tsx",
+    content: `
+      <div className="horizontal inline gap-sm align-center margin-right-xl">a</div>
+      <div className="horizontal inline gap-sm align-center margin-right-xl">b</div>
+    `,
+  },
+  {
+    file: "widgets/Row.tsx",
+    content: `
+      <div className="horizontal inline gap-sm align-center">c</div>
+      <ul className="grid-fit-sm elastic scroll-auto max-height-results-md">r1</ul>
+      <ul className="grid-fit-sm elastic scroll-auto max-height-results-md">r2</ul>
+    `,
+  },
+  {
+    file: "src/Only.tsx",
+    content: `
+      <section className="vertical gap-md padding-lg ground-subtle">x</section>
+      <section className="vertical gap-md padding-lg ground-subtle">y</section>
+      <ul className="grid-fit-sm elastic scroll-auto max-height-results-md">r3</ul>
+    `,
+  },
+];
+
+const contextCaptureSources: ClusterSource[] = [
+  {
+    file: "src/Nested.tsx",
+    content: `
+      <div className="vertical gap-md padding-lg ground-subtle">
+        <kbd className="ground-subtle ink rule corner-sm ruled font-xs font-mono">Esc</kbd>
+        <button onClick={() => remove()} className="pressable padding-inline-sm">×</button>
+      </div>
+    `,
+  },
+];
+
 test("collectClassOccurrences extracts literal class attributes and canonicalizes Ermine tokens", () => {
   const occurrences = collectClassOccurrences(sources);
 
@@ -55,6 +93,29 @@ test("collectClassOccurrences extracts literal class attributes and canonicalize
   assert.equal(occurrences[1].ermineClassString, "padding-inline-sm ground-subtle pressable");
   assert.deepEqual(occurrences[5].tokens, ["project-card", "padding-sm"]);
   assert.deepEqual(occurrences[5].ermineTokens, ["padding-sm"]);
+});
+
+test("occurrences carry usage context: tag, content sample, nearest classed parent", () => {
+  const occurrences = collectClassOccurrences(contextCaptureSources);
+
+  const kbd = occurrences.find((occurrence) => occurrence.context.tag === "kbd");
+  assert.equal(kbd?.context.content, "Esc");
+  assert.equal(kbd?.context.parentClasses, "vertical gap-md padding-lg ground-subtle");
+
+  const button = occurrences.find((occurrence) => occurrence.context.tag === "button");
+  assert.equal(button?.context.content, "×");
+  assert.equal(button?.context.parentClasses, "vertical gap-md padding-lg ground-subtle");
+});
+
+test("promotion candidates carry usage aligned with their examples", () => {
+  const report = mineClassClusters(promotionSources, { limit: 10 });
+  const chip = report.promotions.find((candidate) =>
+    candidate.value === "ground-subtle ink rule corner-sm ruled font-xs font-mono"
+  );
+
+  assert.equal(chip?.usage.length, chip?.examples.length);
+  assert.equal(chip?.usage[0].tag, "kbd");
+  assert.equal(chip?.usage[0].content, "Esc");
 });
 
 test("mineClassClusters reports repeated paragraphs, n-grams, axis constellations, and near matches", () => {
@@ -78,34 +139,122 @@ test("mineClassClusters reports repeated paragraphs, n-grams, axis constellation
     item.shared.includes("pressable") &&
     item.rightOnly.includes("font-sm")
   ));
-  assert.equal(report.combineCandidates[0].value, "padding-inline-sm ground-subtle pressable");
-  assert.equal(report.greedySelections[0].value, "padding-inline-sm ground-subtle pressable");
-  assert.equal(report.greedySelections[0].count, 5);
-  assert.equal(report.greedySelections[0].gain, 7);
-  assert.deepEqual(report.greedySelections[0].axes, ["padding", "skin-ground", "affordance"]);
-  assert.equal(report.semanticUnitReview[0].seed.value, "padding-inline-sm ground-subtle pressable");
-  assert.match(report.semanticUnitReview[0].rule, /grow only while/);
-  assert.deepEqual(report.semanticUnitReview[0].growthOptions[0].addedWords, ["font-sm"]);
-  assert.equal(report.semanticUnitReview[0].growthOptions[0].value, "padding-inline-sm ground-subtle font-sm pressable");
 });
 
-test("semantic promotion review promotes compact closed units and holds component-shaped paragraphs", () => {
+test("promotion review separates candidates from stems and identity-shaped paragraphs", () => {
   const report = mineClassClusters(promotionSources, { limit: 10 });
 
-  const promoted = report.semanticPromotions.find((candidate) =>
+  const chip = report.promotions.find((candidate) =>
     candidate.value === "ground-subtle ink rule corner-sm ruled font-xs font-mono"
   );
-  assert.equal(promoted?.disposition, "promote");
-  assert.ok((promoted?.score ?? 0) >= 25);
-  assert.equal(promoted?.metrics.fileCount, 2);
-  assert.match(promoted?.reasons.join(" ") ?? "", /mechanically closed enough to name/);
+  assert.equal(chip?.disposition, "candidate");
+  assert.equal(chip?.evidence.fileCount, 2);
+  assert.equal(chip?.evidence.cohesion, 1);
+  assert.ok((chip?.evidence.closedPairShare ?? 0) >= 0.8);
+  assert.deepEqual(chip?.evidence.contextResidue, []);
 
-  const component = report.semanticPromotions.find((candidate) =>
+  const component = report.promotions.find((candidate) =>
     candidate.value.includes("active:ground-accent") &&
     candidate.value.includes("disabled:blocked")
   );
-  assert.equal(component?.disposition, "hold-component-shaped");
-  assert.ok((component?.metrics.scopedWordCount ?? 0) >= 4);
+  assert.equal(component?.disposition, "identity-shaped");
+  assert.ok((component?.evidence.scopedWords.length ?? 0) >= 4);
+
+  const stem = mineClassClusters(sources, { limit: 10 }).promotions.find((candidate) =>
+    candidate.value === "padding-inline-sm ground-subtle pressable"
+  );
+  assert.equal(stem?.disposition, "stem");
+});
+
+test("candidates rank by context spread before raw repetition", () => {
+  const report = mineClassClusters(contextSources, { limit: 10 });
+  const candidates = report.promotions.filter((candidate) => candidate.disposition === "candidate");
+
+  assert.ok(candidates.length >= 2);
+  assert.equal(candidates[0].value, "grid-fit-sm elastic scroll-auto max-height-results-md");
+  assert.equal(candidates[0].evidence.fileCount, 2);
+});
+
+test("cohesion stays null below the evidence floor instead of rewarding thin data", () => {
+  const report = mineClassClusters(contextSources, { limit: 10 });
+  const meta = report.promotions.find((candidate) =>
+    candidate.value === "horizontal inline gap-sm align-center"
+  );
+
+  assert.equal(meta?.count, 3);
+  assert.equal(meta?.evidence.cohesion, null);
+  assert.equal(meta?.evidence.closedPairShare, null);
+});
+
+test("scale-backed margin words are stripped into context residue, not identity", () => {
+  const report = mineClassClusters(contextSources, { limit: 10 });
+  const meta = report.promotions.find((candidate) =>
+    candidate.value === "horizontal inline gap-sm align-center"
+  );
+
+  assert.equal(meta?.disposition, "candidate");
+  assert.equal(meta?.evidence.fileCount, 2);
+  assert.deepEqual(meta?.evidence.contextResidue, [{ value: "margin-right-xl", count: 2, examples: [] }]);
+});
+
+test("role-bound grammar words surface as evidence for the naming review", () => {
+  const report = mineClassClusters(contextSources, { limit: 10 });
+  const results = report.promotions.find((candidate) =>
+    candidate.value === "grid-fit-sm elastic scroll-auto max-height-results-md"
+  );
+
+  assert.equal(results?.disposition, "candidate");
+  assert.deepEqual(results?.evidence.roleBoundWords, ["max-height-results-md"]);
+});
+
+test("single-file repetition is held as local evidence, not promoted", () => {
+  const report = mineClassClusters(contextSources, { limit: 10 });
+  const local = report.promotions.find((candidate) =>
+    candidate.value === "vertical gap-md padding-lg ground-subtle"
+  );
+
+  assert.equal(local?.disposition, "local-evidence");
+  assert.equal(local?.evidence.fileCount, 1);
+});
+
+test("overlapping paragraphs are grouped into families around a shared core", () => {
+  const report = mineClassClusters(sources, { limit: 10 });
+  const family = report.families.find((item) =>
+    item.core === "padding-inline-sm ground-subtle pressable"
+  );
+
+  assert.ok(family);
+  assert.equal(family?.kind, "idiom");
+  assert.equal(family?.fileCount, 2);
+  assert.equal(family?.totalCount, 5);
+  assert.equal(family?.members.length, 2);
+  const variant = family?.members.find((member) => member.variantWords.length);
+  assert.deepEqual(variant?.variantWords, ["font-sm"]);
+});
+
+test("families retain count-one variants as evidence around a reusable core", () => {
+  const report = mineClassClusters([
+    {
+      file: "src/A.tsx",
+      content: `<button className="padding-inline-sm ground-subtle pressable">A</button>`,
+    },
+    {
+      file: "src/B.tsx",
+      content: `<button className="padding-inline-sm ground-subtle pressable">B</button>`,
+    },
+    {
+      file: "widgets/C.tsx",
+      content: `<button className="padding-inline-sm ground-subtle pressable font-sm">C</button>`,
+    },
+  ], { limit: 10 });
+  const family = report.families.find((item) =>
+    item.core === "padding-inline-sm ground-subtle pressable"
+  );
+
+  assert.ok(family);
+  assert.ok(family?.members.some((member) =>
+    member.count === 1 && member.variantWords.includes("font-sm")
+  ));
 });
 
 test("renderClusterReport produces a markdown report for adoption review", () => {
@@ -113,12 +262,10 @@ test("renderClusterReport produces a markdown report for adoption review", () =>
   const markdown = renderClusterReport(report, "fixture");
 
   assert.match(markdown, /^# Ermine Class Cluster Report: fixture/);
-  assert.match(markdown, /## Greedy Mechanical Selections/);
-  assert.match(markdown, /round 1: gain 7, 5x, 3 words/);
-  assert.match(markdown, /## Semantic Unit Growth Review/);
-  assert.match(markdown, /grow only while the enlarged group can still be named/);
-  assert.match(markdown, /## Semantic Promotion Review/);
-  assert.match(markdown, /## Combine Candidates/);
+  assert.match(markdown, /## Promotion Review/);
+  assert.match(markdown, /Surplus meaning/);
+  assert.match(markdown, /## Combine Families/);
+  assert.match(markdown, /## Repeated Paragraphs/);
   assert.match(markdown, /3x `padding-inline-sm ground-subtle pressable`/);
   assert.match(markdown, /## Near-Identical Paragraphs/);
 });

@@ -62,6 +62,8 @@
     "adoption:rules": "node --import tsx adoption/rule-residue-analysis.ts",
     "adoption:rules:check": "node --import tsx adoption/rule-residue-analysis.ts --check",
     "adoption:clusters": "node --import tsx adoption/clusters.ts",
+    "adoption:review-pack": "node --import tsx adoption/review-pack.ts",
+    "adoption:admission": "node --import tsx adoption/admission-intake.ts",
     "adoption:classlists": "node --import tsx adoption/classlist-corpus.ts",
     "adoption:lens": "node --import tsx adoption/lens-report.ts",
     "adoption:lens:check": "node --import tsx adoption/lens-report.ts --check",

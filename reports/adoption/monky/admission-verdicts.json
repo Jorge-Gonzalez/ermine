@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "verdicts": [
+    {
+      "paragraph": "ground-subtle ink rule corner-sm ruled font-xs font-mono",
+      "verdict": "admit",
+      "name": "keycap",
+      "intent": "A single keyboard-key legend: a small, subtly grounded, bordered mono chip.",
+      "justification": "8x across 2 directories; every occurrence is a <kbd> with a key legend (Esc, Tab, ↵, arrows) — the role is invisible in the words and decisive in usage."
+    },
+    {
+      "paragraph": "vertical gap-md padding-lg ground-subtle rule corner-md ruled",
+      "verdict": "admit",
+      "name": "panel",
+      "intent": "A grouped content surface: a subtly grounded, bordered, padded vertical section.",
+      "justification": "3 files across 2 directories (editor + options), consistently a <div> section wrapper; 'panel' states the grouping role the seven words spell as a recipe."
+    },
+    {
+      "paragraph": "vertical gap-lg padding-2xl centered flush-block max-width-2xl fill-viewport",
+      "verdict": "admit",
+      "name": "page-frame",
+      "intent": "The top-level page shell: a centered, width-capped, viewport-filling vertical flow.",
+      "justification": "Only 2x, but those are both of the corpus's full pages (Editor and Options roots) — frequency matches opportunity, spread is 2 directories."
+    },
+    {
+      "paragraph": "control-size-lg rule corner-sm ruled pressable focus:ring",
+      "verdict": "hold-as-stem",
+      "justification": "Widest spread in the corpus (3 files, 3 directories, all <input> controls) but only 3x, and 'outlined-control' adds the least surplus of the admit candidates — first in line for the next pass as repetition grows."
+    },
+    {
+      "paragraph": "grid-fit-sm elastic basis-ratio content-align-start scroll-auto max-height-results-md scrollbar-subtle",
+      "verdict": "role-bound-hold",
+      "justification": "Mechanically the strongest unit (1.0 closure, 90% closed pairs) but it contains role-bound max-height-results-md and lives in a single directory — general within the results role only."
+    },
+    {
+      "paragraph": "horizontal gap-xs padding-xs rule-soft ruled-bottom",
+      "verdict": "hold-as-stem",
+      "justification": "2x; any name would state the appearance (soft bottom rule) rather than a role, and the paragraph reads fine spelled out."
+    },
+    {
+      "paragraph": "hidden ink-soft font-sm truncate",
+      "verdict": "hold-as-stem",
+      "justification": "2x; plausible role (truncating content-text preview) but naming it now would outrun the evidence."
+    },
+    {
+      "paragraph": "boxed ink font-sm font-medium",
+      "verdict": "hold-as-stem",
+      "justification": "All four usages are form <label>s — a real field-label role — but confined to one directory; a next-pass candidate if it spreads."
+    },
+    {
+      "paragraph": "span-all padding-lg ink-soft font-md text-center",
+      "verdict": "hold-as-stem",
+      "justification": "Both occurrences are the same empty-state message inside one results feature, and span-all couples it to that grid context."
+    },
+    {
+      "paragraph": "subgrid span-all position-relative selectable",
+      "verdict": "identity",
+      "justification": "The selectable row mechanism of the search-results lists specifically — component-owned structure, not vocabulary."
+    }
+  ],
+  "expansions": [
+    {
+      "name": "keycap",
+      "words": ["basis-content", "padding-xs", "corner-sm", "ground-defined", "ink", "elevated-soft", "pressable", "font-mono", "text-center", "font-sm"]
+    },
+    {
+      "name": "panel",
+      "words": ["vertical", "padding-lg", "flow-spacing-md", "ground", "ground-defined", "ruled", "corner-lg", "elevated-soft", "overflow-visible"]
+    },
+    {
+      "name": "page-frame",
+      "words": ["vertical", "fill-viewport", "height-none", "scroll-y", "ground", "max-width-3xl", "margin-centered", "padding-lg"]
+    }
+  ]
+}

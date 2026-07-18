@@ -379,6 +379,18 @@
       "anchor": "ADR-0063"
     },
     {
+      "id": "ADR-0064",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0064-promotion-mining-measures-judgment-decides.md",
+      "anchor": "ADR-0064"
+    },
+    {
+      "id": "ADR-0065",
+      "register": "history",
+      "file": "constitution/decisions/ADR-0065-family-cores-as-admission-targets.md",
+      "anchor": "ADR-0065"
+    },
+    {
       "id": "CODE:Alias",
       "register": "code",
       "file": "src/registry.ts",
