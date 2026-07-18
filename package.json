@@ -61,6 +61,7 @@
     "adoption:review:check": "node --import tsx adoption/rule-action-review.ts --check",
     "adoption:rules": "node --import tsx adoption/rule-residue-analysis.ts",
     "adoption:rules:check": "node --import tsx adoption/rule-residue-analysis.ts --check",
+    "adoption:clusters": "node --import tsx adoption/clusters.ts",
     "registry": "tsx src/registry.ts",
     "emit": "tsx src/emit.ts",
     "audit": "tsx analysis/audit.ts",

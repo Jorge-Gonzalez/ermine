@@ -626,6 +626,17 @@ It should scan literal class paragraphs and report:
 This is where patterns such as `option-chip`, `icon-action`, `form-field`, and `command-row`
 become visible.
 
+The first miner is available as:
+
+```sh
+npm run adoption:clusters -- --project ../monky
+```
+
+It is intentionally read-only. It scans literal `class`/`className` paragraphs in app source,
+skips common test/build directories, canonicalizes the Ermine tokens, and reports repeated
+paragraphs, common n-grams, axis constellations, near-identical paragraphs, and combine
+candidates. It does not name combines automatically; naming remains a design act.
+
 ## Distinguish Fragment Vs Combine
 
 The miner and lens must classify candidates into the right layer:
@@ -661,17 +672,17 @@ This declaration is browser-adapter boundary.
 
 ## Suggested Delivery Order
 
-1. Document and ratify combines as a consumer-tooling feature.
-2. Implement parser, normalized JSON, and validation.
-3. Implement combine-aware paragraph expansion and lint diagnostics.
-4. Teach the formatter the visible-order versus expanded-order distinction.
-5. Emit standalone combine CSS.
-6. Emit paragraph-aware combine/direct compound CSS.
-7. Build the pure paragraph explainer.
+1. Done: document and ratify combines as a consumer-tooling feature.
+2. Done: implement parser, normalized JSON, and validation.
+3. Done: implement combine-aware paragraph expansion and lint diagnostics.
+4. Done: teach the formatter the visible-order versus expanded-order distinction.
+5. Done: emit standalone combine CSS.
+6. Done: emit paragraph-aware combine/direct compound CSS.
+7. Done: build the pure paragraph explainer.
+8. Done: add the adoption cluster miner.
 8. Add the VS Code command with structured Markdown output.
 9. Add the graph view.
-10. Add the adoption cluster miner.
-11. Connect explanations to generated adoption reports.
+10. Connect explanations to generated adoption reports.
 
 The implementation should stay conservative: combines are named groups, collisions remain
 collisions, and semantic fragments remain CSS-bearing objects outside Ermine's flat word
