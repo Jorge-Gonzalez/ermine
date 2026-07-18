@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 
 import {
   buildCombineStylesheet,
+  buildStylesheetWithCombines,
   expandCombineParagraph,
   formatCombineSource,
   normalizeCombines,
@@ -273,4 +274,43 @@ test("buildCombineStylesheet can emit a requested subset and rejects unknown nam
   assert.match(buildCombineStylesheet(doc, { names: ["icon-action"] }), /\.icon-action \{/);
   assert.doesNotMatch(buildCombineStylesheet(doc, { names: ["icon-action"] }), /\.option-chip \{/);
   assert.throws(() => buildCombineStylesheet(doc, { names: ["missing"] }), /unknown combine name: missing/);
+});
+
+test("buildStylesheetWithCombines emits mixed compound selectors from combines and direct classes", () => {
+  const doc = parseAndNormalizeCombines(`
+    combine row-core: [
+      horizontal
+    ]
+  `);
+  const css = buildStylesheetWithCombines(["row-core inline"], doc);
+
+  assert.match(css, /\.row-core\.inline \{[^}]*display: inline flex;/s);
+  assert.match(css, /\.row-core \{[^}]*flex-direction: row;/s);
+  assert.doesNotMatch(css, /\.horizontal/);
+});
+
+test("buildStylesheetWithCombines keeps direct scoped state skin visible while using combine backing", () => {
+  const doc = parseAndNormalizeCombines(`
+    combine choice-core: [
+      selectable ground-subtle
+    ]
+  `);
+  const css = buildStylesheetWithCombines(["choice-core selected:ink-accent"], doc);
+
+  assert.match(css, /\.choice-core \{[^}]*background: var\(--ground-subtle\);/s);
+  assert.match(css, /\.selected\\:ink-accent\[aria-selected="true"\] \{[^}]*color: var\(--accent\);/s);
+  assert.doesNotMatch(css, /\.selectable \{/);
+});
+
+test("buildStylesheetWithCombines rejects paragraph collisions after expansion", () => {
+  const doc = parseAndNormalizeCombines(`
+    combine compact-x: [
+      padding-inline-sm
+    ]
+  `);
+
+  assert.throws(
+    () => buildStylesheetWithCombines(["compact-x padding-left-xs"], doc),
+    /padding-inline-sm from combine 'compact-x'/,
+  );
 });

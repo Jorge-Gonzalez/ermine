@@ -1,6 +1,6 @@
 import { buildStylesheet } from "./css.ts";
 import { orderParagraph } from "./format-paragraph.ts";
-import { lint, parseWord, type Issue } from "./lint.ts";
+import { lint, parseWord, type Issue, type LintContext } from "./lint.ts";
 
 export type CombineScope = "project" | "package" | "shared";
 
@@ -58,6 +58,10 @@ export interface FormatCombineOptions extends ParseCombineOptions {}
 
 export interface BuildCombineStylesheetOptions {
   names?: Iterable<string>;
+}
+
+export interface BuildStylesheetWithCombinesOptions {
+  context?: LintContext;
 }
 
 type LongField = "intent" | "scope" | "evidence" | "classes";
@@ -306,6 +310,17 @@ function classSelector(word: string): string {
   return `.${word.replace(/([^a-zA-Z0-9_-])/g, "\\$1")}`;
 }
 
+function selectorMapFor(tokens: ExpandedCombineToken[]): Map<string, string> {
+  const selectors = new Map<string, string>();
+  for (const item of tokens) {
+    const selector = item.origin.kind === "combine"
+      ? classSelector(item.origin.combine)
+      : classSelector(item.origin.sourceToken);
+    selectors.set(item.token, selector);
+  }
+  return selectors;
+}
+
 function normalizeVisible(tokens: VisibleCombineToken[]): string {
   const combines = tokens.filter((token) => token.kind === "combine").map((token) => token.token);
   const direct = tokens.filter((token) => token.kind === "class").map((token) => token.token);
@@ -416,4 +431,23 @@ export function buildCombineStylesheet(document: CombineDocument, options: Build
       selectorForWord: () => classSelector(combine.name),
     }).trimEnd();
   }).filter(Boolean).join("\n\n") + (requested.length ? "\n" : "");
+}
+
+export function buildStylesheetWithCombines(
+  classStrings: string[],
+  document: CombineDocument,
+  options: BuildStylesheetWithCombinesOptions = {},
+): string {
+  const blocks = classStrings.map((classString) => {
+    const expansion = expandCombineParagraph(classString, document);
+    const errors = expansion.lint.filter((issue) => issue.level === "error");
+    if (errors.length) {
+      throw new Error(errors.map((issue) => `${issue.rule}: ${issue.msg}`).join("\n"));
+    }
+    const selectors = selectorMapFor(expansion.expandedTokens);
+    return buildStylesheet([expansion.normalizedExpanded], options.context ?? {}, {
+      selectorForWord: (_word, authoredWord) => selectors.get(authoredWord) ?? classSelector(authoredWord),
+    }).trimEnd();
+  });
+  return blocks.filter(Boolean).join("\n\n") + (blocks.length ? "\n" : "");
 }
