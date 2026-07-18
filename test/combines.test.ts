@@ -3,7 +3,9 @@ import assert from "node:assert/strict";
 
 import {
   expandCombineParagraph,
+  formatCombineSource,
   normalizeCombines,
+  orderParagraphWithCombines,
   parseAndNormalizeCombines,
   parseCombineSource,
 } from "../src/combines.ts";
@@ -136,6 +138,19 @@ test("expandCombineParagraph keeps visible combines collapsed and canonicalizes 
   assert.deepEqual(expansion.visibleTokens.map((token) => token.kind), ["class", "combine", "class"]);
 });
 
+test("orderParagraphWithCombines formats visible markup without expanding combines", () => {
+  const doc = parseAndNormalizeCombines(`
+    combine option-chip: [
+      selectable padding-inline-sm ground-subtle pressable
+    ]
+  `);
+
+  assert.equal(
+    orderParagraphWithCombines("selected:ink-accent foo-local option-chip width-popover-md", doc),
+    "option-chip foo-local width-popover-md selected:ink-accent",
+  );
+});
+
 test("expandCombineParagraph reports collisions against hidden combine classes", () => {
   const doc = parseAndNormalizeCombines(`
     combine option-chip: [
@@ -159,4 +174,49 @@ test("expandCombineParagraph reports hidden sources when combines collide with e
   assert.equal(expansion.lint.length, 1);
   assert.match(expansion.lint[0].msg, /padding-inline-sm from combine 'compact-x'/);
   assert.match(expansion.lint[0].msg, /padding-left-xs from combine 'roomy-left'/);
+});
+
+test("formatCombineSource rewrites short-form bodies into canonical order", () => {
+  assert.equal(
+    formatCombineSource(`
+      combine option-chip: [
+        pressable ground-subtle padding-inline-sm selectable
+      ]
+    `),
+    `combine option-chip: [
+  padding-inline-sm selectable ground-subtle pressable
+]\n`,
+  );
+});
+
+test("formatCombineSource preserves long-form metadata and formats classes", () => {
+  assert.equal(
+    formatCombineSource(`
+      combine icon-action {
+        evidence: [
+          command row
+          search action
+        ]
+        scope: shared
+        intent: compact icon action
+
+        classes: [
+          pressable justify-center horizontal padding-xs align-center ink-soft
+        ]
+      }
+    `),
+    `combine icon-action {
+  intent: compact icon action
+  scope: shared
+
+  evidence: [
+    command row
+    search action
+  ]
+
+  classes: [
+    horizontal padding-xs align-center justify-center ink-soft pressable
+  ]
+}\n`,
+  );
 });

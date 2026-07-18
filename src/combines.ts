@@ -53,6 +53,8 @@ export interface ParseCombineOptions {
   sourceName?: string;
 }
 
+export interface FormatCombineOptions extends ParseCombineOptions {}
+
 type LongField = "intent" | "scope" | "evidence" | "classes";
 
 const NAME = /^[a-z][a-z0-9-]*$/;
@@ -352,4 +354,43 @@ export function expandCombineParagraph(classString: string, document: CombineDoc
     normalizedExpanded,
     lint: issues,
   };
+}
+
+export function orderParagraphWithCombines(classString: string, document: CombineDocument): string {
+  return expandCombineParagraph(classString, document).normalizedVisible;
+}
+
+function renderClassBlock(classes: string[]): string {
+  return `[\n  ${classes.join(" ")}\n]`;
+}
+
+function renderLongCombine(combine: CombineDefinition): string {
+  const lines = [`combine ${combine.name} {`];
+  if (combine.intent) lines.push(`  intent: ${combine.intent}`);
+  if (combine.scope !== "project") lines.push(`  scope: ${combine.scope}`);
+  if (combine.evidence.length) {
+    if (lines.length > 1) lines.push("");
+    lines.push("  evidence: [");
+    lines.push(...combine.evidence.map((item) => `    ${item}`));
+    lines.push("  ]");
+  }
+  if (lines.length > 1) lines.push("");
+  lines.push("  classes: [");
+  lines.push(`    ${combine.classString}`);
+  lines.push("  ]");
+  lines.push("}");
+  return lines.join("\n");
+}
+
+export function formatCombineDocument(document: CombineDocument): string {
+  const rendered = document.combines.map((combine) => {
+    const simple = !combine.intent && combine.scope === "project" && combine.evidence.length === 0;
+    if (!simple) return renderLongCombine(combine);
+    return `combine ${combine.name}: ${renderClassBlock(combine.classes)}`;
+  });
+  return `${rendered.join("\n\n")}\n`;
+}
+
+export function formatCombineSource(source: string, options: FormatCombineOptions = {}): string {
+  return formatCombineDocument(parseAndNormalizeCombines(source, options));
 }
