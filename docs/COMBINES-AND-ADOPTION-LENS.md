@@ -637,6 +637,22 @@ skips common test/build directories, canonicalizes the Ermine tokens, and report
 paragraphs, common n-grams, axis constellations, near-identical paragraphs, and combine
 candidates. It does not name combines automatically; naming remains a design act.
 
+The miner also includes a greedy mechanical selection pass. Each round counts frequent
+non-contiguous itemsets, scores them by compression gain, selects the highest positive-gain
+candidate, virtually removes those words from matching paragraphs, and repeats. The score is
+intentionally syntax-only:
+
+```text
+gain = occurrences * (word-count - 1) - word-count
+```
+
+Axis lists are displayed beside each selection as evidence, but they do not affect the score
+in this pass. That preserves the discovery order: first let repetition expose the project's
+hidden structure, then let humans or later tooling interpret whether the selected group is a
+good combine, a too-generic idiom, or a semantic fragment boundary. The default itemset depth
+is capped for interactive use; deeper experiments can use `--itemset-max N`, and shorter or
+longer replacement walks can use `--greedy-rounds N`.
+
 ## Distinguish Fragment Vs Combine
 
 The miner and lens must classify candidates into the right layer:

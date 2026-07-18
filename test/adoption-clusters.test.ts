@@ -59,6 +59,10 @@ test("mineClassClusters reports repeated paragraphs, n-grams, axis constellation
     item.rightOnly.includes("font-sm")
   ));
   assert.equal(report.combineCandidates[0].value, "padding-inline-sm ground-subtle pressable");
+  assert.equal(report.greedySelections[0].value, "padding-inline-sm ground-subtle pressable");
+  assert.equal(report.greedySelections[0].count, 4);
+  assert.equal(report.greedySelections[0].gain, 5);
+  assert.deepEqual(report.greedySelections[0].axes, ["padding", "skin-ground", "affordance"]);
 });
 
 test("renderClusterReport produces a markdown report for adoption review", () => {
@@ -66,6 +70,8 @@ test("renderClusterReport produces a markdown report for adoption review", () =>
   const markdown = renderClusterReport(report, "fixture");
 
   assert.match(markdown, /^# Ermine Class Cluster Report: fixture/);
+  assert.match(markdown, /## Greedy Mechanical Selections/);
+  assert.match(markdown, /round 1: gain 5, 4x, 3 words/);
   assert.match(markdown, /## Combine Candidates/);
   assert.match(markdown, /3x `padding-inline-sm ground-subtle pressable`/);
   assert.match(markdown, /## Near-Identical Paragraphs/);

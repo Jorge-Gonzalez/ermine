@@ -26,6 +26,13 @@ export interface CountedPattern {
   examples: string[];
 }
 
+export interface GreedyCombineCandidate extends CountedPattern {
+  round: number;
+  tokenCount: number;
+  gain: number;
+  axes: string[];
+}
+
 export interface NearIdenticalParagraph {
   left: string;
   right: string;
@@ -45,6 +52,7 @@ export interface ClusterReport {
   axisConstellations: CountedPattern[];
   nearIdentical: NearIdenticalParagraph[];
   combineCandidates: CountedPattern[];
+  greedySelections: GreedyCombineCandidate[];
 }
 
 export interface MineClassClustersOptions {
@@ -52,6 +60,8 @@ export interface MineClassClustersOptions {
   minCount?: number;
   ngramMin?: number;
   ngramMax?: number;
+  itemsetMax?: number;
+  greedyRounds?: number;
   limit?: number;
   nearThreshold?: number;
 }
@@ -61,6 +71,8 @@ const DEFAULT_OPTIONS = {
   minCount: 2,
   ngramMin: 2,
   ngramMax: 6,
+  itemsetMax: 4,
+  greedyRounds: 12,
   limit: 20,
   nearThreshold: 0.72,
 } as const;
@@ -118,6 +130,28 @@ function sortCounted(patterns: Iterable<CountedPattern>, limit: number, minCount
     .filter((pattern) => pattern.count >= minCount)
     .sort((left, right) => right.count - left.count || right.value.split(/\s+/).length - left.value.split(/\s+/).length || left.value.localeCompare(right.value))
     .slice(0, limit);
+}
+
+function keyOf(tokens: readonly string[]): string {
+  return tokens.join("\u0000");
+}
+
+function patternValue(tokens: readonly string[]): string {
+  return orderParagraph(tokens.join(" "));
+}
+
+function isSubset(candidate: readonly string[], transaction: Set<string>): boolean {
+  return candidate.every((token) => transaction.has(token));
+}
+
+function candidateAxes(tokens: readonly string[]): string[] {
+  return uniqueInOrder(tokens
+    .map((token) => parseWord(token).axis)
+    .filter((axis): axis is string => axis !== null));
+}
+
+function gainFor(count: number, tokenCount: number): number {
+  return count * (tokenCount - 1) - tokenCount;
 }
 
 function jaccard(left: string[], right: string[]): number {
@@ -215,6 +249,132 @@ function mineNearIdentical(occurrences: readonly ClassOccurrence[], options: Req
     .slice(0, options.limit);
 }
 
+interface GreedyTransaction {
+  tokens: string[];
+  set: Set<string>;
+  weight: number;
+  examples: string[];
+}
+
+interface ItemsetCount {
+  tokens: string[];
+  count: number;
+  examples: string[];
+}
+
+function transactionKey(tokens: readonly string[]): string {
+  return keyOf(tokensOf(patternValue([...tokens])));
+}
+
+function greedyTransactions(occurrences: readonly ClassOccurrence[], minTokens: number): GreedyTransaction[] {
+  const byTokens = new Map<string, GreedyTransaction>();
+  for (const occurrence of occurrences) {
+    if (occurrence.ermineTokens.length < minTokens) continue;
+    const tokens = uniqueInOrder(occurrence.ermineTokens);
+    const key = transactionKey(tokens);
+    const current = byTokens.get(key) ?? { tokens, set: new Set(tokens), weight: 0, examples: [] };
+    current.weight += 1;
+    if (current.examples.length < 5) current.examples.push(`${occurrence.file}#${occurrence.index + 1}`);
+    byTokens.set(key, current);
+  }
+  return [...byTokens.values()];
+}
+
+function countItemset(
+  counts: Map<string, ItemsetCount>,
+  tokens: string[],
+  transaction: GreedyTransaction,
+): void {
+  const key = keyOf(tokens);
+  const current = counts.get(key) ?? { tokens: [...tokens], count: 0, examples: [] };
+  current.count += transaction.weight;
+  for (const example of transaction.examples) {
+    if (current.examples.length >= 5) break;
+    if (!current.examples.includes(example)) current.examples.push(example);
+  }
+  counts.set(key, current);
+}
+
+function countCombinations(
+  counts: Map<string, ItemsetCount>,
+  transaction: GreedyTransaction,
+  size: number,
+  start = 0,
+  picked: string[] = [],
+): void {
+  if (picked.length === size) {
+    countItemset(counts, picked, transaction);
+    return;
+  }
+  const remaining = size - picked.length;
+  for (let index = start; index <= transaction.tokens.length - remaining; index += 1) {
+    picked.push(transaction.tokens[index]);
+    countCombinations(counts, transaction, size, index + 1, picked);
+    picked.pop();
+  }
+}
+
+function frequentItemsets(
+  transactions: readonly GreedyTransaction[],
+  options: Required<MineClassClustersOptions>,
+): ItemsetCount[] {
+  const counts = new Map<string, ItemsetCount>();
+  for (const transaction of transactions) {
+    for (let size = options.minTokens; size <= Math.min(options.itemsetMax, transaction.tokens.length); size += 1) {
+      countCombinations(counts, transaction, size);
+    }
+  }
+  return [...counts.values()].filter((item) => item.count >= options.minCount);
+}
+
+function bestGreedyCandidate(items: readonly ItemsetCount[]): ItemsetCount | undefined {
+  return [...items]
+    .filter((item) => gainFor(item.count, item.tokens.length) > 0)
+    .sort((left, right) =>
+      gainFor(right.count, right.tokens.length) - gainFor(left.count, left.tokens.length) ||
+      right.tokens.length - left.tokens.length ||
+      right.count - left.count ||
+      patternValue(left.tokens).localeCompare(patternValue(right.tokens)))
+    [0];
+}
+
+function removeCandidate(
+  transactions: readonly GreedyTransaction[],
+  candidate: readonly string[],
+  minTokens: number,
+): GreedyTransaction[] {
+  const candidateSet = new Set(candidate);
+  return transactions.flatMap((transaction) => {
+    if (!isSubset(candidate, transaction.set)) return [transaction];
+    const tokens = transaction.tokens.filter((token) => !candidateSet.has(token));
+    if (tokens.length < minTokens) return [];
+    return [{ tokens, set: new Set(tokens), weight: transaction.weight, examples: transaction.examples }];
+  });
+}
+
+function mineGreedySelections(
+  occurrences: readonly ClassOccurrence[],
+  options: Required<MineClassClustersOptions>,
+): GreedyCombineCandidate[] {
+  let transactions = greedyTransactions(occurrences, options.minTokens);
+  const selections: GreedyCombineCandidate[] = [];
+  for (let round = 1; round <= options.greedyRounds; round += 1) {
+    const best = bestGreedyCandidate(frequentItemsets(transactions, options));
+    if (!best) break;
+    selections.push({
+      round,
+      value: patternValue(best.tokens),
+      count: best.count,
+      examples: best.examples,
+      tokenCount: best.tokens.length,
+      gain: gainFor(best.count, best.tokens.length),
+      axes: candidateAxes(best.tokens),
+    });
+    transactions = removeCandidate(transactions, best.tokens, options.minTokens);
+  }
+  return selections;
+}
+
 export function mineClassClusters(
   sources: readonly ClusterSource[],
   inputOptions: MineClassClustersOptions = {},
@@ -232,6 +392,7 @@ export function mineClassClusters(
     axisConstellations: mineAxisConstellations(occurrences, options),
     nearIdentical: mineNearIdentical(occurrences, options),
     combineCandidates: repeatedParagraphs.length ? repeatedParagraphs : ngrams.filter((pattern) => pattern.value.split(/\s+/).length >= 3),
+    greedySelections: mineGreedySelections(occurrences, options),
   };
 }
 
@@ -283,6 +444,19 @@ function renderNear(near: readonly NearIdenticalParagraph[]): string[] {
   return lines;
 }
 
+function renderGreedy(selections: readonly GreedyCombineCandidate[]): string[] {
+  const lines = ["## Greedy Mechanical Selections", ""];
+  if (!selections.length) return [...lines, "_No positive-gain selections at the selected threshold._", ""];
+  for (const selection of selections) {
+    lines.push(`- round ${selection.round}: gain ${selection.gain}, ${selection.count}x, ${selection.tokenCount} words`);
+    lines.push(`  candidate: \`${selection.value}\``);
+    lines.push(`  axes: ${selection.axes.join(", ")}`);
+    lines.push(`  examples: ${selection.examples.join(", ")}`);
+  }
+  lines.push("");
+  return lines;
+}
+
 export function renderClusterReport(report: ClusterReport, project = "project"): string {
   return [
     `# Ermine Class Cluster Report: ${project}`,
@@ -291,6 +465,7 @@ export function renderClusterReport(report: ClusterReport, project = "project"):
     `- class attributes with Ermine words: ${report.occurrenceCount}`,
     `- distinct Ermine paragraphs: ${report.paragraphCount}`,
     "",
+    ...renderGreedy(report.greedySelections),
     ...renderCounted("Combine Candidates", report.combineCandidates),
     ...renderCounted("Repeated Paragraphs", report.repeatedParagraphs),
     ...renderCounted("Common N-Grams", report.ngrams),
@@ -311,13 +486,15 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const projectIndex = args.indexOf("--project");
   if (projectIndex < 0 || !args[projectIndex + 1]) {
-    throw new Error("usage: clusters.ts --project <path> [--limit N] [--min-count N] [--json]");
+    throw new Error("usage: clusters.ts --project <path> [--limit N] [--min-count N] [--itemset-max N] [--greedy-rounds N] [--json]");
   }
   const project = args[projectIndex + 1];
   const sources = await loadProjectSources(project);
   const report = mineClassClusters(sources, {
     limit: numberArg(args, "--limit") ?? DEFAULT_OPTIONS.limit,
     minCount: numberArg(args, "--min-count") ?? DEFAULT_OPTIONS.minCount,
+    itemsetMax: numberArg(args, "--itemset-max") ?? DEFAULT_OPTIONS.itemsetMax,
+    greedyRounds: numberArg(args, "--greedy-rounds") ?? DEFAULT_OPTIONS.greedyRounds,
   });
   if (args.includes("--json")) console.log(JSON.stringify(report, null, 2));
   else console.log(renderClusterReport(report, slash(project)));
