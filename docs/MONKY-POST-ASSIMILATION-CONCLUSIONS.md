@@ -150,7 +150,8 @@ word:
 ```
 
 The alias should accelerate adoption and authoring while keeping the underlying paragraph
-inspectable.
+inspectable. The implementation plan for this layer, now called **combines**, is recorded in
+[`COMBINES-AND-ADOPTION-LENS.md`](COMBINES-AND-ADOPTION-LENS.md).
 
 ## Semantic Fragments
 
@@ -189,8 +190,9 @@ the same declaration patterns by hand.
 
 ## VS Code Adoption Lens
 
-The graph model should become visible in the editor. A VS Code lens or popup could show, for a
-selected class paragraph:
+The graph model should become visible in the editor. The implementation plan for this surface
+is recorded in [`COMBINES-AND-ADOPTION-LENS.md`](COMBINES-AND-ADOPTION-LENS.md). A VS Code
+lens or popup could show, for a selected class paragraph:
 
 - the words and their axes;
 - the emitted declarations and sockets;
