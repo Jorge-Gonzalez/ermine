@@ -707,14 +707,23 @@ The miner and lens must classify candidates into the right layer:
 This classification is the adoption accelerator. It prevents the next project from asking
 humans or AI to rediscover the same categories by hand.
 
-## Connect To Reports Later
+## Connect To Reports
 
-Once the explainer and miner are stable, connect them to adoption reports:
+The first report connection is `ADOPTION-LENS.md`, generated beside each current adoption
+ledger by:
+
+```sh
+npm run adoption:lens
+npm run adoption:lens:check
+```
+
+It indexes existing generated reports without changing strict declaration accounting:
 
 - `RULE-ACTION-REVIEW.md`;
 - `RULE-RESIDUE-ANALYSIS.md`;
 - `BOUNDARY.md`;
-- `current-ledger.json`.
+- `current-ledger.json`;
+- the classlist corpus fixture, when present.
 
 The lens could then show:
 
@@ -738,7 +747,7 @@ This declaration is browser-adapter boundary.
 9. Done: add the VS Code command with structured Markdown output.
 10. Done: load workspace combine source in the VS Code paragraph explanation.
 11. Done: add the static VS Code graph view.
-12. Connect explanations to generated adoption reports.
+12. Done: connect explanations to generated adoption reports through `ADOPTION-LENS.md`.
 
 The implementation should stay conservative: combines are named groups, collisions remain
 collisions, and semantic fragments remain CSS-bearing objects outside Ermine's flat word
