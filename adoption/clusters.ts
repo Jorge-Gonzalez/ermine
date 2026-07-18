@@ -46,6 +46,30 @@ export interface SemanticUnitReview {
   growthOptions: SemanticGrowthOption[];
 }
 
+export type SemanticPromotionDisposition =
+  | "promote"
+  | "review"
+  | "hold-too-primitive"
+  | "hold-component-shaped"
+  | "hold-project-local"
+  | "hold-low-closure";
+
+export interface SemanticPromotionCandidate extends CountedPattern {
+  tokenCount: number;
+  axes: string[];
+  score: number;
+  disposition: SemanticPromotionDisposition;
+  reasons: string[];
+  metrics: {
+    medianClosure: number;
+    closedPairShare: number;
+    fileCount: number;
+    directoryCount: number;
+    scopedWordCount: number;
+  };
+  strongestPairs: CountedPattern[];
+}
+
 export interface NearIdenticalParagraph {
   left: string;
   right: string;
@@ -67,6 +91,7 @@ export interface ClusterReport {
   combineCandidates: CountedPattern[];
   greedySelections: GreedyCombineCandidate[];
   semanticUnitReview: SemanticUnitReview[];
+  semanticPromotions: SemanticPromotionCandidate[];
 }
 
 export interface MineClassClustersOptions {
@@ -280,6 +305,12 @@ interface ItemsetCount {
   examples: string[];
 }
 
+interface ParagraphRecord extends CountedPattern {
+  tokens: string[];
+  files: Set<string>;
+  directories: Set<string>;
+}
+
 function transactionKey(tokens: readonly string[]): string {
   return keyOf(tokensOf(patternValue([...tokens])));
 }
@@ -432,6 +463,215 @@ function mineSemanticUnitReview(
   });
 }
 
+function directoryOf(file: string): string {
+  const slashIndex = file.lastIndexOf("/");
+  return slashIndex < 0 ? "." : file.slice(0, slashIndex);
+}
+
+function paragraphRecords(
+  occurrences: readonly ClassOccurrence[],
+  options: Required<MineClassClustersOptions>,
+): ParagraphRecord[] {
+  const records = new Map<string, ParagraphRecord>();
+  for (const occurrence of occurrences) {
+    if (occurrence.ermineTokens.length < options.minTokens) continue;
+    const current = records.get(occurrence.ermineClassString) ?? {
+      value: occurrence.ermineClassString,
+      tokens: occurrence.ermineTokens,
+      count: 0,
+      examples: [],
+      files: new Set<string>(),
+      directories: new Set<string>(),
+    };
+    current.count += 1;
+    current.files.add(occurrence.file);
+    current.directories.add(directoryOf(occurrence.file));
+    if (current.examples.length < 5) current.examples.push(`${occurrence.file}#${occurrence.index + 1}`);
+    records.set(occurrence.ermineClassString, current);
+  }
+  return [...records.values()];
+}
+
+function pairSupportKey(left: string, right: string): string {
+  return keyOf([left, right]);
+}
+
+function pairSupports(occurrences: readonly ClassOccurrence[], minTokens: number): Map<string, ItemsetCount> {
+  const supports = new Map<string, ItemsetCount>();
+  for (const occurrence of occurrences) {
+    if (occurrence.ermineTokens.length < minTokens) continue;
+    const tokens = uniqueInOrder(occurrence.ermineTokens);
+    for (let left = 0; left < tokens.length; left += 1) {
+      for (let right = left + 1; right < tokens.length; right += 1) {
+        countItemset(supports, [tokens[left], tokens[right]], {
+          tokens,
+          set: new Set(tokens),
+          weight: 1,
+          examples: [`${occurrence.file}#${occurrence.index + 1}`],
+        });
+      }
+    }
+  }
+  return supports;
+}
+
+function allPairs(tokens: readonly string[]): string[][] {
+  const pairs: string[][] = [];
+  for (let left = 0; left < tokens.length; left += 1) {
+    for (let right = left + 1; right < tokens.length; right += 1) {
+      pairs.push([tokens[left], tokens[right]]);
+    }
+  }
+  return pairs;
+}
+
+function median(values: readonly number[]): number {
+  if (!values.length) return 0;
+  const sorted = [...values].sort((left, right) => left - right);
+  return sorted[Math.floor(sorted.length / 2)];
+}
+
+function roundMetric(value: number): number {
+  return Math.round(value * 100) / 100;
+}
+
+function scorePromotionCandidate(
+  record: ParagraphRecord,
+  axes: readonly string[],
+  medianClosure: number,
+  closedPairShare: number,
+  scopedWordCount: number,
+): number {
+  let score = 0;
+  score += Math.min(24, record.count * 3);
+  if (record.tokens.length >= 4 && record.tokens.length <= 8) score += 8;
+  else if (record.tokens.length === 3) score += 3;
+  else if (record.tokens.length <= 10) score += 2;
+  else score -= 6;
+  score += Math.round(medianClosure * 12);
+  score += Math.round(closedPairShare * 8);
+  if (record.files.size >= 2) score += 4;
+  if (record.directories.size >= 2) score += 3;
+  if (axes.length >= 4 && axes.length <= 7) score += 8;
+  else if (axes.length === 3) score += 2;
+  else if (axes.length <= 2) score -= 6;
+  else if (axes.length <= 9) score += 2;
+  else score -= 8;
+  score -= scopedWordCount * 3;
+  score -= Math.max(0, record.tokens.length - 8) * 3;
+  score -= Math.max(0, axes.length - 8) * 3;
+  if (record.files.size === 1 && record.directories.size === 1) score -= 4;
+  if (record.count <= 2 && record.files.size === 1) score -= 6;
+  return score;
+}
+
+function promotionDisposition(
+  record: ParagraphRecord,
+  axes: readonly string[],
+  score: number,
+  medianClosure: number,
+  closedPairShare: number,
+  scopedWordCount: number,
+): SemanticPromotionDisposition {
+  if (record.tokens.length <= 3 || axes.length <= 2) return "hold-too-primitive";
+  if (
+    record.tokens.length >= 12 ||
+    axes.length >= 10 ||
+    scopedWordCount >= 4 ||
+    (record.files.size === 1 && record.tokens.length >= 9 && axes.length >= 8)
+  ) return "hold-component-shaped";
+  if (record.files.size === 1 && record.count <= 3) return "hold-project-local";
+  if (medianClosure < 0.35 && closedPairShare < 0.35 && (score < 30 || record.files.size < 3 || record.directories.size < 2)) return "hold-low-closure";
+  return score >= 25 ? "promote" : "review";
+}
+
+function promotionReasons(
+  record: ParagraphRecord,
+  axes: readonly string[],
+  disposition: SemanticPromotionDisposition,
+  medianClosure: number,
+  closedPairShare: number,
+  scopedWordCount: number,
+): string[] {
+  const reasons = [
+    `${record.count} repeated paragraphs`,
+    `${record.tokens.length} words across ${axes.length} axes`,
+    `median pair closure ${roundMetric(medianClosure)}`,
+    `${roundMetric(closedPairShare * 100)}% near-closed internal pairs`,
+    `${record.files.size} files and ${record.directories.size} directories`,
+  ];
+  if (scopedWordCount) reasons.push(`${scopedWordCount} scoped/stateful words`);
+  if (disposition === "promote") reasons.push("compact, repeated, and mechanically closed enough to name");
+  if (disposition === "hold-too-primitive") reasons.push("too small to prove a higher-level semantic unit");
+  if (disposition === "hold-component-shaped") reasons.push("too large, stateful, or multi-axis to treat as a compact combine");
+  if (disposition === "hold-project-local") reasons.push("currently repeats in one local context only");
+  if (disposition === "hold-low-closure") reasons.push("internal pairs travel more often outside this paragraph than inside it");
+  return reasons;
+}
+
+function mineSemanticPromotions(
+  occurrences: readonly ClassOccurrence[],
+  options: Required<MineClassClustersOptions>,
+): SemanticPromotionCandidate[] {
+  const pairs = pairSupports(occurrences, options.minTokens);
+  return paragraphRecords(occurrences, options)
+    .filter((record) => record.count >= options.minCount && record.tokens.length >= 3)
+    .map((record): SemanticPromotionCandidate => {
+      const pairItems = allPairs(record.tokens)
+        .map((tokens) => pairs.get(pairSupportKey(tokens[0], tokens[1])) ?? { tokens, count: record.count, examples: record.examples })
+        .map((item) => ({
+          value: patternValue(item.tokens),
+          count: item.count,
+          examples: item.examples,
+        }));
+      const closureRatios = pairItems.map((pair) => record.count / pair.count);
+      const medianClosure = roundMetric(median(closureRatios));
+      const closedPairShare = roundMetric(pairItems.filter((pair) => pair.count <= record.count + 1).length / pairItems.length);
+      const axes = candidateAxes(record.tokens);
+      const scopedWordCount = record.tokens.filter((token) => parseWord(token).scope !== "base").length;
+      const score = scorePromotionCandidate(record, axes, medianClosure, closedPairShare, scopedWordCount);
+      const disposition = promotionDisposition(record, axes, score, medianClosure, closedPairShare, scopedWordCount);
+      return {
+        value: record.value,
+        count: record.count,
+        examples: record.examples,
+        tokenCount: record.tokens.length,
+        axes,
+        score,
+        disposition,
+        reasons: promotionReasons(record, axes, disposition, medianClosure, closedPairShare, scopedWordCount),
+        metrics: {
+          medianClosure,
+          closedPairShare,
+          fileCount: record.files.size,
+          directoryCount: record.directories.size,
+          scopedWordCount,
+        },
+        strongestPairs: pairItems
+          .sort((left, right) => right.count - left.count || left.value.localeCompare(right.value))
+          .slice(0, 4),
+      };
+    })
+    .sort((left, right) =>
+      dispositionRank(left.disposition) - dispositionRank(right.disposition) ||
+      right.score - left.score ||
+      right.count - left.count ||
+      right.tokenCount - left.tokenCount ||
+      left.value.localeCompare(right.value))
+    .slice(0, options.limit);
+}
+
+function dispositionRank(disposition: SemanticPromotionDisposition): number {
+  switch (disposition) {
+    case "promote": return 0;
+    case "review": return 1;
+    case "hold-low-closure": return 2;
+    case "hold-project-local": return 3;
+    case "hold-too-primitive": return 4;
+    case "hold-component-shaped": return 5;
+  }
+}
+
 export function mineClassClusters(
   sources: readonly ClusterSource[],
   inputOptions: MineClassClustersOptions = {},
@@ -452,6 +692,7 @@ export function mineClassClusters(
     combineCandidates: repeatedParagraphs.length ? repeatedParagraphs : ngrams.filter((pattern) => pattern.value.split(/\s+/).length >= 3),
     greedySelections,
     semanticUnitReview: mineSemanticUnitReview(occurrences, greedySelections, options),
+    semanticPromotions: mineSemanticPromotions(occurrences, options),
   };
 }
 
@@ -537,6 +778,22 @@ function renderSemanticUnitReview(reviews: readonly SemanticUnitReview[]): strin
   return lines;
 }
 
+function renderSemanticPromotions(candidates: readonly SemanticPromotionCandidate[]): string[] {
+  const lines = ["## Semantic Promotion Review", ""];
+  if (!candidates.length) return [...lines, "_No repeated paragraphs available for promotion review._", ""];
+  for (const candidate of candidates) {
+    lines.push(`- ${candidate.disposition}: score ${candidate.score}, ${candidate.count}x, ${candidate.tokenCount} words`);
+    lines.push(`  candidate: \`${candidate.value}\``);
+    lines.push(`  axes: ${candidate.axes.join(", ")}`);
+    lines.push(`  metrics: closure ${candidate.metrics.medianClosure}, closed pairs ${(candidate.metrics.closedPairShare * 100).toFixed(0)}%, files ${candidate.metrics.fileCount}, directories ${candidate.metrics.directoryCount}, scoped ${candidate.metrics.scopedWordCount}`);
+    lines.push(`  strongest pairs: ${candidate.strongestPairs.map((pair) => `${pair.count}x \`${pair.value}\``).join("; ")}`);
+    lines.push(`  reasons: ${candidate.reasons.join("; ")}`);
+    lines.push(`  examples: ${candidate.examples.join(", ")}`);
+  }
+  lines.push("");
+  return lines;
+}
+
 export function renderClusterReport(report: ClusterReport, project = "project"): string {
   return [
     `# Ermine Class Cluster Report: ${project}`,
@@ -547,6 +804,7 @@ export function renderClusterReport(report: ClusterReport, project = "project"):
     "",
     ...renderGreedy(report.greedySelections),
     ...renderSemanticUnitReview(report.semanticUnitReview),
+    ...renderSemanticPromotions(report.semanticPromotions),
     ...renderCounted("Combine Candidates", report.combineCandidates),
     ...renderCounted("Repeated Paragraphs", report.repeatedParagraphs),
     ...renderCounted("Common N-Grams", report.ngrams),

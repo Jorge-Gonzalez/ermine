@@ -663,6 +663,35 @@ too generic to name by itself. A larger group containing it may become a combine
 named by style intention rather than by the Monky object that happened to use it. The miner
 therefore reports possible growth options, but it does not promote them automatically.
 
+The stricter promotion review asks a more mechanical question:
+
+> Can repeated low-level words be promoted into the smallest larger unit that has enough
+> mechanical evidence to deserve a semantic name?
+
+This pass ranks repeated full paragraphs with explicit evidence:
+
+- frequency: how often the paragraph repeats;
+- compactness: whether it stays small enough to remain a combine rather than a recipe;
+- pair closure: whether internal pairs mostly travel with this paragraph instead of everywhere;
+- context spread: how many files and directories use the unit;
+- axis shape: whether the unit has enough axes to express a concept without becoming a component;
+- state load: whether scoped words such as `hover:`, `active:`, `disabled:`, and `focus:` make
+  the paragraph too stateful.
+
+The output classifies each candidate as:
+
+| disposition | meaning |
+|---|---|
+| `promote` | compact, repeated, closed enough, and ready for naming review |
+| `review` | mechanically plausible but not strong enough for automatic promotion |
+| `hold-too-primitive` | repeated, but too small to prove a higher-level unit |
+| `hold-component-shaped` | too large, stateful, or multi-axis for a compact combine |
+| `hold-project-local` | repeats in one local context only |
+| `hold-low-closure` | internal pairs appear outside the candidate too often |
+
+The algorithm still does not choose the name. It narrows the adoption work to a short,
+explained list so humans or AI spend judgment on naming rather than pattern archaeology.
+
 ## Distinguish Fragment Vs Combine
 
 The miner and lens must classify candidates into the right layer:
