@@ -1036,8 +1036,8 @@ export const SKIN: AxisRecord[] = [
     axis: "focus-ring",
     sibling: "skin", role: "self", signature: "set-with-exclusivity",
     vocabulary: "closed", regime: "free",
-    valueSpace: ["ring", "ring-accent"],
-    tokens: [{ pattern: /^(ring|ring-accent)$/, shape: "<focus-ring>" }],
+    valueSpace: ["ring", "ring-accent", "ring-accent-soft"],
+    tokens: [{ pattern: /^(ring|ring-accent|ring-accent-soft)$/, shape: "<focus-ring>" }],
     default: null,
     controls: ["outline", "outline-offset"],
     mustNeverTouch: ["display", "gap", "flex", "box-shadow", "border-width", "border-color", "background", "color"],
@@ -1125,7 +1125,7 @@ export const SKIN_PLANE = {
     // R-SKIN-11: the line weight the presence words emit; themes rebind for heavier rules.
     line: ["rule-weight"],
     // R-SKIN-13: the focus indicator (full outline value) and its offset.
-    ring: ["ring", "ring-accent", "ring-offset"],
+    ring: ["ring", "ring-accent", "ring-accent-soft", "ring-offset"],
     // R-SKIN-15: scrollbar thumb/track colours for the subtle treatment.
     scrollbar: ["scrollbar-thumb", "scrollbar-track"],
   },

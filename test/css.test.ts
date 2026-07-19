@@ -193,6 +193,11 @@ test("focus:ring-accent matches the focus outline to the accent carrier (R-SKIN-
   assert.match(css, /\.focus\\:ring-accent:focus \{[^}]*outline: var\(--ring-accent, 2px solid var\(--accent\)\);/s);
 });
 
+test("focus:ring-accent-soft matches the focus outline to the soft accent carrier (R-SKIN-13)", () => {
+  const css = toCss("focus:ring-accent-soft");
+  assert.match(css, /\.focus\\:ring-accent-soft:focus \{[^}]*outline: var\(--ring-accent-soft, 2px solid var\(--accent-soft\)\);/s);
+});
+
 test("the min dials' none endpoint escapes the min-content floor (R-CONSTRAINT-01)", () => {
   const css = toCss("min-height-none min-width-none max-width-none");
   assert.match(css, /\.min-height-none \{[^}]*min-height: 0;/s);

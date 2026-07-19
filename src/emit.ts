@@ -259,11 +259,13 @@ const EMISSION: Record<string, EmitSpec> = {
   "focus-ring": {
     effectKind: "css",
     plain: (word) => {
-      if (word !== "ring" && word !== "ring-accent") return null;
+      if (word !== "ring" && word !== "ring-accent" && word !== "ring-accent-soft") return null;
       return {
         outline: word === "ring-accent"
           ? "var(--ring-accent, 2px solid var(--accent))"
-          : "var(--ring, 2px solid var(--ground-defined))",
+          : word === "ring-accent-soft"
+            ? "var(--ring-accent-soft, 2px solid var(--accent-soft))"
+            : "var(--ring, 2px solid var(--ground-defined))",
         "outline-offset": "var(--ring-offset, 0px)",
       };
     },
