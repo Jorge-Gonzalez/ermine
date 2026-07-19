@@ -258,13 +258,15 @@ const EMISSION: Record<string, EmitSpec> = {
   // Authored under the focus condition (focus:ring); nothing to suppress. ---
   "focus-ring": {
     effectKind: "css",
-    plain: (word) =>
-      word === "ring"
-        ? {
-            outline: "var(--ring, 2px solid var(--ground-defined))",
-            "outline-offset": "var(--ring-offset, 0px)",
-          }
-        : null,
+    plain: (word) => {
+      if (word !== "ring" && word !== "ring-accent") return null;
+      return {
+        outline: word === "ring-accent"
+          ? "var(--ring-accent, 2px solid var(--accent))"
+          : "var(--ring, 2px solid var(--ground-defined))",
+        "outline-offset": "var(--ring-offset, 0px)",
+      };
+    },
   },
 
   // --- truncation/text wrapping (R-SKIN-12). `truncate` = single-line ellipsis;

@@ -188,6 +188,11 @@ test("focus:ring restyles the platform outline under the focus condition (R-SKIN
   assert.doesNotMatch(css, /outline: none/, "there is nothing to suppress");
 });
 
+test("focus:ring-accent matches the focus outline to the accent carrier (R-SKIN-13)", () => {
+  const css = toCss("focus:ring-accent");
+  assert.match(css, /\.focus\\:ring-accent:focus \{[^}]*outline: var\(--ring-accent, 2px solid var\(--accent\)\);/s);
+});
+
 test("the min dials' none endpoint escapes the min-content floor (R-CONSTRAINT-01)", () => {
   const css = toCss("min-height-none min-width-none max-width-none");
   assert.match(css, /\.min-height-none \{[^}]*min-height: 0;/s);
