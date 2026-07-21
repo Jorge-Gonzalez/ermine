@@ -1018,7 +1018,7 @@ Tokens:
 #### elevation
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `elevated-soft` `elevated` `recessed-fail`
+- value space: `elevated-soft` `elevated` `recessed-soft` `recessed-fail`
 - default: none
 - controls: `box-shadow`
 - must never touch: `display` `gap` `flex` `position` `background` `color` `border-color` `border-radius` `font-size`
@@ -1027,7 +1027,7 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<elevation>` | `/^(elevated-soft\|elevated\|recessed-fail)$/` | — | no |
+| `<elevation>` | `/^(elevated-soft\|elevated\|recessed-soft\|recessed-fail)$/` | — | no |
 
 #### affordance
 
@@ -1104,7 +1104,7 @@ Tokens:
 #### focus-ring
 
 - role: `self` · signature: `set-with-exclusivity` · vocabulary: `closed` · regime: `free`
-- value space: `ring`
+- value space: `ring` `ring-accent` `ring-accent-soft`
 - default: none
 - controls: `outline` `outline-offset`
 - must never touch: `display` `gap` `flex` `box-shadow` `border-width` `border-color` `background` `color`
@@ -1113,7 +1113,7 @@ Tokens:
 
 | Shape | Pattern | Value domain | Fallback |
 |---|---|---|---|
-| `<focus-ring>` | `/^(ring)$/` | — | no |
+| `<focus-ring>` | `/^(ring\|ring-accent\|ring-accent-soft)$/` | — | no |
 
 #### truncation
 

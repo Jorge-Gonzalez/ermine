@@ -116,7 +116,7 @@ export interface ErminePlainProps {
   /** axis `text-decoration` */
   textDecoration?: "undecorated" | "underlined" | "struck";
   /** axis `elevation` */
-  elevation?: "elevated-soft" | "elevated" | "recessed-fail";
+  elevation?: "elevated-soft" | "elevated" | "recessed-soft" | "recessed-fail";
   /** axis `affordance` */
   affordance?: "pressable" | "blocked";
   /** axis `concealment` */
@@ -128,7 +128,7 @@ export interface ErminePlainProps {
   /** axis `scrollbar` */
   scrollbar?: "scrollbar-subtle";
   /** axis `focus-ring` */
-  focusRing?: "ring";
+  focusRing?: "ring" | "ring-accent" | "ring-accent-soft";
   /** axis `truncation` */
   truncation?: "truncate" | `clamp-${number}` | "text-nowrap" | "text-pre-wrap" | "text-wrap";
   /** axis `selection-treatment` */
