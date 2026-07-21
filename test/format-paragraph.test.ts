@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { orderParagraph, formatParagraphDerivation } from "../src/format-paragraph.ts";
+import { orderParagraph, orderParagraphGroups, paragraphMaySpanLines, formatParagraphDerivation } from "../src/format-paragraph.ts";
 import { REGISTRY } from "../src/registry.ts";
 
 const corpus = [
@@ -43,6 +43,49 @@ test("scoped words group after base words by derived scope order", () => {
     orderParagraph("parent-hover:ground-defined selected:ink-accent hover:ground-subtle ink horizontal"),
     "horizontal ink hover:ground-subtle selected:ink-accent parent-hover:ground-defined",
   );
+});
+
+test("groups match the single-line order word for word", () => {
+  for (const paragraph of corpus) {
+    assert.equal(orderParagraphGroups(paragraph).join(" "), orderParagraph(paragraph), paragraph);
+  }
+});
+
+test("each plane and each scope becomes its own line", () => {
+  const lines = orderParagraphGroups(
+    "search-item horizontal padding-xs ink-soft corner-sm hover:ground-defined hover:ink-accent selected:revealed",
+  );
+  assert.deepEqual(lines, [
+    "search-item",
+    "horizontal padding-xs",
+    "ink-soft corner-sm",
+    "hover:ground-defined hover:ink-accent",
+    "selected:revealed",
+  ]);
+});
+
+test("line layout is idempotent and survives re-reading its own output", () => {
+  for (const paragraph of corpus) {
+    const laid = orderParagraph(paragraph, { lines: true, indent: "    " });
+    assert.equal(orderParagraph(laid, { lines: true, indent: "    " }), laid, paragraph);
+    assert.equal(orderParagraph(laid), orderParagraph(paragraph), paragraph);
+    assert.deepEqual(sortedTokens(laid), sortedTokens(paragraph), paragraph);
+  }
+});
+
+test("a paragraph may span lines only where a raw newline is safe", () => {
+  const alone = `<div data-component="x" className="ink horizontal">`;
+  assert.equal(paragraphMaySpanLines(alone, alone.indexOf("className")), true);
+
+  const shared = `<kbd className="ink">a</kbd><kbd className="ink">b</kbd>`;
+  assert.equal(paragraphMaySpanLines(shared, shared.indexOf("className")), false);
+  assert.equal(paragraphMaySpanLines(shared, shared.lastIndexOf("className")), false);
+
+  const inString = `document.body.innerHTML = '<div class="ink horizontal">x</div>'`;
+  assert.equal(paragraphMaySpanLines(inString, inString.indexOf("class")), false);
+
+  const afterSplit = `<div className="foo-hook\n  ink">`;
+  assert.equal(paragraphMaySpanLines(afterSplit, afterSplit.indexOf("className")), true);
 });
 
 test("rank derivation covers the registry structurally", () => {

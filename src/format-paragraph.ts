@@ -91,7 +91,17 @@ function isKnownScoped(token: RankedToken): boolean {
   return token.parsed.axis !== null && token.parsed.scope !== BASE_SCOPE;
 }
 
-export function orderParagraph(classString: string): string {
+function groupOf(token: RankedToken): string {
+  if (isKnownScoped(token)) return `scope:${token.parsed.scope}`;
+  if (!isKnownBase(token)) return "identity";
+  return `plane:${axisOf(token.parsed)?.sibling ?? ""}`;
+}
+
+/**
+ * The canonical order, split into the groups a reader scans by: identity hooks,
+ * then one group per plane, then one group per scope.
+ */
+export function orderParagraphGroups(classString: string): string[] {
   const tokens = classString.trim().split(/\s+/).filter(Boolean).map((token, index) => ({
     token,
     parsed: parseWord(token),
@@ -100,5 +110,43 @@ export function orderParagraph(classString: string): string {
   const identity = tokens.filter((token) => !isKnownBase(token) && !isKnownScoped(token));
   const base = tokens.filter(isKnownBase).sort(compareBase);
   const scoped = tokens.filter(isKnownScoped).sort(compareScoped);
-  return [...identity, ...base, ...scoped].map((token) => token.token).join(" ");
+
+  const groups: string[] = [];
+  let openGroup = "";
+  for (const token of [...identity, ...base, ...scoped]) {
+    const group = groupOf(token);
+    if (group === openGroup) groups[groups.length - 1] += ` ${token.token}`;
+    else groups.push(token.token);
+    openGroup = group;
+  }
+  return groups;
+}
+
+export interface ParagraphLayout {
+  /** Put each plane and each scope on its own line instead of one long line. */
+  lines?: boolean;
+  /** Prefix for every line after the first, when `lines` is set. */
+  indent?: string;
+}
+
+export function orderParagraph(classString: string, layout: ParagraphLayout = {}): string {
+  const groups = orderParagraphGroups(classString);
+  return groups.join(layout.lines ? `\n${layout.indent ?? ""}` : " ");
+}
+
+/**
+ * A paragraph may only take multiple lines where a raw newline is syntactically
+ * safe: the attribute alone among class attributes on its line, and not inside a
+ * single-line string (markup embedded in `innerHTML = '…'` and the like).
+ * Everything else degrades to the single-line layout.
+ */
+export function paragraphMaySpanLines(source: string, attributeStart: number): boolean {
+  const lineStart = source.lastIndexOf("\n", attributeStart - 1) + 1;
+  const prefix = source.slice(lineStart, attributeStart);
+  for (const quote of ["'", '"', "`"]) {
+    if ((prefix.split(quote).length - 1) % 2 === 1) return false;
+  }
+  const lineEnd = source.indexOf("\n", attributeStart);
+  const line = source.slice(lineStart, lineEnd < 0 ? source.length : lineEnd);
+  return (line.match(/\bclass(?:Name)?\s*=/g) ?? []).length < 2;
 }

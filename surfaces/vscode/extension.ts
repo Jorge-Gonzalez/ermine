@@ -2,10 +2,11 @@ import * as vscode from "vscode";
 
 import completionsJson from "./completions.generated.json" with { type: "json" };
 import hoversJson from "./hovers.generated.json" with { type: "json" };
-import { classAttributeContextAt } from "./attributes.js";
+import { classAttributeContextAt, classAttributeValues } from "./attributes.js";
 import type { CompletionData, HoverData, HoverEntry } from "./data.js";
 import { explainClassParagraphGraphHtml, explainClassParagraphMarkdown } from "./explain.js";
 import { parseAndNormalizeCombines, type CombineDocument } from "../../src/combines.js";
+import { orderParagraph, paragraphMaySpanLines } from "../../src/format-paragraph.js";
 
 const completions = completionsJson as CompletionData;
 const hovers = hoversJson as HoverData;
@@ -194,12 +195,76 @@ async function showClassParagraphGraph(context: vscode.ExtensionContext): Promis
   });
 }
 
+// The visible editor's options carry VS Code's *detected* indentation for the file;
+// the "editor" configuration only knows the setting, which detection overrides.
+function indentUnit(document: vscode.TextDocument): string {
+  const options = vscode.window.visibleTextEditors.find((editor) => editor.document === document)?.options;
+  const configuration = vscode.workspace.getConfiguration("editor", document.uri);
+  const insertSpaces = typeof options?.insertSpaces === "boolean"
+    ? options.insertSpaces
+    : configuration.get<boolean>("insertSpaces", true);
+  const tabSize = typeof options?.tabSize === "number"
+    ? options.tabSize
+    : configuration.get<number>("tabSize", 2);
+  return insertSpaces ? " ".repeat(tabSize) : "\t";
+}
+
+function wantsPlaneLines(document: vscode.TextDocument): boolean {
+  return vscode.workspace
+    .getConfiguration("ermine", document.uri)
+    .get<string>("paragraphLayout", "single-line") === "plane-per-line";
+}
+
+function paragraphEdits(document: vscode.TextDocument): vscode.TextEdit[] {
+  const lines = wantsPlaneLines(document);
+  const unit = indentUnit(document);
+  const text = document.getText();
+  const edits: vscode.TextEdit[] = [];
+
+  for (const attribute of classAttributeValues(text)) {
+    const start = document.positionAt(attribute.valueStart);
+    const line = document.lineAt(start.line);
+    const indent = `${line.text.slice(0, line.firstNonWhitespaceCharacterIndex)}${unit}`;
+    const ordered = orderParagraph(attribute.value, {
+      // Templates stay single-line to match the rewriter, which never lays them out.
+      lines: lines && attribute.delimiter !== "`" && paragraphMaySpanLines(text, attribute.attributeStart),
+      indent,
+    });
+    if (ordered === attribute.value) continue;
+    edits.push(vscode.TextEdit.replace(
+      new vscode.Range(start, document.positionAt(attribute.valueEnd)),
+      ordered,
+    ));
+  }
+  return edits;
+}
+
+async function formatClassParagraphs(): Promise<void> {
+  const editor = vscode.window.activeTextEditor;
+  if (!editor) return;
+  const edits = paragraphEdits(editor.document);
+  if (!edits.length) return;
+  const edit = new vscode.WorkspaceEdit();
+  edit.set(editor.document.uri, edits);
+  await vscode.workspace.applyEdit(edit);
+}
+
+function formatOnSave(event: vscode.TextDocumentWillSaveEvent): void {
+  const enabled = vscode.workspace
+    .getConfiguration("ermine", event.document.uri)
+    .get<boolean>("formatOnSave", false);
+  if (!enabled || vscode.languages.match(DOCUMENTS, event.document) === 0) return;
+  event.waitUntil(Promise.resolve(paragraphEdits(event.document)));
+}
+
 export function activate(context: vscode.ExtensionContext): void {
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(DOCUMENTS, completionProvider),
     vscode.languages.registerHoverProvider(DOCUMENTS, hoverProvider),
     vscode.commands.registerCommand("ermine.explainClassParagraph", explainClassParagraph),
     vscode.commands.registerCommand("ermine.showClassParagraphGraph", () => showClassParagraphGraph(context)),
+    vscode.commands.registerCommand("ermine.formatClassParagraphs", formatClassParagraphs),
+    vscode.workspace.onWillSaveTextDocument(formatOnSave),
   );
 }
 

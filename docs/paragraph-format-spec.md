@@ -46,6 +46,19 @@ Duplicates: preserve verbatim in place of first occurrence (they are lint's busi
 the formatter's). Unknown-but-scoped tokens (e.g. a typo'd `hover:grond`): treat as
 identity tokens — never guess.
 
+## Layout (single-line vs. one line per plane)
+
+Order is canonical; layout is a choice. `orderParagraphGroups` returns the ordered words
+already cut into the groups a reader scans by — identity hooks, then one group per plane,
+then one group per scope — and `orderParagraph(s, { lines, indent })` joins them with a
+space (default) or with a newline plus `indent`.
+
+A repo picks one layout and uses it everywhere, including in `--check`: the two layouts
+disagree by construction, so `--lines` on the rewriter and `ermine.paragraphLayout` in the
+editor must agree, or every save will fight CI. Template-literal leading segments stay on
+one line in both modes — they are a partial paragraph, and the interpolation that follows
+decides where the string really ends.
+
 ## Main steps
 
 ### Step 1 — the pure function (in ermine)
@@ -113,8 +126,17 @@ before the run (order changes nothing semantically); if any count moves, stop an
 - `--check` wired into Monky's check set; docs: one paragraph in `ADOPTION-PROTOCOL.md`
   naming the canonical order as registry-derived.
 
+## Editor integration
+
+The VS Code surface formats on save when `ermine.formatOnSave` is on, via
+`onWillSaveTextDocument` rather than a `DocumentFormattingEditProvider` — the paragraph
+formatter composes with whatever formatter already owns the language instead of competing
+for the default slot. `Ermine: Format Class Paragraphs` runs the same edits on demand.
+Continuation indent is the attribute's own line indent plus one editor indent unit
+(`editor.tabSize` / `editor.insertSpaces`); it is never a setting of its own.
+
 ## Out of scope
 
-Editor-on-save integration (note as follow-up); sorting inside arbitrary `clsx()`/array
+Sorting inside arbitrary `clsx()`/array
 expressions (only plain attributes, leading template segments, manifest, fixture);
 any lint rule — the formatter replaces the lint idea entirely.

@@ -1,5 +1,6 @@
 {
-  "name": "@ermine/vscode",
+  "name": "ermine",
+  "publisher": "ermine",
   "displayName": "Ermine",
   "version": "0.1.0",
   "private": true,
@@ -13,9 +14,7 @@
     "onLanguage:html",
     "onLanguage:javascriptreact",
     "onLanguage:typescriptreact",
-    "onLanguage:vue",
-    "onCommand:ermine.explainClassParagraph",
-    "onCommand:ermine.showClassParagraphGraph"
+    "onLanguage:vue"
   ],
   "contributes": {
     "configuration": {
@@ -25,6 +24,21 @@
           "type": "string",
           "default": "ermine.combines",
           "description": "Workspace-relative Ermine combine definition file used by paragraph explanation."
+        },
+        "ermine.formatOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Reorder Ermine class paragraphs into canonical order when a file is saved."
+        },
+        "ermine.paragraphLayout": {
+          "type": "string",
+          "enum": ["single-line", "plane-per-line"],
+          "enumDescriptions": [
+            "Keep the whole paragraph on one line.",
+            "Give each plane (layout, layering, motion, state, skin) and each scope its own line."
+          ],
+          "default": "single-line",
+          "description": "How the paragraph formatter lays out an ordered class paragraph."
         }
       }
     },
@@ -36,6 +50,10 @@
       {
         "command": "ermine.showClassParagraphGraph",
         "title": "Ermine: Show Class Paragraph Graph"
+      },
+      {
+        "command": "ermine.formatClassParagraphs",
+        "title": "Ermine: Format Class Paragraphs"
       }
     ]
   },

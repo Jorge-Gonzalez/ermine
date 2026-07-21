@@ -3,7 +3,7 @@ import { readFile, readdir, writeFile } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
-import { orderParagraph } from "../src/format-paragraph.ts";
+import { orderParagraph, paragraphMaySpanLines } from "../src/format-paragraph.ts";
 
 const REPOSITORY_ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const SKIP_DIRECTORIES = new Set([".git", "node_modules", "dist", "coverage", "build"]);
@@ -13,6 +13,8 @@ const STYLE_SMOKE_FIXTURE = "tests/style-smoke-fixture.ts";
 interface CliOptions {
   project: string;
   check: boolean;
+  lines: boolean;
+  indent: string;
 }
 
 interface RewriteStats {
@@ -55,15 +57,29 @@ async function walkMarkup(root: string): Promise<string[]> {
 function parseCli(args: string[]): CliOptions {
   const projectIndex = args.indexOf("--project");
   const project = projectIndex >= 0 ? args[projectIndex + 1] : undefined;
+  const indentIndex = args.indexOf("--indent");
   const check = args.includes("--check");
-  if (!project) throw new Error("usage: format-paragraphs.ts --project <path> [--check]");
-  return { project: resolve(project), check };
+  if (!project) throw new Error("usage: format-paragraphs.ts --project <path> [--check] [--lines] [--indent <spaces>]");
+  return {
+    project: resolve(project),
+    check,
+    lines: args.includes("--lines"),
+    indent: indentIndex >= 0 ? " ".repeat(Number(args[indentIndex + 1])) : "  ",
+  };
 }
 
-function rewriteQuotedAttributes(source: string): { source: string; count: number } {
+function lineIndentAt(source: string, offset: number): string {
+  const start = source.lastIndexOf("\n", offset - 1) + 1;
+  return /^[ \t]*/.exec(source.slice(start, offset))?.[0] ?? "";
+}
+
+function rewriteQuotedAttributes(source: string, layout: CliOptions): { source: string; count: number } {
   let count = 0;
-  const next = source.replace(/\b(class(?:Name)?)\s*=\s*(["'])([\s\S]*?)\2/g, (whole, name: string, quote: string, value: string) => {
-    const ordered = orderParagraph(value);
+  const next = source.replace(/\b(class(?:Name)?)\s*=\s*(["'])([\s\S]*?)\2/g, (whole, name: string, quote: string, value: string, offset: number) => {
+    const ordered = orderParagraph(value, {
+      lines: layout.lines && paragraphMaySpanLines(source, offset),
+      indent: `${lineIndentAt(source, offset)}${layout.indent}`,
+    });
     if (ordered === value) return whole;
     count += 1;
     return `${name}=${quote}${ordered}${quote}`;
@@ -111,9 +127,11 @@ function rewriteTemplateAttributes(source: string): { source: string; count: num
   return { source: next, count, skipped };
 }
 
-function rewriteMarkupSource(source: string): { source: string; rewritten: number; skippedTemplates: number } {
+// Template leading segments stay on one line: they are a partial paragraph, and the
+// interpolation that follows them decides where the string really ends.
+function rewriteMarkupSource(source: string, layout: CliOptions): { source: string; rewritten: number; skippedTemplates: number } {
   const templates = rewriteTemplateAttributes(source);
-  const quoted = rewriteQuotedAttributes(templates.source);
+  const quoted = rewriteQuotedAttributes(templates.source, layout);
   return {
     source: quoted.source,
     rewritten: templates.count + quoted.count,
@@ -148,9 +166,9 @@ function rewriteManifestValue(value: unknown): { value: unknown; count: number }
   return { value: next, count };
 }
 
-async function rewriteFile(path: string, projectRoot: string, check: boolean): Promise<{ changed: boolean; rewritten: number; skippedTemplates: number }> {
+async function rewriteFile(path: string, options: CliOptions): Promise<{ changed: boolean; rewritten: number; skippedTemplates: number }> {
   const before = await readFile(path, "utf8");
-  const relativePath = slash(relative(projectRoot, path));
+  const relativePath = slash(relative(options.project, path));
   const result = relativePath === "ermine.elements.json"
     ? (() => {
         const rewritten = rewriteManifestValue(JSON.parse(before));
@@ -160,9 +178,9 @@ async function rewriteFile(path: string, projectRoot: string, check: boolean): P
           skippedTemplates: 0,
         };
       })()
-    : rewriteMarkupSource(before);
+    : rewriteMarkupSource(before, options);
   if (result.source === before) return { changed: false, rewritten: result.rewritten, skippedTemplates: result.skippedTemplates };
-  if (!check) await writeFile(path, result.source);
+  if (!options.check) await writeFile(path, result.source);
   return { changed: true, rewritten: result.rewritten, skippedTemplates: result.skippedTemplates };
 }
 
@@ -178,7 +196,7 @@ async function main(): Promise<void> {
   const stats: RewriteStats = { scanned: files.length, rewritten: 0, skippedTemplates: 0, changedFiles: [] };
 
   for (const path of files) {
-    const result = await rewriteFile(path, options.project, options.check);
+    const result = await rewriteFile(path, options);
     stats.rewritten += result.rewritten;
     stats.skippedTemplates += result.skippedTemplates;
     if (result.changed) stats.changedFiles.push(slash(relative(options.project, path)));
