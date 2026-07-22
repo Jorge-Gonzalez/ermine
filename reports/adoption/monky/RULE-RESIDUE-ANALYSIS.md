@@ -18,10 +18,10 @@ included.
 
 | metric | count |
 | --- | --- |
-| current declarations | 497 |
-| adopted/infrastructure declarations | 400 |
-| project-owned residue declarations | 97 |
-| project-owned residue rules | 43 |
+| current declarations | 506 |
+| adopted/infrastructure declarations | 407 |
+| project-owned residue declarations | 99 |
+| project-owned residue rules | 44 |
 | assimilable declarations | 0 |
 | shadowed words | 0 |
 | latent-generalizable declarations | 0 |
@@ -31,8 +31,8 @@ included.
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
 | authored-content substrate | 20 | 45 | A reset/prose substrate for user-authored HTML; the point is to preserve native content semantics outside flat utility grammar. |
-| private drawing / engine pseudo | 22 | 51 | Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure. |
-| component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
+| private drawing / engine pseudo | 22 | 52 | Semantic fragments, pseudo-elements, effect-composition hooks, and browser-adapter parts; visible for accounting, not residual Ermine word pressure. |
+| component-local surface/type fragments | 2 | 2 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 
 ## Word-Assimilation Target
 
@@ -44,12 +44,12 @@ The authored-content substrate is likewise a deliberate authored-HTML island.
 
 | bucket | declarations | rules | reading |
 | --- | --- | --- | --- |
-| conserved project-owned residue | 97 | 43 | All remaining project-owned declarations in the current ledger. |
-| semantic fragments excluded | 51 | 22 | Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work. |
+| conserved project-owned residue | 99 | 44 | All remaining project-owned declarations in the current ledger. |
+| semantic fragments excluded | 52 | 22 | Discovered semantic-fragment sub-products and browser-adapter hooks, not unassimilated Ermine work. |
 | content-editor defaults excluded | 45 | 20 | Authored-content substrate defaults under `.sf-authored-content`, excluding pseudo drawing. |
-| adjusted word-assimilation target | 1 | 1 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
+| adjusted word-assimilation target | 2 | 2 | Residue still worth reading for future words, recipes, or project identity after those exclusions. |
 
-The exclusion is union-aware: 96 declarations across
+The exclusion is union-aware: 97 declarations across
 42 rules are outside the word-assimilation target. They remain visible
 in the conserved ledger and boundary reports for full CSS accounting, not because they are
 missed Ermine assimilation.
@@ -58,13 +58,13 @@ missed Ermine assimilation.
 
 | rule shape | rules | declarations | reading |
 | --- | --- | --- | --- |
-| component-local surface/type fragments | 1 | 1 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
+| component-local surface/type fragments | 2 | 2 | Small socket-consuming component signatures that do not yet justify a molecule admission. |
 
 ## By Source File
 
 | file | residue rules |
 | --- | --- |
-| `src/styles/fragments/semantic-fragments.css` | 43 |
+| `src/styles/fragments/semantic-fragments.css` | 44 |
 
 ## By Primary Rule Action
 
@@ -78,20 +78,20 @@ rules are listed later because a single selector can combine several kinds of re
 | interaction-affordance-state | 4 |
 | spacing-rhythm | 4 |
 | motion-transition | 2 |
+| reset-inheritance-neutralization | 2 |
 | surface-line-elevation-cutout | 2 |
 | attachment-edge-layer | 1 |
-| reset-inheritance-neutralization | 1 |
 
 ## Rule Density
 
 | declarations per residue rule | rules |
 | --- | --- |
-| 1 declaration | 23 |
+| 1 declaration | 24 |
 | 2 declarations | 9 |
-| 3 declarations | 5 |
-| 4+ declarations | 6 |
+| 3 declarations | 4 |
+| 4+ declarations | 7 |
 
-This matters because most remaining rules are narrow and intentional. The six
+This matters because most remaining rules are narrow and intentional. The seven
 dense rules are recognizable authored shapes: segmented slider drawing, keyboard cap
 drawing, code/pre blocks, blockquotes, and host identity.
 
@@ -164,7 +164,7 @@ should remember it as authored-content substrate evidence, not as scattered miss
 | --- | --- | --- |
 | `.sf-segmented-pill::before` | 10 | Segmented-control active pill driven by CSS variables and state. |
 | `.sf-keycap-raised::after` | 8 | Keyboard cap underside/shadow drawing. |
-| `::-webkit-scrollbar*` | 8 | Browser-specific scrollbar adapter parts after standard socket integration. |
+| `::-webkit-scrollbar*` | 9 | Browser-specific scrollbar adapter parts after standard socket integration. |
 | `.sf-callout-arrow*` | 4 | CSS triangle arrow drawing and orientation. |
 | `.sf-generated-placeholder:empty::before` | 3 | Placeholder drawing tied to generated content. |
 | `.sf-keycap and variants` | 7 | Exact keyboard cap geometry. |
@@ -180,10 +180,10 @@ any new atomic words.
 
 | file | selector | declarations | rule actions | outcome | residue declarations |
 | --- | --- | --- | --- | --- | --- |
-| `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar` | 2 | component-private-drawing | recipe | width: var(--spacing-md) !important<br>height: var(--spacing-md) !important |
-| `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-thumb` | 3 | component-private-drawing | recipe | background: var(--tone) !important<br>border-radius: var(--radius-md) !important<br>border: 1px solid var(--tone-dim) !important |
-| `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-thumb:hover` | 1 | component-private-drawing | recipe | background: var(--accent-dim) !important |
-| `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-track` | 2 | component-private-drawing | recipe | background: var(--tone-dim) !important<br>border-radius: var(--radius-md) !important |
+| `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar` | 2 | component-private-drawing | recipe | width: var(--spacing-lg) !important<br>height: var(--spacing-lg) !important |
+| `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-thumb` | 4 | component-private-drawing | recipe | background-color: var(--tone) !important<br>background-clip: padding-box !important<br>border-radius: var(--radius-3xl) !important<br>border: 3px solid transparent !important |
+| `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-thumb:hover` | 1 | component-private-drawing | recipe | background-color: var(--accent-dim) !important |
+| `src/styles/fragments/semantic-fragments.css` | `::-webkit-scrollbar-track` | 2 | component-private-drawing | recipe | background: transparent !important<br>border-radius: var(--radius-3xl) !important |
 | `src/styles/fragments/semantic-fragments.css` | `:host(.sf-foreign-overlay-host), .sf-foreign-overlay-host` | 2 | attachment-edge-layer | recipe | position: fixed !important<br>z-index: var(--monky-foreign-overlay-z, 10000) !important |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-authored-content` | 2 | typography-content, reset-inheritance-neutralization | recipe | font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif<br>line-height: normal |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-authored-content a` | 2 | surface-line-elevation-cutout, typography-content | recipe | color: var(--accent)<br>text-decoration: underline |
@@ -208,6 +208,7 @@ any new atomic words.
 | `src/styles/fragments/semantic-fragments.css` | `.sf-callout-arrow` | 2 | component-private-drawing | recipe | width: 0<br>border: 6px solid transparent |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-callout-arrow-bottom` | 1 | component-private-drawing | recipe | border-bottom-color: var(--base-tone) |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-callout-arrow-top` | 1 | component-private-drawing | recipe | border-top-color: var(--base-tone) |
+| `src/styles/fragments/semantic-fragments.css` | `.sf-focus-proxy:focus-visible` | 1 | reset-inheritance-neutralization | recipe | outline: none |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-generated-placeholder:empty::before` | 3 | component-private-drawing | recipe | content: attr(data-placeholder)<br>color: var(--ink-soft)<br>pointer-events: none |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-keycap` | 1 | component-private-drawing | recipe | padding: 1px 4px |
 | `src/styles/fragments/semantic-fragments.css` | `.sf-keycap-raised` | 5 | component-private-drawing | recipe | line-height: 1<br>padding: 3px 6px 6px<br>min-width: 26px<br>border-radius: 4px<br>z-index: 0 |

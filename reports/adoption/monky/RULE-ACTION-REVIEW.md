@@ -8,10 +8,10 @@ generalization, recipe, and local-identity pressure.
 
 | metric | count |
 | --- | --- |
-| reviewed residue declarations | 97 |
+| reviewed residue declarations | 99 |
 | assimilable now | 0 |
 | latent generalizable | 0 |
-| likely recipe/molecule | 97 |
+| likely recipe/molecule | 99 |
 | likely local identity | 0 |
 
 ## By Rule Action
@@ -24,23 +24,23 @@ generalization, recipe, and local-identity pressure.
 | typography-content | 21 |
 | interaction-affordance-state | 5 |
 | motion-transition | 3 |
-| reset-inheritance-neutralization | 3 |
-| component-private-drawing | 41 |
+| reset-inheritance-neutralization | 4 |
+| component-private-drawing | 42 |
 
 ## By Latent Outcome
 
 | latent outcome | declarations |
 | --- | --- |
-| recipe | 97 |
+| recipe | 99 |
 
 ## By Current Ledger Code
 
 | current code | declarations |
 | --- | --- |
-| recipe-identity | 22 |
+| recipe-identity | 23 |
 | parent-relational | 1 |
 | pseudo-mechanics | 23 |
-| scrollbar-followup | 8 |
+| scrollbar-followup | 9 |
 | user-content | 43 |
 
 ## Matched Playbook Recipes
@@ -51,10 +51,10 @@ of residue declarations.
 | recipe | kind | confidence | matches | conversion memory |
 | --- | --- | --- | --- | --- |
 | authored-content-substrate-boundary | boundary | human | 45 | Group descendant typography and rhythm as authored-content substrate evidence. |
-| pseudo-drawing-boundary | boundary | mechanical | 31 | Do not flatten pseudo drawing into ordinary element words. |
+| pseudo-drawing-boundary | boundary | mechanical | 32 | Do not flatten pseudo drawing into ordinary element words. |
 | keycap-drawing-boundary | boundary | review | 15 | Group keycap face, bevel, shadow, and exact micro-padding as one drawing recipe. |
 | segmented-pill-boundary | boundary | review | 13 | Group active-pill pseudo geometry, custom coordinate variables, opacity, and snap/slide timing. |
-| engine-scrollbar-boundary | boundary | mechanical | 8 | Keep engine-specific pseudo selectors grouped by scrollbar part until a post-process adapter owns them. |
+| engine-scrollbar-boundary | boundary | mechanical | 9 | Keep engine-specific pseudo selectors grouped by scrollbar part until a post-process adapter owns them. |
 | selectable-group-fragment-boundary | boundary | review | 5 | Group direct-child selection suppression, press feedback, and min-selection lock styling around the selectable group contract. |
 | callout-arrow-boundary | boundary | review | 4 | Group zero-size box, transparent borders, orientation colour, and attachment together. |
 | generated-placeholder-boundary | boundary | mechanical | 3 | Group generated content, placeholder colour, and pointer-events suppression. |
@@ -71,13 +71,13 @@ of residue declarations.
 
 | family | latent outcome | declarations | primary pressure |
 | --- | --- | --- | --- |
-| component-private-drawing | recipe | 41 | promote as molecule/recipe only if reused |
+| component-private-drawing | recipe | 42 | promote as molecule/recipe only if reused |
 | typography-content | recipe | 21 | promote as molecule/recipe only if reused |
 | spacing-rhythm | recipe | 14 | promote as molecule/recipe only if reused |
 | surface-line-elevation-cutout | recipe | 8 | promote as molecule/recipe only if reused |
 | interaction-affordance-state | recipe | 5 | promote as molecule/recipe only if reused |
+| reset-inheritance-neutralization | recipe | 4 | promote as molecule/recipe only if reused |
 | motion-transition | recipe | 3 | promote as molecule/recipe only if reused |
-| reset-inheritance-neutralization | recipe | 3 | promote as molecule/recipe only if reused |
 | attachment-edge-layer | recipe | 2 | promote as molecule/recipe only if reused |
 
 ## Reading

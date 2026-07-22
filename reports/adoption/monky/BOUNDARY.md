@@ -22,8 +22,8 @@ invariance pass as the roadmap for future ruling cycles.
 
 | source | commit |
 |---|---|
-| Ermine | `f87be063e15466bf92cdbca0fab012d079e82bc5` |
-| monky | `7eef9cdb989c579bfc89c646caebccf914f505a7` |
+| Ermine | `5d1629d40d9299533158c0a871706fa4757b6ded` |
+| monky | `f8cfd2f6cfef8f5f4162e6f97bc70b4e872cc3df` |
 
 ## Closure Gate
 
@@ -31,7 +31,7 @@ invariance pass as the roadmap for future ruling cycles.
 |---|---:|
 | assimilable declarations | 0 |
 | review-coded declarations | 0 |
-| project-owned residue | 97 |
+| project-owned residue | 99 |
 
 ## Product Identity
 
@@ -43,7 +43,7 @@ boundary clause for shadows that are signatures rather than the shared `elevated
 
 | code | count | boundary |
 |---|---:|---|
-| `recipe-identity` | 22 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 23 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 
 ## Relational / Scale-Backed Follow-Up
 
@@ -89,4 +89,4 @@ These rows are not adoption work. They are pre-counted evidence for future Ermin
 | code | rows | evidence |
 |---|---:|---|
 | `parent-relational` | 1 | R-STATE-13 boundary: guarded/JS-state relational mechanics |
-| `scrollbar-followup` | 8 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |
+| `scrollbar-followup` | 9 | R-SKIN-15 boundary: engine-drawn identity outside the treatment |

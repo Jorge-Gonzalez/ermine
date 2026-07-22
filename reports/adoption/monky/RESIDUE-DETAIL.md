@@ -12,55 +12,56 @@ node --import tsx adoption/residue-detail.ts --name monky --write
 
 | source | commit |
 |---|---|
-| Ermine | `f87be063e15466bf92cdbca0fab012d079e82bc5` |
-| monky | `7eef9cdb989c579bfc89c646caebccf914f505a7` |
+| Ermine | `5d1629d40d9299533158c0a871706fa4757b6ded` |
+| monky | `f8cfd2f6cfef8f5f4162e6f97bc70b4e872cc3df` |
 
 ## Summary
 
-- Current declarations: 497
-- Adopted/infrastructure declarations: 400
-- Project-owned residue declarations: 97
+- Current declarations: 506
+- Adopted/infrastructure declarations: 407
+- Project-owned residue declarations: 99
 - Assimilable declarations: 0
 - Shadowed words: 0
 
 | code | declarations | meaning |
 |---|---:|---|
-| `recipe-identity` | 22 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
+| `recipe-identity` | 23 | a project recipe class bundle (R-SKIN-10) — socket-consuming product identity |
 | `parent-relational` | 1 | guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13) |
 | `pseudo-mechanics` | 23 | pseudo-element geometry, fills, and content |
-| `scrollbar-followup` | 8 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
+| `scrollbar-followup` | 9 | engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15) |
 | `user-content` | 43 | rich-text defaults inside user-authored content |
 
-## recipe-identity (22)
+## recipe-identity (23)
 
 a project recipe class bundle (R-SKIN-10) — socket-consuming product identity
 
-### src/styles/fragments/semantic-fragments.css (22)
+### src/styles/fragments/semantic-fragments.css (23)
 
 | line | selector | declaration |
 |---:|---|---|
 | 6 | `.sf-authored-content` | `font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif` |
 | 7 | `.sf-authored-content` | `line-height: normal` |
-| 126 | `:host(.sf-foreign-overlay-host), .sf-foreign-overlay-host` | `position: fixed !important` |
-| 127 | `:host(.sf-foreign-overlay-host), .sf-foreign-overlay-host` | `z-index: var(--monky-foreign-overlay-z, 10000) !important` |
-| 132 | `.sf-callout-arrow` | `width: 0` |
-| 133 | `.sf-callout-arrow` | `border: 6px solid transparent` |
-| 137 | `.sf-callout-arrow-top` | `border-top-color: var(--base-tone)` |
-| 141 | `.sf-callout-arrow-bottom` | `border-bottom-color: var(--base-tone)` |
-| 146 | `.sf-keycap` | `padding: 1px 4px` |
-| 151 | `.sf-keycap-raised` | `line-height: 1` |
-| 152 | `.sf-keycap-raised` | `padding: 3px 6px 6px` |
-| 153 | `.sf-keycap-raised` | `min-width: 26px` |
-| 154 | `.sf-keycap-raised` | `border-radius: 4px` |
-| 155 | `.sf-keycap-raised` | `z-index: 0` |
-| 170 | `.sf-keycap-raised:first-child` | `margin-left: 0` |
-| 196 | `.sf-segmented-control-option svg` | `vertical-align: middle` |
-| 205 | `.sf-shake-suppression` | `transition: none !important` |
-| 210 | `.sf-selectable-group > *` | `user-select: none` |
-| 214 | `.sf-selectable-group > *:active` | `transform: scale(0.98)` |
-| 219 | `.sf-min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
-| 220 | `.sf-min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
-| 224 | `.sf-min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
+| 125 | `.sf-focus-proxy:focus-visible` | `outline: none` |
+| 132 | `:host(.sf-foreign-overlay-host), .sf-foreign-overlay-host` | `position: fixed !important` |
+| 133 | `:host(.sf-foreign-overlay-host), .sf-foreign-overlay-host` | `z-index: var(--monky-foreign-overlay-z, 10000) !important` |
+| 138 | `.sf-callout-arrow` | `width: 0` |
+| 139 | `.sf-callout-arrow` | `border: 6px solid transparent` |
+| 143 | `.sf-callout-arrow-top` | `border-top-color: var(--base-tone)` |
+| 147 | `.sf-callout-arrow-bottom` | `border-bottom-color: var(--base-tone)` |
+| 152 | `.sf-keycap` | `padding: 1px 4px` |
+| 157 | `.sf-keycap-raised` | `line-height: 1` |
+| 158 | `.sf-keycap-raised` | `padding: 3px 6px 6px` |
+| 159 | `.sf-keycap-raised` | `min-width: 26px` |
+| 160 | `.sf-keycap-raised` | `border-radius: 4px` |
+| 161 | `.sf-keycap-raised` | `z-index: 0` |
+| 176 | `.sf-keycap-raised:first-child` | `margin-left: 0` |
+| 202 | `.sf-segmented-control-option svg` | `vertical-align: middle` |
+| 211 | `.sf-shake-suppression` | `transition: none !important` |
+| 216 | `.sf-selectable-group > *` | `user-select: none` |
+| 220 | `.sf-selectable-group > *:active` | `transform: scale(0.98)` |
+| 225 | `.sf-min-selected-1 > .is-selected:only-of-type` | `cursor: not-allowed` |
+| 226 | `.sf-min-selected-1 > .is-selected:only-of-type` | `opacity: 0.95` |
+| 230 | `.sf-min-selected-1 > .is-selected:only-of-type:hover` | `opacity: 0.95` |
 
 ## parent-relational (1)
 
@@ -70,7 +71,7 @@ guarded/JS-state relational mechanics outside the ruled prefixes (R-STATE-13)
 
 | line | selector | declaration |
 |---:|---|---|
-| 200 | `.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked="true"]` | `background: transparent` |
+| 206 | `.sf-segmented-pill.is-sliding .sf-segmented-control-option[aria-checked="true"]` | `background: transparent` |
 
 ## pseudo-mechanics (23)
 
@@ -83,43 +84,44 @@ pseudo-element geometry, fills, and content
 | 117 | `.sf-generated-placeholder:empty::before` | `content: attr(data-placeholder)` |
 | 118 | `.sf-generated-placeholder:empty::before` | `color: var(--ink-soft)` |
 | 119 | `.sf-generated-placeholder:empty::before` | `pointer-events: none` |
-| 159 | `.sf-keycap-raised::after` | `content: ''` |
-| 160 | `.sf-keycap-raised::after` | `position: absolute` |
-| 161 | `.sf-keycap-raised::after` | `background: var(--tone-dim)` |
-| 162 | `.sf-keycap-raised::after` | `inset: 0 2px 4px` |
-| 163 | `.sf-keycap-raised::after` | `border: 1px solid var(--harmonic-minor)` |
-| 164 | `.sf-keycap-raised::after` | `border-radius: 2px` |
-| 165 | `.sf-keycap-raised::after` | `pointer-events: none` |
-| 166 | `.sf-keycap-raised::after` | `z-index: -1` |
-| 175 | `.sf-segmented-pill::before` | `content: ''` |
-| 176 | `.sf-segmented-pill::before` | `position: absolute` |
-| 177 | `.sf-segmented-pill::before` | `top: 0` |
-| 178 | `.sf-segmented-pill::before` | `bottom: 0` |
-| 179 | `.sf-segmented-pill::before` | `left: var(--pill-left, 0)` |
-| 180 | `.sf-segmented-pill::before` | `width: var(--pill-width, 0)` |
-| 181 | `.sf-segmented-pill::before` | `background: var(--accent)` |
-| 182 | `.sf-segmented-pill::before` | `opacity: 0` |
-| 183 | `.sf-segmented-pill::before` | `transition: left 0.1s ease, width 0.1s ease` |
-| 184 | `.sf-segmented-pill::before` | `pointer-events: none` |
-| 188 | `.sf-segmented-pill.is-sliding::before` | `opacity: 1` |
-| 192 | `.sf-segmented-pill.seg-snap::before` | `transition: none` |
+| 165 | `.sf-keycap-raised::after` | `content: ''` |
+| 166 | `.sf-keycap-raised::after` | `position: absolute` |
+| 167 | `.sf-keycap-raised::after` | `background: var(--tone-dim)` |
+| 168 | `.sf-keycap-raised::after` | `inset: 0 2px 4px` |
+| 169 | `.sf-keycap-raised::after` | `border: 1px solid var(--harmonic-minor)` |
+| 170 | `.sf-keycap-raised::after` | `border-radius: 2px` |
+| 171 | `.sf-keycap-raised::after` | `pointer-events: none` |
+| 172 | `.sf-keycap-raised::after` | `z-index: -1` |
+| 181 | `.sf-segmented-pill::before` | `content: ''` |
+| 182 | `.sf-segmented-pill::before` | `position: absolute` |
+| 183 | `.sf-segmented-pill::before` | `top: 0` |
+| 184 | `.sf-segmented-pill::before` | `bottom: 0` |
+| 185 | `.sf-segmented-pill::before` | `left: var(--pill-left, 0)` |
+| 186 | `.sf-segmented-pill::before` | `width: var(--pill-width, 0)` |
+| 187 | `.sf-segmented-pill::before` | `background: var(--accent)` |
+| 188 | `.sf-segmented-pill::before` | `opacity: 0` |
+| 189 | `.sf-segmented-pill::before` | `transition: left 0.1s ease, width 0.1s ease` |
+| 190 | `.sf-segmented-pill::before` | `pointer-events: none` |
+| 194 | `.sf-segmented-pill.is-sliding::before` | `opacity: 1` |
+| 198 | `.sf-segmented-pill.seg-snap::before` | `transition: none` |
 
-## scrollbar-followup (8)
+## scrollbar-followup (9)
 
 engine-drawn scrollbar identity outside the ruled treatment (R-SKIN-15)
 
-### src/styles/fragments/semantic-fragments.css (8)
+### src/styles/fragments/semantic-fragments.css (9)
 
 | line | selector | declaration |
 |---:|---|---|
-| 229 | `::-webkit-scrollbar` | `width: var(--spacing-md) !important` |
-| 230 | `::-webkit-scrollbar` | `height: var(--spacing-md) !important` |
-| 234 | `::-webkit-scrollbar-track` | `background: var(--tone-dim) !important` |
-| 235 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-md) !important` |
-| 239 | `::-webkit-scrollbar-thumb` | `background: var(--tone) !important` |
-| 240 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-md) !important` |
-| 241 | `::-webkit-scrollbar-thumb` | `border: 1px solid var(--tone-dim) !important` |
-| 245 | `::-webkit-scrollbar-thumb:hover` | `background: var(--accent-dim) !important` |
+| 235 | `::-webkit-scrollbar` | `width: var(--spacing-lg) !important` |
+| 236 | `::-webkit-scrollbar` | `height: var(--spacing-lg) !important` |
+| 240 | `::-webkit-scrollbar-track` | `background: transparent !important` |
+| 241 | `::-webkit-scrollbar-track` | `border-radius: var(--radius-3xl) !important` |
+| 245 | `::-webkit-scrollbar-thumb` | `background-color: var(--tone) !important` |
+| 246 | `::-webkit-scrollbar-thumb` | `background-clip: padding-box !important` |
+| 247 | `::-webkit-scrollbar-thumb` | `border-radius: var(--radius-3xl) !important` |
+| 248 | `::-webkit-scrollbar-thumb` | `border: 3px solid transparent !important` |
+| 252 | `::-webkit-scrollbar-thumb:hover` | `background-color: var(--accent-dim) !important` |
 
 ## user-content (43)
 

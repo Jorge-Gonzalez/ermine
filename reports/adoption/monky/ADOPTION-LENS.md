@@ -11,16 +11,16 @@ unless a later design explicitly promotes a new layer.
 
 | source | commit |
 |---|---|
-| Ermine | `f87be063e15466bf92cdbca0fab012d079e82bc5` |
-| monky | `7eef9cdb989c579bfc89c646caebccf914f505a7` |
+| Ermine | `5d1629d40d9299533158c0a871706fa4757b6ded` |
+| monky | `f8cfd2f6cfef8f5f4162e6f97bc70b4e872cc3df` |
 
 ## Summary
 
 | metric | count |
 | --- | --- |
-| declarations | 497 |
-| residue declarations | 97 |
-| reviewed declarations | 97 |
+| declarations | 506 |
+| residue declarations | 99 |
+| reviewed declarations | 99 |
 | combine candidate paragraphs | 40 |
 | classlists with project tokens | 301 |
 
@@ -28,10 +28,10 @@ unless a later design explicitly promotes a new layer.
 
 | category | declarations | meaning |
 | --- | --- | --- |
-| ermine-infrastructure | 400 | already adopted or framework infrastructure |
-| semantic-fragment | 44 | CSS-bearing reusable object below component scale |
+| ermine-infrastructure | 407 | already adopted or framework infrastructure |
+| semantic-fragment | 45 | CSS-bearing reusable object below component scale |
 | authored-content-default | 45 | content editor/user-authored HTML defaults, outside utility authorship |
-| browser-adapter | 8 | vendor or browser-divergent selector/property boundary |
+| browser-adapter | 9 | vendor or browser-divergent selector/property boundary |
 
 ## Repeated Paragraph Evidence
 
